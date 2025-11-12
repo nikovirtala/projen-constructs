@@ -1,0 +1,150 @@
+import { Vitest } from "@nikovirtala/projen-vitest";
+import { awscdk, cdk, JsonPatch, javascript, TextFile, type typescript } from "projen";
+
+export const DEFAULT_AUTHOR = "Niko Virtala";
+export const DEFAULT_AUTHOR_ADDRESS = "niko.virtala@hey.com";
+export const DEFAULT_CDK_VERSION = "2.223.0";
+export const DEFAULT_NODE_VERSION = "22.21.1";
+export const DEFAULT_TYPESCRIPT_VERSION = "5.9.3";
+export const DEFAULT_JSII_VERSION = `~${DEFAULT_TYPESCRIPT_VERSION}`;
+
+export function applyDefaultConfig(
+    project:
+        | awscdk.AwsCdkTypeScriptApp
+        | awscdk.AwsCdkConstructLibrary
+        | typescript.TypeScriptProject
+        | cdk.JsiiProject,
+) {
+    const nodeVersion = project.minNodeVersion ?? DEFAULT_NODE_VERSION;
+
+    // use es modules
+    project.package.addField("type", "module");
+    project.deps.removeDependency("ts-node");
+    project.addDevDeps("tsx");
+    project.defaultTask?.reset();
+    project.defaultTask?.exec(`tsx --tsconfig ${project.tsconfigDev.file.path} .projenrc.ts`);
+
+    project.npmrc.addConfig("node-linker", "hoisted");
+
+    project.vscode?.extensions.addRecommendations("biomejs.biome");
+    project.vscode?.settings.addSettings({
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.biome": "always",
+        },
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+    });
+
+    new TextFile(project, "mise.toml", {
+        committed: true,
+        readonly: true,
+        lines: ["[tools]", `node = "${nodeVersion}"`],
+    });
+
+    if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
+        // use node.js 24.x to get new enough npm to satisfy: trusted publishing requires npm CLI version 11.5.1 or later.
+        project.github
+            ?.tryFindWorkflow("release")
+            ?.file?.patch(JsonPatch.replace("/jobs/release_npm/steps/0/with/node-version", "24.x"));
+
+        project.package.addField("publishConfig", { access: "public" });
+    }
+
+    // remove once configured correctly to biome, mise and vitest components
+    project.npmignore?.addPatterns("biome.jsonc", "mise.toml", "vitest.config.ts");
+
+    new Vitest(project);
+}
+
+export const PROJECT_DEFAULT_OPTIONS = {
+    author: DEFAULT_AUTHOR,
+    authorAddress: DEFAULT_AUTHOR_ADDRESS,
+    defaultReleaseBranch: "main",
+    minNodeVersion: DEFAULT_NODE_VERSION,
+    autoApproveOptions: {
+        secret: "GITHUB_TOKEN",
+        allowedUsernames: ["nikovirtala"],
+    },
+    dependabot: false,
+    depsUpgradeOptions: {
+        workflowOptions: {
+            labels: ["auto-approve", "auto-merge"],
+        },
+    },
+    github: true,
+    mergify: true,
+    autoMerge: true,
+    jest: false,
+    eslint: false,
+    prettier: false,
+    biome: true,
+    biomeOptions: {
+        biomeConfig: {
+            formatter: {
+                indentStyle: javascript.biome_config.IndentStyle.SPACE,
+                indentWidth: 4,
+                lineWidth: 120,
+                useEditorconfig: false,
+            },
+        },
+        formatter: true,
+        linter: true,
+    },
+    packageManager: javascript.NodePackageManager.PNPM,
+    pnpmVersion: "10",
+    projenrcTs: true,
+    typescriptVersion: DEFAULT_TYPESCRIPT_VERSION,
+    tsconfig: {
+        compilerOptions: {
+            allowImportingTsExtensions: true,
+            allowSyntheticDefaultImports: true,
+            alwaysStrict: true,
+            declaration: true,
+            esModuleInterop: true,
+            experimentalDecorators: true,
+            inlineSourceMap: true,
+            inlineSources: true,
+            isolatedModules: true,
+            lib: ["esnext"],
+            module: "nodenext",
+            moduleResolution: javascript.TypeScriptModuleResolution.NODE_NEXT,
+            noEmit: true,
+            noEmitOnError: false,
+            noFallthroughCasesInSwitch: true,
+            noImplicitAny: true,
+            noImplicitOverride: true,
+            noImplicitReturns: true,
+            noImplicitThis: true,
+            noUnusedLocals: true,
+            noUnusedParameters: true,
+            resolveJsonModule: true,
+            strict: true,
+            strictNullChecks: true,
+            strictPropertyInitialization: true,
+            stripInternal: true,
+            target: "esnext",
+        },
+    },
+};
+
+export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = {
+    ...PROJECT_DEFAULT_OPTIONS,
+};
+
+export const JSII_PROJECT_DEFAULT_OPTIONS = {
+    ...PROJECT_DEFAULT_OPTIONS,
+    jsiiVersion: DEFAULT_JSII_VERSION,
+    npmTrustedPublishing: true,
+};
+
+export const CDK_APP_DEFAULT_OPTIONS = {
+    ...PROJECT_DEFAULT_OPTIONS,
+    cdkVersion: DEFAULT_CDK_VERSION,
+};
+
+export const CDK_CONSTRUCT_DEFAULT_OPTIONS = {
+    ...PROJECT_DEFAULT_OPTIONS,
+    cdkVersion: DEFAULT_CDK_VERSION,
+    npmTrustedPublishing: true,
+};
