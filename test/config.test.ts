@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { TypeScriptProject } from "../src/typescript-project";
+import { TypeScriptProject } from "../src/";
 
 describe("applyDefaultConfig", () => {
     it("uses DEFAULT_NODE_VERSION when minNodeVersion is not specified", () => {

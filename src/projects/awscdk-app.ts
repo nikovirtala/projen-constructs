@@ -1,5 +1,5 @@
 import { awscdk } from "projen";
-import { applyDefaultConfig, CDK_APP_DEFAULT_OPTIONS } from "./config";
+import { applyDefaultConfig, CDK_APP_DEFAULT_OPTIONS } from "../config";
 
 export class AwsCdkTypeScriptAppProject extends awscdk.AwsCdkTypeScriptApp {
     constructor(options: awscdk.AwsCdkTypeScriptAppOptions) {

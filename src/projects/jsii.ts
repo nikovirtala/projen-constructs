@@ -1,5 +1,5 @@
 import { cdk } from "projen";
-import { applyDefaultConfig, JSII_PROJECT_DEFAULT_OPTIONS } from "./config";
+import { applyDefaultConfig, JSII_PROJECT_DEFAULT_OPTIONS } from "../config";
 
 export class JsiiProject extends cdk.JsiiProject {
     constructor(options: cdk.JsiiProjectOptions) {

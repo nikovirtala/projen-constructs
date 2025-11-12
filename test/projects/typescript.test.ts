@@ -1,52 +1,58 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { AwsCdkTypeScriptAppProject } from "../src/awscdk-app-project";
+import { TypeScriptProject } from "../../src/projects/typescript";
 
-describe("AwsCdkTypeScriptAppProject", () => {
+describe("TypeScriptProject", () => {
     it("applies default configuration", () => {
-        const project = new AwsCdkTypeScriptAppProject({
-            name: "test-cdk-app",
+        const project = new TypeScriptProject({
+            name: "test-project",
             defaultReleaseBranch: "main",
-            cdkVersion: "2.223.0",
         });
 
         const snapshot = synthSnapshot(project);
 
         expect(snapshot["package.json"]).toMatchObject({
-            name: "test-cdk-app",
+            name: "test-project",
             type: "module",
         });
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
                 module: "nodenext",
                 target: "esnext",
+                noUnusedLocals: true,
                 strict: true,
             },
         });
 
-        expect(snapshot["cdk.json"]).toBeDefined();
+        expect(snapshot["biome.jsonc"]).toBeDefined();
         expect(snapshot["mise.toml"]).toContain('node = "22.21.1"');
     });
 
     it("allows customization of options", () => {
-        const project = new AwsCdkTypeScriptAppProject({
-            name: "custom-cdk-app",
+        const project = new TypeScriptProject({
+            name: "custom-project",
             defaultReleaseBranch: "main",
-            cdkVersion: "2.200.0",
             minNodeVersion: "20.0.0",
             tsconfig: {
                 compilerOptions: {
-                    noImplicitAny: false,
+                    noUnusedLocals: false,
+                },
+            },
+            biomeOptions: {
+                biomeConfig: {
+                    formatter: {
+                        lineWidth: 100,
+                    },
                 },
             },
         });
 
         const snapshot = synthSnapshot(project);
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
-                noImplicitAny: false,
+                noUnusedLocals: false,
                 strict: true,
             },
         });

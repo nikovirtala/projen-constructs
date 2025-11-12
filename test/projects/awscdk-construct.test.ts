@@ -1,10 +1,10 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { AwsCdkConstructLibraryProject } from "../src/awscdk-construct-project";
+import { AwsCdkConstructProject } from "../../src/projects/awscdk-construct";
 
-describe("AwsCdkConstructLibraryProject", () => {
+describe("AwsCdkConstructProject", () => {
     it("applies default configuration", () => {
-        const project = new AwsCdkConstructLibraryProject({
+        const project = new AwsCdkConstructProject({
             name: "test-cdk-construct",
             defaultReleaseBranch: "main",
             author: "Niko Virtala",
@@ -32,7 +32,7 @@ describe("AwsCdkConstructLibraryProject", () => {
     });
 
     it("allows customization of options", () => {
-        const project = new AwsCdkConstructLibraryProject({
+        const project = new AwsCdkConstructProject({
             name: "custom-cdk-construct",
             defaultReleaseBranch: "main",
             author: "Custom Author",

@@ -1,5 +1,5 @@
 import { typescript } from "projen";
-import { applyDefaultConfig, PROJECT_DEFAULT_OPTIONS } from "./config";
+import { applyDefaultConfig, PROJECT_DEFAULT_OPTIONS } from "../config";
 
 export class TypeScriptProject extends typescript.TypeScriptProject {
     constructor(options: typescript.TypeScriptProjectOptions) {

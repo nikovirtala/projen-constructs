@@ -1,7 +1,7 @@
 import { awscdk } from "projen";
-import { applyDefaultConfig, CDK_CONSTRUCT_DEFAULT_OPTIONS } from "./config";
+import { applyDefaultConfig, CDK_CONSTRUCT_DEFAULT_OPTIONS } from "../config";
 
-export class AwsCdkConstructLibraryProject extends awscdk.AwsCdkConstructLibrary {
+export class AwsCdkConstructProject extends awscdk.AwsCdkConstructLibrary {
     constructor(options: awscdk.AwsCdkConstructLibraryOptions) {
         super({
             ...CDK_CONSTRUCT_DEFAULT_OPTIONS,
