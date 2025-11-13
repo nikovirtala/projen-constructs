@@ -32,23 +32,23 @@ Override any option by passing it to the constructor:
 
 ```typescript
 const project = new JsiiProject({
-    name: "my-project",
-    repositoryUrl: "https://github.com/nikovirtala/my-project.git",
-    minNodeVersion: "20.0.0",
-    author: "Custom Author",
-    authorAddress: "custom@example.com",
-    tsconfig: {
-        compilerOptions: {
-            noUnusedLocals: false, // Override individual compiler options
-        },
+  name: "my-project",
+  repositoryUrl: "https://github.com/nikovirtala/my-project.git",
+  minNodeVersion: "20.0.0",
+  author: "Custom Author",
+  authorAddress: "custom@example.com",
+  tsconfig: {
+    compilerOptions: {
+      noUnusedLocals: false, // Override individual compiler options
     },
-    biomeOptions: {
-        biomeConfig: {
-            formatter: {
-                lineWidth: 100, // Override individual formatter options
-            },
-        },
+  },
+  biomeOptions: {
+    biomeConfig: {
+      formatter: {
+        lineWidth: 100, // Override individual formatter options
+      },
     },
+  },
 });
 ```
 
@@ -60,8 +60,8 @@ const project = new JsiiProject({
 import { AwsCdkConstructLibraryProject } from "@nikovirtala/projen-constructs";
 
 const project = new AwsCdkConstructLibraryProject({
-    name: "my-cdk-construct",
-    repositoryUrl: "https://github.com/nikovirtala/my-cdk-construct.git",
+  name: "my-cdk-construct",
+  repositoryUrl: "https://github.com/nikovirtala/my-cdk-construct.git",
 });
 
 project.synth();
@@ -73,8 +73,8 @@ project.synth();
 import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
 
 const project = new AwsCdkTypeScriptAppProject({
-    name: "my-cdk-app",
-    repositoryUrl: "https://github.com/nikovirtala/my-cdk-app.git",
+  name: "my-cdk-app",
+  repositoryUrl: "https://github.com/nikovirtala/my-cdk-app.git",
 });
 
 project.synth();
@@ -86,8 +86,8 @@ project.synth();
 import { JsiiProject } from "@nikovirtala/projen-constructs";
 
 const project = new JsiiProject({
-    name: "my-jsii-project",
-    repositoryUrl: "https://github.com/nikovirtala/my-jsii-project.git",
+  name: "my-jsii-project",
+  repositoryUrl: "https://github.com/nikovirtala/my-jsii-project.git",
 });
 
 project.synth();
@@ -99,9 +99,123 @@ project.synth();
 import { TypeScriptProject } from "@nikovirtala/projen-constructs";
 
 const project = new TypeScriptProject({
-    name: "my-typescript-project",
-    repositoryUrl: "https://github.com/nikovirtala/my-typescript-project.git",
+  name: "my-typescript-project",
+  repositoryUrl: "https://github.com/nikovirtala/my-typescript-project.git",
 });
 
 project.synth();
+```
+
+## Components
+
+The package includes reusable components for common development tasks:
+
+### Vitest
+
+[Vitest](https://vitest.dev) testing framework component.
+
+```typescript
+import { Vitest } from "@nikovirtala/projen-constructs";
+
+new Vitest(project, {
+  vitestVersion: "^4",
+  config: {
+    coverageProvider: CoverageProvider.V8,
+    coverageReporters: [CoverageReporter.TEXT, CoverageReporter.LCOV],
+  },
+});
+```
+
+### TypeDoc
+
+TypeDoc documentation generation component.
+
+```typescript
+import { TypeDoc, EntryPointStrategy } from "@nikovirtala/projen-constructs";
+
+new TypeDoc(project, {
+  version: "^0.28",
+  typeDocConfig: {
+    entryPointStrategy: EntryPointStrategy.EXPAND,
+    out: "docs/api",
+    exclude: ["**/*.test.ts"],
+  },
+});
+```
+
+### Homebrew
+
+Homebrew package management component.
+
+```typescript
+import { Homebrew } from "@nikovirtala/projen-constructs";
+
+const homebrew = new Homebrew(project, {
+  packages: ["jq", "yq"],
+});
+
+homebrew.addPackage("gh");
+```
+
+### Colima
+
+Colima Docker runtime component.
+
+```typescript
+import { Colima } from "@nikovirtala/projen-constructs";
+
+new Colima(project);
+```
+
+### LocalStack
+
+LocalStack AWS emulation component.
+
+```typescript
+import { LocalStack } from "@nikovirtala/projen-constructs";
+
+new LocalStack(project, {
+  services: ["s3", "lambda", "dynamodb"],
+  port: 4566,
+  debug: true,
+});
+```
+
+### LambdaFunctionConstructGenerator
+
+Generates AWS CDK Lambda Function constructs and bundles their code.
+
+```typescript
+import { LambdaFunctionConstructGenerator } from "@nikovirtala/projen-constructs";
+
+new LambdaFunctionConstructGenerator(project, {
+  sourceDir: "src/handlers",
+  outputDir: "src/constructs/lambda",
+  filePattern: "*.lambda.ts",
+  esbuildOptions: {
+    minify: true,
+    sourcemap: true,
+  },
+});
+```
+
+### Bundler
+
+Low-level bundling utilities for Lambda functions.
+
+```typescript
+import {
+  Bundler,
+  LambdaFunctionCodeBundle,
+} from "@nikovirtala/projen-constructs";
+
+const bundler = new Bundler(project, {
+  assetsDir: "assets",
+  esbuildVersion: "^0.25",
+});
+
+new LambdaFunctionCodeBundle(project, {
+  entrypoint: "src/my-function.lambda.ts",
+  extension: ".lambda.ts",
+});
 ```

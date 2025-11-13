@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TypeDoc > with default configuration > generates correct snapshot for typedoc.jsonc 1`] = `
+{
+  "disableSources": true,
+  "entryPointStrategy": "expand",
+  "exclude": [
+    "**/*.test.ts",
+  ],
+  "excludePrivate": true,
+  "out": "docs/api",
+}
+`;

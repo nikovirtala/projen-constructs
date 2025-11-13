@@ -9,6 +9,7 @@
     "biome": "npx projen biome",
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle-vitest-define-config": "npx projen bundle-vitest-define-config",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
@@ -37,10 +38,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2",
+    "@mrgrain/cdk-esbuild": "5.7.3",
     "@types/node": "^22",
     "@vitest/coverage-v8": "^4",
     "commit-and-tag-version": "^12",
-    "constructs": "^10.0.0",
+    "constructs": "^10.4.3",
+    "esbuild": "^0.27.0",
     "jsii": "~5.9.3",
     "jsii-diff": "^1.119.0",
     "jsii-docgen": "^10.5.0",
@@ -52,13 +55,18 @@
     "vitest": "^4"
   },
   "peerDependencies": {
+    "@mrgrain/cdk-esbuild": "^5.7.3",
     "constructs": "^10.4.3",
     "projen": "^0.98.10"
   },
   "dependencies": {
     "@nikovirtala/projen-vitest": "^2.1.5",
+    "case": "^1.6.3",
     "projen": "^0.98.10"
   },
+  "bundledDependencies": [
+    "case"
+  ],
   "pnpm": {},
   "engines": {
     "node": ">= 22.21.1"

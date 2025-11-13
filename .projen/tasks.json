@@ -52,6 +52,14 @@
       ],
       "condition": "git log --oneline -1 | grep -qv \"chore(release):\""
     },
+    "bundle-vitest-define-config": {
+      "name": "bundle-vitest-define-config",
+      "steps": [
+        {
+          "exec": "tsx --tsconfig tsconfig.dev.json .projen/bundle-vitest-define-config.ts"
+        }
+      ]
+    },
     "clobber": {
       "name": "clobber",
       "description": "hard resets to HEAD of origin and cleans the local repo",
@@ -108,6 +116,9 @@
       "steps": [
         {
           "exec": "tsx --tsconfig tsconfig.dev.json .projenrc.ts"
+        },
+        {
+          "spawn": "bundle-vitest-define-config"
         }
       ]
     },
@@ -279,13 +290,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=jsii-diff,jsii-pacmak,projen,tsx,constructs,@nikovirtala/projen-vitest"
+          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@mrgrain/cdk-esbuild,esbuild,jsii-diff,jsii-pacmak,projen,tsx,case,constructs,@nikovirtala/projen-vitest"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @biomejs/biome @types/node commit-and-tag-version constructs jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen tsx typescript vitest @vitest/coverage-v8 @nikovirtala/projen-vitest"
+          "exec": "pnpm update @biomejs/biome @mrgrain/cdk-esbuild @types/node commit-and-tag-version constructs esbuild jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen tsx typescript vitest case @vitest/coverage-v8 @nikovirtala/projen-vitest"
         },
         {
           "exec": "npx projen"

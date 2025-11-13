@@ -6,6 +6,10 @@
       "type": "build"
     },
     {
+      "name": "@mrgrain/cdk-esbuild",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^22",
       "type": "build"
@@ -17,7 +21,11 @@
     },
     {
       "name": "constructs",
-      "version": "^10.0.0",
+      "version": "10.4.3",
+      "type": "build"
+    },
+    {
+      "name": "esbuild",
       "type": "build"
     },
     {
@@ -62,9 +70,17 @@
       "type": "build"
     },
     {
+      "name": "case",
+      "type": "bundled"
+    },
+    {
       "name": "@vitest/coverage-v8",
       "version": "^4",
       "type": "devenv"
+    },
+    {
+      "name": "@mrgrain/cdk-esbuild",
+      "type": "peer"
     },
     {
       "name": "constructs",
