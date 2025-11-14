@@ -1,7 +1,7 @@
 import { Vitest } from "@nikovirtala/projen-vitest";
 import { awscdk, cdk, JsonPatch, javascript, TextFile, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
-import { deepMerge } from "./utils";
+import { mergeAll } from "./utils";
 
 export const DEFAULT_AUTHOR = "Niko Virtala";
 export const DEFAULT_AUTHOR_ADDRESS = "niko.virtala@hey.com";
@@ -147,22 +147,25 @@ const PUBLISHABLE_PROJECT_DEFAULT_OPTIONS = {
     npmTrustedPublishing: true,
 };
 
-export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = deepMerge<typescript.TypeScriptProjectOptions>(
+export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = mergeAll<typescript.TypeScriptProjectOptions>(
     PROJECT_DEFAULT_OPTIONS,
     ES_MODULE_TSCONFIG_OPTIONS,
-) satisfies typescript.TypeScriptProjectOptions;
+);
 
-export const JSII_PROJECT_DEFAULT_OPTIONS = deepMerge<cdk.JsiiProjectOptions>(
-    deepMerge<cdk.JsiiProjectOptions>(PROJECT_DEFAULT_OPTIONS, PUBLISHABLE_PROJECT_DEFAULT_OPTIONS),
+export const JSII_PROJECT_DEFAULT_OPTIONS = mergeAll<cdk.JsiiProjectOptions>(
+    PROJECT_DEFAULT_OPTIONS,
+    PUBLISHABLE_PROJECT_DEFAULT_OPTIONS,
     { jsiiVersion: DEFAULT_JSII_VERSION },
-) satisfies cdk.JsiiProjectOptions;
+);
 
-export const CDK_APP_DEFAULT_OPTIONS = deepMerge<awscdk.AwsCdkTypeScriptAppOptions>(
-    deepMerge<awscdk.AwsCdkTypeScriptAppOptions>(PROJECT_DEFAULT_OPTIONS, ES_MODULE_TSCONFIG_OPTIONS),
+export const CDK_APP_DEFAULT_OPTIONS = mergeAll<awscdk.AwsCdkTypeScriptAppOptions>(
+    PROJECT_DEFAULT_OPTIONS,
+    ES_MODULE_TSCONFIG_OPTIONS,
     { cdkVersion: DEFAULT_CDK_VERSION },
-) satisfies awscdk.AwsCdkTypeScriptAppOptions;
+);
 
-export const CDK_CONSTRUCT_DEFAULT_OPTIONS = deepMerge<awscdk.AwsCdkConstructLibraryOptions>(
-    deepMerge<awscdk.AwsCdkConstructLibraryOptions>(PROJECT_DEFAULT_OPTIONS, PUBLISHABLE_PROJECT_DEFAULT_OPTIONS),
+export const CDK_CONSTRUCT_DEFAULT_OPTIONS = mergeAll<awscdk.AwsCdkConstructLibraryOptions>(
+    PROJECT_DEFAULT_OPTIONS,
+    PUBLISHABLE_PROJECT_DEFAULT_OPTIONS,
     { cdkVersion: DEFAULT_CDK_VERSION },
-) satisfies awscdk.AwsCdkConstructLibraryOptions;
+);

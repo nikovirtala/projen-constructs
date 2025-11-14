@@ -13,3 +13,6 @@ export const deepMerge = <T>(target: Partial<T>, source: Partial<T>): T => {
     }
     return result as T;
 };
+
+export const mergeAll = <T extends object>(...items: Partial<T>[]) =>
+    items.reduce((acc, item) => deepMerge(acc, item), {} as T);
