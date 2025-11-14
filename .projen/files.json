@@ -15,6 +15,7 @@
     ".projen/tasks.json",
     ".vscode/extensions.json",
     ".vscode/settings.json",
+    "Brewfile",
     "LICENSE",
     "mise.toml",
     "src/projects/awscdk-app-options.generated.ts",

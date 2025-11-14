@@ -16,6 +16,8 @@
     "default": "npx projen default",
     "docgen": "npx projen docgen",
     "eject": "npx projen eject",
+    "homebrew:bundle": "npx projen homebrew:bundle",
+    "install:homebrew": "npx projen install:homebrew",
     "mise:trust": "npx projen mise:trust",
     "package": "npx projen package",
     "package-all": "npx projen package-all",

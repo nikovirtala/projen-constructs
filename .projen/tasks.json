@@ -118,7 +118,7 @@
           "exec": "tsx --tsconfig tsconfig.dev.json .projenrc.ts"
         },
         {
-          "spawn": "mise:trust"
+          "spawn": "install:homebrew"
         },
         {
           "spawn": "bundle-vitest-define-config"
@@ -146,6 +146,14 @@
         }
       ]
     },
+    "homebrew:bundle": {
+      "name": "homebrew:bundle",
+      "steps": [
+        {
+          "exec": "brew bundle"
+        }
+      ]
+    },
     "install": {
       "name": "install",
       "description": "Install project dependencies and update lockfile (non-frozen)",
@@ -161,6 +169,17 @@
       "steps": [
         {
           "exec": "pnpm i --frozen-lockfile"
+        }
+      ]
+    },
+    "install:homebrew": {
+      "name": "install:homebrew",
+      "steps": [
+        {
+          "exec": "command -v brew >/dev/null 2>&1 || NONINTERACTIVE=1 /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+        },
+        {
+          "spawn": "homebrew:bundle"
         }
       ]
     },

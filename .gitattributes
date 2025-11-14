@@ -24,6 +24,7 @@
 /.vscode/settings.json linguist-generated
 /API.md linguist-generated
 /biome.jsonc linguist-generated
+/Brewfile linguist-generated
 /LICENSE linguist-generated
 /mise.toml linguist-generated
 /package.json linguist-generated

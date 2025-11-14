@@ -1,5 +1,6 @@
-import { awscdk, cdk, JsonPatch, javascript, TextFile, typescript } from "projen";
+import { awscdk, cdk, JsonPatch, javascript, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
+import { Mise } from "./components/mise";
 import { Vitest, type VitestOptions } from "./components/vitest";
 import { mergeAll } from "./utils";
 
@@ -47,18 +48,8 @@ export function applyDefaultConfig(
         "editor.tabSize": 4,
     });
 
-    if (mise) {
-        new TextFile(project, "mise.toml", {
-            committed: true,
-            readonly: true,
-            lines: ["[tools]", `node = "${nodeVersion}"`],
-        });
-
-        const miseTrust = project.addTask("mise:trust", {
-            exec: "mise trust",
-        });
-
-        project.defaultTask?.spawn(miseTrust);
+    if (mise ?? true) {
+        new Mise(project, { nodeVersion });
     }
 
     if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
@@ -158,7 +149,7 @@ const PUBLISHABLE_PROJECT_DEFAULT_OPTIONS = {
     author: DEFAULT_AUTHOR,
     authorAddress: DEFAULT_AUTHOR_ADDRESS,
     npmTrustedPublishing: true,
-};
+} satisfies Partial<cdk.JsiiProjectOptions>;
 
 export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = mergeAll<typescript.TypeScriptProjectOptions>(
     PROJECT_DEFAULT_OPTIONS,

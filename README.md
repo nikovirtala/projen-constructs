@@ -17,12 +17,12 @@ All project types include:
 - **Package Manager**: pnpm 10
 - **Node Version**: 22.21.1
 - **TypeScript**: 5.9.3
-- **Module Type**: ES modules
+- **Module Type**: ES modules (TypeScript and CDK App projects only; JSII projects use CommonJS)
 - **Code Quality**: Biome for formatting and linting
 - **Testing**: Vitest
 - **Auto-merge**: Enabled with auto-approve
 - **VSCode**: Recommended extensions and settings
-- **mise**: Node version management
+- **mise**: Node version management (via Homebrew)
 - **CDK Version**: 2.223.0 (for CDK projects)
 - **JSII Version**: ~5.9.3 (for JSII projects)
 
@@ -37,6 +37,8 @@ const project = new JsiiProject({
   minNodeVersion: "20.0.0",
   author: "Custom Author",
   authorAddress: "custom@example.com",
+  mise: false,
+  vitest: false,
   tsconfig: {
     compilerOptions: {
       noUnusedLocals: false, // Override individual compiler options
@@ -140,6 +142,18 @@ new TypeDoc(project, {
     out: "docs/api",
     exclude: ["**/*.test.ts"],
   },
+});
+```
+
+### Mise
+
+Mise version management component.
+
+```typescript
+import { Mise } from "@nikovirtala/projen-constructs";
+
+new Mise(project, {
+  nodeVersion: "22.21.1",
 });
 ```
 
