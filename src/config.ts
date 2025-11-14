@@ -1,6 +1,6 @@
 import { awscdk, cdk, JsonPatch, javascript, TextFile, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
-import { Vitest } from "./components/vitest";
+import { Vitest, type VitestOptions } from "./components/vitest";
 import { mergeAll } from "./utils";
 
 export const DEFAULT_AUTHOR = "Niko Virtala";
@@ -16,6 +16,9 @@ export function applyDefaultConfig(
         | awscdk.AwsCdkConstructLibrary
         | typescript.TypeScriptProject
         | cdk.JsiiProject,
+    vitest: boolean = true,
+    vitestOptions?: VitestOptions,
+    mise: boolean = true,
 ) {
     const nodeVersion = project.minNodeVersion ?? DEFAULT_NODE_VERSION;
 
@@ -44,11 +47,13 @@ export function applyDefaultConfig(
         "editor.tabSize": 4,
     });
 
-    new TextFile(project, "mise.toml", {
-        committed: true,
-        readonly: true,
-        lines: ["[tools]", `node = "${nodeVersion}"`],
-    });
+    if (mise ?? true) {
+        new TextFile(project, "mise.toml", {
+            committed: true,
+            readonly: true,
+            lines: ["[tools]", `node = "${nodeVersion}"`],
+        });
+    }
 
     if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
         // use node.js 24.x to get new enough npm to satisfy: trusted publishing requires npm CLI version 11.5.1 or later.
@@ -62,7 +67,9 @@ export function applyDefaultConfig(
     // remove once configured correctly to biome, mise and vitest components
     project.npmignore?.addPatterns("biome.jsonc", "mise.toml", "vitest.config.ts");
 
-    new Vitest(project);
+    if (vitest ?? true) {
+        new Vitest(project, vitestOptions);
+    }
 }
 
 export const PROJECT_DEFAULT_OPTIONS = {

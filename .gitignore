@@ -54,3 +54,7 @@ tsconfig.json
 /coverage/
 !/vitest.config.ts
 !/.projenrc.ts
+!/src/projects/typescript-options.generated.ts
+!/src/projects/jsii-options.generated.ts
+!/src/projects/awscdk-app-options.generated.ts
+!/src/projects/awscdk-construct-options.generated.ts

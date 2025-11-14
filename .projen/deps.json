@@ -6,7 +6,15 @@
       "type": "build"
     },
     {
+      "name": "@jsii/spec",
+      "type": "build"
+    },
+    {
       "name": "@mrgrain/cdk-esbuild",
+      "type": "build"
+    },
+    {
+      "name": "@mrgrain/jsii-struct-builder",
       "type": "build"
     },
     {

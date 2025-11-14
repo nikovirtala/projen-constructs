@@ -28,6 +28,10 @@
       "!.vscode/extensions.json",
       "!.vscode/settings.json",
       "!mise.toml",
+      "!src/projects/awscdk-app-options.generated.ts",
+      "!src/projects/awscdk-construct-options.generated.ts",
+      "!src/projects/jsii-options.generated.ts",
+      "!src/projects/typescript-options.generated.ts",
       "!tsconfig.dev.json",
       "!vitest.config.ts"
     ]

@@ -21,9 +21,15 @@ importers:
       '@biomejs/biome':
         specifier: ^2
         version: 2.3.5
+      '@jsii/spec':
+        specifier: ^1.119.0
+        version: 1.119.0
       '@mrgrain/cdk-esbuild':
         specifier: 5.7.3
         version: 5.7.3(aws-cdk-lib@2.223.0(constructs@10.4.3))(constructs@10.4.3)
+      '@mrgrain/jsii-struct-builder':
+        specifier: ^0.7.64
+        version: 0.7.64(projen@0.98.10(constructs@10.4.3))
       '@types/node':
         specifier: ^22
         version: 22.19.1
@@ -535,6 +541,12 @@ packages:
     peerDependencies:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
+
+  '@mrgrain/jsii-struct-builder@0.7.64':
+    resolution: {integrity: sha512-kWGe4Ob03IFFHpwcEnjj4xxreWbaIsCYS4mPjtanGFzHoldJyJPnAupPAyAJtvjgY5XAsK6h/oIPmkJouvjvYg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      projen: x.x.x
 
   '@nikovirtala/projen-vitest@2.1.5':
     resolution: {integrity: sha512-M18dqDksjLTVjCUWn/FaRmu33wScfkLaIyYeT3ZsYmV1KMZi9+BMeMstI7ndedJekwySztI+QD5qEl09ECL4GA==}
@@ -2392,6 +2404,11 @@ snapshots:
       constructs: 10.4.3
     optionalDependencies:
       esbuild: 0.25.12
+
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.98.10(constructs@10.4.3))':
+    dependencies:
+      '@jsii/spec': 1.119.0
+      projen: 0.98.10(constructs@10.4.3)
 
   '@nikovirtala/projen-vitest@2.1.5(constructs@10.4.3)(projen@0.98.10(constructs@10.4.3))':
     dependencies:

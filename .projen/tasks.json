@@ -290,13 +290,13 @@
       },
       "steps": [
         {
-          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@mrgrain/cdk-esbuild,esbuild,jsii-diff,jsii-pacmak,projen,tsx,case,constructs,@nikovirtala/projen-vitest"
+          "exec": "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@jsii/spec,@mrgrain/cdk-esbuild,@mrgrain/jsii-struct-builder,esbuild,jsii-diff,jsii-pacmak,projen,tsx,case,constructs,@nikovirtala/projen-vitest"
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
         },
         {
-          "exec": "pnpm update @biomejs/biome @mrgrain/cdk-esbuild @types/node commit-and-tag-version constructs esbuild jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen tsx typescript vitest case @vitest/coverage-v8 @nikovirtala/projen-vitest"
+          "exec": "pnpm update @biomejs/biome @jsii/spec @mrgrain/cdk-esbuild @mrgrain/jsii-struct-builder @types/node commit-and-tag-version constructs esbuild jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii projen tsx typescript vitest case @vitest/coverage-v8 @nikovirtala/projen-vitest"
         },
         {
           "exec": "npx projen"
