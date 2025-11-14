@@ -118,6 +118,9 @@
           "exec": "tsx --tsconfig tsconfig.dev.json .projenrc.ts"
         },
         {
+          "spawn": "mise:trust"
+        },
+        {
           "spawn": "bundle-vitest-define-config"
         }
       ]
@@ -158,6 +161,14 @@
       "steps": [
         {
           "exec": "pnpm i --frozen-lockfile"
+        }
+      ]
+    },
+    "mise:trust": {
+      "name": "mise:trust",
+      "steps": [
+        {
+          "exec": "mise trust"
         }
       ]
     },

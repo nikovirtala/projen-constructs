@@ -47,12 +47,18 @@ export function applyDefaultConfig(
         "editor.tabSize": 4,
     });
 
-    if (mise ?? true) {
+    if (mise) {
         new TextFile(project, "mise.toml", {
             committed: true,
             readonly: true,
             lines: ["[tools]", `node = "${nodeVersion}"`],
         });
+
+        const miseTrust = project.addTask("mise:trust", {
+            exec: "mise trust",
+        });
+
+        project.defaultTask?.spawn(miseTrust);
     }
 
     if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
