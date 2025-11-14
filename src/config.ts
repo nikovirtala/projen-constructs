@@ -19,7 +19,11 @@ export function applyDefaultConfig(
 ) {
     const nodeVersion = project.minNodeVersion ?? DEFAULT_NODE_VERSION;
 
-    if (project instanceof awscdk.AwsCdkTypeScriptApp || project instanceof typescript.TypeScriptProject) {
+    if (
+        (project instanceof awscdk.AwsCdkTypeScriptApp || project instanceof typescript.TypeScriptProject) &&
+        !(project instanceof cdk.JsiiProject) &&
+        !(project instanceof awscdk.AwsCdkConstructLibrary)
+    ) {
         project.package.addField("type", "module");
     }
 
