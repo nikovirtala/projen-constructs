@@ -53,7 +53,6 @@ const commonOptions = [
 ];
 
 const commonOmits = [
-    "biome",
     "eslint",
     "eslintOptions",
     "jest",

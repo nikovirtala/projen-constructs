@@ -6507,6 +6507,7 @@ const awsCdkConstructProjectOptions: AwsCdkConstructProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
@@ -6924,6 +6925,19 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
 
 ---
 
@@ -8999,6 +9013,7 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
@@ -9397,6 +9412,19 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
 
 ---
 
@@ -11391,6 +11419,7 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
@@ -11784,6 +11813,19 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
 
 ---
 
@@ -13694,6 +13736,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
@@ -14037,6 +14080,19 @@ Binary programs vended with your module.
 You can use this option to add/customize how binaries are represented in
 your `package.json`, but unless `autoDetectBin` is `false`, every
 executable file under `bin` will automatically be added to this section.
+
+---
+
+##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.biome"></a>
+
+```typescript
+public readonly biome: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Setup Biome.
 
 ---
 
