@@ -1,6 +1,6 @@
-import { Vitest } from "@nikovirtala/projen-vitest";
 import { awscdk, cdk, JsonPatch, javascript, TextFile, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
+import { Vitest } from "./components/vitest";
 import { mergeAll } from "./utils";
 
 export const DEFAULT_AUTHOR = "Niko Virtala";
