@@ -7,7 +7,5 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
         super(deepMerge<typescript.TypeScriptProjectOptions>(TYPESCRIPT_PROJECT_DEFAULT_OPTIONS, options));
 
         applyDefaultConfig(this);
-
-        this.package.addField("publishConfig", { access: "public" });
     }
 }
