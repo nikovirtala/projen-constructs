@@ -1,5 +1,6 @@
 import { Vitest } from "@nikovirtala/projen-vitest";
 import { awscdk, cdk, JsonPatch, javascript, TextFile, typescript } from "projen";
+import { deepMerge } from "./utils";
 
 export const DEFAULT_AUTHOR = "Niko Virtala";
 export const DEFAULT_AUTHOR_ADDRESS = "niko.virtala@hey.com";
@@ -137,37 +138,22 @@ const ES_MODULE_TSCONFIG_OPTIONS = {
     },
 };
 
-export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = {
-    ...PROJECT_DEFAULT_OPTIONS,
-    ...ES_MODULE_TSCONFIG_OPTIONS,
-    tsconfig: {
-        compilerOptions: {
-            ...PROJECT_DEFAULT_OPTIONS.tsconfig.compilerOptions,
-            ...ES_MODULE_TSCONFIG_OPTIONS.tsconfig.compilerOptions,
-        },
-    },
-};
+export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = deepMerge<typescript.TypeScriptProjectOptions>(
+    PROJECT_DEFAULT_OPTIONS,
+    ES_MODULE_TSCONFIG_OPTIONS,
+) satisfies typescript.TypeScriptProjectOptions;
 
-export const JSII_PROJECT_DEFAULT_OPTIONS = {
-    ...PROJECT_DEFAULT_OPTIONS,
+export const JSII_PROJECT_DEFAULT_OPTIONS = deepMerge<cdk.JsiiProjectOptions>(PROJECT_DEFAULT_OPTIONS, {
     jsiiVersion: DEFAULT_JSII_VERSION,
     npmTrustedPublishing: true,
-};
+}) satisfies cdk.JsiiProjectOptions;
 
-export const CDK_APP_DEFAULT_OPTIONS = {
-    ...PROJECT_DEFAULT_OPTIONS,
-    cdkVersion: DEFAULT_CDK_VERSION,
-    ...ES_MODULE_TSCONFIG_OPTIONS,
-    tsconfig: {
-        compilerOptions: {
-            ...PROJECT_DEFAULT_OPTIONS.tsconfig.compilerOptions,
-            ...ES_MODULE_TSCONFIG_OPTIONS.tsconfig.compilerOptions,
-        },
-    },
-};
+export const CDK_APP_DEFAULT_OPTIONS = deepMerge<awscdk.AwsCdkTypeScriptAppOptions>(
+    deepMerge<awscdk.AwsCdkTypeScriptAppOptions>(PROJECT_DEFAULT_OPTIONS, ES_MODULE_TSCONFIG_OPTIONS),
+    { cdkVersion: DEFAULT_CDK_VERSION },
+) satisfies awscdk.AwsCdkTypeScriptAppOptions;
 
-export const CDK_CONSTRUCT_DEFAULT_OPTIONS = {
-    ...PROJECT_DEFAULT_OPTIONS,
+export const CDK_CONSTRUCT_DEFAULT_OPTIONS = deepMerge<awscdk.AwsCdkConstructLibraryOptions>(PROJECT_DEFAULT_OPTIONS, {
     cdkVersion: DEFAULT_CDK_VERSION,
     npmTrustedPublishing: true,
-};
+}) satisfies awscdk.AwsCdkConstructLibraryOptions;

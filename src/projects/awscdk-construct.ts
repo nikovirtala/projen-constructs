@@ -1,30 +1,10 @@
 import { awscdk } from "projen";
 import { applyDefaultConfig, CDK_CONSTRUCT_DEFAULT_OPTIONS } from "../config";
+import { deepMerge } from "../utils";
 
 export class AwsCdkConstructProject extends awscdk.AwsCdkConstructLibrary {
     constructor(options: awscdk.AwsCdkConstructLibraryOptions) {
-        super({
-            ...CDK_CONSTRUCT_DEFAULT_OPTIONS,
-            ...options,
-            biomeOptions: {
-                ...CDK_CONSTRUCT_DEFAULT_OPTIONS.biomeOptions,
-                ...(options.biomeOptions ?? {}),
-                biomeConfig: {
-                    ...CDK_CONSTRUCT_DEFAULT_OPTIONS.biomeOptions.biomeConfig,
-                    ...(options.biomeOptions?.biomeConfig ?? {}),
-                    formatter: {
-                        ...CDK_CONSTRUCT_DEFAULT_OPTIONS.biomeOptions.biomeConfig.formatter,
-                        ...(options.biomeOptions?.biomeConfig?.formatter ?? {}),
-                    },
-                },
-            },
-            tsconfig: {
-                compilerOptions: {
-                    ...CDK_CONSTRUCT_DEFAULT_OPTIONS.tsconfig.compilerOptions,
-                    ...(options.tsconfig?.compilerOptions ?? {}),
-                },
-            },
-        });
+        super(deepMerge<awscdk.AwsCdkConstructLibraryOptions>(CDK_CONSTRUCT_DEFAULT_OPTIONS, options));
 
         applyDefaultConfig(this);
     }
