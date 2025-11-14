@@ -20,7 +20,7 @@ export class Homebrew extends Component {
         this.packages = new Set(options.packages ?? []);
 
         const brewInstallTask = project.addTask("install:homebrew", {
-            exec: 'command -v brew >/dev/null 2>&1 || NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"',
+            exec: 'command -v brew >/dev/null 2>&1 || { NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv 2>/dev/null || /opt/homebrew/bin/brew shellenv 2>/dev/null)"; }',
         });
 
         project.defaultTask?.spawn(brewInstallTask);
@@ -45,7 +45,7 @@ export class Homebrew extends Component {
         const brewBundleTask =
             this.project.tasks.tryFind("homebrew:bundle") ??
             this.project.addTask("homebrew:bundle", {
-                exec: "brew bundle",
+                exec: 'command -v brew >/dev/null 2>&1 || eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv 2>/dev/null || /opt/homebrew/bin/brew shellenv 2>/dev/null)" && brew bundle',
             });
 
         const brewInstallTask = this.project.tasks.tryFind("install:homebrew");

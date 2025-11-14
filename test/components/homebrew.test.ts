@@ -39,7 +39,7 @@ it("creates brew tasks that can be spawned", () => {
     expect(brewInstallTask).toBeDefined();
     expect(brewBundleTask).toBeDefined();
     expect(brewInstallTask?.steps[0].exec).toContain("brew");
-    expect(brewBundleTask?.steps[0].exec).toBe("brew bundle");
+    expect(brewBundleTask?.steps[0].exec).toContain("brew bundle");
 });
 
 it("default task spawns install:homebrew which spawns homebrew:bundle", () => {
