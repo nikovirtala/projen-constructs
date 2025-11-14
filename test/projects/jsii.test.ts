@@ -16,7 +16,6 @@ describe("JsiiProject", () => {
 
         expect(snapshot["package.json"]).toMatchObject({
             name: "test-jsii-project",
-            type: "module",
             author: {
                 name: "Niko Virtala",
                 email: "niko.virtala@hey.com",
@@ -28,8 +27,8 @@ describe("JsiiProject", () => {
 
         expect(snapshot["tsconfig.dev.json"]).toMatchObject({
             compilerOptions: {
-                module: "nodenext",
-                target: "esnext",
+                module: "CommonJS",
+                target: "ES2020",
                 strict: true,
             },
         });

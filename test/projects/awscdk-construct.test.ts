@@ -17,13 +17,12 @@ describe("AwsCdkConstructProject", () => {
 
         expect(snapshot["package.json"]).toMatchObject({
             name: "test-cdk-construct",
-            type: "module",
         });
 
         expect(snapshot["tsconfig.dev.json"]).toMatchObject({
             compilerOptions: {
-                module: "nodenext",
-                target: "esnext",
+                module: "CommonJS",
+                target: "ES2020",
                 strict: true,
             },
         });

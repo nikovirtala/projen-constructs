@@ -8,9 +8,9 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
-      "esnext"
+      "es2020"
     ],
-    "module": "nodenext",
+    "module": "CommonJS",
     "noEmitOnError": false,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -23,11 +23,9 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": true,
-    "target": "esnext",
-    "allowImportingTsExtensions": true,
+    "target": "ES2020",
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "moduleResolution": "nodenext",
     "noEmit": true,
     "noImplicitOverride": true
   },

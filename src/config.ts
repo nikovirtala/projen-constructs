@@ -1,5 +1,5 @@
 import { Vitest } from "@nikovirtala/projen-vitest";
-import { awscdk, cdk, JsonPatch, javascript, TextFile, type typescript } from "projen";
+import { awscdk, cdk, JsonPatch, javascript, TextFile, typescript } from "projen";
 
 export const DEFAULT_AUTHOR = "Niko Virtala";
 export const DEFAULT_AUTHOR_ADDRESS = "niko.virtala@hey.com";
@@ -17,8 +17,10 @@ export function applyDefaultConfig(
 ) {
     const nodeVersion = project.minNodeVersion ?? DEFAULT_NODE_VERSION;
 
-    // use es modules
-    project.package.addField("type", "module");
+    if (project instanceof awscdk.AwsCdkTypeScriptApp || project instanceof typescript.TypeScriptProject) {
+        project.package.addField("type", "module");
+    }
+
     project.deps.removeDependency("ts-node");
     project.addDevDeps("tsx");
     project.defaultTask?.reset();
@@ -97,7 +99,6 @@ export const PROJECT_DEFAULT_OPTIONS = {
     typescriptVersion: DEFAULT_TYPESCRIPT_VERSION,
     tsconfig: {
         compilerOptions: {
-            allowImportingTsExtensions: true,
             allowSyntheticDefaultImports: true,
             alwaysStrict: true,
             declaration: true,
@@ -106,9 +107,6 @@ export const PROJECT_DEFAULT_OPTIONS = {
             inlineSourceMap: true,
             inlineSources: true,
             isolatedModules: true,
-            lib: ["esnext"],
-            module: "nodenext",
-            moduleResolution: javascript.TypeScriptModuleResolution.NODE_NEXT,
             noEmit: true,
             noEmitOnError: false,
             noFallthroughCasesInSwitch: true,
@@ -123,6 +121,17 @@ export const PROJECT_DEFAULT_OPTIONS = {
             strictNullChecks: true,
             strictPropertyInitialization: true,
             stripInternal: true,
+        },
+    },
+};
+
+const ES_MODULE_TSCONFIG_OPTIONS = {
+    tsconfig: {
+        compilerOptions: {
+            allowImportingTsExtensions: true,
+            lib: ["esnext"],
+            module: "nodenext",
+            moduleResolution: javascript.TypeScriptModuleResolution.NODE_NEXT,
             target: "esnext",
         },
     },
@@ -130,6 +139,13 @@ export const PROJECT_DEFAULT_OPTIONS = {
 
 export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = {
     ...PROJECT_DEFAULT_OPTIONS,
+    ...ES_MODULE_TSCONFIG_OPTIONS,
+    tsconfig: {
+        compilerOptions: {
+            ...PROJECT_DEFAULT_OPTIONS.tsconfig.compilerOptions,
+            ...ES_MODULE_TSCONFIG_OPTIONS.tsconfig.compilerOptions,
+        },
+    },
 };
 
 export const JSII_PROJECT_DEFAULT_OPTIONS = {
@@ -141,6 +157,13 @@ export const JSII_PROJECT_DEFAULT_OPTIONS = {
 export const CDK_APP_DEFAULT_OPTIONS = {
     ...PROJECT_DEFAULT_OPTIONS,
     cdkVersion: DEFAULT_CDK_VERSION,
+    ...ES_MODULE_TSCONFIG_OPTIONS,
+    tsconfig: {
+        compilerOptions: {
+            ...PROJECT_DEFAULT_OPTIONS.tsconfig.compilerOptions,
+            ...ES_MODULE_TSCONFIG_OPTIONS.tsconfig.compilerOptions,
+        },
+    },
 };
 
 export const CDK_CONSTRUCT_DEFAULT_OPTIONS = {
