@@ -99,10 +99,6 @@
       "type": "peer"
     },
     {
-      "name": "@nikovirtala/projen-vitest",
-      "type": "runtime"
-    },
-    {
       "name": "projen",
       "type": "runtime"
     }

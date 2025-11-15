@@ -1,4 +1,4 @@
-import { defineConfig } from "@nikovirtala/projen-vitest/lib/bundled-define-config";
+import { defineConfig } from "./lib/vitest-define-config";
 
 export default defineConfig({
   test: {

@@ -3,14 +3,13 @@ import type { TypeScriptProjectOptions } from "projen/lib/typescript";
 import { Mise } from "./components/mise";
 import { Vitest, type VitestOptions } from "./components/vitest";
 import { mergeAll } from "./utils";
+import * as versions from "./versions.json";
 
 export const defaults = {
     author: "Niko Virtala",
     authorAddress: "niko.virtala@hey.com",
-    cdkVersion: "2.223.0",
     constructsVersion: "10.4.3",
-    minNodeVersion: "22.21.1",
-    typescriptVersion: "5.9.3",
+    ...versions,
     get jsiiVersion() {
         return `~${this.typescriptVersion}`;
     },

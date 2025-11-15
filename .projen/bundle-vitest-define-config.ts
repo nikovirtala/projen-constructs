@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 		entryPoints: [entrypoint],
 		bundle: true,
 		platform: "node",
-		outfile: path.join(outDir, "vitest-bundled-define-config.js"),
+		outfile: path.join(outDir, "vitest-define-config.js"),
 		external: ["vitest"],
 		tsconfig: tsconfig,
 	});

@@ -234,9 +234,9 @@ export class Vitest extends Component {
         const project = this.project as NodeProject;
         const packageName = project.package.packageName;
         const defineConfigImport =
-            packageName === "@nikovirtala/projen-vitest"
-                ? 'import { defineConfig } from "vitest/config";'
-                : 'import { defineConfig } from "@nikovirtala/projen-vitest/lib/bundled-define-config";';
+            packageName === "@nikovirtala/projen-constructs"
+                ? 'import { defineConfig } from "./lib/vitest-define-config";'
+                : 'import { defineConfig } from "@nikovirtala/projen-constructs/lib/vitest-define-config";';
 
         return [
             defineConfigImport,

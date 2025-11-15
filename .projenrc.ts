@@ -1,5 +1,6 @@
 import { PrimitiveType } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
+import { JsonPatch } from "projen";
 import { JsiiProject } from "./src/projects";
 
 const project = new JsiiProject({
@@ -7,7 +8,7 @@ const project = new JsiiProject({
     authorAddress: "niko.virtala@hey.com",
     bundledDeps: ["case"],
     defaultReleaseBranch: "main",
-    deps: ["projen", "@nikovirtala/projen-vitest"],
+    deps: ["projen"],
     description: "Projen project types with standard configuration",
     devDeps: [
         "constructs@10.4.3",
@@ -105,8 +106,28 @@ new ProjenStruct(project, {
 
 project.defaultTask?.spawn(
     project.addTask("bundle-vitest-define-config", {
-        exec: "tsx --tsconfig tsconfig.dev.json .projen/bundle-vitest-define-config.ts",
+        exec: "tsx --tsconfig tsconfig.dev.json src/bundle-vitest-define-config.ts",
     }),
 );
+
+project.addTask("update-versions", {
+    description: "fetch latest aws-cdk-lib, node.js and typescript versions from npmjs.com",
+    exec: "tsx .projen/update-versions.ts",
+});
+
+project.postSynthesize = () => {
+    project.upgradeWorkflow?.workflows[0]?.file?.patch(
+        JsonPatch.add("/jobs/upgrade/steps/0", {
+            name: "update aws-cdk-lib, node.js and typescript versions",
+            run: "pnpm exec projen update-versions",
+        }),
+    );
+};
+
+// @mrgrain/cdk-esbuild is both dev and peer dependency which ncu doesn't update on a single run
+project.upgradeWorkflow?.postUpgradeTask.exec(
+    "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --dep=dev,peer --filter=@mrgrain/cdk-esbuild",
+);
+project.upgradeWorkflow?.postUpgradeTask.exec("pnpm i --no-frozen-lockfile");
 
 project.synth();
