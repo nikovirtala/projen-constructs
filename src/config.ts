@@ -4,12 +4,17 @@ import { Mise } from "./components/mise";
 import { Vitest, type VitestOptions } from "./components/vitest";
 import { mergeAll } from "./utils";
 
-export const DEFAULT_AUTHOR = "Niko Virtala";
-export const DEFAULT_AUTHOR_ADDRESS = "niko.virtala@hey.com";
-export const DEFAULT_CDK_VERSION = "2.223.0";
-export const DEFAULT_NODE_VERSION = "22.21.1";
-export const DEFAULT_TYPESCRIPT_VERSION = "5.9.3";
-export const DEFAULT_JSII_VERSION = `~${DEFAULT_TYPESCRIPT_VERSION}`;
+export const defaults = {
+    author: "Niko Virtala",
+    authorAddress: "niko.virtala@hey.com",
+    cdkVersion: "2.223.0",
+    constructsVersion: "10.4.3",
+    minNodeVersion: "22.21.1",
+    typescriptVersion: "5.9.3",
+    get jsiiVersion() {
+        return `~${this.typescriptVersion}`;
+    },
+} as const;
 
 export function applyDefaultConfig(
     project:
@@ -21,7 +26,7 @@ export function applyDefaultConfig(
     vitestOptions?: VitestOptions,
     mise: boolean = true,
 ) {
-    const nodeVersion = project.minNodeVersion ?? DEFAULT_NODE_VERSION;
+    const nodeVersion = project.minNodeVersion ?? defaults.minNodeVersion;
 
     if (
         (project instanceof awscdk.AwsCdkTypeScriptApp || project instanceof typescript.TypeScriptProject) &&
@@ -69,9 +74,9 @@ export function applyDefaultConfig(
     }
 }
 
-export const PROJECT_DEFAULT_OPTIONS = {
+export const projectDefaultOptions = {
     defaultReleaseBranch: "main",
-    minNodeVersion: DEFAULT_NODE_VERSION,
+    minNodeVersion: defaults.minNodeVersion,
     autoApproveOptions: {
         secret: "GITHUB_TOKEN",
         allowedUsernames: ["nikovirtala"],
@@ -104,7 +109,7 @@ export const PROJECT_DEFAULT_OPTIONS = {
     packageManager: javascript.NodePackageManager.PNPM,
     pnpmVersion: "10",
     projenrcTs: true,
-    typescriptVersion: DEFAULT_TYPESCRIPT_VERSION,
+    typescriptVersion: defaults.typescriptVersion,
     tsconfig: {
         compilerOptions: {
             allowSyntheticDefaultImports: true,
@@ -133,7 +138,7 @@ export const PROJECT_DEFAULT_OPTIONS = {
     },
 } satisfies Partial<TypeScriptProjectOptions>;
 
-const ES_MODULE_TSCONFIG_OPTIONS = {
+const esModuleTsconfigOptions = {
     tsconfig: {
         compilerOptions: {
             allowImportingTsExtensions: true,
@@ -145,31 +150,37 @@ const ES_MODULE_TSCONFIG_OPTIONS = {
     },
 } satisfies Partial<TypeScriptProjectOptions>;
 
-const PUBLISHABLE_PROJECT_DEFAULT_OPTIONS = {
-    author: DEFAULT_AUTHOR,
-    authorAddress: DEFAULT_AUTHOR_ADDRESS,
+const publishableProjectDefaultOptions = {
+    author: defaults.author,
+    authorAddress: defaults.authorAddress,
     npmTrustedPublishing: true,
 } satisfies Partial<cdk.JsiiProjectOptions>;
 
-export const TYPESCRIPT_PROJECT_DEFAULT_OPTIONS = mergeAll<typescript.TypeScriptProjectOptions>(
-    PROJECT_DEFAULT_OPTIONS,
-    ES_MODULE_TSCONFIG_OPTIONS,
+const cdkDefaultVersionOptions = {
+    cdkVersion: defaults.cdkVersion,
+    cdkVersionPinning: true,
+    constructsVersion: defaults.constructsVersion,
+} satisfies Partial<awscdk.AwsCdkConstructLibraryOptions>;
+
+export const typescriptProjectDefaultOptions = mergeAll<typescript.TypeScriptProjectOptions>(
+    projectDefaultOptions,
+    esModuleTsconfigOptions,
 );
 
-export const JSII_PROJECT_DEFAULT_OPTIONS = mergeAll<cdk.JsiiProjectOptions>(
-    PROJECT_DEFAULT_OPTIONS,
-    PUBLISHABLE_PROJECT_DEFAULT_OPTIONS,
-    { jsiiVersion: DEFAULT_JSII_VERSION },
+export const jsiiProjectDefaultOptions = mergeAll<cdk.JsiiProjectOptions>(
+    projectDefaultOptions,
+    publishableProjectDefaultOptions,
+    { jsiiVersion: defaults.jsiiVersion },
 );
 
-export const CDK_APP_DEFAULT_OPTIONS = mergeAll<awscdk.AwsCdkTypeScriptAppOptions>(
-    PROJECT_DEFAULT_OPTIONS,
-    ES_MODULE_TSCONFIG_OPTIONS,
-    { cdkVersion: DEFAULT_CDK_VERSION },
+export const cdkAppDefaultOptions = mergeAll<awscdk.AwsCdkTypeScriptAppOptions>(
+    projectDefaultOptions,
+    esModuleTsconfigOptions,
+    cdkDefaultVersionOptions,
 );
 
-export const CDK_CONSTRUCT_DEFAULT_OPTIONS = mergeAll<awscdk.AwsCdkConstructLibraryOptions>(
-    PROJECT_DEFAULT_OPTIONS,
-    PUBLISHABLE_PROJECT_DEFAULT_OPTIONS,
-    { cdkVersion: DEFAULT_CDK_VERSION },
+export const cdkConstructDefaultOptions = mergeAll<awscdk.AwsCdkConstructLibraryOptions>(
+    projectDefaultOptions,
+    publishableProjectDefaultOptions,
+    cdkDefaultVersionOptions,
 );
