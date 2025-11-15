@@ -1,7 +1,5 @@
-import { awscdk, cdk, JsonPatch, javascript, typescript } from "projen";
+import { awscdk, type Component, cdk, JsonPatch, javascript, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
-import { Mise } from "./components/mise";
-import { Vitest, type VitestOptions } from "./components/vitest";
 import { mergeAll } from "./utils";
 import * as versions from "./versions.json";
 
@@ -15,18 +13,19 @@ export const defaults = {
     },
 } as const;
 
-export function applyDefaultConfig(
+interface ComponentConfig {
+    component: new (project: never, options?: never) => Component;
+    enabled?: boolean;
+    options?: unknown;
+}
+
+function configureProject(
     project:
         | awscdk.AwsCdkTypeScriptApp
         | awscdk.AwsCdkConstructLibrary
         | typescript.TypeScriptProject
         | cdk.JsiiProject,
-    vitest: boolean = true,
-    vitestOptions?: VitestOptions,
-    mise: boolean = true,
 ) {
-    const nodeVersion = project.minNodeVersion ?? defaults.minNodeVersion;
-
     if (
         (project instanceof awscdk.AwsCdkTypeScriptApp || project instanceof typescript.TypeScriptProject) &&
         !(project instanceof cdk.JsiiProject) &&
@@ -52,10 +51,6 @@ export function applyDefaultConfig(
         "editor.tabSize": 4,
     });
 
-    if (mise ?? true) {
-        new Mise(project, { nodeVersion });
-    }
-
     if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
         // use node.js 24.x to get new enough npm to satisfy: trusted publishing requires npm CLI version 11.5.1 or later.
         project.github
@@ -67,10 +62,33 @@ export function applyDefaultConfig(
 
     // remove once configured correctly to biome, mise and vitest components
     project.npmignore?.addPatterns("biome.jsonc", "mise.toml", "vitest.config.ts");
+}
 
-    if (vitest ?? true) {
-        new Vitest(project, vitestOptions);
+function injectComponents(
+    project:
+        | awscdk.AwsCdkTypeScriptApp
+        | awscdk.AwsCdkConstructLibrary
+        | typescript.TypeScriptProject
+        | cdk.JsiiProject,
+    components: ComponentConfig[],
+) {
+    for (const { component, enabled, options } of components) {
+        if (enabled ?? true) {
+            new component(project as never, options as never);
+        }
     }
+}
+
+export function applyDefaults(
+    project:
+        | awscdk.AwsCdkTypeScriptApp
+        | awscdk.AwsCdkConstructLibrary
+        | typescript.TypeScriptProject
+        | cdk.JsiiProject,
+    components: ComponentConfig[],
+) {
+    configureProject(project);
+    injectComponents(project, components);
 }
 
 export const projectDefaultOptions = {
@@ -160,25 +178,28 @@ const cdkDefaultVersionOptions = {
     constructsVersion: defaults.constructsVersion,
 } satisfies Partial<awscdk.AwsCdkConstructLibraryOptions>;
 
-export const typescriptProjectDefaultOptions = mergeAll<typescript.TypeScriptProjectOptions>(
-    projectDefaultOptions,
-    esModuleTsconfigOptions,
-);
-
-export const jsiiProjectDefaultOptions = mergeAll<cdk.JsiiProjectOptions>(
-    projectDefaultOptions,
-    publishableProjectDefaultOptions,
-    { jsiiVersion: defaults.jsiiVersion },
-);
-
-export const cdkAppDefaultOptions = mergeAll<awscdk.AwsCdkTypeScriptAppOptions>(
-    projectDefaultOptions,
-    esModuleTsconfigOptions,
-    cdkDefaultVersionOptions,
-);
-
-export const cdkConstructDefaultOptions = mergeAll<awscdk.AwsCdkConstructLibraryOptions>(
-    projectDefaultOptions,
-    publishableProjectDefaultOptions,
-    cdkDefaultVersionOptions,
-);
+export const defaultOptions = {
+    typescript: {
+        TypeScriptProject: mergeAll<typescript.TypeScriptProjectOptions>(
+            projectDefaultOptions,
+            esModuleTsconfigOptions,
+        ),
+    },
+    cdk: {
+        JsiiProject: mergeAll<cdk.JsiiProjectOptions>(projectDefaultOptions, publishableProjectDefaultOptions, {
+            jsiiVersion: defaults.jsiiVersion,
+        }),
+    },
+    awscdk: {
+        AwsCdkTypeScriptApp: mergeAll<awscdk.AwsCdkTypeScriptAppOptions>(
+            projectDefaultOptions,
+            esModuleTsconfigOptions,
+            cdkDefaultVersionOptions,
+        ),
+        AwsCdkConstructLibrary: mergeAll<awscdk.AwsCdkConstructLibraryOptions>(
+            projectDefaultOptions,
+            publishableProjectDefaultOptions,
+            cdkDefaultVersionOptions,
+        ),
+    },
+};

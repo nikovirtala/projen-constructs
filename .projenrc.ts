@@ -1,8 +1,8 @@
-import { PrimitiveType } from "@jsii/spec";
-import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { JsonPatch } from "projen";
+import { Mise } from "./src/components/mise";
+import { Vitest } from "./src/components/vitest";
 import { JsiiProject } from "./src/projects";
-import { ProjenProjectClass } from "./src/projen-project-class";
+import { ProjenProjectGenerator } from "./src/projen-project-generator";
 
 const project = new JsiiProject({
     author: "Niko Virtala",
@@ -24,37 +24,28 @@ const project = new JsiiProject({
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
 });
 
-const commonOptions = [
+project.gitignore.addPatterns(".amazonq/");
+
+/**
+ * Components to integrate into all generated project types
+ *
+ * Each component is automatically added to the generated options interface with:
+ * - An enabled flag (boolean, defaults to true)
+ * - An options property (if optionsProperty is specified)
+ */
+const components = [
+    { component: Mise },
     {
-        name: "mise",
-        type: { primitive: PrimitiveType.Boolean },
-        optional: true,
-        docs: {
-            summary: "Create mise.toml with project Node.js version",
-            default: "true",
-        },
-    },
-    {
-        name: "vitest",
-        type: { primitive: PrimitiveType.Boolean },
-        optional: true,
-        docs: {
-            summary: "Enable testing with Vitest.",
-            default: "true",
-        },
-    },
-    {
-        name: "vitestOptions",
-        type: { fqn: "@nikovirtala/projen-constructs.VitestOptions" },
-        optional: true,
-        docs: {
-            summary: "The Vitest configuration (when enabled).",
-            default: "- default Vitest configuration",
+        component: Vitest,
+        optionsProperty: {
+            name: "vitestOptions",
+            type: "@nikovirtala/projen-constructs.VitestOptions",
+            docs: "Vitest configuration",
         },
     },
 ];
 
-const commonOmits = [
+const projectOmits = [
     "eslint",
     "eslintOptions",
     "jest",
@@ -65,80 +56,36 @@ const commonOmits = [
     "tsJestOptions",
 ];
 
-new ProjenStruct(project, {
-    name: "TypeScriptProjectOptions",
-    filePath: "./src/projects/typescript-options.generated.ts",
-    outputFileOptions: { readonly: true },
-})
-    .mixin(Struct.fromFqn("projen.typescript.TypeScriptProjectOptions"))
-    .withoutDeprecated()
-    .omit(...commonOmits)
-    .add(...commonOptions);
-
-new ProjenStruct(project, {
-    name: "JsiiProjectOptions",
-    filePath: "./src/projects/jsii-options.generated.ts",
-    outputFileOptions: { readonly: true },
-})
-    .mixin(Struct.fromFqn("projen.cdk.JsiiProjectOptions"))
-    .withoutDeprecated()
-    .omit(...commonOmits)
-    .add(...commonOptions);
-
-new ProjenStruct(project, {
-    name: "AwsCdkTypeScriptAppProjectOptions",
-    filePath: "./src/projects/awscdk-typescript-app-options.generated.ts",
-    outputFileOptions: { readonly: true },
-})
-    .mixin(Struct.fromFqn("projen.awscdk.AwsCdkTypeScriptAppOptions"))
-    .withoutDeprecated()
-    .omit(...commonOmits)
-    .add(...commonOptions);
-
-new ProjenStruct(project, {
-    name: "AwsCdkConstructLibraryProjectOptions",
-    filePath: "./src/projects/awscdk-construct-library-options.generated.ts",
-    outputFileOptions: { readonly: true },
-})
-    .mixin(Struct.fromFqn("projen.awscdk.AwsCdkConstructLibraryOptions"))
-    .withoutDeprecated()
-    .omit(...commonOmits)
-    .add(...commonOptions);
-
-new ProjenProjectClass(project, {
+new ProjenProjectGenerator(project, {
     name: "TypeScriptProject",
     baseClass: "typescript.TypeScriptProject",
-    optionsInterface: "TypeScriptProjectOptions",
-    baseOptionsType: "typescript.TypeScriptProjectOptions",
-    defaultConfig: "typescriptProjectDefaultOptions",
     filePath: "./src/projects/typescript.generated.ts",
+    components,
+    omitOptions: projectOmits,
 });
 
-new ProjenProjectClass(project, {
+new ProjenProjectGenerator(project, {
     name: "JsiiProject",
     baseClass: "cdk.JsiiProject",
-    optionsInterface: "JsiiProjectOptions",
-    baseOptionsType: "cdk.JsiiProjectOptions",
-    defaultConfig: "jsiiProjectDefaultOptions",
     filePath: "./src/projects/jsii.generated.ts",
+    components,
+    omitOptions: projectOmits,
 });
 
-new ProjenProjectClass(project, {
+new ProjenProjectGenerator(project, {
     name: "AwsCdkTypeScriptAppProject",
     baseClass: "awscdk.AwsCdkTypeScriptApp",
-    optionsInterface: "AwsCdkTypeScriptAppProjectOptions",
-    baseOptionsType: "awscdk.AwsCdkTypeScriptAppOptions",
-    defaultConfig: "cdkAppDefaultOptions",
     filePath: "./src/projects/awscdk-typescript-app.generated.ts",
+    components,
+    omitOptions: projectOmits,
 });
 
-new ProjenProjectClass(project, {
+new ProjenProjectGenerator(project, {
     name: "AwsCdkConstructLibraryProject",
     baseClass: "awscdk.AwsCdkConstructLibrary",
-    optionsInterface: "AwsCdkConstructLibraryProjectOptions",
-    baseOptionsType: "awscdk.AwsCdkConstructLibraryOptions",
-    defaultConfig: "cdkConstructDefaultOptions",
     filePath: "./src/projects/awscdk-construct-library.generated.ts",
+    components,
+    omitOptions: projectOmits,
 });
 
 project.defaultTask?.spawn(

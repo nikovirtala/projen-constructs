@@ -4,6 +4,10 @@
 
 ### AwsCdkConstructLibraryProject <a name="AwsCdkConstructLibraryProject" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject"></a>
 
+AwsCdkConstructLibraryProject with standard configuration and component integration.
+
+Extends Projen's base class with opinionated defaults and automatic component setup.
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer"></a>
 
 ```typescript
@@ -14,13 +18,15 @@ new AwsCdkConstructLibraryProject(options: AwsCdkConstructLibraryProjectOptions)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions">AwsCdkConstructLibraryProjectOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions">AwsCdkConstructLibraryProjectOptions</a></code> | - Project configuration. |
 
 ---
 
 ##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer.parameter.options"></a>
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions">AwsCdkConstructLibraryProjectOptions</a>
+
+Project configuration.
 
 ---
 
@@ -1593,6 +1599,10 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ### AwsCdkTypeScriptAppProject <a name="AwsCdkTypeScriptAppProject" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProject"></a>
 
+AwsCdkTypeScriptAppProject with standard configuration and component integration.
+
+Extends Projen's base class with opinionated defaults and automatic component setup.
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProject.Initializer"></a>
 
 ```typescript
@@ -1603,13 +1613,15 @@ new AwsCdkTypeScriptAppProject(options: AwsCdkTypeScriptAppProjectOptions)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions">AwsCdkTypeScriptAppProjectOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions">AwsCdkTypeScriptAppProjectOptions</a></code> | - Project configuration. |
 
 ---
 
 ##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProject.Initializer.parameter.options"></a>
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions">AwsCdkTypeScriptAppProjectOptions</a>
+
+Project configuration.
 
 ---
 
@@ -3189,6 +3201,10 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ### JsiiProject <a name="JsiiProject" id="@nikovirtala/projen-constructs.JsiiProject"></a>
 
+JsiiProject with standard configuration and component integration.
+
+Extends Projen's base class with opinionated defaults and automatic component setup.
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.JsiiProject.Initializer"></a>
 
 ```typescript
@@ -3199,13 +3215,15 @@ new JsiiProject(options: JsiiProjectOptions)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions">JsiiProjectOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions">JsiiProjectOptions</a></code> | - Project configuration. |
 
 ---
 
 ##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.JsiiProject.Initializer.parameter.options"></a>
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.JsiiProjectOptions">JsiiProjectOptions</a>
+
+Project configuration.
 
 ---
 
@@ -4705,6 +4723,10 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ### TypeScriptProject <a name="TypeScriptProject" id="@nikovirtala/projen-constructs.TypeScriptProject"></a>
 
+TypeScriptProject with standard configuration and component integration.
+
+Extends Projen's base class with opinionated defaults and automatic component setup.
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.TypeScriptProject.Initializer"></a>
 
 ```typescript
@@ -4715,13 +4737,15 @@ new TypeScriptProject(options: TypeScriptProjectOptions)
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions">TypeScriptProjectOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions">TypeScriptProjectOptions</a></code> | - Project configuration. |
 
 ---
 
 ##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.TypeScriptProject.Initializer.parameter.options"></a>
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions">TypeScriptProjectOptions</a>
+
+Project configuration.
 
 ---
 
@@ -6573,7 +6597,7 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Enable Mise component. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -6640,8 +6664,8 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable testing with Vitest. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | The Vitest configuration (when enabled). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest component. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | Vitest configuration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
@@ -7889,7 +7913,7 @@ public readonly mise: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Create mise.toml with project Node.js version.
+Enable Mise component.
 
 ---
 
@@ -8841,7 +8865,7 @@ public readonly vitest: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Enable testing with Vitest.
+Enable Vitest component.
 
 ---
 
@@ -8854,7 +8878,7 @@ public readonly vitestOptions: VitestOptions;
 - *Type:* <a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a>
 - *Default:* default Vitest configuration
 
-The Vitest configuration (when enabled).
+Vitest configuration.
 
 ---
 
@@ -9076,7 +9100,7 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Enable Mise component. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -9139,8 +9163,8 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable testing with Vitest. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | The Vitest configuration (when enabled). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest component. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | Vitest configuration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.watchExcludes">watchExcludes</a></code> | <code>string[]</code> | Glob patterns to exclude from `cdk watch`. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.watchIncludes">watchIncludes</a></code> | <code>string[]</code> | Glob patterns to include in `cdk watch`. |
@@ -10319,7 +10343,7 @@ public readonly mise: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Create mise.toml with project Node.js version.
+Enable Mise component.
 
 ---
 
@@ -11221,7 +11245,7 @@ public readonly vitest: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Enable testing with Vitest.
+Enable Vitest component.
 
 ---
 
@@ -11234,7 +11258,7 @@ public readonly vitestOptions: VitestOptions;
 - *Type:* <a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a>
 - *Default:* default Vitest configuration
 
-The Vitest configuration (when enabled).
+Vitest configuration.
 
 ---
 
@@ -11474,7 +11498,7 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Enable Mise component. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -11541,8 +11565,8 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable testing with Vitest. |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | The Vitest configuration (when enabled). |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest component. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | Vitest configuration. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
@@ -12615,7 +12639,7 @@ public readonly mise: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Create mise.toml with project Node.js version.
+Enable Mise component.
 
 ---
 
@@ -13567,7 +13591,7 @@ public readonly vitest: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Enable testing with Vitest.
+Enable Vitest component.
 
 ---
 
@@ -13580,7 +13604,7 @@ public readonly vitestOptions: VitestOptions;
 - *Type:* <a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a>
 - *Default:* default Vitest configuration
 
-The Vitest configuration (when enabled).
+Vitest configuration.
 
 ---
 
@@ -13785,7 +13809,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Enable Mise component. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
@@ -13847,8 +13871,8 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable testing with Vitest. |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | The Vitest configuration (when enabled). |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest component. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | Vitest configuration. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
@@ -14791,7 +14815,7 @@ public readonly mise: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Create mise.toml with project Node.js version.
+Enable Mise component.
 
 ---
 
@@ -15680,7 +15704,7 @@ public readonly vitest: boolean;
 - *Type:* boolean
 - *Default:* true
 
-Enable testing with Vitest.
+Enable Vitest component.
 
 ---
 
@@ -15693,7 +15717,7 @@ public readonly vitestOptions: VitestOptions;
 - *Type:* <a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a>
 - *Default:* default Vitest configuration
 
-The Vitest configuration (when enabled).
+Vitest configuration.
 
 ---
 

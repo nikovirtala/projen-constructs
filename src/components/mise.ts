@@ -16,13 +16,17 @@ export class Mise extends Component {
     constructor(project: Project, options: MiseOptions = {}) {
         super(project);
 
+        const nodeVersion =
+            options.nodeVersion ??
+            ("minNodeVersion" in project ? (project as { minNodeVersion?: string }).minNodeVersion : undefined);
+
         const homebrew = Homebrew.of(project) ?? new Homebrew(project);
         homebrew.addPackage("mise");
 
         new TextFile(this, "mise.toml", {
             committed: true,
             readonly: true,
-            lines: ["[tools]", `node = "${options.nodeVersion}"`],
+            lines: ["[tools]", `node = "${nodeVersion}"`],
         });
 
         project.addTask("mise:trust", {

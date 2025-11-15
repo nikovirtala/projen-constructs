@@ -1046,18 +1046,18 @@ export interface JsiiProjectOptions {
    */
   readonly name: string;
   /**
-   * The Vitest configuration (when enabled).
-   * @default - default Vitest configuration
+   * Enable Mise component
+   * @default true
    */
-  readonly vitestOptions?: VitestOptions;
+  readonly mise?: boolean;
   /**
-   * Enable testing with Vitest.
+   * Enable Vitest component
    * @default true
    */
   readonly vitest?: boolean;
   /**
-   * Create mise.toml with project Node.js version
-   * @default true
+   * Vitest configuration
+   * @default - default Vitest configuration
    */
-  readonly mise?: boolean;
+  readonly vitestOptions?: VitestOptions;
 }
