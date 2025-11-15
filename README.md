@@ -41,13 +41,13 @@ const project = new JsiiProject({
   vitest: false,
   tsconfig: {
     compilerOptions: {
-      noUnusedLocals: false, // Override individual compiler options
+      noUnusedLocals: false,
     },
   },
   biomeOptions: {
     biomeConfig: {
       formatter: {
-        lineWidth: 100, // Override individual formatter options
+        lineWidth: 100,
       },
     },
   },
@@ -56,7 +56,9 @@ const project = new JsiiProject({
 
 ## Usage
 
-### AWS CDK Construct Library Projects
+### Projects
+
+#### AWS CDK Construct Library Project
 
 ```typescript
 import { AwsCdkConstructLibraryProject } from "@nikovirtala/projen-constructs";
@@ -69,7 +71,7 @@ const project = new AwsCdkConstructLibraryProject({
 project.synth();
 ```
 
-### AWS CDK TypeScript App Projects
+#### AWS CDK TypeScript App Project
 
 ```typescript
 import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
@@ -82,7 +84,7 @@ const project = new AwsCdkTypeScriptAppProject({
 project.synth();
 ```
 
-### JSII Projects
+#### JSII Project
 
 ```typescript
 import { JsiiProject } from "@nikovirtala/projen-constructs";
@@ -95,7 +97,7 @@ const project = new JsiiProject({
 project.synth();
 ```
 
-### TypeScript Projects
+#### TypeScript Project
 
 ```typescript
 import { TypeScriptProject } from "@nikovirtala/projen-constructs";
@@ -108,11 +110,11 @@ const project = new TypeScriptProject({
 project.synth();
 ```
 
-## Components
+### Components
 
 The package includes reusable components for common development tasks:
 
-### Vitest
+#### Vitest
 
 [Vitest](https://vitest.dev) testing framework component.
 
@@ -128,9 +130,9 @@ new Vitest(project, {
 });
 ```
 
-### TypeDoc
+#### TypeDoc
 
-TypeDoc documentation generation component.
+[TypeDoc](https://typedoc.org) documentation generation component.
 
 ```typescript
 import { TypeDoc, EntryPointStrategy } from "@nikovirtala/projen-constructs";
@@ -145,9 +147,9 @@ new TypeDoc(project, {
 });
 ```
 
-### Mise
+#### Mise
 
-Mise version management component.
+[Mise](https://mise.jdx.dev) dev tools/runtimes management component.
 
 ```typescript
 import { Mise } from "@nikovirtala/projen-constructs";
@@ -157,9 +159,9 @@ new Mise(project, {
 });
 ```
 
-### Homebrew
+#### Homebrew
 
-Homebrew package management component.
+[Homebrew](https://brew.sh) package management component.
 
 ```typescript
 import { Homebrew } from "@nikovirtala/projen-constructs";
@@ -171,9 +173,9 @@ const homebrew = new Homebrew(project, {
 homebrew.addPackage("gh");
 ```
 
-### Colima
+#### Colima
 
-Colima Docker runtime component.
+[Colima](https://github.com/abiosoft/colima) container runtime component. Alternative for Docker.
 
 ```typescript
 import { Colima } from "@nikovirtala/projen-constructs";
@@ -181,9 +183,9 @@ import { Colima } from "@nikovirtala/projen-constructs";
 new Colima(project);
 ```
 
-### LocalStack
+#### LocalStack
 
-LocalStack AWS emulation component.
+[LocalStack](https://www.localstack.cloud) AWS emulation component.
 
 ```typescript
 import { LocalStack } from "@nikovirtala/projen-constructs";
@@ -195,7 +197,7 @@ new LocalStack(project, {
 });
 ```
 
-### LambdaFunctionConstructGenerator
+#### LambdaFunctionConstructGenerator
 
 Generates AWS CDK Lambda Function constructs and bundles their code.
 
@@ -213,7 +215,7 @@ new LambdaFunctionConstructGenerator(project, {
 });
 ```
 
-### Bundler
+#### Bundler
 
 Low-level bundling utilities for Lambda functions.
 
