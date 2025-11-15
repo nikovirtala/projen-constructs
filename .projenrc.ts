@@ -94,8 +94,8 @@ new ProjenStruct(project, {
     .add(...commonOptions);
 
 new ProjenStruct(project, {
-    name: "AwsCdkConstructProjectOptions",
-    filePath: "./src/projects/awscdk-construct-options.generated.ts",
+    name: "AwsCdkConstructLibraryProjectOptions",
+    filePath: "./src/projects/awscdk-construct-library-options.generated.ts",
     outputFileOptions: { readonly: true },
 })
     .mixin(Struct.fromFqn("projen.awscdk.AwsCdkConstructLibraryOptions"))

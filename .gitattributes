@@ -2,7 +2,7 @@
 
 * text=auto eol=lf
 /./src/projects/awscdk-app-options.generated.ts linguist-generated
-/./src/projects/awscdk-construct-options.generated.ts linguist-generated
+/./src/projects/awscdk-construct-library-options.generated.ts linguist-generated
 /./src/projects/jsii-options.generated.ts linguist-generated
 /./src/projects/typescript-options.generated.ts linguist-generated
 /.gitattributes linguist-generated

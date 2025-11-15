@@ -2,25 +2,25 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### AwsCdkConstructProject <a name="AwsCdkConstructProject" id="@nikovirtala/projen-constructs.AwsCdkConstructProject"></a>
+### AwsCdkConstructLibraryProject <a name="AwsCdkConstructLibraryProject" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject"></a>
 
-#### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.Initializer"></a>
+#### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer"></a>
 
 ```typescript
-import { AwsCdkConstructProject } from '@nikovirtala/projen-constructs'
+import { AwsCdkConstructLibraryProject } from '@nikovirtala/projen-constructs'
 
-new AwsCdkConstructProject(options: AwsCdkConstructProjectOptions)
+new AwsCdkConstructLibraryProject(options: AwsCdkConstructLibraryProjectOptions)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions">AwsCdkConstructProjectOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions">AwsCdkConstructLibraryProjectOptions</a></code> | *No description.* |
 
 ---
 
-##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.Initializer.parameter.options"></a>
+##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.Initializer.parameter.options"></a>
 
-- *Type:* <a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions">AwsCdkConstructProjectOptions</a>
+- *Type:* <a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions">AwsCdkConstructLibraryProjectOptions</a>
 
 ---
 
@@ -28,42 +28,42 @@ new AwsCdkConstructProject(options: AwsCdkConstructProjectOptions)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.toString">toString</a></code> | Returns a string representation of this construct. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addTask">addTask</a></code> | Adds a new task to this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.removeTask">removeTask</a></code> | Removes a task from a project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addBins">addBins</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addExcludeFromCleanup">addExcludeFromCleanup</a></code> | Exclude the matching files from pre-synth cleanup. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addGitIgnore">addGitIgnore</a></code> | Adds a .gitignore pattern. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addPackageIgnore">addPackageIgnore</a></code> | Adds patterns to be ignored by npm. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTask">addTask</a></code> | Adds a new task to this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTip">addTip</a></code> | Prints a "tip" message during synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.annotateGenerated">annotateGenerated</a></code> | Marks the provided file(s) as being generated. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.postSynthesize">postSynthesize</a></code> | Called after all components are synthesized. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.preSynthesize">preSynthesize</a></code> | Called before all components are synthesized. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.removeTask">removeTask</a></code> | Removes a task from a project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.runTaskCommand">runTaskCommand</a></code> | Returns the shell command to execute in order to run a task. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.synth">synth</a></code> | Synthesize all project files into `outdir`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindFile">tryFindFile</a></code> | Finds a file at the specified relative path within this project and all its subprojects. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindJsonFile">tryFindJsonFile</a></code> | Finds a json file by name. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindObjectFile">tryFindObjectFile</a></code> | Finds an object file (like JsonFile, YamlFile, etc.) by name. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryRemoveFile">tryRemoveFile</a></code> | Finds a file at the specified relative path within this project and removes it. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addBins">addBins</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addBundledDeps">addBundledDeps</a></code> | Defines bundled dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCompileCommand">addCompileCommand</a></code> | DEPRECATED. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addDeps">addDeps</a></code> | Defines normal dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addDevDeps">addDevDeps</a></code> | Defines development/test dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addFields">addFields</a></code> | Directly set fields in `package.json`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addKeywords">addKeywords</a></code> | Adds keywords to package.json (deduplicated). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addPeerDeps">addPeerDeps</a></code> | Defines peer dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addScripts">addScripts</a></code> | Replaces the contents of multiple npm package.json scripts. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTestCommand">addTestCommand</a></code> | DEPRECATED. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.hasScript">hasScript</a></code> | Indicates if a script by the name name is defined. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.removeScript">removeScript</a></code> | Removes the npm script (always successful). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.renderWorkflowSetup">renderWorkflowSetup</a></code> | Returns the set of workflow steps which should be executed to bootstrap a workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.setScript">setScript</a></code> | Replaces the contents of an npm package.json script. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCdkDependencies">addCdkDependencies</a></code> | Adds dependencies to AWS CDK modules. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCdkTestDependencies">addCdkTestDependencies</a></code> | Adds AWS CDK modules as dev dependencies. |
 
 ---
 
-##### `toString` <a name="toString" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.toString"></a>
+##### `toString` <a name="toString" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.toString"></a>
 
 ```typescript
 public toString(): string
@@ -71,7 +71,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addExcludeFromCleanup"></a>
+##### `addExcludeFromCleanup` <a name="addExcludeFromCleanup" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addExcludeFromCleanup"></a>
 
 ```typescript
 public addExcludeFromCleanup(globs: ...string[]): void
@@ -82,7 +82,7 @@ Exclude the matching files from pre-synth cleanup.
 Can be used when, for example, some
 source files include the projen marker and we don't want them to be erased during synth.
 
-###### `globs`<sup>Required</sup> <a name="globs" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addExcludeFromCleanup.parameter.globs"></a>
+###### `globs`<sup>Required</sup> <a name="globs" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addExcludeFromCleanup.parameter.globs"></a>
 
 - *Type:* ...string[]
 
@@ -90,7 +90,7 @@ The glob patterns to match.
 
 ---
 
-##### `addGitIgnore` <a name="addGitIgnore" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addGitIgnore"></a>
+##### `addGitIgnore` <a name="addGitIgnore" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addGitIgnore"></a>
 
 ```typescript
 public addGitIgnore(pattern: string): void
@@ -98,7 +98,7 @@ public addGitIgnore(pattern: string): void
 
 Adds a .gitignore pattern.
 
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addGitIgnore.parameter.pattern"></a>
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addGitIgnore.parameter.pattern"></a>
 
 - *Type:* string
 
@@ -106,7 +106,7 @@ The glob pattern to ignore.
 
 ---
 
-##### `addPackageIgnore` <a name="addPackageIgnore" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addPackageIgnore"></a>
+##### `addPackageIgnore` <a name="addPackageIgnore" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addPackageIgnore"></a>
 
 ```typescript
 public addPackageIgnore(pattern: string): void
@@ -114,7 +114,7 @@ public addPackageIgnore(pattern: string): void
 
 Adds patterns to be ignored by npm.
 
-###### `pattern`<sup>Required</sup> <a name="pattern" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addPackageIgnore.parameter.pattern"></a>
+###### `pattern`<sup>Required</sup> <a name="pattern" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addPackageIgnore.parameter.pattern"></a>
 
 - *Type:* string
 
@@ -122,7 +122,7 @@ The pattern to ignore.
 
 ---
 
-##### `addTask` <a name="addTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTask"></a>
+##### `addTask` <a name="addTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTask"></a>
 
 ```typescript
 public addTask(name: string, props?: TaskOptions): Task
@@ -133,7 +133,7 @@ Adds a new task to this project.
 This will fail if the project already has
 a task with this name.
 
-###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTask.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTask.parameter.name"></a>
 
 - *Type:* string
 
@@ -141,7 +141,7 @@ The task name to add.
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="props" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTask.parameter.props"></a>
+###### `props`<sup>Optional</sup> <a name="props" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTask.parameter.props"></a>
 
 - *Type:* projen.TaskOptions
 
@@ -149,7 +149,7 @@ Task properties.
 
 ---
 
-##### ~~`addTip`~~ <a name="addTip" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTip"></a>
+##### ~~`addTip`~~ <a name="addTip" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTip"></a>
 
 ```typescript
 public addTip(message: string): void
@@ -157,7 +157,7 @@ public addTip(message: string): void
 
 Prints a "tip" message during synthesis.
 
-###### `message`<sup>Required</sup> <a name="message" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTip.parameter.message"></a>
+###### `message`<sup>Required</sup> <a name="message" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTip.parameter.message"></a>
 
 - *Type:* string
 
@@ -165,7 +165,7 @@ The message.
 
 ---
 
-##### `annotateGenerated` <a name="annotateGenerated" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.annotateGenerated"></a>
+##### `annotateGenerated` <a name="annotateGenerated" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.annotateGenerated"></a>
 
 ```typescript
 public annotateGenerated(glob: string): void
@@ -179,7 +179,7 @@ repository statistics and language breakdown.
 
 > [https://github.com/github/linguist/blob/master/docs/overrides.md](https://github.com/github/linguist/blob/master/docs/overrides.md)
 
-###### `glob`<sup>Required</sup> <a name="glob" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.annotateGenerated.parameter.glob"></a>
+###### `glob`<sup>Required</sup> <a name="glob" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.annotateGenerated.parameter.glob"></a>
 
 - *Type:* string
 
@@ -187,7 +187,7 @@ the glob pattern to match (could be a file path).
 
 ---
 
-##### `postSynthesize` <a name="postSynthesize" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.postSynthesize"></a>
+##### `postSynthesize` <a name="postSynthesize" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.postSynthesize"></a>
 
 ```typescript
 public postSynthesize(): void
@@ -197,7 +197,7 @@ Called after all components are synthesized.
 
 Order is *not* guaranteed.
 
-##### `preSynthesize` <a name="preSynthesize" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.preSynthesize"></a>
+##### `preSynthesize` <a name="preSynthesize" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.preSynthesize"></a>
 
 ```typescript
 public preSynthesize(): void
@@ -205,7 +205,7 @@ public preSynthesize(): void
 
 Called before all components are synthesized.
 
-##### `removeTask` <a name="removeTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.removeTask"></a>
+##### `removeTask` <a name="removeTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.removeTask"></a>
 
 ```typescript
 public removeTask(name: string): Task
@@ -213,7 +213,7 @@ public removeTask(name: string): Task
 
 Removes a task from a project.
 
-###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.removeTask.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.removeTask.parameter.name"></a>
 
 - *Type:* string
 
@@ -221,7 +221,7 @@ The name of the task to remove.
 
 ---
 
-##### `runTaskCommand` <a name="runTaskCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.runTaskCommand"></a>
+##### `runTaskCommand` <a name="runTaskCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.runTaskCommand"></a>
 
 ```typescript
 public runTaskCommand(task: Task): string
@@ -232,7 +232,7 @@ Returns the shell command to execute in order to run a task.
 This will
 typically be `npx projen TASK`.
 
-###### `task`<sup>Required</sup> <a name="task" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.runTaskCommand.parameter.task"></a>
+###### `task`<sup>Required</sup> <a name="task" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.runTaskCommand.parameter.task"></a>
 
 - *Type:* projen.Task
 
@@ -240,7 +240,7 @@ The task for which the command is required.
 
 ---
 
-##### `synth` <a name="synth" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.synth"></a>
+##### `synth` <a name="synth" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.synth"></a>
 
 ```typescript
 public synth(): void
@@ -255,7 +255,7 @@ Synthesize all project files into `outdir`.
 5. Call "postSynthesize()" for all components of this project
 6. Call "this.postSynthesize()"
 
-##### `tryFindFile` <a name="tryFindFile" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindFile"></a>
+##### `tryFindFile` <a name="tryFindFile" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindFile"></a>
 
 ```typescript
 public tryFindFile(filePath: string): FileBase
@@ -263,7 +263,7 @@ public tryFindFile(filePath: string): FileBase
 
 Finds a file at the specified relative path within this project and all its subprojects.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -274,7 +274,7 @@ from the root of _this_ project.
 
 ---
 
-##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindJsonFile"></a>
+##### ~~`tryFindJsonFile`~~ <a name="tryFindJsonFile" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindJsonFile"></a>
 
 ```typescript
 public tryFindJsonFile(filePath: string): JsonFile
@@ -282,7 +282,7 @@ public tryFindJsonFile(filePath: string): JsonFile
 
 Finds a json file by name.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindJsonFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindJsonFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -290,7 +290,7 @@ The file path.
 
 ---
 
-##### `tryFindObjectFile` <a name="tryFindObjectFile" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindObjectFile"></a>
+##### `tryFindObjectFile` <a name="tryFindObjectFile" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindObjectFile"></a>
 
 ```typescript
 public tryFindObjectFile(filePath: string): ObjectFile
@@ -298,7 +298,7 @@ public tryFindObjectFile(filePath: string): ObjectFile
 
 Finds an object file (like JsonFile, YamlFile, etc.) by name.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryFindObjectFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryFindObjectFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -306,7 +306,7 @@ The file path.
 
 ---
 
-##### `tryRemoveFile` <a name="tryRemoveFile" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryRemoveFile"></a>
+##### `tryRemoveFile` <a name="tryRemoveFile" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryRemoveFile"></a>
 
 ```typescript
 public tryRemoveFile(filePath: string): FileBase
@@ -314,7 +314,7 @@ public tryRemoveFile(filePath: string): FileBase
 
 Finds a file at the specified relative path within this project and removes it.
 
-###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.tryRemoveFile.parameter.filePath"></a>
+###### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.tryRemoveFile.parameter.filePath"></a>
 
 - *Type:* string
 
@@ -325,19 +325,19 @@ resolved from the root of _this_ project.
 
 ---
 
-##### `addBins` <a name="addBins" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addBins"></a>
+##### `addBins` <a name="addBins" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addBins"></a>
 
 ```typescript
 public addBins(bins: {[ key: string ]: string}): void
 ```
 
-###### `bins`<sup>Required</sup> <a name="bins" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addBins.parameter.bins"></a>
+###### `bins`<sup>Required</sup> <a name="bins" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addBins.parameter.bins"></a>
 
 - *Type:* {[ key: string ]: string}
 
 ---
 
-##### `addBundledDeps` <a name="addBundledDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addBundledDeps"></a>
+##### `addBundledDeps` <a name="addBundledDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addBundledDeps"></a>
 
 ```typescript
 public addBundledDeps(deps: ...string[]): void
@@ -348,7 +348,7 @@ Defines bundled dependencies.
 Bundled dependencies will be added as normal dependencies as well as to the
 `bundledDependencies` section of your `package.json`.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addBundledDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addBundledDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -362,7 +362,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addCompileCommand"></a>
+##### ~~`addCompileCommand`~~ <a name="addCompileCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCompileCommand"></a>
 
 ```typescript
 public addCompileCommand(commands: ...string[]): void
@@ -370,13 +370,13 @@ public addCompileCommand(commands: ...string[]): void
 
 DEPRECATED.
 
-###### `commands`<sup>Required</sup> <a name="commands" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addCompileCommand.parameter.commands"></a>
+###### `commands`<sup>Required</sup> <a name="commands" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCompileCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
 
 ---
 
-##### `addDeps` <a name="addDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addDeps"></a>
+##### `addDeps` <a name="addDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addDeps"></a>
 
 ```typescript
 public addDeps(deps: ...string[]): void
@@ -384,7 +384,7 @@ public addDeps(deps: ...string[]): void
 
 Defines normal dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -398,7 +398,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### `addDevDeps` <a name="addDevDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addDevDeps"></a>
+##### `addDevDeps` <a name="addDevDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addDevDeps"></a>
 
 ```typescript
 public addDevDeps(deps: ...string[]): void
@@ -406,7 +406,7 @@ public addDevDeps(deps: ...string[]): void
 
 Defines development/test dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addDevDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addDevDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -420,7 +420,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### `addFields` <a name="addFields" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addFields"></a>
+##### `addFields` <a name="addFields" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addFields"></a>
 
 ```typescript
 public addFields(fields: {[ key: string ]: any}): void
@@ -428,7 +428,7 @@ public addFields(fields: {[ key: string ]: any}): void
 
 Directly set fields in `package.json`.
 
-###### `fields`<sup>Required</sup> <a name="fields" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addFields.parameter.fields"></a>
+###### `fields`<sup>Required</sup> <a name="fields" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addFields.parameter.fields"></a>
 
 - *Type:* {[ key: string ]: any}
 
@@ -436,7 +436,7 @@ The fields to set.
 
 ---
 
-##### `addKeywords` <a name="addKeywords" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addKeywords"></a>
+##### `addKeywords` <a name="addKeywords" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addKeywords"></a>
 
 ```typescript
 public addKeywords(keywords: ...string[]): void
@@ -444,7 +444,7 @@ public addKeywords(keywords: ...string[]): void
 
 Adds keywords to package.json (deduplicated).
 
-###### `keywords`<sup>Required</sup> <a name="keywords" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addKeywords.parameter.keywords"></a>
+###### `keywords`<sup>Required</sup> <a name="keywords" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addKeywords.parameter.keywords"></a>
 
 - *Type:* ...string[]
 
@@ -452,7 +452,7 @@ The keywords to add.
 
 ---
 
-##### `addPeerDeps` <a name="addPeerDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addPeerDeps"></a>
+##### `addPeerDeps` <a name="addPeerDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addPeerDeps"></a>
 
 ```typescript
 public addPeerDeps(deps: ...string[]): void
@@ -464,7 +464,7 @@ When adding peer dependencies, a devDependency will also be added on the
 pinned version of the declared peer. This will ensure that you are testing
 your code against the minimum version required from your consumers.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addPeerDeps.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addPeerDeps.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -478,7 +478,7 @@ add/upgrade`. If you wish to specify a version range use this syntax:
 
 ---
 
-##### `addScripts` <a name="addScripts" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addScripts"></a>
+##### `addScripts` <a name="addScripts" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addScripts"></a>
 
 ```typescript
 public addScripts(scripts: {[ key: string ]: string}): void
@@ -486,7 +486,7 @@ public addScripts(scripts: {[ key: string ]: string}): void
 
 Replaces the contents of multiple npm package.json scripts.
 
-###### `scripts`<sup>Required</sup> <a name="scripts" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addScripts.parameter.scripts"></a>
+###### `scripts`<sup>Required</sup> <a name="scripts" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addScripts.parameter.scripts"></a>
 
 - *Type:* {[ key: string ]: string}
 
@@ -494,7 +494,7 @@ The scripts to set.
 
 ---
 
-##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTestCommand"></a>
+##### ~~`addTestCommand`~~ <a name="addTestCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTestCommand"></a>
 
 ```typescript
 public addTestCommand(commands: ...string[]): void
@@ -502,13 +502,13 @@ public addTestCommand(commands: ...string[]): void
 
 DEPRECATED.
 
-###### `commands`<sup>Required</sup> <a name="commands" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addTestCommand.parameter.commands"></a>
+###### `commands`<sup>Required</sup> <a name="commands" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addTestCommand.parameter.commands"></a>
 
 - *Type:* ...string[]
 
 ---
 
-##### ~~`hasScript`~~ <a name="hasScript" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.hasScript"></a>
+##### ~~`hasScript`~~ <a name="hasScript" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.hasScript"></a>
 
 ```typescript
 public hasScript(name: string): boolean
@@ -516,7 +516,7 @@ public hasScript(name: string): boolean
 
 Indicates if a script by the name name is defined.
 
-###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.hasScript.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.hasScript.parameter.name"></a>
 
 - *Type:* string
 
@@ -524,7 +524,7 @@ The name of the script.
 
 ---
 
-##### `removeScript` <a name="removeScript" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.removeScript"></a>
+##### `removeScript` <a name="removeScript" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.removeScript"></a>
 
 ```typescript
 public removeScript(name: string): void
@@ -532,7 +532,7 @@ public removeScript(name: string): void
 
 Removes the npm script (always successful).
 
-###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.removeScript.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.removeScript.parameter.name"></a>
 
 - *Type:* string
 
@@ -540,7 +540,7 @@ The name of the script.
 
 ---
 
-##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.renderWorkflowSetup"></a>
+##### `renderWorkflowSetup` <a name="renderWorkflowSetup" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.renderWorkflowSetup"></a>
 
 ```typescript
 public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
@@ -548,7 +548,7 @@ public renderWorkflowSetup(options?: RenderWorkflowSetupOptions): JobStep[]
 
 Returns the set of workflow steps which should be executed to bootstrap a workflow.
 
-###### `options`<sup>Optional</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.renderWorkflowSetup.parameter.options"></a>
+###### `options`<sup>Optional</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.renderWorkflowSetup.parameter.options"></a>
 
 - *Type:* projen.javascript.RenderWorkflowSetupOptions
 
@@ -556,7 +556,7 @@ Options.
 
 ---
 
-##### `setScript` <a name="setScript" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.setScript"></a>
+##### `setScript` <a name="setScript" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.setScript"></a>
 
 ```typescript
 public setScript(name: string, command: string): void
@@ -564,7 +564,7 @@ public setScript(name: string, command: string): void
 
 Replaces the contents of an npm package.json script.
 
-###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.setScript.parameter.name"></a>
+###### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.setScript.parameter.name"></a>
 
 - *Type:* string
 
@@ -572,7 +572,7 @@ The script name.
 
 ---
 
-###### `command`<sup>Required</sup> <a name="command" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.setScript.parameter.command"></a>
+###### `command`<sup>Required</sup> <a name="command" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.setScript.parameter.command"></a>
 
 - *Type:* string
 
@@ -580,7 +580,7 @@ The command to execute.
 
 ---
 
-##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addCdkDependencies"></a>
+##### ~~`addCdkDependencies`~~ <a name="addCdkDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCdkDependencies"></a>
 
 ```typescript
 public addCdkDependencies(deps: ...string[]): void
@@ -590,7 +590,7 @@ Adds dependencies to AWS CDK modules.
 
 Since this is a library project, dependencies will be added as peer dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addCdkDependencies.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCdkDependencies.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -598,7 +598,7 @@ names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
 ---
 
-##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addCdkTestDependencies"></a>
+##### ~~`addCdkTestDependencies`~~ <a name="addCdkTestDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCdkTestDependencies"></a>
 
 ```typescript
 public addCdkTestDependencies(deps: ...string[]): void
@@ -606,7 +606,7 @@ public addCdkTestDependencies(deps: ...string[]): void
 
 Adds AWS CDK modules as dev dependencies.
 
-###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.addCdkTestDependencies.parameter.deps"></a>
+###### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.addCdkTestDependencies.parameter.deps"></a>
 
 - *Type:* ...string[]
 
@@ -618,18 +618,18 @@ names of cdk modules (e.g. `@aws-cdk/aws-lambda`).
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.of">of</a></code> | Find the closest ancestor project for given construct. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.isProject">isProject</a></code> | Test whether the given construct is a project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.of">of</a></code> | Find the closest ancestor project for given construct. |
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.isConstruct"></a>
 
 ```typescript
-import { AwsCdkConstructProject } from '@nikovirtala/projen-constructs'
+import { AwsCdkConstructLibraryProject } from '@nikovirtala/projen-constructs'
 
-AwsCdkConstructProject.isConstruct(x: any)
+AwsCdkConstructLibraryProject.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
@@ -648,7 +648,7 @@ library can be accidentally installed, and `instanceof` will behave
 unpredictably. It is safest to avoid using `instanceof`, and using
 this type-testing method instead.
 
-###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -656,35 +656,35 @@ Any object.
 
 ---
 
-##### `isProject` <a name="isProject" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.isProject"></a>
+##### `isProject` <a name="isProject" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.isProject"></a>
 
 ```typescript
-import { AwsCdkConstructProject } from '@nikovirtala/projen-constructs'
+import { AwsCdkConstructLibraryProject } from '@nikovirtala/projen-constructs'
 
-AwsCdkConstructProject.isProject(x: any)
+AwsCdkConstructLibraryProject.isProject(x: any)
 ```
 
 Test whether the given construct is a project.
 
-###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.isProject.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.isProject.parameter.x"></a>
 
 - *Type:* any
 
 ---
 
-##### `of` <a name="of" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.of"></a>
+##### `of` <a name="of" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.of"></a>
 
 ```typescript
-import { AwsCdkConstructProject } from '@nikovirtala/projen-constructs'
+import { AwsCdkConstructLibraryProject } from '@nikovirtala/projen-constructs'
 
-AwsCdkConstructProject.of(construct: IConstruct)
+AwsCdkConstructLibraryProject.of(construct: IConstruct)
 ```
 
 Find the closest ancestor project for given construct.
 
 When given a project, this it the project itself.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.of.parameter.construct"></a>
+###### `construct`<sup>Required</sup> <a name="construct" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.of.parameter.construct"></a>
 
 - *Type:* constructs.IConstruct
 
@@ -694,76 +694,76 @@ When given a project, this it the project itself.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.name">name</a></code> | <code>string</code> | Project name. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version supported by this package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.version">version</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.buildTask">buildTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.compileTask">compileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.components">components</a></code> | <code>projen.Component[]</code> | Returns all the components within this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.deps">deps</a></code> | <code>projen.Dependencies</code> | Project dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.ejected">ejected</a></code> | <code>boolean</code> | Whether or not the project is being ejected. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.files">files</a></code> | <code>projen.FileBase[]</code> | All files in this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.gitattributes">gitattributes</a></code> | <code>projen.GitAttributesFile</code> | The .gitattributes file for this repository. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.gitignore">gitignore</a></code> | <code>projen.IgnoreFile</code> | .gitignore. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.logger">logger</a></code> | <code>projen.Logger</code> | Logging utilities. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.name">name</a></code> | <code>string</code> | Project name. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.outdir">outdir</a></code> | <code>string</code> | Absolute output directory of this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.packageTask">packageTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.postCompileTask">postCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.preCompileTask">preCompileTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.projectBuild">projectBuild</a></code> | <code>projen.ProjectBuild</code> | Manages the build process of the project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.projenCommand">projenCommand</a></code> | <code>string</code> | The command to use in order to run the projen CLI. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.root">root</a></code> | <code>projen.Project</code> | The root project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.subprojects">subprojects</a></code> | <code>projen.Project[]</code> | Returns all the subprojects within this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tasks">tasks</a></code> | <code>projen.Tasks</code> | Project tasks. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.testTask">testTask</a></code> | <code>projen.Task</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.defaultTask">defaultTask</a></code> | <code>projen.Task</code> | This is the "default" task, the one that executes "projen". |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.initProject">initProject</a></code> | <code>projen.InitProject</code> | The options used when this project is bootstrapped via `projen new`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.parent">parent</a></code> | <code>projen.Project</code> | A parent project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.projectType">projectType</a></code> | <code>projen.ProjectType</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.autoApprove">autoApprove</a></code> | <code>projen.github.AutoApprove</code> | Auto approve set up for this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.devContainer">devContainer</a></code> | <code>projen.vscode.DevContainer</code> | Access for .devcontainer.json (used for GitHub Codespaces). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.github">github</a></code> | <code>projen.github.GitHub</code> | Access all github components. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.gitpod">gitpod</a></code> | <code>projen.Gitpod</code> | Access for Gitpod. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.vscode">vscode</a></code> | <code>projen.vscode.VsCode</code> | Access all VSCode components. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | The build output directory. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.artifactsJavascriptDirectory">artifactsJavascriptDirectory</a></code> | <code>string</code> | The location of the npm tarball after build (`${artifactsDirectory}/js`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.bundler">bundler</a></code> | <code>projen.javascript.Bundler</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.manifest">manifest</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.npmrc">npmrc</a></code> | <code>projen.javascript.NpmConfig</code> | The .npmrc file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.package">package</a></code> | <code>projen.javascript.NodePackage</code> | API for managing the node package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The package manager to use. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.runScriptCommand">runScriptCommand</a></code> | <code>string</code> | The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the package manager). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.autoMerge">autoMerge</a></code> | <code>projen.github.AutoMerge</code> | Component that sets up mergify for merging approved pull requests. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.biome">biome</a></code> | <code>projen.javascript.Biome</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.buildWorkflow">buildWorkflow</a></code> | <code>projen.build.BuildWorkflow</code> | The PR build GitHub workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.buildWorkflowJobId">buildWorkflowJobId</a></code> | <code>string</code> | The job ID of the build workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.jest">jest</a></code> | <code>projen.javascript.Jest</code> | The Jest configuration (if enabled). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | Maximum node version supported by this package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.npmignore">npmignore</a></code> | <code>projen.IgnoreFile</code> | The .npmignore file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.prettier">prettier</a></code> | <code>projen.javascript.Prettier</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.publisher">publisher</a></code> | <code>projen.release.Publisher</code> | Package publisher. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.release">release</a></code> | <code>projen.release.Release</code> | Release management. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.upgradeWorkflow">upgradeWorkflow</a></code> | <code>projen.javascript.UpgradeDependencies</code> | The upgrade workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.libdir">libdir</a></code> | <code>string</code> | The directory in which compiled .js files reside. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.srcdir">srcdir</a></code> | <code>string</code> | The directory in which the .ts sources reside. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.testdir">testdir</a></code> | <code>string</code> | The directory in which tests reside. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfig</code> | A typescript configuration file which covers all files (sources, tests, projen). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.watchTask">watchTask</a></code> | <code>projen.Task</code> | The "watch" task. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.docgen">docgen</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.eslint">eslint</a></code> | <code>projen.javascript.Eslint</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tsconfigEslint">tsconfigEslint</a></code> | <code>projen.javascript.TypescriptConfig</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.cdkDeps">cdkDeps</a></code> | <code>projen.awscdk.AwsCdkDeps</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | The target CDK version for this library. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.version">version</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -775,7 +775,7 @@ The tree node.
 
 ---
 
-##### `buildTask`<sup>Required</sup> <a name="buildTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.buildTask"></a>
+##### `buildTask`<sup>Required</sup> <a name="buildTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.buildTask"></a>
 
 ```typescript
 public readonly buildTask: Task;
@@ -785,7 +785,7 @@ public readonly buildTask: Task;
 
 ---
 
-##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.commitGenerated"></a>
+##### `commitGenerated`<sup>Required</sup> <a name="commitGenerated" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.commitGenerated"></a>
 
 ```typescript
 public readonly commitGenerated: boolean;
@@ -797,7 +797,7 @@ Whether to commit the managed files by default.
 
 ---
 
-##### `compileTask`<sup>Required</sup> <a name="compileTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.compileTask"></a>
+##### `compileTask`<sup>Required</sup> <a name="compileTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.compileTask"></a>
 
 ```typescript
 public readonly compileTask: Task;
@@ -807,7 +807,7 @@ public readonly compileTask: Task;
 
 ---
 
-##### `components`<sup>Required</sup> <a name="components" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.components"></a>
+##### `components`<sup>Required</sup> <a name="components" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.components"></a>
 
 ```typescript
 public readonly components: Component[];
@@ -819,7 +819,7 @@ Returns all the components within this project.
 
 ---
 
-##### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.deps"></a>
+##### `deps`<sup>Required</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.deps"></a>
 
 ```typescript
 public readonly deps: Dependencies;
@@ -831,7 +831,7 @@ Project dependencies.
 
 ---
 
-##### `ejected`<sup>Required</sup> <a name="ejected" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.ejected"></a>
+##### `ejected`<sup>Required</sup> <a name="ejected" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.ejected"></a>
 
 ```typescript
 public readonly ejected: boolean;
@@ -843,7 +843,7 @@ Whether or not the project is being ejected.
 
 ---
 
-##### `files`<sup>Required</sup> <a name="files" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.files"></a>
+##### `files`<sup>Required</sup> <a name="files" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.files"></a>
 
 ```typescript
 public readonly files: FileBase[];
@@ -855,7 +855,7 @@ All files in this project.
 
 ---
 
-##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.gitattributes"></a>
+##### `gitattributes`<sup>Required</sup> <a name="gitattributes" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.gitattributes"></a>
 
 ```typescript
 public readonly gitattributes: GitAttributesFile;
@@ -867,7 +867,7 @@ The .gitattributes file for this repository.
 
 ---
 
-##### `gitignore`<sup>Required</sup> <a name="gitignore" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.gitignore"></a>
+##### `gitignore`<sup>Required</sup> <a name="gitignore" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.gitignore"></a>
 
 ```typescript
 public readonly gitignore: IgnoreFile;
@@ -879,7 +879,7 @@ public readonly gitignore: IgnoreFile;
 
 ---
 
-##### `logger`<sup>Required</sup> <a name="logger" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.logger"></a>
+##### `logger`<sup>Required</sup> <a name="logger" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.logger"></a>
 
 ```typescript
 public readonly logger: Logger;
@@ -891,7 +891,7 @@ Logging utilities.
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -903,7 +903,7 @@ Project name.
 
 ---
 
-##### `outdir`<sup>Required</sup> <a name="outdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.outdir"></a>
+##### `outdir`<sup>Required</sup> <a name="outdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.outdir"></a>
 
 ```typescript
 public readonly outdir: string;
@@ -915,7 +915,7 @@ Absolute output directory of this project.
 
 ---
 
-##### `packageTask`<sup>Required</sup> <a name="packageTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.packageTask"></a>
+##### `packageTask`<sup>Required</sup> <a name="packageTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.packageTask"></a>
 
 ```typescript
 public readonly packageTask: Task;
@@ -925,7 +925,7 @@ public readonly packageTask: Task;
 
 ---
 
-##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.postCompileTask"></a>
+##### `postCompileTask`<sup>Required</sup> <a name="postCompileTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.postCompileTask"></a>
 
 ```typescript
 public readonly postCompileTask: Task;
@@ -935,7 +935,7 @@ public readonly postCompileTask: Task;
 
 ---
 
-##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.preCompileTask"></a>
+##### `preCompileTask`<sup>Required</sup> <a name="preCompileTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.preCompileTask"></a>
 
 ```typescript
 public readonly preCompileTask: Task;
@@ -945,7 +945,7 @@ public readonly preCompileTask: Task;
 
 ---
 
-##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.projectBuild"></a>
+##### `projectBuild`<sup>Required</sup> <a name="projectBuild" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.projectBuild"></a>
 
 ```typescript
 public readonly projectBuild: ProjectBuild;
@@ -957,7 +957,7 @@ Manages the build process of the project.
 
 ---
 
-##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.projenCommand"></a>
+##### `projenCommand`<sup>Required</sup> <a name="projenCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.projenCommand"></a>
 
 ```typescript
 public readonly projenCommand: string;
@@ -969,7 +969,7 @@ The command to use in order to run the projen CLI.
 
 ---
 
-##### `root`<sup>Required</sup> <a name="root" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.root"></a>
+##### `root`<sup>Required</sup> <a name="root" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.root"></a>
 
 ```typescript
 public readonly root: Project;
@@ -981,7 +981,7 @@ The root project.
 
 ---
 
-##### `subprojects`<sup>Required</sup> <a name="subprojects" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.subprojects"></a>
+##### `subprojects`<sup>Required</sup> <a name="subprojects" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.subprojects"></a>
 
 ```typescript
 public readonly subprojects: Project[];
@@ -993,7 +993,7 @@ Returns all the subprojects within this project.
 
 ---
 
-##### `tasks`<sup>Required</sup> <a name="tasks" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tasks"></a>
+##### `tasks`<sup>Required</sup> <a name="tasks" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tasks"></a>
 
 ```typescript
 public readonly tasks: Tasks;
@@ -1005,7 +1005,7 @@ Project tasks.
 
 ---
 
-##### `testTask`<sup>Required</sup> <a name="testTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.testTask"></a>
+##### `testTask`<sup>Required</sup> <a name="testTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.testTask"></a>
 
 ```typescript
 public readonly testTask: Task;
@@ -1015,7 +1015,7 @@ public readonly testTask: Task;
 
 ---
 
-##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.defaultTask"></a>
+##### `defaultTask`<sup>Optional</sup> <a name="defaultTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.defaultTask"></a>
 
 ```typescript
 public readonly defaultTask: Task;
@@ -1030,7 +1030,7 @@ the project is being ejected.
 
 ---
 
-##### `initProject`<sup>Optional</sup> <a name="initProject" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.initProject"></a>
+##### `initProject`<sup>Optional</sup> <a name="initProject" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.initProject"></a>
 
 ```typescript
 public readonly initProject: InitProject;
@@ -1046,7 +1046,7 @@ FQN of the project type.
 
 ---
 
-##### `parent`<sup>Optional</sup> <a name="parent" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.parent"></a>
+##### `parent`<sup>Optional</sup> <a name="parent" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.parent"></a>
 
 ```typescript
 public readonly parent: Project;
@@ -1060,7 +1060,7 @@ If undefined, this is the root project.
 
 ---
 
-##### `projectType`<sup>Required</sup> <a name="projectType" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.projectType"></a>
+##### `projectType`<sup>Required</sup> <a name="projectType" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.projectType"></a>
 
 ```typescript
 public readonly projectType: ProjectType;
@@ -1070,7 +1070,7 @@ public readonly projectType: ProjectType;
 
 ---
 
-##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.autoApprove"></a>
+##### `autoApprove`<sup>Optional</sup> <a name="autoApprove" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.autoApprove"></a>
 
 ```typescript
 public readonly autoApprove: AutoApprove;
@@ -1082,7 +1082,7 @@ Auto approve set up for this project.
 
 ---
 
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.devContainer"></a>
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.devContainer"></a>
 
 ```typescript
 public readonly devContainer: DevContainer;
@@ -1096,7 +1096,7 @@ This will be `undefined` if devContainer boolean is false
 
 ---
 
-##### `github`<sup>Optional</sup> <a name="github" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.github"></a>
+##### `github`<sup>Optional</sup> <a name="github" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.github"></a>
 
 ```typescript
 public readonly github: GitHub;
@@ -1110,7 +1110,7 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.gitpod"></a>
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.gitpod"></a>
 
 ```typescript
 public readonly gitpod: Gitpod;
@@ -1124,7 +1124,7 @@ This will be `undefined` if gitpod boolean is false
 
 ---
 
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.vscode"></a>
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.vscode"></a>
 
 ```typescript
 public readonly vscode: VsCode;
@@ -1138,7 +1138,7 @@ This will be `undefined` for subprojects.
 
 ---
 
-##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.allowLibraryDependencies"></a>
+##### ~~`allowLibraryDependencies`~~<sup>Required</sup> <a name="allowLibraryDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.allowLibraryDependencies"></a>
 
 - *Deprecated:* use `package.allowLibraryDependencies`
 
@@ -1150,7 +1150,7 @@ public readonly allowLibraryDependencies: boolean;
 
 ---
 
-##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.artifactsDirectory"></a>
+##### `artifactsDirectory`<sup>Required</sup> <a name="artifactsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.artifactsDirectory"></a>
 
 ```typescript
 public readonly artifactsDirectory: string;
@@ -1166,7 +1166,7 @@ tarball will be placed under `dist/js/boom-boom-1.2.3.tg`.
 
 ---
 
-##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.artifactsJavascriptDirectory"></a>
+##### `artifactsJavascriptDirectory`<sup>Required</sup> <a name="artifactsJavascriptDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.artifactsJavascriptDirectory"></a>
 
 ```typescript
 public readonly artifactsJavascriptDirectory: string;
@@ -1178,7 +1178,7 @@ The location of the npm tarball after build (`${artifactsDirectory}/js`).
 
 ---
 
-##### `bundler`<sup>Required</sup> <a name="bundler" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.bundler"></a>
+##### `bundler`<sup>Required</sup> <a name="bundler" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.bundler"></a>
 
 ```typescript
 public readonly bundler: Bundler;
@@ -1188,7 +1188,7 @@ public readonly bundler: Bundler;
 
 ---
 
-##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.entrypoint"></a>
+##### ~~`entrypoint`~~<sup>Required</sup> <a name="entrypoint" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.entrypoint"></a>
 
 - *Deprecated:* use `package.entrypoint`
 
@@ -1200,7 +1200,7 @@ public readonly entrypoint: string;
 
 ---
 
-##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.manifest"></a>
+##### ~~`manifest`~~<sup>Required</sup> <a name="manifest" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.manifest"></a>
 
 - *Deprecated:* use `package.addField(x, y)`
 
@@ -1212,7 +1212,7 @@ public readonly manifest: any;
 
 ---
 
-##### `npmrc`<sup>Required</sup> <a name="npmrc" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.npmrc"></a>
+##### `npmrc`<sup>Required</sup> <a name="npmrc" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.npmrc"></a>
 
 ```typescript
 public readonly npmrc: NpmConfig;
@@ -1224,7 +1224,7 @@ The .npmrc file.
 
 ---
 
-##### `package`<sup>Required</sup> <a name="package" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.package"></a>
+##### `package`<sup>Required</sup> <a name="package" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.package"></a>
 
 ```typescript
 public readonly package: NodePackage;
@@ -1236,7 +1236,7 @@ API for managing the node package.
 
 ---
 
-##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.packageManager"></a>
+##### ~~`packageManager`~~<sup>Required</sup> <a name="packageManager" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.packageManager"></a>
 
 - *Deprecated:* use `package.packageManager`
 
@@ -1250,7 +1250,7 @@ The package manager to use.
 
 ---
 
-##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.runScriptCommand"></a>
+##### `runScriptCommand`<sup>Required</sup> <a name="runScriptCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.runScriptCommand"></a>
 
 ```typescript
 public readonly runScriptCommand: string;
@@ -1262,7 +1262,7 @@ The command to use to run scripts (e.g. `yarn run` or `npm run` depends on the p
 
 ---
 
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.autoMerge"></a>
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.autoMerge"></a>
 
 ```typescript
 public readonly autoMerge: AutoMerge;
@@ -1274,7 +1274,7 @@ Component that sets up mergify for merging approved pull requests.
 
 ---
 
-##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.biome"></a>
+##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.biome"></a>
 
 ```typescript
 public readonly biome: Biome;
@@ -1284,7 +1284,7 @@ public readonly biome: Biome;
 
 ---
 
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.buildWorkflow"></a>
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.buildWorkflow"></a>
 
 ```typescript
 public readonly buildWorkflow: BuildWorkflow;
@@ -1298,7 +1298,7 @@ The PR build GitHub workflow.
 
 ---
 
-##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.buildWorkflowJobId"></a>
+##### `buildWorkflowJobId`<sup>Optional</sup> <a name="buildWorkflowJobId" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.buildWorkflowJobId"></a>
 
 ```typescript
 public readonly buildWorkflowJobId: string;
@@ -1310,7 +1310,7 @@ The job ID of the build workflow.
 
 ---
 
-##### `jest`<sup>Optional</sup> <a name="jest" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.jest"></a>
+##### `jest`<sup>Optional</sup> <a name="jest" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.jest"></a>
 
 ```typescript
 public readonly jest: Jest;
@@ -1322,7 +1322,7 @@ The Jest configuration (if enabled).
 
 ---
 
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.maxNodeVersion"></a>
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.maxNodeVersion"></a>
 
 ```typescript
 public readonly maxNodeVersion: string;
@@ -1336,7 +1336,7 @@ The value indicates the package is incompatible with newer versions.
 
 ---
 
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.minNodeVersion"></a>
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.minNodeVersion"></a>
 
 ```typescript
 public readonly minNodeVersion: string;
@@ -1350,7 +1350,7 @@ This value indicates the package is incompatible with older versions.
 
 ---
 
-##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.npmignore"></a>
+##### `npmignore`<sup>Optional</sup> <a name="npmignore" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.npmignore"></a>
 
 ```typescript
 public readonly npmignore: IgnoreFile;
@@ -1362,7 +1362,7 @@ The .npmignore file.
 
 ---
 
-##### `prettier`<sup>Optional</sup> <a name="prettier" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.prettier"></a>
+##### `prettier`<sup>Optional</sup> <a name="prettier" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.prettier"></a>
 
 ```typescript
 public readonly prettier: Prettier;
@@ -1372,7 +1372,7 @@ public readonly prettier: Prettier;
 
 ---
 
-##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.publisher"></a>
+##### ~~`publisher`~~<sup>Optional</sup> <a name="publisher" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.publisher"></a>
 
 - *Deprecated:* use `release.publisher`.
 
@@ -1389,7 +1389,7 @@ release workflow.
 
 ---
 
-##### `release`<sup>Optional</sup> <a name="release" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.release"></a>
+##### `release`<sup>Optional</sup> <a name="release" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.release"></a>
 
 ```typescript
 public readonly release: Release;
@@ -1401,7 +1401,7 @@ Release management.
 
 ---
 
-##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.upgradeWorkflow"></a>
+##### `upgradeWorkflow`<sup>Optional</sup> <a name="upgradeWorkflow" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.upgradeWorkflow"></a>
 
 ```typescript
 public readonly upgradeWorkflow: UpgradeDependencies;
@@ -1413,7 +1413,7 @@ The upgrade workflow.
 
 ---
 
-##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.docsDirectory"></a>
+##### `docsDirectory`<sup>Required</sup> <a name="docsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.docsDirectory"></a>
 
 ```typescript
 public readonly docsDirectory: string;
@@ -1423,7 +1423,7 @@ public readonly docsDirectory: string;
 
 ---
 
-##### `libdir`<sup>Required</sup> <a name="libdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.libdir"></a>
+##### `libdir`<sup>Required</sup> <a name="libdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.libdir"></a>
 
 ```typescript
 public readonly libdir: string;
@@ -1435,7 +1435,7 @@ The directory in which compiled .js files reside.
 
 ---
 
-##### `srcdir`<sup>Required</sup> <a name="srcdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.srcdir"></a>
+##### `srcdir`<sup>Required</sup> <a name="srcdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.srcdir"></a>
 
 ```typescript
 public readonly srcdir: string;
@@ -1447,7 +1447,7 @@ The directory in which the .ts sources reside.
 
 ---
 
-##### `testdir`<sup>Required</sup> <a name="testdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.testdir"></a>
+##### `testdir`<sup>Required</sup> <a name="testdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.testdir"></a>
 
 ```typescript
 public readonly testdir: string;
@@ -1459,7 +1459,7 @@ The directory in which tests reside.
 
 ---
 
-##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tsconfigDev"></a>
+##### `tsconfigDev`<sup>Required</sup> <a name="tsconfigDev" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tsconfigDev"></a>
 
 ```typescript
 public readonly tsconfigDev: TypescriptConfig;
@@ -1471,7 +1471,7 @@ A typescript configuration file which covers all files (sources, tests, projen).
 
 ---
 
-##### `watchTask`<sup>Required</sup> <a name="watchTask" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.watchTask"></a>
+##### `watchTask`<sup>Required</sup> <a name="watchTask" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.watchTask"></a>
 
 ```typescript
 public readonly watchTask: Task;
@@ -1483,7 +1483,7 @@ The "watch" task.
 
 ---
 
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.docgen"></a>
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.docgen"></a>
 
 ```typescript
 public readonly docgen: boolean;
@@ -1493,7 +1493,7 @@ public readonly docgen: boolean;
 
 ---
 
-##### `eslint`<sup>Optional</sup> <a name="eslint" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.eslint"></a>
+##### `eslint`<sup>Optional</sup> <a name="eslint" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.eslint"></a>
 
 ```typescript
 public readonly eslint: Eslint;
@@ -1503,7 +1503,7 @@ public readonly eslint: Eslint;
 
 ---
 
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tsconfig"></a>
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tsconfig"></a>
 
 ```typescript
 public readonly tsconfig: TypescriptConfig;
@@ -1513,7 +1513,7 @@ public readonly tsconfig: TypescriptConfig;
 
 ---
 
-##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.tsconfigEslint"></a>
+##### `tsconfigEslint`<sup>Optional</sup> <a name="tsconfigEslint" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.tsconfigEslint"></a>
 
 ```typescript
 public readonly tsconfigEslint: TypescriptConfig;
@@ -1523,7 +1523,7 @@ public readonly tsconfigEslint: TypescriptConfig;
 
 ---
 
-##### `cdkDeps`<sup>Required</sup> <a name="cdkDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.cdkDeps"></a>
+##### `cdkDeps`<sup>Required</sup> <a name="cdkDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.cdkDeps"></a>
 
 ```typescript
 public readonly cdkDeps: AwsCdkDeps;
@@ -1533,7 +1533,7 @@ public readonly cdkDeps: AwsCdkDeps;
 
 ---
 
-##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.cdkVersion"></a>
+##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.cdkVersion"></a>
 
 ```typescript
 public readonly cdkVersion: string;
@@ -1545,7 +1545,7 @@ The target CDK version for this library.
 
 ---
 
-##### ~~`version`~~<sup>Required</sup> <a name="version" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.version"></a>
+##### ~~`version`~~<sup>Required</sup> <a name="version" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.version"></a>
 
 - *Deprecated:* use `cdkVersion`
 
@@ -1561,12 +1561,12 @@ public readonly version: string;
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.DEFAULT_TASK">DEFAULT_TASK</a></code> | <code>string</code> | The name of the default task (the task executed when `projen` is run without arguments). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN">DEFAULT_TS_JEST_TRANFORM_PATTERN</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.DEFAULT_TASK"></a>
+##### `DEFAULT_TASK`<sup>Required</sup> <a name="DEFAULT_TASK" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.DEFAULT_TASK"></a>
 
 ```typescript
 public readonly DEFAULT_TASK: string;
@@ -1581,7 +1581,7 @@ this task should synthesize the project files.
 
 ---
 
-##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="@nikovirtala/projen-constructs.AwsCdkConstructProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
+##### `DEFAULT_TS_JEST_TRANFORM_PATTERN`<sup>Required</sup> <a name="DEFAULT_TS_JEST_TRANFORM_PATTERN" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProject.property.DEFAULT_TS_JEST_TRANFORM_PATTERN"></a>
 
 ```typescript
 public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
@@ -6471,190 +6471,190 @@ public readonly project: Project;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### AwsCdkConstructProjectOptions <a name="AwsCdkConstructProjectOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions"></a>
+### AwsCdkConstructLibraryProjectOptions <a name="AwsCdkConstructLibraryProjectOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions"></a>
 
-AwsCdkConstructProjectOptions.
+AwsCdkConstructLibraryProjectOptions.
 
-#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.Initializer"></a>
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.Initializer"></a>
 
 ```typescript
-import { AwsCdkConstructProjectOptions } from '@nikovirtala/projen-constructs'
+import { AwsCdkConstructLibraryProjectOptions } from '@nikovirtala/projen-constructs'
 
-const awsCdkConstructProjectOptions: AwsCdkConstructProjectOptions = { ... }
+const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | Minimum version of the AWS CDK to depend on. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bumpPackage">bumpPackage</a></code> | <code>string</code> | The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkAssertions">cdkAssertions</a></code> | <code>boolean</code> | Install the assertions library? |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkCliVersion">cdkCliVersion</a></code> | <code>string</code> | Version range of the AWS CDK CLI to depend on. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkVersionPinning">cdkVersionPinning</a></code> | <code>boolean</code> | Use pinned version instead of caret version for CDK. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.compatIgnore">compatIgnore</a></code> | <code>string</code> | Name of the ignore file for API compatibility tests. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.compressAssembly">compressAssembly</a></code> | <code>boolean</code> | Emit a compressed version of the assembly. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use tasks and github workflows to handle dependency upgrades. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.depsUpgradeOptions">depsUpgradeOptions</a></code> | <code>projen.javascript.UpgradeDependenciesOptions</code> | Options for `UpgradeDependencies`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.devContainer">devContainer</a></code> | <code>boolean</code> | Add a VSCode development environment (used for GitHub Codespaces). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Build dependencies for this module. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.disableTsconfig">disableTsconfig</a></code> | <code>boolean</code> | Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.json is generated by the jsii compiler). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.disableTsconfigDev">disableTsconfigDev</a></code> | <code>boolean</code> | Do not generate a `tsconfig.dev.json` file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.docgen">docgen</a></code> | <code>boolean</code> | Docgen by Typedoc. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.docgenFilePath">docgenFilePath</a></code> | <code>string</code> | File path for generated docs. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | Docs directory. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.edgeLambdaAutoDiscover">edgeLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). Set to an empty string to not include `main` in your package.json. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.excludeTypescript">excludeTypescript</a></code> | <code>string[]</code> | Accepts a list of glob patterns. Files matching any of those patterns will be excluded from the TypeScript compiler input. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitpod">gitpod</a></code> | <code>boolean</code> | Add a Gitpod development environment. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.homepage">homepage</a></code> | <code>string</code> | Package's Homepage / Website. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.integrationTestAutoDiscover">integrationTestAutoDiscover</a></code> | <code>boolean</code> | Automatically discovers and creates integration tests for each `.integ.ts` file under your test directory. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.jsiiReleaseVersion">jsiiReleaseVersion</a></code> | <code>string</code> | Version requirement of `publib` which is used to publish modules to npm. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.jsiiVersion">jsiiVersion</a></code> | <code>string</code> | Version of the jsii compiler to use. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.lambdaAutoDiscover">lambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in your source tree. If this is disabled, you either need to explicitly call `aws_lambda.Function.autoDiscover()` or define a `new aws_lambda.Function()` for each handler. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.libdir">libdir</a></code> | <code>string</code> | Typescript  artifacts output directory. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.pnpmVersion">pnpmVersion</a></code> | <code>string</code> | The version of PNPM to use if using PNPM as a package manager. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.postBuildSteps">postBuildSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Steps to execute after build as part of the release workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJs">projenrcJs</a></code> | <code>boolean</code> | Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable .projenrc.js generation. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToGo">publishToGo</a></code> | <code>projen.cdk.JsiiGoTarget</code> | Publish Go bindings to a git repository. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToMaven">publishToMaven</a></code> | <code>projen.cdk.JsiiJavaTarget</code> | Publish to maven. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToNuget">publishToNuget</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | Publish to NuGet. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToPypi">publishToPypi</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | Publish to pypi. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseWorkflowEnv">releaseWorkflowEnv</a></code> | <code>{[ key: string ]: string}</code> | Build environment variables for release workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.staleOptions">staleOptions</a></code> | <code>projen.github.StaleOptions</code> | Auto-close stale issues and pull requests. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.testdir">testdir</a></code> | <code>string</code> | Jest tests directory. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable testing with Vitest. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | The Vitest configuration (when enabled). |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.author">author</a></code> | <code>string</code> | The name of the library author. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorAddress">authorAddress</a></code> | <code>string</code> | Email or URL of the library author. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkVersion">cdkVersion</a></code> | <code>string</code> | Minimum version of the AWS CDK to depend on. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.name">name</a></code> | <code>string</code> | This is the name of your project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.repositoryUrl">repositoryUrl</a></code> | <code>string</code> | Git repository URL. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.allowLibraryDependencies">allowLibraryDependencies</a></code> | <code>boolean</code> | Allow the project to include `peerDependencies` and `bundledDependencies`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.artifactsDirectory">artifactsDirectory</a></code> | <code>string</code> | A directory which will contain build artifacts. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.auditDeps">auditDeps</a></code> | <code>boolean</code> | Run security audit on dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.auditDepsOptions">auditDepsOptions</a></code> | <code>projen.javascript.AuditOptions</code> | Security audit options. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorEmail">authorEmail</a></code> | <code>string</code> | Author's e-mail. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorName">authorName</a></code> | <code>string</code> | Author's name. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorOrganization">authorOrganization</a></code> | <code>boolean</code> | Is the author an organization. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorUrl">authorUrl</a></code> | <code>string</code> | Author's URL / Website. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoApproveOptions">autoApproveOptions</a></code> | <code>projen.github.AutoApproveOptions</code> | Enable and configure the 'auto approve' workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoApproveUpgrades">autoApproveUpgrades</a></code> | <code>boolean</code> | Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoDetectBin">autoDetectBin</a></code> | <code>boolean</code> | Automatically add all executables under the `bin` directory to your `package.json` file under the `bin` section. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoMerge">autoMerge</a></code> | <code>boolean</code> | Enable automatic merging on GitHub. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoMergeOptions">autoMergeOptions</a></code> | <code>projen.github.AutoMergeOptions</code> | Configure options for automatic merging on GitHub. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bin">bin</a></code> | <code>{[ key: string ]: string}</code> | Binary programs vended with your module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.biome">biome</a></code> | <code>boolean</code> | Setup Biome. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.biomeOptions">biomeOptions</a></code> | <code>projen.javascript.BiomeOptions</code> | Biome options. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bugsEmail">bugsEmail</a></code> | <code>string</code> | The email address to which issues should be reported. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bugsUrl">bugsUrl</a></code> | <code>string</code> | The url to your project's issue tracker. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.buildWorkflow">buildWorkflow</a></code> | <code>boolean</code> | Define a GitHub workflow for building PRs. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.buildWorkflowOptions">buildWorkflowOptions</a></code> | <code>projen.javascript.BuildWorkflowOptions</code> | Options for PR build workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bumpPackage">bumpPackage</a></code> | <code>string</code> | The `commit-and-tag-version` compatible package used to bump the package version, as a dependency string. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bundledDeps">bundledDeps</a></code> | <code>string[]</code> | List of dependencies to bundle into this module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bundlerOptions">bundlerOptions</a></code> | <code>projen.javascript.BundlerOptions</code> | Options for `Bundler`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bunVersion">bunVersion</a></code> | <code>string</code> | The version of Bun to use if using Bun as a package manager. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.catalog">catalog</a></code> | <code>projen.cdk.Catalog</code> | Libraries will be picked up by the construct catalog when they are published to npm as jsii modules and will be published under:. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkAssertions">cdkAssertions</a></code> | <code>boolean</code> | Install the assertions library? |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkCliVersion">cdkCliVersion</a></code> | <code>string</code> | Version range of the AWS CDK CLI to depend on. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkVersionPinning">cdkVersionPinning</a></code> | <code>boolean</code> | Use pinned version instead of caret version for CDK. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compatIgnore">compatIgnore</a></code> | <code>string</code> | Name of the ignore file for API compatibility tests. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compressAssembly">compressAssembly</a></code> | <code>boolean</code> | Emit a compressed version of the assembly. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dependabotOptions">dependabotOptions</a></code> | <code>projen.github.DependabotOptions</code> | Options for dependabot. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.deps">deps</a></code> | <code>string[]</code> | Runtime dependencies of this module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.depsUpgrade">depsUpgrade</a></code> | <code>boolean</code> | Use tasks and github workflows to handle dependency upgrades. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.depsUpgradeOptions">depsUpgradeOptions</a></code> | <code>projen.javascript.UpgradeDependenciesOptions</code> | Options for `UpgradeDependencies`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.description">description</a></code> | <code>string</code> | The description is just a string that helps people understand the purpose of the package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.devContainer">devContainer</a></code> | <code>boolean</code> | Add a VSCode development environment (used for GitHub Codespaces). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.devDeps">devDeps</a></code> | <code>string[]</code> | Build dependencies for this module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.disableTsconfig">disableTsconfig</a></code> | <code>boolean</code> | Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.json is generated by the jsii compiler). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.disableTsconfigDev">disableTsconfigDev</a></code> | <code>boolean</code> | Do not generate a `tsconfig.dev.json` file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.docgen">docgen</a></code> | <code>boolean</code> | Docgen by Typedoc. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.docgenFilePath">docgenFilePath</a></code> | <code>string</code> | File path for generated docs. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.docsDirectory">docsDirectory</a></code> | <code>string</code> | Docs directory. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.edgeLambdaAutoDiscover">edgeLambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | Module entrypoint (`main` in `package.json`). Set to an empty string to not include `main` in your package.json. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.excludeTypescript">excludeTypescript</a></code> | <code>string[]</code> | Accepts a list of glob patterns. Files matching any of those patterns will be excluded from the TypeScript compiler input. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitpod">gitpod</a></code> | <code>boolean</code> | Add a Gitpod development environment. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.homepage">homepage</a></code> | <code>string</code> | Package's Homepage / Website. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.integrationTestAutoDiscover">integrationTestAutoDiscover</a></code> | <code>boolean</code> | Automatically discovers and creates integration tests for each `.integ.ts` file under your test directory. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.jsiiReleaseVersion">jsiiReleaseVersion</a></code> | <code>string</code> | Version requirement of `publib` which is used to publish modules to npm. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.jsiiVersion">jsiiVersion</a></code> | <code>string</code> | Version of the jsii compiler to use. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.keywords">keywords</a></code> | <code>string[]</code> | Keywords to include in `package.json`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.lambdaAutoDiscover">lambdaAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in your source tree. If this is disabled, you either need to explicitly call `aws_lambda.Function.autoDiscover()` or define a `new aws_lambda.Function()` for each handler. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.lambdaExtensionAutoDiscover">lambdaExtensionAutoDiscover</a></code> | <code>boolean</code> | Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` entrypoint in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.lambdaOptions">lambdaOptions</a></code> | <code>projen.awscdk.LambdaFunctionCommonOptions</code> | Common options for all AWS Lambda functions. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.libdir">libdir</a></code> | <code>string</code> | Typescript  artifacts output directory. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.license">license</a></code> | <code>string</code> | License's SPDX identifier. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.licensed">licensed</a></code> | <code>boolean</code> | Indicates if a license should be added. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.logging">logging</a></code> | <code>projen.LoggerOptions</code> | Configure logging options such as verbosity. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.majorVersion">majorVersion</a></code> | <code>number</code> | Major version to release from the default branch. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.maxNodeVersion">maxNodeVersion</a></code> | <code>string</code> | The maximum node version supported by this package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.minMajorVersion">minMajorVersion</a></code> | <code>number</code> | Minimal Major version to release. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.minNodeVersion">minNodeVersion</a></code> | <code>string</code> | The minimum node version required by this package to function. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.mise">mise</a></code> | <code>boolean</code> | Create mise.toml with project Node.js version. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.nextVersionCommand">nextVersionCommand</a></code> | <code>string</code> | A shell command to control the next version to release. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmAccess">npmAccess</a></code> | <code>projen.javascript.NpmAccess</code> | Access level of the npm package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmDistTag">npmDistTag</a></code> | <code>string</code> | The npmDistTag to use when publishing from the default branch. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmignoreEnabled">npmignoreEnabled</a></code> | <code>boolean</code> | Defines an .npmignore file. Normally this is only needed for libraries that are packaged as tarballs. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmIgnoreOptions">npmIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .npmignore file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmProvenance">npmProvenance</a></code> | <code>boolean</code> | Should provenance statements be generated when the package is published. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pnpmVersion">pnpmVersion</a></code> | <code>string</code> | The version of PNPM to use if using PNPM as a package manager. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.postBuildSteps">postBuildSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Steps to execute after build as part of the release workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.prerelease">prerelease</a></code> | <code>string</code> | Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pre"). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenCommand">projenCommand</a></code> | <code>string</code> | The shell command to use in order to run the projen CLI. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenCredentials">projenCredentials</a></code> | <code>projen.github.GithubCredentials</code> | Choose a method of providing GitHub API access for projen workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenDevDependency">projenDevDependency</a></code> | <code>boolean</code> | Indicates of "projen" should be installed as a devDependency. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJs">projenrcJs</a></code> | <code>boolean</code> | Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable .projenrc.js generation. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJson">projenrcJson</a></code> | <code>boolean</code> | Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .projenrc.json generation. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJsonOptions">projenrcJsonOptions</a></code> | <code>projen.ProjenrcJsonOptions</code> | Options for .projenrc.json. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJsOptions">projenrcJsOptions</a></code> | <code>projen.javascript.ProjenrcOptions</code> | Options for .projenrc.js. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcTs">projenrcTs</a></code> | <code>boolean</code> | Use TypeScript for your projenrc file (`.projenrc.ts`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcTsOptions">projenrcTsOptions</a></code> | <code>projen.typescript.ProjenrcOptions</code> | Options for .projenrc.ts. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenVersion">projenVersion</a></code> | <code>string</code> | Version of projen to install. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishDryRun">publishDryRun</a></code> | <code>boolean</code> | Instead of actually publishing to package managers, just print the publishing command. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishTasks">publishTasks</a></code> | <code>boolean</code> | Define publishing tasks that can be executed manually as well as workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToGo">publishToGo</a></code> | <code>projen.cdk.JsiiGoTarget</code> | Publish Go bindings to a git repository. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToMaven">publishToMaven</a></code> | <code>projen.cdk.JsiiJavaTarget</code> | Publish to maven. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToNuget">publishToNuget</a></code> | <code>projen.cdk.JsiiDotNetTarget</code> | Publish to NuGet. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToPypi">publishToPypi</a></code> | <code>projen.cdk.JsiiPythonTarget</code> | Publish to pypi. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pullRequestTemplate">pullRequestTemplate</a></code> | <code>boolean</code> | Include a GitHub pull request template. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pullRequestTemplateContents">pullRequestTemplateContents</a></code> | <code>string[]</code> | The contents of the pull request template. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.readme">readme</a></code> | <code>projen.SampleReadmeProps</code> | The README setup. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releasableCommits">releasableCommits</a></code> | <code>projen.ReleasableCommits</code> | Find commits that should be considered releasable Used to decide if a release is required. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.release">release</a></code> | <code>boolean</code> | Add release management to this project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseBranches">releaseBranches</a></code> | <code>{[ key: string ]: projen.release.BranchOptions}</code> | Defines additional release branches. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseEnvironment">releaseEnvironment</a></code> | <code>string</code> | The GitHub Actions environment used for the release. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseFailureIssue">releaseFailureIssue</a></code> | <code>boolean</code> | Create a github issue on every failed publishing task. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseFailureIssueLabel">releaseFailureIssueLabel</a></code> | <code>string</code> | The label to apply to issues indicating publish failures. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseTagPrefix">releaseTagPrefix</a></code> | <code>string</code> | Automatically add the given prefix to release tags. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseToNpm">releaseToNpm</a></code> | <code>boolean</code> | Automatically release to npm when new versions are introduced. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseTrigger">releaseTrigger</a></code> | <code>projen.release.ReleaseTrigger</code> | The release trigger to use. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseWorkflowEnv">releaseWorkflowEnv</a></code> | <code>{[ key: string ]: string}</code> | Build environment variables for release workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseWorkflowName">releaseWorkflowName</a></code> | <code>string</code> | The name of the default release workflow. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseWorkflowSetupSteps">releaseWorkflowSetupSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | A set of workflow steps to execute in order to setup the workflow container. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.renovatebot">renovatebot</a></code> | <code>boolean</code> | Use renovatebot to handle dependency upgrades. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.renovatebotOptions">renovatebotOptions</a></code> | <code>projen.RenovatebotOptions</code> | Options for renovatebot. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.repository">repository</a></code> | <code>string</code> | The repository is the location where the actual code for your package lives. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.repositoryDirectory">repositoryDirectory</a></code> | <code>string</code> | If the package.json for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.rootdir">rootdir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.scopedPackagesOptions">scopedPackagesOptions</a></code> | <code>projen.javascript.ScopedPackagesOptions[]</code> | Options for privately hosted scoped packages. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Typescript sources directory. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.stability">stability</a></code> | <code>string</code> | Package's Stability. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.stale">stale</a></code> | <code>boolean</code> | Auto-close of stale issues and pull request. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.staleOptions">staleOptions</a></code> | <code>projen.github.StaleOptions</code> | Auto-close stale issues and pull requests. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.testdir">testdir</a></code> | <code>string</code> | Jest tests directory. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name of the development tsconfig.json file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable testing with Vitest. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | The Vitest configuration (when enabled). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowBootstrapSteps">workflowBootstrapSteps</a></code> | <code>projen.github.workflows.JobStep[]</code> | Workflow steps to use in order to bootstrap this repo. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowContainerImage">workflowContainerImage</a></code> | <code>string</code> | Container image to use for GitHub workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
 
-##### `author`<sup>Required</sup> <a name="author" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.author"></a>
+##### `author`<sup>Required</sup> <a name="author" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.author"></a>
 
 ```typescript
 public readonly author: string;
@@ -6667,7 +6667,7 @@ The name of the library author.
 
 ---
 
-##### `authorAddress`<sup>Required</sup> <a name="authorAddress" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorAddress"></a>
+##### `authorAddress`<sup>Required</sup> <a name="authorAddress" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorAddress"></a>
 
 ```typescript
 public readonly authorAddress: string;
@@ -6680,7 +6680,7 @@ Email or URL of the library author.
 
 ---
 
-##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkVersion"></a>
+##### `cdkVersion`<sup>Required</sup> <a name="cdkVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkVersion"></a>
 
 ```typescript
 public readonly cdkVersion: string;
@@ -6693,7 +6693,7 @@ Minimum version of the AWS CDK to depend on.
 
 ---
 
-##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.defaultReleaseBranch"></a>
+##### `defaultReleaseBranch`<sup>Required</sup> <a name="defaultReleaseBranch" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.defaultReleaseBranch"></a>
 
 ```typescript
 public readonly defaultReleaseBranch: string;
@@ -6706,7 +6706,7 @@ The name of the main release branch.
 
 ---
 
-##### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -6719,7 +6719,7 @@ This is the name of your project.
 
 ---
 
-##### `repositoryUrl`<sup>Required</sup> <a name="repositoryUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.repositoryUrl"></a>
+##### `repositoryUrl`<sup>Required</sup> <a name="repositoryUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.repositoryUrl"></a>
 
 ```typescript
 public readonly repositoryUrl: string;
@@ -6732,7 +6732,7 @@ Git repository URL.
 
 ---
 
-##### `allowLibraryDependencies`<sup>Optional</sup> <a name="allowLibraryDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.allowLibraryDependencies"></a>
+##### `allowLibraryDependencies`<sup>Optional</sup> <a name="allowLibraryDependencies" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.allowLibraryDependencies"></a>
 
 ```typescript
 public readonly allowLibraryDependencies: boolean;
@@ -6748,7 +6748,7 @@ for specifying these.
 
 ---
 
-##### `artifactsDirectory`<sup>Optional</sup> <a name="artifactsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.artifactsDirectory"></a>
+##### `artifactsDirectory`<sup>Optional</sup> <a name="artifactsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.artifactsDirectory"></a>
 
 ```typescript
 public readonly artifactsDirectory: string;
@@ -6761,7 +6761,7 @@ A directory which will contain build artifacts.
 
 ---
 
-##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.auditDeps"></a>
+##### `auditDeps`<sup>Optional</sup> <a name="auditDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.auditDeps"></a>
 
 ```typescript
 public readonly auditDeps: boolean;
@@ -6778,7 +6778,7 @@ vulnerabilities or above in all dependencies (including dev dependencies).
 
 ---
 
-##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.auditDepsOptions"></a>
+##### `auditDepsOptions`<sup>Optional</sup> <a name="auditDepsOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.auditDepsOptions"></a>
 
 ```typescript
 public readonly auditDepsOptions: AuditOptions;
@@ -6791,7 +6791,7 @@ Security audit options.
 
 ---
 
-##### `authorEmail`<sup>Optional</sup> <a name="authorEmail" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorEmail"></a>
+##### `authorEmail`<sup>Optional</sup> <a name="authorEmail" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorEmail"></a>
 
 ```typescript
 public readonly authorEmail: string;
@@ -6803,7 +6803,7 @@ Author's e-mail.
 
 ---
 
-##### `authorName`<sup>Optional</sup> <a name="authorName" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorName"></a>
+##### `authorName`<sup>Optional</sup> <a name="authorName" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorName"></a>
 
 ```typescript
 public readonly authorName: string;
@@ -6815,7 +6815,7 @@ Author's name.
 
 ---
 
-##### `authorOrganization`<sup>Optional</sup> <a name="authorOrganization" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorOrganization"></a>
+##### `authorOrganization`<sup>Optional</sup> <a name="authorOrganization" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorOrganization"></a>
 
 ```typescript
 public readonly authorOrganization: boolean;
@@ -6827,7 +6827,7 @@ Is the author an organization.
 
 ---
 
-##### `authorUrl`<sup>Optional</sup> <a name="authorUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.authorUrl"></a>
+##### `authorUrl`<sup>Optional</sup> <a name="authorUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.authorUrl"></a>
 
 ```typescript
 public readonly authorUrl: string;
@@ -6839,7 +6839,7 @@ Author's URL / Website.
 
 ---
 
-##### `autoApproveOptions`<sup>Optional</sup> <a name="autoApproveOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoApproveOptions"></a>
+##### `autoApproveOptions`<sup>Optional</sup> <a name="autoApproveOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoApproveOptions"></a>
 
 ```typescript
 public readonly autoApproveOptions: AutoApproveOptions;
@@ -6852,7 +6852,7 @@ Enable and configure the 'auto approve' workflow.
 
 ---
 
-##### `autoApproveUpgrades`<sup>Optional</sup> <a name="autoApproveUpgrades" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoApproveUpgrades"></a>
+##### `autoApproveUpgrades`<sup>Optional</sup> <a name="autoApproveUpgrades" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoApproveUpgrades"></a>
 
 ```typescript
 public readonly autoApproveUpgrades: boolean;
@@ -6867,7 +6867,7 @@ Throw if set to true but `autoApproveOptions` are not defined.
 
 ---
 
-##### `autoDetectBin`<sup>Optional</sup> <a name="autoDetectBin" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoDetectBin"></a>
+##### `autoDetectBin`<sup>Optional</sup> <a name="autoDetectBin" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoDetectBin"></a>
 
 ```typescript
 public readonly autoDetectBin: boolean;
@@ -6880,7 +6880,7 @@ Automatically add all executables under the `bin` directory to your `package.jso
 
 ---
 
-##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoMerge"></a>
+##### `autoMerge`<sup>Optional</sup> <a name="autoMerge" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoMerge"></a>
 
 ```typescript
 public readonly autoMerge: boolean;
@@ -6896,7 +6896,7 @@ is set to false.
 
 ---
 
-##### `autoMergeOptions`<sup>Optional</sup> <a name="autoMergeOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.autoMergeOptions"></a>
+##### `autoMergeOptions`<sup>Optional</sup> <a name="autoMergeOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.autoMergeOptions"></a>
 
 ```typescript
 public readonly autoMergeOptions: AutoMergeOptions;
@@ -6912,7 +6912,7 @@ Has no effect if
 
 ---
 
-##### `bin`<sup>Optional</sup> <a name="bin" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bin"></a>
+##### `bin`<sup>Optional</sup> <a name="bin" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bin"></a>
 
 ```typescript
 public readonly bin: {[ key: string ]: string};
@@ -6928,7 +6928,7 @@ executable file under `bin` will automatically be added to this section.
 
 ---
 
-##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biome"></a>
+##### `biome`<sup>Optional</sup> <a name="biome" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.biome"></a>
 
 ```typescript
 public readonly biome: boolean;
@@ -6941,7 +6941,7 @@ Setup Biome.
 
 ---
 
-##### `biomeOptions`<sup>Optional</sup> <a name="biomeOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.biomeOptions"></a>
+##### `biomeOptions`<sup>Optional</sup> <a name="biomeOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.biomeOptions"></a>
 
 ```typescript
 public readonly biomeOptions: BiomeOptions;
@@ -6954,7 +6954,7 @@ Biome options.
 
 ---
 
-##### `bugsEmail`<sup>Optional</sup> <a name="bugsEmail" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bugsEmail"></a>
+##### `bugsEmail`<sup>Optional</sup> <a name="bugsEmail" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bugsEmail"></a>
 
 ```typescript
 public readonly bugsEmail: string;
@@ -6966,7 +6966,7 @@ The email address to which issues should be reported.
 
 ---
 
-##### `bugsUrl`<sup>Optional</sup> <a name="bugsUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bugsUrl"></a>
+##### `bugsUrl`<sup>Optional</sup> <a name="bugsUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bugsUrl"></a>
 
 ```typescript
 public readonly bugsUrl: string;
@@ -6978,7 +6978,7 @@ The url to your project's issue tracker.
 
 ---
 
-##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.buildWorkflow"></a>
+##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.buildWorkflow"></a>
 
 ```typescript
 public readonly buildWorkflow: boolean;
@@ -6991,7 +6991,7 @@ Define a GitHub workflow for building PRs.
 
 ---
 
-##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.buildWorkflowOptions"></a>
+##### `buildWorkflowOptions`<sup>Optional</sup> <a name="buildWorkflowOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.buildWorkflowOptions"></a>
 
 ```typescript
 public readonly buildWorkflowOptions: BuildWorkflowOptions;
@@ -7003,7 +7003,7 @@ Options for PR build workflow.
 
 ---
 
-##### `bumpPackage`<sup>Optional</sup> <a name="bumpPackage" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bumpPackage"></a>
+##### `bumpPackage`<sup>Optional</sup> <a name="bumpPackage" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bumpPackage"></a>
 
 ```typescript
 public readonly bumpPackage: string;
@@ -7018,7 +7018,7 @@ This can be any compatible package version, including the deprecated `standard-v
 
 ---
 
-##### `bundledDeps`<sup>Optional</sup> <a name="bundledDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bundledDeps"></a>
+##### `bundledDeps`<sup>Optional</sup> <a name="bundledDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bundledDeps"></a>
 
 ```typescript
 public readonly bundledDeps: string[];
@@ -7041,7 +7041,7 @@ this will be what you `package.json` will eventually include.
 
 ---
 
-##### `bundlerOptions`<sup>Optional</sup> <a name="bundlerOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bundlerOptions"></a>
+##### `bundlerOptions`<sup>Optional</sup> <a name="bundlerOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bundlerOptions"></a>
 
 ```typescript
 public readonly bundlerOptions: BundlerOptions;
@@ -7053,7 +7053,7 @@ Options for `Bundler`.
 
 ---
 
-##### `bunVersion`<sup>Optional</sup> <a name="bunVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.bunVersion"></a>
+##### `bunVersion`<sup>Optional</sup> <a name="bunVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.bunVersion"></a>
 
 ```typescript
 public readonly bunVersion: string;
@@ -7066,7 +7066,7 @@ The version of Bun to use if using Bun as a package manager.
 
 ---
 
-##### `catalog`<sup>Optional</sup> <a name="catalog" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.catalog"></a>
+##### `catalog`<sup>Optional</sup> <a name="catalog" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.catalog"></a>
 
 ```typescript
 public readonly catalog: Catalog;
@@ -7088,7 +7088,7 @@ mentioned in the tweet.
 
 ---
 
-##### `cdkAssertions`<sup>Optional</sup> <a name="cdkAssertions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkAssertions"></a>
+##### `cdkAssertions`<sup>Optional</sup> <a name="cdkAssertions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkAssertions"></a>
 
 ```typescript
 public readonly cdkAssertions: boolean;
@@ -7104,7 +7104,7 @@ assertions is already included in 'aws-cdk-lib'
 
 ---
 
-##### `cdkCliVersion`<sup>Optional</sup> <a name="cdkCliVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkCliVersion"></a>
+##### `cdkCliVersion`<sup>Optional</sup> <a name="cdkCliVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkCliVersion"></a>
 
 ```typescript
 public readonly cdkCliVersion: string;
@@ -7122,7 +7122,7 @@ option to restrict it to a specific version or version range.
 
 ---
 
-##### `cdkVersionPinning`<sup>Optional</sup> <a name="cdkVersionPinning" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.cdkVersionPinning"></a>
+##### `cdkVersionPinning`<sup>Optional</sup> <a name="cdkVersionPinning" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.cdkVersionPinning"></a>
 
 ```typescript
 public readonly cdkVersionPinning: boolean;
@@ -7137,7 +7137,7 @@ If you use experimental features this will let you define the moment you include
 
 ---
 
-##### `checkLicenses`<sup>Optional</sup> <a name="checkLicenses" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.checkLicenses"></a>
+##### `checkLicenses`<sup>Optional</sup> <a name="checkLicenses" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.checkLicenses"></a>
 
 ```typescript
 public readonly checkLicenses: LicenseCheckerOptions;
@@ -7152,7 +7152,7 @@ This setting will cause the build to fail, if any prohibited or not allowed lice
 
 ---
 
-##### `clobber`<sup>Optional</sup> <a name="clobber" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.clobber"></a>
+##### `clobber`<sup>Optional</sup> <a name="clobber" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.clobber"></a>
 
 ```typescript
 public readonly clobber: boolean;
@@ -7165,7 +7165,7 @@ Add a `clobber` task which resets the repo to origin.
 
 ---
 
-##### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.codeArtifactOptions"></a>
+##### `codeArtifactOptions`<sup>Optional</sup> <a name="codeArtifactOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeArtifactOptions"></a>
 
 ```typescript
 public readonly codeArtifactOptions: CodeArtifactOptions;
@@ -7180,7 +7180,7 @@ This is required if publishing packages to, or installing scoped packages from A
 
 ---
 
-##### `codeCov`<sup>Optional</sup> <a name="codeCov" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.codeCov"></a>
+##### `codeCov`<sup>Optional</sup> <a name="codeCov" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCov"></a>
 
 ```typescript
 public readonly codeCov: boolean;
@@ -7193,7 +7193,7 @@ Define a GitHub workflow step for sending code coverage metrics to https://codec
 
 ---
 
-##### `codeCovTokenSecret`<sup>Optional</sup> <a name="codeCovTokenSecret" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.codeCovTokenSecret"></a>
+##### `codeCovTokenSecret`<sup>Optional</sup> <a name="codeCovTokenSecret" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCovTokenSecret"></a>
 
 ```typescript
 public readonly codeCovTokenSecret: string;
@@ -7206,7 +7206,7 @@ Define the secret name for a specified https://codecov.io/ token.
 
 ---
 
-##### `commitGenerated`<sup>Optional</sup> <a name="commitGenerated" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.commitGenerated"></a>
+##### `commitGenerated`<sup>Optional</sup> <a name="commitGenerated" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.commitGenerated"></a>
 
 ```typescript
 public readonly commitGenerated: boolean;
@@ -7219,7 +7219,7 @@ Whether to commit the managed files by default.
 
 ---
 
-##### `compat`<sup>Optional</sup> <a name="compat" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.compat"></a>
+##### `compat`<sup>Optional</sup> <a name="compat" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compat"></a>
 
 ```typescript
 public readonly compat: boolean;
@@ -7235,7 +7235,7 @@ You can manually run compatibility tests using `yarn compat` if this feature is 
 
 ---
 
-##### `compatIgnore`<sup>Optional</sup> <a name="compatIgnore" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.compatIgnore"></a>
+##### `compatIgnore`<sup>Optional</sup> <a name="compatIgnore" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compatIgnore"></a>
 
 ```typescript
 public readonly compatIgnore: string;
@@ -7248,7 +7248,7 @@ Name of the ignore file for API compatibility tests.
 
 ---
 
-##### `compressAssembly`<sup>Optional</sup> <a name="compressAssembly" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.compressAssembly"></a>
+##### `compressAssembly`<sup>Optional</sup> <a name="compressAssembly" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compressAssembly"></a>
 
 ```typescript
 public readonly compressAssembly: boolean;
@@ -7261,7 +7261,7 @@ Emit a compressed version of the assembly.
 
 ---
 
-##### `constructsVersion`<sup>Optional</sup> <a name="constructsVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.constructsVersion"></a>
+##### `constructsVersion`<sup>Optional</sup> <a name="constructsVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.constructsVersion"></a>
 
 ```typescript
 public readonly constructsVersion: string;
@@ -7274,7 +7274,7 @@ Minimum version of the `constructs` library to depend on.
 
 ---
 
-##### `copyrightOwner`<sup>Optional</sup> <a name="copyrightOwner" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.copyrightOwner"></a>
+##### `copyrightOwner`<sup>Optional</sup> <a name="copyrightOwner" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.copyrightOwner"></a>
 
 ```typescript
 public readonly copyrightOwner: string;
@@ -7287,7 +7287,7 @@ License copyright owner.
 
 ---
 
-##### `copyrightPeriod`<sup>Optional</sup> <a name="copyrightPeriod" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.copyrightPeriod"></a>
+##### `copyrightPeriod`<sup>Optional</sup> <a name="copyrightPeriod" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.copyrightPeriod"></a>
 
 ```typescript
 public readonly copyrightPeriod: string;
@@ -7300,7 +7300,7 @@ The copyright years to put in the LICENSE file.
 
 ---
 
-##### `dependabot`<sup>Optional</sup> <a name="dependabot" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.dependabot"></a>
+##### `dependabot`<sup>Optional</sup> <a name="dependabot" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dependabot"></a>
 
 ```typescript
 public readonly dependabot: boolean;
@@ -7315,7 +7315,7 @@ Cannot be used in conjunction with `depsUpgrade`.
 
 ---
 
-##### `dependabotOptions`<sup>Optional</sup> <a name="dependabotOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.dependabotOptions"></a>
+##### `dependabotOptions`<sup>Optional</sup> <a name="dependabotOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dependabotOptions"></a>
 
 ```typescript
 public readonly dependabotOptions: DependabotOptions;
@@ -7328,7 +7328,7 @@ Options for dependabot.
 
 ---
 
-##### `deps`<sup>Optional</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.deps"></a>
+##### `deps`<sup>Optional</sup> <a name="deps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.deps"></a>
 
 ```typescript
 public readonly deps: string[];
@@ -7348,7 +7348,7 @@ this will be what you `package.json` will eventually include.
 
 ---
 
-##### `depsUpgrade`<sup>Optional</sup> <a name="depsUpgrade" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.depsUpgrade"></a>
+##### `depsUpgrade`<sup>Optional</sup> <a name="depsUpgrade" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.depsUpgrade"></a>
 
 ```typescript
 public readonly depsUpgrade: boolean;
@@ -7363,7 +7363,7 @@ Cannot be used in conjunction with `dependabot`.
 
 ---
 
-##### `depsUpgradeOptions`<sup>Optional</sup> <a name="depsUpgradeOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.depsUpgradeOptions"></a>
+##### `depsUpgradeOptions`<sup>Optional</sup> <a name="depsUpgradeOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.depsUpgradeOptions"></a>
 
 ```typescript
 public readonly depsUpgradeOptions: UpgradeDependenciesOptions;
@@ -7376,7 +7376,7 @@ Options for `UpgradeDependencies`.
 
 ---
 
-##### `description`<sup>Optional</sup> <a name="description" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.description"></a>
+##### `description`<sup>Optional</sup> <a name="description" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.description"></a>
 
 ```typescript
 public readonly description: string;
@@ -7391,7 +7391,7 @@ See https://classic.yarnpkg.com/en/docs/package-json/#toc-description
 
 ---
 
-##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.devContainer"></a>
+##### `devContainer`<sup>Optional</sup> <a name="devContainer" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.devContainer"></a>
 
 ```typescript
 public readonly devContainer: boolean;
@@ -7404,7 +7404,7 @@ Add a VSCode development environment (used for GitHub Codespaces).
 
 ---
 
-##### `devDeps`<sup>Optional</sup> <a name="devDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.devDeps"></a>
+##### `devDeps`<sup>Optional</sup> <a name="devDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.devDeps"></a>
 
 ```typescript
 public readonly devDeps: string[];
@@ -7428,7 +7428,7 @@ this will be what you `package.json` will eventually include.
 
 ---
 
-##### `disableTsconfig`<sup>Optional</sup> <a name="disableTsconfig" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.disableTsconfig"></a>
+##### `disableTsconfig`<sup>Optional</sup> <a name="disableTsconfig" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.disableTsconfig"></a>
 
 ```typescript
 public readonly disableTsconfig: boolean;
@@ -7441,7 +7441,7 @@ Do not generate a `tsconfig.json` file (used by jsii projects since tsconfig.jso
 
 ---
 
-##### `disableTsconfigDev`<sup>Optional</sup> <a name="disableTsconfigDev" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.disableTsconfigDev"></a>
+##### `disableTsconfigDev`<sup>Optional</sup> <a name="disableTsconfigDev" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.disableTsconfigDev"></a>
 
 ```typescript
 public readonly disableTsconfigDev: boolean;
@@ -7454,7 +7454,7 @@ Do not generate a `tsconfig.dev.json` file.
 
 ---
 
-##### `docgen`<sup>Optional</sup> <a name="docgen" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.docgen"></a>
+##### `docgen`<sup>Optional</sup> <a name="docgen" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.docgen"></a>
 
 ```typescript
 public readonly docgen: boolean;
@@ -7467,7 +7467,7 @@ Docgen by Typedoc.
 
 ---
 
-##### `docgenFilePath`<sup>Optional</sup> <a name="docgenFilePath" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.docgenFilePath"></a>
+##### `docgenFilePath`<sup>Optional</sup> <a name="docgenFilePath" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.docgenFilePath"></a>
 
 ```typescript
 public readonly docgenFilePath: string;
@@ -7480,7 +7480,7 @@ File path for generated docs.
 
 ---
 
-##### `docsDirectory`<sup>Optional</sup> <a name="docsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.docsDirectory"></a>
+##### `docsDirectory`<sup>Optional</sup> <a name="docsDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.docsDirectory"></a>
 
 ```typescript
 public readonly docsDirectory: string;
@@ -7493,7 +7493,7 @@ Docs directory.
 
 ---
 
-##### `edgeLambdaAutoDiscover`<sup>Optional</sup> <a name="edgeLambdaAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.edgeLambdaAutoDiscover"></a>
+##### `edgeLambdaAutoDiscover`<sup>Optional</sup> <a name="edgeLambdaAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.edgeLambdaAutoDiscover"></a>
 
 ```typescript
 public readonly edgeLambdaAutoDiscover: boolean;
@@ -7506,7 +7506,7 @@ Automatically adds an `cloudfront.experimental.EdgeFunction` for each `.edge-lam
 
 ---
 
-##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.entrypoint"></a>
+##### `entrypoint`<sup>Optional</sup> <a name="entrypoint" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.entrypoint"></a>
 
 ```typescript
 public readonly entrypoint: string;
@@ -7519,7 +7519,7 @@ Module entrypoint (`main` in `package.json`). Set to an empty string to not incl
 
 ---
 
-##### `entrypointTypes`<sup>Optional</sup> <a name="entrypointTypes" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.entrypointTypes"></a>
+##### `entrypointTypes`<sup>Optional</sup> <a name="entrypointTypes" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.entrypointTypes"></a>
 
 ```typescript
 public readonly entrypointTypes: string;
@@ -7532,7 +7532,7 @@ The .d.ts file that includes the type declarations for this module.
 
 ---
 
-##### `excludeTypescript`<sup>Optional</sup> <a name="excludeTypescript" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.excludeTypescript"></a>
+##### `excludeTypescript`<sup>Optional</sup> <a name="excludeTypescript" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.excludeTypescript"></a>
 
 ```typescript
 public readonly excludeTypescript: string[];
@@ -7548,7 +7548,7 @@ that cannot be compiled with jsii's compiler settings.
 
 ---
 
-##### `experimentalIntegRunner`<sup>Optional</sup> <a name="experimentalIntegRunner" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.experimentalIntegRunner"></a>
+##### `experimentalIntegRunner`<sup>Optional</sup> <a name="experimentalIntegRunner" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.experimentalIntegRunner"></a>
 
 ```typescript
 public readonly experimentalIntegRunner: boolean;
@@ -7561,7 +7561,7 @@ Enable experimental support for the AWS CDK integ-runner.
 
 ---
 
-##### `github`<sup>Optional</sup> <a name="github" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.github"></a>
+##### `github`<sup>Optional</sup> <a name="github" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.github"></a>
 
 ```typescript
 public readonly github: boolean;
@@ -7576,7 +7576,7 @@ Enabled by default for root projects. Disabled for non-root projects.
 
 ---
 
-##### `githubOptions`<sup>Optional</sup> <a name="githubOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.githubOptions"></a>
+##### `githubOptions`<sup>Optional</sup> <a name="githubOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.githubOptions"></a>
 
 ```typescript
 public readonly githubOptions: GitHubOptions;
@@ -7589,7 +7589,7 @@ Options for GitHub integration.
 
 ---
 
-##### `gitignore`<sup>Optional</sup> <a name="gitignore" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitignore"></a>
+##### `gitignore`<sup>Optional</sup> <a name="gitignore" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitignore"></a>
 
 ```typescript
 public readonly gitignore: string[];
@@ -7601,7 +7601,7 @@ Additional entries to .gitignore.
 
 ---
 
-##### `gitIgnoreOptions`<sup>Optional</sup> <a name="gitIgnoreOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitIgnoreOptions"></a>
+##### `gitIgnoreOptions`<sup>Optional</sup> <a name="gitIgnoreOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitIgnoreOptions"></a>
 
 ```typescript
 public readonly gitIgnoreOptions: IgnoreFileOptions;
@@ -7613,7 +7613,7 @@ Configuration options for .gitignore file.
 
 ---
 
-##### `gitOptions`<sup>Optional</sup> <a name="gitOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitOptions"></a>
+##### `gitOptions`<sup>Optional</sup> <a name="gitOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitOptions"></a>
 
 ```typescript
 public readonly gitOptions: GitOptions;
@@ -7625,7 +7625,7 @@ Configuration options for git.
 
 ---
 
-##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.gitpod"></a>
+##### `gitpod`<sup>Optional</sup> <a name="gitpod" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitpod"></a>
 
 ```typescript
 public readonly gitpod: boolean;
@@ -7638,7 +7638,7 @@ Add a Gitpod development environment.
 
 ---
 
-##### `homepage`<sup>Optional</sup> <a name="homepage" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.homepage"></a>
+##### `homepage`<sup>Optional</sup> <a name="homepage" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.homepage"></a>
 
 ```typescript
 public readonly homepage: string;
@@ -7650,7 +7650,7 @@ Package's Homepage / Website.
 
 ---
 
-##### `integrationTestAutoDiscover`<sup>Optional</sup> <a name="integrationTestAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.integrationTestAutoDiscover"></a>
+##### `integrationTestAutoDiscover`<sup>Optional</sup> <a name="integrationTestAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.integrationTestAutoDiscover"></a>
 
 ```typescript
 public readonly integrationTestAutoDiscover: boolean;
@@ -7663,7 +7663,7 @@ Automatically discovers and creates integration tests for each `.integ.ts` file 
 
 ---
 
-##### `jsiiReleaseVersion`<sup>Optional</sup> <a name="jsiiReleaseVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.jsiiReleaseVersion"></a>
+##### `jsiiReleaseVersion`<sup>Optional</sup> <a name="jsiiReleaseVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.jsiiReleaseVersion"></a>
 
 ```typescript
 public readonly jsiiReleaseVersion: string;
@@ -7676,7 +7676,7 @@ Version requirement of `publib` which is used to publish modules to npm.
 
 ---
 
-##### `jsiiVersion`<sup>Optional</sup> <a name="jsiiVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.jsiiVersion"></a>
+##### `jsiiVersion`<sup>Optional</sup> <a name="jsiiVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.jsiiVersion"></a>
 
 ```typescript
 public readonly jsiiVersion: string;
@@ -7696,7 +7696,7 @@ and should remain on the same minor, so we recommend using a `~` dependency
 
 ---
 
-##### `keywords`<sup>Optional</sup> <a name="keywords" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.keywords"></a>
+##### `keywords`<sup>Optional</sup> <a name="keywords" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.keywords"></a>
 
 ```typescript
 public readonly keywords: string[];
@@ -7708,7 +7708,7 @@ Keywords to include in `package.json`.
 
 ---
 
-##### `lambdaAutoDiscover`<sup>Optional</sup> <a name="lambdaAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.lambdaAutoDiscover"></a>
+##### `lambdaAutoDiscover`<sup>Optional</sup> <a name="lambdaAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.lambdaAutoDiscover"></a>
 
 ```typescript
 public readonly lambdaAutoDiscover: boolean;
@@ -7721,7 +7721,7 @@ Automatically adds an `aws_lambda.Function` for each `.lambda.ts` handler in you
 
 ---
 
-##### `lambdaExtensionAutoDiscover`<sup>Optional</sup> <a name="lambdaExtensionAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.lambdaExtensionAutoDiscover"></a>
+##### `lambdaExtensionAutoDiscover`<sup>Optional</sup> <a name="lambdaExtensionAutoDiscover" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.lambdaExtensionAutoDiscover"></a>
 
 ```typescript
 public readonly lambdaExtensionAutoDiscover: boolean;
@@ -7734,7 +7734,7 @@ Automatically adds an `awscdk.LambdaExtension` for each `.lambda-extension.ts` e
 
 ---
 
-##### `lambdaOptions`<sup>Optional</sup> <a name="lambdaOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.lambdaOptions"></a>
+##### `lambdaOptions`<sup>Optional</sup> <a name="lambdaOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.lambdaOptions"></a>
 
 ```typescript
 public readonly lambdaOptions: LambdaFunctionCommonOptions;
@@ -7747,7 +7747,7 @@ Common options for all AWS Lambda functions.
 
 ---
 
-##### `libdir`<sup>Optional</sup> <a name="libdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.libdir"></a>
+##### `libdir`<sup>Optional</sup> <a name="libdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.libdir"></a>
 
 ```typescript
 public readonly libdir: string;
@@ -7760,7 +7760,7 @@ Typescript  artifacts output directory.
 
 ---
 
-##### `license`<sup>Optional</sup> <a name="license" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.license"></a>
+##### `license`<sup>Optional</sup> <a name="license" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.license"></a>
 
 ```typescript
 public readonly license: string;
@@ -7776,7 +7776,7 @@ Use the `licensed` option if you want to no license to be specified.
 
 ---
 
-##### `licensed`<sup>Optional</sup> <a name="licensed" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.licensed"></a>
+##### `licensed`<sup>Optional</sup> <a name="licensed" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.licensed"></a>
 
 ```typescript
 public readonly licensed: boolean;
@@ -7789,7 +7789,7 @@ Indicates if a license should be added.
 
 ---
 
-##### `logging`<sup>Optional</sup> <a name="logging" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.logging"></a>
+##### `logging`<sup>Optional</sup> <a name="logging" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.logging"></a>
 
 ```typescript
 public readonly logging: LoggerOptions;
@@ -7802,7 +7802,7 @@ Configure logging options such as verbosity.
 
 ---
 
-##### `majorVersion`<sup>Optional</sup> <a name="majorVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.majorVersion"></a>
+##### `majorVersion`<sup>Optional</sup> <a name="majorVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.majorVersion"></a>
 
 ```typescript
 public readonly majorVersion: number;
@@ -7818,7 +7818,7 @@ If not specified, we bump the global latest version.
 
 ---
 
-##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.maxNodeVersion"></a>
+##### `maxNodeVersion`<sup>Optional</sup> <a name="maxNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.maxNodeVersion"></a>
 
 ```typescript
 public readonly maxNodeVersion: string;
@@ -7838,7 +7838,7 @@ Consider this option only if your package is known to not function with newer ve
 
 ---
 
-##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.minMajorVersion"></a>
+##### `minMajorVersion`<sup>Optional</sup> <a name="minMajorVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.minMajorVersion"></a>
 
 ```typescript
 public readonly minMajorVersion: number;
@@ -7856,7 +7856,7 @@ Can not be set together with `majorVersion`.
 
 ---
 
-##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.minNodeVersion"></a>
+##### `minNodeVersion`<sup>Optional</sup> <a name="minNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.minNodeVersion"></a>
 
 ```typescript
 public readonly minNodeVersion: string;
@@ -7880,7 +7880,7 @@ To change the node version of your CI/CD workflows, use `workflowNodeVersion`.
 
 ---
 
-##### `mise`<sup>Optional</sup> <a name="mise" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.mise"></a>
+##### `mise`<sup>Optional</sup> <a name="mise" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.mise"></a>
 
 ```typescript
 public readonly mise: boolean;
@@ -7893,7 +7893,7 @@ Create mise.toml with project Node.js version.
 
 ---
 
-##### `nextVersionCommand`<sup>Optional</sup> <a name="nextVersionCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.nextVersionCommand"></a>
+##### `nextVersionCommand`<sup>Optional</sup> <a name="nextVersionCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.nextVersionCommand"></a>
 
 ```typescript
 public readonly nextVersionCommand: string;
@@ -7925,7 +7925,7 @@ script can be used to achieve the effects of `minMajorVersion`.
 
 ---
 
-##### `npmAccess`<sup>Optional</sup> <a name="npmAccess" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmAccess"></a>
+##### `npmAccess`<sup>Optional</sup> <a name="npmAccess" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmAccess"></a>
 
 ```typescript
 public readonly npmAccess: NpmAccess;
@@ -7938,7 +7938,7 @@ Access level of the npm package.
 
 ---
 
-##### `npmDistTag`<sup>Optional</sup> <a name="npmDistTag" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmDistTag"></a>
+##### `npmDistTag`<sup>Optional</sup> <a name="npmDistTag" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmDistTag"></a>
 
 ```typescript
 public readonly npmDistTag: string;
@@ -7954,7 +7954,7 @@ for each branch.
 
 ---
 
-##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmignoreEnabled"></a>
+##### `npmignoreEnabled`<sup>Optional</sup> <a name="npmignoreEnabled" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmignoreEnabled"></a>
 
 ```typescript
 public readonly npmignoreEnabled: boolean;
@@ -7967,7 +7967,7 @@ Defines an .npmignore file. Normally this is only needed for libraries that are 
 
 ---
 
-##### `npmIgnoreOptions`<sup>Optional</sup> <a name="npmIgnoreOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmIgnoreOptions"></a>
+##### `npmIgnoreOptions`<sup>Optional</sup> <a name="npmIgnoreOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmIgnoreOptions"></a>
 
 ```typescript
 public readonly npmIgnoreOptions: IgnoreFileOptions;
@@ -7979,7 +7979,7 @@ Configuration options for .npmignore file.
 
 ---
 
-##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmProvenance"></a>
+##### `npmProvenance`<sup>Optional</sup> <a name="npmProvenance" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmProvenance"></a>
 
 ```typescript
 public readonly npmProvenance: boolean;
@@ -7998,7 +7998,7 @@ which is using npm internally and supports provenance statements independently o
 
 ---
 
-##### `npmRegistryUrl`<sup>Optional</sup> <a name="npmRegistryUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmRegistryUrl"></a>
+##### `npmRegistryUrl`<sup>Optional</sup> <a name="npmRegistryUrl" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmRegistryUrl"></a>
 
 ```typescript
 public readonly npmRegistryUrl: string;
@@ -8013,7 +8013,7 @@ Must be a URL (e.g. start with "https://" or "http://")
 
 ---
 
-##### `npmTokenSecret`<sup>Optional</sup> <a name="npmTokenSecret" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmTokenSecret"></a>
+##### `npmTokenSecret`<sup>Optional</sup> <a name="npmTokenSecret" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmTokenSecret"></a>
 
 ```typescript
 public readonly npmTokenSecret: string;
@@ -8026,7 +8026,7 @@ GitHub secret which contains the NPM token to use when publishing packages.
 
 ---
 
-##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.npmTrustedPublishing"></a>
+##### `npmTrustedPublishing`<sup>Optional</sup> <a name="npmTrustedPublishing" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmTrustedPublishing"></a>
 
 ```typescript
 public readonly npmTrustedPublishing: boolean;
@@ -8039,7 +8039,7 @@ Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on
 
 ---
 
-##### `outdir`<sup>Optional</sup> <a name="outdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.outdir"></a>
+##### `outdir`<sup>Optional</sup> <a name="outdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.outdir"></a>
 
 ```typescript
 public readonly outdir: string;
@@ -8056,7 +8056,7 @@ subprojects.
 
 ---
 
-##### `package`<sup>Optional</sup> <a name="package" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.package"></a>
+##### `package`<sup>Optional</sup> <a name="package" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.package"></a>
 
 ```typescript
 public readonly package: boolean;
@@ -8069,7 +8069,7 @@ Defines a `package` task that will produce an npm tarball under the artifacts di
 
 ---
 
-##### `packageManager`<sup>Optional</sup> <a name="packageManager" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.packageManager"></a>
+##### `packageManager`<sup>Optional</sup> <a name="packageManager" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.packageManager"></a>
 
 ```typescript
 public readonly packageManager: NodePackageManager;
@@ -8082,7 +8082,7 @@ The Node Package Manager used to execute scripts.
 
 ---
 
-##### `packageName`<sup>Optional</sup> <a name="packageName" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.packageName"></a>
+##### `packageName`<sup>Optional</sup> <a name="packageName" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.packageName"></a>
 
 ```typescript
 public readonly packageName: string;
@@ -8095,7 +8095,7 @@ The "name" in package.json.
 
 ---
 
-##### `parent`<sup>Optional</sup> <a name="parent" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.parent"></a>
+##### `parent`<sup>Optional</sup> <a name="parent" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.parent"></a>
 
 ```typescript
 public readonly parent: Project;
@@ -8107,7 +8107,7 @@ The parent project, if this project is part of a bigger project.
 
 ---
 
-##### `peerDependencyOptions`<sup>Optional</sup> <a name="peerDependencyOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.peerDependencyOptions"></a>
+##### `peerDependencyOptions`<sup>Optional</sup> <a name="peerDependencyOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDependencyOptions"></a>
 
 ```typescript
 public readonly peerDependencyOptions: PeerDependencyOptions;
@@ -8119,7 +8119,7 @@ Options for `peerDeps`.
 
 ---
 
-##### `peerDeps`<sup>Optional</sup> <a name="peerDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.peerDeps"></a>
+##### `peerDeps`<sup>Optional</sup> <a name="peerDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDeps"></a>
 
 ```typescript
 public readonly peerDeps: string[];
@@ -8146,7 +8146,7 @@ test your module against the lowest peer version required.
 
 ---
 
-##### `pnpmVersion`<sup>Optional</sup> <a name="pnpmVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.pnpmVersion"></a>
+##### `pnpmVersion`<sup>Optional</sup> <a name="pnpmVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pnpmVersion"></a>
 
 ```typescript
 public readonly pnpmVersion: string;
@@ -8159,7 +8159,7 @@ The version of PNPM to use if using PNPM as a package manager.
 
 ---
 
-##### `postBuildSteps`<sup>Optional</sup> <a name="postBuildSteps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.postBuildSteps"></a>
+##### `postBuildSteps`<sup>Optional</sup> <a name="postBuildSteps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.postBuildSteps"></a>
 
 ```typescript
 public readonly postBuildSteps: JobStep[];
@@ -8172,7 +8172,7 @@ Steps to execute after build as part of the release workflow.
 
 ---
 
-##### `prerelease`<sup>Optional</sup> <a name="prerelease" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.prerelease"></a>
+##### `prerelease`<sup>Optional</sup> <a name="prerelease" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.prerelease"></a>
 
 ```typescript
 public readonly prerelease: string;
@@ -8185,7 +8185,7 @@ Bump versions from the default branch as pre-releases (e.g. "beta", "alpha", "pr
 
 ---
 
-##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenCommand"></a>
+##### `projenCommand`<sup>Optional</sup> <a name="projenCommand" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenCommand"></a>
 
 ```typescript
 public readonly projenCommand: string;
@@ -8200,7 +8200,7 @@ Can be used to customize in special environments.
 
 ---
 
-##### `projenCredentials`<sup>Optional</sup> <a name="projenCredentials" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenCredentials"></a>
+##### `projenCredentials`<sup>Optional</sup> <a name="projenCredentials" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenCredentials"></a>
 
 ```typescript
 public readonly projenCredentials: GithubCredentials;
@@ -8213,7 +8213,7 @@ Choose a method of providing GitHub API access for projen workflows.
 
 ---
 
-##### `projenDevDependency`<sup>Optional</sup> <a name="projenDevDependency" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenDevDependency"></a>
+##### `projenDevDependency`<sup>Optional</sup> <a name="projenDevDependency" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenDevDependency"></a>
 
 ```typescript
 public readonly projenDevDependency: boolean;
@@ -8226,7 +8226,7 @@ Indicates of "projen" should be installed as a devDependency.
 
 ---
 
-##### `projenrcJs`<sup>Optional</sup> <a name="projenrcJs" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJs"></a>
+##### `projenrcJs`<sup>Optional</sup> <a name="projenrcJs" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJs"></a>
 
 ```typescript
 public readonly projenrcJs: boolean;
@@ -8239,7 +8239,7 @@ Generate (once) .projenrc.js (in JavaScript). Set to `false` in order to disable
 
 ---
 
-##### `projenrcJson`<sup>Optional</sup> <a name="projenrcJson" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJson"></a>
+##### `projenrcJson`<sup>Optional</sup> <a name="projenrcJson" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJson"></a>
 
 ```typescript
 public readonly projenrcJson: boolean;
@@ -8252,7 +8252,7 @@ Generate (once) .projenrc.json (in JSON). Set to `false` in order to disable .pr
 
 ---
 
-##### `projenrcJsonOptions`<sup>Optional</sup> <a name="projenrcJsonOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJsonOptions"></a>
+##### `projenrcJsonOptions`<sup>Optional</sup> <a name="projenrcJsonOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJsonOptions"></a>
 
 ```typescript
 public readonly projenrcJsonOptions: ProjenrcJsonOptions;
@@ -8265,7 +8265,7 @@ Options for .projenrc.json.
 
 ---
 
-##### `projenrcJsOptions`<sup>Optional</sup> <a name="projenrcJsOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcJsOptions"></a>
+##### `projenrcJsOptions`<sup>Optional</sup> <a name="projenrcJsOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcJsOptions"></a>
 
 ```typescript
 public readonly projenrcJsOptions: ProjenrcOptions;
@@ -8278,7 +8278,7 @@ Options for .projenrc.js.
 
 ---
 
-##### `projenrcTs`<sup>Optional</sup> <a name="projenrcTs" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcTs"></a>
+##### `projenrcTs`<sup>Optional</sup> <a name="projenrcTs" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcTs"></a>
 
 ```typescript
 public readonly projenrcTs: boolean;
@@ -8291,7 +8291,7 @@ Use TypeScript for your projenrc file (`.projenrc.ts`).
 
 ---
 
-##### `projenrcTsOptions`<sup>Optional</sup> <a name="projenrcTsOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenrcTsOptions"></a>
+##### `projenrcTsOptions`<sup>Optional</sup> <a name="projenrcTsOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenrcTsOptions"></a>
 
 ```typescript
 public readonly projenrcTsOptions: ProjenrcOptions;
@@ -8303,7 +8303,7 @@ Options for .projenrc.ts.
 
 ---
 
-##### `projenVersion`<sup>Optional</sup> <a name="projenVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.projenVersion"></a>
+##### `projenVersion`<sup>Optional</sup> <a name="projenVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.projenVersion"></a>
 
 ```typescript
 public readonly projenVersion: string;
@@ -8316,7 +8316,7 @@ Version of projen to install.
 
 ---
 
-##### `publishDryRun`<sup>Optional</sup> <a name="publishDryRun" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishDryRun"></a>
+##### `publishDryRun`<sup>Optional</sup> <a name="publishDryRun" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishDryRun"></a>
 
 ```typescript
 public readonly publishDryRun: boolean;
@@ -8329,7 +8329,7 @@ Instead of actually publishing to package managers, just print the publishing co
 
 ---
 
-##### `publishTasks`<sup>Optional</sup> <a name="publishTasks" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishTasks"></a>
+##### `publishTasks`<sup>Optional</sup> <a name="publishTasks" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishTasks"></a>
 
 ```typescript
 public readonly publishTasks: boolean;
@@ -8345,7 +8345,7 @@ in order to create a publishing task for each publishing activity.
 
 ---
 
-##### `publishToGo`<sup>Optional</sup> <a name="publishToGo" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToGo"></a>
+##### `publishToGo`<sup>Optional</sup> <a name="publishToGo" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToGo"></a>
 
 ```typescript
 public readonly publishToGo: JsiiGoTarget;
@@ -8358,7 +8358,7 @@ Publish Go bindings to a git repository.
 
 ---
 
-##### `publishToMaven`<sup>Optional</sup> <a name="publishToMaven" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToMaven"></a>
+##### `publishToMaven`<sup>Optional</sup> <a name="publishToMaven" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToMaven"></a>
 
 ```typescript
 public readonly publishToMaven: JsiiJavaTarget;
@@ -8371,7 +8371,7 @@ Publish to maven.
 
 ---
 
-##### `publishToNuget`<sup>Optional</sup> <a name="publishToNuget" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToNuget"></a>
+##### `publishToNuget`<sup>Optional</sup> <a name="publishToNuget" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToNuget"></a>
 
 ```typescript
 public readonly publishToNuget: JsiiDotNetTarget;
@@ -8384,7 +8384,7 @@ Publish to NuGet.
 
 ---
 
-##### `publishToPypi`<sup>Optional</sup> <a name="publishToPypi" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.publishToPypi"></a>
+##### `publishToPypi`<sup>Optional</sup> <a name="publishToPypi" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.publishToPypi"></a>
 
 ```typescript
 public readonly publishToPypi: JsiiPythonTarget;
@@ -8397,7 +8397,7 @@ Publish to pypi.
 
 ---
 
-##### `pullRequestTemplate`<sup>Optional</sup> <a name="pullRequestTemplate" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.pullRequestTemplate"></a>
+##### `pullRequestTemplate`<sup>Optional</sup> <a name="pullRequestTemplate" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pullRequestTemplate"></a>
 
 ```typescript
 public readonly pullRequestTemplate: boolean;
@@ -8410,7 +8410,7 @@ Include a GitHub pull request template.
 
 ---
 
-##### `pullRequestTemplateContents`<sup>Optional</sup> <a name="pullRequestTemplateContents" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.pullRequestTemplateContents"></a>
+##### `pullRequestTemplateContents`<sup>Optional</sup> <a name="pullRequestTemplateContents" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pullRequestTemplateContents"></a>
 
 ```typescript
 public readonly pullRequestTemplateContents: string[];
@@ -8423,7 +8423,7 @@ The contents of the pull request template.
 
 ---
 
-##### `readme`<sup>Optional</sup> <a name="readme" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.readme"></a>
+##### `readme`<sup>Optional</sup> <a name="readme" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.readme"></a>
 
 ```typescript
 public readonly readme: SampleReadmeProps;
@@ -8436,7 +8436,7 @@ The README setup.
 
 ---
 
-##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releasableCommits"></a>
+##### `releasableCommits`<sup>Optional</sup> <a name="releasableCommits" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releasableCommits"></a>
 
 ```typescript
 public readonly releasableCommits: ReleasableCommits;
@@ -8449,7 +8449,7 @@ Find commits that should be considered releasable Used to decide if a release is
 
 ---
 
-##### `release`<sup>Optional</sup> <a name="release" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.release"></a>
+##### `release`<sup>Optional</sup> <a name="release" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.release"></a>
 
 ```typescript
 public readonly release: boolean;
@@ -8462,7 +8462,7 @@ Add release management to this project.
 
 ---
 
-##### `releaseBranches`<sup>Optional</sup> <a name="releaseBranches" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseBranches"></a>
+##### `releaseBranches`<sup>Optional</sup> <a name="releaseBranches" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseBranches"></a>
 
 ```typescript
 public readonly releaseBranches: {[ key: string ]: BranchOptions};
@@ -8482,7 +8482,7 @@ be provided for the default branch.
 
 ---
 
-##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseEnvironment"></a>
+##### `releaseEnvironment`<sup>Optional</sup> <a name="releaseEnvironment" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseEnvironment"></a>
 
 ```typescript
 public readonly releaseEnvironment: string;
@@ -8501,7 +8501,7 @@ on a per artifact basis.
 
 ---
 
-##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseFailureIssue"></a>
+##### `releaseFailureIssue`<sup>Optional</sup> <a name="releaseFailureIssue" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseFailureIssue"></a>
 
 ```typescript
 public readonly releaseFailureIssue: boolean;
@@ -8514,7 +8514,7 @@ Create a github issue on every failed publishing task.
 
 ---
 
-##### `releaseFailureIssueLabel`<sup>Optional</sup> <a name="releaseFailureIssueLabel" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseFailureIssueLabel"></a>
+##### `releaseFailureIssueLabel`<sup>Optional</sup> <a name="releaseFailureIssueLabel" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseFailureIssueLabel"></a>
 
 ```typescript
 public readonly releaseFailureIssueLabel: string;
@@ -8529,7 +8529,7 @@ Only applies if `releaseFailureIssue` is true.
 
 ---
 
-##### `releaseTagPrefix`<sup>Optional</sup> <a name="releaseTagPrefix" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseTagPrefix"></a>
+##### `releaseTagPrefix`<sup>Optional</sup> <a name="releaseTagPrefix" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseTagPrefix"></a>
 
 ```typescript
 public readonly releaseTagPrefix: string;
@@ -8548,7 +8548,7 @@ with the new prefix.
 
 ---
 
-##### `releaseToNpm`<sup>Optional</sup> <a name="releaseToNpm" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseToNpm"></a>
+##### `releaseToNpm`<sup>Optional</sup> <a name="releaseToNpm" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseToNpm"></a>
 
 ```typescript
 public readonly releaseToNpm: boolean;
@@ -8561,7 +8561,7 @@ Automatically release to npm when new versions are introduced.
 
 ---
 
-##### `releaseTrigger`<sup>Optional</sup> <a name="releaseTrigger" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseTrigger"></a>
+##### `releaseTrigger`<sup>Optional</sup> <a name="releaseTrigger" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseTrigger"></a>
 
 ```typescript
 public readonly releaseTrigger: ReleaseTrigger;
@@ -8574,7 +8574,7 @@ The release trigger to use.
 
 ---
 
-##### `releaseWorkflowEnv`<sup>Optional</sup> <a name="releaseWorkflowEnv" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseWorkflowEnv"></a>
+##### `releaseWorkflowEnv`<sup>Optional</sup> <a name="releaseWorkflowEnv" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseWorkflowEnv"></a>
 
 ```typescript
 public readonly releaseWorkflowEnv: {[ key: string ]: string};
@@ -8587,7 +8587,7 @@ Build environment variables for release workflows.
 
 ---
 
-##### `releaseWorkflowName`<sup>Optional</sup> <a name="releaseWorkflowName" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseWorkflowName"></a>
+##### `releaseWorkflowName`<sup>Optional</sup> <a name="releaseWorkflowName" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseWorkflowName"></a>
 
 ```typescript
 public readonly releaseWorkflowName: string;
@@ -8600,7 +8600,7 @@ The name of the default release workflow.
 
 ---
 
-##### `releaseWorkflowSetupSteps`<sup>Optional</sup> <a name="releaseWorkflowSetupSteps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.releaseWorkflowSetupSteps"></a>
+##### `releaseWorkflowSetupSteps`<sup>Optional</sup> <a name="releaseWorkflowSetupSteps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.releaseWorkflowSetupSteps"></a>
 
 ```typescript
 public readonly releaseWorkflowSetupSteps: JobStep[];
@@ -8612,7 +8612,7 @@ A set of workflow steps to execute in order to setup the workflow container.
 
 ---
 
-##### `renovatebot`<sup>Optional</sup> <a name="renovatebot" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.renovatebot"></a>
+##### `renovatebot`<sup>Optional</sup> <a name="renovatebot" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.renovatebot"></a>
 
 ```typescript
 public readonly renovatebot: boolean;
@@ -8625,7 +8625,7 @@ Use renovatebot to handle dependency upgrades.
 
 ---
 
-##### `renovatebotOptions`<sup>Optional</sup> <a name="renovatebotOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.renovatebotOptions"></a>
+##### `renovatebotOptions`<sup>Optional</sup> <a name="renovatebotOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.renovatebotOptions"></a>
 
 ```typescript
 public readonly renovatebotOptions: RenovatebotOptions;
@@ -8638,7 +8638,7 @@ Options for renovatebot.
 
 ---
 
-##### `repository`<sup>Optional</sup> <a name="repository" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.repository"></a>
+##### `repository`<sup>Optional</sup> <a name="repository" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.repository"></a>
 
 ```typescript
 public readonly repository: string;
@@ -8652,7 +8652,7 @@ See https://classic.yarnpkg.com/en/docs/package-json/#toc-repository
 
 ---
 
-##### `repositoryDirectory`<sup>Optional</sup> <a name="repositoryDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.repositoryDirectory"></a>
+##### `repositoryDirectory`<sup>Optional</sup> <a name="repositoryDirectory" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.repositoryDirectory"></a>
 
 ```typescript
 public readonly repositoryDirectory: string;
@@ -8664,7 +8664,7 @@ If the package.json for your package is not in the root directory (for example i
 
 ---
 
-##### `rootdir`<sup>Optional</sup> <a name="rootdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.rootdir"></a>
+##### `rootdir`<sup>Optional</sup> <a name="rootdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.rootdir"></a>
 
 ```typescript
 public readonly rootdir: string;
@@ -8675,7 +8675,7 @@ public readonly rootdir: string;
 
 ---
 
-##### `scopedPackagesOptions`<sup>Optional</sup> <a name="scopedPackagesOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.scopedPackagesOptions"></a>
+##### `scopedPackagesOptions`<sup>Optional</sup> <a name="scopedPackagesOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.scopedPackagesOptions"></a>
 
 ```typescript
 public readonly scopedPackagesOptions: ScopedPackagesOptions[];
@@ -8688,7 +8688,7 @@ Options for privately hosted scoped packages.
 
 ---
 
-##### `srcdir`<sup>Optional</sup> <a name="srcdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.srcdir"></a>
+##### `srcdir`<sup>Optional</sup> <a name="srcdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.srcdir"></a>
 
 ```typescript
 public readonly srcdir: string;
@@ -8701,7 +8701,7 @@ Typescript sources directory.
 
 ---
 
-##### `stability`<sup>Optional</sup> <a name="stability" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.stability"></a>
+##### `stability`<sup>Optional</sup> <a name="stability" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.stability"></a>
 
 ```typescript
 public readonly stability: string;
@@ -8713,7 +8713,7 @@ Package's Stability.
 
 ---
 
-##### `stale`<sup>Optional</sup> <a name="stale" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.stale"></a>
+##### `stale`<sup>Optional</sup> <a name="stale" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.stale"></a>
 
 ```typescript
 public readonly stale: boolean;
@@ -8728,7 +8728,7 @@ See `staleOptions` for options.
 
 ---
 
-##### `staleOptions`<sup>Optional</sup> <a name="staleOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.staleOptions"></a>
+##### `staleOptions`<sup>Optional</sup> <a name="staleOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.staleOptions"></a>
 
 ```typescript
 public readonly staleOptions: StaleOptions;
@@ -8743,7 +8743,7 @@ To disable set `stale` to `false`.
 
 ---
 
-##### `testdir`<sup>Optional</sup> <a name="testdir" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.testdir"></a>
+##### `testdir`<sup>Optional</sup> <a name="testdir" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.testdir"></a>
 
 ```typescript
 public readonly testdir: string;
@@ -8762,7 +8762,7 @@ compile the code in-memory.
 
 ---
 
-##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.tsconfig"></a>
+##### `tsconfig`<sup>Optional</sup> <a name="tsconfig" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfig"></a>
 
 ```typescript
 public readonly tsconfig: TypescriptConfigOptions;
@@ -8775,7 +8775,7 @@ Custom TSConfig.
 
 ---
 
-##### `tsconfigDev`<sup>Optional</sup> <a name="tsconfigDev" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.tsconfigDev"></a>
+##### `tsconfigDev`<sup>Optional</sup> <a name="tsconfigDev" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDev"></a>
 
 ```typescript
 public readonly tsconfigDev: TypescriptConfigOptions;
@@ -8788,7 +8788,7 @@ Custom tsconfig options for the development tsconfig.json file (used for testing
 
 ---
 
-##### `tsconfigDevFile`<sup>Optional</sup> <a name="tsconfigDevFile" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.tsconfigDevFile"></a>
+##### `tsconfigDevFile`<sup>Optional</sup> <a name="tsconfigDevFile" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDevFile"></a>
 
 ```typescript
 public readonly tsconfigDevFile: string;
@@ -8801,7 +8801,7 @@ The name of the development tsconfig.json file.
 
 ---
 
-##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.typescriptVersion"></a>
+##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typescriptVersion"></a>
 
 ```typescript
 public readonly typescriptVersion: string;
@@ -8817,7 +8817,7 @@ same minor, so we recommend using a `~` dependency (e.g. `~1.2.3`).
 
 ---
 
-##### `versionrcOptions`<sup>Optional</sup> <a name="versionrcOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.versionrcOptions"></a>
+##### `versionrcOptions`<sup>Optional</sup> <a name="versionrcOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.versionrcOptions"></a>
 
 ```typescript
 public readonly versionrcOptions: {[ key: string ]: any};
@@ -8832,7 +8832,7 @@ Given values either append to default configuration or overwrite values in it.
 
 ---
 
-##### `vitest`<sup>Optional</sup> <a name="vitest" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.vitest"></a>
+##### `vitest`<sup>Optional</sup> <a name="vitest" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitest"></a>
 
 ```typescript
 public readonly vitest: boolean;
@@ -8845,7 +8845,7 @@ Enable testing with Vitest.
 
 ---
 
-##### `vitestOptions`<sup>Optional</sup> <a name="vitestOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.vitestOptions"></a>
+##### `vitestOptions`<sup>Optional</sup> <a name="vitestOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vitestOptions"></a>
 
 ```typescript
 public readonly vitestOptions: VitestOptions;
@@ -8858,7 +8858,7 @@ The Vitest configuration (when enabled).
 
 ---
 
-##### `vscode`<sup>Optional</sup> <a name="vscode" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.vscode"></a>
+##### `vscode`<sup>Optional</sup> <a name="vscode" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.vscode"></a>
 
 ```typescript
 public readonly vscode: boolean;
@@ -8873,7 +8873,7 @@ Enabled by default for root projects. Disabled for non-root projects.
 
 ---
 
-##### `workflowBootstrapSteps`<sup>Optional</sup> <a name="workflowBootstrapSteps" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowBootstrapSteps"></a>
+##### `workflowBootstrapSteps`<sup>Optional</sup> <a name="workflowBootstrapSteps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowBootstrapSteps"></a>
 
 ```typescript
 public readonly workflowBootstrapSteps: JobStep[];
@@ -8886,7 +8886,7 @@ Workflow steps to use in order to bootstrap this repo.
 
 ---
 
-##### `workflowContainerImage`<sup>Optional</sup> <a name="workflowContainerImage" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowContainerImage"></a>
+##### `workflowContainerImage`<sup>Optional</sup> <a name="workflowContainerImage" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowContainerImage"></a>
 
 ```typescript
 public readonly workflowContainerImage: string;
@@ -8899,7 +8899,7 @@ Container image to use for GitHub workflows.
 
 ---
 
-##### `workflowGitIdentity`<sup>Optional</sup> <a name="workflowGitIdentity" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowGitIdentity"></a>
+##### `workflowGitIdentity`<sup>Optional</sup> <a name="workflowGitIdentity" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowGitIdentity"></a>
 
 ```typescript
 public readonly workflowGitIdentity: GitIdentity;
@@ -8912,7 +8912,7 @@ The git identity to use in workflows.
 
 ---
 
-##### `workflowNodeVersion`<sup>Optional</sup> <a name="workflowNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowNodeVersion"></a>
+##### `workflowNodeVersion`<sup>Optional</sup> <a name="workflowNodeVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowNodeVersion"></a>
 
 ```typescript
 public readonly workflowNodeVersion: string;
@@ -8927,7 +8927,7 @@ Always use this option if your GitHub Actions workflows require a specific to ru
 
 ---
 
-##### `workflowPackageCache`<sup>Optional</sup> <a name="workflowPackageCache" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowPackageCache"></a>
+##### `workflowPackageCache`<sup>Optional</sup> <a name="workflowPackageCache" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowPackageCache"></a>
 
 ```typescript
 public readonly workflowPackageCache: boolean;
@@ -8940,7 +8940,7 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowRunsOn"></a>
+##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOn"></a>
 
 ```typescript
 public readonly workflowRunsOn: string[];
@@ -8953,7 +8953,7 @@ Github Runner selection labels.
 
 ---
 
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.workflowRunsOnGroup"></a>
+##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOnGroup"></a>
 
 ```typescript
 public readonly workflowRunsOnGroup: GroupRunnerOptions;
@@ -8965,7 +8965,7 @@ Github Runner Group selection options.
 
 ---
 
-##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructProjectOptions.property.yarnBerryOptions"></a>
+##### `yarnBerryOptions`<sup>Optional</sup> <a name="yarnBerryOptions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.yarnBerryOptions"></a>
 
 ```typescript
 public readonly yarnBerryOptions: YarnBerryOptions;

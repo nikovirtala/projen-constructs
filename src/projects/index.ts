@@ -1,4 +1,4 @@
-export * from "./awscdk-app";
-export * from "./awscdk-construct";
+export * from "./awscdk-construct-library";
+export * from "./awscdk-typescript-app";
 export * from "./jsii";
 export * from "./typescript";

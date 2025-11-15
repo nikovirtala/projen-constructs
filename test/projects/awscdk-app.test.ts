@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { AwsCdkTypeScriptAppProject } from "../../src/projects/awscdk-app";
+import { AwsCdkTypeScriptAppProject } from "../../src/projects/awscdk-typescript-app";
 
 describe("AwsCdkTypeScriptAppProject", () => {
     it("applies default configuration", () => {

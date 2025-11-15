@@ -3,9 +3,9 @@ import type { awscdk, cdk, github, GitOptions, GroupRunnerOptions, IgnoreFileOpt
 import type { VitestOptions } from '../';
 
 /**
- * AwsCdkConstructProjectOptions
+ * AwsCdkConstructLibraryProjectOptions
  */
-export interface AwsCdkConstructProjectOptions {
+export interface AwsCdkConstructLibraryProjectOptions {
   /**
    * Common options for all AWS Lambda functions.
    * @default - default options
