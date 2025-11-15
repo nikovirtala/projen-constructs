@@ -29,10 +29,14 @@
       "!.vscode/settings.json",
       "!Brewfile",
       "!mise.toml",
-      "!src/projects/awscdk-app-options.generated.ts",
       "!src/projects/awscdk-construct-library-options.generated.ts",
+      "!src/projects/awscdk-construct-library.generated.ts",
+      "!src/projects/awscdk-typescript-app-options.generated.ts",
+      "!src/projects/awscdk-typescript-app.generated.ts",
       "!src/projects/jsii-options.generated.ts",
+      "!src/projects/jsii.generated.ts",
       "!src/projects/typescript-options.generated.ts",
+      "!src/projects/typescript.generated.ts",
       "!tsconfig.dev.json",
       "!vitest.config.ts"
     ]

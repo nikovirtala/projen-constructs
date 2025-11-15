@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { TypeScriptProject } from "../../src/projects/typescript";
+import { TypeScriptProject } from "../../src/projects";
 
 describe("TypeScriptProject", () => {
     it("applies default configuration", () => {

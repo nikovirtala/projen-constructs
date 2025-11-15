@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { AwsCdkConstructLibraryProject } from "../../src/projects/awscdk-construct-library";
+import { AwsCdkConstructLibraryProject } from "../../src/projects";
 
 describe("AwsCdkConstructLibraryProject", () => {
     it("applies default configuration", () => {

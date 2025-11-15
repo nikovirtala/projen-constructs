@@ -2,6 +2,7 @@ import { PrimitiveType } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import { JsonPatch } from "projen";
 import { JsiiProject } from "./src/projects";
+import { ProjenProjectClass } from "./src/projen-project-class";
 
 const project = new JsiiProject({
     author: "Niko Virtala",
@@ -86,7 +87,7 @@ new ProjenStruct(project, {
 
 new ProjenStruct(project, {
     name: "AwsCdkTypeScriptAppProjectOptions",
-    filePath: "./src/projects/awscdk-app-options.generated.ts",
+    filePath: "./src/projects/awscdk-typescript-app-options.generated.ts",
     outputFileOptions: { readonly: true },
 })
     .mixin(Struct.fromFqn("projen.awscdk.AwsCdkTypeScriptAppOptions"))
@@ -103,6 +104,42 @@ new ProjenStruct(project, {
     .withoutDeprecated()
     .omit(...commonOmits)
     .add(...commonOptions);
+
+new ProjenProjectClass(project, {
+    name: "TypeScriptProject",
+    baseClass: "typescript.TypeScriptProject",
+    optionsInterface: "TypeScriptProjectOptions",
+    baseOptionsType: "typescript.TypeScriptProjectOptions",
+    defaultConfig: "typescriptProjectDefaultOptions",
+    filePath: "./src/projects/typescript.generated.ts",
+});
+
+new ProjenProjectClass(project, {
+    name: "JsiiProject",
+    baseClass: "cdk.JsiiProject",
+    optionsInterface: "JsiiProjectOptions",
+    baseOptionsType: "cdk.JsiiProjectOptions",
+    defaultConfig: "jsiiProjectDefaultOptions",
+    filePath: "./src/projects/jsii.generated.ts",
+});
+
+new ProjenProjectClass(project, {
+    name: "AwsCdkTypeScriptAppProject",
+    baseClass: "awscdk.AwsCdkTypeScriptApp",
+    optionsInterface: "AwsCdkTypeScriptAppProjectOptions",
+    baseOptionsType: "awscdk.AwsCdkTypeScriptAppOptions",
+    defaultConfig: "cdkAppDefaultOptions",
+    filePath: "./src/projects/awscdk-typescript-app.generated.ts",
+});
+
+new ProjenProjectClass(project, {
+    name: "AwsCdkConstructLibraryProject",
+    baseClass: "awscdk.AwsCdkConstructLibrary",
+    optionsInterface: "AwsCdkConstructLibraryProjectOptions",
+    baseOptionsType: "awscdk.AwsCdkConstructLibraryOptions",
+    defaultConfig: "cdkConstructDefaultOptions",
+    filePath: "./src/projects/awscdk-construct-library.generated.ts",
+});
 
 project.defaultTask?.spawn(
     project.addTask("bundle-vitest-define-config", {

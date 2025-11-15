@@ -1,6 +1,6 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { JsiiProject } from "../../src/projects/jsii";
+import { JsiiProject } from "../../src/projects";
 
 describe("JsiiProject", () => {
     it("applies default configuration", () => {
