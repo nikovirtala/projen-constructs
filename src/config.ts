@@ -157,7 +157,6 @@ const publishableProjectDefaultOptions = {
 
 const cdkDefaultVersionOptions = {
     cdkVersion: defaults.cdkVersion,
-    cdkVersionPinning: true,
     constructsVersion: defaults.constructsVersion,
 } satisfies Partial<awscdk.AwsCdkConstructLibraryOptions>;
 
