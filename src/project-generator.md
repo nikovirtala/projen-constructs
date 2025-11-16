@@ -1,37 +1,39 @@
-# ProjenProjectGenerator
+# Project generator
 
-A Projen component that generates project class implementations following the jsii-struct-builder pattern.
+## Problem
 
-## Overview
+Maintaining multiple Projen project classes with similar structure creates repetitive boilerplate code. Each project type (TypeScript, CDK, JSII) requires manual updates when adding components or changing configuration patterns.
 
-`ProjenProjectGenerator` automatically generates boilerplate project classes that extend Projen base classes with custom configuration. This eliminates manual maintenance of repetitive code across multiple project types.
+## Solution
+
+`ProjectGenerator` generates project class implementations automatically from configuration. The generator eliminates manual maintenance by creating classes that extend Projen base types with custom configuration and components.
+
+```mermaid
+graph TD
+    A[.projenrc.ts configuration] --> B[ProjectGenerator]
+    B --> C[TypeScriptClassRenderer]
+    C --> D[CodeBuffer]
+    D --> E[Generated class files]
+    E --> F[index.ts exports]
+```
 
 ## Architecture
 
-The implementation follows the jsii-struct-builder pattern with three main components:
+The generator uses three components:
 
-### 1. CodeBuffer
+**CodeBuffer** manages indentation during code generation:
+- `line(code)` adds a line of code
+- `open(code)` adds a line and increases indentation
+- `close(code)` decreases indentation and adds a line
+- `flush()` returns generated lines and resets the buffer
 
-Manages code generation with proper indentation:
-
-- `line(code)` - Add a line of code
-- `open(code)` - Add a line and increase indentation
-- `close(code)` - Decrease indentation and add a line
-- `flush()` - Return generated lines and reset
-
-### 2. TypeScriptClassRenderer
-
-Renders TypeScript class code:
-
+**TypeScriptClassRenderer** renders TypeScript class code:
 - Extracts and sorts imports (external packages first, then relative)
 - Generates type-only imports for interface files
 - Renders class with constructor pattern
 - Handles custom options extraction and default config application
 
-### 3. ProjenProjectGenerator (Component)
-
-Projen component that orchestrates generation:
-
+**ProjectGenerator** orchestrates generation as a Projen component:
 - Extends `Component` for lifecycle integration
 - Runs during `preSynthesize()` phase
 - Creates `TypeScriptClassFile` with generated content
@@ -39,7 +41,7 @@ Projen component that orchestrates generation:
 ## Usage
 
 ```typescript
-new ProjenProjectGenerator(project, {
+new ProjectGenerator(project, {
   name: "TypeScriptProject",
   baseClass: "typescript.TypeScriptProject",
   filePath: "./src/projects/typescript.generated.ts",
@@ -52,9 +54,9 @@ new ProjenProjectGenerator(project, {
 });
 ```
 
-## Generated Code Pattern
+## Generated code pattern
 
-Each generated class follows this pattern:
+Each generated class follows this structure:
 
 ```typescript
 import { baseModule } from "projen";
@@ -80,34 +82,29 @@ export class ClassName extends BaseClass {
 }
 ```
 
-## Benefits
+## Key features
 
-1. **Single Source of Truth**: All project classes defined in `.projenrc.ts`
-2. **Consistency**: Identical pattern across all project types
-3. **Maintainability**: Changes to the pattern update all classes automatically
-4. **Type Safety**: Full TypeScript support with proper imports
-5. **JSII Compatible**: Generates code that works with JSII compilation
+**Derived configuration**: Config names and paths derive from base class names, eliminating hardcoded mappings.
 
-## Key Features
+**Component-based**: Components are passed as class references, enabling dynamic instantiation.
 
-1. **Derived Configuration**: Config names and paths are derived from base class names, eliminating hardcoded mappings
-2. **Component-Based**: Components are passed as class references, enabling dynamic instantiation
-3. **Structured Defaults**: Default options follow the base class structure (`defaultOptions.typescript.TypeScriptProject`)
-4. **Type-Safe**: Uses `never` type for flexible component constructor signatures
+**Structured defaults**: Default options follow the base class structure (`defaultOptions.typescript.TypeScriptProject`).
+
+**Type-safe**: Uses `never` type for flexible component constructor signatures.
 
 ## Comparison with jsii-struct-builder
 
-| Feature  | jsii-struct-builder                  | ProjenProjectGenerator |
+| Feature  | jsii-struct-builder                  | ProjectGenerator |
 | -------- | ------------------------------------ | ---------------------- |
 | Purpose  | Generate interfaces                  | Generate classes       |
 | Input    | JSII specs                           | Configuration objects  |
 | Output   | TypeScript interfaces                | TypeScript classes     |
 | Pattern  | Builder pattern with transformations | Code generation        |
-| Use Case | Type definitions                     | Implementation code    |
+| Use case | Type definitions                     | Implementation code    |
 
 ## Integration
 
-The `index.ts` file directly exports from generated files:
+The `index.ts` file exports directly from generated files:
 
 ```typescript
 export * from "./awscdk-construct-library.generated";
@@ -115,5 +112,3 @@ export * from "./awscdk-typescript-app.generated";
 export * from "./jsii.generated";
 export * from "./typescript.generated";
 ```
-
-No intermediate wrapper files are needed, keeping the codebase clean and minimal.

@@ -1,8 +1,8 @@
 import { JsonPatch } from "projen";
 import { Mise } from "./src/components/mise";
 import { Vitest } from "./src/components/vitest";
+import { ProjectGenerator } from "./src/project-generator";
 import { JsiiProject } from "./src/projects";
-import { ProjenProjectGenerator } from "./src/projen-project-generator";
 
 const project = new JsiiProject({
     author: "Niko Virtala",
@@ -56,7 +56,7 @@ const projectOmits = [
     "tsJestOptions",
 ];
 
-new ProjenProjectGenerator(project, {
+new ProjectGenerator(project, {
     name: "TypeScriptProject",
     baseClass: "typescript.TypeScriptProject",
     filePath: "./src/projects/typescript.generated.ts",
@@ -64,7 +64,7 @@ new ProjenProjectGenerator(project, {
     omitOptions: projectOmits,
 });
 
-new ProjenProjectGenerator(project, {
+new ProjectGenerator(project, {
     name: "JsiiProject",
     baseClass: "cdk.JsiiProject",
     filePath: "./src/projects/jsii.generated.ts",
@@ -72,7 +72,7 @@ new ProjenProjectGenerator(project, {
     omitOptions: projectOmits,
 });
 
-new ProjenProjectGenerator(project, {
+new ProjectGenerator(project, {
     name: "AwsCdkTypeScriptAppProject",
     baseClass: "awscdk.AwsCdkTypeScriptApp",
     filePath: "./src/projects/awscdk-typescript-app.generated.ts",
@@ -80,7 +80,7 @@ new ProjenProjectGenerator(project, {
     omitOptions: projectOmits,
 });
 
-new ProjenProjectGenerator(project, {
+new ProjectGenerator(project, {
     name: "AwsCdkConstructLibraryProject",
     baseClass: "awscdk.AwsCdkConstructLibrary",
     filePath: "./src/projects/awscdk-construct-library.generated.ts",

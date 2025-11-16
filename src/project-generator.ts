@@ -65,14 +65,14 @@ interface ComponentConfig<T extends Component = Component> {
 }
 
 /**
- * Options for ProjenProjectGenerator component
+ * Options for ProjectGenerator component
  *
  * Configures the generation of a TypeScript project class that extends a Projen base class
  * with standard configuration and component integration.
  *
  * @example
  * ```typescript
- * new ProjenProjectGenerator(project, {
+ * new ProjectGenerator(project, {
  *   name: "TypeScriptProject",
  *   baseClass: "typescript.TypeScriptProject",
  *   filePath: "src/projects/typescript.generated.ts",
@@ -80,7 +80,7 @@ interface ComponentConfig<T extends Component = Component> {
  * });
  * ```
  */
-export interface ProjenProjectGeneratorOptions<M extends ProjenModule = ProjenModule> extends SourceCodeOptions {
+export interface ProjectGeneratorOptions<M extends ProjenModule = ProjenModule> extends SourceCodeOptions {
     /**
      * Name of the generated class (e.g., "TypeScriptProject")
      *
@@ -210,7 +210,7 @@ class CodeBuffer {
 }
 
 /**
- * Renders TypeScript class code from ProjenProjectGenerator options
+ * Renders TypeScript class code from ProjectGenerator options
  *
  * Generates a complete TypeScript class file including imports, options interface export,
  * class declaration, and constructor with component integration.
@@ -234,7 +234,7 @@ class TypeScriptClassRenderer {
      * @param options - Generator configuration
      * @returns Complete TypeScript class code as a string
      */
-    render(options: ProjenProjectGeneratorOptions<ProjenModule>): string {
+    render(options: ProjectGeneratorOptions<ProjenModule>): string {
         this.buffer.flush();
 
         /* Derive interface and type names from the class name */
@@ -340,7 +340,7 @@ class TypeScriptClassRenderer {
      * @returns Map of module paths to sets of imported names
      */
     private extractImports(
-        options: ProjenProjectGeneratorOptions<ProjenModule>,
+        options: ProjectGeneratorOptions<ProjenModule>,
         optionsInterface: string,
     ): Map<string, Set<string>> {
         const imports = new Map<string, Set<string>>();
@@ -443,7 +443,7 @@ class TypeScriptClassRenderer {
      * @param componentArray - Code string for component array
      */
     private renderClass(
-        options: ProjenProjectGeneratorOptions<ProjenModule>,
+        options: ProjectGeneratorOptions<ProjenModule>,
         optionsInterface: string,
         baseOptionsType: string,
         destructure: string[],
@@ -476,7 +476,7 @@ class TypeScriptClassRenderer {
      * @param componentArray - Code string for component array
      */
     private renderConstructor(
-        options: ProjenProjectGeneratorOptions<ProjenModule>,
+        options: ProjectGeneratorOptions<ProjenModule>,
         optionsInterface: string,
         baseOptionsType: string,
         destructure: string[],
@@ -537,7 +537,7 @@ class TypeScriptClassRenderer {
  *
  * @example
  * ```typescript
- * new ProjenProjectGenerator(project, {
+ * new ProjectGenerator(project, {
  *   name: "TypeScriptProject",
  *   baseClass: "typescript.TypeScriptProject",
  *   filePath: "src/projects/typescript.generated.ts",
@@ -545,7 +545,7 @@ class TypeScriptClassRenderer {
  * });
  * ```
  */
-export class ProjenProjectGenerator extends Component {
+export class ProjectGenerator extends Component {
     private renderer: TypeScriptClassRenderer;
 
     /**
@@ -554,7 +554,7 @@ export class ProjenProjectGenerator extends Component {
      */
     constructor(
         project: Project,
-        private readonly options: ProjenProjectGeneratorOptions<ProjenModule>,
+        private readonly options: ProjectGeneratorOptions<ProjenModule>,
     ) {
         super(project);
         this.renderer = new TypeScriptClassRenderer();
