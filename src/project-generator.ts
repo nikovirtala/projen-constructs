@@ -3,9 +3,7 @@ import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import type { Project, SourceCodeOptions, typescript } from "projen";
 import { Component, TextFile } from "projen";
 import { InvalidBaseClassFormatError, InvalidFilePathError, InvalidIndentLevelError } from "./errors";
-
-type ProjenModule = "typescript" | "cdk" | "awscdk";
-type ProjenBaseClass<M extends ProjenModule> = `${M}.${string}`;
+import type { ProjectType } from "./project-type";
 
 /**
  * Default components applied to all generated projects
@@ -80,7 +78,7 @@ interface ComponentConfig<T extends Component = Component> {
  * });
  * ```
  */
-export interface ProjectGeneratorOptions<M extends ProjenModule = ProjenModule> extends SourceCodeOptions {
+export interface ProjectGeneratorOptions extends SourceCodeOptions {
     /**
      * Name of the generated class (e.g., "TypeScriptProject")
      *
@@ -89,15 +87,14 @@ export interface ProjectGeneratorOptions<M extends ProjenModule = ProjenModule> 
     readonly name: string;
 
     /**
-     * Fully qualified base class to extend in format "module.ClassName"
+     * Project type identifier
      *
-     * Must be a valid Projen class reference like "typescript.TypeScriptProject",
-     * "cdk.JsiiProject", or "awscdk.AwsCdkTypeScriptApp".
+     * Specifies which Projen base class to extend and which default configuration to apply.
      *
-     * @example "typescript.TypeScriptProject"
-     * @example "cdk.JsiiProject"
+     * @example ProjectType.TYPESCRIPT
+     * @example ProjectType.JSII
      */
-    readonly baseClass: ProjenBaseClass<M>;
+    readonly projectType: ProjectType;
 
     /**
      * Output file path for the generated class
@@ -234,12 +231,12 @@ class TypeScriptClassRenderer {
      * @param options - Generator configuration
      * @returns Complete TypeScript class code as a string
      */
-    render(options: ProjectGeneratorOptions<ProjenModule>): string {
+    render(options: ProjectGeneratorOptions): string {
         this.buffer.flush();
 
         /* Derive interface and type names from the class name */
         const optionsInterface = `${options.name}Options`;
-        const baseOptionsFqn = this.getBaseOptionsFqn(options.baseClass);
+        const baseOptionsFqn = this.getBaseOptionsFqn(options.projectType);
         const baseOptionsType = baseOptionsFqn.replace(/^projen\./, "");
 
         /* Use provided components or fall back to defaults (Mise + Vitest) */
@@ -261,20 +258,21 @@ class TypeScriptClassRenderer {
     }
 
     /**
-     * Derives the fully qualified options interface name from base class
+     * Derives the fully qualified options interface name from project type
      *
-     * Transforms base class reference into the corresponding Projen options interface name
+     * Transforms project type into the corresponding Projen options interface name
      * by appending "Options" suffix and prefixing with "projen." namespace.
      *
-     * @param baseClass - Base class in format "module.ClassName"
+     * @param projectType - Project type identifier
      * @returns Fully qualified options interface name
-     * @throws {InvalidBaseClassFormatError} When baseClass format is invalid
+     * @throws {InvalidBaseClassFormatError} When projectType format is invalid
      *
      * @example
-     * getBaseOptionsFqn("typescript.TypeScriptProject") // "projen.typescript.TypeScriptProjectOptions"
-     * getBaseOptionsFqn("cdk.JsiiProject") // "projen.cdk.JsiiProjectOptions"
+     * getBaseOptionsFqn(ProjectType.TYPESCRIPT) // "projen.typescript.TypeScriptProjectOptions"
+     * getBaseOptionsFqn(ProjectType.JSII) // "projen.cdk.JsiiProjectOptions"
      */
-    getBaseOptionsFqn(baseClass: string): string {
+    getBaseOptionsFqn(projectType: ProjectType): string {
+        const baseClass = projectType.valueOf();
         /* Validate base class format: must contain module.ClassName structure */
         if (!baseClass.includes(".")) {
             throw new InvalidBaseClassFormatError(baseClass);
@@ -339,14 +337,11 @@ class TypeScriptClassRenderer {
      * @param optionsInterface - Name of the generated options interface
      * @returns Map of module paths to sets of imported names
      */
-    private extractImports(
-        options: ProjectGeneratorOptions<ProjenModule>,
-        optionsInterface: string,
-    ): Map<string, Set<string>> {
+    private extractImports(options: ProjectGeneratorOptions, optionsInterface: string): Map<string, Set<string>> {
         const imports = new Map<string, Set<string>>();
 
-        /* Extract base module name from baseClass (e.g., "typescript" from "typescript.TypeScriptProject") */
-        const baseModule = options.baseClass.split(".")[0];
+        /* Extract base module name from projectType (e.g., "typescript" from "typescript.TypeScriptProject") */
+        const baseModule = options.projectType.valueOf().split(".")[0];
         const optionsFileName = this.getOptionsFileName(optionsInterface);
 
         /* Projen base module import */
@@ -381,17 +376,17 @@ class TypeScriptClassRenderer {
     /**
      * Derives the config path for accessing default options
      *
-     * Transforms base class reference into the corresponding path in the defaultOptions
+     * Transforms project type into the corresponding path in the defaultOptions
      * configuration object exported from config.ts.
      *
-     * @param baseClass - Base class in format "module.ClassName"
+     * @param projectType - Project type identifier
      * @returns Config path for accessing default options
      *
      * @example
-     * getConfigPath("typescript.TypeScriptProject") // "defaultOptions.typescript.TypeScriptProject"
+     * getConfigPath(ProjectType.TYPESCRIPT) // "defaultOptions.typescript.TypeScriptProject"
      */
-    private getConfigPath(baseClass: string): string {
-        return `defaultOptions.${baseClass}`;
+    private getConfigPath(projectType: ProjectType): string {
+        return `defaultOptions.${projectType.valueOf()}`;
     }
 
     /**
@@ -443,7 +438,7 @@ class TypeScriptClassRenderer {
      * @param componentArray - Code string for component array
      */
     private renderClass(
-        options: ProjectGeneratorOptions<ProjenModule>,
+        options: ProjectGeneratorOptions,
         optionsInterface: string,
         baseOptionsType: string,
         destructure: string[],
@@ -455,7 +450,7 @@ class TypeScriptClassRenderer {
         this.buffer.line(" *");
         this.buffer.line(" * Extends Projen's base class with opinionated defaults and automatic component setup.");
         this.buffer.line(" */");
-        this.buffer.open(`export class ${options.name} extends ${options.baseClass} {`);
+        this.buffer.open(`export class ${options.name} extends ${options.projectType.valueOf()} {`);
         this.renderConstructor(options, optionsInterface, baseOptionsType, destructure, componentArray);
         this.buffer.close("}");
     }
@@ -476,13 +471,13 @@ class TypeScriptClassRenderer {
      * @param componentArray - Code string for component array
      */
     private renderConstructor(
-        options: ProjectGeneratorOptions<ProjenModule>,
+        options: ProjectGeneratorOptions,
         optionsInterface: string,
         baseOptionsType: string,
         destructure: string[],
         componentArray: string,
     ) {
-        const configPath = this.getConfigPath(options.baseClass);
+        const configPath = this.getConfigPath(options.projectType);
         this.buffer.line("/**");
         this.buffer.line(" * @param options - Project configuration");
         this.buffer.line(" */");
@@ -554,14 +549,14 @@ export class ProjectGenerator extends Component {
      */
     constructor(
         project: Project,
-        private readonly options: ProjectGeneratorOptions<ProjenModule>,
+        private readonly options: ProjectGeneratorOptions,
     ) {
         super(project);
         this.renderer = new TypeScriptClassRenderer();
 
         /* Generate the options interface using ProjenStruct for JSII compatibility */
         const optionsInterface = `${options.name}Options`;
-        const baseOptionsFqn = this.renderer.getBaseOptionsFqn(options.baseClass);
+        const baseOptionsFqn = this.renderer.getBaseOptionsFqn(options.projectType);
         const optionsFilePath = this.getOptionsFilePath(optionsInterface);
 
         /* ProjenStruct generates a concrete TypeScript interface from Projen's options

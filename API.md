@@ -16235,3 +16235,41 @@ public readonly vitestVersion: string;
 
 ---
 
+
+### ProjectType <a name="ProjectType" id="@nikovirtala/projen-constructs.ProjectType"></a>
+
+Enum defining all supported project types.
+
+Each project type corresponds to a generated project class and its configuration
+in the defaultOptions structure.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT">TYPESCRIPT</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.JSII">JSII</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP">AWS_CDK_TYPESCRIPT_APP</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY">AWS_CDK_CONSTRUCT_LIBRARY</a></code> | *No description.* |
+
+---
+
+##### `TYPESCRIPT` <a name="TYPESCRIPT" id="@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT"></a>
+
+---
+
+
+##### `JSII` <a name="JSII" id="@nikovirtala/projen-constructs.ProjectType.JSII"></a>
+
+---
+
+
+##### `AWS_CDK_TYPESCRIPT_APP` <a name="AWS_CDK_TYPESCRIPT_APP" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP"></a>
+
+---
+
+
+##### `AWS_CDK_CONSTRUCT_LIBRARY` <a name="AWS_CDK_CONSTRUCT_LIBRARY" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY"></a>
+
+---
+

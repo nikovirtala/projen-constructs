@@ -41,9 +41,11 @@ The generator uses three components:
 ## Usage
 
 ```typescript
+import { ProjectType } from "./project-type";
+
 new ProjectGenerator(project, {
   name: "TypeScriptProject",
-  baseClass: "typescript.TypeScriptProject",
+  projectType: ProjectType.TYPESCRIPT,
   filePath: "./src/projects/typescript.generated.ts",
   components: [
     { component: Mise },
@@ -84,13 +86,28 @@ export class ClassName extends BaseClass {
 
 ## Key features
 
-**Derived configuration**: Config names and paths derive from base class names, eliminating hardcoded mappings.
+**Explicit project types**: Uses ProjectType enum for type-safe project identification. Each enum value maps directly to a Projen base class and its configuration path.
 
 **Component-based**: Components are passed as class references, enabling dynamic instantiation.
 
-**Structured defaults**: Default options follow the base class structure (`defaultOptions.typescript.TypeScriptProject`).
+**Structured defaults**: Default options follow the project type structure (`defaultOptions.typescript.TypeScriptProject`).
 
 **Type-safe**: Uses `never` type for flexible component constructor signatures.
+
+## Project type mapping
+
+The ProjectType enum provides explicit mapping between project types and their Projen base classes:
+
+```typescript
+enum ProjectType {
+  TYPESCRIPT = "typescript.TypeScriptProject",
+  JSII = "cdk.JsiiProject",
+  AWS_CDK_TYPESCRIPT_APP = "awscdk.AwsCdkTypeScriptApp",
+  AWS_CDK_CONSTRUCT_LIBRARY = "awscdk.AwsCdkConstructLibrary",
+}
+```
+
+This eliminates fragile path-based naming and makes the relationship between project types and their configuration explicit.
 
 ## Comparison with jsii-struct-builder
 
