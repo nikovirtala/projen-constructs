@@ -5,56 +5,283 @@ import { Jest, type NodeProject } from "projen/lib/javascript";
 import { TextFile } from "projen/lib/textfile";
 
 export enum Environment {
+    /**
+     * Run tests in Vercel's Edge Runtime VM.
+     *
+     * @see https://edge-runtime.vercel.app/packages/vm
+     */
     EDGE_RUNTIME = "edge-runtime",
+
+    /**
+     * Run tests in `happy-dom` environment.
+     *
+     * @see https://github.com/capricorn86/happy-dom
+     */
     HAPPY_DOM = "happy-dom",
+
+    /**
+     * Run tests in `jsdom` environment.
+     *
+     * @see https://github.com/jsdom/jsdom
+     */
     JSDOM = "jsdom",
+
+    /**
+     * Run tests in a Node.js environment.
+     */
     NODE = "node",
 }
 
 export enum Pool {
+    /**
+     * Run tests in `node:child_process` using fork()
+     *
+     * Test isolation (when enabled) is done by spawning a new child process for each test file.
+     *
+     * @see https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options
+     */
     FORKS = "forks",
+
+    /**
+     * Run tests in `node:worker_threads`.
+     *
+     * Test isolation (when enabled) is done by spawning a new thread for each test file.
+     */
     THREADS = "threads",
+
+    /**
+     * Run tests in isolated `node:vm`.
+     *
+     * Test files are run parallel using `node:child_process` fork()
+     *
+     * This makes tests run faster, but VM module is unstable. Your tests might leak memory.
+     *
+     * @see https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options
+     */
     VMFORKS = "vmforks",
+
+    /**
+     * Run tests in isolated `node:vm`.
+     * Test files are run parallel using `node:worker_threads`.
+     *
+     * This makes tests run faster, but VM module is unstable. Your tests might leak memory.
+     */
     VMTHREADS = "vmthreads",
 }
 
 export enum CoverageProvider {
+    /**
+     * Provide coverage report using istanbul.
+     *
+     * @see https://istanbul.js.org
+     */
     ISTANBUL = "istanbul",
+
+    /**
+     * Provide coverage reports using v8.
+     *
+     * @see https://v8.dev/blog/javascript-code-coverage
+     */
     V8 = "v8",
 }
 
 export enum CoverageReporter {
+    /**
+     * Provides `clover` report.
+     */
     CLOVER = "clover",
+
+    /**
+     * Provides `HTML` report.
+     */
     HTML = "html",
+
+    /**
+     * Provides `JSON` report.
+     */
     JSON = "json",
+
+    /**
+     * Provides `LCOV` report.
+     */
     LCOV = "lcov",
+
+    /**
+     * Provides `text` report.
+     */
     TEXT = "text",
 }
 
+/**
+ * Vitest Config.
+ *
+ * @see https://vitest.dev/config/
+ */
 export interface VitestConfigOptions {
+    /**
+     * A list of glob patterns that match your test files.
+     *
+     * @default - Vitest's `configDefaults.include`
+     * @see https://vitest.dev/config/#include
+     */
     readonly include?: Array<string>;
+
+    /**
+     * A list of glob patterns that should be excluded from your test files.
+     *
+     * @default - Vitest's `configDefaults.exclude`
+     * @see https://vitest.dev/config/#exclude
+     */
     readonly exclude?: Array<string>;
+
+    /**
+     * The environment that will be used for testing.
+     *
+     * @default "node"
+     * @see https://vitest.dev/config/#environment
+     */
     readonly environment?: Environment;
+
+    /**
+     * Run tests in an isolated environment. This option has no effect on vmThreads pool.
+     *
+     * Disabling this option might improve performance if your code doesn't rely on side effects.
+     *
+     * @default true
+     * @see https://vitest.dev/config/#isolate
+     */
     readonly isolate?: boolean;
+
+    /**
+     * Pool used to run tests in.
+     *
+     * @default "forks"
+     * @see https://vitest.dev/config/#pool
+     */
     readonly pool?: Pool;
+
+    /**
+     * Register apis globally. If you prefer to use the APIs globally like Jest, set to `true`.
+     *
+     * @default false
+     * @see https://vitest.dev/config/#globals
+     */
     readonly globals?: boolean;
+
+    /**
+     * Coverage enabled.
+     *
+     * @default true
+     * @see https://vitest.dev/config/#coverage-enabled
+     */
     readonly coverageEnabled?: boolean;
+
+    /**
+     * Coverage provider type.
+     *
+     * @default "v8"
+     * @see https://vitest.dev/config/#coverage-provider
+     */
     readonly coverageProvider?: CoverageProvider;
+
+    /**
+     * Coverage reporters.
+     *
+     * @default '["text", "lcov"]'
+     * @see https://vitest.dev/config/#coverage-reporter
+     */
     readonly coverageReporters?: Array<CoverageReporter>;
+
+    /**
+     * Coverage output directory.
+     *
+     * @default "coverage"
+     */
     readonly coverageDirectory?: string;
+
+    /**
+     * Enable typechecking alongside your regular tests.
+     *
+     * @default true (for TypeScript projects)
+     * @see https://vitest.dev/config/#typecheck-enabled
+     */
     readonly typecheckEnabled?: boolean;
+
+    /**
+     * Tool to use for type checking. Checker should implement the same output format as `tsc`.
+     *
+     * @default "tsc --noEmit"
+     * @see https://vitest.dev/config/#typecheck-checker
+     */
     readonly typecheckChecker?: string;
+
+    /**
+     * Path to custom tsconfig, relative to the project root.
+     *
+     * @default "tsconfig.dev.json"
+     * @see https://vitest.dev/config/#typecheck-tsconfig
+     */
     readonly typecheckTsconfig?: string;
+
+    /**
+     * Vitest will not fail, if no tests will be found.
+     *
+     * @default true
+     * @see https://vitest.dev/config/#passwithnotests
+     */
     readonly passWithNoTests?: boolean;
+
+    /**
+     * Stop running tests after certain number of failures.
+     *
+     * @default 0
+     * @see https://vitest.dev/config/#bail
+     */
     readonly bail?: number;
+
+    /**
+     * Update snapshot files. This will update all changed snapshots and delete obsolete ones.
+     *
+     * @default true
+     * @see https://vitest.dev/guide/snapshot.html#updating-snapshots
+     */
     readonly updateSnapshots?: boolean;
+
+    /**
+     * Always print console traces when calling any console method.
+     *
+     * @default true
+     * @see https://vitest.dev/config/#consoletrace
+     */
     readonly printConsoleTrace?: boolean;
+
+    /**
+     * The number of milliseconds after which a test or suite is considered slow.
+     *
+     * @default 300
+     * @see https://vitest.dev/config/#slowtestthreshold
+     */
     readonly slowTestThreshold?: number;
 }
 
 export interface VitestOptions {
+    /**
+     * Config file path.
+     *
+     * @default "vitest.config.ts"
+     */
     readonly configFilePath?: string;
+
+    /**
+     * Initial config options.
+     */
     readonly config?: VitestConfigOptions;
+
+    /**
+     * Vitest version.
+     *
+     * @default "^4"
+     */
     readonly vitestVersion?: string;
 }
 

@@ -16270,6 +16270,10 @@ Options for Yarn Berry.
 
 ### VitestConfigOptions <a name="VitestConfigOptions" id="@nikovirtala/projen-constructs.VitestConfigOptions"></a>
 
+Vitest Config.
+
+> [https://vitest.dev/config/](https://vitest.dev/config/)
+
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.VitestConfigOptions.Initializer"></a>
 
 ```typescript
@@ -16282,24 +16286,24 @@ const vitestConfigOptions: VitestConfigOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.bail">bail</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageDirectory">coverageDirectory</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageEnabled">coverageEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageProvider">coverageProvider</a></code> | <code><a href="#@nikovirtala/projen-constructs.CoverageProvider">CoverageProvider</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageReporters">coverageReporters</a></code> | <code><a href="#@nikovirtala/projen-constructs.CoverageReporter">CoverageReporter</a>[]</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.environment">environment</a></code> | <code><a href="#@nikovirtala/projen-constructs.Environment">Environment</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.exclude">exclude</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.globals">globals</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.include">include</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.isolate">isolate</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.passWithNoTests">passWithNoTests</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.pool">pool</a></code> | <code><a href="#@nikovirtala/projen-constructs.Pool">Pool</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.printConsoleTrace">printConsoleTrace</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.slowTestThreshold">slowTestThreshold</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.typecheckChecker">typecheckChecker</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.typecheckEnabled">typecheckEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.typecheckTsconfig">typecheckTsconfig</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.updateSnapshots">updateSnapshots</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.bail">bail</a></code> | <code>number</code> | Stop running tests after certain number of failures. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageDirectory">coverageDirectory</a></code> | <code>string</code> | Coverage output directory. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageEnabled">coverageEnabled</a></code> | <code>boolean</code> | Coverage enabled. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageProvider">coverageProvider</a></code> | <code><a href="#@nikovirtala/projen-constructs.CoverageProvider">CoverageProvider</a></code> | Coverage provider type. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.coverageReporters">coverageReporters</a></code> | <code><a href="#@nikovirtala/projen-constructs.CoverageReporter">CoverageReporter</a>[]</code> | Coverage reporters. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.environment">environment</a></code> | <code><a href="#@nikovirtala/projen-constructs.Environment">Environment</a></code> | The environment that will be used for testing. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.exclude">exclude</a></code> | <code>string[]</code> | A list of glob patterns that should be excluded from your test files. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.globals">globals</a></code> | <code>boolean</code> | Register apis globally. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.include">include</a></code> | <code>string[]</code> | A list of glob patterns that match your test files. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.isolate">isolate</a></code> | <code>boolean</code> | Run tests in an isolated environment. This option has no effect on vmThreads pool. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.passWithNoTests">passWithNoTests</a></code> | <code>boolean</code> | Vitest will not fail, if no tests will be found. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.pool">pool</a></code> | <code><a href="#@nikovirtala/projen-constructs.Pool">Pool</a></code> | Pool used to run tests in. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.printConsoleTrace">printConsoleTrace</a></code> | <code>boolean</code> | Always print console traces when calling any console method. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.slowTestThreshold">slowTestThreshold</a></code> | <code>number</code> | The number of milliseconds after which a test or suite is considered slow. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.typecheckChecker">typecheckChecker</a></code> | <code>string</code> | Tool to use for type checking. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.typecheckEnabled">typecheckEnabled</a></code> | <code>boolean</code> | Enable typechecking alongside your regular tests. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.typecheckTsconfig">typecheckTsconfig</a></code> | <code>string</code> | Path to custom tsconfig, relative to the project root. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions.property.updateSnapshots">updateSnapshots</a></code> | <code>boolean</code> | Update snapshot files. |
 
 ---
 
@@ -16310,6 +16314,11 @@ public readonly bail: number;
 ```
 
 - *Type:* number
+- *Default:* 0
+
+Stop running tests after certain number of failures.
+
+> [https://vitest.dev/config/#bail](https://vitest.dev/config/#bail)
 
 ---
 
@@ -16320,6 +16329,9 @@ public readonly coverageDirectory: string;
 ```
 
 - *Type:* string
+- *Default:* "coverage"
+
+Coverage output directory.
 
 ---
 
@@ -16330,6 +16342,11 @@ public readonly coverageEnabled: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Coverage enabled.
+
+> [https://vitest.dev/config/#coverage-enabled](https://vitest.dev/config/#coverage-enabled)
 
 ---
 
@@ -16340,6 +16357,11 @@ public readonly coverageProvider: CoverageProvider;
 ```
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.CoverageProvider">CoverageProvider</a>
+- *Default:* "v8"
+
+Coverage provider type.
+
+> [https://vitest.dev/config/#coverage-provider](https://vitest.dev/config/#coverage-provider)
 
 ---
 
@@ -16350,6 +16372,11 @@ public readonly coverageReporters: CoverageReporter[];
 ```
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.CoverageReporter">CoverageReporter</a>[]
+- *Default:* '["text", "lcov"]'
+
+Coverage reporters.
+
+> [https://vitest.dev/config/#coverage-reporter](https://vitest.dev/config/#coverage-reporter)
 
 ---
 
@@ -16360,6 +16387,11 @@ public readonly environment: Environment;
 ```
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.Environment">Environment</a>
+- *Default:* "node"
+
+The environment that will be used for testing.
+
+> [https://vitest.dev/config/#environment](https://vitest.dev/config/#environment)
 
 ---
 
@@ -16370,6 +16402,11 @@ public readonly exclude: string[];
 ```
 
 - *Type:* string[]
+- *Default:* Vitest's `configDefaults.exclude`
+
+A list of glob patterns that should be excluded from your test files.
+
+> [https://vitest.dev/config/#exclude](https://vitest.dev/config/#exclude)
 
 ---
 
@@ -16380,6 +16417,13 @@ public readonly globals: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* false
+
+Register apis globally.
+
+If you prefer to use the APIs globally like Jest, set to `true`.
+
+> [https://vitest.dev/config/#globals](https://vitest.dev/config/#globals)
 
 ---
 
@@ -16390,6 +16434,11 @@ public readonly include: string[];
 ```
 
 - *Type:* string[]
+- *Default:* Vitest's `configDefaults.include`
+
+A list of glob patterns that match your test files.
+
+> [https://vitest.dev/config/#include](https://vitest.dev/config/#include)
 
 ---
 
@@ -16400,6 +16449,13 @@ public readonly isolate: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Run tests in an isolated environment. This option has no effect on vmThreads pool.
+
+Disabling this option might improve performance if your code doesn't rely on side effects.
+
+> [https://vitest.dev/config/#isolate](https://vitest.dev/config/#isolate)
 
 ---
 
@@ -16410,6 +16466,11 @@ public readonly passWithNoTests: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Vitest will not fail, if no tests will be found.
+
+> [https://vitest.dev/config/#passwithnotests](https://vitest.dev/config/#passwithnotests)
 
 ---
 
@@ -16420,6 +16481,11 @@ public readonly pool: Pool;
 ```
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.Pool">Pool</a>
+- *Default:* "forks"
+
+Pool used to run tests in.
+
+> [https://vitest.dev/config/#pool](https://vitest.dev/config/#pool)
 
 ---
 
@@ -16430,6 +16496,11 @@ public readonly printConsoleTrace: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Always print console traces when calling any console method.
+
+> [https://vitest.dev/config/#consoletrace](https://vitest.dev/config/#consoletrace)
 
 ---
 
@@ -16440,6 +16511,11 @@ public readonly slowTestThreshold: number;
 ```
 
 - *Type:* number
+- *Default:* 300
+
+The number of milliseconds after which a test or suite is considered slow.
+
+> [https://vitest.dev/config/#slowtestthreshold](https://vitest.dev/config/#slowtestthreshold)
 
 ---
 
@@ -16450,6 +16526,13 @@ public readonly typecheckChecker: string;
 ```
 
 - *Type:* string
+- *Default:* "tsc --noEmit"
+
+Tool to use for type checking.
+
+Checker should implement the same output format as `tsc`.
+
+> [https://vitest.dev/config/#typecheck-checker](https://vitest.dev/config/#typecheck-checker)
 
 ---
 
@@ -16460,6 +16543,11 @@ public readonly typecheckEnabled: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true (for TypeScript projects)
+
+Enable typechecking alongside your regular tests.
+
+> [https://vitest.dev/config/#typecheck-enabled](https://vitest.dev/config/#typecheck-enabled)
 
 ---
 
@@ -16470,6 +16558,11 @@ public readonly typecheckTsconfig: string;
 ```
 
 - *Type:* string
+- *Default:* "tsconfig.dev.json"
+
+Path to custom tsconfig, relative to the project root.
+
+> [https://vitest.dev/config/#typecheck-tsconfig](https://vitest.dev/config/#typecheck-tsconfig)
 
 ---
 
@@ -16480,6 +16573,13 @@ public readonly updateSnapshots: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Update snapshot files.
+
+This will update all changed snapshots and delete obsolete ones.
+
+> [https://vitest.dev/guide/snapshot.html#updating-snapshots](https://vitest.dev/guide/snapshot.html#updating-snapshots)
 
 ---
 
@@ -16497,9 +16597,9 @@ const vitestOptions: VitestOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.config">config</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions">VitestConfigOptions</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.configFilePath">configFilePath</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.vitestVersion">vitestVersion</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.config">config</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions">VitestConfigOptions</a></code> | Initial config options. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.configFilePath">configFilePath</a></code> | <code>string</code> | Config file path. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.vitestVersion">vitestVersion</a></code> | <code>string</code> | Vitest version. |
 
 ---
 
@@ -16511,6 +16611,8 @@ public readonly config: VitestConfigOptions;
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.VitestConfigOptions">VitestConfigOptions</a>
 
+Initial config options.
+
 ---
 
 ##### `configFilePath`<sup>Optional</sup> <a name="configFilePath" id="@nikovirtala/projen-constructs.VitestOptions.property.configFilePath"></a>
@@ -16520,6 +16622,9 @@ public readonly configFilePath: string;
 ```
 
 - *Type:* string
+- *Default:* "vitest.config.ts"
+
+Config file path.
 
 ---
 
@@ -16530,6 +16635,9 @@ public readonly vitestVersion: string;
 ```
 
 - *Type:* string
+- *Default:* "^4"
+
+Vitest version.
 
 ---
 
@@ -16543,17 +16651,25 @@ public readonly vitestVersion: string;
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageProvider.ISTANBUL">ISTANBUL</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageProvider.V8">V8</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageProvider.ISTANBUL">ISTANBUL</a></code> | Provide coverage report using istanbul. |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageProvider.V8">V8</a></code> | Provide coverage reports using v8. |
 
 ---
 
 ##### `ISTANBUL` <a name="ISTANBUL" id="@nikovirtala/projen-constructs.CoverageProvider.ISTANBUL"></a>
 
+Provide coverage report using istanbul.
+
+> [https://istanbul.js.org](https://istanbul.js.org)
+
 ---
 
 
 ##### `V8` <a name="V8" id="@nikovirtala/projen-constructs.CoverageProvider.V8"></a>
+
+Provide coverage reports using v8.
+
+> [https://v8.dev/blog/javascript-code-coverage](https://v8.dev/blog/javascript-code-coverage)
 
 ---
 
@@ -16564,35 +16680,45 @@ public readonly vitestVersion: string;
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.CLOVER">CLOVER</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.HTML">HTML</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.JSON">JSON</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.LCOV">LCOV</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.TEXT">TEXT</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.CLOVER">CLOVER</a></code> | Provides `clover` report. |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.HTML">HTML</a></code> | Provides `HTML` report. |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.JSON">JSON</a></code> | Provides `JSON` report. |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.LCOV">LCOV</a></code> | Provides `LCOV` report. |
+| <code><a href="#@nikovirtala/projen-constructs.CoverageReporter.TEXT">TEXT</a></code> | Provides `text` report. |
 
 ---
 
 ##### `CLOVER` <a name="CLOVER" id="@nikovirtala/projen-constructs.CoverageReporter.CLOVER"></a>
+
+Provides `clover` report.
 
 ---
 
 
 ##### `HTML` <a name="HTML" id="@nikovirtala/projen-constructs.CoverageReporter.HTML"></a>
 
+Provides `HTML` report.
+
 ---
 
 
 ##### `JSON` <a name="JSON" id="@nikovirtala/projen-constructs.CoverageReporter.JSON"></a>
+
+Provides `JSON` report.
 
 ---
 
 
 ##### `LCOV` <a name="LCOV" id="@nikovirtala/projen-constructs.CoverageReporter.LCOV"></a>
 
+Provides `LCOV` report.
+
 ---
 
 
 ##### `TEXT` <a name="TEXT" id="@nikovirtala/projen-constructs.CoverageReporter.TEXT"></a>
+
+Provides `text` report.
 
 ---
 
@@ -16603,29 +16729,43 @@ public readonly vitestVersion: string;
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.Environment.EDGE_RUNTIME">EDGE_RUNTIME</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Environment.HAPPY_DOM">HAPPY_DOM</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Environment.JSDOM">JSDOM</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Environment.NODE">NODE</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Environment.EDGE_RUNTIME">EDGE_RUNTIME</a></code> | Run tests in Vercel's Edge Runtime VM. |
+| <code><a href="#@nikovirtala/projen-constructs.Environment.HAPPY_DOM">HAPPY_DOM</a></code> | Run tests in `happy-dom` environment. |
+| <code><a href="#@nikovirtala/projen-constructs.Environment.JSDOM">JSDOM</a></code> | Run tests in `jsdom` environment. |
+| <code><a href="#@nikovirtala/projen-constructs.Environment.NODE">NODE</a></code> | Run tests in a Node.js environment. |
 
 ---
 
 ##### `EDGE_RUNTIME` <a name="EDGE_RUNTIME" id="@nikovirtala/projen-constructs.Environment.EDGE_RUNTIME"></a>
+
+Run tests in Vercel's Edge Runtime VM.
+
+> [https://edge-runtime.vercel.app/packages/vm](https://edge-runtime.vercel.app/packages/vm)
 
 ---
 
 
 ##### `HAPPY_DOM` <a name="HAPPY_DOM" id="@nikovirtala/projen-constructs.Environment.HAPPY_DOM"></a>
 
+Run tests in `happy-dom` environment.
+
+> [https://github.com/capricorn86/happy-dom](https://github.com/capricorn86/happy-dom)
+
 ---
 
 
 ##### `JSDOM` <a name="JSDOM" id="@nikovirtala/projen-constructs.Environment.JSDOM"></a>
 
+Run tests in `jsdom` environment.
+
+> [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
+
 ---
 
 
 ##### `NODE` <a name="NODE" id="@nikovirtala/projen-constructs.Environment.NODE"></a>
+
+Run tests in a Node.js environment.
 
 ---
 
@@ -16636,29 +16776,51 @@ public readonly vitestVersion: string;
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.Pool.FORKS">FORKS</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Pool.THREADS">THREADS</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Pool.VMFORKS">VMFORKS</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Pool.VMTHREADS">VMTHREADS</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Pool.FORKS">FORKS</a></code> | Run tests in `node:child_process` using fork(). |
+| <code><a href="#@nikovirtala/projen-constructs.Pool.THREADS">THREADS</a></code> | Run tests in `node:worker_threads`. |
+| <code><a href="#@nikovirtala/projen-constructs.Pool.VMFORKS">VMFORKS</a></code> | Run tests in isolated `node:vm`. |
+| <code><a href="#@nikovirtala/projen-constructs.Pool.VMTHREADS">VMTHREADS</a></code> | Run tests in isolated `node:vm`. Test files are run parallel using `node:worker_threads`. |
 
 ---
 
 ##### `FORKS` <a name="FORKS" id="@nikovirtala/projen-constructs.Pool.FORKS"></a>
+
+Run tests in `node:child_process` using fork().
+
+Test isolation (when enabled) is done by spawning a new child process for each test file.
+
+> [https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options](https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options)
 
 ---
 
 
 ##### `THREADS` <a name="THREADS" id="@nikovirtala/projen-constructs.Pool.THREADS"></a>
 
+Run tests in `node:worker_threads`.
+
+Test isolation (when enabled) is done by spawning a new thread for each test file.
+
 ---
 
 
 ##### `VMFORKS` <a name="VMFORKS" id="@nikovirtala/projen-constructs.Pool.VMFORKS"></a>
 
+Run tests in isolated `node:vm`.
+
+Test files are run parallel using `node:child_process` fork()
+
+This makes tests run faster, but VM module is unstable. Your tests might leak memory.
+
+> [https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options](https://nodejs.org/api/child_process.html#child_processforkmodulepath-args-options)
+
 ---
 
 
 ##### `VMTHREADS` <a name="VMTHREADS" id="@nikovirtala/projen-constructs.Pool.VMTHREADS"></a>
+
+Run tests in isolated `node:vm`. Test files are run parallel using `node:worker_threads`.
+
+This makes tests run faster, but VM module is unstable. Your tests might leak memory.
 
 ---
 
