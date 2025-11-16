@@ -1,4 +1,6 @@
-import type { Property } from "@jsii/spec";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import type { Assembly, Property } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import type { Project, SourceCodeOptions, typescript } from "projen";
 import { Component, TextFile } from "projen";
@@ -211,15 +213,23 @@ class CodeBuffer {
  *
  * Generates a complete TypeScript class file including imports, options interface export,
  * class declaration, and constructor with component integration.
+ *
+ * Uses JSII manifest introspection to validate base classes and options interfaces.
  */
 class TypeScriptClassRenderer {
     private buffer: CodeBuffer;
+    private jsiiManifest: Assembly;
 
     /**
      * @param indent - Number of spaces per indentation level (default: 4)
      */
     constructor(indent = 4) {
         this.buffer = new CodeBuffer(" ".repeat(indent));
+        /* Load Projen's JSII manifest for base class introspection */
+        const projenPackageJson = require.resolve("projen/package.json");
+        const projenRoot = dirname(projenPackageJson);
+        const jsiiPath = join(projenRoot, ".jsii");
+        this.jsiiManifest = JSON.parse(readFileSync(jsiiPath, "utf-8"));
     }
 
     /**
@@ -262,10 +272,11 @@ class TypeScriptClassRenderer {
      *
      * Transforms project type into the corresponding Projen options interface name
      * by appending "Options" suffix and prefixing with "projen." namespace.
+     * Validates that the base class exists in Projen's JSII manifest.
      *
      * @param projectType - Project type identifier
      * @returns Fully qualified options interface name
-     * @throws {InvalidBaseClassFormatError} When projectType format is invalid
+     * @throws {InvalidBaseClassFormatError} When projectType format is invalid or class not found
      *
      * @example
      * getBaseOptionsFqn(ProjectType.TYPESCRIPT) // "projen.typescript.TypeScriptProjectOptions"
@@ -278,7 +289,20 @@ class TypeScriptClassRenderer {
             throw new InvalidBaseClassFormatError(baseClass);
         }
 
-        return `projen.${baseClass}Options`;
+        const baseClassFqn = `projen.${baseClass}`;
+        const optionsFqn = `${baseClassFqn}Options`;
+
+        /* Validate base class exists in JSII manifest */
+        if (!this.jsiiManifest.types?.[baseClassFqn]) {
+            throw new InvalidBaseClassFormatError(`Base class not found in JSII manifest: ${baseClassFqn}`);
+        }
+
+        /* Validate options interface exists in JSII manifest */
+        if (!this.jsiiManifest.types?.[optionsFqn]) {
+            throw new InvalidBaseClassFormatError(`Options interface not found in JSII manifest: ${optionsFqn}`);
+        }
+
+        return optionsFqn;
     }
 
     /**

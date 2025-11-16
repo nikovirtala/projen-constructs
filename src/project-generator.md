@@ -30,6 +30,8 @@ The generator uses three components:
 
 **TypeScriptClassRenderer** renders TypeScript class code:
 
+- Loads Projen's JSII manifest for base class introspection
+- Validates base classes and options interfaces exist in JSII specs
 - Extracts and sorts imports (external packages first, then relative)
 - Generates type-only imports for interface files
 - Renders class with constructor pattern
@@ -99,6 +101,8 @@ export class ClassName extends BaseClass {
 
 **Type-safe**: Uses `never` type for flexible component constructor signatures.
 
+**JSII introspection**: Validates base classes and options interfaces against Projen's JSII manifest at generation time, ensuring type safety and catching configuration errors early.
+
 ## Project type mapping
 
 The ProjectType enum provides explicit mapping between project types and their Projen base classes:
@@ -114,15 +118,27 @@ enum ProjectType {
 
 This eliminates fragile path-based naming and makes the relationship between project types and their configuration explicit.
 
+## JSII introspection
+
+The generator validates base classes and options interfaces against Projen's JSII manifest:
+
+1. **Loads JSII manifest** - Reads Projen's `.jsii` file at construction time
+2. **Validates base classes** - Ensures `projen.{module}.{ClassName}` exists
+3. **Validates options interfaces** - Ensures `projen.{module}.{ClassName}Options` exists
+4. **Fails fast** - Throws `InvalidBaseClassFormatError` if validation fails
+
+This prevents runtime errors from invalid project type configurations and ensures generated code references valid Projen types.
+
 ## Comparison with jsii-struct-builder
 
-| Feature  | jsii-struct-builder                  | ProjectGenerator      |
-| -------- | ------------------------------------ | --------------------- |
-| Purpose  | Generate interfaces                  | Generate classes      |
-| Input    | JSII specs                           | Configuration objects |
-| Output   | TypeScript interfaces                | TypeScript classes    |
-| Pattern  | Builder pattern with transformations | Code generation       |
-| Use case | Type definitions                     | Implementation code   |
+| Feature       | jsii-struct-builder                  | ProjectGenerator                    |
+| ------------- | ------------------------------------ | ----------------------------------- |
+| Purpose       | Generate interfaces                  | Generate classes                    |
+| Input         | JSII specs                           | Configuration objects + JSII specs  |
+| Output        | TypeScript interfaces                | TypeScript classes                  |
+| Pattern       | Builder pattern with transformations | Code generation with introspection  |
+| Use case      | Type definitions                     | Implementation code                 |
+| JSII usage    | Full spec transformation             | Validation and metadata extraction  |
 
 ## Integration
 
