@@ -16247,29 +16247,45 @@ in the defaultOptions structure.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT">TYPESCRIPT</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.JSII">JSII</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP">AWS_CDK_TYPESCRIPT_APP</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY">AWS_CDK_CONSTRUCT_LIBRARY</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT">TYPESCRIPT</a></code> | TypeScript project with ES modules support. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.JSII">JSII</a></code> | JSII project for publishing multi-language libraries. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP">AWS_CDK_TYPESCRIPT_APP</a></code> | AWS CDK TypeScript application project with ES modules support. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY">AWS_CDK_CONSTRUCT_LIBRARY</a></code> | AWS CDK construct library project for publishing reusable constructs. |
 
 ---
 
 ##### `TYPESCRIPT` <a name="TYPESCRIPT" id="@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT"></a>
+
+TypeScript project with ES modules support.
+
+> [https://projen.io/docs/api/typescript#typescriptproject-](https://projen.io/docs/api/typescript#typescriptproject-)
 
 ---
 
 
 ##### `JSII` <a name="JSII" id="@nikovirtala/projen-constructs.ProjectType.JSII"></a>
 
+JSII project for publishing multi-language libraries.
+
+> [https://projen.io/docs/api/cdk#jsiiproject-](https://projen.io/docs/api/cdk#jsiiproject-)
+
 ---
 
 
 ##### `AWS_CDK_TYPESCRIPT_APP` <a name="AWS_CDK_TYPESCRIPT_APP" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP"></a>
 
+AWS CDK TypeScript application project with ES modules support.
+
+> [https://projen.io/docs/api/awscdk#awscdktypescriptapp-](https://projen.io/docs/api/awscdk#awscdktypescriptapp-)
+
 ---
 
 
 ##### `AWS_CDK_CONSTRUCT_LIBRARY` <a name="AWS_CDK_CONSTRUCT_LIBRARY" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY"></a>
+
+AWS CDK construct library project for publishing reusable constructs.
+
+> [https://projen.io/docs/api/awscdk/#awscdkconstructlibrary-](https://projen.io/docs/api/awscdk/#awscdkconstructlibrary-)
 
 ---
 
