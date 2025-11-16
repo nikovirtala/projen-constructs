@@ -59,4 +59,19 @@ describe("TypeScriptProject", () => {
 
         expect(snapshot["mise.toml"]).toContain('node = "20.0.0"');
     });
+
+    it("accepts vitestOptions", () => {
+        const project = new TypeScriptProject({
+            name: "test-vitest",
+            defaultReleaseBranch: "main",
+            vitestOptions: {
+                vitestVersion: "^4",
+            },
+        });
+
+        const snapshot = synthSnapshot(project);
+
+        expect(snapshot["package.json"].devDependencies).toHaveProperty("vitest");
+        expect(snapshot["vitest.config.ts"]).toBeDefined();
+    });
 });

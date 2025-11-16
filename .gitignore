@@ -55,6 +55,7 @@ tsconfig.json
 /coverage/
 !/vitest.config.ts
 .amazonq/
+!/src/project-type.ts
 !/.projenrc.ts
 !/src/projects/typescript.generated.ts
 !/src/projects/typescript-options.generated.ts

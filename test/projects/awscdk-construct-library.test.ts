@@ -1,28 +1,22 @@
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
-import { JsiiProject } from "../../src/projects";
+import { AwsCdkConstructLibraryProject } from "../../src/projects";
 
-describe("JsiiProject", () => {
+describe("AwsCdkConstructLibraryProject", () => {
     it("applies default configuration", () => {
-        const project = new JsiiProject({
-            name: "test-jsii-project",
-            repositoryUrl: "https://github.com/test/test.git",
+        const project = new AwsCdkConstructLibraryProject({
+            name: "test-cdk-construct",
+            defaultReleaseBranch: "main",
             author: "Niko Virtala",
             authorAddress: "niko.virtala@hey.com",
-            defaultReleaseBranch: "main",
+            repositoryUrl: "https://github.com/test/test.git",
+            cdkVersion: "2.223.0",
         });
 
         const snapshot = synthSnapshot(project);
 
         expect(snapshot["package.json"]).toMatchObject({
-            name: "test-jsii-project",
-            author: {
-                name: "Niko Virtala",
-                email: "niko.virtala@hey.com",
-            },
-            jsii: {
-                outdir: "dist",
-            },
+            name: "test-cdk-construct",
         });
 
         expect(snapshot["tsconfig.dev.json"]).toMatchObject({
@@ -37,16 +31,17 @@ describe("JsiiProject", () => {
     });
 
     it("allows customization of options", () => {
-        const project = new JsiiProject({
-            name: "custom-jsii-project",
+        const project = new AwsCdkConstructLibraryProject({
+            name: "custom-cdk-construct",
             defaultReleaseBranch: "main",
-            repositoryUrl: "https://github.com/test/test.git",
             author: "Custom Author",
             authorAddress: "custom@example.com",
-            jsiiVersion: "~5.8.0",
+            repositoryUrl: "https://github.com/test/test.git",
+            cdkVersion: "2.200.0",
+            minNodeVersion: "20.0.0",
             tsconfig: {
                 compilerOptions: {
-                    noUnusedParameters: false,
+                    strictNullChecks: false,
                 },
             },
         });
@@ -62,19 +57,22 @@ describe("JsiiProject", () => {
 
         expect(snapshot["tsconfig.dev.json"]).toMatchObject({
             compilerOptions: {
-                noUnusedParameters: false,
+                strictNullChecks: false,
                 strict: true,
             },
         });
+
+        expect(snapshot["mise.toml"]).toContain('node = "20.0.0"');
     });
 
     it("accepts vitestOptions", () => {
-        const project = new JsiiProject({
+        const project = new AwsCdkConstructLibraryProject({
             name: "test-vitest",
-            repositoryUrl: "https://github.com/test/test.git",
+            defaultReleaseBranch: "main",
             author: "Niko Virtala",
             authorAddress: "niko.virtala@hey.com",
-            defaultReleaseBranch: "main",
+            repositoryUrl: "https://github.com/test/test.git",
+            cdkVersion: "2.223.0",
             vitestOptions: {
                 vitestVersion: "^4",
             },

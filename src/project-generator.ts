@@ -1,67 +1,79 @@
 import { readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
-import type { Assembly, Property } from "@jsii/spec";
+import { dirname, join, resolve } from "node:path";
+import type { Assembly } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
 import type { Project, SourceCodeOptions, typescript } from "projen";
-import { Component, TextFile } from "projen";
-import { InvalidBaseClassFormatError, InvalidFilePathError, InvalidIndentLevelError } from "./errors";
+import * as projen from "projen";
+import {
+    ComponentResolutionError,
+    InvalidBaseClassFormatError,
+    InvalidFilePathError,
+    InvalidIndentLevelError,
+    ManifestLoadError,
+} from "./errors";
 import type { ProjectType } from "./project-type";
 
 /**
  * Default components applied to all generated projects
  */
-const DEFAULT_COMPONENTS: ComponentConfig[] = [
-    { component: require("./components/mise").Mise },
-    {
-        component: require("./components/vitest").Vitest,
-        optionsProperty: {
-            name: "vitestOptions",
-            type: "@nikovirtala/projen-constructs.VitestOptions",
-            docs: "Vitest configuration",
+function getDefaultComponents(): Component[] {
+    return [
+        { componentClass: require("./components/mise").Mise },
+        {
+            componentClass: require("./components/vitest").Vitest,
+            optionsProperty: {
+                name: "vitestOptions",
+                type: "@nikovirtala/projen-constructs.VitestOptions",
+                docs: "Vitest configuration",
+            },
         },
-    },
-];
+    ];
+}
 
 /**
  * Configuration for a component to be integrated into a generated project
- *
- * @example
- * ```typescript
- * const config: ComponentConfig = {
- *   component: Vitest,
- *   optionsProperty: "vitestOptions"
- * };
- * ```
  */
-interface ComponentConfig<T extends Component = Component> {
+export interface Component {
     /**
-     * Component class constructor
+     * Component class reference
+     *
+     * @jsii ignore
      */
-    readonly component: new (
-        project: never,
-        options?: never,
-    ) => T;
+    readonly componentClass: any;
+
+    /**
+     * Fully qualified name of the component class
+     *
+     * Optional - auto-detected by searching JSII manifests.
+     */
+    readonly fqn?: string;
 
     /**
      * Options property configuration for the generated options interface
      *
-     * When specified, adds an options property to the interface allowing
-     * users to configure the component.
+     * Optional - auto-detected from component constructor.
+     * Set to false to disable options property generation.
+     * Set to string or object to customize the property name.
      */
-    readonly optionsProperty?: {
-        /**
-         * Name of the options property (e.g., "vitestOptions")
-         */
-        readonly name: string;
-        /**
-         * Fully qualified type name (e.g., "@nikovirtala/projen-constructs.VitestOptions")
-         */
-        readonly type: string;
-        /**
-         * Documentation summary
-         */
-        readonly docs?: string;
-    };
+    readonly optionsProperty?: string | ComponentOptions | false;
+}
+
+/**
+ * Options property configuration
+ */
+export interface ComponentOptions {
+    /**
+     * Name of the options property
+     */
+    readonly name: string;
+    /**
+     * Fully qualified type name (optional, auto-detected from component constructor)
+     */
+    readonly type?: string;
+    /**
+     * Documentation summary (optional, auto-detected from component constructor)
+     */
+    readonly docs?: string;
 }
 
 /**
@@ -69,16 +81,6 @@ interface ComponentConfig<T extends Component = Component> {
  *
  * Configures the generation of a TypeScript project class that extends a Projen base class
  * with standard configuration and component integration.
- *
- * @example
- * ```typescript
- * new ProjectGenerator(project, {
- *   name: "TypeScriptProject",
- *   baseClass: "typescript.TypeScriptProject",
- *   filePath: "src/projects/typescript.generated.ts",
- *   components: [{ component: Vitest, optionsProperty: "vitestOptions" }]
- * });
- * ```
  */
 export interface ProjectGeneratorOptions extends SourceCodeOptions {
     /**
@@ -116,15 +118,17 @@ export interface ProjectGeneratorOptions extends SourceCodeOptions {
      *
      * @default [{ component: Mise }, { component: Vitest, optionsProperty: { name: "vitestOptions", type: "...", docs: "..." } }]
      */
-    readonly components?: ComponentConfig[];
+    readonly components?: Component[];
 
     /**
      * Additional properties to add to the generated options interface
      *
      * Use this to extend the base options with custom properties specific to
      * your project type.
+     *
+     * @jsii ignore
      */
-    readonly additionalOptions?: Property[];
+    readonly additionalOptions?: any[];
 
     /**
      * Property names to omit from the base options interface
@@ -218,7 +222,7 @@ class CodeBuffer {
  */
 class TypeScriptClassRenderer {
     private buffer: CodeBuffer;
-    private jsiiManifest: Assembly;
+    public jsiiManifest: Assembly;
 
     /**
      * @param indent - Number of spaces per indentation level (default: 4)
@@ -250,7 +254,7 @@ class TypeScriptClassRenderer {
         const baseOptionsType = baseOptionsFqn.replace(/^projen\./, "");
 
         /* Use provided components or fall back to defaults (Mise + Vitest) */
-        const components = options.components ?? DEFAULT_COMPONENTS;
+        const components = options.components ?? getDefaultComponents();
 
         /* Extract component configuration for constructor generation */
         const { destructure, componentArray } = this.extractComponentOptions(components);
@@ -262,7 +266,6 @@ class TypeScriptClassRenderer {
         this.renderExport(optionsInterface);
         this.buffer.line();
         this.renderClass(options, optionsInterface, baseOptionsType, destructure, componentArray);
-        this.buffer.line();
 
         return this.buffer.flush().join("\n");
     }
@@ -322,21 +325,22 @@ class TypeScriptClassRenderer {
      *   componentArray: "[{ component: Vitest, enabled: vitest, options: vitestOptions }]"
      * }
      */
-    private extractComponentOptions(components: ComponentConfig[]): { destructure: string[]; componentArray: string } {
+    private extractComponentOptions(components: Component[]): { destructure: string[]; componentArray: string } {
         const destructure: string[] = [];
         const componentParts: string[] = [];
 
         for (const c of components) {
             /* Convert component class name to camelCase variable name (e.g., Vitest -> vitest) */
-            const name = c.component.name.charAt(0).toLowerCase() + c.component.name.slice(1);
+            const name = c.componentClass.name.charAt(0).toLowerCase() + c.componentClass.name.slice(1);
             destructure.push(name);
 
             /* Build component config object for applyDefaults() call */
-            const parts = [`component: ${c.component.name}`];
-            if (c.optionsProperty) {
+            const parts = [`component: ${c.componentClass.name}`];
+            if (c.optionsProperty && typeof c.optionsProperty !== "boolean") {
                 /* Component has configurable options - include both enabled flag and options */
-                destructure.push(c.optionsProperty.name);
-                parts.push(`enabled: ${name}`, `options: ${c.optionsProperty.name}`);
+                const propName = typeof c.optionsProperty === "string" ? c.optionsProperty : c.optionsProperty.name;
+                destructure.push(propName);
+                parts.push(`enabled: ${name}`, `options: ${propName}`);
             } else {
                 /* Component has no options - only include enabled flag */
                 parts.push(`enabled: ${name}`);
@@ -375,9 +379,9 @@ class TypeScriptClassRenderer {
         imports.set("../config", new Set(["applyDefaults", "defaultOptions"]));
 
         /* Component class imports - derive module path from component class name */
-        const components = options.components ?? DEFAULT_COMPONENTS;
+        const components = options.components ?? getDefaultComponents();
         for (const c of components) {
-            const componentName = c.component.name;
+            const componentName = c.componentClass.name;
             const modulePath = `../components/${componentName.toLowerCase()}`;
             if (!imports.has(modulePath)) {
                 imports.set(modulePath, new Set());
@@ -448,7 +452,6 @@ class TypeScriptClassRenderer {
      */
     private renderExport(optionsInterface: string) {
         const optionsFileName = this.getOptionsFileName(optionsInterface);
-        this.buffer.line();
         this.buffer.line(`export { ${optionsInterface} } from "./${optionsFileName}.generated";`);
     }
 
@@ -468,7 +471,6 @@ class TypeScriptClassRenderer {
         destructure: string[],
         componentArray: string,
     ) {
-        this.buffer.line();
         this.buffer.line("/**");
         this.buffer.line(` * ${options.name} with standard configuration and component integration`);
         this.buffer.line(" *");
@@ -544,28 +546,11 @@ class TypeScriptClassRenderer {
  * Projen component that generates TypeScript project classes with standard configuration
  *
  * This component automates the creation of project classes that extend Projen base classes
- * with opinionated defaults and component integration. It generates both:
- * 1. An options interface (via ProjenStruct) that extends the base Projen options
- * 2. A project class that applies default configuration and instantiates components
- *
- * The generated code follows a consistent pattern:
- * - Imports required modules and components
- * - Re-exports the generated options interface
- * - Defines a class extending the Projen base class
- * - Constructor merges defaults with user options and applies components
- *
- * @example
- * ```typescript
- * new ProjectGenerator(project, {
- *   name: "TypeScriptProject",
- *   baseClass: "typescript.TypeScriptProject",
- *   filePath: "src/projects/typescript.generated.ts",
- *   components: [{ component: Vitest, optionsProperty: "vitestOptions" }]
- * });
- * ```
+ * with opinionated defaults and component integration.
  */
-export class ProjectGenerator extends Component {
+export class ProjectGenerator extends projen.Component {
     private renderer: TypeScriptClassRenderer;
+    private static enumGenerated = false;
 
     /**
      * @param project - Projen project instance
@@ -577,6 +562,12 @@ export class ProjectGenerator extends Component {
     ) {
         super(project);
         this.renderer = new TypeScriptClassRenderer();
+
+        /* Generate ProjectType enum once on first instantiation */
+        if (!ProjectGenerator.enumGenerated) {
+            this.generateProjectTypeEnum();
+            ProjectGenerator.enumGenerated = true;
+        }
 
         /* Generate the options interface using ProjenStruct for JSII compatibility */
         const optionsInterface = `${options.name}Options`;
@@ -600,11 +591,11 @@ export class ProjectGenerator extends Component {
         }
 
         /* Add component-derived options to the interface */
-        const components = options.components ?? DEFAULT_COMPONENTS;
+        const components = options.components ?? getDefaultComponents();
         const { PrimitiveType } = require("@jsii/spec");
 
         for (const c of components) {
-            const name = c.component.name.charAt(0).toLowerCase() + c.component.name.slice(1);
+            const name = c.componentClass.name.charAt(0).toLowerCase() + c.componentClass.name.slice(1);
 
             /* Add enabled flag for the component */
             struct.add({
@@ -612,27 +603,41 @@ export class ProjectGenerator extends Component {
                 type: { primitive: PrimitiveType.Boolean },
                 optional: true,
                 docs: {
-                    summary: `Enable ${c.component.name} component`,
+                    summary: `Enable ${c.componentClass.name} component`,
                     default: "true",
                 },
             });
 
             /* Add options property if component is configurable */
-            if (c.optionsProperty) {
-                struct.add({
-                    name: c.optionsProperty.name,
-                    type: { fqn: c.optionsProperty.type },
-                    optional: true,
-                    docs: {
-                        summary: c.optionsProperty.docs ?? `${c.component.name} configuration`,
-                        default: `- default ${c.component.name} configuration`,
-                    },
-                });
+            if (c.optionsProperty !== false) {
+                try {
+                    const optionsType = this.resolveComponentOptionsType(c);
+                    if (optionsType && this.isFqnAvailable(optionsType.fqn)) {
+                        struct.add({
+                            name: optionsType.name,
+                            type: { fqn: optionsType.fqn },
+                            optional: true,
+                            docs: {
+                                summary: optionsType.docs ?? `${c.componentClass.name} configuration`,
+                                default: `- default ${c.componentClass.name} configuration`,
+                            },
+                        });
+                    }
+                } catch (error) {
+                    /* Component has no options parameter or resolution failed - skip */
+                    console.warn(
+                        JSON.stringify({
+                            message: "Failed to resolve component options type",
+                            component: c.componentClass.name,
+                            error: error instanceof Error ? error.message : String(error),
+                        }),
+                    );
+                }
             }
         }
 
         /* Add custom options to the interface */
-        if (options.additionalOptions) {
+        if (options.additionalOptions && options.additionalOptions.length > 0) {
             struct.add(...options.additionalOptions);
         }
     }
@@ -687,6 +692,313 @@ export class ProjectGenerator extends Component {
             readonly: this.options.readonly ?? true,
         });
     }
+
+    /**
+     * Checks if an FQN is available in any JSII manifest
+     */
+    private isFqnAvailable(fqn: string): boolean {
+        try {
+            const manifest = this.loadManifestForFqn(fqn);
+            return manifest.types?.[fqn] !== undefined;
+        } catch {
+            return false;
+        }
+    }
+
+    /**
+     * Resolves component options type from JSII manifest
+     *
+     * Auto-detects options from JSII manifest when optionsProperty is undefined.
+     * Returns null only when optionsProperty is explicitly set to false.
+     */
+    private resolveComponentOptionsType(component: Component): { name: string; fqn: string; docs?: string } | null {
+        /* Normalize optionsProperty to ComponentOptions */
+        let optionsConfig: ComponentOptions | undefined;
+        if (typeof component.optionsProperty === "string") {
+            optionsConfig = { name: component.optionsProperty };
+        } else if (component.optionsProperty && typeof component.optionsProperty === "object") {
+            optionsConfig = component.optionsProperty;
+        }
+
+        /* Use explicit type if provided */
+        if (optionsConfig?.type) {
+            return {
+                name: optionsConfig.name,
+                fqn: optionsConfig.type,
+                docs: optionsConfig.docs,
+            };
+        }
+
+        /* Find component in JSII manifests */
+        const componentFqn = component.fqn ?? this.findComponentFqn(component.componentClass.name);
+        const manifest = this.loadManifestForFqn(componentFqn);
+
+        const classType = manifest.types?.[componentFqn];
+        if (!classType || classType.kind !== "class") {
+            throw new ComponentResolutionError(componentFqn, "Component not found in JSII manifest");
+        }
+
+        const initializer = (classType as { initializer?: { parameters?: Array<{ type?: { fqn?: string } }> } })
+            .initializer;
+        if (!initializer?.parameters?.[1]) {
+            return null; /* Component has no options parameter */
+        }
+
+        const optionsParam = initializer.parameters[1];
+        const optionsFqn = optionsParam.type?.fqn;
+
+        if (!optionsFqn) {
+            return null; /* Options parameter has no FQN */
+        }
+
+        const optionsType = manifest.types?.[optionsFqn];
+        const docs = (optionsType as { docs?: { summary?: string } } | undefined)?.docs?.summary;
+
+        /* Auto-generate property name if not provided */
+        const name = component.componentClass.name;
+        const defaultName = `${name.charAt(0).toLowerCase()}${name.slice(1)}Options`;
+        const propertyName = optionsConfig?.name ?? defaultName;
+
+        return { name: propertyName, fqn: optionsFqn, docs };
+    }
+
+    /**
+     * Finds component FQN by searching all JSII manifests
+     */
+    private findComponentFqn(componentName: string): string {
+        /* Try own package first */
+        const ownFqn = `@nikovirtala/projen-constructs.${componentName}`;
+        try {
+            const ownManifest = this.loadOwnManifest();
+            if (ownManifest.types?.[ownFqn]) {
+                return ownFqn;
+            }
+        } catch (error) {
+            /* Own manifest not available yet during development - this is expected */
+            console.warn(
+                JSON.stringify({
+                    message: "Own manifest not available",
+                    component: componentName,
+                    error: error instanceof Error ? error.message : String(error),
+                }),
+            );
+        }
+
+        /* Search in node_modules for JSII packages */
+        const nodeModulesPath = join(__dirname, "../../node_modules");
+        const packages = this.findJsiiPackages(nodeModulesPath);
+
+        for (const pkg of packages) {
+            try {
+                const manifest = this.loadManifestFromPackage(pkg);
+                for (const fqn of Object.keys(manifest.types ?? {})) {
+                    if (fqn.endsWith(`.${componentName}`)) {
+                        return fqn;
+                    }
+                }
+            } catch (error) {
+                /* Skip packages with invalid manifests - log for debugging */
+                console.warn(
+                    JSON.stringify({
+                        message: "Failed to load manifest from package",
+                        package: pkg,
+                        error: error instanceof Error ? error.message : String(error),
+                    }),
+                );
+            }
+        }
+
+        throw new ComponentResolutionError(componentName, "Component not found in any JSII manifest");
+    }
+
+    /**
+     * Finds all JSII packages in node_modules
+     */
+    private findJsiiPackages(nodeModulesPath: string): string[] {
+        const packages: string[] = [];
+        const { readdirSync, statSync, existsSync } = require("node:fs");
+
+        if (!existsSync(nodeModulesPath)) {
+            return packages;
+        }
+
+        const resolvedBase = resolve(nodeModulesPath);
+
+        for (const entry of readdirSync(nodeModulesPath)) {
+            const entryPath = resolve(nodeModulesPath, entry);
+
+            /* Prevent path traversal attacks */
+            if (!entryPath.startsWith(resolvedBase)) {
+                continue;
+            }
+
+            if (entry.startsWith("@")) {
+                /* Scoped package - recurse into scope */
+                const scopePath = entryPath;
+                for (const scopedEntry of readdirSync(scopePath)) {
+                    const pkgPath = resolve(scopePath, scopedEntry);
+
+                    /* Prevent path traversal attacks */
+                    if (!pkgPath.startsWith(resolvedBase)) {
+                        continue;
+                    }
+
+                    if (existsSync(join(pkgPath, ".jsii"))) {
+                        packages.push(pkgPath);
+                    }
+                }
+            } else if (statSync(entryPath).isDirectory()) {
+                /* Regular package */
+                if (existsSync(join(entryPath, ".jsii"))) {
+                    packages.push(entryPath);
+                }
+            }
+        }
+
+        return packages;
+    }
+
+    /**
+     * Loads JSII manifest for a given FQN
+     *
+     * Extracts package name from FQN. For scoped packages like @scope/package.ClassName,
+     * the package name is everything before the first dot (i.e., @scope/package).
+     */
+    private loadManifestForFqn(fqn: string): Assembly {
+        const dotIndex = fqn.indexOf(".");
+        const packageName = dotIndex > 0 ? fqn.substring(0, dotIndex) : fqn;
+
+        /* Try own package */
+        if (packageName === "@nikovirtala/projen-constructs") {
+            return this.loadOwnManifest();
+        }
+
+        /* Try node_modules */
+        try {
+            const pkgJsonPath = require.resolve(`${packageName}/package.json`);
+            return this.loadManifestFromPackage(dirname(pkgJsonPath));
+        } catch (error) {
+            throw new ManifestLoadError(packageName, error instanceof Error ? error.message : String(error));
+        }
+    }
+
+    /**
+     * Loads JSII manifest from a package directory
+     */
+    private loadManifestFromPackage(packagePath: string): Assembly {
+        const jsiiPath = join(packagePath, ".jsii");
+        return JSON.parse(readFileSync(jsiiPath, "utf-8"));
+    }
+
+    /**
+     * Loads this package's JSII manifest
+     */
+    private loadOwnManifest(): Assembly {
+        const jsiiPath = join(__dirname, "../.jsii");
+        return JSON.parse(readFileSync(jsiiPath, "utf-8"));
+    }
+
+    /**
+     * Generates ProjectType enum from Projen's JSII manifest
+     */
+    private generateProjectTypeEnum(): void {
+        const projectTypes = this.discoverProjectTypes();
+
+        const lines: string[] = [];
+        lines.push("/**");
+        lines.push(" * Enum defining all supported project types");
+        lines.push(" *");
+        lines.push(" * Each project type corresponds to a generated project class and its configuration");
+        lines.push(" * in the defaultOptions structure.");
+        lines.push(" *");
+        lines.push(" * @generated Automatically generated from Projen's JSII manifest");
+        lines.push(" */");
+        lines.push("export enum ProjectType {");
+
+        for (const [enumName, value, docs] of projectTypes) {
+            lines.push("    /**");
+            lines.push(`     * ${docs}`);
+            lines.push("     */");
+            lines.push(`    ${enumName} = "${value}",`);
+            lines.push("");
+        }
+
+        lines.push("}");
+
+        new projen.TextFile(this.project, "src/project-type.ts", {
+            readonly: true,
+            lines,
+        });
+    }
+
+    /**
+     * Discovers all project types that extend projen.Project
+     */
+    private discoverProjectTypes(): Array<[string, string, string]> {
+        const projectTypes: Array<[string, string, string]> = [];
+        const baseClass = "projen.Project";
+
+        for (const [fqn, type] of Object.entries(this.renderer.jsiiManifest.types ?? {})) {
+            if (type.kind !== "class") {
+                continue;
+            }
+
+            const classType = type as {
+                abstract?: boolean;
+                base?: string;
+                docs?: { summary?: string };
+            };
+
+            if (classType.abstract) {
+                continue;
+            }
+
+            if (!this.extendsBase(classType, baseClass)) {
+                continue;
+            }
+
+            const parts = fqn.split(".");
+            if (parts.length < 3 || parts[0] !== "projen") {
+                continue;
+            }
+
+            const module = parts[1];
+            const className = parts.slice(2).join(".");
+            const enumName = className
+                .replace(/([A-Z])/g, "_$1")
+                .toUpperCase()
+                .replace(/^_/, "");
+            const value = `${module}.${className}`;
+            const docs = classType.docs?.summary ?? className;
+
+            projectTypes.push([enumName, value, docs]);
+        }
+
+        return projectTypes.sort((a, b) => a[0].localeCompare(b[0]));
+    }
+
+    /**
+     * Checks if a class extends the base class
+     */
+    private extendsBase(classType: { inheritancePath?: string[]; base?: string }, baseClass: string): boolean {
+        if (classType.inheritancePath) {
+            return classType.inheritancePath.includes(baseClass);
+        }
+
+        let currentBase = classType.base;
+        while (currentBase) {
+            if (currentBase === baseClass) {
+                return true;
+            }
+            const baseType = this.renderer.jsiiManifest.types?.[currentBase];
+            if (!baseType || baseType.kind !== "class") {
+                break;
+            }
+            currentBase = (baseType as { base?: string }).base;
+        }
+
+        return false;
+    }
 }
 
 /**
@@ -695,7 +1007,7 @@ export class ProjectGenerator extends Component {
  * Extends Projen's TextFile to add the generated file marker comment
  * at the beginning of the file.
  */
-class TypeScriptClassFile extends TextFile {
+class TypeScriptClassFile extends projen.TextFile {
     /**
      * @param project - Projen project instance
      * @param filePath - Output file path

@@ -6,9 +6,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { JsiiProjectOptions } from "./jsii-options.generated";
 
-
 export { JsiiProjectOptions } from "./jsii-options.generated";
-
 
 /**
  * JsiiProject with standard configuration and component integration
@@ -21,12 +19,12 @@ export class JsiiProject extends cdk.JsiiProject {
      */
     constructor(options: JsiiProjectOptions) {
         /* Separate component configuration from base Projen options */
-        const { mise, vitest, vitestOptions, ...baseOptions } = options;
+        const { mise, vitest, ...baseOptions } = options;
 
         /* Merge default configuration with user options and initialize base class */
         super(deepMerge<cdk.JsiiProjectOptions>(defaultOptions.cdk.JsiiProject, baseOptions));
 
         /* Apply component defaults and instantiate enabled components */
-        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest, options: vitestOptions }]);
+        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest }]);
     }
 }

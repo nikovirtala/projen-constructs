@@ -33,5 +33,6 @@
 /mise.toml linguist-generated
 /package.json linguist-generated
 /pnpm-lock.yaml linguist-generated
+/src/project-type.ts linguist-generated
 /tsconfig.dev.json linguist-generated
 /vitest.config.ts linguist-generated

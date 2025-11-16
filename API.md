@@ -4721,6 +4721,181 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ---
 
+### ProjectGenerator <a name="ProjectGenerator" id="@nikovirtala/projen-constructs.ProjectGenerator"></a>
+
+Projen component that generates TypeScript project classes with standard configuration.
+
+This component automates the creation of project classes that extend Projen base classes
+with opinionated defaults and component integration.
+
+#### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.ProjectGenerator.Initializer"></a>
+
+```typescript
+import { ProjectGenerator } from '@nikovirtala/projen-constructs'
+
+new ProjectGenerator(project: Project, options: ProjectGeneratorOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | - Projen project instance. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions">ProjectGeneratorOptions</a></code> | - Generator configuration. |
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.ProjectGenerator.Initializer.parameter.project"></a>
+
+- *Type:* projen.Project
+
+Projen project instance.
+
+---
+
+##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.ProjectGenerator.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions">ProjectGeneratorOptions</a>
+
+Generator configuration.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.preSynthesize">preSynthesize</a></code> | Generates the TypeScript class file during Projen synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@nikovirtala/projen-constructs.ProjectGenerator.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `postSynthesize` <a name="postSynthesize" id="@nikovirtala/projen-constructs.ProjectGenerator.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@nikovirtala/projen-constructs.ProjectGenerator.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Generates the TypeScript class file during Projen synthesis.
+
+Called by Projen during the synthesis phase to generate the project class file.
+The file is marked as readonly to prevent manual editing.
+
+##### `synthesize` <a name="synthesize" id="@nikovirtala/projen-constructs.ProjectGenerator.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@nikovirtala/projen-constructs.ProjectGenerator.isConstruct"></a>
+
+```typescript
+import { ProjectGenerator } from '@nikovirtala/projen-constructs'
+
+ProjectGenerator.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.ProjectGenerator.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@nikovirtala/projen-constructs.ProjectGenerator.isComponent"></a>
+
+```typescript
+import { ProjectGenerator } from '@nikovirtala/projen-constructs'
+
+ProjectGenerator.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.ProjectGenerator.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGenerator.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.ProjectGenerator.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.ProjectGenerator.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ### TypeScriptProject <a name="TypeScriptProject" id="@nikovirtala/projen-constructs.TypeScriptProject"></a>
 
 TypeScriptProject with standard configuration and component integration.
@@ -11408,6 +11583,115 @@ Options for Yarn Berry.
 
 ---
 
+### Component <a name="Component" id="@nikovirtala/projen-constructs.Component"></a>
+
+Configuration for a component to be integrated into a generated project.
+
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.Component.Initializer"></a>
+
+```typescript
+import { Component } from '@nikovirtala/projen-constructs'
+
+const component: Component = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.Component.property.fqn">fqn</a></code> | <code>string</code> | Fully qualified name of the component class. |
+| <code><a href="#@nikovirtala/projen-constructs.Component.property.optionsProperty">optionsProperty</a></code> | <code>string \| boolean \| <a href="#@nikovirtala/projen-constructs.ComponentOptions">ComponentOptions</a></code> | Options property configuration for the generated options interface. |
+
+---
+
+##### `fqn`<sup>Optional</sup> <a name="fqn" id="@nikovirtala/projen-constructs.Component.property.fqn"></a>
+
+```typescript
+public readonly fqn: string;
+```
+
+- *Type:* string
+
+Fully qualified name of the component class.
+
+Optional - auto-detected by searching JSII manifests.
+
+---
+
+##### `optionsProperty`<sup>Optional</sup> <a name="optionsProperty" id="@nikovirtala/projen-constructs.Component.property.optionsProperty"></a>
+
+```typescript
+public readonly optionsProperty: string | boolean | ComponentOptions;
+```
+
+- *Type:* string | boolean | <a href="#@nikovirtala/projen-constructs.ComponentOptions">ComponentOptions</a>
+
+Options property configuration for the generated options interface.
+
+Optional - auto-detected from component constructor.
+Set to false to disable options property generation.
+Set to string or object to customize the property name.
+
+---
+
+### ComponentOptions <a name="ComponentOptions" id="@nikovirtala/projen-constructs.ComponentOptions"></a>
+
+Options property configuration.
+
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.ComponentOptions.Initializer"></a>
+
+```typescript
+import { ComponentOptions } from '@nikovirtala/projen-constructs'
+
+const componentOptions: ComponentOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ComponentOptions.property.name">name</a></code> | <code>string</code> | Name of the options property. |
+| <code><a href="#@nikovirtala/projen-constructs.ComponentOptions.property.docs">docs</a></code> | <code>string</code> | Documentation summary (optional, auto-detected from component constructor). |
+| <code><a href="#@nikovirtala/projen-constructs.ComponentOptions.property.type">type</a></code> | <code>string</code> | Fully qualified type name (optional, auto-detected from component constructor). |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.ComponentOptions.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Name of the options property.
+
+---
+
+##### `docs`<sup>Optional</sup> <a name="docs" id="@nikovirtala/projen-constructs.ComponentOptions.property.docs"></a>
+
+```typescript
+public readonly docs: string;
+```
+
+- *Type:* string
+
+Documentation summary (optional, auto-detected from component constructor).
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="@nikovirtala/projen-constructs.ComponentOptions.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Fully qualified type name (optional, auto-detected from component constructor).
+
+---
+
 ### JsiiProjectOptions <a name="JsiiProjectOptions" id="@nikovirtala/projen-constructs.JsiiProjectOptions"></a>
 
 JsiiProjectOptions.
@@ -13725,6 +14009,149 @@ public readonly yarnBerryOptions: YarnBerryOptions;
 - *Default:* Yarn Berry v4 with all default options
 
 Options for Yarn Berry.
+
+---
+
+### ProjectGeneratorOptions <a name="ProjectGeneratorOptions" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions"></a>
+
+Options for ProjectGenerator component.
+
+Configures the generation of a TypeScript project class that extends a Projen base class
+with standard configuration and component integration.
+
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.Initializer"></a>
+
+```typescript
+import { ProjectGeneratorOptions } from '@nikovirtala/projen-constructs'
+
+const projectGeneratorOptions: ProjectGeneratorOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.indent">indent</a></code> | <code>number</code> | Indentation size. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.readonly">readonly</a></code> | <code>boolean</code> | Whether the generated file should be readonly. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.filePath">filePath</a></code> | <code>string</code> | Output file path for the generated class. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.name">name</a></code> | <code>string</code> | Name of the generated class (e.g., "TypeScriptProject"). |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.projectType">projectType</a></code> | <code><a href="#@nikovirtala/projen-constructs.ProjectType">ProjectType</a></code> | Project type identifier. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.components">components</a></code> | <code><a href="#@nikovirtala/projen-constructs.Component">Component</a>[]</code> | Components to integrate into the project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.omitOptions">omitOptions</a></code> | <code>string[]</code> | Property names to omit from the base options interface. |
+
+---
+
+##### `indent`<sup>Optional</sup> <a name="indent" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.indent"></a>
+
+```typescript
+public readonly indent: number;
+```
+
+- *Type:* number
+- *Default:* 2
+
+Indentation size.
+
+---
+
+##### `readonly`<sup>Optional</sup> <a name="readonly" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.readonly"></a>
+
+```typescript
+public readonly readonly: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Whether the generated file should be readonly.
+
+---
+
+##### `filePath`<sup>Required</sup> <a name="filePath" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.filePath"></a>
+
+```typescript
+public readonly filePath: string;
+```
+
+- *Type:* string
+
+Output file path for the generated class.
+
+Must contain a directory separator. The options interface will be generated
+in the same directory with a ".generated.ts" suffix.
+
+---
+
+*Example*
+
+```typescript
+"src/projects/typescript.generated.ts"
+```
+
+
+##### `name`<sup>Required</sup> <a name="name" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Name of the generated class (e.g., "TypeScriptProject").
+
+The options interface will be named `${name}Options`.
+
+---
+
+##### `projectType`<sup>Required</sup> <a name="projectType" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.projectType"></a>
+
+```typescript
+public readonly projectType: ProjectType;
+```
+
+- *Type:* <a href="#@nikovirtala/projen-constructs.ProjectType">ProjectType</a>
+
+Project type identifier.
+
+Specifies which Projen base class to extend and which default configuration to apply.
+
+---
+
+*Example*
+
+```typescript
+ProjectType.JSII
+```
+
+
+##### `components`<sup>Optional</sup> <a name="components" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.components"></a>
+
+```typescript
+public readonly components: Component[];
+```
+
+- *Type:* <a href="#@nikovirtala/projen-constructs.Component">Component</a>[]
+- *Default:* [{ component: Mise }, { component: Vitest, optionsProperty: { name: "vitestOptions", type: "...", docs: "..." } }]
+
+Components to integrate into the project.
+
+Each component will be instantiated during project construction and can be
+configured via an optional options property in the generated interface.
+
+---
+
+##### `omitOptions`<sup>Optional</sup> <a name="omitOptions" id="@nikovirtala/projen-constructs.ProjectGeneratorOptions.property.omitOptions"></a>
+
+```typescript
+public readonly omitOptions: string[];
+```
+
+- *Type:* string[]
+
+Property names to omit from the base options interface.
+
+Use this to hide base class options that should not be configurable
+in the generated project type.
 
 ---
 
@@ -16247,45 +16674,173 @@ in the defaultOptions structure.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT">TYPESCRIPT</a></code> | TypeScript project with ES modules support. |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.JSII">JSII</a></code> | JSII project for publishing multi-language libraries. |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP">AWS_CDK_TYPESCRIPT_APP</a></code> | AWS CDK TypeScript application project with ES modules support. |
-| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY">AWS_CDK_CONSTRUCT_LIBRARY</a></code> | AWS CDK construct library project for publishing reusable constructs. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY">AWS_CDK_CONSTRUCT_LIBRARY</a></code> | AWS CDK construct library project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_JAVA_APP">AWS_CDK_JAVA_APP</a></code> | AWS CDK app in Java. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_PYTHON_APP">AWS_CDK_PYTHON_APP</a></code> | AWS CDK app in Python. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPE_SCRIPT_APP">AWS_CDK_TYPE_SCRIPT_APP</a></code> | AWS CDK app in TypeScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CDK8S_PYTHON_APP">CDK8S_PYTHON_APP</a></code> | CDK8s app in Python. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CDK8S_TYPE_SCRIPT_APP">CDK8S_TYPE_SCRIPT_APP</a></code> | CDK8s app in TypeScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_AWS">CONSTRUCT_LIBRARY_AWS</a></code> | ConstructLibraryAws. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDK8S">CONSTRUCT_LIBRARY_CDK8S</a></code> | CDK8s construct library project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDKTF">CONSTRUCT_LIBRARY_CDKTF</a></code> | CDKTF construct library project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.GIT_HUB_PROJECT">GIT_HUB_PROJECT</a></code> | GitHub-based project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.JAVA_PROJECT">JAVA_PROJECT</a></code> | Java project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.JSII_PROJECT">JSII_PROJECT</a></code> | Multi-language jsii library project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.NEXT_JS_PROJECT">NEXT_JS_PROJECT</a></code> | Next.js project using JavaScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.NEXT_JS_TYPE_SCRIPT_PROJECT">NEXT_JS_TYPE_SCRIPT_PROJECT</a></code> | Next.js project using TypeScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.NODE_PROJECT">NODE_PROJECT</a></code> | Node.js project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.PYTHON_PROJECT">PYTHON_PROJECT</a></code> | Python project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.REACT_PROJECT">REACT_PROJECT</a></code> | React project using JavaScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.REACT_TYPE_SCRIPT_PROJECT">REACT_TYPE_SCRIPT_PROJECT</a></code> | React project using TypeScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPE_SCRIPT_APP_PROJECT">TYPE_SCRIPT_APP_PROJECT</a></code> | TypeScript app. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPE_SCRIPT_LIBRARY_PROJECT">TYPE_SCRIPT_LIBRARY_PROJECT</a></code> | TypeScriptLibraryProject. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.TYPE_SCRIPT_PROJECT">TYPE_SCRIPT_PROJECT</a></code> | TypeScript project. |
 
 ---
-
-##### `TYPESCRIPT` <a name="TYPESCRIPT" id="@nikovirtala/projen-constructs.ProjectType.TYPESCRIPT"></a>
-
-TypeScript project with ES modules support.
-
-> [https://projen.io/docs/api/typescript#typescriptproject-](https://projen.io/docs/api/typescript#typescriptproject-)
-
----
-
-
-##### `JSII` <a name="JSII" id="@nikovirtala/projen-constructs.ProjectType.JSII"></a>
-
-JSII project for publishing multi-language libraries.
-
-> [https://projen.io/docs/api/cdk#jsiiproject-](https://projen.io/docs/api/cdk#jsiiproject-)
-
----
-
-
-##### `AWS_CDK_TYPESCRIPT_APP` <a name="AWS_CDK_TYPESCRIPT_APP" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPESCRIPT_APP"></a>
-
-AWS CDK TypeScript application project with ES modules support.
-
-> [https://projen.io/docs/api/awscdk#awscdktypescriptapp-](https://projen.io/docs/api/awscdk#awscdktypescriptapp-)
-
----
-
 
 ##### `AWS_CDK_CONSTRUCT_LIBRARY` <a name="AWS_CDK_CONSTRUCT_LIBRARY" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_CONSTRUCT_LIBRARY"></a>
 
-AWS CDK construct library project for publishing reusable constructs.
+AWS CDK construct library project.
 
-> [https://projen.io/docs/api/awscdk/#awscdkconstructlibrary-](https://projen.io/docs/api/awscdk/#awscdkconstructlibrary-)
+---
+
+
+##### `AWS_CDK_JAVA_APP` <a name="AWS_CDK_JAVA_APP" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_JAVA_APP"></a>
+
+AWS CDK app in Java.
+
+---
+
+
+##### `AWS_CDK_PYTHON_APP` <a name="AWS_CDK_PYTHON_APP" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_PYTHON_APP"></a>
+
+AWS CDK app in Python.
+
+---
+
+
+##### `AWS_CDK_TYPE_SCRIPT_APP` <a name="AWS_CDK_TYPE_SCRIPT_APP" id="@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPE_SCRIPT_APP"></a>
+
+AWS CDK app in TypeScript.
+
+---
+
+
+##### `CDK8S_PYTHON_APP` <a name="CDK8S_PYTHON_APP" id="@nikovirtala/projen-constructs.ProjectType.CDK8S_PYTHON_APP"></a>
+
+CDK8s app in Python.
+
+---
+
+
+##### `CDK8S_TYPE_SCRIPT_APP` <a name="CDK8S_TYPE_SCRIPT_APP" id="@nikovirtala/projen-constructs.ProjectType.CDK8S_TYPE_SCRIPT_APP"></a>
+
+CDK8s app in TypeScript.
+
+---
+
+
+##### `CONSTRUCT_LIBRARY_AWS` <a name="CONSTRUCT_LIBRARY_AWS" id="@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_AWS"></a>
+
+ConstructLibraryAws.
+
+---
+
+
+##### `CONSTRUCT_LIBRARY_CDK8S` <a name="CONSTRUCT_LIBRARY_CDK8S" id="@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDK8S"></a>
+
+CDK8s construct library project.
+
+---
+
+
+##### `CONSTRUCT_LIBRARY_CDKTF` <a name="CONSTRUCT_LIBRARY_CDKTF" id="@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDKTF"></a>
+
+CDKTF construct library project.
+
+---
+
+
+##### `GIT_HUB_PROJECT` <a name="GIT_HUB_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.GIT_HUB_PROJECT"></a>
+
+GitHub-based project.
+
+---
+
+
+##### `JAVA_PROJECT` <a name="JAVA_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.JAVA_PROJECT"></a>
+
+Java project.
+
+---
+
+
+##### `JSII_PROJECT` <a name="JSII_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.JSII_PROJECT"></a>
+
+Multi-language jsii library project.
+
+---
+
+
+##### `NEXT_JS_PROJECT` <a name="NEXT_JS_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.NEXT_JS_PROJECT"></a>
+
+Next.js project using JavaScript.
+
+---
+
+
+##### `NEXT_JS_TYPE_SCRIPT_PROJECT` <a name="NEXT_JS_TYPE_SCRIPT_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.NEXT_JS_TYPE_SCRIPT_PROJECT"></a>
+
+Next.js project using TypeScript.
+
+---
+
+
+##### `NODE_PROJECT` <a name="NODE_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.NODE_PROJECT"></a>
+
+Node.js project.
+
+---
+
+
+##### `PYTHON_PROJECT` <a name="PYTHON_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.PYTHON_PROJECT"></a>
+
+Python project.
+
+---
+
+
+##### `REACT_PROJECT` <a name="REACT_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.REACT_PROJECT"></a>
+
+React project using JavaScript.
+
+---
+
+
+##### `REACT_TYPE_SCRIPT_PROJECT` <a name="REACT_TYPE_SCRIPT_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.REACT_TYPE_SCRIPT_PROJECT"></a>
+
+React project using TypeScript.
+
+---
+
+
+##### `TYPE_SCRIPT_APP_PROJECT` <a name="TYPE_SCRIPT_APP_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.TYPE_SCRIPT_APP_PROJECT"></a>
+
+TypeScript app.
+
+---
+
+
+##### `TYPE_SCRIPT_LIBRARY_PROJECT` <a name="TYPE_SCRIPT_LIBRARY_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.TYPE_SCRIPT_LIBRARY_PROJECT"></a>
+
+TypeScriptLibraryProject.
+
+---
+
+
+##### `TYPE_SCRIPT_PROJECT` <a name="TYPE_SCRIPT_PROJECT" id="@nikovirtala/projen-constructs.ProjectType.TYPE_SCRIPT_PROJECT"></a>
+
+TypeScript project.
 
 ---
 

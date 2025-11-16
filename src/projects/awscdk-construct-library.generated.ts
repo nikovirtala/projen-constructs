@@ -6,9 +6,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { AwsCdkConstructLibraryProjectOptions } from "./awscdk-construct-library-options.generated";
 
-
 export { AwsCdkConstructLibraryProjectOptions } from "./awscdk-construct-library-options.generated";
-
 
 /**
  * AwsCdkConstructLibraryProject with standard configuration and component integration
@@ -21,12 +19,12 @@ export class AwsCdkConstructLibraryProject extends awscdk.AwsCdkConstructLibrary
      */
     constructor(options: AwsCdkConstructLibraryProjectOptions) {
         /* Separate component configuration from base Projen options */
-        const { mise, vitest, vitestOptions, ...baseOptions } = options;
+        const { mise, vitest, ...baseOptions } = options;
 
         /* Merge default configuration with user options and initialize base class */
         super(deepMerge<awscdk.AwsCdkConstructLibraryOptions>(defaultOptions.awscdk.AwsCdkConstructLibrary, baseOptions));
 
         /* Apply component defaults and instantiate enabled components */
-        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest, options: vitestOptions }]);
+        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest }]);
     }
 }

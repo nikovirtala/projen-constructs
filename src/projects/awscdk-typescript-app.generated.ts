@@ -6,9 +6,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { AwsCdkTypeScriptAppProjectOptions } from "./awscdk-typescript-app-options.generated";
 
-
 export { AwsCdkTypeScriptAppProjectOptions } from "./awscdk-typescript-app-options.generated";
-
 
 /**
  * AwsCdkTypeScriptAppProject with standard configuration and component integration
@@ -21,12 +19,12 @@ export class AwsCdkTypeScriptAppProject extends awscdk.AwsCdkTypeScriptApp {
      */
     constructor(options: AwsCdkTypeScriptAppProjectOptions) {
         /* Separate component configuration from base Projen options */
-        const { mise, vitest, vitestOptions, ...baseOptions } = options;
+        const { mise, vitest, ...baseOptions } = options;
 
         /* Merge default configuration with user options and initialize base class */
         super(deepMerge<awscdk.AwsCdkTypeScriptAppOptions>(defaultOptions.awscdk.AwsCdkTypeScriptApp, baseOptions));
 
         /* Apply component defaults and instantiate enabled components */
-        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest, options: vitestOptions }]);
+        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest }]);
     }
 }

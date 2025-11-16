@@ -6,9 +6,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { TypeScriptProjectOptions } from "./typescript-options.generated";
 
-
 export { TypeScriptProjectOptions } from "./typescript-options.generated";
-
 
 /**
  * TypeScriptProject with standard configuration and component integration
@@ -21,12 +19,12 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
      */
     constructor(options: TypeScriptProjectOptions) {
         /* Separate component configuration from base Projen options */
-        const { mise, vitest, vitestOptions, ...baseOptions } = options;
+        const { mise, vitest, ...baseOptions } = options;
 
         /* Merge default configuration with user options and initialize base class */
         super(deepMerge<typescript.TypeScriptProjectOptions>(defaultOptions.typescript.TypeScriptProject, baseOptions));
 
         /* Apply component defaults and instantiate enabled components */
-        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest, options: vitestOptions }]);
+        applyDefaults(this, [{ component: Mise, enabled: mise }, { component: Vitest, enabled: vitest }]);
     }
 }

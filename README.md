@@ -8,21 +8,26 @@ Projen project types with standard configuration for consistent project setup ac
 pnpm add -D @nikovirtala/projen-constructs projen constructs
 ```
 
-## Standard Configuration
+## Features
 
-All project types include:
+- **Standard Configuration**: Opinionated defaults for author, release branch, package manager, Node.js, TypeScript, and tooling
+- **Automatic Project Type Discovery**: Generates `ProjectType` enum from Projen's JSII manifest (18 project types)
+- **Component System**: Reusable components (Vitest, Mise, TypeDoc, LocalStack, etc.)
+- **Code Generation**: `ProjectGenerator` creates project classes with standard configuration
+- **ES Modules**: TypeScript and CDK App projects use ES modules (JSII uses CommonJS)
+- **Code Quality**: Biome for formatting and linting
+- **Testing**: Vitest with coverage
+- **Auto-merge**: Enabled with auto-approve
+- **VSCode**: Recommended extensions and settings
+- **mise**: Node version management
+
+## Standard Configuration
 
 - **Author**: Niko Virtala (niko.virtala@hey.com)
 - **Default Release Branch**: main
 - **Package Manager**: pnpm 10
 - **Node Version**: 22.21.1
 - **TypeScript**: 5.9.3
-- **Module Type**: ES modules (TypeScript and CDK App projects only; JSII projects use CommonJS)
-- **Code Quality**: Biome for formatting and linting
-- **Testing**: Vitest
-- **Auto-merge**: Enabled with auto-approve
-- **VSCode**: Recommended extensions and settings
-- **mise**: Node version management (via Homebrew)
 - **CDK Version**: 2.223.0 (for CDK projects)
 - **JSII Version**: ~5.9.3 (for JSII projects)
 
@@ -235,3 +240,27 @@ new LambdaFunctionCodeBundle(project, {
   extension: ".lambda.ts",
 });
 ```
+
+#### ProjectGenerator
+
+Generates TypeScript project classes with standard configuration.
+
+```typescript
+import { ProjectGenerator, ProjectType } from "@nikovirtala/projen-constructs";
+
+new ProjectGenerator(project, {
+  name: "TypeScriptProject",
+  projectType: ProjectType.TYPESCRIPT,
+  filePath: "./src/projects/typescript.generated.ts",
+  components: [
+    { componentClass: Mise },
+    { componentClass: Vitest }, // Auto-detects VitestOptions from JSII manifest
+  ],
+});
+```
+
+Features:
+- Automatically generates the `ProjectType` enum from Projen's JSII manifest
+- Auto-detects component options types from JSII manifests
+- Validates paths to prevent directory traversal attacks
+- Structured error handling with custom error classes

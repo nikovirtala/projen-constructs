@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deepMerge } from "../src/utils";
+import { deepMerge, mergeAll } from "../src/utils";
 
 describe("deepMerge", () => {
     it("merges simple objects", () => {
@@ -88,5 +88,45 @@ describe("deepMerge", () => {
                 d: 4,
             },
         });
+    });
+
+    it("handles undefined target", () => {
+        const source = { a: 1, b: 2 };
+        const result = deepMerge(undefined, source);
+
+        expect(result).toEqual({ a: 1, b: 2 });
+    });
+
+    it("handles undefined source", () => {
+        const target = { a: 1, b: 2 };
+        const result = deepMerge(target, undefined);
+
+        expect(result).toEqual({ a: 1, b: 2 });
+    });
+
+    it("handles both undefined", () => {
+        const result = deepMerge(undefined, undefined);
+
+        expect(result).toEqual({});
+    });
+});
+
+describe("mergeAll", () => {
+    it("merges multiple objects", () => {
+        const result = mergeAll({ a: 1 }, { b: 2 }, { c: 3 });
+
+        expect(result).toEqual({ a: 1, b: 2, c: 3 });
+    });
+
+    it("handles undefined items", () => {
+        const result = mergeAll({ a: 1 }, undefined, { b: 2 });
+
+        expect(result).toEqual({ a: 1, b: 2 });
+    });
+
+    it("handles all undefined items", () => {
+        const result = mergeAll(undefined, undefined, undefined);
+
+        expect(result).toEqual({});
     });
 });

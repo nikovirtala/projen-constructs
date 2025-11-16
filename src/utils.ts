@@ -1,6 +1,6 @@
-export const deepMerge = <T>(target: Partial<T>, source: Partial<T>): T => {
-    const result = structuredClone(target) as Record<string, unknown>;
-    const src = source as Record<string, unknown>;
+export const deepMerge = <T>(target: Partial<T> | undefined, source: Partial<T> | undefined): T => {
+    const result = structuredClone(target ?? {}) as Record<string, unknown>;
+    const src = (source ?? {}) as Record<string, unknown>;
     for (const key in src) {
         if (src[key] && typeof src[key] === "object" && !Array.isArray(src[key])) {
             result[key] = deepMerge(
@@ -14,5 +14,5 @@ export const deepMerge = <T>(target: Partial<T>, source: Partial<T>): T => {
     return result as T;
 };
 
-export const mergeAll = <T extends object>(...items: Partial<T>[]) =>
+export const mergeAll = <T extends object>(...items: (Partial<T> | undefined)[]) =>
     items.reduce((acc, item) => deepMerge(acc, item), {} as T);

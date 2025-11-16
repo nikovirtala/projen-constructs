@@ -29,6 +29,7 @@
       "!.vscode/settings.json",
       "!Brewfile",
       "!mise.toml",
+      "!src/project-type.ts",
       "!src/projects/awscdk-construct-library-options.generated.ts",
       "!src/projects/awscdk-construct-library.generated.ts",
       "!src/projects/awscdk-typescript-app-options.generated.ts",

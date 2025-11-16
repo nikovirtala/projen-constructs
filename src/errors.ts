@@ -27,3 +27,29 @@ export class InvalidFilePathError extends Error {
         this.name = "InvalidFilePathError";
     }
 }
+
+/**
+ * Error thrown when component resolution fails
+ */
+export class ComponentResolutionError extends Error {
+    constructor(
+        public readonly componentName: string,
+        public readonly reason: string,
+    ) {
+        super(`Failed to resolve component ${componentName}: ${reason}`);
+        this.name = "ComponentResolutionError";
+    }
+}
+
+/**
+ * Error thrown when JSII manifest loading fails
+ */
+export class ManifestLoadError extends Error {
+    constructor(
+        public readonly packageName: string,
+        public readonly reason: string,
+    ) {
+        super(`Cannot load JSII manifest for package ${packageName}: ${reason}`);
+        this.name = "ManifestLoadError";
+    }
+}

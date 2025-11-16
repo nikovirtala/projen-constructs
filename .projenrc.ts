@@ -32,19 +32,9 @@ project.gitignore.addPatterns(".amazonq/");
  *
  * Each component is automatically added to the generated options interface with:
  * - An enabled flag (boolean, defaults to true)
- * - An options property (if optionsProperty is specified)
+ * - An options property (auto-detected from JSII manifest)
  */
-const components = [
-    { component: Mise },
-    {
-        component: Vitest,
-        optionsProperty: {
-            name: "vitestOptions",
-            type: "@nikovirtala/projen-constructs.VitestOptions",
-            docs: "Vitest configuration",
-        },
-    },
-];
+const components = [{ componentClass: Mise }, { componentClass: Vitest }];
 
 const projectOmits = [
     "eslint",
@@ -59,7 +49,7 @@ const projectOmits = [
 
 new ProjectGenerator(project, {
     name: "TypeScriptProject",
-    projectType: ProjectType.TYPESCRIPT,
+    projectType: ProjectType.TYPE_SCRIPT_PROJECT,
     filePath: "./src/projects/typescript.generated.ts",
     components,
     omitOptions: projectOmits,
@@ -67,7 +57,7 @@ new ProjectGenerator(project, {
 
 new ProjectGenerator(project, {
     name: "JsiiProject",
-    projectType: ProjectType.JSII,
+    projectType: ProjectType.JSII_PROJECT,
     filePath: "./src/projects/jsii.generated.ts",
     components,
     omitOptions: projectOmits,
@@ -75,7 +65,7 @@ new ProjectGenerator(project, {
 
 new ProjectGenerator(project, {
     name: "AwsCdkTypeScriptAppProject",
-    projectType: ProjectType.AWS_CDK_TYPESCRIPT_APP,
+    projectType: ProjectType.AWS_CDK_TYPE_SCRIPT_APP,
     filePath: "./src/projects/awscdk-typescript-app.generated.ts",
     components,
     omitOptions: projectOmits,
