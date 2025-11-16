@@ -22,18 +22,21 @@ graph TD
 The generator uses three components:
 
 **CodeBuffer** manages indentation during code generation:
+
 - `line(code)` adds a line of code
 - `open(code)` adds a line and increases indentation
 - `close(code)` decreases indentation and adds a line
 - `flush()` returns generated lines and resets the buffer
 
 **TypeScriptClassRenderer** renders TypeScript class code:
+
 - Extracts and sorts imports (external packages first, then relative)
 - Generates type-only imports for interface files
 - Renders class with constructor pattern
 - Handles custom options extraction and default config application
 
 **ProjectGenerator** orchestrates generation as a Projen component:
+
 - Extends `Component` for lifecycle integration
 - Runs during `preSynthesize()` phase
 - Creates `TypeScriptClassFile` with generated content
@@ -74,7 +77,9 @@ export class ClassName extends BaseClass {
   constructor(options: OptionsInterface) {
     const { mise, vitest, vitestOptions, ...baseOptions } = options;
 
-    super(deepMerge<BaseOptionsType>(defaultOptions.module.ClassName, baseOptions));
+    super(
+      deepMerge<BaseOptionsType>(defaultOptions.module.ClassName, baseOptions)
+    );
 
     applyDefaults(this, [
       { component: Mise, enabled: mise },
@@ -111,13 +116,13 @@ This eliminates fragile path-based naming and makes the relationship between pro
 
 ## Comparison with jsii-struct-builder
 
-| Feature  | jsii-struct-builder                  | ProjectGenerator |
-| -------- | ------------------------------------ | ---------------------- |
-| Purpose  | Generate interfaces                  | Generate classes       |
-| Input    | JSII specs                           | Configuration objects  |
-| Output   | TypeScript interfaces                | TypeScript classes     |
-| Pattern  | Builder pattern with transformations | Code generation        |
-| Use case | Type definitions                     | Implementation code    |
+| Feature  | jsii-struct-builder                  | ProjectGenerator      |
+| -------- | ------------------------------------ | --------------------- |
+| Purpose  | Generate interfaces                  | Generate classes      |
+| Input    | JSII specs                           | Configuration objects |
+| Output   | TypeScript interfaces                | TypeScript classes    |
+| Pattern  | Builder pattern with transformations | Code generation       |
+| Use case | Type definitions                     | Implementation code   |
 
 ## Integration
 
