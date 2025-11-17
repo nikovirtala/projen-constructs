@@ -26,6 +26,10 @@ const project = new JsiiProject({
 });
 
 project.gitignore.addPatterns(".amazonq/");
+project.gitignore.addPatterns(".kiro/");
+
+// projects depend on components jsii fqns
+project.gitignore.removePatterns(".jsii");
 
 /**
  * Components to integrate into all generated project types

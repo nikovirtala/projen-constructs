@@ -45,7 +45,6 @@ jspm_packages/
 !/src/
 /lib
 /dist/
-.jsii
 tsconfig.json
 !/API.md
 !/.vscode/extensions.json
@@ -55,6 +54,7 @@ tsconfig.json
 /coverage/
 !/vitest.config.ts
 .amazonq/
+.kiro/
 !/src/project-type.ts
 !/.projenrc.ts
 !/src/projects/typescript.generated.ts
