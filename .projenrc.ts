@@ -31,6 +31,9 @@ project.gitignore.addPatterns(".kiro/");
 // projects depend on components jsii fqns
 project.gitignore.removePatterns(".jsii");
 
+// Remove docgen from post-compile task
+project.postCompileTask.reset();
+
 /**
  * Components to integrate into all generated project types
  *
