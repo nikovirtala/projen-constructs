@@ -31,8 +31,11 @@ project.gitignore.addPatterns(".kiro/");
 // projects depend on components jsii fqns
 project.gitignore.removePatterns(".jsii");
 
-// Remove docgen from post-compile task
+// remove docgen from post-compile task
 project.postCompileTask.reset();
+
+// regenerate .jsii after unbump to ensure version is 0.0.0
+project.tasks.tryFind("unbump")?.exec("jsii --silence-warnings=reserved-word");
 
 /**
  * Components to integrate into all generated project types

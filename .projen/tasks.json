@@ -312,6 +312,9 @@
       "steps": [
         {
           "builtin": "release/reset-version"
+        },
+        {
+          "exec": "jsii --silence-warnings=reserved-word"
         }
       ]
     },
