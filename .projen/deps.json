@@ -68,6 +68,11 @@
       "type": "build"
     },
     {
+      "name": "typedoc",
+      "version": "^0.28",
+      "type": "build"
+    },
+    {
       "name": "typescript",
       "version": "5.9.3",
       "type": "build"

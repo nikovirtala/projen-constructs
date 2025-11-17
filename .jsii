@@ -10373,6 +10373,52 @@
       ],
       "symbolId": "src/projects/awscdk-typescript-app-options.generated:AwsCdkTypeScriptAppProjectOptions"
     },
+    "@nikovirtala/projen-constructs.CommentStyle": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "docs": {
+        "see": "https://typedoc.org/documents/Options.Comments.html#commentstyle",
+        "stability": "stable",
+        "summary": "Specifies the documentation mode TypeDoc should use."
+      },
+      "fqn": "@nikovirtala/projen-constructs.CommentStyle",
+      "kind": "enum",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 454
+      },
+      "members": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Parse JSDoc style comments only."
+          },
+          "name": "JSDOC"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Parse block comments."
+          },
+          "name": "BLOCK"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Parse line comments (//)."
+          },
+          "name": "LINE"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Parse all comment styles."
+          },
+          "name": "ALL"
+        }
+      ],
+      "name": "CommentStyle",
+      "symbolId": "src/components/typedoc-config:CommentStyle"
+    },
     "@nikovirtala/projen-constructs.Component": {
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
@@ -10590,6 +10636,52 @@
       "name": "CoverageReporter",
       "symbolId": "src/components/vitest:CoverageReporter"
     },
+    "@nikovirtala/projen-constructs.EntryPointStrategy": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "docs": {
+        "see": "https://typedoc.org/documents/Options.Input.html#entrypointstrategy",
+        "stability": "stable",
+        "summary": "Specifies the strategy to be used to convert entry points into documentation."
+      },
+      "fqn": "@nikovirtala/projen-constructs.EntryPointStrategy",
+      "kind": "enum",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 402
+      },
+      "members": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Expects all entry points to be contained within a single package."
+          },
+          "name": "RESOLVE"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Expects all entry points to be top-level directories."
+          },
+          "name": "EXPAND"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Expects all entry points to be individual files."
+          },
+          "name": "PACKAGES"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Merges multiple projects into a single documentation site."
+          },
+          "name": "MERGE"
+        }
+      ],
+      "name": "EntryPointStrategy",
+      "symbolId": "src/components/typedoc-config:EntryPointStrategy"
+    },
     "@nikovirtala/projen-constructs.Environment": {
       "assembly": "@nikovirtala/projen-constructs",
       "docs": {
@@ -10652,7 +10744,7 @@
         },
         "locationInModule": {
           "filename": "src/projects/jsii.generated.ts",
-          "line": 20
+          "line": 21
         },
         "parameters": [
           {
@@ -10669,7 +10761,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/projects/jsii.generated.ts",
-        "line": 16
+        "line": 17
       },
       "name": "JsiiProject",
       "symbolId": "src/projects/jsii.generated:JsiiProject"
@@ -13294,6 +13386,42 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "stability": "stable",
+            "summary": "Enable TypeDoc component."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 1067
+          },
+          "name": "typeDoc",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "- default TypeDoc configuration",
+            "stability": "stable",
+            "summary": "TypeDoc configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 1072
+          },
+          "name": "typeDocOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.TypeDocOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "\"latest\"",
             "remarks": "NOTE: Typescript is not semantically versioned and should remain on the\nsame minor, so we recommend using a `~` dependency (e.g. `~1.2.3`).",
             "stability": "experimental",
@@ -13553,6 +13681,59 @@
         }
       ],
       "symbolId": "src/projects/jsii-options.generated:JsiiProjectOptions"
+    },
+    "@nikovirtala/projen-constructs.LogLevel": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "docs": {
+        "see": "https://typedoc.org/documents/Options.Other.html#loglevel",
+        "stability": "stable",
+        "summary": "Specifies the logger that should be used."
+      },
+      "fqn": "@nikovirtala/projen-constructs.LogLevel",
+      "kind": "enum",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 426
+      },
+      "members": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Log all messages including verbose debug information."
+          },
+          "name": "VERBOSE"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Log informational messages and above."
+          },
+          "name": "INFO"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Log warnings and errors only."
+          },
+          "name": "WARN"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Log errors only."
+          },
+          "name": "ERROR"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Disable all logging."
+          },
+          "name": "NONE"
+        }
+      ],
+      "name": "LogLevel",
+      "symbolId": "src/components/typedoc-config:LogLevel"
     },
     "@nikovirtala/projen-constructs.Pool": {
       "assembly": "@nikovirtala/projen-constructs",
@@ -13954,6 +14135,1055 @@
       ],
       "name": "ProjectType",
       "symbolId": "src/project-type:ProjectType"
+    },
+    "@nikovirtala/projen-constructs.TypeDoc": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable",
+        "summary": "TypeDoc component for projen projects."
+      },
+      "fqn": "@nikovirtala/projen-constructs.TypeDoc",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/typedoc.ts",
+          "line": 57
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.javascript.NodeProject"
+            }
+          },
+          {
+            "name": "options",
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.TypeDocOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/typedoc.ts",
+        "line": 39
+      },
+      "methods": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/components/typedoc.ts",
+            "line": 40
+          },
+          "name": "of",
+          "parameters": [
+            {
+              "name": "project",
+              "type": {
+                "fqn": "projen.Project"
+              }
+            }
+          ],
+          "returns": {
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.TypeDoc"
+            }
+          },
+          "static": true
+        }
+      ],
+      "name": "TypeDoc",
+      "properties": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "TypeDoc configuration file."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc.ts",
+            "line": 55
+          },
+          "name": "file",
+          "type": {
+            "fqn": "projen.JsonFile"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "TypeDoc task."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc.ts",
+            "line": 50
+          },
+          "name": "task",
+          "type": {
+            "fqn": "projen.Task"
+          }
+        }
+      ],
+      "symbolId": "src/components/typedoc:TypeDoc"
+    },
+    "@nikovirtala/projen-constructs.TypeDocConfiguration": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "see": "https://typedoc.org/options/",
+        "stability": "stable",
+        "summary": "TypeDoc configuration."
+      },
+      "fqn": "@nikovirtala/projen-constructs.TypeDocConfiguration",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 6
+      },
+      "name": "TypeDocConfiguration",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#basepath",
+            "stability": "stable",
+            "summary": "Specify the base path for all urls."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 82
+          },
+          "name": "basePath",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#cachebust",
+            "stability": "stable",
+            "summary": "Include the generation time in links to prevent browsers from using a cached version."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 264
+          },
+          "name": "cacheBust",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#categorizebygroup",
+            "stability": "stable",
+            "summary": "Specify the categories that will be used to group reflections."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 180
+          },
+          "name": "categorizeByGroup",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#cleanoutputdir",
+            "stability": "stable",
+            "summary": "Prevent TypeDoc from cleaning the output directory specified with --out."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 96
+          },
+          "name": "cleanOutputDir",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#commentstyle",
+            "stability": "stable",
+            "summary": "Specify the documentation mode TypeDoc should use."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 152
+          },
+          "name": "commentStyle",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.CommentStyle"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#defaultcategory",
+            "stability": "stable",
+            "summary": "Specify the default category for reflections without a category."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 166
+          },
+          "name": "defaultCategory",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#defaultgroup",
+            "stability": "stable",
+            "summary": "Specify the default group for reflections without a group."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 173
+          },
+          "name": "defaultGroup",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#defaultvisibility",
+            "stability": "stable",
+            "summary": "Specify the default visibility for members without a visibility tag."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 159
+          },
+          "name": "defaultVisibility",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.Visibility"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#disablegit",
+            "stability": "stable",
+            "summary": "Disables setting the source of reflections when documenting projects within a Git repository."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 243
+          },
+          "name": "disableGit",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#disablesources",
+            "stability": "stable",
+            "summary": "Disables automatically linking to source code."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 236
+          },
+          "name": "disableSources",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#entrypoints",
+            "stability": "stable",
+            "summary": "Specifies the entry points to be documented by TypeDoc."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 12
+          },
+          "name": "entryPoints",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#entrypointstrategy",
+            "stability": "stable",
+            "summary": "Specifies the strategy to be used to convert entry points into documentation."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 19
+          },
+          "name": "entryPointStrategy",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.EntryPointStrategy"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#exclude",
+            "stability": "stable",
+            "summary": "Define patterns to be excluded when expanding directories."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 26
+          },
+          "name": "exclude",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#excludeexternals",
+            "stability": "stable",
+            "summary": "Prevent externally resolved symbols from being documented."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 33
+          },
+          "name": "excludeExternals",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#excludeinternal",
+            "stability": "stable",
+            "summary": "Prevent symbols that are not exported from being documented."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 54
+          },
+          "name": "excludeInternal",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#excludeprivate",
+            "stability": "stable",
+            "summary": "Prevent private members from being included in the generated documentation."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 40
+          },
+          "name": "excludePrivate",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#excludeprotected",
+            "stability": "stable",
+            "summary": "Prevent protected members from being included in the generated documentation."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 47
+          },
+          "name": "excludeProtected",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#externalpattern",
+            "stability": "stable",
+            "summary": "Define patterns for files that should be considered external."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 320
+          },
+          "name": "externalPattern",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#externalsymbollinkmappings",
+            "stability": "stable",
+            "summary": "Define custom mappings for symbols in external packages."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 327
+          },
+          "name": "externalSymbolLinkMappings",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "collection": {
+                  "elementtype": {
+                    "primitive": "string"
+                  },
+                  "kind": "map"
+                }
+              },
+              "kind": "map"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#gitremote",
+            "stability": "stable",
+            "summary": "Specify the git remote that should be used to link to source files."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 222
+          },
+          "name": "gitRemote",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Comments.html#gitrevision",
+            "stability": "stable",
+            "summary": "Specify the git revision that should be used to link to source files."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 215
+          },
+          "name": "gitRevision",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#hidegenerator",
+            "stability": "stable",
+            "summary": "Do not print the TypeDoc link at the end of the page."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 250
+          },
+          "name": "hideGenerator",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#hideparametertypesintitle",
+            "stability": "stable",
+            "summary": "Hide parameter types in the signature."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 257
+          },
+          "name": "hideParameterTypesInTitle",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#includes",
+            "stability": "stable",
+            "summary": "Specify the location to look for included documents."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 103
+          },
+          "name": "includes",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Validation.html#intentionallynotexported",
+            "stability": "stable",
+            "summary": "A list of types that should not produce warnings when not being exported."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 313
+          },
+          "name": "intentionallyNotExported",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#json",
+            "stability": "stable",
+            "summary": "Specify the location the documentation should be written to."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 68
+          },
+          "name": "json",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Other.html#loglevel",
+            "stability": "stable",
+            "summary": "Specify the logger that should be used."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 131
+          },
+          "name": "logLevel",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.LogLevel"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#media",
+            "stability": "stable",
+            "summary": "Specify the location with media files that should be copied to the output directory."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 110
+          },
+          "name": "media",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#name",
+            "stability": "stable",
+            "summary": "Set the name of the project that will be used in the header of the template."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 89
+          },
+          "name": "name",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#out",
+            "stability": "stable",
+            "summary": "Specifies the output directory the documentation should be written to."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 61
+          },
+          "name": "out",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#packagejson",
+            "stability": "stable",
+            "summary": "Specify the package.json file that should be used to determine the package name."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 208
+          },
+          "name": "packageJson",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#readme",
+            "stability": "stable",
+            "summary": "Specify the readme file that should be displayed on the index page."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 201
+          },
+          "name": "readme",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Validation.html#requiredtobedocumented",
+            "stability": "stable",
+            "summary": "Specify the type of reflections that must be documented."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 292
+          },
+          "name": "requiredToBeDocumented",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#searchcategoryboosts",
+            "stability": "stable",
+            "summary": "Specify the search category boosts."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 194
+          },
+          "name": "searchCategoryBoosts",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "number"
+              },
+              "kind": "map"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#searchgroupboosts",
+            "stability": "stable",
+            "summary": "Specify the search group boosts."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 187
+          },
+          "name": "searchGroupBoosts",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "number"
+              },
+              "kind": "map"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#searchincomments",
+            "stability": "stable",
+            "summary": "If set, the search index will also include comments."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 271
+          },
+          "name": "searchInComments",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#searchindocuments",
+            "stability": "stable",
+            "summary": "If set, the search index will also include documents."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 278
+          },
+          "name": "searchInDocuments",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#sort",
+            "stability": "stable",
+            "summary": "Specify the sort strategy for documented values."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 138
+          },
+          "name": "sort",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Organization.html#sortentrypoints",
+            "stability": "stable",
+            "summary": "Specify the sort strategy for static and instance members."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 145
+          },
+          "name": "sortEntryPoints",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#sourcelinktemplate",
+            "stability": "stable",
+            "summary": "Specify a link template to be used when generating source urls."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 229
+          },
+          "name": "sourceLinkTemplate",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#theme",
+            "stability": "stable",
+            "summary": "Specify a theme name to use."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 75
+          },
+          "name": "theme",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Validation.html#treatvalidationwarningsaserrors",
+            "stability": "stable",
+            "summary": "If set, validation warnings will be treated as errors."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 306
+          },
+          "name": "treatValidationWarningsAsErrors",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Validation.html#treatwarningsaserrors",
+            "stability": "stable",
+            "summary": "If set, warnings will be treated as errors."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 299
+          },
+          "name": "treatWarningsAsErrors",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#tsbuildinfo",
+            "stability": "stable",
+            "summary": "Specify the location and filename a .tsbuildinfo file should be written to."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 117
+          },
+          "name": "tsBuildInfo",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Input.html#tsconfig",
+            "stability": "stable",
+            "summary": "Specify a TypeScript config file that should be used to load TypeScript configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 124
+          },
+          "name": "tsconfig",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Validation.html",
+            "stability": "stable",
+            "summary": "Specify validation options."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 285
+          },
+          "name": "validation",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.ValidationOptions"
+          }
+        }
+      ],
+      "symbolId": "src/components/typedoc-config:TypeDocConfiguration"
+    },
+    "@nikovirtala/projen-constructs.TypeDocOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.TypeDocOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/typedoc.ts",
+        "line": 20
+      },
+      "name": "TypeDocOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "remarks": "This configuration will be merged with the default configuration",
+            "stability": "stable",
+            "summary": "Full TypeDoc configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc.ts",
+            "line": 33
+          },
+          "name": "typeDocConfig",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.TypeDocConfiguration"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "\"^0.28\"",
+            "stability": "stable",
+            "summary": "Version of TypeDoc to use."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc.ts",
+            "line": 26
+          },
+          "name": "version",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/typedoc:TypeDocOptions"
     },
     "@nikovirtala/projen-constructs.TypeScriptProject": {
       "assembly": "@nikovirtala/projen-constructs",
@@ -16614,6 +17844,115 @@
       ],
       "symbolId": "src/projects/typescript-options.generated:TypeScriptProjectOptions"
     },
+    "@nikovirtala/projen-constructs.ValidationOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "see": "https://typedoc.org/documents/Options.Validation.html",
+        "stability": "stable",
+        "summary": "Validation options."
+      },
+      "fqn": "@nikovirtala/projen-constructs.ValidationOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 498
+      },
+      "name": "ValidationOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "If set, TypeDoc will produce warnings about \\@link tags which will produce broken links."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 510
+          },
+          "name": "invalidLink",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "If set, TypeDoc will produce warnings when an exported symbol is not documented."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 506
+          },
+          "name": "notDocumented",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable",
+            "summary": "If set, TypeDoc will produce warnings when a symbol is referenced by the documentation."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 502
+          },
+          "name": "notExported",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        }
+      ],
+      "symbolId": "src/components/typedoc-config:ValidationOptions"
+    },
+    "@nikovirtala/projen-constructs.Visibility": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "docs": {
+        "see": "https://typedoc.org/documents/Options.Comments.html#defaultvisibility",
+        "stability": "stable",
+        "summary": "Specifies the default visibility for members without a visibility tag."
+      },
+      "fqn": "@nikovirtala/projen-constructs.Visibility",
+      "kind": "enum",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 478
+      },
+      "members": [
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Public visibility - accessible from anywhere."
+          },
+          "name": "PUBLIC"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Protected visibility - accessible from class and subclasses."
+          },
+          "name": "PROTECTED"
+        },
+        {
+          "docs": {
+            "stability": "stable",
+            "summary": "Private visibility - accessible only within the class."
+          },
+          "name": "PRIVATE"
+        }
+      ],
+      "name": "Visibility",
+      "symbolId": "src/components/typedoc-config:Visibility"
+    },
     "@nikovirtala/projen-constructs.Vitest": {
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
@@ -17248,5 +18587,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "NeDUJ47d80s/G7Jwfd0VqkST74p1fgGAkG/4AEPG2h4="
+  "fingerprint": "oq4R2Tg0TLGV+VYTG62hK4knZeai8FIc3SOzddCUJUA="
 }

@@ -53,6 +53,7 @@ tsconfig.json
 !/mise.toml
 /coverage/
 !/vitest.config.ts
+!/typedoc.jsonc
 .amazonq/
 .kiro/
 !/src/project-type.ts

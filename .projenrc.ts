@@ -1,5 +1,6 @@
 import { JsonPatch } from "projen";
 import { Mise } from "./src/components/mise";
+import { TypeDoc } from "./src/components/typedoc";
 import { Vitest } from "./src/components/vitest";
 import { ProjectGenerator } from "./src/project-generator";
 import { ProjectType } from "./src/project-type";
@@ -69,7 +70,7 @@ new ProjectGenerator(project, {
     name: "JsiiProject",
     projectType: ProjectType.JSII_PROJECT,
     filePath: "./src/projects/jsii.generated.ts",
-    components,
+    components: [{ componentClass: Mise }, { componentClass: Vitest }, { componentClass: TypeDoc }],
     omitOptions: projectOmits,
 });
 

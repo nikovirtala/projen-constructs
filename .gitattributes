@@ -35,4 +35,5 @@
 /pnpm-lock.yaml linguist-generated
 /src/project-type.ts linguist-generated
 /tsconfig.dev.json linguist-generated
+/typedoc.jsonc linguist-generated
 /vitest.config.ts linguist-generated

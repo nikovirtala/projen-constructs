@@ -29,6 +29,7 @@
     "test": "npx projen test",
     "test:update": "npx projen test:update",
     "test:watch": "npx projen test:watch",
+    "typedoc": "npx projen typedoc",
     "unbump": "npx projen unbump",
     "update-versions": "npx projen update-versions",
     "upgrade": "npx projen upgrade",
@@ -57,6 +58,7 @@
     "jsii-rosetta": "~5.9.3",
     "projen": "^0.98.11",
     "tsx": "^4.20.6",
+    "typedoc": "^0.28",
     "typescript": "5.9.3",
     "vitest": "^4"
   },
