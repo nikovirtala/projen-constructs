@@ -39,6 +39,10 @@ function configureProject(
     project.defaultTask?.reset();
     project.defaultTask?.exec(`tsx --tsconfig ${project.tsconfigDev.file.path} .projenrc.ts`);
 
+    if (project instanceof awscdk.AwsCdkTypeScriptApp) {
+        project.cdkConfig.json.addOverride("app", `npx tsx ${project.srcdir}/${project.appEntrypoint}`);
+    }
+
     project.npmrc.addConfig("node-linker", "hoisted");
 
     project.vscode?.extensions.addRecommendations("biomejs.biome");

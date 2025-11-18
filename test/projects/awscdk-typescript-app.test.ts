@@ -26,6 +26,9 @@ describe("AwsCdkTypeScriptAppProject", () => {
         });
 
         expect(snapshot["cdk.json"]).toBeDefined();
+        expect(snapshot["cdk.json"]).toMatchObject({
+            app: "npx tsx src/main.ts",
+        });
         expect(snapshot["mise.toml"]).toContain('node = "22.21.1"');
     });
 
