@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@mrgrain/jsii-struct-builder':
+        specifier: ^0.7.64
+        version: 0.7.64(projen@0.98.11(constructs@10.4.3))
       case:
         specifier: ^1.6.3
         version: 1.6.3
@@ -24,9 +27,6 @@ importers:
       '@mrgrain/cdk-esbuild':
         specifier: 5.7.4
         version: 5.7.4(aws-cdk-lib@2.223.0(constructs@10.4.3))(constructs@10.4.3)
-      '@mrgrain/jsii-struct-builder':
-        specifier: ^0.7.64
-        version: 0.7.64(projen@0.98.11(constructs@10.4.3))
       '@types/node':
         specifier: ^22
         version: 22.19.1

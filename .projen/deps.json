@@ -14,10 +14,6 @@
       "type": "build"
     },
     {
-      "name": "@mrgrain/jsii-struct-builder",
-      "type": "build"
-    },
-    {
       "name": "@types/node",
       "version": "^22",
       "type": "build"
@@ -81,6 +77,10 @@
       "name": "vitest",
       "version": "^4",
       "type": "build"
+    },
+    {
+      "name": "@mrgrain/jsii-struct-builder",
+      "type": "bundled"
     },
     {
       "name": "case",

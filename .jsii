@@ -7,6 +7,7 @@
     ]
   },
   "bundled": {
+    "@mrgrain/jsii-struct-builder": "^0.7.64",
     "case": "^1.6.3"
   },
   "dependencies": {
@@ -18587,5 +18588,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "oq4R2Tg0TLGV+VYTG62hK4knZeai8FIc3SOzddCUJUA="
+  "fingerprint": "nmwmynrr9iSRXQu3NcxDU0+gdtZZb5GvibjX3zwqzHQ="
 }
