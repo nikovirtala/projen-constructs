@@ -94,14 +94,12 @@ project.addTask("update-versions", {
     exec: "tsx .projen/update-versions.ts",
 });
 
-project.postSynthesize = () => {
-    project.upgradeWorkflow?.workflows[0]?.file?.patch(
-        JsonPatch.add("/jobs/upgrade/steps/0", {
-            name: "update aws-cdk-lib, node.js and typescript versions",
-            run: "pnpm exec projen update-versions",
-        }),
-    );
-};
+project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
+    JsonPatch.add("/jobs/upgrade/steps/3", {
+        name: "update aws-cdk-lib, node.js and typescript versions",
+        run: "pnpm exec projen update-versions",
+    }),
+);
 
 // @mrgrain/cdk-esbuild is both dev and peer dependency which ncu doesn't update on a single run
 project.upgradeWorkflow?.postUpgradeTask.exec(

@@ -45,7 +45,7 @@
     "@biomejs/biome": "^2",
     "@jsii/spec": "^1.119.0",
     "@mrgrain/cdk-esbuild": "5.7.4",
-    "@types/node": "^22",
+    "@types/node": "^24",
     "@vitest/coverage-v8": "^4",
     "commit-and-tag-version": "^12",
     "constructs": "^10.4.3",
@@ -55,7 +55,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.119.0",
     "jsii-rosetta": "~5.9.3",
-    "projen": "^0.98.11",
+    "projen": "^0.98.15",
     "tsx": "^4.20.6",
     "typedoc": "^0.28",
     "typescript": "5.9.3",
@@ -64,12 +64,12 @@
   "peerDependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.4",
     "constructs": "^10.4.3",
-    "projen": "^0.98.11"
+    "projen": "^0.98.15"
   },
   "dependencies": {
     "@mrgrain/jsii-struct-builder": "^0.7.64",
     "case": "^1.6.3",
-    "projen": "^0.98.11"
+    "projen": "^0.98.15"
   },
   "bundledDependencies": [
     "@mrgrain/jsii-struct-builder",
@@ -77,7 +77,7 @@
   ],
   "pnpm": {},
   "engines": {
-    "node": ">= 22.21.1"
+    "node": ">= 24.11.1"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",

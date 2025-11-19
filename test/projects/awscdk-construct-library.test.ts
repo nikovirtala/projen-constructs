@@ -27,7 +27,7 @@ describe("AwsCdkConstructLibraryProject", () => {
             },
         });
 
-        expect(snapshot["mise.toml"]).toContain('node = "22.21.1"');
+        expect(snapshot["mise.toml"]).toMatch(/node = "24\.\d+\.\d+"/);
     });
 
     it("allows customization of options", () => {

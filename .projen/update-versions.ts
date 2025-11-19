@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const nodeJsMajorVersion = 22;
+const nodeJsMajorVersion = 24;
 
 async function getLatestVersion(packageName: string): Promise<string> {
     const response = await fetch(`https://registry.npmjs.org/${packageName}/latest`);
@@ -17,16 +17,14 @@ async function getLatestNodeLts(): Promise<string> {
 }
 
 async function main() {
-    const [cdkVersion, constructsVersion, typescriptVersion, nodeVersion] = await Promise.all([
+    const [cdkVersion, typescriptVersion, nodeVersion] = await Promise.all([
         getLatestVersion("aws-cdk-lib"),
-        getLatestVersion("constructs"),
         getLatestVersion("typescript"),
         getLatestNodeLts(),
     ]);
 
     const versions = {
         cdkVersion,
-        constructsVersion,
         typescriptVersion,
         minNodeVersion: nodeVersion,
     };

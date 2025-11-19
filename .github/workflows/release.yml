@@ -35,7 +35,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 22.21.1
+          node-version: 24.11.1
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: release
@@ -75,7 +75,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v5
         with:
-          node-version: 22.21.1
+          node-version: 24.11.1
       - name: Download build artifacts
         uses: actions/download-artifact@v5
         with:
@@ -99,7 +99,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v5
         with:
-          node-version: 24.x
+          node-version: 24.11.1
       - name: Download build artifacts
         uses: actions/download-artifact@v5
         with:
