@@ -1,4 +1,4 @@
-import { awscdk, type Component, cdk, javascript, typescript } from "projen";
+import { awscdk, cdk, javascript, type Component as ProjenComponent, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
 import { mergeAll } from "./utils";
 import * as versions from "./versions.json";
@@ -13,8 +13,8 @@ export const defaults = {
     },
 } as const;
 
-interface ComponentConfig {
-    component: new (project: never, options?: never) => Component;
+interface Component {
+    component: new (project: never, options?: never) => ProjenComponent;
     enabled?: boolean;
     options?: unknown;
 }
@@ -69,7 +69,7 @@ function injectComponents(
         | awscdk.AwsCdkConstructLibrary
         | typescript.TypeScriptProject
         | cdk.JsiiProject,
-    components: ComponentConfig[],
+    components: Component[],
 ) {
     for (const { component, enabled, options } of components) {
         if (enabled ?? true) {
@@ -84,7 +84,7 @@ export function applyDefaults(
         | awscdk.AwsCdkConstructLibrary
         | typescript.TypeScriptProject
         | cdk.JsiiProject,
-    components: ComponentConfig[],
+    components: Component[],
 ) {
     configureProject(project);
     injectComponents(project, components);
