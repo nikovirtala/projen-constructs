@@ -1,4 +1,5 @@
 import * as path from "node:path";
+import { awscdk, cdk } from "projen";
 import { Component } from "projen/lib/component";
 import { DependencyType } from "projen/lib/dependencies";
 import { Jest, type NodeProject } from "projen/lib/javascript";
@@ -357,6 +358,10 @@ export class Vitest extends Component {
 
         this.addTestCommand();
         this.synthesizeConfig();
+
+        if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
+            project.npmignore?.addPatterns("vitest.config.ts");
+        }
     }
 
     public override preSynthesize() {

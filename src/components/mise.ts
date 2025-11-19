@@ -1,3 +1,4 @@
+import { awscdk, cdk } from "projen";
 import { Component } from "projen/lib/component";
 import type { Project } from "projen/lib/project";
 import { TextFile } from "projen/lib/textfile";
@@ -32,5 +33,9 @@ export class Mise extends Component {
         project.addTask("mise:trust", {
             exec: "mise trust",
         });
+
+        if (project instanceof cdk.JsiiProject || project instanceof awscdk.AwsCdkConstructLibrary) {
+            project.npmignore?.addPatterns("mise.toml");
+        }
     }
 }

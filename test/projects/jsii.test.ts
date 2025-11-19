@@ -34,6 +34,9 @@ describe("JsiiProject", () => {
         });
 
         expect(snapshot["mise.toml"]).toMatch(/node = "24\.\d+\.\d+"/);
+        expect(snapshot[".npmignore"]).toContain("biome.jsonc");
+        expect(snapshot[".npmignore"]).toContain("mise.toml");
+        expect(snapshot[".npmignore"]).toContain("vitest.config.ts");
     });
 
     it("allows customization of options", () => {
