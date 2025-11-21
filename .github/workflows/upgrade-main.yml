@@ -30,6 +30,8 @@ jobs:
         run: pnpm i --frozen-lockfile
       - name: update aws-cdk-lib, node.js and typescript versions
         run: pnpm exec projen update-versions
+      - name: run projen
+        run: npx projen
       - name: Upgrade dependencies
         run: npx projen upgrade
       - name: Find mutations

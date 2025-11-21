@@ -101,6 +101,13 @@ project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
     }),
 );
 
+project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
+    JsonPatch.add("/jobs/upgrade/steps/5", {
+        name: "run projen",
+        run: "npx projen",
+    }),
+);
+
 // @mrgrain/cdk-esbuild is both dev and peer dependency which ncu doesn't update on a single run
 project.upgradeWorkflow?.postUpgradeTask.exec(
     "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --dep=dev,peer --filter=@mrgrain/cdk-esbuild",
