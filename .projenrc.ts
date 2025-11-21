@@ -95,7 +95,7 @@ project.addTask("update-versions", {
 });
 
 project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
-    JsonPatch.add("/jobs/upgrade/steps/3", {
+    JsonPatch.add("/jobs/upgrade/steps/4", {
         name: "update aws-cdk-lib, node.js and typescript versions",
         run: "pnpm exec projen update-versions",
     }),
