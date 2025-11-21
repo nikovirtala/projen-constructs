@@ -13,7 +13,7 @@ const project = new JsiiProject({
     defaultReleaseBranch: "main",
     deps: ["projen"],
     description: "Projen project types with standard configuration",
-    devDeps: ["constructs@10.4.3", "projen@0.98.10", "esbuild", "@mrgrain/cdk-esbuild", "@jsii/spec"],
+    devDeps: ["constructs", "projen", "esbuild", "@mrgrain/cdk-esbuild", "@jsii/spec"],
     name: "@nikovirtala/projen-constructs",
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
