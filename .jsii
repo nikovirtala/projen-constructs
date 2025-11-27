@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.4",
     "constructs": "^10.4.3",
-    "projen": "^0.98.25"
+    "projen": "^0.98.26"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -18589,5 +18589,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "LEQ/jOhRT0sbr7VeZNQYQ079wCi9VUPmDhG22xaYHVc="
+  "fingerprint": "ZwtSZzuS+iJeRT5eYcknxUGMxXUo+t44VuCLQ7FZSpI="
 }
