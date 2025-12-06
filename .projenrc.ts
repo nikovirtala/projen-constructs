@@ -19,9 +19,6 @@ const project = new JsiiProject({
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
 });
 
-project.gitignore.addPatterns(".amazonq/");
-project.gitignore.addPatterns(".kiro/");
-
 // projects depend on components jsii fqns
 project.gitignore.removePatterns(".jsii");
 
