@@ -38,8 +38,27 @@ export class Homebrew extends Component {
 
         this.project.tryRemoveFile("Brewfile");
 
+        const lines: string[] = [];
+        const taps = new Set<string>();
+
+        for (const pkg of this.packages) {
+            const parts = pkg.split("/");
+            if (parts.length >= 2) {
+                const tap = `${parts[0]}/${parts[1]}`;
+                taps.add(tap);
+            }
+        }
+
+        for (const tap of Array.from(taps).sort()) {
+            lines.push(`tap "${tap}"`);
+        }
+
+        for (const pkg of Array.from(this.packages).sort()) {
+            lines.push(`brew "${pkg}"`);
+        }
+
         new TextFile(this, "Brewfile", {
-            lines: Array.from(this.packages).map((pkg) => `brew "${pkg}"`),
+            lines,
         });
 
         const brewBundleTask =

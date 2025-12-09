@@ -5580,6 +5580,24 @@
         {
           "abstract": true,
           "docs": {
+            "default": "- default Homebrew configuration",
+            "stability": "stable",
+            "summary": "Homebrew configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 1145
+          },
+          "name": "homebrewOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.HomebrewOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "stability": "experimental",
             "summary": "Package's Homepage / Website."
           },
@@ -5887,12 +5905,30 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1145
+            "line": 1150
           },
           "name": "mise",
           "optional": true,
           "type": {
             "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "- default Mise configuration",
+            "stability": "stable",
+            "summary": "Mise configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 1155
+          },
+          "name": "miseOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.MiseOptions"
           }
         },
         {
@@ -7148,7 +7184,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1150
+            "line": 1160
           },
           "name": "vitest",
           "optional": true,
@@ -7166,7 +7202,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1155
+            "line": 1165
           },
           "name": "vitestOptions",
           "optional": true,
@@ -8680,6 +8716,24 @@
         {
           "abstract": true,
           "docs": {
+            "default": "- default Homebrew configuration",
+            "stability": "stable",
+            "summary": "Homebrew configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 1094
+          },
+          "name": "homebrewOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.HomebrewOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "stability": "experimental",
             "summary": "Package's Homepage / Website."
           },
@@ -8965,12 +9019,30 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1094
+            "line": 1099
           },
           "name": "mise",
           "optional": true,
           "type": {
             "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "- default Mise configuration",
+            "stability": "stable",
+            "summary": "Mise configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 1104
+          },
+          "name": "miseOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.MiseOptions"
           }
         },
         {
@@ -10155,7 +10227,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1099
+            "line": 1109
           },
           "name": "vitest",
           "optional": true,
@@ -10173,7 +10245,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1104
+            "line": 1114
           },
           "name": "vitestOptions",
           "optional": true,
@@ -12657,6 +12729,24 @@
         {
           "abstract": true,
           "docs": {
+            "default": "- default Homebrew configuration",
+            "stability": "stable",
+            "summary": "Homebrew configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 1057
+          },
+          "name": "homebrewOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.HomebrewOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "stability": "experimental",
             "summary": "Package's Homepage / Website."
           },
@@ -12892,12 +12982,30 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1057
+            "line": 1062
           },
           "name": "mise",
           "optional": true,
           "type": {
             "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "- default Mise configuration",
+            "stability": "stable",
+            "summary": "Mise configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 1067
+          },
+          "name": "miseOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.MiseOptions"
           }
         },
         {
@@ -14110,7 +14218,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1072
+            "line": 1082
           },
           "name": "typeDoc",
           "optional": true,
@@ -14128,7 +14236,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1077
+            "line": 1087
           },
           "name": "typeDocOptions",
           "optional": true,
@@ -14189,7 +14297,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1062
+            "line": 1072
           },
           "name": "vitest",
           "optional": true,
@@ -14207,7 +14315,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1067
+            "line": 1077
           },
           "name": "vitestOptions",
           "optional": true,
@@ -17729,6 +17837,24 @@
         {
           "abstract": true,
           "docs": {
+            "default": "- default Homebrew configuration",
+            "stability": "stable",
+            "summary": "Homebrew configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/typescript-options.generated.ts",
+            "line": 961
+          },
+          "name": "homebrewOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.HomebrewOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "stability": "experimental",
             "summary": "Package's Homepage / Website."
           },
@@ -17942,12 +18068,30 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 961
+            "line": 966
           },
           "name": "mise",
           "optional": true,
           "type": {
             "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "- default Mise configuration",
+            "stability": "stable",
+            "summary": "Mise configuration."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/typescript-options.generated.ts",
+            "line": 971
+          },
+          "name": "miseOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.MiseOptions"
           }
         },
         {
@@ -19114,7 +19258,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 966
+            "line": 976
           },
           "name": "vitest",
           "optional": true,
@@ -19132,7 +19276,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 971
+            "line": 981
           },
           "name": "vitestOptions",
           "optional": true,
@@ -20067,5 +20211,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "q0wrxLTWpRXnEWlCT5x222iZMSVZFtB44wDZYbYpfLM="
+  "fingerprint": "F3uwdMFhnENRqtbWbCWD6mI2kbKibBLopXWVK5wBScs="
 }
