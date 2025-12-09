@@ -10411,6 +10411,545 @@
       ],
       "symbolId": "src/projects/awscdk-typescript-app-options.generated:AwsCdkTypeScriptAppProjectOptions"
     },
+    "@nikovirtala/projen-constructs.Bundle": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.Bundle",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 149
+      },
+      "name": "Bundle",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 150
+          },
+          "name": "bundleTask",
+          "type": {
+            "fqn": "projen.Task"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 152
+          },
+          "name": "outdir",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 151
+          },
+          "name": "outfile",
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/bundle-lambda-function-code:Bundle"
+    },
+    "@nikovirtala/projen-constructs.Bundler": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.Bundler",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/bundle-lambda-function-code.ts",
+          "line": 41
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.Project"
+            }
+          },
+          {
+            "name": "options",
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.BundlerOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 28
+      },
+      "methods": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 29
+          },
+          "name": "of",
+          "parameters": [
+            {
+              "name": "project",
+              "type": {
+                "fqn": "projen.Project"
+              }
+            }
+          ],
+          "returns": {
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.Bundler"
+            }
+          },
+          "static": true
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 62
+          },
+          "name": "addBundle",
+          "parameters": [
+            {
+              "name": "entrypoint",
+              "type": {
+                "primitive": "string"
+              }
+            },
+            {
+              "name": "options",
+              "type": {
+                "fqn": "@nikovirtala/projen-constructs.BundlingOptions"
+              }
+            }
+          ],
+          "returns": {
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.Bundle"
+            }
+          }
+        }
+      ],
+      "name": "Bundler",
+      "properties": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 35
+          },
+          "name": "bundledir",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 49
+          },
+          "name": "bundleTask",
+          "type": {
+            "fqn": "projen.Task"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 34
+          },
+          "name": "esbuildVersion",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/bundle-lambda-function-code:Bundler"
+    },
+    "@nikovirtala/projen-constructs.BundlerOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.BundlerOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 21
+      },
+      "name": "BundlerOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 24
+          },
+          "name": "addToPreCompile",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 23
+          },
+          "name": "assetsDir",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 22
+          },
+          "name": "esbuildVersion",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 25
+          },
+          "name": "loaders",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "map"
+            }
+          }
+        }
+      ],
+      "symbolId": "src/components/bundle-lambda-function-code:BundlerOptions"
+    },
+    "@nikovirtala/projen-constructs.BundlingOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.BundlingOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 155
+      },
+      "name": "BundlingOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 167
+          },
+          "name": "banner",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 156
+          },
+          "name": "externals",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 163
+          },
+          "name": "format",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 162
+          },
+          "name": "loaders",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "map"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 166
+          },
+          "name": "mainFields",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 164
+          },
+          "name": "minify",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 160
+          },
+          "name": "outfile",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 159
+          },
+          "name": "platform",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 157
+          },
+          "name": "sourcemap",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 165
+          },
+          "name": "sourcesContent",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 158
+          },
+          "name": "target",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 161
+          },
+          "name": "tsconfigPath",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/bundle-lambda-function-code:BundlingOptions"
+    },
+    "@nikovirtala/projen-constructs.Colima": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.Colima",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/colima.ts",
+          "line": 7
+        },
+        "parameters": [
+          {
+            "name": "scope",
+            "type": {
+              "fqn": "constructs.IConstruct"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/colima.ts",
+        "line": 6
+      },
+      "name": "Colima",
+      "symbolId": "src/components/colima:Colima"
+    },
     "@nikovirtala/projen-constructs.CommentStyle": {
       "assembly": "@nikovirtala/projen-constructs",
       "docs": {
@@ -10766,6 +11305,128 @@
       ],
       "name": "Environment",
       "symbolId": "src/components/vitest:Environment"
+    },
+    "@nikovirtala/projen-constructs.Homebrew": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.Homebrew",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/homebrew.ts",
+          "line": 17
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.Project"
+            }
+          },
+          {
+            "name": "options",
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.HomebrewOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/homebrew.ts",
+        "line": 9
+      },
+      "methods": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/components/homebrew.ts",
+            "line": 10
+          },
+          "name": "of",
+          "parameters": [
+            {
+              "name": "project",
+              "type": {
+                "fqn": "projen.Project"
+              }
+            }
+          ],
+          "returns": {
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.Homebrew"
+            }
+          },
+          "static": true
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/components/homebrew.ts",
+            "line": 31
+          },
+          "name": "addPackage",
+          "parameters": [
+            {
+              "name": "packageName",
+              "type": {
+                "primitive": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "name": "Homebrew",
+      "symbolId": "src/components/homebrew:Homebrew"
+    },
+    "@nikovirtala/projen-constructs.HomebrewOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.HomebrewOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/homebrew.ts",
+        "line": 5
+      },
+      "name": "HomebrewOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/homebrew.ts",
+            "line": 6
+          },
+          "name": "packages",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        }
+      ],
+      "symbolId": "src/components/homebrew:HomebrewOptions"
     },
     "@nikovirtala/projen-constructs.JsiiProject": {
       "assembly": "@nikovirtala/projen-constructs",
@@ -13738,6 +14399,652 @@
       ],
       "symbolId": "src/projects/jsii-options.generated:JsiiProjectOptions"
     },
+    "@nikovirtala/projen-constructs.LambdaFunctionCodeBundle": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundle",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/bundle-lambda-function-code.ts",
+          "line": 179
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.Project"
+            }
+          },
+          {
+            "name": "options",
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 178
+      },
+      "name": "LambdaFunctionCodeBundle",
+      "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundle"
+    },
+    "@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 170
+      },
+      "name": "LambdaFunctionCodeBundleOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 171
+          },
+          "name": "entrypoint",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 172
+          },
+          "name": "extension",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 175
+          },
+          "name": "bundlingOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.BundlingOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 173
+          },
+          "name": "constructFile",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 174
+          },
+          "name": "constructName",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundleOptions"
+    },
+    "@nikovirtala/projen-constructs.LambdaFunctionCodeBundler": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundler",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/bundle-lambda-function-code.ts",
+          "line": 238
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.Project"
+            }
+          },
+          {
+            "name": "options",
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 237
+      },
+      "name": "LambdaFunctionCodeBundler",
+      "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundler"
+    },
+    "@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/bundle-lambda-function-code.ts",
+        "line": 231
+      },
+      "name": "LambdaFunctionCodeBundlerOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 232
+          },
+          "name": "extension",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 233
+          },
+          "name": "srcdir",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/bundle-lambda-function-code.ts",
+            "line": 234
+          },
+          "name": "bundleOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions"
+          }
+        }
+      ],
+      "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundlerOptions"
+    },
+    "@nikovirtala/projen-constructs.LambdaFunctionConstructGenerator": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LambdaFunctionConstructGenerator",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/lambda-function-construct-generator.ts",
+          "line": 28
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.javascript.NodeProject"
+            }
+          },
+          {
+            "name": "options",
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/lambda-function-construct-generator.ts",
+        "line": 17
+      },
+      "name": "LambdaFunctionConstructGenerator",
+      "properties": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 21
+          },
+          "name": "esbuildOptions",
+          "type": {
+            "fqn": "@mrgrain/cdk-esbuild.BuildOptions"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 20
+          },
+          "name": "filePattern",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 19
+          },
+          "name": "outputDir",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 18
+          },
+          "name": "sourceDir",
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 23
+          },
+          "name": "baseConstructClass",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 22
+          },
+          "name": "baseConstructImport",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 24
+          },
+          "name": "baseConstructPackage",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/lambda-function-construct-generator:LambdaFunctionConstructGenerator"
+    },
+    "@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/lambda-function-construct-generator.ts",
+        "line": 6
+      },
+      "name": "LambdaFunctionConstructGeneratorOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 11
+          },
+          "name": "addDependencies",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 13
+          },
+          "name": "baseConstructClass",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 12
+          },
+          "name": "baseConstructImport",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 14
+          },
+          "name": "baseConstructPackage",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 10
+          },
+          "name": "esbuildOptions",
+          "optional": true,
+          "type": {
+            "fqn": "@mrgrain/cdk-esbuild.BuildOptions"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 9
+          },
+          "name": "filePattern",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 8
+          },
+          "name": "outputDir",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/lambda-function-construct-generator.ts",
+            "line": 7
+          },
+          "name": "sourceDir",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/lambda-function-construct-generator:LambdaFunctionConstructGeneratorOptions"
+    },
+    "@nikovirtala/projen-constructs.LocalStack": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LocalStack",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/localstack.ts",
+          "line": 15
+        },
+        "parameters": [
+          {
+            "name": "scope",
+            "type": {
+              "fqn": "constructs.IConstruct"
+            }
+          },
+          {
+            "name": "options",
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.LocalStackOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/localstack.ts",
+        "line": 14
+      },
+      "name": "LocalStack",
+      "symbolId": "src/components/localstack:LocalStack"
+    },
+    "@nikovirtala/projen-constructs.LocalStackOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.LocalStackOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/localstack.ts",
+        "line": 7
+      },
+      "name": "LocalStackOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/localstack.ts",
+            "line": 10
+          },
+          "name": "debug",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/localstack.ts",
+            "line": 11
+          },
+          "name": "imageTag",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/localstack.ts",
+            "line": 9
+          },
+          "name": "port",
+          "optional": true,
+          "type": {
+            "primitive": "number"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/localstack.ts",
+            "line": 8
+          },
+          "name": "services",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "string"
+              },
+              "kind": "array"
+            }
+          }
+        }
+      ],
+      "symbolId": "src/components/localstack:LocalStackOptions"
+    },
     "@nikovirtala/projen-constructs.LogLevel": {
       "assembly": "@nikovirtala/projen-constructs",
       "docs": {
@@ -13790,6 +15097,105 @@
       ],
       "name": "LogLevel",
       "symbolId": "src/components/typedoc-config:LogLevel"
+    },
+    "@nikovirtala/projen-constructs.Mise": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "base": "projen.Component",
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.Mise",
+      "initializer": {
+        "docs": {
+          "stability": "stable"
+        },
+        "locationInModule": {
+          "filename": "src/components/mise.ts",
+          "line": 17
+        },
+        "parameters": [
+          {
+            "name": "project",
+            "type": {
+              "fqn": "projen.Project"
+            }
+          },
+          {
+            "name": "options",
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.MiseOptions"
+            }
+          }
+        ]
+      },
+      "kind": "class",
+      "locationInModule": {
+        "filename": "src/components/mise.ts",
+        "line": 11
+      },
+      "methods": [
+        {
+          "docs": {
+            "stability": "stable"
+          },
+          "locationInModule": {
+            "filename": "src/components/mise.ts",
+            "line": 12
+          },
+          "name": "of",
+          "parameters": [
+            {
+              "name": "project",
+              "type": {
+                "fqn": "projen.Project"
+              }
+            }
+          ],
+          "returns": {
+            "optional": true,
+            "type": {
+              "fqn": "@nikovirtala/projen-constructs.Mise"
+            }
+          },
+          "static": true
+        }
+      ],
+      "name": "Mise",
+      "symbolId": "src/components/mise:Mise"
+    },
+    "@nikovirtala/projen-constructs.MiseOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "stability": "stable"
+      },
+      "fqn": "@nikovirtala/projen-constructs.MiseOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/mise.ts",
+        "line": 7
+      },
+      "name": "MiseOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "stable"
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/mise.ts",
+            "line": 8
+          },
+          "name": "nodeVersion",
+          "optional": true,
+          "type": {
+            "primitive": "string"
+          }
+        }
+      ],
+      "symbolId": "src/components/mise:MiseOptions"
     },
     "@nikovirtala/projen-constructs.Pool": {
       "assembly": "@nikovirtala/projen-constructs",
@@ -18661,5 +20067,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "9RmIIiBX1tlZo1xd41gDWyUYrhxi3bXcH4yH2m/dZFM="
+  "fingerprint": "q0wrxLTWpRXnEWlCT5x222iZMSVZFtB44wDZYbYpfLM="
 }

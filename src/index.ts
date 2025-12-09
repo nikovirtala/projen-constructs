@@ -1,5 +1,4 @@
-export * from "./components/typedoc";
-export * from "./components/vitest";
+export * from "./components";
 export * from "./config";
 export * from "./project-generator";
 export * from "./project-type";
