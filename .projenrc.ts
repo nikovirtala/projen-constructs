@@ -1,4 +1,5 @@
 import { JsonPatch } from "projen";
+import { Homebrew } from "./src/components/homebrew";
 import { Mise } from "./src/components/mise";
 import { TypeDoc } from "./src/components/typedoc";
 import { Vitest } from "./src/components/vitest";
@@ -17,7 +18,11 @@ const project = new JsiiProject({
     name: "@nikovirtala/projen-constructs",
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
+    pnpmVersion: "10",
 });
+
+// configure pnpm to use shamefully-hoist to fix jsii-pacmak esbuild resolution
+project.npmrc?.addConfig("shamefully-hoist", "true");
 
 // projects depend on components jsii fqns
 project.gitignore.removePatterns(".jsii");
@@ -35,7 +40,7 @@ project.tasks.tryFind("unbump")?.exec("jsii --silence-warnings=reserved-word");
  * - An enabled flag (boolean, defaults to true)
  * - An options property (auto-detected from JSII manifest)
  */
-const components = [{ componentClass: Mise }, { componentClass: Vitest }];
+const components = [{ componentClass: Homebrew }, { componentClass: Mise }, { componentClass: Vitest }];
 
 const projectOmits = [
     "eslint",
@@ -60,7 +65,12 @@ new ProjectGenerator(project, {
     name: "JsiiProject",
     projectType: ProjectType.JSII_PROJECT,
     filePath: "./src/projects/jsii.generated.ts",
-    components: [{ componentClass: Mise }, { componentClass: Vitest }, { componentClass: TypeDoc }],
+    components: [
+        { componentClass: Homebrew },
+        { componentClass: Mise },
+        { componentClass: Vitest },
+        { componentClass: TypeDoc },
+    ],
     omitOptions: projectOmits,
 });
 

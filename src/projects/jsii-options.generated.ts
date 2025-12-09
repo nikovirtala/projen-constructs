@@ -1046,6 +1046,11 @@ export interface JsiiProjectOptions {
    */
   readonly name: string;
   /**
+   * Enable Homebrew component
+   * @default true
+   */
+  readonly homebrew?: boolean;
+  /**
    * Enable Mise component
    * @default true
    */
