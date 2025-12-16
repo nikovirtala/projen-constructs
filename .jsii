@@ -11,7 +11,7 @@
     "case": "^1.6.3"
   },
   "dependencies": {
-    "@mrgrain/cdk-esbuild": "^5.7.5",
+    "@mrgrain/cdk-esbuild": "^5.7.6",
     "constructs": "^10.4.4",
     "projen": "^0.98.29"
   },
@@ -4180,7 +4180,7 @@
     "stability": "stable"
   },
   "homepage": "https://github.com/nikovirtala/projen-constructs.git",
-  "jsiiVersion": "5.9.19 (build 870daae)",
+  "jsiiVersion": "5.9.20 (build 6e2b13a)",
   "license": "Apache-2.0",
   "metadata": {
     "jsii": {
@@ -20211,5 +20211,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "zWVy0HH2DYRgLicYWfbT98ODfxWlKn2al9ebW+GJ+oA="
+  "fingerprint": "zOkVmGe69aEkdn6lZJJ8rGknRocBlC9eUPy7GcGUkAw="
 }
