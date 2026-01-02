@@ -25,8 +25,8 @@ importers:
         specifier: ^1.124.0
         version: 1.124.0
       '@mrgrain/cdk-esbuild':
-        specifier: 5.7.6
-        version: 5.7.6(aws-cdk-lib@2.223.0(constructs@10.4.4))(constructs@10.4.4)
+        specifier: 5.7.7
+        version: 5.7.7(aws-cdk-lib@2.223.0(constructs@10.4.4))(constructs@10.4.4)
       '@types/node':
         specifier: ^24
         version: 24.10.4
@@ -539,8 +539,8 @@ packages:
     resolution: {integrity: sha512-Mw5uS6490EVZk275zYl1jCt6RH8AWAd9zIsebmeE+Y15GR4Ps6sqKxSAidzoH6Fnem+3TtWJTERpcrBT2iDHiQ==}
     engines: {node: '>= 14.17.0'}
 
-  '@mrgrain/cdk-esbuild@5.7.6':
-    resolution: {integrity: sha512-p57ZKaKt71J73yAA3WLT/NwvoxfchiN7fj6eAg8zXnliYniRY51aO8q/mk/4i/sHkeW69Hnfk9orWvday7I47Q==}
+  '@mrgrain/cdk-esbuild@5.7.7':
+    resolution: {integrity: sha512-C55jj++c+pgrMzU8j7Rlmo6uD4z0m/Fk6DkT967g9acWCy85ZX/U4Dbu1a2Ovx24zP3WixPL6Bw/SC3hidMSfA==}
     peerDependencies:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.0.5
@@ -2482,7 +2482,7 @@ snapshots:
     dependencies:
       ajv: 8.17.1
 
-  '@mrgrain/cdk-esbuild@5.7.6(aws-cdk-lib@2.223.0(constructs@10.4.4))(constructs@10.4.4)':
+  '@mrgrain/cdk-esbuild@5.7.7(aws-cdk-lib@2.223.0(constructs@10.4.4))(constructs@10.4.4)':
     dependencies:
       aws-cdk-lib: 2.223.0(constructs@10.4.4)
       constructs: 10.4.4
