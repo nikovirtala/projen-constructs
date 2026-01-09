@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.7",
     "constructs": "^10.4.4",
-    "projen": "^0.98.33"
+    "projen": "^0.99.0"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4528,7 +4528,7 @@
             "default": "- true",
             "remarks": "Throw if set to true but `autoApproveOptions` are not defined.",
             "stability": "experimental",
-            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued)."
+            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured)."
           },
           "immutable": true,
           "locationInModule": {
@@ -5163,7 +5163,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "true",
+            "default": "- `true` for root projects, `false` for subprojects",
             "remarks": "Cannot be used in conjunction with `dependabot`.",
             "stability": "experimental",
             "summary": "Use tasks and github workflows to handle dependency upgrades."
@@ -7701,7 +7701,7 @@
             "default": "- true",
             "remarks": "Throw if set to true but `autoApproveOptions` are not defined.",
             "stability": "experimental",
-            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued)."
+            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured)."
           },
           "immutable": true,
           "locationInModule": {
@@ -8322,7 +8322,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "true",
+            "default": "- `true` for root projects, `false` for subprojects",
             "remarks": "Cannot be used in conjunction with `dependabot`.",
             "stability": "experimental",
             "summary": "Use tasks and github workflows to handle dependency upgrades."
@@ -11806,7 +11806,7 @@
             "default": "- true",
             "remarks": "Throw if set to true but `autoApproveOptions` are not defined.",
             "stability": "experimental",
-            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued)."
+            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured)."
           },
           "immutable": true,
           "locationInModule": {
@@ -12348,7 +12348,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "true",
+            "default": "- `true` for root projects, `false` for subprojects",
             "remarks": "Cannot be used in conjunction with `dependabot`.",
             "stability": "experimental",
             "summary": "Use tasks and github workflows to handle dependency upgrades."
@@ -17010,7 +17010,7 @@
             "default": "- true",
             "remarks": "Throw if set to true but `autoApproveOptions` are not defined.",
             "stability": "experimental",
-            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configued)."
+            "summary": "Automatically approve deps upgrade PRs, allowing them to be merged by mergify (if configured)."
           },
           "immutable": true,
           "locationInModule": {
@@ -17497,7 +17497,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "true",
+            "default": "- `true` for root projects, `false` for subprojects",
             "remarks": "Cannot be used in conjunction with `dependabot`.",
             "stability": "experimental",
             "summary": "Use tasks and github workflows to handle dependency upgrades."
@@ -20211,5 +20211,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "JdbeuE0r7+xY9J55ARIpysgnKNL8YwBFQuXa5YWPyh4="
+  "fingerprint": "yUYPsTk6aLAG3Hpb7D0smAjSF9PpHlcgjLhogvWOvRc="
 }
