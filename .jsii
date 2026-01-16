@@ -11,9 +11,9 @@
     "case": "^1.6.3"
   },
   "dependencies": {
-    "@mrgrain/cdk-esbuild": "^5.7.7",
+    "@mrgrain/cdk-esbuild": "^5.7.8",
     "constructs": "^10.4.4",
-    "projen": "^0.99.1"
+    "projen": "^0.99.3"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4338,7 +4338,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1135
+            "line": 1141
           },
           "name": "name",
           "type": {
@@ -4979,7 +4979,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1128
+            "line": 1134
           },
           "name": "commitGenerated",
           "optional": true,
@@ -5516,7 +5516,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1122
+            "line": 1128
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -5533,7 +5533,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1117
+            "line": 1123
           },
           "name": "gitOptions",
           "optional": true,
@@ -5569,7 +5569,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1140
+            "line": 1146
           },
           "name": "homebrew",
           "optional": true,
@@ -5587,7 +5587,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1145
+            "line": 1151
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -5811,7 +5811,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1112
+            "line": 1118
           },
           "name": "logging",
           "optional": true,
@@ -5905,7 +5905,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1150
+            "line": 1156
           },
           "name": "mise",
           "optional": true,
@@ -5923,7 +5923,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1155
+            "line": 1161
           },
           "name": "miseOptions",
           "optional": true,
@@ -6107,7 +6107,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1106
+            "line": 1112
           },
           "name": "outdir",
           "optional": true,
@@ -6181,7 +6181,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1095
+            "line": 1101
           },
           "name": "parent",
           "optional": true,
@@ -6287,6 +6287,24 @@
           "optional": true,
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "experimental",
+            "summary": "Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 1096
+          },
+          "name": "projectTree",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
           }
         },
         {
@@ -7184,7 +7202,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1160
+            "line": 1166
           },
           "name": "vitest",
           "optional": true,
@@ -7202,7 +7220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1165
+            "line": 1171
           },
           "name": "vitestOptions",
           "optional": true,
@@ -7493,7 +7511,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1084
+            "line": 1090
           },
           "name": "name",
           "type": {
@@ -8170,7 +8188,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1077
+            "line": 1083
           },
           "name": "commitGenerated",
           "optional": true,
@@ -8652,7 +8670,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1071
+            "line": 1077
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -8669,7 +8687,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1066
+            "line": 1072
           },
           "name": "gitOptions",
           "optional": true,
@@ -8705,7 +8723,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1089
+            "line": 1095
           },
           "name": "homebrew",
           "optional": true,
@@ -8723,7 +8741,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1094
+            "line": 1100
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -8925,7 +8943,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1061
+            "line": 1067
           },
           "name": "logging",
           "optional": true,
@@ -9019,7 +9037,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1099
+            "line": 1105
           },
           "name": "mise",
           "optional": true,
@@ -9037,7 +9055,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1104
+            "line": 1110
           },
           "name": "miseOptions",
           "optional": true,
@@ -9221,7 +9239,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1055
+            "line": 1061
           },
           "name": "outdir",
           "optional": true,
@@ -9295,7 +9313,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1044
+            "line": 1050
           },
           "name": "parent",
           "optional": true,
@@ -9401,6 +9419,24 @@
           "optional": true,
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "experimental",
+            "summary": "Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 1045
+          },
+          "name": "projectTree",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
           }
         },
         {
@@ -10227,7 +10263,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1109
+            "line": 1115
           },
           "name": "vitest",
           "optional": true,
@@ -10245,7 +10281,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1114
+            "line": 1120
           },
           "name": "vitestOptions",
           "optional": true,
@@ -11616,7 +11652,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1047
+            "line": 1053
           },
           "name": "name",
           "type": {
@@ -12182,7 +12218,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1040
+            "line": 1046
           },
           "name": "commitGenerated",
           "optional": true,
@@ -12665,7 +12701,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1034
+            "line": 1040
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -12682,7 +12718,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1029
+            "line": 1035
           },
           "name": "gitOptions",
           "optional": true,
@@ -12718,7 +12754,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1052
+            "line": 1058
           },
           "name": "homebrew",
           "optional": true,
@@ -12736,7 +12772,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1057
+            "line": 1063
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -12888,7 +12924,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1024
+            "line": 1030
           },
           "name": "logging",
           "optional": true,
@@ -12982,7 +13018,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1062
+            "line": 1068
           },
           "name": "mise",
           "optional": true,
@@ -13000,7 +13036,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1067
+            "line": 1073
           },
           "name": "miseOptions",
           "optional": true,
@@ -13184,7 +13220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1018
+            "line": 1024
           },
           "name": "outdir",
           "optional": true,
@@ -13258,7 +13294,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1007
+            "line": 1013
           },
           "name": "parent",
           "optional": true,
@@ -13364,6 +13400,24 @@
           "optional": true,
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "experimental",
+            "summary": "Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 1008
+          },
+          "name": "projectTree",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
           }
         },
         {
@@ -14218,7 +14272,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1082
+            "line": 1088
           },
           "name": "typeDoc",
           "optional": true,
@@ -14236,7 +14290,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1087
+            "line": 1093
           },
           "name": "typeDocOptions",
           "optional": true,
@@ -14297,7 +14351,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1072
+            "line": 1078
           },
           "name": "vitest",
           "optional": true,
@@ -14315,7 +14369,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1077
+            "line": 1083
           },
           "name": "vitestOptions",
           "optional": true,
@@ -16837,7 +16891,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 951
+            "line": 957
           },
           "name": "name",
           "type": {
@@ -17386,7 +17440,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 944
+            "line": 950
           },
           "name": "commitGenerated",
           "optional": true,
@@ -17773,7 +17827,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 938
+            "line": 944
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -17790,7 +17844,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 933
+            "line": 939
           },
           "name": "gitOptions",
           "optional": true,
@@ -17826,7 +17880,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 956
+            "line": 962
           },
           "name": "homebrew",
           "optional": true,
@@ -17844,7 +17898,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 961
+            "line": 967
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -17974,7 +18028,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 928
+            "line": 934
           },
           "name": "logging",
           "optional": true,
@@ -18068,7 +18122,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 966
+            "line": 972
           },
           "name": "mise",
           "optional": true,
@@ -18086,7 +18140,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 971
+            "line": 977
           },
           "name": "miseOptions",
           "optional": true,
@@ -18270,7 +18324,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 922
+            "line": 928
           },
           "name": "outdir",
           "optional": true,
@@ -18344,7 +18398,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 911
+            "line": 917
           },
           "name": "parent",
           "optional": true,
@@ -18450,6 +18504,24 @@
           "optional": true,
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "experimental",
+            "summary": "Generate a project tree file (`.projen/tree.json`) that shows all components and their relationships. Useful for understanding your project structure and debugging."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/typescript-options.generated.ts",
+            "line": 912
+          },
+          "name": "projectTree",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
           }
         },
         {
@@ -19258,7 +19330,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 976
+            "line": 982
           },
           "name": "vitest",
           "optional": true,
@@ -19276,7 +19348,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 981
+            "line": 987
           },
           "name": "vitestOptions",
           "optional": true,
@@ -20211,5 +20283,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "aolugnQG1TwvSaWf5swv3CIVBgKEiV1uGvSxkDHJ4UA="
+  "fingerprint": "o0L7nbOITx6nRO1vFoeBKkcmDKLYqjQeV6qbZe9h6uk="
 }
