@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@mrgrain/jsii-struct-builder':
         specifier: ^0.7.64
-        version: 0.7.64(projen@0.99.3(constructs@10.4.4))
+        version: 0.7.64(projen@0.99.3(constructs@10.4.5))
       case:
         specifier: ^1.6.3
         version: 1.6.3
       projen:
         specifier: ^0.99.3
-        version: 0.99.3(constructs@10.4.4)
+        version: 0.99.3(constructs@10.4.5)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2
@@ -26,7 +26,7 @@ importers:
         version: 1.125.0
       '@mrgrain/cdk-esbuild':
         specifier: 5.7.8
-        version: 5.7.8(aws-cdk-lib@2.223.0(constructs@10.4.4))(constructs@10.4.4)
+        version: 5.7.8(aws-cdk-lib@2.223.0(constructs@10.4.5))(constructs@10.4.5)
       '@types/node':
         specifier: ^24
         version: 24.10.9
@@ -37,8 +37,8 @@ importers:
         specifier: ^12
         version: 12.6.1
       constructs:
-        specifier: ^10.4.4
-        version: 10.4.4
+        specifier: ^10.4.5
+        version: 10.4.5
       esbuild:
         specifier: ^0.27.2
         version: 0.27.2
@@ -920,8 +920,8 @@ packages:
     resolution: {integrity: sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==}
     engines: {'0': node >= 6.0}
 
-  constructs@10.4.4:
-    resolution: {integrity: sha512-lP0qC1oViYf1cutHo9/KQ8QL637f/W29tDmv/6sy35F5zs+MD9f66nbAAIjicwc7fwyuF3rkg6PhZh4sfvWIpA==}
+  constructs@10.4.5:
+    resolution: {integrity: sha512-fOoP70YLevMZr5avJHx2DU3LNYmC6wM8OwdrNewMZou1kZnPGOeVzBrRjZNgFDHUlulYUjkpFRSpTE3D+n+ZSg==}
 
   conventional-changelog-angular@6.0.0:
     resolution: {integrity: sha512-6qLgrBF4gueoC7AFVHu51nHL9pF9FRjXrH+ceVf7WmAfH3gs+gEYOkvxhjMPjZu57I4AGUGoNTY8V7Hrgf1uqg==}
@@ -2478,17 +2478,17 @@ snapshots:
     dependencies:
       ajv: 8.17.1
 
-  '@mrgrain/cdk-esbuild@5.7.8(aws-cdk-lib@2.223.0(constructs@10.4.4))(constructs@10.4.4)':
+  '@mrgrain/cdk-esbuild@5.7.8(aws-cdk-lib@2.223.0(constructs@10.4.5))(constructs@10.4.5)':
     dependencies:
-      aws-cdk-lib: 2.223.0(constructs@10.4.4)
-      constructs: 10.4.4
+      aws-cdk-lib: 2.223.0(constructs@10.4.5)
+      constructs: 10.4.5
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.99.3(constructs@10.4.4))':
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.99.3(constructs@10.4.5))':
     dependencies:
       '@jsii/spec': 1.125.0
-      projen: 0.99.3(constructs@10.4.4)
+      projen: 0.99.3(constructs@10.4.5)
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2712,12 +2712,12 @@ snapshots:
   asynckit@0.4.0:
     optional: true
 
-  aws-cdk-lib@2.223.0(constructs@10.4.4):
+  aws-cdk-lib@2.223.0(constructs@10.4.5):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.242
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.0
       '@aws-cdk/cloud-assembly-schema': 48.20.0
-      constructs: 10.4.4
+      constructs: 10.4.5
 
   balanced-match@1.0.2: {}
 
@@ -2842,7 +2842,7 @@ snapshots:
       readable-stream: 3.6.2
       typedarray: 0.0.6
 
-  constructs@10.4.4: {}
+  constructs@10.4.5: {}
 
   conventional-changelog-angular@6.0.0:
     dependencies:
@@ -3729,9 +3729,9 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.99.3(constructs@10.4.4):
+  projen@0.99.3(constructs@10.4.5):
     dependencies:
-      constructs: 10.4.4
+      constructs: 10.4.5
 
   punycode.js@2.3.1: {}
 
