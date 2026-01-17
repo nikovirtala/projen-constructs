@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.8",
-    "constructs": "^10.4.4",
+    "constructs": "^10.4.5",
     "projen": "^0.99.3"
   },
   "dependencyClosure": {
@@ -20283,5 +20283,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "o0L7nbOITx6nRO1vFoeBKkcmDKLYqjQeV6qbZe9h6uk="
+  "fingerprint": "gFkNl9UuPV48Fd2ezmQH6H5FFmUx364OLI5g6g+LWOs="
 }
