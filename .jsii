@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.10",
     "constructs": "^10.4.5",
-    "projen": "^0.99.7"
+    "projen": "^0.99.8"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4180,7 +4180,7 @@
     "stability": "stable"
   },
   "homepage": "https://github.com/nikovirtala/projen-constructs.git",
-  "jsiiVersion": "5.9.23 (build 29252a0)",
+  "jsiiVersion": "5.9.24 (build b849aae)",
   "license": "Apache-2.0",
   "metadata": {
     "jsii": {
@@ -20283,5 +20283,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "3MKZ26shZV/XcI7LAZBRdu43DeJ04gkpIZpu/U70bUc="
+  "fingerprint": "Oo4dwV0Qk2xzHS4Yt4B6w1OUAVCqZob7PUz3bzdzh0M="
 }
