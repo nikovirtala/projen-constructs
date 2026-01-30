@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@mrgrain/jsii-struct-builder':
         specifier: ^0.7.64
-        version: 0.7.64(projen@0.99.8(constructs@10.4.5))
+        version: 0.7.64(projen@0.99.9(constructs@10.4.5))
       case:
         specifier: ^1.6.3
         version: 1.6.3
       projen:
-        specifier: ^0.99.8
-        version: 0.99.8(constructs@10.4.5)
+        specifier: ^0.99.9
+        version: 0.99.9(constructs@10.4.5)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2
@@ -1705,8 +1705,8 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  projen@0.99.8:
-    resolution: {integrity: sha512-1loAy1XQ5rZ0vobXOdt+ytHTz/6F77H4d4Rtn1Kz0TA/UzTxPgCgBmfOy6ZYAmsXE7Jq+ODGjYdZhaKSQDw10Q==}
+  projen@0.99.9:
+    resolution: {integrity: sha512-yg+0VCwfQyeqwclPuono0vNYKOAsPoO+CCh7xapI2dru8Xw5pEtNs+LEIfFd2pMwEUDTn7QyN/Jt4IfP9jLEzw==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2500,10 +2500,10 @@ snapshots:
     optionalDependencies:
       esbuild: 0.25.12
 
-  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.99.8(constructs@10.4.5))':
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.99.9(constructs@10.4.5))':
     dependencies:
       '@jsii/spec': 1.126.0
-      projen: 0.99.8(constructs@10.4.5)
+      projen: 0.99.9(constructs@10.4.5)
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3744,7 +3744,7 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.99.8(constructs@10.4.5):
+  projen@0.99.9(constructs@10.4.5):
     dependencies:
       constructs: 10.4.5
 
