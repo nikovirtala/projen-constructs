@@ -44,7 +44,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2",
     "@jsii/spec": "^1.126.0",
-    "@mrgrain/cdk-esbuild": "5.7.10",
+    "@mrgrain/cdk-esbuild": "5.7.11",
     "@types/node": "^24",
     "@vitest/coverage-v8": "^4",
     "commit-and-tag-version": "^12",
@@ -62,7 +62,7 @@
     "vitest": "^4"
   },
   "peerDependencies": {
-    "@mrgrain/cdk-esbuild": "^5.7.10",
+    "@mrgrain/cdk-esbuild": "^5.7.11",
     "constructs": "^10.4.5",
     "projen": "^0.99.9"
   },
