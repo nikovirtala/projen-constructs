@@ -1,5 +1,5 @@
 {
-    "cdkVersion": "2.237.1",
+    "cdkVersion": "2.238.0",
     "typescriptVersion": "5.9.3",
     "minNodeVersion": "24.13.0"
 }
