@@ -77,7 +77,7 @@
   ],
   "pnpm": {},
   "engines": {
-    "node": ">= 24.13.0"
+    "node": ">= 24.13.1"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
