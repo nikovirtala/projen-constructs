@@ -45,7 +45,7 @@ export interface AwsCdkConstructLibraryProjectOptions {
   /**
    * Minimum version of the `constructs` library to depend on.
    * @default - for CDK 1.x the default is "3.2.27", for CDK 2.x the default is
-"10.0.5".
+"10.5.1".
    * @stability experimental
    */
   readonly constructsVersion?: string;
@@ -76,7 +76,7 @@ export interface AwsCdkConstructLibraryProjectOptions {
   readonly cdkAssertions?: boolean;
   /**
    * Minimum version of the AWS CDK to depend on.
-   * @default "2.1.0"
+   * @default "2.189.1"
    * @stability experimental
    */
   readonly cdkVersion: string;
