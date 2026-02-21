@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.11",
     "constructs": "^10.5.1",
-    "projen": "^0.99.13"
+    "projen": "^0.99.15"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4294,7 +4294,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"2.1.0\"",
+            "default": "\"2.189.1\"",
             "stability": "experimental",
             "summary": "Minimum version of the AWS CDK to depend on."
           },
@@ -5045,7 +5045,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "- for CDK 1.x the default is \"3.2.27\", for CDK 2.x the default is\n\"10.0.5\".",
+            "default": "- for CDK 1.x the default is \"3.2.27\", for CDK 2.x the default is\n\"10.5.1\".",
             "stability": "experimental",
             "summary": "Minimum version of the `constructs` library to depend on."
           },
@@ -7467,7 +7467,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"2.1.0\"",
+            "default": "\"2.189.1\"",
             "stability": "experimental",
             "summary": "Minimum version of the AWS CDK to depend on."
           },
@@ -8199,7 +8199,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "- for CDK 1.x the default is \"3.2.27\", for CDK 2.x the default is\n\"10.0.5\".",
+            "default": "- for CDK 1.x the default is \"3.2.27\", for CDK 2.x the default is\n\"10.5.1\".",
             "stability": "experimental",
             "summary": "Minimum version of the `constructs` library to depend on."
           },
@@ -20283,5 +20283,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "P02M3V/Ul0R7buIuLOx88nK2jpno64D/1CjHnpu/srE="
+  "fingerprint": "HmVv/+Z9P6AaIs2tAmXy0b2KqzX2l06JrF9fu2EF1G4="
 }
