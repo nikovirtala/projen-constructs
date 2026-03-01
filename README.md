@@ -1,13 +1,7 @@
 # @nikovirtala/projen-constructs
 
-Opinionated [Projen](https://github.com/projen/projen) project types that keep your repositories consistent,
-modern, and low-maintenance — so you can focus on what actually matters.
-
-## Why?
-
-Bootstrapping a new project is easy. Keeping a dozen repositories in sync with the latest tooling, TypeScript
-best practices, and consistent CI/CD is tedious. This library encapsulates those decisions once, so all your
-projects inherit them automatically.
+Opinionated [Projen](https://github.com/projen/projen) project types with standard configuration for
+consistent project setup across repositories.
 
 ## Installation
 
@@ -17,16 +11,12 @@ pnpm add -D @nikovirtala/projen-constructs projen constructs
 
 ## Project Types
 
-Pick the one that fits your use case and let it handle the rest:
-
-| Class | Base | Use When |
-|---|---|---|
-| `TypeScriptProject` | `typescript.TypeScriptProject` | Plain TypeScript library or tool |
-| `JsiiProject` | `cdk.JsiiProject` | Multi-language library via JSII |
-| `AwsCdkTypeScriptAppProject` | `awscdk.AwsCdkTypeScriptApp` | AWS CDK application |
-| `AwsCdkConstructLibraryProject` | `awscdk.AwsCdkConstructLibrary` | Publishable AWS CDK construct |
-
-### Quick start
+| Class | Base |
+|---|---|
+| `TypeScriptProject` | `typescript.TypeScriptProject` |
+| `JsiiProject` | `cdk.JsiiProject` |
+| `AwsCdkTypeScriptAppProject` | `awscdk.AwsCdkTypeScriptApp` |
+| `AwsCdkConstructLibraryProject` | `awscdk.AwsCdkConstructLibrary` |
 
 ```typescript
 import { TypeScriptProject } from "@nikovirtala/projen-constructs";
@@ -39,55 +29,43 @@ const project = new TypeScriptProject({
 project.synth();
 ```
 
-That's it. No bikeshedding over formatter settings, linter rules, or CI workflow YAML.
+## Defaults
 
-## What You Get
+All project types share a common baseline configuration:
 
-Every project type comes pre-wired with:
+- **Tooling**: Biome for formatting and linting; ESLint, Prettier, and ts-node are removed
+- **Testing**: Vitest with V8 coverage
+- **Runtime management**: Mise, with a pinned Node.js version in `mise.toml`
+- **Package management**: pnpm
+- **Local tooling**: Homebrew `Brewfile`
+- **Module format**: ESM for `TypeScriptProject` and `AwsCdkTypeScriptAppProject`; CommonJS for JSII-based projects
+- **CI**: Auto-approve and auto-merge for dependency upgrade PRs; trusted NPM publishing for publishable projects
+- **VSCode**: Biome extension recommended, format-on-save enabled
 
-- **Biome** — formatting and linting in one fast tool; ESLint, Prettier, and ts-node are removed
-- **Vitest** — test runner with V8 coverage
-- **Mise** — pinned Node.js version via `mise.toml`, reproducible across machines
-- **Homebrew** — `Brewfile` for local tooling
-- **pnpm** — fast, disk-efficient package management
-- **ESM** — `TypeScriptProject` and `AwsCdkTypeScriptAppProject` use native ES modules; JSII projects stay CommonJS by necessity
-- **GitHub Actions** — auto-approve and auto-merge for dependency PRs; trusted NPM publishing for publishable projects
-- **VSCode** — Biome extension recommended, format-on-save configured out of the box
+### Version update process
 
-## Version Management
+Dependency versions are kept current by an automated weekly cycle:
 
-Version numbers are intentionally absent from this README — they'd be stale the moment a new release ships.
-
-Instead, the library keeps itself current automatically:
-
-1. A weekly `upgrade-main` GitHub Actions workflow runs `npm-check-updates` to bump all dependencies to their latest minor versions.
-2. As part of that upgrade run, a custom `update-versions` step queries the NPM registry for the latest `aws-cdk-lib` and `typescript` releases, and the official Node.js release index for the latest LTS patch of the current major. Results are written to `src/versions.json`.
-3. After the version update, `projen` re-synthesises all project files so the generated code reflects the new defaults.
-4. The resulting PR is automatically approved and merged — using the same auto-approve/auto-merge setup that all generated projects themselves inherit.
-
-The versions you'll get are always the latest stable LTS Node.js for the current major, the latest `typescript`
-release, and the latest `aws-cdk-lib` — as of the last upgrade cycle.
+1. The `upgrade-main` GitHub Actions workflow runs `npm-check-updates` to bump all dependencies to their latest minor versions.
+2. A custom `update-versions` step queries the NPM registry for the latest `aws-cdk-lib` and `typescript` releases, and the Node.js release index for the latest LTS patch of the current major. Results are written to `src/versions.json`.
+3. `projen` re-synthesises all project files to reflect the updated defaults.
+4. The resulting PR is auto-approved and auto-merged.
 
 ## Customization
 
-Every option from the underlying Projen project type is available. Anything you pass in is deep-merged with
-the defaults, so you only need to override what you care about:
+User-provided options are deep-merged with the defaults. Only specify what you want to override:
 
 ```typescript
 const project = new JsiiProject({
     name: "my-project",
     repositoryUrl: "https://github.com/nikovirtala/my-project.git",
-    // pin a different Node version
     minNodeVersion: "20.0.0",
-    // disable a component
     mise: false,
-    // relax a TypeScript compiler option
     tsconfig: {
         compilerOptions: {
             noUnusedLocals: false,
         },
     },
-    // tweak Biome
     biomeOptions: {
         biomeConfig: {
             formatter: {
@@ -100,12 +78,12 @@ const project = new JsiiProject({
 
 ## Components
 
-Components are reusable building blocks. Project types include the ones that make sense for them; you can
-also compose components directly into any Projen project.
+Reusable components that can be composed into any Projen project. Project types include a default set;
+additional components can be added manually.
 
 ### Vitest
 
-[Vitest](https://vitest.dev) testing framework with configurable coverage and environment:
+[Vitest](https://vitest.dev) test runner:
 
 ```typescript
 import { Vitest, CoverageProvider, CoverageReporter } from "@nikovirtala/projen-constructs";
@@ -157,7 +135,7 @@ homebrew.addPackage("gh");
 
 ### Colima
 
-[Colima](https://github.com/abiosoft/colima) — a lighter Docker alternative for local container workloads:
+[Colima](https://github.com/abiosoft/colima) container runtime:
 
 ```typescript
 import { Colima } from "@nikovirtala/projen-constructs";
@@ -167,7 +145,7 @@ new Colima(project);
 
 ### LocalStack
 
-[LocalStack](https://www.localstack.cloud) for running AWS services locally:
+[LocalStack](https://www.localstack.cloud) AWS service emulation:
 
 ```typescript
 import { LocalStack } from "@nikovirtala/projen-constructs";
@@ -179,9 +157,9 @@ new LocalStack(project, {
 });
 ```
 
-### Lambda Function Construct Generator
+### LambdaFunctionConstructGenerator
 
-Generates CDK `Function` constructs and bundles their handler code with esbuild:
+Generates CDK `Function` constructs and bundles handler code with esbuild:
 
 ```typescript
 import { LambdaFunctionConstructGenerator } from "@nikovirtala/projen-constructs";
