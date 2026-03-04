@@ -4180,7 +4180,7 @@
     "stability": "stable"
   },
   "homepage": "https://github.com/nikovirtala/projen-constructs.git",
-  "jsiiVersion": "5.9.30 (build 832a54a)",
+  "jsiiVersion": "5.9.31 (build 550e607)",
   "license": "Apache-2.0",
   "metadata": {
     "jsii": {
@@ -20283,5 +20283,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "fa/dWn55D18eNEDM/5m7w2ttFxCdwnGyBxQQ6xfA1GI="
+  "fingerprint": "2HgiIbxa8PrDYBlDwteNOMjhRGroqdo2/QpSPX0jYWg="
 }
