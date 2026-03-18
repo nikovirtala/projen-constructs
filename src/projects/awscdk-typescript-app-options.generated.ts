@@ -7,6 +7,12 @@ import type { HomebrewOptions, MiseOptions, VitestOptions } from '../';
  */
 export interface AwsCdkTypeScriptAppProjectOptions {
   /**
+   * Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project.
+   * @default true
+   * @stability experimental
+   */
+  readonly singletonLambdaAutoDiscover?: boolean;
+  /**
    * Common options for all AWS Lambda functions.
    * @default - default options
    * @stability experimental

@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.11",
     "constructs": "^10.5.1",
-    "projen": "^0.99.20"
+    "projen": "^0.99.21"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4267,7 +4267,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 192
+            "line": 198
           },
           "name": "author",
           "type": {
@@ -4284,7 +4284,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 186
+            "line": 192
           },
           "name": "authorAddress",
           "type": {
@@ -4301,7 +4301,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 82
+            "line": 88
           },
           "name": "cdkVersion",
           "type": {
@@ -4318,7 +4318,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 496
+            "line": 502
           },
           "name": "defaultReleaseBranch",
           "type": {
@@ -4338,7 +4338,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1141
+            "line": 1147
           },
           "name": "name",
           "type": {
@@ -4355,7 +4355,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 180
+            "line": 186
           },
           "name": "repositoryUrl",
           "type": {
@@ -4373,7 +4373,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 973
+            "line": 979
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -4391,7 +4391,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 490
+            "line": 496
           },
           "name": "artifactsDirectory",
           "optional": true,
@@ -4410,7 +4410,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 484
+            "line": 490
           },
           "name": "auditDeps",
           "optional": true,
@@ -4428,7 +4428,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 475
+            "line": 481
           },
           "name": "auditDepsOptions",
           "optional": true,
@@ -4445,7 +4445,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 965
+            "line": 971
           },
           "name": "authorEmail",
           "optional": true,
@@ -4462,7 +4462,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 960
+            "line": 966
           },
           "name": "authorName",
           "optional": true,
@@ -4479,7 +4479,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 955
+            "line": 961
           },
           "name": "authorOrganization",
           "optional": true,
@@ -4496,7 +4496,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 950
+            "line": 956
           },
           "name": "authorUrl",
           "optional": true,
@@ -4514,7 +4514,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1059
+            "line": 1065
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -4533,7 +4533,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 469
+            "line": 475
           },
           "name": "autoApproveUpgrades",
           "optional": true,
@@ -4551,7 +4551,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 945
+            "line": 951
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -4570,7 +4570,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1053
+            "line": 1059
           },
           "name": "autoMerge",
           "optional": true,
@@ -4589,7 +4589,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1045
+            "line": 1051
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -4607,7 +4607,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 939
+            "line": 945
           },
           "name": "bin",
           "optional": true,
@@ -4630,7 +4630,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 462
+            "line": 468
           },
           "name": "biome",
           "optional": true,
@@ -4648,7 +4648,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 456
+            "line": 462
           },
           "name": "biomeOptions",
           "optional": true,
@@ -4665,7 +4665,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 931
+            "line": 937
           },
           "name": "bugsEmail",
           "optional": true,
@@ -4682,7 +4682,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 926
+            "line": 932
           },
           "name": "bugsUrl",
           "optional": true,
@@ -4700,7 +4700,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 450
+            "line": 456
           },
           "name": "buildWorkflow",
           "optional": true,
@@ -4717,7 +4717,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 444
+            "line": 450
           },
           "name": "buildWorkflowOptions",
           "optional": true,
@@ -4736,7 +4736,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 689
+            "line": 695
           },
           "name": "bumpPackage",
           "optional": true,
@@ -4754,7 +4754,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 921
+            "line": 927
           },
           "name": "bundledDeps",
           "optional": true,
@@ -4776,7 +4776,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 439
+            "line": 445
           },
           "name": "bundlerOptions",
           "optional": true,
@@ -4794,7 +4794,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 906
+            "line": 912
           },
           "name": "bunVersion",
           "optional": true,
@@ -4813,7 +4813,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 96
+            "line": 102
           },
           "name": "catalog",
           "optional": true,
@@ -4832,7 +4832,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 76
+            "line": 82
           },
           "name": "cdkAssertions",
           "optional": true,
@@ -4851,7 +4851,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 68
+            "line": 74
           },
           "name": "cdkCliVersion",
           "optional": true,
@@ -4869,7 +4869,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 58
+            "line": 64
           },
           "name": "cdkVersionPinning",
           "optional": true,
@@ -4888,7 +4888,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 434
+            "line": 440
           },
           "name": "checkLicenses",
           "optional": true,
@@ -4906,7 +4906,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1037
+            "line": 1043
           },
           "name": "clobber",
           "optional": true,
@@ -4925,7 +4925,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 900
+            "line": 906
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -4943,7 +4943,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 427
+            "line": 433
           },
           "name": "codeCov",
           "optional": true,
@@ -4961,7 +4961,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 421
+            "line": 427
           },
           "name": "codeCovTokenSecret",
           "optional": true,
@@ -4979,7 +4979,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1134
+            "line": 1140
           },
           "name": "commitGenerated",
           "optional": true,
@@ -4998,7 +4998,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 174
+            "line": 180
           },
           "name": "compat",
           "optional": true,
@@ -5016,7 +5016,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 166
+            "line": 172
           },
           "name": "compatIgnore",
           "optional": true,
@@ -5034,7 +5034,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 160
+            "line": 166
           },
           "name": "compressAssembly",
           "optional": true,
@@ -5052,7 +5052,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 51
+            "line": 57
           },
           "name": "constructsVersion",
           "optional": true,
@@ -5070,7 +5070,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 415
+            "line": 421
           },
           "name": "copyrightOwner",
           "optional": true,
@@ -5088,7 +5088,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 409
+            "line": 415
           },
           "name": "copyrightPeriod",
           "optional": true,
@@ -5107,7 +5107,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 403
+            "line": 409
           },
           "name": "dependabot",
           "optional": true,
@@ -5125,7 +5125,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 396
+            "line": 402
           },
           "name": "dependabotOptions",
           "optional": true,
@@ -5147,7 +5147,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 893
+            "line": 899
           },
           "name": "deps",
           "optional": true,
@@ -5171,7 +5171,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 390
+            "line": 396
           },
           "name": "depsUpgrade",
           "optional": true,
@@ -5189,7 +5189,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 383
+            "line": 389
           },
           "name": "depsUpgradeOptions",
           "optional": true,
@@ -5210,7 +5210,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 880
+            "line": 886
           },
           "name": "description",
           "optional": true,
@@ -5228,7 +5228,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1031
+            "line": 1037
           },
           "name": "devContainer",
           "optional": true,
@@ -5250,7 +5250,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 872
+            "line": 878
           },
           "name": "devDeps",
           "optional": true,
@@ -5273,7 +5273,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 282
+            "line": 288
           },
           "name": "disableTsconfig",
           "optional": true,
@@ -5291,7 +5291,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 276
+            "line": 282
           },
           "name": "disableTsconfigDev",
           "optional": true,
@@ -5309,7 +5309,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 270
+            "line": 276
           },
           "name": "docgen",
           "optional": true,
@@ -5327,7 +5327,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 154
+            "line": 160
           },
           "name": "docgenFilePath",
           "optional": true,
@@ -5345,7 +5345,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 264
+            "line": 270
           },
           "name": "docsDirectory",
           "optional": true,
@@ -5363,7 +5363,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 44
+            "line": 50
           },
           "name": "edgeLambdaAutoDiscover",
           "optional": true,
@@ -5381,7 +5381,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 855
+            "line": 861
           },
           "name": "entrypoint",
           "optional": true,
@@ -5399,7 +5399,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 258
+            "line": 264
           },
           "name": "entrypointTypes",
           "optional": true,
@@ -5417,7 +5417,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 148
+            "line": 154
           },
           "name": "excludeTypescript",
           "optional": true,
@@ -5440,7 +5440,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 38
+            "line": 44
           },
           "name": "experimentalIntegRunner",
           "optional": true,
@@ -5459,7 +5459,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1025
+            "line": 1031
           },
           "name": "github",
           "optional": true,
@@ -5477,7 +5477,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1018
+            "line": 1024
           },
           "name": "githubOptions",
           "optional": true,
@@ -5494,7 +5494,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 377
+            "line": 383
           },
           "name": "gitignore",
           "optional": true,
@@ -5516,7 +5516,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1128
+            "line": 1134
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -5533,7 +5533,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1123
+            "line": 1129
           },
           "name": "gitOptions",
           "optional": true,
@@ -5551,7 +5551,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1012
+            "line": 1018
           },
           "name": "gitpod",
           "optional": true,
@@ -5569,7 +5569,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1146
+            "line": 1152
           },
           "name": "homebrew",
           "optional": true,
@@ -5587,7 +5587,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1151
+            "line": 1157
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -5604,7 +5604,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 848
+            "line": 854
           },
           "name": "homepage",
           "optional": true,
@@ -5622,7 +5622,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 32
+            "line": 38
           },
           "name": "integrationTestAutoDiscover",
           "optional": true,
@@ -5640,7 +5640,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 682
+            "line": 688
           },
           "name": "jsiiReleaseVersion",
           "optional": true,
@@ -5662,7 +5662,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 138
+            "line": 144
           },
           "name": "jsiiVersion",
           "optional": true,
@@ -5679,7 +5679,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 843
+            "line": 849
           },
           "name": "keywords",
           "optional": true,
@@ -5702,7 +5702,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 26
+            "line": 32
           },
           "name": "lambdaAutoDiscover",
           "optional": true,
@@ -5720,7 +5720,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 20
+            "line": 26
           },
           "name": "lambdaExtensionAutoDiscover",
           "optional": true,
@@ -5738,7 +5738,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 14
+            "line": 20
           },
           "name": "lambdaOptions",
           "optional": true,
@@ -5756,7 +5756,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 252
+            "line": 258
           },
           "name": "libdir",
           "optional": true,
@@ -5775,7 +5775,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 838
+            "line": 844
           },
           "name": "license",
           "optional": true,
@@ -5793,7 +5793,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 830
+            "line": 836
           },
           "name": "licensed",
           "optional": true,
@@ -5811,7 +5811,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1118
+            "line": 1124
           },
           "name": "logging",
           "optional": true,
@@ -5830,7 +5830,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 676
+            "line": 682
           },
           "name": "majorVersion",
           "optional": true,
@@ -5849,7 +5849,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 824
+            "line": 830
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -5868,7 +5868,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 668
+            "line": 674
           },
           "name": "minMajorVersion",
           "optional": true,
@@ -5887,7 +5887,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 813
+            "line": 819
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -5905,7 +5905,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1156
+            "line": 1162
           },
           "name": "mise",
           "optional": true,
@@ -5923,7 +5923,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1161
+            "line": 1167
           },
           "name": "miseOptions",
           "optional": true,
@@ -5942,7 +5942,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 658
+            "line": 664
           },
           "name": "nextVersionCommand",
           "optional": true,
@@ -5960,7 +5960,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 798
+            "line": 804
           },
           "name": "npmAccess",
           "optional": true,
@@ -5979,7 +5979,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 634
+            "line": 640
           },
           "name": "npmDistTag",
           "optional": true,
@@ -5997,7 +5997,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 372
+            "line": 378
           },
           "name": "npmignoreEnabled",
           "optional": true,
@@ -6014,7 +6014,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 366
+            "line": 372
           },
           "name": "npmIgnoreOptions",
           "optional": true,
@@ -6033,7 +6033,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 790
+            "line": 796
           },
           "name": "npmProvenance",
           "optional": true,
@@ -6052,7 +6052,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 779
+            "line": 785
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -6070,7 +6070,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 772
+            "line": 778
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -6088,7 +6088,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 766
+            "line": 772
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -6107,7 +6107,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1112
+            "line": 1118
           },
           "name": "outdir",
           "optional": true,
@@ -6125,7 +6125,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 361
+            "line": 367
           },
           "name": "package",
           "optional": true,
@@ -6143,7 +6143,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 760
+            "line": 766
           },
           "name": "packageManager",
           "optional": true,
@@ -6164,7 +6164,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 754
+            "line": 760
           },
           "name": "packageName",
           "optional": true,
@@ -6181,7 +6181,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1101
+            "line": 1107
           },
           "name": "parent",
           "optional": true,
@@ -6198,7 +6198,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 747
+            "line": 753
           },
           "name": "peerDependencyOptions",
           "optional": true,
@@ -6217,7 +6217,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 742
+            "line": 748
           },
           "name": "peerDeps",
           "optional": true,
@@ -6240,7 +6240,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 723
+            "line": 729
           },
           "name": "pnpmVersion",
           "optional": true,
@@ -6258,7 +6258,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 626
+            "line": 632
           },
           "name": "postBuildSteps",
           "optional": true,
@@ -6281,7 +6281,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 620
+            "line": 626
           },
           "name": "prerelease",
           "optional": true,
@@ -6299,7 +6299,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1096
+            "line": 1102
           },
           "name": "projectTree",
           "optional": true,
@@ -6318,7 +6318,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1090
+            "line": 1096
           },
           "name": "projenCommand",
           "optional": true,
@@ -6336,7 +6336,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1006
+            "line": 1012
           },
           "name": "projenCredentials",
           "optional": true,
@@ -6354,7 +6354,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 355
+            "line": 361
           },
           "name": "projenDevDependency",
           "optional": true,
@@ -6372,7 +6372,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 349
+            "line": 355
           },
           "name": "projenrcJs",
           "optional": true,
@@ -6390,7 +6390,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1083
+            "line": 1089
           },
           "name": "projenrcJson",
           "optional": true,
@@ -6408,7 +6408,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1077
+            "line": 1083
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -6426,7 +6426,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 343
+            "line": 349
           },
           "name": "projenrcJsOptions",
           "optional": true,
@@ -6447,7 +6447,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 246
+            "line": 252
           },
           "name": "projenrcTs",
           "optional": true,
@@ -6464,7 +6464,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 239
+            "line": 245
           },
           "name": "projenrcTsOptions",
           "optional": true,
@@ -6482,7 +6482,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 337
+            "line": 343
           },
           "name": "projenVersion",
           "optional": true,
@@ -6500,7 +6500,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 614
+            "line": 620
           },
           "name": "publishDryRun",
           "optional": true,
@@ -6519,7 +6519,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 608
+            "line": 614
           },
           "name": "publishTasks",
           "optional": true,
@@ -6537,7 +6537,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 125
+            "line": 131
           },
           "name": "publishToGo",
           "optional": true,
@@ -6555,7 +6555,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 119
+            "line": 125
           },
           "name": "publishToMaven",
           "optional": true,
@@ -6573,7 +6573,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 113
+            "line": 119
           },
           "name": "publishToNuget",
           "optional": true,
@@ -6591,7 +6591,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 107
+            "line": 113
           },
           "name": "publishToPypi",
           "optional": true,
@@ -6609,7 +6609,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 331
+            "line": 337
           },
           "name": "pullRequestTemplate",
           "optional": true,
@@ -6627,7 +6627,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 325
+            "line": 331
           },
           "name": "pullRequestTemplateContents",
           "optional": true,
@@ -6650,7 +6650,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1000
+            "line": 1006
           },
           "name": "readme",
           "optional": true,
@@ -6668,7 +6668,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 600
+            "line": 606
           },
           "name": "releasableCommits",
           "optional": true,
@@ -6686,7 +6686,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 319
+            "line": 325
           },
           "name": "release",
           "optional": true,
@@ -6705,7 +6705,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 594
+            "line": 600
           },
           "name": "releaseBranches",
           "optional": true,
@@ -6729,7 +6729,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 581
+            "line": 587
           },
           "name": "releaseEnvironment",
           "optional": true,
@@ -6747,7 +6747,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 570
+            "line": 576
           },
           "name": "releaseFailureIssue",
           "optional": true,
@@ -6766,7 +6766,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 564
+            "line": 570
           },
           "name": "releaseFailureIssueLabel",
           "optional": true,
@@ -6785,7 +6785,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 557
+            "line": 563
           },
           "name": "releaseTagPrefix",
           "optional": true,
@@ -6803,7 +6803,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 313
+            "line": 319
           },
           "name": "releaseToNpm",
           "optional": true,
@@ -6821,7 +6821,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 547
+            "line": 553
           },
           "name": "releaseTrigger",
           "optional": true,
@@ -6839,7 +6839,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 541
+            "line": 547
           },
           "name": "releaseWorkflowEnv",
           "optional": true,
@@ -6862,7 +6862,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 535
+            "line": 541
           },
           "name": "releaseWorkflowName",
           "optional": true,
@@ -6879,7 +6879,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 529
+            "line": 535
           },
           "name": "releaseWorkflowSetupSteps",
           "optional": true,
@@ -6902,7 +6902,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1071
+            "line": 1077
           },
           "name": "renovatebot",
           "optional": true,
@@ -6920,7 +6920,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1065
+            "line": 1071
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -6938,7 +6938,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 717
+            "line": 723
           },
           "name": "repository",
           "optional": true,
@@ -6955,7 +6955,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 711
+            "line": 717
           },
           "name": "repositoryDirectory",
           "optional": true,
@@ -6972,7 +6972,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 101
+            "line": 107
           },
           "name": "rootdir",
           "optional": true,
@@ -6990,7 +6990,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 706
+            "line": 712
           },
           "name": "scopedPackagesOptions",
           "optional": true,
@@ -7006,6 +7006,24 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "stability": "experimental",
+            "summary": "Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 14
+          },
+          "name": "singletonLambdaAutoDiscover",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "\"src\"",
             "stability": "experimental",
             "summary": "Typescript sources directory."
@@ -7013,7 +7031,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 234
+            "line": 240
           },
           "name": "srcdir",
           "optional": true,
@@ -7030,7 +7048,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 700
+            "line": 706
           },
           "name": "stability",
           "optional": true,
@@ -7049,7 +7067,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 994
+            "line": 1000
           },
           "name": "stale",
           "optional": true,
@@ -7068,7 +7086,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 987
+            "line": 993
           },
           "name": "staleOptions",
           "optional": true,
@@ -7087,7 +7105,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 228
+            "line": 234
           },
           "name": "testdir",
           "optional": true,
@@ -7105,7 +7123,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 218
+            "line": 224
           },
           "name": "tsconfig",
           "optional": true,
@@ -7123,7 +7141,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 212
+            "line": 218
           },
           "name": "tsconfigDev",
           "optional": true,
@@ -7141,7 +7159,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 206
+            "line": 212
           },
           "name": "tsconfigDevFile",
           "optional": true,
@@ -7160,7 +7178,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 200
+            "line": 206
           },
           "name": "typescriptVersion",
           "optional": true,
@@ -7179,7 +7197,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 524
+            "line": 530
           },
           "name": "versionrcOptions",
           "optional": true,
@@ -7202,7 +7220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1166
+            "line": 1172
           },
           "name": "vitest",
           "optional": true,
@@ -7220,7 +7238,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1171
+            "line": 1177
           },
           "name": "vitestOptions",
           "optional": true,
@@ -7239,7 +7257,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 980
+            "line": 986
           },
           "name": "vscode",
           "optional": true,
@@ -7257,7 +7275,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 307
+            "line": 313
           },
           "name": "workflowBootstrapSteps",
           "optional": true,
@@ -7280,7 +7298,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 517
+            "line": 523
           },
           "name": "workflowContainerImage",
           "optional": true,
@@ -7298,7 +7316,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 301
+            "line": 307
           },
           "name": "workflowGitIdentity",
           "optional": true,
@@ -7317,7 +7335,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 295
+            "line": 301
           },
           "name": "workflowNodeVersion",
           "optional": true,
@@ -7335,7 +7353,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 288
+            "line": 294
           },
           "name": "workflowPackageCache",
           "optional": true,
@@ -7357,7 +7375,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 511
+            "line": 517
           },
           "name": "workflowRunsOn",
           "optional": true,
@@ -7383,7 +7401,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 503
+            "line": 509
           },
           "name": "workflowRunsOnGroup",
           "optional": true,
@@ -7401,7 +7419,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 695
+            "line": 701
           },
           "name": "yarnBerryOptions",
           "optional": true,
@@ -7474,7 +7492,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 93
+            "line": 99
           },
           "name": "cdkVersion",
           "type": {
@@ -7491,7 +7509,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 445
+            "line": 451
           },
           "name": "defaultReleaseBranch",
           "type": {
@@ -7511,7 +7529,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1090
+            "line": 1096
           },
           "name": "name",
           "type": {
@@ -7529,7 +7547,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 922
+            "line": 928
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -7546,7 +7564,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 55
+            "line": 61
           },
           "name": "app",
           "optional": true,
@@ -7564,7 +7582,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 50
+            "line": 56
           },
           "name": "appEntrypoint",
           "optional": true,
@@ -7582,7 +7600,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 439
+            "line": 445
           },
           "name": "artifactsDirectory",
           "optional": true,
@@ -7601,7 +7619,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 433
+            "line": 439
           },
           "name": "auditDeps",
           "optional": true,
@@ -7619,7 +7637,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 424
+            "line": 430
           },
           "name": "auditDepsOptions",
           "optional": true,
@@ -7636,7 +7654,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 914
+            "line": 920
           },
           "name": "authorEmail",
           "optional": true,
@@ -7653,7 +7671,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 909
+            "line": 915
           },
           "name": "authorName",
           "optional": true,
@@ -7670,7 +7688,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 904
+            "line": 910
           },
           "name": "authorOrganization",
           "optional": true,
@@ -7687,7 +7705,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 899
+            "line": 905
           },
           "name": "authorUrl",
           "optional": true,
@@ -7705,7 +7723,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1008
+            "line": 1014
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -7724,7 +7742,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 418
+            "line": 424
           },
           "name": "autoApproveUpgrades",
           "optional": true,
@@ -7742,7 +7760,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 894
+            "line": 900
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -7761,7 +7779,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1002
+            "line": 1008
           },
           "name": "autoMerge",
           "optional": true,
@@ -7780,7 +7798,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 994
+            "line": 1000
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -7798,7 +7816,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 888
+            "line": 894
           },
           "name": "bin",
           "optional": true,
@@ -7821,7 +7839,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 411
+            "line": 417
           },
           "name": "biome",
           "optional": true,
@@ -7839,7 +7857,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 405
+            "line": 411
           },
           "name": "biomeOptions",
           "optional": true,
@@ -7856,7 +7874,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 880
+            "line": 886
           },
           "name": "bugsEmail",
           "optional": true,
@@ -7873,7 +7891,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 875
+            "line": 881
           },
           "name": "bugsUrl",
           "optional": true,
@@ -7892,7 +7910,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 141
+            "line": 147
           },
           "name": "buildCommand",
           "optional": true,
@@ -7910,7 +7928,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 399
+            "line": 405
           },
           "name": "buildWorkflow",
           "optional": true,
@@ -7927,7 +7945,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 393
+            "line": 399
           },
           "name": "buildWorkflowOptions",
           "optional": true,
@@ -7946,7 +7964,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 638
+            "line": 644
           },
           "name": "bumpPackage",
           "optional": true,
@@ -7964,7 +7982,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 870
+            "line": 876
           },
           "name": "bundledDeps",
           "optional": true,
@@ -7986,7 +8004,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 388
+            "line": 394
           },
           "name": "bundlerOptions",
           "optional": true,
@@ -8004,7 +8022,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 855
+            "line": 861
           },
           "name": "bunVersion",
           "optional": true,
@@ -8023,7 +8041,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 87
+            "line": 93
           },
           "name": "cdkAssertions",
           "optional": true,
@@ -8042,7 +8060,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 79
+            "line": 85
           },
           "name": "cdkCliVersion",
           "optional": true,
@@ -8060,7 +8078,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 132
+            "line": 138
           },
           "name": "cdkout",
           "optional": true,
@@ -8078,7 +8096,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 69
+            "line": 75
           },
           "name": "cdkVersionPinning",
           "optional": true,
@@ -8097,7 +8115,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 383
+            "line": 389
           },
           "name": "checkLicenses",
           "optional": true,
@@ -8115,7 +8133,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 986
+            "line": 992
           },
           "name": "clobber",
           "optional": true,
@@ -8134,7 +8152,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 849
+            "line": 855
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -8152,7 +8170,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 376
+            "line": 382
           },
           "name": "codeCov",
           "optional": true,
@@ -8170,7 +8188,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 370
+            "line": 376
           },
           "name": "codeCovTokenSecret",
           "optional": true,
@@ -8188,7 +8206,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1083
+            "line": 1089
           },
           "name": "commitGenerated",
           "optional": true,
@@ -8206,7 +8224,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 62
+            "line": 68
           },
           "name": "constructsVersion",
           "optional": true,
@@ -8224,7 +8242,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 126
+            "line": 132
           },
           "name": "context",
           "optional": true,
@@ -8247,7 +8265,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 364
+            "line": 370
           },
           "name": "copyrightOwner",
           "optional": true,
@@ -8265,7 +8283,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 358
+            "line": 364
           },
           "name": "copyrightPeriod",
           "optional": true,
@@ -8284,7 +8302,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 352
+            "line": 358
           },
           "name": "dependabot",
           "optional": true,
@@ -8302,7 +8320,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 345
+            "line": 351
           },
           "name": "dependabotOptions",
           "optional": true,
@@ -8324,7 +8342,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 842
+            "line": 848
           },
           "name": "deps",
           "optional": true,
@@ -8348,7 +8366,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 339
+            "line": 345
           },
           "name": "depsUpgrade",
           "optional": true,
@@ -8366,7 +8384,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 332
+            "line": 338
           },
           "name": "depsUpgradeOptions",
           "optional": true,
@@ -8387,7 +8405,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 829
+            "line": 835
           },
           "name": "description",
           "optional": true,
@@ -8405,7 +8423,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 980
+            "line": 986
           },
           "name": "devContainer",
           "optional": true,
@@ -8427,7 +8445,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 821
+            "line": 827
           },
           "name": "devDeps",
           "optional": true,
@@ -8450,7 +8468,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 231
+            "line": 237
           },
           "name": "disableTsconfig",
           "optional": true,
@@ -8468,7 +8486,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 225
+            "line": 231
           },
           "name": "disableTsconfigDev",
           "optional": true,
@@ -8486,7 +8504,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 219
+            "line": 225
           },
           "name": "docgen",
           "optional": true,
@@ -8504,7 +8522,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 213
+            "line": 219
           },
           "name": "docsDirectory",
           "optional": true,
@@ -8522,7 +8540,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 44
+            "line": 50
           },
           "name": "edgeLambdaAutoDiscover",
           "optional": true,
@@ -8540,7 +8558,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 804
+            "line": 810
           },
           "name": "entrypoint",
           "optional": true,
@@ -8558,7 +8576,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 207
+            "line": 213
           },
           "name": "entrypointTypes",
           "optional": true,
@@ -8576,7 +8594,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 38
+            "line": 44
           },
           "name": "experimentalIntegRunner",
           "optional": true,
@@ -8594,7 +8612,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 120
+            "line": 126
           },
           "name": "featureFlags",
           "optional": true,
@@ -8613,7 +8631,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 974
+            "line": 980
           },
           "name": "github",
           "optional": true,
@@ -8631,7 +8649,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 967
+            "line": 973
           },
           "name": "githubOptions",
           "optional": true,
@@ -8648,7 +8666,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 326
+            "line": 332
           },
           "name": "gitignore",
           "optional": true,
@@ -8670,7 +8688,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1077
+            "line": 1083
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -8687,7 +8705,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1072
+            "line": 1078
           },
           "name": "gitOptions",
           "optional": true,
@@ -8705,7 +8723,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 961
+            "line": 967
           },
           "name": "gitpod",
           "optional": true,
@@ -8723,7 +8741,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1095
+            "line": 1101
           },
           "name": "homebrew",
           "optional": true,
@@ -8741,7 +8759,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1100
+            "line": 1106
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -8758,7 +8776,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 797
+            "line": 803
           },
           "name": "homepage",
           "optional": true,
@@ -8776,7 +8794,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 32
+            "line": 38
           },
           "name": "integrationTestAutoDiscover",
           "optional": true,
@@ -8794,7 +8812,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 631
+            "line": 637
           },
           "name": "jsiiReleaseVersion",
           "optional": true,
@@ -8811,7 +8829,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 792
+            "line": 798
           },
           "name": "keywords",
           "optional": true,
@@ -8834,7 +8852,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 26
+            "line": 32
           },
           "name": "lambdaAutoDiscover",
           "optional": true,
@@ -8852,7 +8870,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 20
+            "line": 26
           },
           "name": "lambdaExtensionAutoDiscover",
           "optional": true,
@@ -8870,7 +8888,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 14
+            "line": 20
           },
           "name": "lambdaOptions",
           "optional": true,
@@ -8888,7 +8906,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 201
+            "line": 207
           },
           "name": "libdir",
           "optional": true,
@@ -8907,7 +8925,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 787
+            "line": 793
           },
           "name": "license",
           "optional": true,
@@ -8925,7 +8943,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 779
+            "line": 785
           },
           "name": "licensed",
           "optional": true,
@@ -8943,7 +8961,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1067
+            "line": 1073
           },
           "name": "logging",
           "optional": true,
@@ -8962,7 +8980,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 625
+            "line": 631
           },
           "name": "majorVersion",
           "optional": true,
@@ -8981,7 +8999,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 773
+            "line": 779
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -9000,7 +9018,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 617
+            "line": 623
           },
           "name": "minMajorVersion",
           "optional": true,
@@ -9019,7 +9037,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 762
+            "line": 768
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -9037,7 +9055,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1105
+            "line": 1111
           },
           "name": "mise",
           "optional": true,
@@ -9055,7 +9073,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1110
+            "line": 1116
           },
           "name": "miseOptions",
           "optional": true,
@@ -9074,7 +9092,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 607
+            "line": 613
           },
           "name": "nextVersionCommand",
           "optional": true,
@@ -9092,7 +9110,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 747
+            "line": 753
           },
           "name": "npmAccess",
           "optional": true,
@@ -9111,7 +9129,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 583
+            "line": 589
           },
           "name": "npmDistTag",
           "optional": true,
@@ -9129,7 +9147,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 321
+            "line": 327
           },
           "name": "npmignoreEnabled",
           "optional": true,
@@ -9146,7 +9164,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 315
+            "line": 321
           },
           "name": "npmIgnoreOptions",
           "optional": true,
@@ -9165,7 +9183,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 739
+            "line": 745
           },
           "name": "npmProvenance",
           "optional": true,
@@ -9184,7 +9202,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 728
+            "line": 734
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -9202,7 +9220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 721
+            "line": 727
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -9220,7 +9238,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 715
+            "line": 721
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -9239,7 +9257,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1061
+            "line": 1067
           },
           "name": "outdir",
           "optional": true,
@@ -9257,7 +9275,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 310
+            "line": 316
           },
           "name": "package",
           "optional": true,
@@ -9275,7 +9293,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 709
+            "line": 715
           },
           "name": "packageManager",
           "optional": true,
@@ -9296,7 +9314,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 703
+            "line": 709
           },
           "name": "packageName",
           "optional": true,
@@ -9313,7 +9331,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1050
+            "line": 1056
           },
           "name": "parent",
           "optional": true,
@@ -9330,7 +9348,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 696
+            "line": 702
           },
           "name": "peerDependencyOptions",
           "optional": true,
@@ -9349,7 +9367,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 691
+            "line": 697
           },
           "name": "peerDeps",
           "optional": true,
@@ -9372,7 +9390,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 672
+            "line": 678
           },
           "name": "pnpmVersion",
           "optional": true,
@@ -9390,7 +9408,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 575
+            "line": 581
           },
           "name": "postBuildSteps",
           "optional": true,
@@ -9413,7 +9431,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 569
+            "line": 575
           },
           "name": "prerelease",
           "optional": true,
@@ -9431,7 +9449,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1045
+            "line": 1051
           },
           "name": "projectTree",
           "optional": true,
@@ -9450,7 +9468,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1039
+            "line": 1045
           },
           "name": "projenCommand",
           "optional": true,
@@ -9468,7 +9486,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 955
+            "line": 961
           },
           "name": "projenCredentials",
           "optional": true,
@@ -9486,7 +9504,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 304
+            "line": 310
           },
           "name": "projenDevDependency",
           "optional": true,
@@ -9504,7 +9522,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 298
+            "line": 304
           },
           "name": "projenrcJs",
           "optional": true,
@@ -9522,7 +9540,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1032
+            "line": 1038
           },
           "name": "projenrcJson",
           "optional": true,
@@ -9540,7 +9558,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1026
+            "line": 1032
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -9558,7 +9576,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 292
+            "line": 298
           },
           "name": "projenrcJsOptions",
           "optional": true,
@@ -9579,7 +9597,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 195
+            "line": 201
           },
           "name": "projenrcTs",
           "optional": true,
@@ -9596,7 +9614,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 188
+            "line": 194
           },
           "name": "projenrcTsOptions",
           "optional": true,
@@ -9614,7 +9632,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 286
+            "line": 292
           },
           "name": "projenVersion",
           "optional": true,
@@ -9632,7 +9650,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 563
+            "line": 569
           },
           "name": "publishDryRun",
           "optional": true,
@@ -9651,7 +9669,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 557
+            "line": 563
           },
           "name": "publishTasks",
           "optional": true,
@@ -9669,7 +9687,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 280
+            "line": 286
           },
           "name": "pullRequestTemplate",
           "optional": true,
@@ -9687,7 +9705,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 274
+            "line": 280
           },
           "name": "pullRequestTemplateContents",
           "optional": true,
@@ -9710,7 +9728,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 949
+            "line": 955
           },
           "name": "readme",
           "optional": true,
@@ -9728,7 +9746,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 549
+            "line": 555
           },
           "name": "releasableCommits",
           "optional": true,
@@ -9746,7 +9764,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 268
+            "line": 274
           },
           "name": "release",
           "optional": true,
@@ -9765,7 +9783,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 543
+            "line": 549
           },
           "name": "releaseBranches",
           "optional": true,
@@ -9789,7 +9807,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 530
+            "line": 536
           },
           "name": "releaseEnvironment",
           "optional": true,
@@ -9807,7 +9825,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 519
+            "line": 525
           },
           "name": "releaseFailureIssue",
           "optional": true,
@@ -9826,7 +9844,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 513
+            "line": 519
           },
           "name": "releaseFailureIssueLabel",
           "optional": true,
@@ -9845,7 +9863,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 506
+            "line": 512
           },
           "name": "releaseTagPrefix",
           "optional": true,
@@ -9863,7 +9881,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 262
+            "line": 268
           },
           "name": "releaseToNpm",
           "optional": true,
@@ -9881,7 +9899,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 496
+            "line": 502
           },
           "name": "releaseTrigger",
           "optional": true,
@@ -9899,7 +9917,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 490
+            "line": 496
           },
           "name": "releaseWorkflowEnv",
           "optional": true,
@@ -9922,7 +9940,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 484
+            "line": 490
           },
           "name": "releaseWorkflowName",
           "optional": true,
@@ -9939,7 +9957,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 478
+            "line": 484
           },
           "name": "releaseWorkflowSetupSteps",
           "optional": true,
@@ -9962,7 +9980,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1020
+            "line": 1026
           },
           "name": "renovatebot",
           "optional": true,
@@ -9980,7 +9998,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1014
+            "line": 1020
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -9998,7 +10016,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 666
+            "line": 672
           },
           "name": "repository",
           "optional": true,
@@ -10015,7 +10033,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 660
+            "line": 666
           },
           "name": "repositoryDirectory",
           "optional": true,
@@ -10033,7 +10051,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 111
+            "line": 117
           },
           "name": "requireApproval",
           "optional": true,
@@ -10051,7 +10069,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 655
+            "line": 661
           },
           "name": "scopedPackagesOptions",
           "optional": true,
@@ -10067,6 +10085,24 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "stability": "experimental",
+            "summary": "Automatically adds an `awscdk.SingletonFunction` for each `.singleton-lambda.ts` handler in your source tree. If this is disabled, you can manually add an `awscdk.AutoDiscover` component to your project."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 14
+          },
+          "name": "singletonLambdaAutoDiscover",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "\"src\"",
             "stability": "experimental",
             "summary": "Typescript sources directory."
@@ -10074,7 +10110,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 183
+            "line": 189
           },
           "name": "srcdir",
           "optional": true,
@@ -10091,7 +10127,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 649
+            "line": 655
           },
           "name": "stability",
           "optional": true,
@@ -10110,7 +10146,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 943
+            "line": 949
           },
           "name": "stale",
           "optional": true,
@@ -10129,7 +10165,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 936
+            "line": 942
           },
           "name": "staleOptions",
           "optional": true,
@@ -10148,7 +10184,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 177
+            "line": 183
           },
           "name": "testdir",
           "optional": true,
@@ -10166,7 +10202,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 167
+            "line": 173
           },
           "name": "tsconfig",
           "optional": true,
@@ -10184,7 +10220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 161
+            "line": 167
           },
           "name": "tsconfigDev",
           "optional": true,
@@ -10202,7 +10238,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 155
+            "line": 161
           },
           "name": "tsconfigDevFile",
           "optional": true,
@@ -10221,7 +10257,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 149
+            "line": 155
           },
           "name": "typescriptVersion",
           "optional": true,
@@ -10240,7 +10276,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 473
+            "line": 479
           },
           "name": "versionrcOptions",
           "optional": true,
@@ -10263,7 +10299,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1115
+            "line": 1121
           },
           "name": "vitest",
           "optional": true,
@@ -10281,7 +10317,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1120
+            "line": 1126
           },
           "name": "vitestOptions",
           "optional": true,
@@ -10300,7 +10336,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 929
+            "line": 935
           },
           "name": "vscode",
           "optional": true,
@@ -10318,7 +10354,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 105
+            "line": 111
           },
           "name": "watchExcludes",
           "optional": true,
@@ -10341,7 +10377,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 99
+            "line": 105
           },
           "name": "watchIncludes",
           "optional": true,
@@ -10364,7 +10400,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 256
+            "line": 262
           },
           "name": "workflowBootstrapSteps",
           "optional": true,
@@ -10387,7 +10423,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 466
+            "line": 472
           },
           "name": "workflowContainerImage",
           "optional": true,
@@ -10405,7 +10441,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 250
+            "line": 256
           },
           "name": "workflowGitIdentity",
           "optional": true,
@@ -10424,7 +10460,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 244
+            "line": 250
           },
           "name": "workflowNodeVersion",
           "optional": true,
@@ -10442,7 +10478,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 237
+            "line": 243
           },
           "name": "workflowPackageCache",
           "optional": true,
@@ -10464,7 +10500,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 460
+            "line": 466
           },
           "name": "workflowRunsOn",
           "optional": true,
@@ -10490,7 +10526,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 452
+            "line": 458
           },
           "name": "workflowRunsOnGroup",
           "optional": true,
@@ -10508,7 +10544,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 644
+            "line": 650
           },
           "name": "yarnBerryOptions",
           "optional": true,
@@ -20283,5 +20319,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "+g47MjmqDQk1BCUqdgfA/T+G19rjVQIeRLXvK/Q5wAw="
+  "fingerprint": "X2ls1dIfWtA6Vk+VahoxQtHaHhO/OvSM/+1Ozdj8RvE="
 }
