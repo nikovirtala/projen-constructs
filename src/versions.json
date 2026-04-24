@@ -1,5 +1,6 @@
 {
     "cdkVersion": "2.244.0",
+    "pnpmVersion": "10.12.1",
     "typescriptVersion": "5.9.3",
     "minNodeVersion": "24.14.0"
 }
