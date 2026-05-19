@@ -18,7 +18,7 @@ const project = new JsiiProject({
     name: "@nikovirtala/projen-constructs",
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
-    pnpmVersion: "10",
+    pnpmVersion: "10.28.1",
 });
 
 // configure pnpm to use shamefully-hoist to fix jsii-pacmak esbuild resolution

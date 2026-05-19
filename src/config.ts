@@ -123,7 +123,7 @@ export const projectDefaultOptions = {
         linter: true,
     },
     packageManager: javascript.NodePackageManager.PNPM,
-    pnpmVersion: "10",
+    pnpmVersion: "10.28.1",
     projenrcTs: true,
     typescriptVersion: defaults.typescriptVersion,
     tsconfig: {
