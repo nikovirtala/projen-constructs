@@ -110,6 +110,13 @@ project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
 
 project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
     JsonPatch.add("/jobs/upgrade/steps/5", {
+        name: "Install updated dependencies",
+        run: "pnpm i --no-frozen-lockfile",
+    }),
+);
+
+project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
+    JsonPatch.add("/jobs/upgrade/steps/6", {
         name: "run projen",
         run: "npx projen",
     }),
