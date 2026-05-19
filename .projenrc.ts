@@ -119,6 +119,7 @@ project.github?.tryFindWorkflow("upgrade-main")?.file?.patch(
     JsonPatch.add("/jobs/upgrade/steps/6", {
         name: "run projen",
         run: "npx projen",
+        env: { CI: "0" },
     }),
 );
 

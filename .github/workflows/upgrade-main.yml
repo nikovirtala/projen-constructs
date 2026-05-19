@@ -34,6 +34,8 @@ jobs:
         run: pnpm i --no-frozen-lockfile
       - name: run projen
         run: npx projen
+        env:
+          CI: "0"
       - name: Upgrade dependencies
         run: npx projen upgrade
       - name: Find mutations
