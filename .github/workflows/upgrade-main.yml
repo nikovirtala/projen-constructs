@@ -30,6 +30,8 @@ jobs:
         run: pnpm i --frozen-lockfile
       - name: update aws-cdk-lib, node.js and typescript versions
         run: pnpm exec projen update-versions
+      - name: Install updated dependencies
+        run: pnpm i --no-frozen-lockfile
       - name: run projen
         run: npx projen
       - name: Upgrade dependencies
