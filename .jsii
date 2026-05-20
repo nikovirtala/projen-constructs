@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.7.11",
-    "constructs": "^10.5.1",
-    "projen": "^0.99.21"
+    "constructs": "^10.6.0",
+    "projen": "^0.99.62"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4180,7 +4180,7 @@
     "stability": "stable"
   },
   "homepage": "https://github.com/nikovirtala/projen-constructs.git",
-  "jsiiVersion": "5.9.33 (build 8ebb533)",
+  "jsiiVersion": "5.9.41 (build 8930737)",
   "license": "Apache-2.0",
   "metadata": {
     "jsii": {
@@ -4338,7 +4338,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1147
+            "line": 1172
           },
           "name": "name",
           "type": {
@@ -4366,6 +4366,24 @@
           "abstract": true,
           "docs": {
             "default": "true",
+            "stability": "experimental",
+            "summary": "Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 1004
+          },
+          "name": "addPackageManagerToDevEngines",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "true",
             "remarks": "This is normally only allowed for libraries. For apps, there's no meaning\nfor specifying these.",
             "stability": "experimental",
             "summary": "Allow the project to include `peerDependencies` and `bundledDependencies`."
@@ -4373,7 +4391,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 979
+            "line": 998
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -4445,7 +4463,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 971
+            "line": 990
           },
           "name": "authorEmail",
           "optional": true,
@@ -4462,7 +4480,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 966
+            "line": 985
           },
           "name": "authorName",
           "optional": true,
@@ -4479,7 +4497,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 961
+            "line": 980
           },
           "name": "authorOrganization",
           "optional": true,
@@ -4496,7 +4514,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 956
+            "line": 975
           },
           "name": "authorUrl",
           "optional": true,
@@ -4514,7 +4532,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1065
+            "line": 1090
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -4551,7 +4569,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 951
+            "line": 970
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -4570,7 +4588,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1059
+            "line": 1084
           },
           "name": "autoMerge",
           "optional": true,
@@ -4589,7 +4607,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1051
+            "line": 1076
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -4607,7 +4625,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 945
+            "line": 964
           },
           "name": "bin",
           "optional": true,
@@ -4665,7 +4683,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 937
+            "line": 956
           },
           "name": "bugsEmail",
           "optional": true,
@@ -4682,7 +4700,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 932
+            "line": 951
           },
           "name": "bugsUrl",
           "optional": true,
@@ -4747,14 +4765,14 @@
         {
           "abstract": true,
           "docs": {
-            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "List of dependencies to bundle into this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 927
+            "line": 946
           },
           "name": "bundledDeps",
           "optional": true,
@@ -4794,7 +4812,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 912
+            "line": 931
           },
           "name": "bunVersion",
           "optional": true,
@@ -4906,7 +4924,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1043
+            "line": 1068
           },
           "name": "clobber",
           "optional": true,
@@ -4925,7 +4943,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 906
+            "line": 925
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -4979,7 +4997,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1140
+            "line": 1165
           },
           "name": "commitGenerated",
           "optional": true,
@@ -5099,6 +5117,25 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "remarks": "Only triggered when the lockfile for the configured package\nmanager already exists.\n\nThis is useful when migrating between package managers to avoid conflicts.",
+            "stability": "experimental",
+            "summary": "Automatically delete lockfiles from package managers that are not the active one."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 918
+          },
+          "name": "deleteOrphanedLockFiles",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "false",
             "remarks": "Cannot be used in conjunction with `depsUpgrade`.",
             "stability": "experimental",
@@ -5140,14 +5177,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Runtime dependencies of this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 899
+            "line": 908
           },
           "name": "deps",
           "optional": true,
@@ -5210,7 +5247,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 886
+            "line": 895
           },
           "name": "description",
           "optional": true,
@@ -5228,7 +5265,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1037
+            "line": 1062
           },
           "name": "devContainer",
           "optional": true,
@@ -5243,14 +5280,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Build dependencies for this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 878
+            "line": 887
           },
           "name": "devDeps",
           "optional": true,
@@ -5261,6 +5298,23 @@
               },
               "kind": "array"
             }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "experimental",
+            "summary": "Configure the `devEngines` field in `package.json`. The `devEngines.packageManager` field is automatically populated based on the resolved `packageManager` value. Any fields provided here are merged with the auto-populated `packageManager` entry."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-construct-library-options.generated.ts",
+            "line": 870
+          },
+          "name": "devEngines",
+          "optional": true,
+          "type": {
+            "fqn": "projen.javascript.DevEngines"
           }
         },
         {
@@ -5381,7 +5435,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 861
+            "line": 862
           },
           "name": "entrypoint",
           "optional": true,
@@ -5459,7 +5513,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1031
+            "line": 1056
           },
           "name": "github",
           "optional": true,
@@ -5477,7 +5531,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1024
+            "line": 1049
           },
           "name": "githubOptions",
           "optional": true,
@@ -5516,7 +5570,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1134
+            "line": 1159
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -5533,7 +5587,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1129
+            "line": 1154
           },
           "name": "gitOptions",
           "optional": true,
@@ -5551,7 +5605,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1018
+            "line": 1043
           },
           "name": "gitpod",
           "optional": true,
@@ -5569,7 +5623,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1152
+            "line": 1177
           },
           "name": "homebrew",
           "optional": true,
@@ -5587,7 +5641,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1157
+            "line": 1182
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -5604,7 +5658,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 854
+            "line": 855
           },
           "name": "homepage",
           "optional": true,
@@ -5679,7 +5733,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 849
+            "line": 850
           },
           "name": "keywords",
           "optional": true,
@@ -5775,7 +5829,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 844
+            "line": 845
           },
           "name": "license",
           "optional": true,
@@ -5793,7 +5847,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 836
+            "line": 837
           },
           "name": "licensed",
           "optional": true,
@@ -5811,7 +5865,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1124
+            "line": 1149
           },
           "name": "logging",
           "optional": true,
@@ -5849,7 +5903,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 830
+            "line": 831
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -5887,7 +5941,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 819
+            "line": 820
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -5905,7 +5959,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1162
+            "line": 1187
           },
           "name": "mise",
           "optional": true,
@@ -5923,7 +5977,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1167
+            "line": 1192
           },
           "name": "miseOptions",
           "optional": true,
@@ -5960,7 +6014,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 804
+            "line": 805
           },
           "name": "npmAccess",
           "optional": true,
@@ -6033,7 +6087,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 796
+            "line": 797
           },
           "name": "npmProvenance",
           "optional": true,
@@ -6052,7 +6106,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 785
+            "line": 786
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -6070,7 +6124,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 778
+            "line": 779
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -6088,7 +6142,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 772
+            "line": 773
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -6107,7 +6161,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1118
+            "line": 1143
           },
           "name": "outdir",
           "optional": true,
@@ -6136,14 +6190,17 @@
         {
           "abstract": true,
           "docs": {
-            "default": "NodePackageManager.YARN_CLASSIC",
+            "custom": {
+              "pjnew": "$PACKAGE_MANAGER"
+            },
+            "default": "- Detected from the calling process or `YARN_CLASSIC` if detection fails.",
             "stability": "experimental",
             "summary": "The Node Package Manager used to execute scripts."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 766
+            "line": 767
           },
           "name": "packageManager",
           "optional": true,
@@ -6181,7 +6238,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1107
+            "line": 1132
           },
           "name": "parent",
           "optional": true,
@@ -6233,7 +6290,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"9\"",
+            "default": "\"10.33.0\"",
             "stability": "experimental",
             "summary": "The version of PNPM to use if using PNPM as a package manager."
           },
@@ -6299,7 +6356,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1102
+            "line": 1127
           },
           "name": "projectTree",
           "optional": true,
@@ -6318,7 +6375,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1096
+            "line": 1121
           },
           "name": "projenCommand",
           "optional": true,
@@ -6336,7 +6393,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1012
+            "line": 1037
           },
           "name": "projenCredentials",
           "optional": true,
@@ -6390,7 +6447,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1089
+            "line": 1114
           },
           "name": "projenrcJson",
           "optional": true,
@@ -6408,7 +6465,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1083
+            "line": 1108
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -6650,7 +6707,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1006
+            "line": 1031
           },
           "name": "readme",
           "optional": true,
@@ -6902,7 +6959,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1077
+            "line": 1102
           },
           "name": "renovatebot",
           "optional": true,
@@ -6920,7 +6977,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1071
+            "line": 1096
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -7067,7 +7124,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1000
+            "line": 1025
           },
           "name": "stale",
           "optional": true,
@@ -7086,7 +7143,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 993
+            "line": 1018
           },
           "name": "staleOptions",
           "optional": true,
@@ -7220,7 +7277,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1172
+            "line": 1197
           },
           "name": "vitest",
           "optional": true,
@@ -7238,7 +7295,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1177
+            "line": 1202
           },
           "name": "vitestOptions",
           "optional": true,
@@ -7257,7 +7314,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 986
+            "line": 1011
           },
           "name": "vscode",
           "optional": true,
@@ -7529,11 +7586,29 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1096
+            "line": 1121
           },
           "name": "name",
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "true",
+            "stability": "experimental",
+            "summary": "Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 953
+          },
+          "name": "addPackageManagerToDevEngines",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
           }
         },
         {
@@ -7547,7 +7622,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 928
+            "line": 947
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -7654,7 +7729,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 920
+            "line": 939
           },
           "name": "authorEmail",
           "optional": true,
@@ -7671,7 +7746,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 915
+            "line": 934
           },
           "name": "authorName",
           "optional": true,
@@ -7688,7 +7763,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 910
+            "line": 929
           },
           "name": "authorOrganization",
           "optional": true,
@@ -7705,7 +7780,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 905
+            "line": 924
           },
           "name": "authorUrl",
           "optional": true,
@@ -7723,7 +7798,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1014
+            "line": 1039
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -7760,7 +7835,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 900
+            "line": 919
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -7779,7 +7854,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1008
+            "line": 1033
           },
           "name": "autoMerge",
           "optional": true,
@@ -7798,7 +7873,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1000
+            "line": 1025
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -7816,7 +7891,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 894
+            "line": 913
           },
           "name": "bin",
           "optional": true,
@@ -7874,7 +7949,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 886
+            "line": 905
           },
           "name": "bugsEmail",
           "optional": true,
@@ -7891,7 +7966,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 881
+            "line": 900
           },
           "name": "bugsUrl",
           "optional": true,
@@ -7975,14 +8050,14 @@
         {
           "abstract": true,
           "docs": {
-            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "List of dependencies to bundle into this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 876
+            "line": 895
           },
           "name": "bundledDeps",
           "optional": true,
@@ -8022,7 +8097,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 861
+            "line": 880
           },
           "name": "bunVersion",
           "optional": true,
@@ -8133,7 +8208,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 992
+            "line": 1017
           },
           "name": "clobber",
           "optional": true,
@@ -8152,7 +8227,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 855
+            "line": 874
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -8206,7 +8281,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1089
+            "line": 1114
           },
           "name": "commitGenerated",
           "optional": true,
@@ -8294,6 +8369,25 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "remarks": "Only triggered when the lockfile for the configured package\nmanager already exists.\n\nThis is useful when migrating between package managers to avoid conflicts.",
+            "stability": "experimental",
+            "summary": "Automatically delete lockfiles from package managers that are not the active one."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 867
+          },
+          "name": "deleteOrphanedLockFiles",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "false",
             "remarks": "Cannot be used in conjunction with `depsUpgrade`.",
             "stability": "experimental",
@@ -8335,14 +8429,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Runtime dependencies of this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 848
+            "line": 857
           },
           "name": "deps",
           "optional": true,
@@ -8405,7 +8499,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 835
+            "line": 844
           },
           "name": "description",
           "optional": true,
@@ -8423,7 +8517,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 986
+            "line": 1011
           },
           "name": "devContainer",
           "optional": true,
@@ -8438,14 +8532,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Build dependencies for this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 827
+            "line": 836
           },
           "name": "devDeps",
           "optional": true,
@@ -8456,6 +8550,23 @@
               },
               "kind": "array"
             }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "experimental",
+            "summary": "Configure the `devEngines` field in `package.json`. The `devEngines.packageManager` field is automatically populated based on the resolved `packageManager` value. Any fields provided here are merged with the auto-populated `packageManager` entry."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
+            "line": 819
+          },
+          "name": "devEngines",
+          "optional": true,
+          "type": {
+            "fqn": "projen.javascript.DevEngines"
           }
         },
         {
@@ -8558,7 +8669,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 810
+            "line": 811
           },
           "name": "entrypoint",
           "optional": true,
@@ -8631,7 +8742,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 980
+            "line": 1005
           },
           "name": "github",
           "optional": true,
@@ -8649,7 +8760,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 973
+            "line": 998
           },
           "name": "githubOptions",
           "optional": true,
@@ -8688,7 +8799,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1083
+            "line": 1108
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -8705,7 +8816,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1078
+            "line": 1103
           },
           "name": "gitOptions",
           "optional": true,
@@ -8723,7 +8834,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 967
+            "line": 992
           },
           "name": "gitpod",
           "optional": true,
@@ -8741,7 +8852,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1101
+            "line": 1126
           },
           "name": "homebrew",
           "optional": true,
@@ -8759,7 +8870,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1106
+            "line": 1131
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -8776,7 +8887,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 803
+            "line": 804
           },
           "name": "homepage",
           "optional": true,
@@ -8829,7 +8940,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 798
+            "line": 799
           },
           "name": "keywords",
           "optional": true,
@@ -8925,7 +9036,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 793
+            "line": 794
           },
           "name": "license",
           "optional": true,
@@ -8943,7 +9054,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 785
+            "line": 786
           },
           "name": "licensed",
           "optional": true,
@@ -8961,7 +9072,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1073
+            "line": 1098
           },
           "name": "logging",
           "optional": true,
@@ -8999,7 +9110,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 779
+            "line": 780
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -9037,7 +9148,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 768
+            "line": 769
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -9055,7 +9166,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1111
+            "line": 1136
           },
           "name": "mise",
           "optional": true,
@@ -9073,7 +9184,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1116
+            "line": 1141
           },
           "name": "miseOptions",
           "optional": true,
@@ -9110,7 +9221,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 753
+            "line": 754
           },
           "name": "npmAccess",
           "optional": true,
@@ -9183,7 +9294,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 745
+            "line": 746
           },
           "name": "npmProvenance",
           "optional": true,
@@ -9202,7 +9313,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 734
+            "line": 735
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -9220,7 +9331,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 727
+            "line": 728
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -9238,7 +9349,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 721
+            "line": 722
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -9257,7 +9368,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1067
+            "line": 1092
           },
           "name": "outdir",
           "optional": true,
@@ -9286,14 +9397,17 @@
         {
           "abstract": true,
           "docs": {
-            "default": "NodePackageManager.YARN_CLASSIC",
+            "custom": {
+              "pjnew": "$PACKAGE_MANAGER"
+            },
+            "default": "- Detected from the calling process or `YARN_CLASSIC` if detection fails.",
             "stability": "experimental",
             "summary": "The Node Package Manager used to execute scripts."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 715
+            "line": 716
           },
           "name": "packageManager",
           "optional": true,
@@ -9331,7 +9445,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1056
+            "line": 1081
           },
           "name": "parent",
           "optional": true,
@@ -9383,7 +9497,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"9\"",
+            "default": "\"10.33.0\"",
             "stability": "experimental",
             "summary": "The version of PNPM to use if using PNPM as a package manager."
           },
@@ -9449,7 +9563,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1051
+            "line": 1076
           },
           "name": "projectTree",
           "optional": true,
@@ -9468,7 +9582,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1045
+            "line": 1070
           },
           "name": "projenCommand",
           "optional": true,
@@ -9486,7 +9600,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 961
+            "line": 986
           },
           "name": "projenCredentials",
           "optional": true,
@@ -9540,7 +9654,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1038
+            "line": 1063
           },
           "name": "projenrcJson",
           "optional": true,
@@ -9558,7 +9672,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1032
+            "line": 1057
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -9728,7 +9842,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 955
+            "line": 980
           },
           "name": "readme",
           "optional": true,
@@ -9980,7 +10094,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1026
+            "line": 1051
           },
           "name": "renovatebot",
           "optional": true,
@@ -9998,7 +10112,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1020
+            "line": 1045
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -10146,7 +10260,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 949
+            "line": 974
           },
           "name": "stale",
           "optional": true,
@@ -10165,7 +10279,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 942
+            "line": 967
           },
           "name": "staleOptions",
           "optional": true,
@@ -10299,7 +10413,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1121
+            "line": 1146
           },
           "name": "vitest",
           "optional": true,
@@ -10317,7 +10431,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1126
+            "line": 1151
           },
           "name": "vitestOptions",
           "optional": true,
@@ -10336,7 +10450,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 935
+            "line": 960
           },
           "name": "vscode",
           "optional": true,
@@ -11688,7 +11802,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1053
+            "line": 1078
           },
           "name": "name",
           "type": {
@@ -11716,6 +11830,24 @@
           "abstract": true,
           "docs": {
             "default": "true",
+            "stability": "experimental",
+            "summary": "Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 910
+          },
+          "name": "addPackageManagerToDevEngines",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "true",
             "remarks": "This is normally only allowed for libraries. For apps, there's no meaning\nfor specifying these.",
             "stability": "experimental",
             "summary": "Allow the project to include `peerDependencies` and `bundledDependencies`."
@@ -11723,7 +11855,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 885
+            "line": 904
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -11795,7 +11927,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 877
+            "line": 896
           },
           "name": "authorEmail",
           "optional": true,
@@ -11812,7 +11944,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 872
+            "line": 891
           },
           "name": "authorName",
           "optional": true,
@@ -11829,7 +11961,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 867
+            "line": 886
           },
           "name": "authorOrganization",
           "optional": true,
@@ -11846,7 +11978,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 862
+            "line": 881
           },
           "name": "authorUrl",
           "optional": true,
@@ -11864,7 +11996,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 971
+            "line": 996
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -11901,7 +12033,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 857
+            "line": 876
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -11920,7 +12052,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 965
+            "line": 990
           },
           "name": "autoMerge",
           "optional": true,
@@ -11939,7 +12071,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 957
+            "line": 982
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -11957,7 +12089,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 851
+            "line": 870
           },
           "name": "bin",
           "optional": true,
@@ -12015,7 +12147,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 843
+            "line": 862
           },
           "name": "bugsEmail",
           "optional": true,
@@ -12032,7 +12164,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 838
+            "line": 857
           },
           "name": "bugsUrl",
           "optional": true,
@@ -12097,14 +12229,14 @@
         {
           "abstract": true,
           "docs": {
-            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "List of dependencies to bundle into this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 833
+            "line": 852
           },
           "name": "bundledDeps",
           "optional": true,
@@ -12144,7 +12276,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 818
+            "line": 837
           },
           "name": "bunVersion",
           "optional": true,
@@ -12181,7 +12313,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 949
+            "line": 974
           },
           "name": "clobber",
           "optional": true,
@@ -12200,7 +12332,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 812
+            "line": 831
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -12254,7 +12386,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1046
+            "line": 1071
           },
           "name": "commitGenerated",
           "optional": true,
@@ -12356,6 +12488,25 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "remarks": "Only triggered when the lockfile for the configured package\nmanager already exists.\n\nThis is useful when migrating between package managers to avoid conflicts.",
+            "stability": "experimental",
+            "summary": "Automatically delete lockfiles from package managers that are not the active one."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 824
+          },
+          "name": "deleteOrphanedLockFiles",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "false",
             "remarks": "Cannot be used in conjunction with `depsUpgrade`.",
             "stability": "experimental",
@@ -12397,14 +12548,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Runtime dependencies of this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 805
+            "line": 814
           },
           "name": "deps",
           "optional": true,
@@ -12467,7 +12618,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 792
+            "line": 801
           },
           "name": "description",
           "optional": true,
@@ -12485,7 +12636,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 943
+            "line": 968
           },
           "name": "devContainer",
           "optional": true,
@@ -12500,14 +12651,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Build dependencies for this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 784
+            "line": 793
           },
           "name": "devDeps",
           "optional": true,
@@ -12518,6 +12669,23 @@
               },
               "kind": "array"
             }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "experimental",
+            "summary": "Configure the `devEngines` field in `package.json`. The `devEngines.packageManager` field is automatically populated based on the resolved `packageManager` value. Any fields provided here are merged with the auto-populated `packageManager` entry."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/jsii-options.generated.ts",
+            "line": 776
+          },
+          "name": "devEngines",
+          "optional": true,
+          "type": {
+            "fqn": "projen.javascript.DevEngines"
           }
         },
         {
@@ -12620,7 +12788,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 767
+            "line": 768
           },
           "name": "entrypoint",
           "optional": true,
@@ -12680,7 +12848,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 937
+            "line": 962
           },
           "name": "github",
           "optional": true,
@@ -12698,7 +12866,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 930
+            "line": 955
           },
           "name": "githubOptions",
           "optional": true,
@@ -12737,7 +12905,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1040
+            "line": 1065
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -12754,7 +12922,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1035
+            "line": 1060
           },
           "name": "gitOptions",
           "optional": true,
@@ -12772,7 +12940,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 924
+            "line": 949
           },
           "name": "gitpod",
           "optional": true,
@@ -12790,7 +12958,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1058
+            "line": 1083
           },
           "name": "homebrew",
           "optional": true,
@@ -12808,7 +12976,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1063
+            "line": 1088
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -12825,7 +12993,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 760
+            "line": 761
           },
           "name": "homepage",
           "optional": true,
@@ -12882,7 +13050,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 755
+            "line": 756
           },
           "name": "keywords",
           "optional": true,
@@ -12924,7 +13092,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 750
+            "line": 751
           },
           "name": "license",
           "optional": true,
@@ -12942,7 +13110,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 742
+            "line": 743
           },
           "name": "licensed",
           "optional": true,
@@ -12960,7 +13128,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1030
+            "line": 1055
           },
           "name": "logging",
           "optional": true,
@@ -12998,7 +13166,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 736
+            "line": 737
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -13036,7 +13204,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 725
+            "line": 726
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -13054,7 +13222,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1068
+            "line": 1093
           },
           "name": "mise",
           "optional": true,
@@ -13072,7 +13240,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1073
+            "line": 1098
           },
           "name": "miseOptions",
           "optional": true,
@@ -13109,7 +13277,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 710
+            "line": 711
           },
           "name": "npmAccess",
           "optional": true,
@@ -13182,7 +13350,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 702
+            "line": 703
           },
           "name": "npmProvenance",
           "optional": true,
@@ -13201,7 +13369,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 691
+            "line": 692
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -13219,7 +13387,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 684
+            "line": 685
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -13237,7 +13405,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 678
+            "line": 679
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -13256,7 +13424,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1024
+            "line": 1049
           },
           "name": "outdir",
           "optional": true,
@@ -13285,14 +13453,17 @@
         {
           "abstract": true,
           "docs": {
-            "default": "NodePackageManager.YARN_CLASSIC",
+            "custom": {
+              "pjnew": "$PACKAGE_MANAGER"
+            },
+            "default": "- Detected from the calling process or `YARN_CLASSIC` if detection fails.",
             "stability": "experimental",
             "summary": "The Node Package Manager used to execute scripts."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 672
+            "line": 673
           },
           "name": "packageManager",
           "optional": true,
@@ -13330,7 +13501,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1013
+            "line": 1038
           },
           "name": "parent",
           "optional": true,
@@ -13382,7 +13553,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"9\"",
+            "default": "\"10.33.0\"",
             "stability": "experimental",
             "summary": "The version of PNPM to use if using PNPM as a package manager."
           },
@@ -13448,7 +13619,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1008
+            "line": 1033
           },
           "name": "projectTree",
           "optional": true,
@@ -13467,7 +13638,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1002
+            "line": 1027
           },
           "name": "projenCommand",
           "optional": true,
@@ -13485,7 +13656,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 918
+            "line": 943
           },
           "name": "projenCredentials",
           "optional": true,
@@ -13539,7 +13710,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 995
+            "line": 1020
           },
           "name": "projenrcJson",
           "optional": true,
@@ -13557,7 +13728,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 989
+            "line": 1014
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -13799,7 +13970,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 912
+            "line": 937
           },
           "name": "readme",
           "optional": true,
@@ -14051,7 +14222,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 983
+            "line": 1008
           },
           "name": "renovatebot",
           "optional": true,
@@ -14069,7 +14240,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 977
+            "line": 1002
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -14198,7 +14369,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 906
+            "line": 931
           },
           "name": "stale",
           "optional": true,
@@ -14217,7 +14388,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 899
+            "line": 924
           },
           "name": "staleOptions",
           "optional": true,
@@ -14308,7 +14479,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1088
+            "line": 1113
           },
           "name": "typeDoc",
           "optional": true,
@@ -14326,7 +14497,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1093
+            "line": 1118
           },
           "name": "typeDocOptions",
           "optional": true,
@@ -14387,7 +14558,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1078
+            "line": 1103
           },
           "name": "vitest",
           "optional": true,
@@ -14405,7 +14576,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1083
+            "line": 1108
           },
           "name": "vitestOptions",
           "optional": true,
@@ -14424,7 +14595,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 892
+            "line": 917
           },
           "name": "vscode",
           "optional": true,
@@ -16927,11 +17098,29 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 957
+            "line": 982
           },
           "name": "name",
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "true",
+            "stability": "experimental",
+            "summary": "Automatically add the resolved `packageManager` to `devEngines.packageManager` in `package.json`, setting `onFail` to `ignore`."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/typescript-options.generated.ts",
+            "line": 814
+          },
+          "name": "addPackageManagerToDevEngines",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
           }
         },
         {
@@ -16945,7 +17134,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 789
+            "line": 808
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -17017,7 +17206,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 781
+            "line": 800
           },
           "name": "authorEmail",
           "optional": true,
@@ -17034,7 +17223,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 776
+            "line": 795
           },
           "name": "authorName",
           "optional": true,
@@ -17051,7 +17240,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 771
+            "line": 790
           },
           "name": "authorOrganization",
           "optional": true,
@@ -17068,7 +17257,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 766
+            "line": 785
           },
           "name": "authorUrl",
           "optional": true,
@@ -17086,7 +17275,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 875
+            "line": 900
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -17123,7 +17312,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 761
+            "line": 780
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -17142,7 +17331,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 869
+            "line": 894
           },
           "name": "autoMerge",
           "optional": true,
@@ -17161,7 +17350,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 861
+            "line": 886
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -17179,7 +17368,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 755
+            "line": 774
           },
           "name": "bin",
           "optional": true,
@@ -17237,7 +17426,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 747
+            "line": 766
           },
           "name": "bugsEmail",
           "optional": true,
@@ -17254,7 +17443,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 742
+            "line": 761
           },
           "name": "bugsUrl",
           "optional": true,
@@ -17319,14 +17508,14 @@
         {
           "abstract": true,
           "docs": {
-            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These modules will be\nadded both to the `dependencies` section and `bundledDependencies` section of\nyour `package.json`.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "List of dependencies to bundle into this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 737
+            "line": 756
           },
           "name": "bundledDeps",
           "optional": true,
@@ -17366,7 +17555,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 722
+            "line": 741
           },
           "name": "bunVersion",
           "optional": true,
@@ -17403,7 +17592,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 853
+            "line": 878
           },
           "name": "clobber",
           "optional": true,
@@ -17422,7 +17611,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 716
+            "line": 735
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -17476,7 +17665,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 950
+            "line": 975
           },
           "name": "commitGenerated",
           "optional": true,
@@ -17523,6 +17712,25 @@
         {
           "abstract": true,
           "docs": {
+            "default": "true",
+            "remarks": "Only triggered when the lockfile for the configured package\nmanager already exists.\n\nThis is useful when migrating between package managers to avoid conflicts.",
+            "stability": "experimental",
+            "summary": "Automatically delete lockfiles from package managers that are not the active one."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/typescript-options.generated.ts",
+            "line": 728
+          },
+          "name": "deleteOrphanedLockFiles",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "false",
             "remarks": "Cannot be used in conjunction with `depsUpgrade`.",
             "stability": "experimental",
@@ -17564,14 +17772,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "The recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Runtime dependencies of this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 709
+            "line": 718
           },
           "name": "deps",
           "optional": true,
@@ -17634,7 +17842,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 696
+            "line": 705
           },
           "name": "description",
           "optional": true,
@@ -17652,7 +17860,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 847
+            "line": 872
           },
           "name": "devContainer",
           "optional": true,
@@ -17667,14 +17875,14 @@
               "featured": "true"
             },
             "default": "[]",
-            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `yarn add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `npm i` or `yarn add` (e.g. `express@^2`) and\nthis will be what you `package.json` will eventually include.",
+            "remarks": "These dependencies will only be\navailable in your build environment but will not be fetched when this\nmodule is consumed.\n\nThe recommendation is to only specify the module name here (e.g.\n`express`). This will behave similar to `pnpm add` or `npm install` in the\nsense that it will add the module as a dependency to your `package.json`\nfile with the latest version (`^`). You can specify semver requirements in\nthe same syntax passed to `pnpm add` or `npm i` (e.g. `express@^2`) and\nthis will be what your `package.json` will eventually include.",
             "stability": "experimental",
             "summary": "Build dependencies for this module."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 688
+            "line": 697
           },
           "name": "devDeps",
           "optional": true,
@@ -17685,6 +17893,23 @@
               },
               "kind": "array"
             }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "stability": "experimental",
+            "summary": "Configure the `devEngines` field in `package.json`. The `devEngines.packageManager` field is automatically populated based on the resolved `packageManager` value. Any fields provided here are merged with the auto-populated `packageManager` entry."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/projects/typescript-options.generated.ts",
+            "line": 680
+          },
+          "name": "devEngines",
+          "optional": true,
+          "type": {
+            "fqn": "projen.javascript.DevEngines"
           }
         },
         {
@@ -17769,7 +17994,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 671
+            "line": 672
           },
           "name": "entrypoint",
           "optional": true,
@@ -17806,7 +18031,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 841
+            "line": 866
           },
           "name": "github",
           "optional": true,
@@ -17824,7 +18049,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 834
+            "line": 859
           },
           "name": "githubOptions",
           "optional": true,
@@ -17863,7 +18088,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 944
+            "line": 969
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -17880,7 +18105,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 939
+            "line": 964
           },
           "name": "gitOptions",
           "optional": true,
@@ -17898,7 +18123,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 828
+            "line": 853
           },
           "name": "gitpod",
           "optional": true,
@@ -17916,7 +18141,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 962
+            "line": 987
           },
           "name": "homebrew",
           "optional": true,
@@ -17934,7 +18159,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 967
+            "line": 992
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -17951,7 +18176,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 664
+            "line": 665
           },
           "name": "homepage",
           "optional": true,
@@ -17986,7 +18211,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 659
+            "line": 660
           },
           "name": "keywords",
           "optional": true,
@@ -18028,7 +18253,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 654
+            "line": 655
           },
           "name": "license",
           "optional": true,
@@ -18046,7 +18271,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 646
+            "line": 647
           },
           "name": "licensed",
           "optional": true,
@@ -18064,7 +18289,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 934
+            "line": 959
           },
           "name": "logging",
           "optional": true,
@@ -18102,7 +18327,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 640
+            "line": 641
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -18140,7 +18365,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 629
+            "line": 630
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -18158,7 +18383,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 972
+            "line": 997
           },
           "name": "mise",
           "optional": true,
@@ -18176,7 +18401,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 977
+            "line": 1002
           },
           "name": "miseOptions",
           "optional": true,
@@ -18213,7 +18438,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 614
+            "line": 615
           },
           "name": "npmAccess",
           "optional": true,
@@ -18286,7 +18511,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 606
+            "line": 607
           },
           "name": "npmProvenance",
           "optional": true,
@@ -18305,7 +18530,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 595
+            "line": 596
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -18323,7 +18548,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 588
+            "line": 589
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -18341,7 +18566,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 582
+            "line": 583
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -18360,7 +18585,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 928
+            "line": 953
           },
           "name": "outdir",
           "optional": true,
@@ -18389,14 +18614,17 @@
         {
           "abstract": true,
           "docs": {
-            "default": "NodePackageManager.YARN_CLASSIC",
+            "custom": {
+              "pjnew": "$PACKAGE_MANAGER"
+            },
+            "default": "- Detected from the calling process or `YARN_CLASSIC` if detection fails.",
             "stability": "experimental",
             "summary": "The Node Package Manager used to execute scripts."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 576
+            "line": 577
           },
           "name": "packageManager",
           "optional": true,
@@ -18434,7 +18662,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 917
+            "line": 942
           },
           "name": "parent",
           "optional": true,
@@ -18486,7 +18714,7 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"9\"",
+            "default": "\"10.33.0\"",
             "stability": "experimental",
             "summary": "The version of PNPM to use if using PNPM as a package manager."
           },
@@ -18552,7 +18780,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 912
+            "line": 937
           },
           "name": "projectTree",
           "optional": true,
@@ -18571,7 +18799,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 906
+            "line": 931
           },
           "name": "projenCommand",
           "optional": true,
@@ -18589,7 +18817,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 822
+            "line": 847
           },
           "name": "projenCredentials",
           "optional": true,
@@ -18643,7 +18871,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 899
+            "line": 924
           },
           "name": "projenrcJson",
           "optional": true,
@@ -18661,7 +18889,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 893
+            "line": 918
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -18831,7 +19059,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 816
+            "line": 841
           },
           "name": "readme",
           "optional": true,
@@ -19083,7 +19311,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 887
+            "line": 912
           },
           "name": "renovatebot",
           "optional": true,
@@ -19101,7 +19329,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 881
+            "line": 906
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -19213,7 +19441,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 810
+            "line": 835
           },
           "name": "stale",
           "optional": true,
@@ -19232,7 +19460,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 803
+            "line": 828
           },
           "name": "staleOptions",
           "optional": true,
@@ -19366,7 +19594,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 982
+            "line": 1007
           },
           "name": "vitest",
           "optional": true,
@@ -19384,7 +19612,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 987
+            "line": 1012
           },
           "name": "vitestOptions",
           "optional": true,
@@ -19403,7 +19631,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 796
+            "line": 821
           },
           "name": "vscode",
           "optional": true,
@@ -20319,5 +20547,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "X2ls1dIfWtA6Vk+VahoxQtHaHhO/OvSM/+1Ozdj8RvE="
+  "fingerprint": "WImsRU6EmPl1Mdxaiyg3fsyq6+K1lOk6Ee2UDJIP/wA="
 }
