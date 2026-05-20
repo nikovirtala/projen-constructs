@@ -55,8 +55,8 @@ describe("vitest", () => {
 
         expect(snapshot["package.json"].devDependencies.vitest).toBe("^4");
         expect(snapshot["package.json"].devDependencies["@vitest/coverage-v8"]).toBe("^4");
-        expect(snapshot["package.json"].scripts["test:update"]).toBe("npx projen test:update");
-        expect(snapshot["package.json"].scripts["test:watch"]).toBe("npx projen test:watch");
+        expect(snapshot["package.json"].scripts["test:update"]).toBe("projen test:update");
+        expect(snapshot["package.json"].scripts["test:watch"]).toBe("projen test:watch");
 
         const config = snapshot["vitest.config.ts"];
         expect(config).toContain("    coverage: {\n      enabled: true,");
