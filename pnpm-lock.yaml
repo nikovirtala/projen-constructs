@@ -50,16 +50,16 @@ importers:
         version: 1.132.0
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.11.21(jsii-rosetta@5.9.48)
+        version: 10.11.21(jsii-rosetta@5.9.49)
       jsii-pacmak:
         specifier: ^1.132.0
-        version: 1.132.0(jsii-rosetta@5.9.48)
+        version: 1.132.0(jsii-rosetta@5.9.49)
       jsii-rosetta:
         specifier: ~5.9.3
-        version: 5.9.48
+        version: 5.9.49
       tsx:
-        specifier: ^4.22.3
-        version: 4.22.3
+        specifier: ^4.22.4
+        version: 4.22.4
       typedoc:
         specifier: ^0.28
         version: 0.28.19(typescript@5.9.3)
@@ -68,7 +68,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^4
-        version: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(jsdom@25.0.1)(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0))
+        version: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(jsdom@25.0.1)(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0))
 
 packages:
 
@@ -1425,8 +1425,8 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-rosetta@5.9.48:
-    resolution: {integrity: sha512-ACtXGq28JJeQv8fa4SlnEZWrE6kHxLL6/p35Vqit3MtFJC4ZvFkTFR3nJCS1KsLnY19HyhzOnSXxCL3M8p3xzg==}
+  jsii-rosetta@5.9.49:
+    resolution: {integrity: sha512-h7TVEt0wegY/cQHjEnVVxnKWTK8WUpR22Z81XAtAqMul6aecx8scsumaAYKIkgIOiROgQWH15zyPsNtrl30DRA==}
     engines: {node: '>= 20.16.0'}
     hasBin: true
 
@@ -1971,8 +1971,8 @@ packages:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
 
-  tsx@4.22.3:
-    resolution: {integrity: sha512-mdoNxBC/cSQObGGVQ5Bpn5i+yv7j68gk3Nfm3wFjcJg3Z0Mix9jzAFfP12prmm5eVGmDKtp0yyArrs0Q+8gZHg==}
+  tsx@4.22.4:
+    resolution: {integrity: sha512-X8EX+XV4QR5xCsrgxaED954zTDfY8KqlDtskKEL0cHhyS/P8b4IFOvGDQpsC9Q1XnLq915wEfwwY/zzskCtmhg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2640,7 +2640,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.0.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(jsdom@25.0.1)(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0))
+      vitest: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(jsdom@25.0.1)(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0))
 
   '@vitest/expect@4.1.7':
     dependencies:
@@ -2651,13 +2651,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.7(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0))':
+  '@vitest/mocker@4.1.7(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0))':
     dependencies:
       '@vitest/spy': 4.1.7
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0)
 
   '@vitest/pretty-format@4.1.7':
     dependencies:
@@ -3406,19 +3406,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.11.21(jsii-rosetta@5.9.48):
+  jsii-docgen@10.11.21(jsii-rosetta@5.9.49):
     dependencies:
       '@jsii/spec': 1.132.0
       case: 1.6.3
       fast-glob: 3.3.3
       fs-extra: 10.1.0
       jsii-reflect: 1.132.0
-      jsii-rosetta: 5.9.48
+      jsii-rosetta: 5.9.49
       json-stream-stringify: 3.1.6
       semver: 7.8.1
       yargs: 16.2.0
 
-  jsii-pacmak@1.132.0(jsii-rosetta@5.9.48):
+  jsii-pacmak@1.132.0(jsii-rosetta@5.9.49):
     dependencies:
       '@jsii/check-node': 1.132.0
       '@jsii/spec': 1.132.0
@@ -3428,7 +3428,7 @@ snapshots:
       escape-string-regexp: 4.0.0
       fs-extra: 10.1.0
       jsii-reflect: 1.132.0
-      jsii-rosetta: 5.9.48
+      jsii-rosetta: 5.9.49
       semver: 7.8.0
       spdx-license-list: 6.11.0
       xmlbuilder: 15.1.1
@@ -3443,7 +3443,7 @@ snapshots:
       oo-ascii-tree: 1.132.0
       yargs: 17.7.2
 
-  jsii-rosetta@5.9.48:
+  jsii-rosetta@5.9.49:
     dependencies:
       '@jsii/check-node': 1.132.0
       '@jsii/spec': 1.132.0
@@ -4015,7 +4015,7 @@ snapshots:
 
   trim-newlines@3.0.1: {}
 
-  tsx@4.22.3:
+  tsx@4.22.4:
     dependencies:
       esbuild: 0.28.0
     optionalDependencies:
@@ -4058,7 +4058,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite@7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0):
+  vite@7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.4)
@@ -4069,13 +4069,13 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.12.4
       fsevents: 2.3.3
-      tsx: 4.22.3
+      tsx: 4.22.4
       yaml: 2.9.0
 
-  vitest@4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(jsdom@25.0.1)(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0)):
+  vitest@4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(jsdom@25.0.1)(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.7
-      '@vitest/mocker': 4.1.7(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0))
+      '@vitest/mocker': 4.1.7(vite@7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0))
       '@vitest/pretty-format': 4.1.7
       '@vitest/runner': 4.1.7
       '@vitest/snapshot': 4.1.7
@@ -4092,7 +4092,7 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.2.2(@types/node@24.12.4)(tsx@4.22.3)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.12.4)(tsx@4.22.4)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.12.4
