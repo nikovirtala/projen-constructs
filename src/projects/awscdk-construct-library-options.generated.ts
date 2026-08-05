@@ -73,14 +73,6 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly cdkCliVersion?: string;
   /**
-   * Install the assertions library?
-   * Only needed for CDK 1.x. If using CDK 2.x then
-   * assertions is already included in 'aws-cdk-lib'
-   * @default - will be included by default for AWS CDK >= 1.111.0 < 2.0.0
-   * @stability experimental
-   */
-  readonly cdkAssertions?: boolean;
-  /**
    * Minimum version of the AWS CDK to depend on.
    * @default "2.189.1"
    * @stability experimental
@@ -100,6 +92,14 @@ export interface AwsCdkConstructLibraryProjectOptions {
    * @stability experimental
    */
   readonly catalog?: cdk.Catalog;
+  /**
+   * Level of tsconfig validation jsii should perform on the user-provided tsconfig.
+   * Only relevant when the project synthesizes its own tsconfig
+   * (i.e. `disableTsconfig` is not set on the TypeScriptProject).
+   * @default ValidateTsconfig.STRICT
+   * @stability experimental
+   */
+  readonly validateTsconfig?: cdk.ValidateTsconfig;
   /**
    * @default "."
    * @stability experimental
@@ -139,7 +139,7 @@ export interface AwsCdkConstructLibraryProjectOptions {
    * (e.g. `~5.0.0`).
    * @default "~5.9.0"
    * @stability experimental
-   * @pjnew "~5.9.0"
+   * @pjnew "~6.0.0"
    */
   readonly jsiiVersion?: string;
   /**
@@ -205,8 +205,11 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly typescriptVersion?: string;
   /**
-   * The name of the development tsconfig.json file.
-   * @default "tsconfig.dev.json"
+   * The name (and path) of the development tsconfig file.
+   * By default this lives inside the test directory (e.g. `test/tsconfig.json`)
+   * so that the TypeScript language service resolves it as the nearest config
+   * for test files.
+   * @default - "{testdir}/tsconfig.json"
    * @stability experimental
    */
   readonly tsconfigDevFile?: string;
@@ -238,6 +241,14 @@ export interface AwsCdkConstructLibraryProjectOptions {
    * @stability experimental
    */
   readonly srcdir?: string;
+  /**
+   * The TypeScript runner to use for executing TypeScript files.
+   * This is a project-level setting that components (e.g. projenrc) will
+   * use as their default runner.
+   * @default TypeScriptRunner.tsNode()
+   * @stability experimental
+   */
+  readonly runner?: typescript.TypeScriptRunner;
   /**
    * Options for .projenrc.ts.
    * @stability experimental
@@ -275,7 +286,7 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly docgen?: boolean;
   /**
-   * Do not generate a `tsconfig.dev.json` file.
+   * Do not generate a development tsconfig file.
    * @default false
    * @stability experimental
    */
@@ -408,13 +419,26 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly dependabot?: boolean;
   /**
+   * The name of the main release branch.
+   * @default "main"
+   * @stability experimental
+   * @featured true
+   */
+  readonly defaultReleaseBranch?: string;
+  /**
    * The copyright years to put in the LICENSE file.
+   * This value is only used if the selected license text contains the
+   * `$copyright_period` placeholder. For example, it has no effect on the
+   * MPL-2.0 license text.
    * @default - current year
    * @stability experimental
    */
   readonly copyrightPeriod?: string;
   /**
    * License copyright owner.
+   * This value is only used if the selected license text contains the
+   * `$copyright_owner` placeholder. For example, it has no effect on the
+   * MPL-2.0 license text.
    * @default - defaults to the value of authorName or "" if `authorName` is undefined.
    * @stability experimental
    */
@@ -494,12 +518,6 @@ export interface AwsCdkConstructLibraryProjectOptions {
    * @stability experimental
    */
   readonly artifactsDirectory?: string;
-  /**
-   * The name of the main release branch.
-   * @default "main"
-   * @stability experimental
-   */
-  readonly defaultReleaseBranch: string;
   /**
    * Github Runner Group selection options.
    * @stability experimental
@@ -727,6 +745,12 @@ export interface AwsCdkConstructLibraryProjectOptions {
    * @stability experimental
    */
   readonly pnpmVersion?: string;
+  /**
+   * Options for pnpm.
+   * @default - all default options
+   * @stability experimental
+   */
+  readonly pnpmOptions?: javascript.PnpmOptions;
   /**
    * Peer dependencies for this module.
    * Dependencies listed here are required to
@@ -988,6 +1012,36 @@ export interface AwsCdkConstructLibraryProjectOptions {
    * @stability experimental
    */
   readonly authorEmail?: string;
+  /**
+   * List of dependency (package) names that are allowed to run lifecycle install scripts (`preinstall`, `install`, `postinstall`, `prepare`) during dependency installation.
+   * These scripts can execute arbitrary code, making them a common
+   * supply-chain attack vector. Package managers are moving toward
+   * blocking them by default and requiring an explicit allowlist.
+   * Configuring `allowScripts` sets up that allowlist so scripts only run
+   * for the packages you have explicitly reviewed and trust.
+   *
+   * Support for this setting depends on the configured `packageManager`:
+   *
+   * - `NPM`: written to the native `allowScripts` field in `package.json`
+   *   (requires npm >= 11.16; see https://docs.npmjs.com/cli/v11/commands/npm-approve-scripts).
+   * - `BUN`: written to the native `trustedDependencies` field in
+   *   `package.json` (see https://bun.com/docs/pm/lifecycle).
+   * - `PNPM`: written to the `onlyBuiltDependencies` setting in
+   *   `pnpm-workspace.yaml` (see https://pnpm.io/settings#onlybuiltdependencies).
+   * - `YARN2`, `YARN_BERRY`: written to the native
+   *   `dependenciesMeta.<pkg>.built` allowlist in `package.json`, combined
+   *   with `enableScripts: false` in `.yarnrc.yml` (see
+   *   https://yarnpkg.com/features/security#postinstalls). If you set
+   *   `yarnBerryOptions.yarnRcOptions.enableScripts` explicitly, that value
+   *   is respected instead of being overridden.
+   * - `YARN`, `YARN_CLASSIC`: not supported. Yarn Classic has no native
+   *   mechanism to allowlist install scripts for specific dependencies.
+   *   Setting this option with one of these package managers throws an
+   *   error at synthesis time.
+   * @default - all install scripts are allowed to run (package manager default)
+   * @stability experimental
+   */
+  readonly allowScripts?: Array<string>;
   /**
    * Allow the project to include `peerDependencies` and `bundledDependencies`.
    * This is normally only allowed for libraries. For apps, there's no meaning

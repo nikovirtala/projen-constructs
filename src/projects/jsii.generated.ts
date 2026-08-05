@@ -8,7 +8,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { JsiiProjectOptions } from "./jsii-options.generated";
 
-export { JsiiProjectOptions } from "./jsii-options.generated";
+export type { JsiiProjectOptions } from "./jsii-options.generated";
 
 /**
  * JsiiProject with standard configuration and component integration

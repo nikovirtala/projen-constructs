@@ -5,6 +5,7 @@
 !/.projen/files.json
 !/.github/workflows/pull-request-lint.yml
 !/.github/workflows/auto-approve.yml
+!/pnpm-workspace.yaml
 !/package.json
 !/LICENSE
 !/.npmignore
@@ -40,13 +41,13 @@ jspm_packages/
 !/.github/pull_request_template.md
 !/biome.jsonc
 !/test/
-!/tsconfig.dev.json
+!/tsconfig.json
+!/test/tsconfig.json
 !/src/
 /lib
 /dist/
-tsconfig.json
+!/projenrc/tsconfig.json
 !/API.md
-!/.npmrc
 !/.vscode/extensions.json
 !/.vscode/settings.json
 !/Brewfile

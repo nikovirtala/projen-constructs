@@ -17,7 +17,7 @@ Automates project scaffolding and configuration for TypeScript, JSII, and AWS CD
 ## Standard Defaults
 
 - Author: Niko Virtala (niko.virtala@hey.com)
-- Package Manager: pnpm 10
+- Package Manager: pnpm 11
 - Node Version: 24.11.1
 - TypeScript: 5.9.3
 - CDK Version: 2.223.0

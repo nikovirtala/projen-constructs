@@ -5,7 +5,7 @@ permissions-backup.acl
 /dist/version.txt
 /.mergify.yml
 /test/
-/tsconfig.dev.json
+/test/tsconfig.json
 /src/
 !/lib/
 !/lib/**/*.js
@@ -17,6 +17,7 @@ dist
 /.idea/
 /.projenrc.js
 tsconfig.tsbuildinfo
+/projenrc/tsconfig.json
 !.jsii
 biome.jsonc
 mise.toml

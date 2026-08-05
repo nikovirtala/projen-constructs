@@ -38,11 +38,6 @@ export enum ProjectType {
     CDK8S_TYPE_SCRIPT_APP = "cdk8s.Cdk8sTypeScriptApp",
 
     /**
-     * ConstructLibraryAws
-     */
-    CONSTRUCT_LIBRARY_AWS = "awscdk.ConstructLibraryAws",
-
-    /**
      * CDK8s construct library project.
      */
     CONSTRUCT_LIBRARY_CDK8S = "cdk8s.ConstructLibraryCdk8s",
@@ -101,11 +96,6 @@ export enum ProjectType {
      * TypeScript app.
      */
     TYPE_SCRIPT_APP_PROJECT = "typescript.TypeScriptAppProject",
-
-    /**
-     * TypeScriptLibraryProject
-     */
-    TYPE_SCRIPT_LIBRARY_PROJECT = "typescript.TypeScriptLibraryProject",
 
     /**
      * TypeScript project.

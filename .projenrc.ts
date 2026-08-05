@@ -18,11 +18,14 @@ const project = new JsiiProject({
     name: "@nikovirtala/projen-constructs",
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
-    pnpmVersion: "10.28.1",
+    pnpmVersion: "11.20.0",
+    // shamefully-hoist fixes jsii-pacmak esbuild resolution
+    pnpmOptions: {
+        workspaceYamlOptions: {
+            shamefullyHoist: true,
+        },
+    },
 });
-
-// configure pnpm to use shamefully-hoist to fix jsii-pacmak esbuild resolution
-project.npmrc?.addConfig("shamefully-hoist", "true");
 
 // projects depend on components jsii fqns
 project.gitignore.removePatterns(".jsii");
@@ -92,9 +95,16 @@ new ProjectGenerator(project, {
 
 project.defaultTask?.spawn(
     project.addTask("bundle-vitest-define-config", {
-        exec: "tsx --tsconfig tsconfig.dev.json src/bundle-vitest-define-config.ts",
+        exec: "tsx --tsconfig tsconfig.json src/bundle-vitest-define-config.ts",
     }),
 );
+
+/**
+ * `vitest/config` is ESM only, so re-exporting it cannot be compiled by jsii
+ * (CommonJS). This file is an esbuild entrypoint, bundled into
+ * `lib/vitest-define-config.js` by the `bundle-vitest-define-config` task.
+ */
+project.tsconfig?.addExclude("src/vitest-define-config-entry.ts");
 
 project.addTask("update-versions", {
     description: "fetch latest aws-cdk-lib, node.js and typescript versions from npmjs.com",

@@ -4,6 +4,7 @@ import { Component } from "projen/lib/component";
 import { DependencyType } from "projen/lib/dependencies";
 import { Jest, type NodeProject } from "projen/lib/javascript";
 import { TextFile } from "projen/lib/textfile";
+import { tsconfigDevPath } from "../utils";
 
 export enum Environment {
     /**
@@ -219,7 +220,7 @@ export interface VitestConfigOptions {
     /**
      * Path to custom tsconfig, relative to the project root.
      *
-     * @default "tsconfig.dev.json"
+     * @default - the project's development tsconfig (e.g. "test/tsconfig.json")
      * @see https://vitest.dev/config/#typecheck-tsconfig
      */
     readonly typecheckTsconfig?: string;
@@ -332,7 +333,7 @@ export class Vitest extends Component {
         this.coverageEnabled = options.config?.coverageEnabled ?? true;
         this.typecheckEnabled = options.config?.typecheckEnabled ?? this.isTypescriptProject();
         this.typecheckChecker = options.config?.typecheckChecker ?? "tsc --noEmit";
-        this.typecheckTsconfig = options.config?.typecheckTsconfig ?? "tsconfig.dev.json";
+        this.typecheckTsconfig = options.config?.typecheckTsconfig ?? tsconfigDevPath(project);
         this.passWithNoTests = options.config?.passWithNoTests ?? true;
         this.bail = options.config?.bail ?? 0;
         this.environment = options.config?.environment ?? Environment.NODE;

@@ -452,7 +452,8 @@ class TypeScriptClassRenderer {
      */
     private renderExport(optionsInterface: string) {
         const optionsFileName = this.getOptionsFileName(optionsInterface);
-        this.buffer.line(`export { ${optionsInterface} } from "./${optionsFileName}.generated";`);
+        /* type-only re-export, required by `isolatedModules` */
+        this.buffer.line(`export type { ${optionsInterface} } from "./${optionsFileName}.generated";`);
     }
 
     /**

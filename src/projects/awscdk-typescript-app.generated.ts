@@ -7,7 +7,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { AwsCdkTypeScriptAppProjectOptions } from "./awscdk-typescript-app-options.generated";
 
-export { AwsCdkTypeScriptAppProjectOptions } from "./awscdk-typescript-app-options.generated";
+export type { AwsCdkTypeScriptAppProjectOptions } from "./awscdk-typescript-app-options.generated";
 
 /**
  * AwsCdkTypeScriptAppProject with standard configuration and component integration

@@ -7,7 +7,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { TypeScriptProjectOptions } from "./typescript-options.generated";
 
-export { TypeScriptProjectOptions } from "./typescript-options.generated";
+export type { TypeScriptProjectOptions } from "./typescript-options.generated";
 
 /**
  * TypeScriptProject with standard configuration and component integration

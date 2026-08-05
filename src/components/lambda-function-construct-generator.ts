@@ -2,6 +2,7 @@ import * as path from "node:path";
 import type { BuildOptions } from "@mrgrain/cdk-esbuild";
 import { Component, SourceCode } from "projen";
 import type { NodeProject } from "projen/lib/javascript";
+import { tsconfigDevPath } from "../utils";
 
 export interface LambdaFunctionConstructGeneratorOptions {
     readonly sourceDir?: string;
@@ -78,7 +79,7 @@ export class LambdaFunctionConstructGenerator extends Component {
 
         const bundleTask = this.nodeProject.addTask(taskName, {
             description: `Generate Lambda Function Constructs from ${this.sourceDir}/${this.filePattern} and bundle their handlers`,
-            exec: `tsx --tsconfig tsconfig.dev.json ${this.bundlerScriptPath} --source-dir ${this.sourceDir} --output-dir ${this.outputDir} --file-pattern "${this.filePattern}" --esbuild-options '${JSON.stringify(this.esbuildOptions)}'${baseConstructArgs}`,
+            exec: `tsx --tsconfig ${tsconfigDevPath(this.nodeProject)} ${this.bundlerScriptPath} --source-dir ${this.sourceDir} --output-dir ${this.outputDir} --file-pattern "${this.filePattern}" --esbuild-options '${JSON.stringify(this.esbuildOptions)}'${baseConstructArgs}`,
         });
 
         this.createBundlerScript();

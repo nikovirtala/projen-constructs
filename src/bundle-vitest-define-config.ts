@@ -4,7 +4,7 @@ import * as esbuild from "esbuild";
 (async () => {
     const entrypoint = path.resolve(__dirname, "./vitest-define-config-entry.ts");
     const outDir = path.resolve(__dirname, "../lib");
-    const tsconfig = path.resolve(__dirname, "../tsconfig.dev.json");
+    const tsconfig = path.resolve(__dirname, "../tsconfig.json");
 
     await esbuild.build({
         entryPoints: [entrypoint],

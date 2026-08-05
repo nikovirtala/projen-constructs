@@ -19,10 +19,10 @@ describe("AwsCdkConstructLibraryProject", () => {
             name: "test-cdk-construct",
         });
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
-                module: "CommonJS",
-                target: "ES2020",
+                module: "node16",
+                target: "ES2022",
                 strict: true,
             },
         });
@@ -58,7 +58,7 @@ describe("AwsCdkConstructLibraryProject", () => {
             },
         });
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
                 strictNullChecks: false,
                 strict: true,

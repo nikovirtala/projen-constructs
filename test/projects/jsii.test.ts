@@ -25,10 +25,10 @@ describe("JsiiProject", () => {
             },
         });
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
-                module: "CommonJS",
-                target: "ES2020",
+                module: "node16",
+                target: "ES2022",
                 strict: true,
             },
         });
@@ -63,7 +63,7 @@ describe("JsiiProject", () => {
             },
         });
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
                 noUnusedParameters: false,
                 strict: true,

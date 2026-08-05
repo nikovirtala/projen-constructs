@@ -1,5 +1,6 @@
 import { Component } from "projen/lib/component";
 import type { Project } from "projen/lib/project";
+import { TaskShell } from "projen/lib/task-shell";
 import { TextFile } from "projen/lib/textfile";
 
 export interface HomebrewOptions {
@@ -20,6 +21,9 @@ export class Homebrew extends Component {
         this.packages = new Set(options.packages ?? []);
 
         const brewInstallTask = project.addTask("install:homebrew", {
+            // brace groups, `eval` and multiple redirects are not supported by projen's
+            // built-in cross-platform shell, so run this through bash
+            shell: TaskShell.bash(),
             exec: 'command -v brew >/dev/null 2>&1 || { NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv 2>/dev/null || /opt/homebrew/bin/brew shellenv 2>/dev/null)"; }',
         });
 
@@ -64,6 +68,9 @@ export class Homebrew extends Component {
         const brewBundleTask =
             this.project.tasks.tryFind("homebrew:bundle") ??
             this.project.addTask("homebrew:bundle", {
+                // `eval` and multiple redirects are not supported by projen's built-in
+                // cross-platform shell, so run this through bash
+                shell: TaskShell.bash(),
                 exec: 'command -v brew >/dev/null 2>&1 || eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv 2>/dev/null || /opt/homebrew/bin/brew shellenv 2>/dev/null)" && brew bundle',
             });
 

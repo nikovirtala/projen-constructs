@@ -18,7 +18,7 @@ This project is **entirely managed by projen**. Key implications:
 - **TypeScript 5.9.3** - Primary language
 - **Node.js 24.11.1** - Runtime (managed via mise)
 - **JSII ~5.9.3** - Multi-language library support
-- **pnpm 10** - Package manager
+- **pnpm 11** - Package manager (settings live in `pnpm-workspace.yaml`, not `.npmrc`)
 
 ## Code Quality
 
@@ -98,10 +98,12 @@ To modify generated files, edit `.projenrc.ts` and run `pnpm projen`.
 
 ## TypeScript Configuration
 
-- **tsconfig.dev.json** - Development config (includes src, test, .projenrc.ts)
+- **tsconfig.json** - Compile config (src -> lib), validated by jsii against its `strict` rule set
+- **test/tsconfig.json** - Development/type-check config, extends the root config
+- **projenrc/tsconfig.json** - Config covering `.projenrc.ts`
 - Strict mode enabled with all strict checks
-- ES2020 target and lib
-- CommonJS module for JSII compatibility
+- ES2022 target and lib
+- node16 module for JSII compatibility
 - Source maps inlined
 
 ## Version Management

@@ -7,7 +7,7 @@ import { applyDefaults, defaultOptions } from "../config";
 import { deepMerge } from "../utils";
 import type { AwsCdkConstructLibraryProjectOptions } from "./awscdk-construct-library-options.generated";
 
-export { AwsCdkConstructLibraryProjectOptions } from "./awscdk-construct-library-options.generated";
+export type { AwsCdkConstructLibraryProjectOptions } from "./awscdk-construct-library-options.generated";
 
 /**
  * AwsCdkConstructLibraryProject with standard configuration and component integration

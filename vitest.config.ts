@@ -21,7 +21,7 @@ export default defineConfig({
     typecheck: {
       enabled: true,
       checker: "tsc --noEmit",
-      tsconfig: "tsconfig.dev.json",
+      tsconfig: "test/tsconfig.json",
     },
     update: true,
   },

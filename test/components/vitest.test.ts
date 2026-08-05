@@ -10,7 +10,7 @@ describe("jest", () => {
     test("throws when jest is enabled", () => {
         const project = new TypeScriptProject({
             name: "test-node-project",
-            mergify: false,
+            githubOptions: { mergify: false },
             projenDevDependency: false,
             defaultReleaseBranch: "main",
             jest: true,
@@ -23,7 +23,7 @@ describe("jest", () => {
     test("throws when jest is added after vitest", () => {
         const project = new TypeScriptProject({
             name: "test-node-project",
-            mergify: false,
+            githubOptions: { mergify: false },
             projenDevDependency: false,
             defaultReleaseBranch: "main",
             jest: false,
@@ -41,7 +41,7 @@ describe("vitest", () => {
     beforeEach(() => {
         project = new TypeScriptProject({
             name: "test-node-project",
-            mergify: false,
+            githubOptions: { mergify: false },
             projenDevDependency: false,
             defaultReleaseBranch: "main",
             jest: false,
@@ -66,7 +66,7 @@ describe("vitest", () => {
 
         expect(config).toContain("    typecheck: {\n      enabled: true,");
         expect(config).toContain('      checker: "tsc --noEmit",\n');
-        expect(config).toContain('      tsconfig: "tsconfig.dev.json",\n');
+        expect(config).toContain('      tsconfig: "test/tsconfig.json",\n');
 
         expect(config).toContain("    bail: 0,\n");
         expect(config).toContain('    environment: "node",\n');
@@ -200,14 +200,14 @@ describe("vitest", () => {
             });
 
             const snapshot = synthSnapshot(project);
-            expect(snapshot["tsconfig.dev.json"].compilerOptions.types).toContain("vitest/globals");
+            expect(snapshot["test/tsconfig.json"].compilerOptions.types).toContain("vitest/globals");
         });
 
         test("does not add vitest/globals to tsconfig when globals disabled", () => {
             new Vitest(project);
 
             const snapshot = synthSnapshot(project);
-            expect(snapshot["tsconfig.dev.json"].compilerOptions.types || []).not.toContain("vitest/globals");
+            expect(snapshot["test/tsconfig.json"].compilerOptions.types || []).not.toContain("vitest/globals");
         });
 
         test("updates tsconfig when globals configuration changes (false --> true)", () => {
@@ -215,7 +215,7 @@ describe("vitest", () => {
 
             vitest.configureGlobals();
             const snapshot = synthSnapshot(project);
-            expect(snapshot["tsconfig.dev.json"].compilerOptions.types).toContain("vitest/globals");
+            expect(snapshot["test/tsconfig.json"].compilerOptions.types).toContain("vitest/globals");
         });
 
         test("throws when tsconfig file doesn't exist", () => {
@@ -231,7 +231,7 @@ describe("vitest", () => {
                 },
             });
 
-            customProject.tryRemoveFile("tsconfig.dev.json");
+            customProject.tryRemoveFile("test/tsconfig.json");
 
             expect(() => vitest.configureGlobals()).toThrow("unable to find tsconfig");
         });

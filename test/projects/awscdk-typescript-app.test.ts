@@ -17,7 +17,7 @@ describe("AwsCdkTypeScriptAppProject", () => {
             type: "module",
         });
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
                 module: "nodenext",
                 target: "esnext",
@@ -47,7 +47,7 @@ describe("AwsCdkTypeScriptAppProject", () => {
 
         const snapshot = synthSnapshot(project);
 
-        expect(snapshot["tsconfig.dev.json"]).toMatchObject({
+        expect(snapshot["tsconfig.json"]).toMatchObject({
             compilerOptions: {
                 noImplicitAny: false,
                 strict: true,
