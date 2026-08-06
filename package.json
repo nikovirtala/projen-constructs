@@ -51,26 +51,26 @@
     "commit-and-tag-version": "^12",
     "constructs": "^10.8.1",
     "esbuild": "^0.28.1",
-    "jsii": "~5.9.3",
+    "jsii": "~6.0.3",
     "jsii-diff": "^1.139.0",
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.139.0",
-    "jsii-rosetta": "~5.9.3",
-    "projen": "^0.101.25",
-    "tsx": "^4.23.7",
+    "jsii-rosetta": "~6.0.3",
+    "projen": "^0.101.26",
+    "tsx": "^4.23.8",
     "typedoc": "^0.28",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "^4"
   },
   "peerDependencies": {
     "@mrgrain/cdk-esbuild": "^5.8.1",
     "constructs": "^10.8.1",
-    "projen": "^0.101.25"
+    "projen": "^0.101.26"
   },
   "dependencies": {
     "@mrgrain/jsii-struct-builder": "^0.7.64",
     "case": "^1.6.3",
-    "projen": "^0.101.25"
+    "projen": "^0.101.26"
   },
   "bundledDependencies": [
     "@mrgrain/jsii-struct-builder",
@@ -78,7 +78,7 @@
   ],
   "pnpm": {},
   "engines": {
-    "node": ">= 24.16.0"
+    "node": ">= 24.19.0"
   },
   "devEngines": {
     "packageManager": {
