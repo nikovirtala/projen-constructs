@@ -23,6 +23,18 @@ describe("projen new", () => {
 
     describe.each(projectTypes.map((type) => [type.pjid, type] as const))("%s", (_pjid, projectType) => {
         /**
+         * The generator omits a component options property when its type is missing from
+         * the JSII manifest, which is how a stale or unreadable manifest silently shrinks
+         * the public API of this package.
+         */
+        it.each(["homebrewOptions", "miseOptions", "vitestOptions"])("exposes %s", (name) => {
+            const option = projectType.options.find((candidate) => candidate.name === name);
+
+            expect(option).toBeDefined();
+            expect(option?.optional).toBe(true);
+        });
+
+        /**
          * An option with an initial value is rendered as an explicit argument in the
          * generated `.projenrc.ts`, where it takes precedence over the defaults these
          * project types apply. Projen annotates `packageManager` with the

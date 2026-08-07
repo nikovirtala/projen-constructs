@@ -613,7 +613,21 @@ export class ProjectGenerator extends projen.Component {
             if (c.optionsProperty !== false) {
                 try {
                     const optionsType = this.resolveComponentOptionsType(c);
-                    if (optionsType && this.isFqnAvailable(optionsType.fqn)) {
+                    if (optionsType && !this.isFqnAvailable(optionsType.fqn)) {
+                        /* The options type is not in the manifest yet, which is expected while
+                         * a new component is being introduced: its type only reaches the
+                         * manifest once it has been compiled. Never leave this silent, since
+                         * skipping the property removes it from the public API of this
+                         * package - a stale or unreadable manifest looks exactly the same. */
+                        console.warn(
+                            JSON.stringify({
+                                message:
+                                    "Component options type is missing from the JSII manifest, omitting the options property. Compile the package and synthesize again.",
+                                component: c.componentClass.name,
+                                fqn: optionsType.fqn,
+                            }),
+                        );
+                    } else if (optionsType) {
                         struct.add({
                             name: optionsType.name,
                             type: { fqn: optionsType.fqn },
