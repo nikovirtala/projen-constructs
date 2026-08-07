@@ -8,11 +8,20 @@ Projen project types with standard configuration for consistent project setup ac
 pnpm add -D @nikovirtala/projen-constructs projen constructs
 ```
 
+Requires pnpm 11 and `projen` >= 0.101.27. `@mrgrain/cdk-esbuild` and `constructs` are peer
+dependencies as well.
+
+To create a project from scratch:
+
+```bash
+pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_library
+```
+
 ## Features
 
 - **Standard Configuration**: Opinionated defaults for author, release branch, package manager, Node.js, TypeScript, and tooling
-- **Automatic Project Type Discovery**: Generates `ProjectType` enum from Projen's JSII manifest (18 project types)
-- **Component System**: Reusable components (Vitest, Mise, TypeDoc, LocalStack, etc.)
+- **Automatic Project Type Discovery**: Generates the `ProjectType` enum from Projen's JSII manifest (19 project types)
+- **Component System**: Reusable components (Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, Lambda bundling)
 - **Code Generation**: `ProjectGenerator` creates project classes with standard configuration
 - **ES Modules**: TypeScript and CDK App projects use ES modules (JSII uses CommonJS)
 - **Code Quality**: Biome for formatting and linting
@@ -25,11 +34,36 @@ pnpm add -D @nikovirtala/projen-constructs projen constructs
 
 - **Author**: Niko Virtala (niko.virtala@hey.com)
 - **Default Release Branch**: main
-- **Package Manager**: pnpm 10
-- **Node Version**: 22.21.1
-- **TypeScript**: 5.9.3
-- **CDK Version**: 2.223.0 (for CDK projects)
-- **JSII Version**: ~5.9.3 (for JSII projects)
+- **Package Manager**: pnpm 11.20.0
+- **Node Version**: 24.19.0
+- **TypeScript**: 6.0.3
+- **CDK Version**: 2.263.0 (for CDK projects)
+- **JSII Version**: ~6.0.3 (for JSII projects)
+
+The AWS CDK, Node.js and TypeScript versions live in `src/versions.json` and are refreshed by the
+`update-versions` task, which the dependency upgrade workflow runs.
+
+### pnpm
+
+pnpm reads its settings from `pnpm-workspace.yaml`, not `.npmrc`, since pnpm 11. Generated projects
+get:
+
+| Setting                | Value             | Reason                                                                                                       |
+| ---------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------ |
+| `nodeLinker`           | `hoisted`         | jsii tooling resolves dependencies from a flat `node_modules`                                                |
+| `allowBuilds`          | `esbuild: true`   | esbuild links its platform binary in a postinstall script, and pnpm 11 fails an install with ignored builds   |
+| `verifyDepsBeforeRun`  | `false`           | projen resolves the task `PATH` with `$(pnpm -c exec ...)`, which otherwise re-enters `pnpm install` and deadlocks |
+| `minimumReleaseAge`    | `0`              | the pnpm 11 default of 1440 minutes makes pnpm write `minimumReleaseAgeExclude` entries into this generated file |
+
+### TypeScript configuration
+
+Projen renders three configs, and none of them should be edited directly:
+
+- `tsconfig.json` compiles `src` to `lib`. For JSII projects, jsii validates it against its `strict`
+  rule set, so it only carries compiler options jsii accepts.
+- `test/tsconfig.json` extends it and is type-check only. This is the config Vitest type checking and
+  the editor use, and the one `tsconfigDev` points at.
+- `projenrc/tsconfig.json` covers `.projenrc.ts`.
 
 ## Customization
 
@@ -39,7 +73,7 @@ Override any option by passing it to the constructor:
 const project = new JsiiProject({
   name: "my-project",
   repositoryUrl: "https://github.com/nikovirtala/my-project.git",
-  minNodeVersion: "20.0.0",
+  minNodeVersion: "24.0.0",
   author: "Custom Author",
   authorAddress: "custom@example.com",
   mise: false,
@@ -58,6 +92,9 @@ const project = new JsiiProject({
   },
 });
 ```
+
+Every component is exposed as an enable flag (`mise`, `vitest`, ...) plus an options property
+(`miseOptions`, `vitestOptions`, ...).
 
 ## Usage
 
@@ -135,6 +172,9 @@ new Vitest(project, {
 });
 ```
 
+Type checking runs against the project's development tsconfig (`test/tsconfig.json`) unless
+`config.typecheckTsconfig` says otherwise.
+
 #### TypeDoc
 
 [TypeDoc](https://typedoc.org) documentation generation component.
@@ -160,13 +200,14 @@ new TypeDoc(project, {
 import { Mise } from "@nikovirtala/projen-constructs";
 
 new Mise(project, {
-  nodeVersion: "22.21.1",
+  nodeVersion: "24.19.0",
 });
 ```
 
 #### Homebrew
 
-[Homebrew](https://brew.sh) package management component.
+[Homebrew](https://brew.sh) package management component. Writes a `Brewfile` and adds an
+`install:homebrew` task that bootstraps Homebrew and runs `brew bundle`.
 
 ```typescript
 import { Homebrew } from "@nikovirtala/projen-constructs";
@@ -250,7 +291,7 @@ import { ProjectGenerator, ProjectType } from "@nikovirtala/projen-constructs";
 
 new ProjectGenerator(project, {
   name: "TypeScriptProject",
-  projectType: ProjectType.TYPESCRIPT,
+  projectType: ProjectType.TYPE_SCRIPT_PROJECT,
   filePath: "./src/projects/typescript.generated.ts",
   components: [
     { componentClass: Mise },
@@ -260,7 +301,99 @@ new ProjectGenerator(project, {
 ```
 
 Features:
+
 - Automatically generates the `ProjectType` enum from Projen's JSII manifest
 - Auto-detects component options types from JSII manifests
+- Strips Projen's `@pjnew` annotation from `packageManager`, which `projen new` would otherwise
+  render into a generated `.projenrc.ts` as the package manager that ran the command
 - Validates paths to prevent directory traversal attacks
 - Structured error handling with custom error classes
+
+## Development
+
+This project is managed by Projen and generates itself: `.projenrc.ts` defines the project using the
+`JsiiProject` type from `src/`. Configuration changes belong in `.projenrc.ts`, never in the
+generated files.
+
+```bash
+pnpm projen           # synthesize project files
+pnpm build            # synthesize, compile, test and package
+pnpm test             # biome, vitest, typedoc
+pnpm test:watch       # vitest in watch mode
+pnpm test:update      # update snapshots
+pnpm biome            # format and lint
+pnpm docgen           # regenerate API.md from the .jsii manifest
+pnpm update-versions  # refresh src/versions.json
+pnpm upgrade          # upgrade dependencies
+```
+
+### Build process
+
+```mermaid
+flowchart TD
+    projenrc[".projenrc.ts"]
+
+    subgraph synthesize["default (synthesize)"]
+        direction TB
+        synth["tsx .projenrc.ts"]
+        generator["ProjectGenerator"]
+        generated["src/project-type.ts<br/>src/projects/*.generated.ts<br/>src/projects/*-options.generated.ts"]
+        projenfiles["package.json, tsconfig.json,<br/>pnpm-workspace.yaml, workflows, ..."]
+        brew["install:homebrew<br/>brew bundle"]
+        definecfg["bundle-vitest-define-config<br/>esbuild → lib/vitest-define-config.js"]
+
+        synth --> generator --> generated
+        synth --> projenfiles
+        synth --> brew
+        synth --> definecfg
+    end
+
+    subgraph compile["compile"]
+        direction TB
+        jsii["jsii<br/>validates tsconfig.json against the strict rule set"]
+        lib["lib/**"]
+        manifest[".jsii manifest"]
+
+        jsii --> lib
+        jsii --> manifest
+    end
+
+    subgraph test["test"]
+        direction TB
+        biome["biome check --write"]
+        vitest["vitest run<br/>+ type checking"]
+        typedoc["typedoc → docs/api"]
+
+        biome --> vitest --> typedoc
+    end
+
+    subgraph package["package"]
+        direction TB
+        pacmak["jsii-pacmak<br/>--pack-command 'pnpm pack'"]
+        dist["dist/js/*.tgz"]
+
+        pacmak --> dist
+    end
+
+    projenrc --> synthesize
+    synthesize --> compile
+    compile --> test
+    test --> package
+
+    manifest -. "component options FQNs<br/>read on the next synthesis" .-> generator
+    docgen["docgen<br/>jsii-docgen → API.md"]
+    manifest --> docgen
+
+    classDef artifact fill:#eef,stroke:#88a
+    class generated,projenfiles,lib,manifest,dist artifact
+```
+
+The dashed edge is the part worth knowing about: `ProjectGenerator` reads the committed `.jsii`
+manifest to resolve component options types, so the manifest produced by `compile` feeds the *next*
+synthesis. This is why `.jsii` is committed rather than ignored. A component options type that is
+missing from the manifest is reported as a warning and its options property is left out of the
+generated interface, which is expected only while a new component is being introduced: compile once,
+then synthesize again.
+
+`package` runs `package:js` on CI and `package-all` locally; both end up in `jsii-pacmak`.
+`docgen` is not part of `build` and has to be run explicitly after the manifest changes.
