@@ -2,8 +2,8 @@ import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import type { Assembly } from "@jsii/spec";
 import { ProjenStruct, Struct } from "@mrgrain/jsii-struct-builder";
-import type { Project, SourceCodeOptions, typescript } from "projen";
 import * as projen from "projen";
+import { javascript, type Project, type SourceCodeOptions, type typescript } from "projen";
 import {
     ComponentResolutionError,
     InvalidBaseClassFormatError,
@@ -583,7 +583,7 @@ export class ProjectGenerator extends projen.Component {
             filePath: optionsFilePath,
             outputFileOptions: { readonly: true },
         })
-            .mixin(Struct.fromFqn(baseOptionsFqn))
+            .mixin(this.withoutPackageManagerInitialValue(Struct.fromFqn(baseOptionsFqn)))
             .withoutDeprecated();
 
         /* Remove specified options from the base interface */
@@ -641,6 +641,40 @@ export class ProjectGenerator extends projen.Component {
         if (options.additionalOptions && options.additionalOptions.length > 0) {
             struct.add(...options.additionalOptions);
         }
+    }
+
+    /**
+     * Drops the `@pjnew` annotation from the `packageManager` option.
+     *
+     * `projen new` renders that annotation as an explicit argument in the `.projenrc.ts`
+     * it generates, where it takes precedence over the defaults these project types
+     * apply. Projen annotates `packageManager` with the `$PACKAGE_MANAGER` macro, which
+     * resolves to the package manager that runs the command, so `npx projen new --from`
+     * would pin a new project to npm. Without an annotation the option is left out of
+     * the generated `.projenrc.ts` and the default of this library applies.
+     *
+     * The annotation cannot be re-pointed at pnpm instead: projen only accepts a macro
+     * or a primitive value as an initial value, and this option is an enum.
+     *
+     * @param base - The projen options struct the generated interface is derived from
+     */
+    private withoutPackageManagerInitialValue(base: Struct): Struct {
+        const packageManager = base.properties.find((property) => property.name === "packageManager");
+
+        if (!packageManager?.docs?.custom?.pjnew) {
+            return base;
+        }
+
+        const { pjnew, ...custom } = packageManager.docs.custom;
+
+        return base.replace("packageManager", {
+            ...packageManager,
+            docs: {
+                ...packageManager.docs,
+                default: `- ${javascript.NodePackageManager.PNPM}`,
+                custom,
+            },
+        });
     }
 
     /**

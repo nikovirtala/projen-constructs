@@ -6,6 +6,16 @@ import { ProjectGenerator } from "../src/project-generator";
 import { ProjectType } from "../src/project-type";
 import { TypeScriptProject } from "../src/projects";
 
+/**
+ * Returns the documentation comment preceding a property declaration.
+ */
+function documentationOf(source: string, property: string): string {
+    const declaration = source.indexOf(`readonly ${property}?:`);
+    expect(declaration, `property ${property} not found`).toBeGreaterThan(-1);
+
+    return source.slice(source.lastIndexOf("/**", declaration), declaration);
+}
+
 describe("ProjectGenerator", () => {
     describe("component options auto-detection", () => {
         it("auto-detects VitestOptions from JSII manifest when optionsProperty is undefined", () => {
@@ -114,6 +124,35 @@ describe("ProjectGenerator", () => {
 
             /* Verify vitestOptions is NOT added */
             expect(optionsFile).not.toContain("vitestOptions");
+        });
+
+        it("documents pnpm as the packageManager default, without an initial value", () => {
+            const project = new TypeScriptProject({
+                name: "test-project",
+                defaultReleaseBranch: "main",
+            });
+
+            new ProjectGenerator(project, {
+                name: "TestProject",
+                projectType: ProjectType.TYPE_SCRIPT_PROJECT,
+                filePath: "./src/test-project.generated.ts",
+                components: [{ componentClass: Vitest }],
+            });
+
+            const snapshot = synthSnapshot(project);
+            const docs = documentationOf(snapshot["src/testprojectoptions.generated.ts"], "packageManager");
+
+            /* `projen new` renders `@pjnew` as an explicit argument in the .projenrc.ts it
+             * generates, which would take precedence over the applied defaults. Projen
+             * annotates this option with the $PACKAGE_MANAGER macro, resolving to whatever
+             * package manager runs the command. */
+            expect(docs).not.toContain("@pjnew");
+            expect(docs).toContain("@default - pnpm");
+
+            /* Annotations of other options are left untouched */
+            expect(documentationOf(snapshot["src/testprojectoptions.generated.ts"], "projenrcTs")).toContain(
+                "@pjnew true",
+            );
         });
 
         it("generates correct constructor structure", () => {
