@@ -48,6 +48,11 @@ export enum ProjectType {
     CONSTRUCT_LIBRARY_CDKTF = "cdktf.ConstructLibraryCdktf",
 
     /**
+     * CDKTN construct library project.
+     */
+    CONSTRUCT_LIBRARY_CDKTN = "cdktn.ConstructLibraryCdktn",
+
+    /**
      * GitHub-based project.
      */
     GIT_HUB_PROJECT = "github.GitHubProject",
