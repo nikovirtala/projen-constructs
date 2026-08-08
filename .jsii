@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.8.1",
     "constructs": "^10.8.1",
-    "projen": "^0.101.28"
+    "projen": "^0.101.29"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4140,6 +4140,7 @@
         "projen.cdk": {},
         "projen.cdk8s": {},
         "projen.cdktf": {},
+        "projen.cdktn": {},
         "projen.circleci": {},
         "projen.github": {},
         "projen.github.workflows": {},
@@ -16128,6 +16129,13 @@
         {
           "docs": {
             "stability": "stable",
+            "summary": "CDKTN construct library project."
+          },
+          "name": "CONSTRUCT_LIBRARY_CDKTN"
+        },
+        {
+          "docs": {
+            "stability": "stable",
             "summary": "GitHub-based project."
           },
           "name": "GIT_HUB_PROJECT"
@@ -20870,5 +20878,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "V2HIe80/yxKbdMwf6kur2q9c/HoEAGTpesvmiHcaIVg="
+  "fingerprint": "s0Hjlb192Ewaf9D9Re/Ns5FvUlsm8KJRSq57nI0Wmcg="
 }
