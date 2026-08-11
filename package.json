@@ -57,7 +57,7 @@
     "jsii-pacmak": "^1.139.0",
     "jsii-rosetta": "~6.0.3",
     "projen": "^0.101.31",
-    "tsx": "^4.23.11",
+    "tsx": "^4.23.12",
     "typedoc": "^0.28",
     "typescript": "6.0.3",
     "vitest": "^4"
