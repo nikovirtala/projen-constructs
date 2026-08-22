@@ -56,7 +56,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.139.0",
     "jsii-rosetta": "~6.0.3",
-    "projen": "^0.101.33",
+    "projen": "^0.103.1",
     "tsx": "^4.23.12",
     "typedoc": "^0.28",
     "typescript": "6.0.3",
@@ -65,12 +65,12 @@
   "peerDependencies": {
     "@mrgrain/cdk-esbuild": "^5.8.2",
     "constructs": "^10.8.1",
-    "projen": "^0.101.33"
+    "projen": "^0.103.1"
   },
   "dependencies": {
     "@mrgrain/jsii-struct-builder": "^0.7.64",
     "case": "^1.6.3",
-    "projen": "^0.101.33"
+    "projen": "^0.103.1"
   },
   "bundledDependencies": [
     "@mrgrain/jsii-struct-builder",
