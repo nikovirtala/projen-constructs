@@ -38,6 +38,11 @@ export enum ProjectType {
     CDK8S_TYPE_SCRIPT_APP = "cdk8s.Cdk8sTypeScriptApp",
 
     /**
+     * CDKTN app in TypeScript.
+     */
+    CDKTN_TYPE_SCRIPT_APP = "cdktn.CdktnTypeScriptApp",
+
+    /**
      * CDK8s construct library project.
      */
     CONSTRUCT_LIBRARY_CDK8S = "cdk8s.ConstructLibraryCdk8s",
