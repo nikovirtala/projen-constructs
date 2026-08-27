@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.8.2",
     "constructs": "^10.8.1",
-    "projen": "^0.103.3"
+    "projen": "^0.103.5"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4151,6 +4151,7 @@
         "projen.python": {},
         "projen.python.uvConfig": {},
         "projen.release": {},
+        "projen.sonarqube": {},
         "projen.typescript": {},
         "projen.vscode": {},
         "projen.web": {}
@@ -20693,5 +20694,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "p9qVrs0sjtHO5jjJyzJKrdR0/zHKDJoUnvUSrPSW878="
+  "fingerprint": "EDGqJtvByvdHYcdDvWyHALeqdazoebK9w5nV/ZycOSE="
 }
