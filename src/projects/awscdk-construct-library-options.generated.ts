@@ -205,6 +205,13 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly typescriptVersion?: string;
   /**
+   * Type-check the test suite as part of the `test` task.
+   * Adds a `tsc --noEmit` step against the development tsconfig.
+   * @default false
+   * @stability experimental
+   */
+  readonly typecheckTests?: boolean;
+  /**
    * The name (and path) of the development tsconfig file.
    * By default this lives inside the test directory (e.g. `test/tsconfig.json`)
    * so that the TypeScript language service resolves it as the nearest config
