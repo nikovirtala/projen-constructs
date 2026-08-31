@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@mrgrain/jsii-struct-builder':
         specifier: ^0.7.64
-        version: 0.7.64(projen@0.103.10(constructs@10.8.1))
+        version: 0.7.64(projen@0.103.11(constructs@10.8.1))
       case:
         specifier: ^1.6.3
         version: 1.6.3
       projen:
-        specifier: ^0.103.10
-        version: 0.103.10(constructs@10.8.1)
+        specifier: ^0.103.11
+        version: 0.103.11(constructs@10.8.1)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5
@@ -44,22 +44,22 @@ importers:
         version: 0.28.2
       jsii:
         specifier: ~6.0.3
-        version: 6.0.11(supports-color@7.2.0)
+        version: 6.0.12(supports-color@7.2.0)
       jsii-diff:
         specifier: ^1.140.0
         version: 1.140.0(supports-color@7.2.0)
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.12.5(jsii-rosetta@6.0.12(supports-color@7.2.0))
+        version: 10.12.5(jsii-rosetta@6.0.13(supports-color@7.2.0))
       jsii-pacmak:
         specifier: ^1.140.0
-        version: 1.140.0(jsii-rosetta@6.0.12(supports-color@7.2.0))
+        version: 1.140.0(jsii-rosetta@6.0.13(supports-color@7.2.0))
       jsii-rosetta:
         specifier: ~6.0.3
-        version: 6.0.12(supports-color@7.2.0)
+        version: 6.0.13(supports-color@7.2.0)
       tsx:
-        specifier: ^4.23.12
-        version: 4.23.12
+        specifier: ^4.23.13
+        version: 4.23.13
       typedoc:
         specifier: ^0.28
         version: 0.28.20(typescript@6.0.3)
@@ -68,7 +68,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: ^4
-        version: 4.1.11(@types/node@24.13.3)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0))
+        version: 4.1.11(@types/node@24.13.3)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0))
 
 packages:
 
@@ -948,8 +948,8 @@ packages:
   '@vitest/utils@4.1.11':
     resolution: {integrity: sha512-zTCVGpyFsGWBhllOyKlTw/vnr6D9qxsfSDyfbyZmTyjHw5N/VuvzHpHoQjm2ZJzn4RJgx5w4r7V0er69CmLgPQ==}
 
-  '@xmldom/xmldom@0.9.11':
-    resolution: {integrity: sha512-tW8bcK3hsG0/uqSnNz6TK4BkcuZSezoU7DlnYssILmZDktPnSHHuDJJFM0AJv+13gz2r0iGdrj6qqKeUnxXEDg==}
+  '@xmldom/xmldom@0.9.12':
+    resolution: {integrity: sha512-5AXjrcMClTryPe9LgZrygpB1lj7s0S9E0+W+AHaVKAVyHanafK86iPSvG5xHVSp/jC+VH1UXu0TAEmY279xH7A==}
     engines: {node: '>=14.6'}
 
   JSONStream@1.3.5:
@@ -1631,13 +1631,13 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-rosetta@6.0.12:
-    resolution: {integrity: sha512-/sLjj9rbS2d3VTzltjb1L9/44HhZ2TZ02SDdbgzTBsfAVpu7PpXFXp4RT5lzMk7+LZl4GiML/ZSPMlLwy6FwuQ==}
+  jsii-rosetta@6.0.13:
+    resolution: {integrity: sha512-Ru3fbLNvCYIwsdrhIAjr/HFk0qfg15ssCqq1Ie6TL8V1Rq56fBbIzmDsH8CF60WJA2ZLXrUXrmbtKgzdQvHjNg==}
     engines: {node: '>= 20.16.0'}
     hasBin: true
 
-  jsii@6.0.11:
-    resolution: {integrity: sha512-yWNGlOpbi9kssRiq2wV+r/I09eNRxehrFmbNK0QTdvR5CBVk8aaLJ1ShLCKPRV1J4kNaOJ+z8fpWSdCYBscgVQ==}
+  jsii@6.0.12:
+    resolution: {integrity: sha512-QGi87rQ853gJhjc2+M/UHHRAhIPxShGmhtZPGgVA1vmmPEOn0kKiP+3pWziDmPNZojXtgpCCdfF8neOMWUA+yA==}
     engines: {node: '>= 20.16.0'}
     hasBin: true
 
@@ -1912,8 +1912,8 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  projen@0.103.10:
-    resolution: {integrity: sha512-CiX+VsdvGWvWb9qpMUhZm3MyNV0CSPuUT7bkBNsFcRr65NywSpdQ2MkKtfaht683C+wB8AVYWyfPxF+k1vja/w==}
+  projen@0.103.11:
+    resolution: {integrity: sha512-aUT2VKHEOdjf4evZMR7xKTYUeo8fUMmcbHUuCeewPO8LjFzmQmAYuge2zA0s+Frp9e7uKGekv2zjAKPmjrBSFw==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2177,8 +2177,8 @@ packages:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
 
-  tsx@4.23.12:
-    resolution: {integrity: sha512-FDf4L4sYzKtzWYhU/Xm0AQFdTjdIxNo9ElTf2mxXM6k8YMHXzYUe4yODVaXP4V9uMFbVg8c0qyBccK2OOxb45Q==}
+  tsx@4.23.13:
+    resolution: {integrity: sha512-BL5MGkRln6aDYhb0xbQlEAGw743BaZYWdbWtdJOBriYJboKgUUYCadFp2/FpBBZquBC/ezNBn7wMMPx7FDZUDw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2782,10 +2782,10 @@ snapshots:
     optionalDependencies:
       esbuild: 0.27.7
 
-  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.103.10(constructs@10.8.1))':
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.103.11(constructs@10.8.1))':
     dependencies:
       '@jsii/spec': 1.140.0
-      projen: 0.103.10(constructs@10.8.1)
+      projen: 0.103.11(constructs@10.8.1)
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -2934,7 +2934,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.0.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.11(@types/node@24.13.3)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0))
+      vitest: 4.1.11(@types/node@24.13.3)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0))
 
   '@vitest/expect@4.1.11':
     dependencies:
@@ -2945,13 +2945,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.11(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0))':
+  '@vitest/mocker@4.1.11(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0))':
     dependencies:
       '@vitest/spy': 4.1.11
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0)
 
   '@vitest/pretty-format@4.1.11':
     dependencies:
@@ -2977,7 +2977,7 @@ snapshots:
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
 
-  '@xmldom/xmldom@0.9.11': {}
+  '@xmldom/xmldom@0.9.12': {}
 
   JSONStream@1.3.5:
     dependencies:
@@ -3732,19 +3732,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.12.5(jsii-rosetta@6.0.12(supports-color@7.2.0)):
+  jsii-docgen@10.12.5(jsii-rosetta@6.0.13(supports-color@7.2.0)):
     dependencies:
       '@jsii/spec': 1.140.0
       case: 1.6.3
       fast-glob: 3.3.3
       fs-extra: 10.1.0
       jsii-reflect: 1.139.0
-      jsii-rosetta: 6.0.12(supports-color@7.2.0)
+      jsii-rosetta: 6.0.13(supports-color@7.2.0)
       json-stream-stringify: 3.1.7
       semver: 7.8.5
       yargs: 16.2.2
 
-  jsii-pacmak@1.140.0(jsii-rosetta@6.0.12(supports-color@7.2.0)):
+  jsii-pacmak@1.140.0(jsii-rosetta@6.0.13(supports-color@7.2.0)):
     dependencies:
       '@jsii/check-node': 1.140.0
       '@jsii/spec': 1.140.0
@@ -3754,7 +3754,7 @@ snapshots:
       escape-string-regexp: 4.0.0
       fs-extra: 10.1.0
       jsii-reflect: 1.140.0
-      jsii-rosetta: 6.0.12(supports-color@7.2.0)
+      jsii-rosetta: 6.0.13(supports-color@7.2.0)
       semver: 7.8.5
       spdx-license-list: 6.12.0
       xmlbuilder: 15.1.1
@@ -3778,15 +3778,15 @@ snapshots:
       oo-ascii-tree: 1.140.0
       yargs: 17.7.3
 
-  jsii-rosetta@6.0.12(supports-color@7.2.0):
+  jsii-rosetta@6.0.13(supports-color@7.2.0):
     dependencies:
-      '@jsii/check-node': 1.139.0
+      '@jsii/check-node': 1.140.0
       '@jsii/spec': 1.140.0
-      '@xmldom/xmldom': 0.9.11
+      '@xmldom/xmldom': 0.9.12
       chalk: 4.1.2
       commonmark: 0.31.2
       fast-glob: 3.3.3
-      jsii: 6.0.11(supports-color@7.2.0)
+      jsii: 6.0.12(supports-color@7.2.0)
       semver: 7.8.5
       semver-intersect: 1.5.0
       stream-json: 1.9.1
@@ -3796,10 +3796,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii@6.0.11(supports-color@7.2.0):
+  jsii@6.0.12(supports-color@7.2.0):
     dependencies:
-      '@jsii/check-node': 1.139.0
-      '@jsii/spec': 1.139.0
+      '@jsii/check-node': 1.140.0
+      '@jsii/spec': 1.140.0
       case: 1.6.3
       chalk: 4.1.2
       fast-deep-equal: 3.1.3
@@ -4080,7 +4080,7 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.103.10(constructs@10.8.1):
+  projen@0.103.11(constructs@10.8.1):
     dependencies:
       constructs: 10.8.1
 
@@ -4351,7 +4351,7 @@ snapshots:
 
   trim-newlines@3.0.1: {}
 
-  tsx@4.23.12:
+  tsx@4.23.13:
     dependencies:
       esbuild: 0.28.2
     optionalDependencies:
@@ -4394,7 +4394,7 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite@7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0):
+  vite@7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.5)
@@ -4405,13 +4405,13 @@ snapshots:
     optionalDependencies:
       '@types/node': 24.13.3
       fsevents: 2.3.3
-      tsx: 4.23.12
+      tsx: 4.23.13
       yaml: 2.9.0
 
-  vitest@4.1.11(@types/node@24.13.3)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0)):
+  vitest@4.1.11(@types/node@24.13.3)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0))
+      '@vitest/mocker': 4.1.11(vite@7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0))
       '@vitest/pretty-format': 4.1.11
       '@vitest/runner': 4.1.11
       '@vitest/snapshot': 4.1.11
@@ -4428,7 +4428,7 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.2.2(@types/node@24.13.3)(tsx@4.23.12)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.13.3)(tsx@4.23.13)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.13.3
