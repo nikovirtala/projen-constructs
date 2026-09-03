@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@mrgrain/jsii-struct-builder':
         specifier: ^0.7.64
-        version: 0.7.64(projen@0.103.12(constructs@10.8.1))
+        version: 0.7.64(projen@0.103.15(constructs@10.8.1))
       case:
         specifier: ^1.6.3
         version: 1.6.3
       projen:
-        specifier: ^0.103.12
-        version: 0.103.12(constructs@10.8.1)
+        specifier: ^0.103.15
+        version: 0.103.15(constructs@10.8.1)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5
@@ -25,8 +25,8 @@ importers:
         specifier: ^1.140.0
         version: 1.140.0
       '@mrgrain/cdk-esbuild':
-        specifier: 5.8.2
-        version: 5.8.2(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: 5.8.3
+        version: 5.8.3(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^24
         version: 24.13.3
@@ -691,8 +691,8 @@ packages:
     resolution: {integrity: sha512-1rGS+iJtejQ3ybSJfV0if9PzZuSQmORbVF3MkqE0csatF//Rj8raCqptZLMX6rkdfZ8C2Jsw5hU4PrmuCzBk6A==}
     engines: {node: '>= 14.17.0'}
 
-  '@mrgrain/cdk-esbuild@5.8.2':
-    resolution: {integrity: sha512-6sCt0PWh5rmgTqdwaDNSquqyQr8J9K5kVD32Qqi0zsYLgMkZuvoMnAO6TXvJyZ3YVjyfzMhS3V9/l9moD4ZWXA==}
+  '@mrgrain/cdk-esbuild@5.8.3':
+    resolution: {integrity: sha512-oZurhh9aFk4fCe5FqoO8GVWeiX8dn3lIP/HHLGCCOkDL8yxqPNt84nYC7Y7hd4tI+PLZYbIb859M8+7KTB0Bcg==}
     peerDependencies:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.5.0
@@ -1895,8 +1895,8 @@ packages:
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
-  projen@0.103.12:
-    resolution: {integrity: sha512-fPbwEtJV/c275ImzY4XJ+9IcV/ak1GtTmu85ye8TRYizFYXnr7KFqFZ0aXlFbq9evBi9KBUFaELMP4AMHhHFXQ==}
+  projen@0.103.15:
+    resolution: {integrity: sha512-7L9ubnWJlwz/BXk2Whv0AvX+YNM3pnHrzFj5Ethw0m1CQcU3dotqmqFxfy5CrfWkK/4Y+wfTELJOZjvKQenjFA==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2751,17 +2751,17 @@ snapshots:
 
   '@jsii/spec@1.140.0': {}
 
-  '@mrgrain/cdk-esbuild@5.8.2(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)':
+  '@mrgrain/cdk-esbuild@5.8.3(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)':
     dependencies:
       aws-cdk-lib: 2.223.0(constructs@10.8.1)
       constructs: 10.8.1
     optionalDependencies:
       esbuild: 0.27.7
 
-  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.103.12(constructs@10.8.1))':
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.103.15(constructs@10.8.1))':
     dependencies:
       '@jsii/spec': 1.140.0
-      projen: 0.103.12(constructs@10.8.1)
+      projen: 0.103.15(constructs@10.8.1)
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -4045,7 +4045,7 @@ snapshots:
 
   process-nextick-args@2.0.1: {}
 
-  projen@0.103.12(constructs@10.8.1):
+  projen@0.103.15(constructs@10.8.1):
     dependencies:
       constructs: 10.8.1
 
