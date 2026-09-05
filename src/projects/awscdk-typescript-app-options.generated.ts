@@ -907,6 +907,13 @@ export interface AwsCdkTypeScriptAppProjectOptions {
    */
   readonly dedupeDeps?: boolean;
   /**
+   * Configuration values available to package scripts at runtime.
+   * Values should be JSON-serializable.
+   * @default - no package configuration
+   * @stability experimental
+   */
+  readonly config?: Record<string, any>;
+  /**
    * Options for npm packages using AWS CodeArtifact.
    * This is required if publishing packages to, or installing scoped packages from AWS CodeArtifact
    * @default - undefined
