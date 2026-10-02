@@ -22,14 +22,14 @@ importers:
         specifier: ^2.5
         version: 2.5.15
       '@jsii/spec':
-        specifier: ^1.140.0
-        version: 1.140.0
+        specifier: ^1.141.0
+        version: 1.141.0
       '@mrgrain/cdk-esbuild':
-        specifier: 5.8.4
-        version: 5.8.4(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)
+        specifier: 5.8.5
+        version: 5.8.5(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^24
-        version: 24.19.0
+        version: 24.19.1
       '@vitest/coverage-v8':
         specifier: ^4
         version: 4.1.11(vitest@4.1.11)
@@ -46,14 +46,14 @@ importers:
         specifier: ~6.0.3
         version: 6.0.16(supports-color@7.2.0)
       jsii-diff:
-        specifier: ^1.140.0
-        version: 1.140.0(supports-color@7.2.0)
+        specifier: ^1.141.0
+        version: 1.141.0(supports-color@7.2.0)
       jsii-docgen:
         specifier: ^10.5.0
         version: 10.12.6(jsii-rosetta@6.0.17(supports-color@7.2.0))
       jsii-pacmak:
-        specifier: ^1.140.0
-        version: 1.140.0(jsii-rosetta@6.0.17(supports-color@7.2.0))
+        specifier: ^1.141.0
+        version: 1.141.0(jsii-rosetta@6.0.17(supports-color@7.2.0))
       jsii-rosetta:
         specifier: ~6.0.3
         version: 6.0.17(supports-color@7.2.0)
@@ -68,7 +68,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: ^4
-        version: 4.1.11(@types/node@24.19.0)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0))
+        version: 4.1.11(@types/node@24.19.1)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))
 
 packages:
 
@@ -699,12 +699,20 @@ packages:
     resolution: {integrity: sha512-NTiY2Nd9ZtACPZjaU+k9+oiaD191Yw0FoiUR7bB+NoOtB5nMEhrLKn5O/PYmCIZGK0G1JaJs+PmLcyj68J6RKw==}
     engines: {node: '>= 14.17.0'}
 
+  '@jsii/check-node@1.141.0':
+    resolution: {integrity: sha512-dGAUZmacdWhZtmPuTNOf9avAsh0IHwZ5m6mNzOrJ0aVTgDu3L9PWw4dq99emn6Xx0pYCrSs+W4xcbp71bH3MLQ==}
+    engines: {node: '>= 14.17.0'}
+
   '@jsii/spec@1.140.0':
     resolution: {integrity: sha512-1rGS+iJtejQ3ybSJfV0if9PzZuSQmORbVF3MkqE0csatF//Rj8raCqptZLMX6rkdfZ8C2Jsw5hU4PrmuCzBk6A==}
     engines: {node: '>= 14.17.0'}
 
-  '@mrgrain/cdk-esbuild@5.8.4':
-    resolution: {integrity: sha512-6nnQccdJ1t4lfNylSrq1fz+5jO2eZfX9+BTCkKqkn7fygxyYdigEZ6YlJWhYf4oQmDpYhnSy4AJESYSOnFwRVg==}
+  '@jsii/spec@1.141.0':
+    resolution: {integrity: sha512-NL/2TJnpfs332uuEWUV8Rx2wrV/gLoxdw7pmv457BoUwpOL6ZqOYgM6W54Niqn4RCjdxGddVL2l4CJBRMW0NgQ==}
+    engines: {node: '>= 14.17.0'}
+
+  '@mrgrain/cdk-esbuild@5.8.5':
+    resolution: {integrity: sha512-ht4JHQgXbQPoWYbzlDnCegafak9wzV2g4y5gk01YZI1AJf0ay5u6ETmUH/TsSwKwROknBbaB2TFbB8K2+8X5xA==}
     peerDependencies:
       aws-cdk-lib: ^2.51.0
       constructs: ^10.5.0
@@ -921,8 +929,8 @@ packages:
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
-  '@types/node@24.19.0':
-    resolution: {integrity: sha512-zY+5tKxXdhGh1PYI0ac+7juvEu4OI6vWtVVoj5i2m42jxAY1U+zHGt6QCyOFwykdP62sM3MJ9stoYYUw5aCWew==}
+  '@types/node@24.19.1':
+    resolution: {integrity: sha512-aS3/DG0oM05K0RIXXP+hKjinGG5IgSSVGzswZxW3O0sS3pH4/fycXundUC9XsszgKCk4gHXylTEK6hyFxVxnoQ==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1072,8 +1080,8 @@ packages:
     resolution: {integrity: sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==}
     engines: {node: '>=0.8'}
 
-  codemaker@1.140.0:
-    resolution: {integrity: sha512-/EPlxI+2i9ji7aZac2kLEUyjzfgHWBl8hDZ98T6BnED9mTLRInCNToA0vqgZPcTotiP6g6YNeZo7cBAc90Ok9A==}
+  codemaker@1.141.0:
+    resolution: {integrity: sha512-OpueAw6U+vDjYOOZ0RLexINaMaybJUus64+CoJa6u9d3oWaI43sSQFMAuJT2jT6zyGlFkeRlbk/vT2E5396fcg==}
     engines: {node: '>= 14.17.0'}
 
   color-convert@2.0.1:
@@ -1436,8 +1444,8 @@ packages:
       canvas:
         optional: true
 
-  jsii-diff@1.140.0:
-    resolution: {integrity: sha512-nK6y3X08YDt7hrkgl45gn9uzQFioqeBLXwj/OZ1AyeejvvPQJvaNuIogRdrfjBuNuksjnQlW/RJk8ocgzaXCvA==}
+  jsii-diff@1.141.0:
+    resolution: {integrity: sha512-JJmXP5K4G0KOqA5kwymMDPJV9jdrsF2ZZnz7Xbv7IpXvTjz73p8VPV3GLi+yHPITgFG81FOFxB8P27H0KW2U7Q==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
@@ -1447,8 +1455,8 @@ packages:
     peerDependencies:
       jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0
 
-  jsii-pacmak@1.140.0:
-    resolution: {integrity: sha512-BHv63POC099uGm08UM7L5UZUanN3rfESzWv54xpwhamiIJ+zlw0+6Sj790LP2skRkezTdTj8Qj6mhU5Kxfko7g==}
+  jsii-pacmak@1.141.0:
+    resolution: {integrity: sha512-Ky6g3RLeTwU4xP/KKXHjsHsILYd7QaOHzI/qNrySwoWhPQmRrRB6fPQYtqCHkC+kjMUGJKTopS7hT+XBqWFaQA==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
     peerDependencies:
@@ -1456,6 +1464,11 @@ packages:
 
   jsii-reflect@1.140.0:
     resolution: {integrity: sha512-8bRD6WSQfWrB6/31sz92bi21HWaMVzvxZUgaJt/IiT3RqGKc57dO+idekn8WNpTBneE9vVhj24UDExHH8YfJAQ==}
+    engines: {node: '>= 14.17.0'}
+    hasBin: true
+
+  jsii-reflect@1.141.0:
+    resolution: {integrity: sha512-M51GkGF3PX4iBFm2HLemzxgEdqEoEjvzLYQAvsO0yGY351F2ZlRm2afn9Sx6XcrNCH4IXddDBfxktt46kh5nNA==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
@@ -1566,6 +1579,10 @@ packages:
 
   oo-ascii-tree@1.140.0:
     resolution: {integrity: sha512-swJJN43RwwtZAtNQu03W8rqNtTUvq9T4eGU4KupRq7I9/R3exHobbF/OOm5sl6tGcumsQrNU97NBx7x+LEIPgA==}
+    engines: {node: '>= 14.17.0'}
+
+  oo-ascii-tree@1.141.0:
+    resolution: {integrity: sha512-D1xND2r5udiTGnj9k2S1obzT8mzRu5RrjI1doR8dH7rrjnB0DrwwbCFiOeG9waUsqcT8w9KlzpS0IRbrustJIw==}
     engines: {node: '>= 14.17.0'}
 
   p-limit@2.3.0:
@@ -2349,9 +2366,16 @@ snapshots:
       chalk: 4.1.2
       semver: 7.8.5
 
+  '@jsii/check-node@1.141.0':
+    dependencies:
+      chalk: 4.1.2
+      semver: 7.8.5
+
   '@jsii/spec@1.140.0': {}
 
-  '@mrgrain/cdk-esbuild@5.8.4(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)':
+  '@jsii/spec@1.141.0': {}
+
+  '@mrgrain/cdk-esbuild@5.8.5(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)':
     dependencies:
       aws-cdk-lib: 2.223.0(constructs@10.8.1)
       constructs: 10.8.1
@@ -2360,7 +2384,7 @@ snapshots:
 
   '@mrgrain/jsii-struct-builder@0.7.64(projen@0.103.27(constructs@10.8.1))':
     dependencies:
-      '@jsii/spec': 1.140.0
+      '@jsii/spec': 1.141.0
       projen: 0.103.27(constructs@10.8.1)
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
@@ -2503,7 +2527,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@24.19.0':
+  '@types/node@24.19.1':
     dependencies:
       undici-types: 7.24.6
 
@@ -2521,7 +2545,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.0.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.11(@types/node@24.19.0)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0))
+      vitest: 4.1.11(@types/node@24.19.1)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))
 
   '@vitest/expect@4.1.11':
     dependencies:
@@ -2532,13 +2556,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.11(vite@7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0))':
+  '@vitest/mocker@4.1.11(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))':
     dependencies:
       '@vitest/spy': 4.1.11
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0)
 
   '@vitest/pretty-format@4.1.11':
     dependencies:
@@ -2649,7 +2673,7 @@ snapshots:
 
   clone@2.1.2: {}
 
-  codemaker@1.140.0:
+  codemaker@1.141.0:
     dependencies:
       camelcase: 6.3.0
       decamelize: 5.0.1
@@ -3137,12 +3161,12 @@ snapshots:
       - utf-8-validate
     optional: true
 
-  jsii-diff@1.140.0(supports-color@7.2.0):
+  jsii-diff@1.141.0(supports-color@7.2.0):
     dependencies:
-      '@jsii/check-node': 1.140.0
-      '@jsii/spec': 1.140.0
+      '@jsii/check-node': 1.141.0
+      '@jsii/spec': 1.141.0
       fs-extra: 10.1.0
-      jsii-reflect: 1.140.0
+      jsii-reflect: 1.141.0
       log4js: 6.9.1(supports-color@7.2.0)
       yargs: 17.7.3
     transitivePeerDependencies:
@@ -3150,7 +3174,7 @@ snapshots:
 
   jsii-docgen@10.12.6(jsii-rosetta@6.0.17(supports-color@7.2.0)):
     dependencies:
-      '@jsii/spec': 1.140.0
+      '@jsii/spec': 1.141.0
       case: 1.6.3
       fast-glob: 3.3.3
       fs-extra: 10.1.0
@@ -3160,16 +3184,16 @@ snapshots:
       semver: 7.8.5
       yargs: 16.2.2
 
-  jsii-pacmak@1.140.0(jsii-rosetta@6.0.17(supports-color@7.2.0)):
+  jsii-pacmak@1.141.0(jsii-rosetta@6.0.17(supports-color@7.2.0)):
     dependencies:
-      '@jsii/check-node': 1.140.0
-      '@jsii/spec': 1.140.0
+      '@jsii/check-node': 1.141.0
+      '@jsii/spec': 1.141.0
       clone: 2.1.2
-      codemaker: 1.140.0
+      codemaker: 1.141.0
       commonmark: 0.31.2
       escape-string-regexp: 4.0.0
       fs-extra: 10.1.0
-      jsii-reflect: 1.140.0
+      jsii-reflect: 1.141.0
       jsii-rosetta: 6.0.17(supports-color@7.2.0)
       semver: 7.8.5
       spdx-license-list: 6.12.0
@@ -3185,10 +3209,19 @@ snapshots:
       oo-ascii-tree: 1.140.0
       yargs: 17.7.3
 
+  jsii-reflect@1.141.0:
+    dependencies:
+      '@jsii/check-node': 1.141.0
+      '@jsii/spec': 1.141.0
+      chalk: 4.1.2
+      fs-extra: 10.1.0
+      oo-ascii-tree: 1.141.0
+      yargs: 17.7.3
+
   jsii-rosetta@6.0.17(supports-color@7.2.0):
     dependencies:
       '@jsii/check-node': 1.140.0
-      '@jsii/spec': 1.140.0
+      '@jsii/spec': 1.141.0
       '@xmldom/xmldom': 0.9.12
       chalk: 4.1.2
       commonmark: 0.31.2
@@ -3325,6 +3358,8 @@ snapshots:
   obug@2.1.1: {}
 
   oo-ascii-tree@1.140.0: {}
+
+  oo-ascii-tree@1.141.0: {}
 
   p-limit@2.3.0:
     dependencies:
@@ -3553,7 +3588,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  vite@7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0):
+  vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.5)
@@ -3562,15 +3597,15 @@ snapshots:
       rollup: 4.62.4
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 24.19.0
+      '@types/node': 24.19.1
       fsevents: 2.3.3
       tsx: 4.23.15
       yaml: 2.9.0
 
-  vitest@4.1.11(@types/node@24.19.0)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0)):
+  vitest@4.1.11(@types/node@24.19.1)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0))
+      '@vitest/mocker': 4.1.11(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))
       '@vitest/pretty-format': 4.1.11
       '@vitest/runner': 4.1.11
       '@vitest/snapshot': 4.1.11
@@ -3587,10 +3622,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.2.2(@types/node@24.19.0)(tsx@4.23.15)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.19.0
+      '@types/node': 24.19.1
       '@vitest/coverage-v8': 4.1.11(vitest@4.1.11)
       jsdom: 25.0.1(supports-color@7.2.0)
     transitivePeerDependencies:
