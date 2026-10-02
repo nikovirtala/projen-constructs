@@ -11,7 +11,7 @@
     "case": "^1.6.3"
   },
   "dependencies": {
-    "@mrgrain/cdk-esbuild": "^5.8.4",
+    "@mrgrain/cdk-esbuild": "^5.8.5",
     "constructs": "^10.8.1",
     "projen": "^0.103.27"
   },
@@ -20943,5 +20943,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "tGFWmW49JQfV6Vflo423ceXYdJ2N7w7DcVViLm97Us0="
+  "fingerprint": "1IgVmjgkQWXiqPNWWsu1BaInHuhd4tEdubiCwqhCdbo="
 }
