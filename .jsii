@@ -13,7 +13,7 @@
   "dependencies": {
     "@mrgrain/cdk-esbuild": "^5.8.5",
     "constructs": "^10.8.1",
-    "projen": "^0.104.0"
+    "projen": "^0.104.1"
   },
   "dependencyClosure": {
     "@aws-cdk/asset-awscli-v1": {
@@ -4325,7 +4325,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1258
+            "line": 1262
           },
           "name": "name",
           "type": {
@@ -4359,7 +4359,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1086
+            "line": 1090
           },
           "name": "addPackageManagerToDevEngines",
           "optional": true,
@@ -4378,7 +4378,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1080
+            "line": 1084
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -4397,7 +4397,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1072
+            "line": 1076
           },
           "name": "allowScripts",
           "optional": true,
@@ -4420,7 +4420,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 529
+            "line": 533
           },
           "name": "artifactsDirectory",
           "optional": true,
@@ -4439,7 +4439,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 523
+            "line": 527
           },
           "name": "auditDeps",
           "optional": true,
@@ -4457,7 +4457,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 514
+            "line": 518
           },
           "name": "auditDepsOptions",
           "optional": true,
@@ -4474,7 +4474,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1042
+            "line": 1046
           },
           "name": "authorEmail",
           "optional": true,
@@ -4491,7 +4491,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1037
+            "line": 1041
           },
           "name": "authorName",
           "optional": true,
@@ -4508,7 +4508,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1032
+            "line": 1036
           },
           "name": "authorOrganization",
           "optional": true,
@@ -4525,7 +4525,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1027
+            "line": 1031
           },
           "name": "authorUrl",
           "optional": true,
@@ -4543,7 +4543,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1172
+            "line": 1176
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -4562,7 +4562,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 508
+            "line": 512
           },
           "name": "autoApproveUpgrades",
           "optional": true,
@@ -4580,7 +4580,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1022
+            "line": 1026
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -4599,7 +4599,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1166
+            "line": 1170
           },
           "name": "autoMerge",
           "optional": true,
@@ -4618,7 +4618,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1158
+            "line": 1162
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -4636,7 +4636,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1016
+            "line": 1020
           },
           "name": "bin",
           "optional": true,
@@ -4659,7 +4659,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 501
+            "line": 505
           },
           "name": "biome",
           "optional": true,
@@ -4677,7 +4677,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 495
+            "line": 499
           },
           "name": "biomeOptions",
           "optional": true,
@@ -4694,7 +4694,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1008
+            "line": 1012
           },
           "name": "bugsEmail",
           "optional": true,
@@ -4711,7 +4711,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1003
+            "line": 1007
           },
           "name": "bugsUrl",
           "optional": true,
@@ -4729,7 +4729,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 489
+            "line": 493
           },
           "name": "buildWorkflow",
           "optional": true,
@@ -4746,7 +4746,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 483
+            "line": 487
           },
           "name": "buildWorkflowOptions",
           "optional": true,
@@ -4765,7 +4765,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 715
+            "line": 719
           },
           "name": "bumpPackage",
           "optional": true,
@@ -4783,7 +4783,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 998
+            "line": 1002
           },
           "name": "bundledDeps",
           "optional": true,
@@ -4805,7 +4805,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 478
+            "line": 482
           },
           "name": "bundlerOptions",
           "optional": true,
@@ -4823,7 +4823,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 983
+            "line": 987
           },
           "name": "bunVersion",
           "optional": true,
@@ -4898,7 +4898,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 473
+            "line": 477
           },
           "name": "checkLicenses",
           "optional": true,
@@ -4916,7 +4916,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1150
+            "line": 1154
           },
           "name": "clobber",
           "optional": true,
@@ -4935,7 +4935,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 977
+            "line": 981
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -4953,7 +4953,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 466
+            "line": 470
           },
           "name": "codeCov",
           "optional": true,
@@ -4971,7 +4971,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 458
+            "line": 462
           },
           "name": "codeCovTokenSecret",
           "optional": true,
@@ -4989,7 +4989,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1251
+            "line": 1255
           },
           "name": "commitGenerated",
           "optional": true,
@@ -5063,7 +5063,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 970
+            "line": 974
           },
           "name": "config",
           "optional": true,
@@ -5105,7 +5105,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 452
+            "line": 456
           },
           "name": "copyrightOwner",
           "optional": true,
@@ -5124,7 +5124,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 443
+            "line": 447
           },
           "name": "copyrightPeriod",
           "optional": true,
@@ -5143,7 +5143,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 963
+            "line": 967
           },
           "name": "dedupeDeps",
           "optional": true,
@@ -5164,7 +5164,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 434
+            "line": 438
           },
           "name": "defaultReleaseBranch",
           "optional": true,
@@ -5183,7 +5183,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 943
+            "line": 947
           },
           "name": "deleteOrphanedLockFiles",
           "optional": true,
@@ -5202,7 +5202,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 427
+            "line": 431
           },
           "name": "dependabot",
           "optional": true,
@@ -5220,7 +5220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 420
+            "line": 424
           },
           "name": "dependabotOptions",
           "optional": true,
@@ -5242,7 +5242,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 933
+            "line": 937
           },
           "name": "deps",
           "optional": true,
@@ -5266,7 +5266,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 414
+            "line": 418
           },
           "name": "depsUpgrade",
           "optional": true,
@@ -5284,7 +5284,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 407
+            "line": 411
           },
           "name": "depsUpgradeOptions",
           "optional": true,
@@ -5305,7 +5305,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 920
+            "line": 924
           },
           "name": "description",
           "optional": true,
@@ -5323,7 +5323,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1144
+            "line": 1148
           },
           "name": "devContainer",
           "optional": true,
@@ -5345,7 +5345,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 912
+            "line": 916
           },
           "name": "devDeps",
           "optional": true,
@@ -5367,7 +5367,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 895
+            "line": 899
           },
           "name": "devEngines",
           "optional": true,
@@ -5385,7 +5385,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 306
+            "line": 310
           },
           "name": "disableTsconfig",
           "optional": true,
@@ -5403,7 +5403,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 300
+            "line": 304
           },
           "name": "disableTsconfigDev",
           "optional": true,
@@ -5421,7 +5421,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 294
+            "line": 298
           },
           "name": "docgen",
           "optional": true,
@@ -5457,7 +5457,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 288
+            "line": 292
           },
           "name": "docsDirectory",
           "optional": true,
@@ -5493,7 +5493,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 887
+            "line": 891
           },
           "name": "entrypoint",
           "optional": true,
@@ -5511,7 +5511,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 282
+            "line": 286
           },
           "name": "entrypointTypes",
           "optional": true,
@@ -5571,7 +5571,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1138
+            "line": 1142
           },
           "name": "github",
           "optional": true,
@@ -5589,7 +5589,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1131
+            "line": 1135
           },
           "name": "githubOptions",
           "optional": true,
@@ -5608,7 +5608,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 708
+            "line": 712
           },
           "name": "githubReleaseLatest",
           "optional": true,
@@ -5625,7 +5625,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 401
+            "line": 405
           },
           "name": "gitignore",
           "optional": true,
@@ -5647,7 +5647,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1245
+            "line": 1249
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -5664,7 +5664,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1240
+            "line": 1244
           },
           "name": "gitOptions",
           "optional": true,
@@ -5682,7 +5682,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1125
+            "line": 1129
           },
           "name": "gitpod",
           "optional": true,
@@ -5700,7 +5700,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1263
+            "line": 1267
           },
           "name": "homebrew",
           "optional": true,
@@ -5718,7 +5718,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1268
+            "line": 1272
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -5735,7 +5735,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 880
+            "line": 884
           },
           "name": "homepage",
           "optional": true,
@@ -5771,7 +5771,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 700
+            "line": 704
           },
           "name": "jsiiReleaseVersion",
           "optional": true,
@@ -5810,7 +5810,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 875
+            "line": 879
           },
           "name": "keywords",
           "optional": true,
@@ -5881,13 +5881,14 @@
           "abstract": true,
           "docs": {
             "default": "\"lib\"",
+            "remarks": "When `libdir` is changed, set `entrypoint` to match it (for example\n`libdir: \"dist\"` with `entrypoint: \"dist/index.js\"`). `types` follows the\nentrypoint rather than `libdir`, and `main` still defaults to\n`lib/index.js`.",
             "stability": "experimental",
             "summary": "Typescript  artifacts output directory."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 276
+            "line": 280
           },
           "name": "libdir",
           "optional": true,
@@ -5906,7 +5907,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 870
+            "line": 874
           },
           "name": "license",
           "optional": true,
@@ -5924,7 +5925,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 862
+            "line": 866
           },
           "name": "licensed",
           "optional": true,
@@ -5942,7 +5943,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1235
+            "line": 1239
           },
           "name": "logging",
           "optional": true,
@@ -5961,7 +5962,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 694
+            "line": 698
           },
           "name": "majorVersion",
           "optional": true,
@@ -5980,7 +5981,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 856
+            "line": 860
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -5999,7 +6000,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 686
+            "line": 690
           },
           "name": "minMajorVersion",
           "optional": true,
@@ -6018,7 +6019,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 845
+            "line": 849
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -6036,7 +6037,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1273
+            "line": 1277
           },
           "name": "mise",
           "optional": true,
@@ -6054,7 +6055,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1278
+            "line": 1282
           },
           "name": "miseOptions",
           "optional": true,
@@ -6073,7 +6074,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 676
+            "line": 680
           },
           "name": "nextVersionCommand",
           "optional": true,
@@ -6091,7 +6092,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 830
+            "line": 834
           },
           "name": "npmAccess",
           "optional": true,
@@ -6110,7 +6111,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 652
+            "line": 656
           },
           "name": "npmDistTag",
           "optional": true,
@@ -6128,7 +6129,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 396
+            "line": 400
           },
           "name": "npmignoreEnabled",
           "optional": true,
@@ -6145,7 +6146,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 390
+            "line": 394
           },
           "name": "npmIgnoreOptions",
           "optional": true,
@@ -6164,7 +6165,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 822
+            "line": 826
           },
           "name": "npmProvenance",
           "optional": true,
@@ -6183,7 +6184,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 811
+            "line": 815
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -6201,7 +6202,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 804
+            "line": 808
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -6219,7 +6220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 798
+            "line": 802
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -6238,7 +6239,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1229
+            "line": 1233
           },
           "name": "outdir",
           "optional": true,
@@ -6256,7 +6257,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 385
+            "line": 389
           },
           "name": "package",
           "optional": true,
@@ -6274,7 +6275,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 792
+            "line": 796
           },
           "name": "packageManager",
           "optional": true,
@@ -6295,7 +6296,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 786
+            "line": 790
           },
           "name": "packageName",
           "optional": true,
@@ -6312,7 +6313,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1218
+            "line": 1222
           },
           "name": "parent",
           "optional": true,
@@ -6329,7 +6330,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 779
+            "line": 783
           },
           "name": "peerDependencyOptions",
           "optional": true,
@@ -6348,7 +6349,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 774
+            "line": 778
           },
           "name": "peerDeps",
           "optional": true,
@@ -6371,7 +6372,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 755
+            "line": 759
           },
           "name": "pnpmOptions",
           "optional": true,
@@ -6389,7 +6390,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 749
+            "line": 753
           },
           "name": "pnpmVersion",
           "optional": true,
@@ -6407,7 +6408,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 644
+            "line": 648
           },
           "name": "postBuildSteps",
           "optional": true,
@@ -6430,7 +6431,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 638
+            "line": 642
           },
           "name": "prerelease",
           "optional": true,
@@ -6448,7 +6449,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1213
+            "line": 1217
           },
           "name": "projectTree",
           "optional": true,
@@ -6467,7 +6468,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1207
+            "line": 1211
           },
           "name": "projenCommand",
           "optional": true,
@@ -6485,7 +6486,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1119
+            "line": 1123
           },
           "name": "projenCredentials",
           "optional": true,
@@ -6503,7 +6504,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 379
+            "line": 383
           },
           "name": "projenDevDependency",
           "optional": true,
@@ -6521,7 +6522,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 373
+            "line": 377
           },
           "name": "projenrcJs",
           "optional": true,
@@ -6539,7 +6540,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1196
+            "line": 1200
           },
           "name": "projenrcJson",
           "optional": true,
@@ -6557,7 +6558,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1190
+            "line": 1194
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -6575,7 +6576,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 367
+            "line": 371
           },
           "name": "projenrcJsOptions",
           "optional": true,
@@ -6631,7 +6632,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 361
+            "line": 365
           },
           "name": "projenVersion",
           "optional": true,
@@ -6649,7 +6650,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 632
+            "line": 636
           },
           "name": "publishDryRun",
           "optional": true,
@@ -6668,7 +6669,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 626
+            "line": 630
           },
           "name": "publishTasks",
           "optional": true,
@@ -6758,7 +6759,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 355
+            "line": 359
           },
           "name": "pullRequestTemplate",
           "optional": true,
@@ -6776,7 +6777,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 349
+            "line": 353
           },
           "name": "pullRequestTemplateContents",
           "optional": true,
@@ -6799,7 +6800,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1113
+            "line": 1117
           },
           "name": "readme",
           "optional": true,
@@ -6817,7 +6818,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 618
+            "line": 622
           },
           "name": "releasableCommits",
           "optional": true,
@@ -6835,7 +6836,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 343
+            "line": 347
           },
           "name": "release",
           "optional": true,
@@ -6854,7 +6855,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 612
+            "line": 616
           },
           "name": "releaseBranches",
           "optional": true,
@@ -6878,7 +6879,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 599
+            "line": 603
           },
           "name": "releaseEnvironment",
           "optional": true,
@@ -6896,7 +6897,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 588
+            "line": 592
           },
           "name": "releaseFailureIssue",
           "optional": true,
@@ -6915,7 +6916,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 582
+            "line": 586
           },
           "name": "releaseFailureIssueLabel",
           "optional": true,
@@ -6934,7 +6935,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 575
+            "line": 579
           },
           "name": "releaseTagPrefix",
           "optional": true,
@@ -6952,7 +6953,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 337
+            "line": 341
           },
           "name": "releaseToNpm",
           "optional": true,
@@ -6970,7 +6971,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 565
+            "line": 569
           },
           "name": "releaseTrigger",
           "optional": true,
@@ -6988,7 +6989,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 559
+            "line": 563
           },
           "name": "releaseWorkflowEnv",
           "optional": true,
@@ -7011,7 +7012,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 553
+            "line": 557
           },
           "name": "releaseWorkflowName",
           "optional": true,
@@ -7028,7 +7029,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 547
+            "line": 551
           },
           "name": "releaseWorkflowSetupSteps",
           "optional": true,
@@ -7051,7 +7052,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1184
+            "line": 1188
           },
           "name": "renovatebot",
           "optional": true,
@@ -7069,7 +7070,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1178
+            "line": 1182
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -7087,7 +7088,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 743
+            "line": 747
           },
           "name": "repository",
           "optional": true,
@@ -7104,7 +7105,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 737
+            "line": 741
           },
           "name": "repositoryDirectory",
           "optional": true,
@@ -7158,7 +7159,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 732
+            "line": 736
           },
           "name": "scopedPackagesOptions",
           "optional": true,
@@ -7216,7 +7217,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 726
+            "line": 730
           },
           "name": "stability",
           "optional": true,
@@ -7235,7 +7236,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1107
+            "line": 1111
           },
           "name": "stale",
           "optional": true,
@@ -7254,7 +7255,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1100
+            "line": 1104
           },
           "name": "staleOptions",
           "optional": true,
@@ -7404,7 +7405,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 542
+            "line": 546
           },
           "name": "versionrcOptions",
           "optional": true,
@@ -7427,7 +7428,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1283
+            "line": 1287
           },
           "name": "vitest",
           "optional": true,
@@ -7445,7 +7446,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1288
+            "line": 1292
           },
           "name": "vitestOptions",
           "optional": true,
@@ -7464,7 +7465,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 1093
+            "line": 1097
           },
           "name": "vscode",
           "optional": true,
@@ -7482,7 +7483,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 331
+            "line": 335
           },
           "name": "workflowBootstrapSteps",
           "optional": true,
@@ -7505,7 +7506,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 535
+            "line": 539
           },
           "name": "workflowContainerImage",
           "optional": true,
@@ -7523,7 +7524,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 325
+            "line": 329
           },
           "name": "workflowGitIdentity",
           "optional": true,
@@ -7542,7 +7543,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 319
+            "line": 323
           },
           "name": "workflowNodeVersion",
           "optional": true,
@@ -7560,7 +7561,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 312
+            "line": 316
           },
           "name": "workflowPackageCache",
           "optional": true,
@@ -7578,7 +7579,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-construct-library-options.generated.ts",
-            "line": 721
+            "line": 725
           },
           "name": "yarnBerryOptions",
           "optional": true,
@@ -7671,7 +7672,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1203
+            "line": 1207
           },
           "name": "name",
           "type": {
@@ -7688,7 +7689,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1031
+            "line": 1035
           },
           "name": "addPackageManagerToDevEngines",
           "optional": true,
@@ -7707,7 +7708,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1025
+            "line": 1029
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -7726,7 +7727,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1017
+            "line": 1021
           },
           "name": "allowScripts",
           "optional": true,
@@ -7784,7 +7785,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 474
+            "line": 478
           },
           "name": "artifactsDirectory",
           "optional": true,
@@ -7803,7 +7804,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 468
+            "line": 472
           },
           "name": "auditDeps",
           "optional": true,
@@ -7821,7 +7822,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 459
+            "line": 463
           },
           "name": "auditDepsOptions",
           "optional": true,
@@ -7838,7 +7839,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 987
+            "line": 991
           },
           "name": "authorEmail",
           "optional": true,
@@ -7855,7 +7856,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 982
+            "line": 986
           },
           "name": "authorName",
           "optional": true,
@@ -7872,7 +7873,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 977
+            "line": 981
           },
           "name": "authorOrganization",
           "optional": true,
@@ -7889,7 +7890,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 972
+            "line": 976
           },
           "name": "authorUrl",
           "optional": true,
@@ -7907,7 +7908,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1117
+            "line": 1121
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -7926,7 +7927,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 453
+            "line": 457
           },
           "name": "autoApproveUpgrades",
           "optional": true,
@@ -7944,7 +7945,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 967
+            "line": 971
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -7963,7 +7964,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1111
+            "line": 1115
           },
           "name": "autoMerge",
           "optional": true,
@@ -7982,7 +7983,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1103
+            "line": 1107
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -8000,7 +8001,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 961
+            "line": 965
           },
           "name": "bin",
           "optional": true,
@@ -8023,7 +8024,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 446
+            "line": 450
           },
           "name": "biome",
           "optional": true,
@@ -8041,7 +8042,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 440
+            "line": 444
           },
           "name": "biomeOptions",
           "optional": true,
@@ -8058,7 +8059,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 953
+            "line": 957
           },
           "name": "bugsEmail",
           "optional": true,
@@ -8075,7 +8076,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 948
+            "line": 952
           },
           "name": "bugsUrl",
           "optional": true,
@@ -8112,7 +8113,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 434
+            "line": 438
           },
           "name": "buildWorkflow",
           "optional": true,
@@ -8129,7 +8130,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 428
+            "line": 432
           },
           "name": "buildWorkflowOptions",
           "optional": true,
@@ -8148,7 +8149,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 660
+            "line": 664
           },
           "name": "bumpPackage",
           "optional": true,
@@ -8166,7 +8167,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 943
+            "line": 947
           },
           "name": "bundledDeps",
           "optional": true,
@@ -8188,7 +8189,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 423
+            "line": 427
           },
           "name": "bundlerOptions",
           "optional": true,
@@ -8206,7 +8207,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 928
+            "line": 932
           },
           "name": "bunVersion",
           "optional": true,
@@ -8280,7 +8281,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 418
+            "line": 422
           },
           "name": "checkLicenses",
           "optional": true,
@@ -8298,7 +8299,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1095
+            "line": 1099
           },
           "name": "clobber",
           "optional": true,
@@ -8317,7 +8318,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 922
+            "line": 926
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -8335,7 +8336,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 411
+            "line": 415
           },
           "name": "codeCov",
           "optional": true,
@@ -8353,7 +8354,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 403
+            "line": 407
           },
           "name": "codeCovTokenSecret",
           "optional": true,
@@ -8371,7 +8372,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1196
+            "line": 1200
           },
           "name": "commitGenerated",
           "optional": true,
@@ -8390,7 +8391,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 915
+            "line": 919
           },
           "name": "config",
           "optional": true,
@@ -8455,7 +8456,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 397
+            "line": 401
           },
           "name": "copyrightOwner",
           "optional": true,
@@ -8474,7 +8475,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 388
+            "line": 392
           },
           "name": "copyrightPeriod",
           "optional": true,
@@ -8493,7 +8494,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 908
+            "line": 912
           },
           "name": "dedupeDeps",
           "optional": true,
@@ -8514,7 +8515,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 379
+            "line": 383
           },
           "name": "defaultReleaseBranch",
           "optional": true,
@@ -8533,7 +8534,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 888
+            "line": 892
           },
           "name": "deleteOrphanedLockFiles",
           "optional": true,
@@ -8552,7 +8553,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 372
+            "line": 376
           },
           "name": "dependabot",
           "optional": true,
@@ -8570,7 +8571,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 365
+            "line": 369
           },
           "name": "dependabotOptions",
           "optional": true,
@@ -8592,7 +8593,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 878
+            "line": 882
           },
           "name": "deps",
           "optional": true,
@@ -8616,7 +8617,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 359
+            "line": 363
           },
           "name": "depsUpgrade",
           "optional": true,
@@ -8634,7 +8635,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 352
+            "line": 356
           },
           "name": "depsUpgradeOptions",
           "optional": true,
@@ -8655,7 +8656,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 865
+            "line": 869
           },
           "name": "description",
           "optional": true,
@@ -8673,7 +8674,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1089
+            "line": 1093
           },
           "name": "devContainer",
           "optional": true,
@@ -8695,7 +8696,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 857
+            "line": 861
           },
           "name": "devDeps",
           "optional": true,
@@ -8717,7 +8718,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 840
+            "line": 844
           },
           "name": "devEngines",
           "optional": true,
@@ -8735,7 +8736,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 251
+            "line": 255
           },
           "name": "disableTsconfig",
           "optional": true,
@@ -8753,7 +8754,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 245
+            "line": 249
           },
           "name": "disableTsconfigDev",
           "optional": true,
@@ -8771,7 +8772,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 239
+            "line": 243
           },
           "name": "docgen",
           "optional": true,
@@ -8789,7 +8790,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 233
+            "line": 237
           },
           "name": "docsDirectory",
           "optional": true,
@@ -8825,7 +8826,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 832
+            "line": 836
           },
           "name": "entrypoint",
           "optional": true,
@@ -8843,7 +8844,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 227
+            "line": 231
           },
           "name": "entrypointTypes",
           "optional": true,
@@ -8898,7 +8899,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1083
+            "line": 1087
           },
           "name": "github",
           "optional": true,
@@ -8916,7 +8917,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1076
+            "line": 1080
           },
           "name": "githubOptions",
           "optional": true,
@@ -8935,7 +8936,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 653
+            "line": 657
           },
           "name": "githubReleaseLatest",
           "optional": true,
@@ -8952,7 +8953,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 346
+            "line": 350
           },
           "name": "gitignore",
           "optional": true,
@@ -8974,7 +8975,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1190
+            "line": 1194
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -8991,7 +8992,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1185
+            "line": 1189
           },
           "name": "gitOptions",
           "optional": true,
@@ -9009,7 +9010,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1070
+            "line": 1074
           },
           "name": "gitpod",
           "optional": true,
@@ -9027,7 +9028,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1208
+            "line": 1212
           },
           "name": "homebrew",
           "optional": true,
@@ -9045,7 +9046,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1213
+            "line": 1217
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -9062,7 +9063,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 825
+            "line": 829
           },
           "name": "homepage",
           "optional": true,
@@ -9098,7 +9099,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 645
+            "line": 649
           },
           "name": "jsiiReleaseVersion",
           "optional": true,
@@ -9115,7 +9116,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 820
+            "line": 824
           },
           "name": "keywords",
           "optional": true,
@@ -9186,13 +9187,14 @@
           "abstract": true,
           "docs": {
             "default": "\"lib\"",
+            "remarks": "When `libdir` is changed, set `entrypoint` to match it (for example\n`libdir: \"dist\"` with `entrypoint: \"dist/index.js\"`). `types` follows the\nentrypoint rather than `libdir`, and `main` still defaults to\n`lib/index.js`.",
             "stability": "experimental",
             "summary": "Typescript  artifacts output directory."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 221
+            "line": 225
           },
           "name": "libdir",
           "optional": true,
@@ -9211,7 +9213,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 815
+            "line": 819
           },
           "name": "license",
           "optional": true,
@@ -9229,7 +9231,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 807
+            "line": 811
           },
           "name": "licensed",
           "optional": true,
@@ -9247,7 +9249,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1180
+            "line": 1184
           },
           "name": "logging",
           "optional": true,
@@ -9266,7 +9268,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 639
+            "line": 643
           },
           "name": "majorVersion",
           "optional": true,
@@ -9285,7 +9287,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 801
+            "line": 805
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -9304,7 +9306,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 631
+            "line": 635
           },
           "name": "minMajorVersion",
           "optional": true,
@@ -9323,7 +9325,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 790
+            "line": 794
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -9341,7 +9343,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1218
+            "line": 1222
           },
           "name": "mise",
           "optional": true,
@@ -9359,7 +9361,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1223
+            "line": 1227
           },
           "name": "miseOptions",
           "optional": true,
@@ -9378,7 +9380,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 621
+            "line": 625
           },
           "name": "nextVersionCommand",
           "optional": true,
@@ -9396,7 +9398,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 775
+            "line": 779
           },
           "name": "npmAccess",
           "optional": true,
@@ -9415,7 +9417,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 597
+            "line": 601
           },
           "name": "npmDistTag",
           "optional": true,
@@ -9433,7 +9435,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 341
+            "line": 345
           },
           "name": "npmignoreEnabled",
           "optional": true,
@@ -9450,7 +9452,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 335
+            "line": 339
           },
           "name": "npmIgnoreOptions",
           "optional": true,
@@ -9469,7 +9471,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 767
+            "line": 771
           },
           "name": "npmProvenance",
           "optional": true,
@@ -9488,7 +9490,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 756
+            "line": 760
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -9506,7 +9508,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 749
+            "line": 753
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -9524,7 +9526,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 743
+            "line": 747
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -9543,7 +9545,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1174
+            "line": 1178
           },
           "name": "outdir",
           "optional": true,
@@ -9561,7 +9563,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 330
+            "line": 334
           },
           "name": "package",
           "optional": true,
@@ -9579,7 +9581,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 737
+            "line": 741
           },
           "name": "packageManager",
           "optional": true,
@@ -9600,7 +9602,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 731
+            "line": 735
           },
           "name": "packageName",
           "optional": true,
@@ -9617,7 +9619,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1163
+            "line": 1167
           },
           "name": "parent",
           "optional": true,
@@ -9634,7 +9636,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 724
+            "line": 728
           },
           "name": "peerDependencyOptions",
           "optional": true,
@@ -9653,7 +9655,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 719
+            "line": 723
           },
           "name": "peerDeps",
           "optional": true,
@@ -9676,7 +9678,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 700
+            "line": 704
           },
           "name": "pnpmOptions",
           "optional": true,
@@ -9694,7 +9696,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 694
+            "line": 698
           },
           "name": "pnpmVersion",
           "optional": true,
@@ -9712,7 +9714,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 589
+            "line": 593
           },
           "name": "postBuildSteps",
           "optional": true,
@@ -9735,7 +9737,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 583
+            "line": 587
           },
           "name": "prerelease",
           "optional": true,
@@ -9753,7 +9755,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1158
+            "line": 1162
           },
           "name": "projectTree",
           "optional": true,
@@ -9772,7 +9774,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1152
+            "line": 1156
           },
           "name": "projenCommand",
           "optional": true,
@@ -9790,7 +9792,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1064
+            "line": 1068
           },
           "name": "projenCredentials",
           "optional": true,
@@ -9808,7 +9810,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 324
+            "line": 328
           },
           "name": "projenDevDependency",
           "optional": true,
@@ -9826,7 +9828,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 318
+            "line": 322
           },
           "name": "projenrcJs",
           "optional": true,
@@ -9844,7 +9846,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1141
+            "line": 1145
           },
           "name": "projenrcJson",
           "optional": true,
@@ -9862,7 +9864,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1135
+            "line": 1139
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -9880,7 +9882,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 312
+            "line": 316
           },
           "name": "projenrcJsOptions",
           "optional": true,
@@ -9936,7 +9938,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 306
+            "line": 310
           },
           "name": "projenVersion",
           "optional": true,
@@ -9954,7 +9956,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 577
+            "line": 581
           },
           "name": "publishDryRun",
           "optional": true,
@@ -9973,7 +9975,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 571
+            "line": 575
           },
           "name": "publishTasks",
           "optional": true,
@@ -9991,7 +9993,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 300
+            "line": 304
           },
           "name": "pullRequestTemplate",
           "optional": true,
@@ -10009,7 +10011,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 294
+            "line": 298
           },
           "name": "pullRequestTemplateContents",
           "optional": true,
@@ -10032,7 +10034,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1058
+            "line": 1062
           },
           "name": "readme",
           "optional": true,
@@ -10050,7 +10052,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 563
+            "line": 567
           },
           "name": "releasableCommits",
           "optional": true,
@@ -10068,7 +10070,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 288
+            "line": 292
           },
           "name": "release",
           "optional": true,
@@ -10087,7 +10089,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 557
+            "line": 561
           },
           "name": "releaseBranches",
           "optional": true,
@@ -10111,7 +10113,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 544
+            "line": 548
           },
           "name": "releaseEnvironment",
           "optional": true,
@@ -10129,7 +10131,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 533
+            "line": 537
           },
           "name": "releaseFailureIssue",
           "optional": true,
@@ -10148,7 +10150,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 527
+            "line": 531
           },
           "name": "releaseFailureIssueLabel",
           "optional": true,
@@ -10167,7 +10169,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 520
+            "line": 524
           },
           "name": "releaseTagPrefix",
           "optional": true,
@@ -10185,7 +10187,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 282
+            "line": 286
           },
           "name": "releaseToNpm",
           "optional": true,
@@ -10203,7 +10205,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 510
+            "line": 514
           },
           "name": "releaseTrigger",
           "optional": true,
@@ -10221,7 +10223,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 504
+            "line": 508
           },
           "name": "releaseWorkflowEnv",
           "optional": true,
@@ -10244,7 +10246,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 498
+            "line": 502
           },
           "name": "releaseWorkflowName",
           "optional": true,
@@ -10261,7 +10263,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 492
+            "line": 496
           },
           "name": "releaseWorkflowSetupSteps",
           "optional": true,
@@ -10284,7 +10286,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1129
+            "line": 1133
           },
           "name": "renovatebot",
           "optional": true,
@@ -10302,7 +10304,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1123
+            "line": 1127
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -10320,7 +10322,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 688
+            "line": 692
           },
           "name": "repository",
           "optional": true,
@@ -10337,7 +10339,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 682
+            "line": 686
           },
           "name": "repositoryDirectory",
           "optional": true,
@@ -10392,7 +10394,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 677
+            "line": 681
           },
           "name": "scopedPackagesOptions",
           "optional": true,
@@ -10450,7 +10452,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 671
+            "line": 675
           },
           "name": "stability",
           "optional": true,
@@ -10469,7 +10471,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1052
+            "line": 1056
           },
           "name": "stale",
           "optional": true,
@@ -10488,7 +10490,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1045
+            "line": 1049
           },
           "name": "staleOptions",
           "optional": true,
@@ -10619,7 +10621,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 487
+            "line": 491
           },
           "name": "versionrcOptions",
           "optional": true,
@@ -10642,7 +10644,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1228
+            "line": 1232
           },
           "name": "vitest",
           "optional": true,
@@ -10660,7 +10662,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1233
+            "line": 1237
           },
           "name": "vitestOptions",
           "optional": true,
@@ -10679,7 +10681,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 1038
+            "line": 1042
           },
           "name": "vscode",
           "optional": true,
@@ -10743,7 +10745,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 276
+            "line": 280
           },
           "name": "workflowBootstrapSteps",
           "optional": true,
@@ -10766,7 +10768,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 480
+            "line": 484
           },
           "name": "workflowContainerImage",
           "optional": true,
@@ -10784,7 +10786,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 270
+            "line": 274
           },
           "name": "workflowGitIdentity",
           "optional": true,
@@ -10803,7 +10805,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 264
+            "line": 268
           },
           "name": "workflowNodeVersion",
           "optional": true,
@@ -10821,7 +10823,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 257
+            "line": 261
           },
           "name": "workflowPackageCache",
           "optional": true,
@@ -10839,7 +10841,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/awscdk-typescript-app-options.generated.ts",
-            "line": 666
+            "line": 670
           },
           "name": "yarnBerryOptions",
           "optional": true,
@@ -11966,7 +11968,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1172
+            "line": 1176
           },
           "name": "name",
           "type": {
@@ -12000,7 +12002,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1000
+            "line": 1004
           },
           "name": "addPackageManagerToDevEngines",
           "optional": true,
@@ -12019,7 +12021,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 994
+            "line": 998
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -12038,7 +12040,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 986
+            "line": 990
           },
           "name": "allowScripts",
           "optional": true,
@@ -12061,7 +12063,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 443
+            "line": 447
           },
           "name": "artifactsDirectory",
           "optional": true,
@@ -12080,7 +12082,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 437
+            "line": 441
           },
           "name": "auditDeps",
           "optional": true,
@@ -12098,7 +12100,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 428
+            "line": 432
           },
           "name": "auditDepsOptions",
           "optional": true,
@@ -12115,7 +12117,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 956
+            "line": 960
           },
           "name": "authorEmail",
           "optional": true,
@@ -12132,7 +12134,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 951
+            "line": 955
           },
           "name": "authorName",
           "optional": true,
@@ -12149,7 +12151,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 946
+            "line": 950
           },
           "name": "authorOrganization",
           "optional": true,
@@ -12166,7 +12168,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 941
+            "line": 945
           },
           "name": "authorUrl",
           "optional": true,
@@ -12184,7 +12186,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1086
+            "line": 1090
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -12203,7 +12205,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 422
+            "line": 426
           },
           "name": "autoApproveUpgrades",
           "optional": true,
@@ -12221,7 +12223,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 936
+            "line": 940
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -12240,7 +12242,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1080
+            "line": 1084
           },
           "name": "autoMerge",
           "optional": true,
@@ -12259,7 +12261,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1072
+            "line": 1076
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -12277,7 +12279,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 930
+            "line": 934
           },
           "name": "bin",
           "optional": true,
@@ -12300,7 +12302,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 415
+            "line": 419
           },
           "name": "biome",
           "optional": true,
@@ -12318,7 +12320,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 409
+            "line": 413
           },
           "name": "biomeOptions",
           "optional": true,
@@ -12335,7 +12337,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 922
+            "line": 926
           },
           "name": "bugsEmail",
           "optional": true,
@@ -12352,7 +12354,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 917
+            "line": 921
           },
           "name": "bugsUrl",
           "optional": true,
@@ -12370,7 +12372,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 403
+            "line": 407
           },
           "name": "buildWorkflow",
           "optional": true,
@@ -12387,7 +12389,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 397
+            "line": 401
           },
           "name": "buildWorkflowOptions",
           "optional": true,
@@ -12406,7 +12408,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 629
+            "line": 633
           },
           "name": "bumpPackage",
           "optional": true,
@@ -12424,7 +12426,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 912
+            "line": 916
           },
           "name": "bundledDeps",
           "optional": true,
@@ -12446,7 +12448,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 392
+            "line": 396
           },
           "name": "bundlerOptions",
           "optional": true,
@@ -12464,7 +12466,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 897
+            "line": 901
           },
           "name": "bunVersion",
           "optional": true,
@@ -12483,7 +12485,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 387
+            "line": 391
           },
           "name": "checkLicenses",
           "optional": true,
@@ -12501,7 +12503,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1064
+            "line": 1068
           },
           "name": "clobber",
           "optional": true,
@@ -12520,7 +12522,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 891
+            "line": 895
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -12538,7 +12540,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 380
+            "line": 384
           },
           "name": "codeCov",
           "optional": true,
@@ -12556,7 +12558,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 372
+            "line": 376
           },
           "name": "codeCovTokenSecret",
           "optional": true,
@@ -12574,7 +12576,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1165
+            "line": 1169
           },
           "name": "commitGenerated",
           "optional": true,
@@ -12648,7 +12650,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 884
+            "line": 888
           },
           "name": "config",
           "optional": true,
@@ -12672,7 +12674,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 366
+            "line": 370
           },
           "name": "copyrightOwner",
           "optional": true,
@@ -12691,7 +12693,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 357
+            "line": 361
           },
           "name": "copyrightPeriod",
           "optional": true,
@@ -12710,7 +12712,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 877
+            "line": 881
           },
           "name": "dedupeDeps",
           "optional": true,
@@ -12731,7 +12733,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 348
+            "line": 352
           },
           "name": "defaultReleaseBranch",
           "optional": true,
@@ -12750,7 +12752,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 857
+            "line": 861
           },
           "name": "deleteOrphanedLockFiles",
           "optional": true,
@@ -12769,7 +12771,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 341
+            "line": 345
           },
           "name": "dependabot",
           "optional": true,
@@ -12787,7 +12789,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 334
+            "line": 338
           },
           "name": "dependabotOptions",
           "optional": true,
@@ -12809,7 +12811,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 847
+            "line": 851
           },
           "name": "deps",
           "optional": true,
@@ -12833,7 +12835,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 328
+            "line": 332
           },
           "name": "depsUpgrade",
           "optional": true,
@@ -12851,7 +12853,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 321
+            "line": 325
           },
           "name": "depsUpgradeOptions",
           "optional": true,
@@ -12872,7 +12874,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 834
+            "line": 838
           },
           "name": "description",
           "optional": true,
@@ -12890,7 +12892,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1058
+            "line": 1062
           },
           "name": "devContainer",
           "optional": true,
@@ -12912,7 +12914,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 826
+            "line": 830
           },
           "name": "devDeps",
           "optional": true,
@@ -12934,7 +12936,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 809
+            "line": 813
           },
           "name": "devEngines",
           "optional": true,
@@ -12952,7 +12954,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 220
+            "line": 224
           },
           "name": "disableTsconfig",
           "optional": true,
@@ -12970,7 +12972,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 214
+            "line": 218
           },
           "name": "disableTsconfigDev",
           "optional": true,
@@ -12988,7 +12990,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 208
+            "line": 212
           },
           "name": "docgen",
           "optional": true,
@@ -13024,7 +13026,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 202
+            "line": 206
           },
           "name": "docsDirectory",
           "optional": true,
@@ -13042,7 +13044,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 801
+            "line": 805
           },
           "name": "entrypoint",
           "optional": true,
@@ -13060,7 +13062,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 196
+            "line": 200
           },
           "name": "entrypointTypes",
           "optional": true,
@@ -13102,7 +13104,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1052
+            "line": 1056
           },
           "name": "github",
           "optional": true,
@@ -13120,7 +13122,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1045
+            "line": 1049
           },
           "name": "githubOptions",
           "optional": true,
@@ -13139,7 +13141,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 622
+            "line": 626
           },
           "name": "githubReleaseLatest",
           "optional": true,
@@ -13156,7 +13158,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 315
+            "line": 319
           },
           "name": "gitignore",
           "optional": true,
@@ -13178,7 +13180,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1159
+            "line": 1163
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -13195,7 +13197,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1154
+            "line": 1158
           },
           "name": "gitOptions",
           "optional": true,
@@ -13213,7 +13215,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1039
+            "line": 1043
           },
           "name": "gitpod",
           "optional": true,
@@ -13231,7 +13233,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1177
+            "line": 1181
           },
           "name": "homebrew",
           "optional": true,
@@ -13249,7 +13251,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1182
+            "line": 1186
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -13266,7 +13268,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 794
+            "line": 798
           },
           "name": "homepage",
           "optional": true,
@@ -13284,7 +13286,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 614
+            "line": 618
           },
           "name": "jsiiReleaseVersion",
           "optional": true,
@@ -13323,7 +13325,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 789
+            "line": 793
           },
           "name": "keywords",
           "optional": true,
@@ -13340,13 +13342,14 @@
           "abstract": true,
           "docs": {
             "default": "\"lib\"",
+            "remarks": "When `libdir` is changed, set `entrypoint` to match it (for example\n`libdir: \"dist\"` with `entrypoint: \"dist/index.js\"`). `types` follows the\nentrypoint rather than `libdir`, and `main` still defaults to\n`lib/index.js`.",
             "stability": "experimental",
             "summary": "Typescript  artifacts output directory."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 190
+            "line": 194
           },
           "name": "libdir",
           "optional": true,
@@ -13365,7 +13368,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 784
+            "line": 788
           },
           "name": "license",
           "optional": true,
@@ -13383,7 +13386,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 776
+            "line": 780
           },
           "name": "licensed",
           "optional": true,
@@ -13401,7 +13404,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1149
+            "line": 1153
           },
           "name": "logging",
           "optional": true,
@@ -13420,7 +13423,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 608
+            "line": 612
           },
           "name": "majorVersion",
           "optional": true,
@@ -13439,7 +13442,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 770
+            "line": 774
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -13458,7 +13461,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 600
+            "line": 604
           },
           "name": "minMajorVersion",
           "optional": true,
@@ -13477,7 +13480,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 759
+            "line": 763
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -13495,7 +13498,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1187
+            "line": 1191
           },
           "name": "mise",
           "optional": true,
@@ -13513,7 +13516,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1192
+            "line": 1196
           },
           "name": "miseOptions",
           "optional": true,
@@ -13532,7 +13535,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 590
+            "line": 594
           },
           "name": "nextVersionCommand",
           "optional": true,
@@ -13550,7 +13553,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 744
+            "line": 748
           },
           "name": "npmAccess",
           "optional": true,
@@ -13569,7 +13572,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 566
+            "line": 570
           },
           "name": "npmDistTag",
           "optional": true,
@@ -13587,7 +13590,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 310
+            "line": 314
           },
           "name": "npmignoreEnabled",
           "optional": true,
@@ -13604,7 +13607,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 304
+            "line": 308
           },
           "name": "npmIgnoreOptions",
           "optional": true,
@@ -13623,7 +13626,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 736
+            "line": 740
           },
           "name": "npmProvenance",
           "optional": true,
@@ -13642,7 +13645,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 725
+            "line": 729
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -13660,7 +13663,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 718
+            "line": 722
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -13678,7 +13681,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 712
+            "line": 716
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -13697,7 +13700,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1143
+            "line": 1147
           },
           "name": "outdir",
           "optional": true,
@@ -13715,7 +13718,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 299
+            "line": 303
           },
           "name": "package",
           "optional": true,
@@ -13733,7 +13736,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 706
+            "line": 710
           },
           "name": "packageManager",
           "optional": true,
@@ -13754,7 +13757,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 700
+            "line": 704
           },
           "name": "packageName",
           "optional": true,
@@ -13771,7 +13774,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1132
+            "line": 1136
           },
           "name": "parent",
           "optional": true,
@@ -13788,7 +13791,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 693
+            "line": 697
           },
           "name": "peerDependencyOptions",
           "optional": true,
@@ -13807,7 +13810,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 688
+            "line": 692
           },
           "name": "peerDeps",
           "optional": true,
@@ -13830,7 +13833,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 669
+            "line": 673
           },
           "name": "pnpmOptions",
           "optional": true,
@@ -13848,7 +13851,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 663
+            "line": 667
           },
           "name": "pnpmVersion",
           "optional": true,
@@ -13866,7 +13869,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 558
+            "line": 562
           },
           "name": "postBuildSteps",
           "optional": true,
@@ -13889,7 +13892,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 552
+            "line": 556
           },
           "name": "prerelease",
           "optional": true,
@@ -13907,7 +13910,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1127
+            "line": 1131
           },
           "name": "projectTree",
           "optional": true,
@@ -13926,7 +13929,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1121
+            "line": 1125
           },
           "name": "projenCommand",
           "optional": true,
@@ -13944,7 +13947,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1033
+            "line": 1037
           },
           "name": "projenCredentials",
           "optional": true,
@@ -13962,7 +13965,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 293
+            "line": 297
           },
           "name": "projenDevDependency",
           "optional": true,
@@ -13980,7 +13983,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 287
+            "line": 291
           },
           "name": "projenrcJs",
           "optional": true,
@@ -13998,7 +14001,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1110
+            "line": 1114
           },
           "name": "projenrcJson",
           "optional": true,
@@ -14016,7 +14019,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1104
+            "line": 1108
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -14034,7 +14037,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 281
+            "line": 285
           },
           "name": "projenrcJsOptions",
           "optional": true,
@@ -14090,7 +14093,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 275
+            "line": 279
           },
           "name": "projenVersion",
           "optional": true,
@@ -14108,7 +14111,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 546
+            "line": 550
           },
           "name": "publishDryRun",
           "optional": true,
@@ -14127,7 +14130,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 540
+            "line": 544
           },
           "name": "publishTasks",
           "optional": true,
@@ -14217,7 +14220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 269
+            "line": 273
           },
           "name": "pullRequestTemplate",
           "optional": true,
@@ -14235,7 +14238,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 263
+            "line": 267
           },
           "name": "pullRequestTemplateContents",
           "optional": true,
@@ -14258,7 +14261,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1027
+            "line": 1031
           },
           "name": "readme",
           "optional": true,
@@ -14276,7 +14279,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 532
+            "line": 536
           },
           "name": "releasableCommits",
           "optional": true,
@@ -14294,7 +14297,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 257
+            "line": 261
           },
           "name": "release",
           "optional": true,
@@ -14313,7 +14316,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 526
+            "line": 530
           },
           "name": "releaseBranches",
           "optional": true,
@@ -14337,7 +14340,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 513
+            "line": 517
           },
           "name": "releaseEnvironment",
           "optional": true,
@@ -14355,7 +14358,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 502
+            "line": 506
           },
           "name": "releaseFailureIssue",
           "optional": true,
@@ -14374,7 +14377,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 496
+            "line": 500
           },
           "name": "releaseFailureIssueLabel",
           "optional": true,
@@ -14393,7 +14396,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 489
+            "line": 493
           },
           "name": "releaseTagPrefix",
           "optional": true,
@@ -14411,7 +14414,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 251
+            "line": 255
           },
           "name": "releaseToNpm",
           "optional": true,
@@ -14429,7 +14432,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 479
+            "line": 483
           },
           "name": "releaseTrigger",
           "optional": true,
@@ -14447,7 +14450,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 473
+            "line": 477
           },
           "name": "releaseWorkflowEnv",
           "optional": true,
@@ -14470,7 +14473,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 467
+            "line": 471
           },
           "name": "releaseWorkflowName",
           "optional": true,
@@ -14487,7 +14490,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 461
+            "line": 465
           },
           "name": "releaseWorkflowSetupSteps",
           "optional": true,
@@ -14510,7 +14513,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1098
+            "line": 1102
           },
           "name": "renovatebot",
           "optional": true,
@@ -14528,7 +14531,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1092
+            "line": 1096
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -14546,7 +14549,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 657
+            "line": 661
           },
           "name": "repository",
           "optional": true,
@@ -14563,7 +14566,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 651
+            "line": 655
           },
           "name": "repositoryDirectory",
           "optional": true,
@@ -14617,7 +14620,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 646
+            "line": 650
           },
           "name": "scopedPackagesOptions",
           "optional": true,
@@ -14657,7 +14660,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 640
+            "line": 644
           },
           "name": "stability",
           "optional": true,
@@ -14676,7 +14679,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1021
+            "line": 1025
           },
           "name": "stale",
           "optional": true,
@@ -14695,7 +14698,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1014
+            "line": 1018
           },
           "name": "staleOptions",
           "optional": true,
@@ -14806,7 +14809,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1207
+            "line": 1211
           },
           "name": "typeDoc",
           "optional": true,
@@ -14824,7 +14827,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1212
+            "line": 1216
           },
           "name": "typeDocOptions",
           "optional": true,
@@ -14881,7 +14884,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 456
+            "line": 460
           },
           "name": "versionrcOptions",
           "optional": true,
@@ -14904,7 +14907,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1197
+            "line": 1201
           },
           "name": "vitest",
           "optional": true,
@@ -14922,7 +14925,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1202
+            "line": 1206
           },
           "name": "vitestOptions",
           "optional": true,
@@ -14941,7 +14944,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 1007
+            "line": 1011
           },
           "name": "vscode",
           "optional": true,
@@ -14959,7 +14962,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 245
+            "line": 249
           },
           "name": "workflowBootstrapSteps",
           "optional": true,
@@ -14982,7 +14985,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 449
+            "line": 453
           },
           "name": "workflowContainerImage",
           "optional": true,
@@ -15000,7 +15003,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 239
+            "line": 243
           },
           "name": "workflowGitIdentity",
           "optional": true,
@@ -15019,7 +15022,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 233
+            "line": 237
           },
           "name": "workflowNodeVersion",
           "optional": true,
@@ -15037,7 +15040,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 226
+            "line": 230
           },
           "name": "workflowPackageCache",
           "optional": true,
@@ -15055,7 +15058,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/jsii-options.generated.ts",
-            "line": 635
+            "line": 639
           },
           "name": "yarnBerryOptions",
           "optional": true,
@@ -17379,7 +17382,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1068
+            "line": 1072
           },
           "name": "name",
           "type": {
@@ -17396,7 +17399,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 896
+            "line": 900
           },
           "name": "addPackageManagerToDevEngines",
           "optional": true,
@@ -17415,7 +17418,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 890
+            "line": 894
           },
           "name": "allowLibraryDependencies",
           "optional": true,
@@ -17434,7 +17437,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 882
+            "line": 886
           },
           "name": "allowScripts",
           "optional": true,
@@ -17457,7 +17460,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 339
+            "line": 343
           },
           "name": "artifactsDirectory",
           "optional": true,
@@ -17476,7 +17479,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 333
+            "line": 337
           },
           "name": "auditDeps",
           "optional": true,
@@ -17494,7 +17497,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 324
+            "line": 328
           },
           "name": "auditDepsOptions",
           "optional": true,
@@ -17511,7 +17514,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 852
+            "line": 856
           },
           "name": "authorEmail",
           "optional": true,
@@ -17528,7 +17531,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 847
+            "line": 851
           },
           "name": "authorName",
           "optional": true,
@@ -17545,7 +17548,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 842
+            "line": 846
           },
           "name": "authorOrganization",
           "optional": true,
@@ -17562,7 +17565,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 837
+            "line": 841
           },
           "name": "authorUrl",
           "optional": true,
@@ -17580,7 +17583,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 982
+            "line": 986
           },
           "name": "autoApproveOptions",
           "optional": true,
@@ -17599,7 +17602,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 318
+            "line": 322
           },
           "name": "autoApproveUpgrades",
           "optional": true,
@@ -17617,7 +17620,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 832
+            "line": 836
           },
           "name": "autoDetectBin",
           "optional": true,
@@ -17636,7 +17639,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 976
+            "line": 980
           },
           "name": "autoMerge",
           "optional": true,
@@ -17655,7 +17658,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 968
+            "line": 972
           },
           "name": "autoMergeOptions",
           "optional": true,
@@ -17673,7 +17676,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 826
+            "line": 830
           },
           "name": "bin",
           "optional": true,
@@ -17696,7 +17699,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 311
+            "line": 315
           },
           "name": "biome",
           "optional": true,
@@ -17714,7 +17717,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 305
+            "line": 309
           },
           "name": "biomeOptions",
           "optional": true,
@@ -17731,7 +17734,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 818
+            "line": 822
           },
           "name": "bugsEmail",
           "optional": true,
@@ -17748,7 +17751,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 813
+            "line": 817
           },
           "name": "bugsUrl",
           "optional": true,
@@ -17766,7 +17769,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 299
+            "line": 303
           },
           "name": "buildWorkflow",
           "optional": true,
@@ -17783,7 +17786,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 293
+            "line": 297
           },
           "name": "buildWorkflowOptions",
           "optional": true,
@@ -17802,7 +17805,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 525
+            "line": 529
           },
           "name": "bumpPackage",
           "optional": true,
@@ -17820,7 +17823,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 808
+            "line": 812
           },
           "name": "bundledDeps",
           "optional": true,
@@ -17842,7 +17845,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 288
+            "line": 292
           },
           "name": "bundlerOptions",
           "optional": true,
@@ -17860,7 +17863,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 793
+            "line": 797
           },
           "name": "bunVersion",
           "optional": true,
@@ -17879,7 +17882,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 283
+            "line": 287
           },
           "name": "checkLicenses",
           "optional": true,
@@ -17897,7 +17900,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 960
+            "line": 964
           },
           "name": "clobber",
           "optional": true,
@@ -17916,7 +17919,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 787
+            "line": 791
           },
           "name": "codeArtifactOptions",
           "optional": true,
@@ -17934,7 +17937,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 276
+            "line": 280
           },
           "name": "codeCov",
           "optional": true,
@@ -17952,7 +17955,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 268
+            "line": 272
           },
           "name": "codeCovTokenSecret",
           "optional": true,
@@ -17970,7 +17973,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1061
+            "line": 1065
           },
           "name": "commitGenerated",
           "optional": true,
@@ -17989,7 +17992,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 780
+            "line": 784
           },
           "name": "config",
           "optional": true,
@@ -18013,7 +18016,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 262
+            "line": 266
           },
           "name": "copyrightOwner",
           "optional": true,
@@ -18032,7 +18035,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 253
+            "line": 257
           },
           "name": "copyrightPeriod",
           "optional": true,
@@ -18051,7 +18054,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 773
+            "line": 777
           },
           "name": "dedupeDeps",
           "optional": true,
@@ -18072,7 +18075,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 244
+            "line": 248
           },
           "name": "defaultReleaseBranch",
           "optional": true,
@@ -18091,7 +18094,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 753
+            "line": 757
           },
           "name": "deleteOrphanedLockFiles",
           "optional": true,
@@ -18110,7 +18113,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 237
+            "line": 241
           },
           "name": "dependabot",
           "optional": true,
@@ -18128,7 +18131,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 230
+            "line": 234
           },
           "name": "dependabotOptions",
           "optional": true,
@@ -18150,7 +18153,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 743
+            "line": 747
           },
           "name": "deps",
           "optional": true,
@@ -18174,7 +18177,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 224
+            "line": 228
           },
           "name": "depsUpgrade",
           "optional": true,
@@ -18192,7 +18195,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 217
+            "line": 221
           },
           "name": "depsUpgradeOptions",
           "optional": true,
@@ -18213,7 +18216,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 730
+            "line": 734
           },
           "name": "description",
           "optional": true,
@@ -18231,7 +18234,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 954
+            "line": 958
           },
           "name": "devContainer",
           "optional": true,
@@ -18253,7 +18256,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 722
+            "line": 726
           },
           "name": "devDeps",
           "optional": true,
@@ -18275,7 +18278,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 705
+            "line": 709
           },
           "name": "devEngines",
           "optional": true,
@@ -18293,7 +18296,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 116
+            "line": 120
           },
           "name": "disableTsconfig",
           "optional": true,
@@ -18311,7 +18314,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 110
+            "line": 114
           },
           "name": "disableTsconfigDev",
           "optional": true,
@@ -18329,7 +18332,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 104
+            "line": 108
           },
           "name": "docgen",
           "optional": true,
@@ -18347,7 +18350,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 98
+            "line": 102
           },
           "name": "docsDirectory",
           "optional": true,
@@ -18365,7 +18368,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 697
+            "line": 701
           },
           "name": "entrypoint",
           "optional": true,
@@ -18383,7 +18386,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 92
+            "line": 96
           },
           "name": "entrypointTypes",
           "optional": true,
@@ -18402,7 +18405,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 948
+            "line": 952
           },
           "name": "github",
           "optional": true,
@@ -18420,7 +18423,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 941
+            "line": 945
           },
           "name": "githubOptions",
           "optional": true,
@@ -18439,7 +18442,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 518
+            "line": 522
           },
           "name": "githubReleaseLatest",
           "optional": true,
@@ -18456,7 +18459,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 211
+            "line": 215
           },
           "name": "gitignore",
           "optional": true,
@@ -18478,7 +18481,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1055
+            "line": 1059
           },
           "name": "gitIgnoreOptions",
           "optional": true,
@@ -18495,7 +18498,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1050
+            "line": 1054
           },
           "name": "gitOptions",
           "optional": true,
@@ -18513,7 +18516,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 935
+            "line": 939
           },
           "name": "gitpod",
           "optional": true,
@@ -18531,7 +18534,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1073
+            "line": 1077
           },
           "name": "homebrew",
           "optional": true,
@@ -18549,7 +18552,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1078
+            "line": 1082
           },
           "name": "homebrewOptions",
           "optional": true,
@@ -18566,7 +18569,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 690
+            "line": 694
           },
           "name": "homepage",
           "optional": true,
@@ -18584,7 +18587,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 510
+            "line": 514
           },
           "name": "jsiiReleaseVersion",
           "optional": true,
@@ -18601,7 +18604,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 685
+            "line": 689
           },
           "name": "keywords",
           "optional": true,
@@ -18618,13 +18621,14 @@
           "abstract": true,
           "docs": {
             "default": "\"lib\"",
+            "remarks": "When `libdir` is changed, set `entrypoint` to match it (for example\n`libdir: \"dist\"` with `entrypoint: \"dist/index.js\"`). `types` follows the\nentrypoint rather than `libdir`, and `main` still defaults to\n`lib/index.js`.",
             "stability": "experimental",
             "summary": "Typescript  artifacts output directory."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 86
+            "line": 90
           },
           "name": "libdir",
           "optional": true,
@@ -18643,7 +18647,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 680
+            "line": 684
           },
           "name": "license",
           "optional": true,
@@ -18661,7 +18665,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 672
+            "line": 676
           },
           "name": "licensed",
           "optional": true,
@@ -18679,7 +18683,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1045
+            "line": 1049
           },
           "name": "logging",
           "optional": true,
@@ -18698,7 +18702,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 504
+            "line": 508
           },
           "name": "majorVersion",
           "optional": true,
@@ -18717,7 +18721,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 666
+            "line": 670
           },
           "name": "maxNodeVersion",
           "optional": true,
@@ -18736,7 +18740,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 496
+            "line": 500
           },
           "name": "minMajorVersion",
           "optional": true,
@@ -18755,7 +18759,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 655
+            "line": 659
           },
           "name": "minNodeVersion",
           "optional": true,
@@ -18773,7 +18777,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1083
+            "line": 1087
           },
           "name": "mise",
           "optional": true,
@@ -18791,7 +18795,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1088
+            "line": 1092
           },
           "name": "miseOptions",
           "optional": true,
@@ -18810,7 +18814,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 486
+            "line": 490
           },
           "name": "nextVersionCommand",
           "optional": true,
@@ -18828,7 +18832,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 640
+            "line": 644
           },
           "name": "npmAccess",
           "optional": true,
@@ -18847,7 +18851,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 462
+            "line": 466
           },
           "name": "npmDistTag",
           "optional": true,
@@ -18865,7 +18869,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 206
+            "line": 210
           },
           "name": "npmignoreEnabled",
           "optional": true,
@@ -18882,7 +18886,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 200
+            "line": 204
           },
           "name": "npmIgnoreOptions",
           "optional": true,
@@ -18901,7 +18905,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 632
+            "line": 636
           },
           "name": "npmProvenance",
           "optional": true,
@@ -18920,7 +18924,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 621
+            "line": 625
           },
           "name": "npmRegistryUrl",
           "optional": true,
@@ -18938,7 +18942,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 614
+            "line": 618
           },
           "name": "npmTokenSecret",
           "optional": true,
@@ -18956,7 +18960,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 608
+            "line": 612
           },
           "name": "npmTrustedPublishing",
           "optional": true,
@@ -18975,7 +18979,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1039
+            "line": 1043
           },
           "name": "outdir",
           "optional": true,
@@ -18993,7 +18997,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 195
+            "line": 199
           },
           "name": "package",
           "optional": true,
@@ -19011,7 +19015,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 602
+            "line": 606
           },
           "name": "packageManager",
           "optional": true,
@@ -19032,7 +19036,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 596
+            "line": 600
           },
           "name": "packageName",
           "optional": true,
@@ -19049,7 +19053,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1028
+            "line": 1032
           },
           "name": "parent",
           "optional": true,
@@ -19066,7 +19070,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 589
+            "line": 593
           },
           "name": "peerDependencyOptions",
           "optional": true,
@@ -19085,7 +19089,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 584
+            "line": 588
           },
           "name": "peerDeps",
           "optional": true,
@@ -19108,7 +19112,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 565
+            "line": 569
           },
           "name": "pnpmOptions",
           "optional": true,
@@ -19126,7 +19130,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 559
+            "line": 563
           },
           "name": "pnpmVersion",
           "optional": true,
@@ -19144,7 +19148,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 454
+            "line": 458
           },
           "name": "postBuildSteps",
           "optional": true,
@@ -19167,7 +19171,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 448
+            "line": 452
           },
           "name": "prerelease",
           "optional": true,
@@ -19185,7 +19189,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1023
+            "line": 1027
           },
           "name": "projectTree",
           "optional": true,
@@ -19204,7 +19208,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1017
+            "line": 1021
           },
           "name": "projenCommand",
           "optional": true,
@@ -19222,7 +19226,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 929
+            "line": 933
           },
           "name": "projenCredentials",
           "optional": true,
@@ -19240,7 +19244,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 189
+            "line": 193
           },
           "name": "projenDevDependency",
           "optional": true,
@@ -19258,7 +19262,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 183
+            "line": 187
           },
           "name": "projenrcJs",
           "optional": true,
@@ -19276,7 +19280,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1006
+            "line": 1010
           },
           "name": "projenrcJson",
           "optional": true,
@@ -19294,7 +19298,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1000
+            "line": 1004
           },
           "name": "projenrcJsonOptions",
           "optional": true,
@@ -19312,7 +19316,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 177
+            "line": 181
           },
           "name": "projenrcJsOptions",
           "optional": true,
@@ -19368,7 +19372,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 171
+            "line": 175
           },
           "name": "projenVersion",
           "optional": true,
@@ -19386,7 +19390,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 442
+            "line": 446
           },
           "name": "publishDryRun",
           "optional": true,
@@ -19405,7 +19409,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 436
+            "line": 440
           },
           "name": "publishTasks",
           "optional": true,
@@ -19423,7 +19427,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 165
+            "line": 169
           },
           "name": "pullRequestTemplate",
           "optional": true,
@@ -19441,7 +19445,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 159
+            "line": 163
           },
           "name": "pullRequestTemplateContents",
           "optional": true,
@@ -19464,7 +19468,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 923
+            "line": 927
           },
           "name": "readme",
           "optional": true,
@@ -19482,7 +19486,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 428
+            "line": 432
           },
           "name": "releasableCommits",
           "optional": true,
@@ -19500,7 +19504,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 153
+            "line": 157
           },
           "name": "release",
           "optional": true,
@@ -19519,7 +19523,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 422
+            "line": 426
           },
           "name": "releaseBranches",
           "optional": true,
@@ -19543,7 +19547,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 409
+            "line": 413
           },
           "name": "releaseEnvironment",
           "optional": true,
@@ -19561,7 +19565,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 398
+            "line": 402
           },
           "name": "releaseFailureIssue",
           "optional": true,
@@ -19580,7 +19584,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 392
+            "line": 396
           },
           "name": "releaseFailureIssueLabel",
           "optional": true,
@@ -19599,7 +19603,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 385
+            "line": 389
           },
           "name": "releaseTagPrefix",
           "optional": true,
@@ -19617,7 +19621,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 147
+            "line": 151
           },
           "name": "releaseToNpm",
           "optional": true,
@@ -19635,7 +19639,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 375
+            "line": 379
           },
           "name": "releaseTrigger",
           "optional": true,
@@ -19653,7 +19657,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 369
+            "line": 373
           },
           "name": "releaseWorkflowEnv",
           "optional": true,
@@ -19676,7 +19680,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 363
+            "line": 367
           },
           "name": "releaseWorkflowName",
           "optional": true,
@@ -19693,7 +19697,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 357
+            "line": 361
           },
           "name": "releaseWorkflowSetupSteps",
           "optional": true,
@@ -19716,7 +19720,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 994
+            "line": 998
           },
           "name": "renovatebot",
           "optional": true,
@@ -19734,7 +19738,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 988
+            "line": 992
           },
           "name": "renovatebotOptions",
           "optional": true,
@@ -19752,7 +19756,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 553
+            "line": 557
           },
           "name": "repository",
           "optional": true,
@@ -19769,7 +19773,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 547
+            "line": 551
           },
           "name": "repositoryDirectory",
           "optional": true,
@@ -19806,7 +19810,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 542
+            "line": 546
           },
           "name": "scopedPackagesOptions",
           "optional": true,
@@ -19846,7 +19850,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 536
+            "line": 540
           },
           "name": "stability",
           "optional": true,
@@ -19865,7 +19869,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 917
+            "line": 921
           },
           "name": "stale",
           "optional": true,
@@ -19884,7 +19888,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 910
+            "line": 914
           },
           "name": "staleOptions",
           "optional": true,
@@ -20015,7 +20019,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 352
+            "line": 356
           },
           "name": "versionrcOptions",
           "optional": true,
@@ -20038,7 +20042,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1093
+            "line": 1097
           },
           "name": "vitest",
           "optional": true,
@@ -20056,7 +20060,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 1098
+            "line": 1102
           },
           "name": "vitestOptions",
           "optional": true,
@@ -20075,7 +20079,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 903
+            "line": 907
           },
           "name": "vscode",
           "optional": true,
@@ -20093,7 +20097,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 141
+            "line": 145
           },
           "name": "workflowBootstrapSteps",
           "optional": true,
@@ -20116,7 +20120,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 345
+            "line": 349
           },
           "name": "workflowContainerImage",
           "optional": true,
@@ -20134,7 +20138,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 135
+            "line": 139
           },
           "name": "workflowGitIdentity",
           "optional": true,
@@ -20153,7 +20157,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 129
+            "line": 133
           },
           "name": "workflowNodeVersion",
           "optional": true,
@@ -20171,7 +20175,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 122
+            "line": 126
           },
           "name": "workflowPackageCache",
           "optional": true,
@@ -20189,7 +20193,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/projects/typescript-options.generated.ts",
-            "line": 531
+            "line": 535
           },
           "name": "yarnBerryOptions",
           "optional": true,
@@ -20943,5 +20947,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "9cJNn4OtwikqhndHodYmdrdi3ozjsY147GdQHHGhWFQ="
+  "fingerprint": "9p5yWpFqr5PujUH1Ypz/IGsjU8KvZzIlm1BE5sD5hAE="
 }
