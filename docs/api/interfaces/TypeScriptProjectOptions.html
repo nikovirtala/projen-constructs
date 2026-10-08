@@ -1111,7 +1111,11 @@ mark it as latest.</p>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="libdir"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>libdir</span><a href="#libdir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">libdir</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>Typescript  artifacts output directory.</p>
+<div class="tsd-comment tsd-typography"><p>Typescript  artifacts output directory.
+When <code>libdir</code> is changed, set <code>entrypoint</code> to match it (for example
+<code>libdir: &quot;dist&quot;</code> with <code>entrypoint: &quot;dist/index.js&quot;</code>). <code>types</code> follows the
+entrypoint rather than <code>libdir</code>, and <code>main</code> still defaults to
+<code>lib/index.js</code>.</p>
 </div>
 <div class="tsd-comment tsd-typography">
 <div class="tsd-tag-default">
