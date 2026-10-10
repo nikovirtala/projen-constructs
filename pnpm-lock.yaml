@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@mrgrain/jsii-struct-builder':
         specifier: ^0.7.64
-        version: 0.7.64(projen@0.104.2(constructs@10.8.1))
+        version: 0.7.64(projen@0.104.3(constructs@10.8.1))
       case:
         specifier: ^1.6.3
         version: 1.6.3
       projen:
-        specifier: ^0.104.2
-        version: 0.104.2(constructs@10.8.1)
+        specifier: ^0.104.3
+        version: 0.104.3(constructs@10.8.1)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5
@@ -29,7 +29,7 @@ importers:
         version: 5.8.5(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)
       '@types/node':
         specifier: ^24
-        version: 24.19.1
+        version: 24.19.2
       '@vitest/coverage-v8':
         specifier: ^4
         version: 4.1.11(vitest@4.1.11)
@@ -50,7 +50,7 @@ importers:
         version: 1.141.0(supports-color@7.2.0)
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.12.6(jsii-rosetta@6.0.18(supports-color@7.2.0))
+        version: 10.12.7(jsii-rosetta@6.0.18(supports-color@7.2.0))
       jsii-pacmak:
         specifier: ^1.141.0
         version: 1.141.0(jsii-rosetta@6.0.18(supports-color@7.2.0))
@@ -68,7 +68,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: ^4
-        version: 4.1.11(@types/node@24.19.1)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))
+        version: 4.1.11(@types/node@24.19.2)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0))
 
 packages:
 
@@ -703,10 +703,6 @@ packages:
     resolution: {integrity: sha512-dGAUZmacdWhZtmPuTNOf9avAsh0IHwZ5m6mNzOrJ0aVTgDu3L9PWw4dq99emn6Xx0pYCrSs+W4xcbp71bH3MLQ==}
     engines: {node: '>= 14.17.0'}
 
-  '@jsii/spec@1.140.0':
-    resolution: {integrity: sha512-1rGS+iJtejQ3ybSJfV0if9PzZuSQmORbVF3MkqE0csatF//Rj8raCqptZLMX6rkdfZ8C2Jsw5hU4PrmuCzBk6A==}
-    engines: {node: '>= 14.17.0'}
-
   '@jsii/spec@1.141.0':
     resolution: {integrity: sha512-NL/2TJnpfs332uuEWUV8Rx2wrV/gLoxdw7pmv457BoUwpOL6ZqOYgM6W54Niqn4RCjdxGddVL2l4CJBRMW0NgQ==}
     engines: {node: '>= 14.17.0'}
@@ -929,8 +925,8 @@ packages:
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
-  '@types/node@24.19.1':
-    resolution: {integrity: sha512-aS3/DG0oM05K0RIXXP+hKjinGG5IgSSVGzswZxW3O0sS3pH4/fycXundUC9XsszgKCk4gHXylTEK6hyFxVxnoQ==}
+  '@types/node@24.19.2':
+    resolution: {integrity: sha512-93d49wCWJkCyN87MxLpNN6KXPCwFw7bVUg79mGUV1OS40JGWwVCr8n61DXCSqz7CV6/VfPkb7xec7uP2M+QHWQ==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1449,8 +1445,8 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-docgen@10.12.6:
-    resolution: {integrity: sha512-MShAZLUkLLO2B8UG4rm7nlLRaBY7ePdZVagl1I4d0r9qnResexL7cqJN4qEmxB7qsRZhpCY2tLhb3wlpZlH3cg==}
+  jsii-docgen@10.12.7:
+    resolution: {integrity: sha512-zLJMrH3nrnc5yDcnwfl1nQtfM8mRwQ2kS0MiM3UtNoSIOS68TNKNXsb/0gMT/uwJzayPhvv9yIINYcqwzicZQw==}
     hasBin: true
     peerDependencies:
       jsii-rosetta: ^1.85.0 || ~5.0.14 || ~5.1.2 || ~5.2.0 || ~5.3.0 || ~5.4.0 || ~5.5.0 || ~5.6.0 || ~5.7.0 || ~5.8.0 || ~5.9.1 || ~6.0.0
@@ -1461,11 +1457,6 @@ packages:
     hasBin: true
     peerDependencies:
       jsii-rosetta: '>=5.9.0'
-
-  jsii-reflect@1.140.0:
-    resolution: {integrity: sha512-8bRD6WSQfWrB6/31sz92bi21HWaMVzvxZUgaJt/IiT3RqGKc57dO+idekn8WNpTBneE9vVhj24UDExHH8YfJAQ==}
-    engines: {node: '>= 14.17.0'}
-    hasBin: true
 
   jsii-reflect@1.141.0:
     resolution: {integrity: sha512-M51GkGF3PX4iBFm2HLemzxgEdqEoEjvzLYQAvsO0yGY351F2ZlRm2afn9Sx6XcrNCH4IXddDBfxktt46kh5nNA==}
@@ -1577,10 +1568,6 @@ packages:
   obug@2.1.1:
     resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
 
-  oo-ascii-tree@1.140.0:
-    resolution: {integrity: sha512-swJJN43RwwtZAtNQu03W8rqNtTUvq9T4eGU4KupRq7I9/R3exHobbF/OOm5sl6tGcumsQrNU97NBx7x+LEIPgA==}
-    engines: {node: '>= 14.17.0'}
-
   oo-ascii-tree@1.141.0:
     resolution: {integrity: sha512-D1xND2r5udiTGnj9k2S1obzT8mzRu5RrjI1doR8dH7rrjnB0DrwwbCFiOeG9waUsqcT8w9KlzpS0IRbrustJIw==}
     engines: {node: '>= 14.17.0'}
@@ -1638,8 +1625,8 @@ packages:
     resolution: {integrity: sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==}
     engines: {node: ^10 || ^12 || >=14}
 
-  projen@0.104.2:
-    resolution: {integrity: sha512-nmmHsPFR1q1Iz+z3u3H1idCZyL3RkefGM5JHIjimJJ34IZPHAj17Mh8G/MUrN7aeNpacMCDsfm5uRQqBiDPWTA==}
+  projen@0.104.3:
+    resolution: {integrity: sha512-eIrla55PZgFSeAY+zbzVhF1DJLsNOZ8nMsk4qyN0ptcGUfI9KIVwD3fLgSfzaVLFJ5o30HURr8pnFzavquScqg==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2371,8 +2358,6 @@ snapshots:
       chalk: 4.1.2
       semver: 7.8.5
 
-  '@jsii/spec@1.140.0': {}
-
   '@jsii/spec@1.141.0': {}
 
   '@mrgrain/cdk-esbuild@5.8.5(aws-cdk-lib@2.223.0(constructs@10.8.1))(constructs@10.8.1)':
@@ -2382,10 +2367,10 @@ snapshots:
     optionalDependencies:
       esbuild: 0.27.7
 
-  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.104.2(constructs@10.8.1))':
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.104.3(constructs@10.8.1))':
     dependencies:
       '@jsii/spec': 1.141.0
-      projen: 0.104.2(constructs@10.8.1)
+      projen: 0.104.3(constructs@10.8.1)
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -2527,7 +2512,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@24.19.1':
+  '@types/node@24.19.2':
     dependencies:
       undici-types: 7.24.6
 
@@ -2545,7 +2530,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.0.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.11(@types/node@24.19.1)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))
+      vitest: 4.1.11(@types/node@24.19.2)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0))
 
   '@vitest/expect@4.1.11':
     dependencies:
@@ -2556,13 +2541,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.11(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))':
+  '@vitest/mocker@4.1.11(vite@7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0))':
     dependencies:
       '@vitest/spy': 4.1.11
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0)
 
   '@vitest/pretty-format@4.1.11':
     dependencies:
@@ -3172,13 +3157,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.12.6(jsii-rosetta@6.0.18(supports-color@7.2.0)):
+  jsii-docgen@10.12.7(jsii-rosetta@6.0.18(supports-color@7.2.0)):
     dependencies:
       '@jsii/spec': 1.141.0
       case: 1.6.3
       fast-glob: 3.3.3
       fs-extra: 10.1.0
-      jsii-reflect: 1.140.0
+      jsii-reflect: 1.141.0
       jsii-rosetta: 6.0.18(supports-color@7.2.0)
       json-stream-stringify: 3.1.7
       semver: 7.8.5
@@ -3198,15 +3183,6 @@ snapshots:
       semver: 7.8.5
       spdx-license-list: 6.12.0
       xmlbuilder: 15.1.1
-      yargs: 17.7.3
-
-  jsii-reflect@1.140.0:
-    dependencies:
-      '@jsii/check-node': 1.140.0
-      '@jsii/spec': 1.140.0
-      chalk: 4.1.2
-      fs-extra: 10.1.0
-      oo-ascii-tree: 1.140.0
       yargs: 17.7.3
 
   jsii-reflect@1.141.0:
@@ -3357,8 +3333,6 @@ snapshots:
 
   obug@2.1.1: {}
 
-  oo-ascii-tree@1.140.0: {}
-
   oo-ascii-tree@1.141.0: {}
 
   p-limit@2.3.0:
@@ -3404,7 +3378,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  projen@0.104.2(constructs@10.8.1):
+  projen@0.104.3(constructs@10.8.1):
     dependencies:
       constructs: 10.8.1
 
@@ -3588,7 +3562,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0):
+  vite@7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.5)
@@ -3597,15 +3571,15 @@ snapshots:
       rollup: 4.62.4
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 24.19.1
+      '@types/node': 24.19.2
       fsevents: 2.3.3
       tsx: 4.23.15
       yaml: 2.9.0
 
-  vitest@4.1.11(@types/node@24.19.1)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0)):
+  vitest@4.1.11(@types/node@24.19.2)(@vitest/coverage-v8@4.1.11)(jsdom@25.0.1(supports-color@7.2.0))(vite@7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0))
+      '@vitest/mocker': 4.1.11(vite@7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0))
       '@vitest/pretty-format': 4.1.11
       '@vitest/runner': 4.1.11
       '@vitest/snapshot': 4.1.11
@@ -3622,10 +3596,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.2.2(@types/node@24.19.1)(tsx@4.23.15)(yaml@2.9.0)
+      vite: 7.2.2(@types/node@24.19.2)(tsx@4.23.15)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.19.1
+      '@types/node': 24.19.2
       '@vitest/coverage-v8': 4.1.11(vitest@4.1.11)
       jsdom: 25.0.1(supports-color@7.2.0)
     transitivePeerDependencies:
