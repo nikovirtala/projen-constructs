@@ -50,13 +50,13 @@ importers:
         version: 1.141.0(supports-color@7.2.0)
       jsii-docgen:
         specifier: ^10.5.0
-        version: 10.12.7(jsii-rosetta@6.0.19(supports-color@7.2.0))
+        version: 10.12.7(jsii-rosetta@6.0.20(supports-color@7.2.0))
       jsii-pacmak:
         specifier: ^1.141.0
-        version: 1.141.0(jsii-rosetta@6.0.19(supports-color@7.2.0))
+        version: 1.141.0(jsii-rosetta@6.0.20(supports-color@7.2.0))
       jsii-rosetta:
         specifier: ~6.0.3
-        version: 6.0.19(supports-color@7.2.0)
+        version: 6.0.20(supports-color@7.2.0)
       tsx:
         specifier: ^4.23.15
         version: 4.23.15
@@ -1455,8 +1455,8 @@ packages:
     engines: {node: '>= 14.17.0'}
     hasBin: true
 
-  jsii-rosetta@6.0.19:
-    resolution: {integrity: sha512-nvVqQtERHzHa3T6nrHrf7KVogCJMuyhSBdTgxn8qBr8yN7mXR0ZFzf30JLjBA8HA4mouV++R56S7O2CnSTvPIw==}
+  jsii-rosetta@6.0.20:
+    resolution: {integrity: sha512-vQOPnY6trR2WB8a4R0Eet4io3Aa7VQYlZ/oVdOM57zsLxKZ/cffzGs/mep0hd1w4WZbis+juf28XSJsyYV5i2g==}
     engines: {node: '>= 20.16.0'}
     hasBin: true
 
@@ -3142,19 +3142,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  jsii-docgen@10.12.7(jsii-rosetta@6.0.19(supports-color@7.2.0)):
+  jsii-docgen@10.12.7(jsii-rosetta@6.0.20(supports-color@7.2.0)):
     dependencies:
       '@jsii/spec': 1.141.0
       case: 1.6.3
       fast-glob: 3.3.3
       fs-extra: 10.1.0
       jsii-reflect: 1.141.0
-      jsii-rosetta: 6.0.19(supports-color@7.2.0)
+      jsii-rosetta: 6.0.20(supports-color@7.2.0)
       json-stream-stringify: 3.1.7
       semver: 7.8.5
       yargs: 16.2.2
 
-  jsii-pacmak@1.141.0(jsii-rosetta@6.0.19(supports-color@7.2.0)):
+  jsii-pacmak@1.141.0(jsii-rosetta@6.0.20(supports-color@7.2.0)):
     dependencies:
       '@jsii/check-node': 1.141.0
       '@jsii/spec': 1.141.0
@@ -3164,7 +3164,7 @@ snapshots:
       escape-string-regexp: 4.0.0
       fs-extra: 10.1.0
       jsii-reflect: 1.141.0
-      jsii-rosetta: 6.0.19(supports-color@7.2.0)
+      jsii-rosetta: 6.0.20(supports-color@7.2.0)
       semver: 7.8.5
       spdx-license-list: 6.12.0
       xmlbuilder: 15.1.1
@@ -3179,7 +3179,7 @@ snapshots:
       oo-ascii-tree: 1.141.0
       yargs: 17.7.3
 
-  jsii-rosetta@6.0.19(supports-color@7.2.0):
+  jsii-rosetta@6.0.20(supports-color@7.2.0):
     dependencies:
       '@jsii/check-node': 1.141.0
       '@jsii/spec': 1.141.0
