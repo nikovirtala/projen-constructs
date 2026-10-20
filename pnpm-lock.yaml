@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@mrgrain/jsii-struct-builder':
         specifier: ^0.7.64
-        version: 0.7.64(projen@0.104.8(constructs@10.8.1))
+        version: 0.7.64(projen@0.104.9(constructs@10.8.1))
       case:
         specifier: ^1.6.3
         version: 1.6.3
       projen:
-        specifier: ^0.104.8
-        version: 0.104.8(constructs@10.8.1)
+        specifier: ^0.104.9
+        version: 0.104.9(constructs@10.8.1)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.5
@@ -1617,8 +1617,8 @@ packages:
     resolution: {integrity: sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==}
     engines: {node: ^10 || ^12 || >=14}
 
-  projen@0.104.8:
-    resolution: {integrity: sha512-+aP/lwF00aclH+CLMta1ikb4Vzb2jrCQlK4usDevnvpSS0r/uG+CFj08RED813u3Y++xvKJK3Kwn58ctKLq45g==}
+  projen@0.104.9:
+    resolution: {integrity: sha512-n9aKnFTImRyoi/jLyhMMVQ0SwuMcmMOzHaKqUi2b0CZQw2cRvb3qTIjbdw1a1G6x/a6u0keGloGXhT4/jxsJRg==}
     engines: {node: '>= 16.0.0'}
     hasBin: true
     peerDependencies:
@@ -2352,10 +2352,10 @@ snapshots:
     optionalDependencies:
       esbuild: 0.27.7
 
-  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.104.8(constructs@10.8.1))':
+  '@mrgrain/jsii-struct-builder@0.7.64(projen@0.104.9(constructs@10.8.1))':
     dependencies:
       '@jsii/spec': 1.141.0
-      projen: 0.104.8(constructs@10.8.1)
+      projen: 0.104.9(constructs@10.8.1)
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -3363,7 +3363,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  projen@0.104.8(constructs@10.8.1):
+  projen@0.104.9(constructs@10.8.1):
     dependencies:
       constructs: 10.8.1
 
