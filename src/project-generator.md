@@ -22,14 +22,12 @@ graph TD
 The generator uses three components:
 
 **CodeBuffer** manages indentation during code generation:
-
 - `line(code)` adds a line of code
 - `open(code)` adds a line and increases indentation
 - `close(code)` decreases indentation and adds a line
 - `flush()` returns generated lines and resets the buffer
 
 **TypeScriptClassRenderer** renders TypeScript class code:
-
 - Loads Projen's JSII manifest for base class introspection
 - Validates base classes and options interfaces exist in JSII specs
 - Extracts and sorts imports (external packages first, then relative)
@@ -38,7 +36,6 @@ The generator uses three components:
 - Handles custom options extraction and default config application
 
 **ProjectGenerator** orchestrates generation as a Projen component:
-
 - Extends `Component` for lifecycle integration
 - Runs during `preSynthesize()` phase
 - Creates `TypeScriptClassFile` with generated content
@@ -50,14 +47,14 @@ The generator uses three components:
 import { ProjectGenerator, ProjectType } from "@nikovirtala/projen-constructs";
 
 new ProjectGenerator(project, {
-  name: "TypeScriptProject",
-  projectType: ProjectType.TYPESCRIPT,
-  filePath: "./src/projects/typescript.generated.ts",
-  components: [
-    { componentClass: Mise },
-    { componentClass: Vitest }, // Auto-detects VitestOptions from JSII manifest
-  ],
-  omitOptions: ["eslint", "jest", "prettier"],
+    name: "TypeScriptProject",
+    projectType: ProjectType.TYPESCRIPT,
+    filePath: "./src/projects/typescript.generated.ts",
+    components: [
+        { componentClass: Mise },
+        { componentClass: Vitest }, // Auto-detects VitestOptions from JSII manifest
+    ],
+    omitOptions: ["eslint", "jest", "prettier"],
 });
 ```
 
@@ -76,18 +73,16 @@ import type { OptionsInterface } from "./options-file.generated";
 export { OptionsInterface } from "./options-file.generated";
 
 export class ClassName extends BaseClass {
-  constructor(options: OptionsInterface) {
-    const { mise, vitest, vitestOptions, ...baseOptions } = options;
+    constructor(options: OptionsInterface) {
+        const { mise, vitest, vitestOptions, ...baseOptions } = options;
 
-    super(
-      deepMerge<BaseOptionsType>(defaultOptions.module.ClassName, baseOptions)
-    );
+        super(deepMerge<BaseOptionsType>(defaultOptions.module.ClassName, baseOptions));
 
-    applyDefaults(this, [
-      { component: Mise, enabled: mise },
-      { component: Vitest, enabled: vitest, options: vitestOptions },
-    ]);
-  }
+        applyDefaults(this, [
+            { component: Mise, enabled: mise },
+            { component: Vitest, enabled: vitest, options: vitestOptions },
+        ]);
+    }
 }
 ```
 
@@ -113,10 +108,10 @@ The ProjectType enum provides explicit mapping between project types and their P
 
 ```typescript
 enum ProjectType {
-  TYPESCRIPT = "typescript.TypeScriptProject",
-  JSII = "cdk.JsiiProject",
-  AWS_CDK_TYPESCRIPT_APP = "awscdk.AwsCdkTypeScriptApp",
-  AWS_CDK_CONSTRUCT_LIBRARY = "awscdk.AwsCdkConstructLibrary",
+    TYPESCRIPT = "typescript.TypeScriptProject",
+    JSII = "cdk.JsiiProject",
+    AWS_CDK_TYPESCRIPT_APP = "awscdk.AwsCdkTypeScriptApp",
+    AWS_CDK_CONSTRUCT_LIBRARY = "awscdk.AwsCdkConstructLibrary",
 }
 ```
 
@@ -137,7 +132,6 @@ pnpm exec tsx scripts/generate-project-type.ts > src/project-type.ts
 ## JSII introspection
 
 The generator validates base classes and options interfaces against Projen's JSII manifest:
-
 1. **Loads JSII manifest** - Reads Projen's `.jsii` file at construction time
 2. **Validates base classes** - Ensures `projen.{module}.{ClassName}` exists
 3. **Validates options interfaces** - Ensures `projen.{module}.{ClassName}Options` exists
@@ -149,7 +143,6 @@ This prevents runtime errors from invalid project type configurations and ensure
 ## Error handling
 
 The generator uses custom error classes for structured error reporting:
-
 - **ManifestLoadError**: JSII manifest loading failures with package name and reason
 - **ComponentResolutionError**: Component resolution failures with component name and reason
 - **InvalidBaseClassFormatError**: Invalid base class format in project type configuration
@@ -158,14 +151,14 @@ All errors include context properties for debugging. Non-critical errors (missin
 
 ## Comparison with jsii-struct-builder
 
-| Feature       | jsii-struct-builder                  | ProjectGenerator                    |
-| ------------- | ------------------------------------ | ----------------------------------- |
-| Purpose       | Generate interfaces                  | Generate classes                    |
-| Input         | JSII specs                           | Configuration objects + JSII specs  |
-| Output        | TypeScript interfaces                | TypeScript classes                  |
-| Pattern       | Builder pattern with transformations | Code generation with introspection  |
-| Use case      | Type definitions                     | Implementation code                 |
-| JSII usage    | Full spec transformation             | Validation and metadata extraction  |
+| Feature    | jsii-struct-builder                  | ProjectGenerator                   |
+| ---------- | ------------------------------------ | ---------------------------------- |
+| Purpose    | Generate interfaces                  | Generate classes                   |
+| Input      | JSII specs                           | Configuration objects + JSII specs |
+| Output     | TypeScript interfaces                | TypeScript classes                 |
+| Pattern    | Builder pattern with transformations | Code generation with introspection |
+| Use case   | Type definitions                     | Implementation code                |
+| JSII usage | Full spec transformation             | Validation and metadata extraction |
 
 ## Integration
 
