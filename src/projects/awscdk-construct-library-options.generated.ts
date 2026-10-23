@@ -795,6 +795,20 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly packageManager?: javascript.NodePackageManager;
   /**
+   * How long to wait, in seconds, for the published package version to be available.
+   * Requires `npmVerifyPublished` to be enabled.
+   * @default 3600
+   * @stability experimental
+   */
+  readonly npmVerifyPublishedTimeoutSeconds?: number;
+  /**
+   * Wait until the published package version is available from the npm registry before the publish job completes.
+   * Enable this when packages that depend on the published package are released right after.
+   * @default false
+   * @stability experimental
+   */
+  readonly npmVerifyPublished?: boolean;
+  /**
    * Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
    * @default - false
    * @stability experimental
