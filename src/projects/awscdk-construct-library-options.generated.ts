@@ -309,6 +309,20 @@ export interface AwsCdkConstructLibraryProjectOptions {
    */
   readonly disableTsconfig?: boolean;
   /**
+   * Permissions for the main build, release and dependency upgrade jobs.
+   * Defined scopes override the job defaults and automatically inferred permissions,
+   * including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+   * Use `JobPermission.NONE` to explicitly remove a permission.
+   *
+   * `buildWorkflowOptions.permissions` replaces this entire set, including automatic
+   * permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+   * scopes. Applies to all release branches, but not to separate package, publishing,
+   * self-mutation or pull request creation jobs, or unrelated workflows.
+   * @default - Use the job defaults and automatically inferred permissions.
+   * @stability experimental
+   */
+  readonly workflowPermissions?: github.workflows.JobPermissions;
+  /**
    * Enable Node.js package cache in GitHub workflows.
    * @default false
    * @stability experimental
