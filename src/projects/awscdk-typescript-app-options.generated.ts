@@ -102,6 +102,12 @@ export interface AwsCdkTypeScriptAppProjectOptions {
    */
   readonly watchExcludes?: Array<string>;
   /**
+   * Enable AWS CDK library version reporting.
+   * @default - use the AWS CDK default
+   * @stability experimental
+   */
+  readonly versionReporting?: boolean;
+  /**
    * To protect you against unintended changes that affect your security posture, the AWS CDK Toolkit prompts you to approve security-related changes before deploying them.
    * @default ApprovalLevel.BROADENING
    * @stability experimental
