@@ -21,12 +21,12 @@ export class JsiiProject extends cdk.JsiiProject {
      */
     constructor(options: JsiiProjectOptions) {
         /* Separate component configuration from base Projen options */
-        const { homebrew, mise, vitest, typeDoc, ...baseOptions } = options;
+        const { homebrew, homebrewOptions, mise, miseOptions, vitest, vitestOptions, typeDoc, typeDocOptions, ...baseOptions } = options;
 
         /* Merge default configuration with user options and initialize base class */
         super(deepMerge<cdk.JsiiProjectOptions>(defaultOptions.cdk.JsiiProject, baseOptions));
 
         /* Apply component defaults and instantiate enabled components */
-        applyDefaults(this, [{ component: Homebrew, enabled: homebrew }, { component: Mise, enabled: mise }, { component: Vitest, enabled: vitest }, { component: TypeDoc, enabled: typeDoc }]);
+        applyDefaults(this, [{ component: Homebrew, enabled: homebrew, options: homebrewOptions }, { component: Mise, enabled: mise, options: miseOptions }, { component: Vitest, enabled: vitest, options: vitestOptions }, { component: TypeDoc, enabled: typeDoc, options: typeDocOptions }]);
     }
 }

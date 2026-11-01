@@ -243,9 +243,11 @@ class TypeScriptClassRenderer {
      * builds import statements, and renders the class structure.
      *
      * @param options - Generator configuration
+     * @param optionsProperties - Options property name per component class name, for the components whose
+     *   options property was added to the generated options interface
      * @returns Complete TypeScript class code as a string
      */
-    render(options: ProjectGeneratorOptions): string {
+    render(options: ProjectGeneratorOptions, optionsProperties: ReadonlyMap<string, string> = new Map()): string {
         this.buffer.flush();
 
         /* Derive interface and type names from the class name */
@@ -257,7 +259,7 @@ class TypeScriptClassRenderer {
         const components = options.components ?? getDefaultComponents();
 
         /* Extract component configuration for constructor generation */
-        const { destructure, componentArray } = this.extractComponentOptions(components);
+        const { destructure, componentArray } = this.extractComponentOptions(components, optionsProperties);
         const imports = this.extractImports(options, optionsInterface);
 
         /* Render all sections of the class file */
@@ -315,17 +317,24 @@ class TypeScriptClassRenderer {
      * 1. Destructure list: variable names to extract from options
      * 2. Component array: code string for applyDefaults() call
      *
+     * The options are passed through for exactly the components whose options property is in the
+     * generated options interface, so every property of that interface reaches its component.
+     *
      * @param components - Component configurations
+     * @param optionsProperties - Options property name per component class name
      * @returns Object with destructure array and componentArray code string
      *
      * @example
-     * Input: [{ component: Vitest, optionsProperty: { name: "vitestOptions", ... } }]
+     * Input: [{ component: Vitest }], { Vitest => "vitestOptions" }
      * Output: {
      *   destructure: ["vitest", "vitestOptions"],
      *   componentArray: "[{ component: Vitest, enabled: vitest, options: vitestOptions }]"
      * }
      */
-    private extractComponentOptions(components: Component[]): { destructure: string[]; componentArray: string } {
+    private extractComponentOptions(
+        components: Component[],
+        optionsProperties: ReadonlyMap<string, string>,
+    ): { destructure: string[]; componentArray: string } {
         const destructure: string[] = [];
         const componentParts: string[] = [];
 
@@ -336,9 +345,9 @@ class TypeScriptClassRenderer {
 
             /* Build component config object for applyDefaults() call */
             const parts = [`component: ${c.componentClass.name}`];
-            if (c.optionsProperty && typeof c.optionsProperty !== "boolean") {
+            const propName = optionsProperties.get(c.componentClass.name);
+            if (propName) {
                 /* Component has configurable options - include both enabled flag and options */
-                const propName = typeof c.optionsProperty === "string" ? c.optionsProperty : c.optionsProperty.name;
                 destructure.push(propName);
                 parts.push(`enabled: ${name}`, `options: ${propName}`);
             } else {
@@ -552,6 +561,11 @@ class TypeScriptClassRenderer {
 export class ProjectGenerator extends projen.Component {
     private renderer: TypeScriptClassRenderer;
     private static enumGenerated = false;
+    /**
+     * Options property name per component class name, for the components whose options
+     * property was added to the generated options interface
+     */
+    private readonly optionsProperties = new Map<string, string>();
 
     /**
      * @param project - Projen project instance
@@ -628,6 +642,7 @@ export class ProjectGenerator extends projen.Component {
                             }),
                         );
                     } else if (optionsType) {
+                        this.optionsProperties.set(c.componentClass.name, optionsType.name);
                         struct.add({
                             name: optionsType.name,
                             type: { fqn: optionsType.fqn },
@@ -735,7 +750,7 @@ export class ProjectGenerator extends projen.Component {
      * The file is marked as readonly to prevent manual editing.
      */
     preSynthesize(): void {
-        const content = this.renderer.render(this.options);
+        const content = this.renderer.render(this.options, this.optionsProperties);
 
         new TypeScriptClassFile(this.project, this.options.filePath, content, {
             readonly: this.options.readonly ?? true,

@@ -20,12 +20,12 @@ export class TypeScriptProject extends typescript.TypeScriptProject {
      */
     constructor(options: TypeScriptProjectOptions) {
         /* Separate component configuration from base Projen options */
-        const { homebrew, mise, vitest, ...baseOptions } = options;
+        const { homebrew, homebrewOptions, mise, miseOptions, vitest, vitestOptions, ...baseOptions } = options;
 
         /* Merge default configuration with user options and initialize base class */
         super(deepMerge<typescript.TypeScriptProjectOptions>(defaultOptions.typescript.TypeScriptProject, baseOptions));
 
         /* Apply component defaults and instantiate enabled components */
-        applyDefaults(this, [{ component: Homebrew, enabled: homebrew }, { component: Mise, enabled: mise }, { component: Vitest, enabled: vitest }]);
+        applyDefaults(this, [{ component: Homebrew, enabled: homebrew, options: homebrewOptions }, { component: Mise, enabled: mise, options: miseOptions }, { component: Vitest, enabled: vitest, options: vitestOptions }]);
     }
 }
