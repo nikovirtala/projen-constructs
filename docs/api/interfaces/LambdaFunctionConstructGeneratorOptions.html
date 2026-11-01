@@ -10,6 +10,9 @@
 <ul class="tsd-breadcrumb" aria-label="Breadcrumb">
 <li><a href="" aria-current="page">LambdaFunctionConstructGeneratorOptions</a></li></ul>
 <h1>Interface LambdaFunctionConstructGeneratorOptions</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Options for the LambdaFunctionConstructGenerator</p>
+</div></section>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">LambdaFunctionConstructGeneratorOptions</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#adddependencies">addDependencies</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#baseconstructclass">baseConstructClass</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#baseconstructimport">baseConstructImport</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#baseconstructpackage">baseConstructPackage</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#esbuildoptions">esbuildOptions</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">BuildOptions</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#filepattern">filePattern</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#outputdir">outputDir</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#sourcedir">sourceDir</a><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
@@ -32,28 +35,107 @@
 <section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="adddependencies"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>add<wbr/>Dependencies</span><a href="#adddependencies" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">addDependencies</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">addDependencies</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Whether to automatically add the required dependencies</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default">Default<a href="#default" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">true</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="baseconstructclass"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>base<wbr/>Construct<wbr/>Class</span><a href="#baseconstructclass" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">baseConstructClass</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">baseConstructClass</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Name of the construct class to extend</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;NodejsFunction&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div>
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-1">Default<a href="#default-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;aws_lambda.Function&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="baseconstructimport"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>base<wbr/>Construct<wbr/>Import</span><a href="#baseconstructimport" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">baseConstructImport</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">baseConstructImport</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Import statement for the base construct</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example-1">Example<a href="#example-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;import { NodejsFunction } from &#39;aws-cdk-lib/aws-lambda-nodejs&#39;;&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div>
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-2">Default<a href="#default-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;import { aws_lambda } from &#39;aws-cdk-lib&#39;;&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="baseconstructpackage"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>base<wbr/>Construct<wbr/>Package</span><a href="#baseconstructpackage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">baseConstructPackage</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">baseConstructPackage</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Package name to add as dependency for the base construct</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example-2">Example<a href="#example-2" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;aws-cdk-lib&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div>
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-3">Default<a href="#default-3" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;aws-cdk-lib&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="esbuildoptions"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>esbuild<wbr/>Options</span><a href="#esbuildoptions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">esbuildOptions</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">BuildOptions</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">esbuildOptions</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">BuildOptions</span></div>
+<div class="tsd-comment tsd-typography"><p>esbuild options to customize the bundling process</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-4">Default<a href="#default-4" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-1">{}</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="filepattern"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>file<wbr/>Pattern</span><a href="#filepattern" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">filePattern</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">filePattern</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>File pattern to identify Lambda Function handlers</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-5">Default<a href="#default-5" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;*.lambda.ts&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="outputdir"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>output<wbr/>Dir</span><a href="#outputdir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">outputDir</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">outputDir</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Output directory where Lambda Function constructs will be generated</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-6">Default<a href="#default-6" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;src/constructs/lambda&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="sourcedir"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>source<wbr/>Dir</span><a href="#sourcedir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">sourceDir</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div></section></section></details></div>
+<div class="tsd-signature"><span class="tsd-kind-property">sourceDir</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Source directory where Lambda Function handlers are located</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default-7">Default<a href="#default-7" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;src/handlers&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

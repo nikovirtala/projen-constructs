@@ -41,6 +41,28 @@ describe("LocalStack", () => {
         expect(execStep?.exec).toContain("localstack status");
         expect(execStep?.exec).toContain("LOCALSTACK_PORT=4566");
         expect(execStep?.exec).toContain("LOCALSTACK_DEBUG=0");
+        expect(execStep?.exec).not.toContain("IMAGE_NAME");
+    });
+
+    it("should start the image with the given imageTag", () => {
+        const project = new javascript.NodeProject({
+            name: "test",
+            defaultReleaseBranch: "main",
+        });
+
+        new LocalStack(project, { imageTag: "4.9.2" });
+
+        const execStep = project.tasks.tryFind("localstack")?.steps.find((s) => s.exec?.includes("localstack status"));
+        expect(execStep?.exec).toContain("IMAGE_NAME=localstack/localstack:4.9.2 localstack start -d");
+    });
+
+    it.each(["4.9; rm -rf /", "", "-latest", "a b", "$(whoami)"])("should reject invalid imageTag %j", (imageTag) => {
+        const project = new javascript.NodeProject({
+            name: "test",
+            defaultReleaseBranch: "main",
+        });
+
+        expect(() => new LocalStack(project, { imageTag })).toThrow("is not a valid Docker image tag");
     });
 
     it("should create localstack task with custom options", () => {

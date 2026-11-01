@@ -10,6 +10,9 @@
 <ul class="tsd-breadcrumb" aria-label="Breadcrumb">
 <li><a href="" aria-current="page">LambdaFunctionCodeBundlerOptions</a></li></ul>
 <h1>Interface LambdaFunctionCodeBundlerOptions</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Options for <code>LambdaFunctionCodeBundler</code></p>
+</div></section>
 <div class="tsd-signature"><span class="tsd-signature-keyword">interface</span> <span class="tsd-kind-interface">LambdaFunctionCodeBundlerOptions</span> <span class="tsd-signature-symbol">{</span><br/>    <a class="tsd-kind-property" href="#bundleoptions">bundleOptions</a><span class="tsd-signature-symbol">?:</span> <a href="LambdaFunctionCodeBundleOptions.html" class="tsd-signature-type tsd-kind-interface">LambdaFunctionCodeBundleOptions</a><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#extension">extension</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/>    <a class="tsd-kind-property" href="#srcdir">srcdir</a><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">;</span><br/><span class="tsd-signature-symbol">}</span></div>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
@@ -27,13 +30,33 @@
 <section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="bundleoptions"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>bundle<wbr/>Options</span><a href="#bundleoptions" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">bundleOptions</span><span class="tsd-signature-symbol">?:</span> <a href="LambdaFunctionCodeBundleOptions.html" class="tsd-signature-type tsd-kind-interface">LambdaFunctionCodeBundleOptions</a></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">bundleOptions</span><span class="tsd-signature-symbol">?:</span> <a href="LambdaFunctionCodeBundleOptions.html" class="tsd-signature-type tsd-kind-interface">LambdaFunctionCodeBundleOptions</a></div>
+<div class="tsd-comment tsd-typography"><p>Options for AWS Lambda Function bundling, applied to every discovered entrypoint.</p>
+<p>The <code>entrypoint</code> and <code>extension</code> given here are ignored: each bundle uses its
+discovered entrypoint and the <code>extension</code> of the bundler.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default">Default<a href="#default" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><ul>
+<li>the defaults of <code>LambdaFunctionCodeBundleOptions</code></li>
+</ul>
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="extension"><code class="tsd-tag">Readonly</code><span>extension</span><a href="#extension" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">extension</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div></section>
+<div class="tsd-signature"><span class="tsd-kind-property">extension</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Locate files with the given extension.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-2">&quot;.lambda.ts&quot;</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="srcdir"><code class="tsd-tag">Readonly</code><span>srcdir</span><a href="#srcdir" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">srcdir</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div></section></section></details></div>
+<div class="tsd-signature"><span class="tsd-kind-property">srcdir</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+<div class="tsd-comment tsd-typography"><p>Project source tree (relative to project output directory).</p>
+</div></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

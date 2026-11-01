@@ -4,6 +4,11 @@ import { Component } from "projen/lib/component";
 import { TaskShell } from "projen/lib/task-shell";
 import { Homebrew } from "./homebrew";
 
+/**
+ * Colima component for projen projects.
+ *
+ * Adds Colima support to your project with automatic installation and startup.
+ */
 export class Colima extends Component {
     constructor(scope: IConstruct) {
         super(scope);

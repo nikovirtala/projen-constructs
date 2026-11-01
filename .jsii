@@ -10989,25 +10989,27 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "A bundle created by `Bundler.addBundle`."
       },
       "fqn": "@nikovirtala/projen-constructs.Bundle",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 158
+        "line": 235
       },
       "name": "Bundle",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "The task that produces this bundle."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 159
+            "line": 239
           },
           "name": "bundleTask",
           "type": {
@@ -11017,12 +11019,13 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "Base directory containing the output file (relative to project root)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 161
+            "line": 249
           },
           "name": "outdir",
           "type": {
@@ -11032,12 +11035,13 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "Location of the output file (relative to project root)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 160
+            "line": 244
           },
           "name": "outfile",
           "type": {
@@ -11051,16 +11055,18 @@
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Adds support for bundling JavaScript applications and dependencies into a single file."
       },
       "fqn": "@nikovirtala/projen-constructs.Bundler",
       "initializer": {
         "docs": {
-          "stability": "stable"
+          "stability": "stable",
+          "summary": "Creates a `Bundler`."
         },
         "locationInModule": {
           "filename": "src/components/bundle-lambda-function-code.ts",
-          "line": 50
+          "line": 106
         },
         "parameters": [
           {
@@ -11081,20 +11087,25 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 37
+        "line": 76
       },
       "methods": [
         {
           "docs": {
-            "stability": "stable"
+            "returns": "A bundler",
+            "stability": "stable",
+            "summary": "Returns the `Bundler` instance associated with a project or `undefined` if there is no Bundler."
           },
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 38
+            "line": 84
           },
           "name": "of",
           "parameters": [
             {
+              "docs": {
+                "summary": "The project."
+              },
               "name": "project",
               "type": {
                 "fqn": "projen.Project"
@@ -11111,21 +11122,28 @@
         },
         {
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "Adds a task to the project which bundles a specific entrypoint and all of its dependencies into a single javascript output file."
           },
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 71
+            "line": 140
           },
           "name": "addBundle",
           "parameters": [
             {
+              "docs": {
+                "summary": "The relative path of the artifact within the project."
+              },
               "name": "entrypoint",
               "type": {
                 "primitive": "string"
               }
             },
             {
+              "docs": {
+                "summary": "Bundling options."
+              },
               "name": "options",
               "type": {
                 "fqn": "@nikovirtala/projen-constructs.BundlingOptions"
@@ -11143,12 +11161,13 @@
       "properties": [
         {
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "Root bundle directory."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 44
+            "line": 97
           },
           "name": "bundledir",
           "type": {
@@ -11157,12 +11176,14 @@
         },
         {
           "docs": {
-            "stability": "stable"
+            "remarks": "If the project doesn't have a \"bundle\" task, it will be created and spawned\nduring the pre-compile phase (unless `addToPreCompile` is `false`).",
+            "stability": "stable",
+            "summary": "Gets or creates the singleton \"bundle\" task of the project."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 58
+            "line": 120
           },
           "name": "bundleTask",
           "type": {
@@ -11171,12 +11192,13 @@
         },
         {
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "The semantic version requirement for `esbuild` (if defined)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 43
+            "line": 92
           },
           "name": "esbuildVersion",
           "optional": true,
@@ -11191,25 +11213,28 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Options for `Bundler`."
       },
       "fqn": "@nikovirtala/projen-constructs.BundlerOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 30
+        "line": 41
       },
       "name": "BundlerOptions",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "true",
+            "stability": "stable",
+            "summary": "Install the `bundle` command as a pre-compile phase."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 33
+            "line": 61
           },
           "name": "addToPreCompile",
           "optional": true,
@@ -11220,12 +11245,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"assets\"",
+            "stability": "stable",
+            "summary": "Output directory for all bundles."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 32
+            "line": 54
           },
           "name": "assetsDir",
           "optional": true,
@@ -11236,12 +11263,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- no specific version (implies latest)",
+            "stability": "stable",
+            "summary": "The semantic version requirement for `esbuild`."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 31
+            "line": 47
           },
           "name": "esbuildVersion",
           "optional": true,
@@ -11252,12 +11281,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- no loaders",
+            "remarks": "Loaders are appended to the esbuild command by `--loader:.extension=loader`",
+            "stability": "stable",
+            "summary": "Map of file extensions (without dot) and loaders to use for this file type."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 34
+            "line": 69
           },
           "name": "loaders",
           "optional": true,
@@ -11277,25 +11309,30 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Options for bundling."
       },
       "fqn": "@nikovirtala/projen-constructs.BundlingOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 164
+        "line": 255
       },
       "name": "BundlingOptions",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\":js=import { createRequire as topLevelCreateRequire } from 'module';const require = topLevelCreateRequire(import.meta.url)\"",
+            "remarks": "The default defines `require` so that CommonJS dependencies work in an ES module bundle.",
+            "see": "https://esbuild.github.io/api/#banner",
+            "stability": "stable",
+            "summary": "esbuild `--banner` argument, appended as is (so it starts with the file type, e.g. `:js=`)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 176
+            "line": 359
           },
           "name": "banner",
           "optional": true,
@@ -11306,12 +11343,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "[]",
+            "remarks": "Instead of being bundled, the import will be preserved (using require for\nthe iife and cjs formats and using import for the esm format) and will be\nevaluated at run time instead.\n\nThis has several uses. First of all, it can be used to trim unnecessary\ncode from your bundle for a code path that you know will never be executed.\nFor example, a package may contain code that only runs in node but you will\nonly be using that package in the browser. It can also be used to import\ncode in node at run time from a package that cannot be bundled. For\nexample, the fsevents package contains a native extension, which esbuild\ndoesn't support.",
+            "stability": "stable",
+            "summary": "You can mark a file or a package as external to exclude it from your build."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 165
+            "line": 272
           },
           "name": "externals",
           "optional": true,
@@ -11327,12 +11367,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"esm\"",
+            "see": "https://esbuild.github.io/api/#format",
+            "stability": "stable",
+            "summary": "Output format for the generated JavaScript files: `\"iife\"`, `\"cjs\"` or `\"esm\"`."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 172
+            "line": 325
           },
           "name": "format",
           "optional": true,
@@ -11343,12 +11386,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- the loaders of the `Bundler`",
+            "remarks": "Loaders are appended to the esbuild command by `--loader:.extension=loader`",
+            "stability": "stable",
+            "summary": "Map of file extensions (without dot) and loaders to use for this file type."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 171
+            "line": 317
           },
           "name": "loaders",
           "optional": true,
@@ -11364,12 +11410,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"module,main\"",
+            "see": "https://esbuild.github.io/api/#main-fields",
+            "stability": "stable",
+            "summary": "Comma-separated list of `package.json` fields esbuild tries when resolving a package."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 175
+            "line": 349
           },
           "name": "mainFields",
           "optional": true,
@@ -11380,12 +11429,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "true",
+            "see": "https://esbuild.github.io/api/#minify",
+            "stability": "stable",
+            "summary": "Minify the bundle."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 173
+            "line": 333
           },
           "name": "minify",
           "optional": true,
@@ -11396,12 +11448,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"index.mjs\"",
+            "stability": "stable",
+            "summary": "Bundler output path relative to the asset's output directory."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 169
+            "line": 300
           },
           "name": "outfile",
           "optional": true,
@@ -11412,12 +11466,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"node\"",
+            "stability": "stable",
+            "summary": "esbuild platform."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 168
+            "line": 293
           },
           "name": "platform",
           "optional": true,
@@ -11428,12 +11484,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "true",
+            "stability": "stable",
+            "summary": "Include a source map in the bundle."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 166
+            "line": 279
           },
           "name": "sourcemap",
           "optional": true,
@@ -11444,12 +11502,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "false",
+            "see": "https://esbuild.github.io/api/#sources-content",
+            "stability": "stable",
+            "summary": "Include the original source code in the source map."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 174
+            "line": 341
           },
           "name": "sourcesContent",
           "optional": true,
@@ -11460,12 +11521,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"esnext\"",
+            "stability": "stable",
+            "summary": "esbuild target."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 167
+            "line": 286
           },
           "name": "target",
           "optional": true,
@@ -11476,12 +11539,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- no tsconfig is passed to esbuild",
+            "remarks": "`LambdaFunctionCodeBundle` always sets this to the project's development tsconfig.",
+            "stability": "stable",
+            "summary": "The path of the tsconfig.json file to use for bundling."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 170
+            "line": 309
           },
           "name": "tsconfigPath",
           "optional": true,
@@ -11496,7 +11562,9 @@
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
       "docs": {
-        "stability": "stable"
+        "remarks": "Adds Colima support to your project with automatic installation and startup.",
+        "stability": "stable",
+        "summary": "Colima component for projen projects."
       },
       "fqn": "@nikovirtala/projen-constructs.Colima",
       "initializer": {
@@ -11505,7 +11573,7 @@
         },
         "locationInModule": {
           "filename": "src/components/colima.ts",
-          "line": 8
+          "line": 13
         },
         "parameters": [
           {
@@ -11519,7 +11587,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/colima.ts",
-        "line": 7
+        "line": 12
       },
       "name": "Colima",
       "symbolId": "src/components/colima:Colima"
@@ -15264,25 +15332,35 @@
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
       "docs": {
-        "stability": "stable"
+        "example": "new Bundler(myProject);\nnew LambdaFunctionCodeBundle(myProject, {\n  entrypoint: \"src/foo.lambda.ts\",\n  extension: \".lambda.ts\",\n});",
+        "remarks": "Adds a task to the project's `Bundler` that uses `esbuild` to bundle the\nhandler into the assets directory, and generates a file (e.g. `src/foo-code.ts`)\nexporting an `aws_lambda.Code` constant (e.g. `FooFunctionCode`) that points to\nthe bundle. Pass it as the `code` of an `aws_lambda.Function`.\n\nRequires a `Bundler` component in the project.",
+        "stability": "stable",
+        "summary": "Generates a pre-bundled AWS Lambda Function code asset from handler code."
       },
       "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundle",
       "initializer": {
         "docs": {
-          "stability": "stable"
+          "stability": "stable",
+          "summary": "Defines a pre-bundled AWS Lambda Function code asset from handler code."
         },
         "locationInModule": {
           "filename": "src/components/bundle-lambda-function-code.ts",
-          "line": 188
+          "line": 433
         },
         "parameters": [
           {
+            "docs": {
+              "summary": "The project to use."
+            },
             "name": "project",
             "type": {
               "fqn": "projen.Project"
             }
           },
           {
+            "docs": {
+              "summary": "Options."
+            },
             "name": "options",
             "type": {
               "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions"
@@ -15293,7 +15371,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 187
+        "line": 426
       },
       "name": "LambdaFunctionCodeBundle",
       "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundle"
@@ -15302,25 +15380,29 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Options for `LambdaFunctionCodeBundle`."
       },
       "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 179
+        "line": 365
       },
       "name": "LambdaFunctionCodeBundleOptions",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "example": "\"src/subdir/foo.lambda.ts\"",
+            "remarks": "This is relative to the root directory of the project.",
+            "stability": "stable",
+            "summary": "A path from the project root directory to a TypeScript file which contains the AWS Lambda handler entrypoint (exports a `handler` function)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 180
+            "line": 374
           },
           "name": "entrypoint",
           "type": {
@@ -15330,12 +15412,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "example": "\".lambda.ts\"",
+            "stability": "stable",
+            "summary": "Suffix for AWS Lambda handlers."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 181
+            "line": 381
           },
           "name": "extension",
           "type": {
@@ -15345,12 +15429,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- the defaults of `BundlingOptions`",
+            "stability": "stable",
+            "summary": "Bundling options for this AWS Lambda Function."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 184
+            "line": 405
           },
           "name": "bundlingOptions",
           "optional": true,
@@ -15361,12 +15447,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- The path of the entrypoint file, with the `-code.ts` suffix\ninstead of the extension (e.g. `src/foo-code.ts`).",
+            "remarks": "This file should also be\nunder the source tree.",
+            "stability": "stable",
+            "summary": "The name of the generated TypeScript source file."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 182
+            "line": 390
           },
           "name": "constructFile",
           "optional": true,
@@ -15377,12 +15466,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- A pascal cased version of the name of the entrypoint file, with\nthe suffix `FunctionCode` (e.g. `ResizeImageFunctionCode`).",
+            "stability": "stable",
+            "summary": "The name of the generated `aws_lambda.Code` constant."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 183
+            "line": 398
           },
           "name": "constructName",
           "optional": true,
@@ -15407,7 +15498,7 @@
         },
         "locationInModule": {
           "filename": "src/components/bundle-lambda-function-code.ts",
-          "line": 250
+          "line": 516
         },
         "parameters": [
           {
@@ -15427,7 +15518,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 249
+        "line": 515
       },
       "name": "LambdaFunctionCodeBundler",
       "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundler"
@@ -15436,25 +15527,28 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Options for `LambdaFunctionCodeBundler`."
       },
       "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 240
+        "line": 488
       },
       "name": "LambdaFunctionCodeBundlerOptions",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "example": "\".lambda.ts\"",
+            "stability": "stable",
+            "summary": "Locate files with the given extension."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 241
+            "line": 494
           },
           "name": "extension",
           "type": {
@@ -15464,12 +15558,13 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "stability": "stable",
+            "summary": "Project source tree (relative to project output directory)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 242
+            "line": 499
           },
           "name": "srcdir",
           "type": {
@@ -15479,12 +15574,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- the defaults of `LambdaFunctionCodeBundleOptions`",
+            "remarks": "The `entrypoint` and `extension` given here are ignored: each bundle uses its\ndiscovered entrypoint and the `extension` of the bundler.",
+            "stability": "stable",
+            "summary": "Options for AWS Lambda Function bundling, applied to every discovered entrypoint."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 243
+            "line": 509
           },
           "name": "bundleOptions",
           "optional": true,
@@ -15499,7 +15597,9 @@
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
       "docs": {
-        "stability": "stable"
+        "remarks": "The bundling happens during projen execution, not during CDK synth, enabling a \"build once, deploy many\" pattern.",
+        "stability": "stable",
+        "summary": "A projen component that generates AWS CDK Lambda Function constructs and bundles their code assets using esbuild."
       },
       "fqn": "@nikovirtala/projen-constructs.LambdaFunctionConstructGenerator",
       "initializer": {
@@ -15508,7 +15608,7 @@
         },
         "locationInModule": {
           "filename": "src/components/lambda-function-construct-generator.ts",
-          "line": 29
+          "line": 90
         },
         "parameters": [
           {
@@ -15529,7 +15629,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/lambda-function-construct-generator.ts",
-        "line": 18
+        "line": 79
       },
       "name": "LambdaFunctionConstructGenerator",
       "properties": [
@@ -15540,7 +15640,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 22
+            "line": 83
           },
           "name": "esbuildOptions",
           "type": {
@@ -15554,7 +15654,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 21
+            "line": 82
           },
           "name": "filePattern",
           "type": {
@@ -15568,7 +15668,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 20
+            "line": 81
           },
           "name": "outputDir",
           "type": {
@@ -15582,7 +15682,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 19
+            "line": 80
           },
           "name": "sourceDir",
           "type": {
@@ -15596,7 +15696,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 24
+            "line": 85
           },
           "name": "baseConstructClass",
           "optional": true,
@@ -15611,7 +15711,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 23
+            "line": 84
           },
           "name": "baseConstructImport",
           "optional": true,
@@ -15626,7 +15726,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 25
+            "line": 86
           },
           "name": "baseConstructPackage",
           "optional": true,
@@ -15641,25 +15741,28 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Options for the LambdaFunctionConstructGenerator."
       },
       "fqn": "@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/lambda-function-construct-generator.ts",
-        "line": 7
+        "line": 10
       },
       "name": "LambdaFunctionConstructGeneratorOptions",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "true",
+            "stability": "stable",
+            "summary": "Whether to automatically add the required dependencies."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 12
+            "line": 44
           },
           "name": "addDependencies",
           "optional": true,
@@ -15670,12 +15773,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"aws_lambda.Function\"",
+            "example": "\"NodejsFunction\"",
+            "stability": "stable",
+            "summary": "Name of the construct class to extend."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 14
+            "line": 62
           },
           "name": "baseConstructClass",
           "optional": true,
@@ -15686,12 +15792,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"import { aws_lambda } from 'aws-cdk-lib';\"",
+            "example": "\"import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';\"",
+            "stability": "stable",
+            "summary": "Import statement for the base construct."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 13
+            "line": 53
           },
           "name": "baseConstructImport",
           "optional": true,
@@ -15702,12 +15811,15 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"aws-cdk-lib\"",
+            "example": "\"aws-cdk-lib\"",
+            "stability": "stable",
+            "summary": "Package name to add as dependency for the base construct."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 15
+            "line": 71
           },
           "name": "baseConstructPackage",
           "optional": true,
@@ -15718,12 +15830,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "{}",
+            "stability": "stable",
+            "summary": "esbuild options to customize the bundling process."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 11
+            "line": 37
           },
           "name": "esbuildOptions",
           "optional": true,
@@ -15734,12 +15848,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"*.lambda.ts\"",
+            "stability": "stable",
+            "summary": "File pattern to identify Lambda Function handlers."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 10
+            "line": 30
           },
           "name": "filePattern",
           "optional": true,
@@ -15750,12 +15866,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"src/constructs/lambda\"",
+            "stability": "stable",
+            "summary": "Output directory where Lambda Function constructs will be generated."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 9
+            "line": 23
           },
           "name": "outputDir",
           "optional": true,
@@ -15766,12 +15884,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "\"src/handlers\"",
+            "stability": "stable",
+            "summary": "Source directory where Lambda Function handlers are located."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/lambda-function-construct-generator.ts",
-            "line": 8
+            "line": 16
           },
           "name": "sourceDir",
           "optional": true,
@@ -15786,7 +15906,9 @@
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
       "docs": {
-        "stability": "stable"
+        "remarks": "Adds LocalStack support to your project with automatic Docker/Colima setup.",
+        "stability": "stable",
+        "summary": "LocalStack component for projen projects."
       },
       "fqn": "@nikovirtala/projen-constructs.LocalStack",
       "initializer": {
@@ -15795,7 +15917,7 @@
         },
         "locationInModule": {
           "filename": "src/components/localstack.ts",
-          "line": 15
+          "line": 50
         },
         "parameters": [
           {
@@ -15816,7 +15938,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/localstack.ts",
-        "line": 14
+        "line": 49
       },
       "name": "LocalStack",
       "symbolId": "src/components/localstack:LocalStack"
@@ -15825,25 +15947,28 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Options for LocalStack component."
       },
       "fqn": "@nikovirtala/projen-constructs.LocalStackOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/localstack.ts",
-        "line": 7
+        "line": 10
       },
       "name": "LocalStackOptions",
       "properties": [
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "false",
+            "stability": "stable",
+            "summary": "Enable LocalStack debug mode."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 10
+            "line": 27
           },
           "name": "debug",
           "optional": true,
@@ -15854,12 +15979,16 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- the LocalStack CLI's default image",
+            "remarks": "When set, LocalStack starts with the `localstack/localstack:<imageTag>` image, passed to\n`localstack start` through the `IMAGE_NAME` environment variable. That's the community\nimage, even if a `LOCALSTACK_AUTH_TOKEN` would otherwise select the Pro image.\n\nMust be a valid Docker tag.",
+            "see": "https://docs.localstack.cloud/aws/customization/configuration-options/",
+            "stability": "stable",
+            "summary": "LocalStack Docker image tag, e.g. `\"4.9\"` to pin a version."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 11
+            "line": 41
           },
           "name": "imageTag",
           "optional": true,
@@ -15870,12 +15999,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "4566",
+            "stability": "stable",
+            "summary": "LocalStack gateway port."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 9
+            "line": 21
           },
           "name": "port",
           "optional": true,
@@ -15886,12 +16017,14 @@
         {
           "abstract": true,
           "docs": {
-            "stability": "stable"
+            "default": "- all services enabled",
+            "stability": "stable",
+            "summary": "LocalStack services to enable."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 8
+            "line": 15
           },
           "name": "services",
           "optional": true,
@@ -21248,5 +21381,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "KTIu4EXlTyL4l4rWXeGPKEloP3Itkp25RBhKjxlaJoM="
+  "fingerprint": "SsoG69RC7THtvnLayb0IfcNNuG4PG6a2qLAt4Z1pbq0="
 }

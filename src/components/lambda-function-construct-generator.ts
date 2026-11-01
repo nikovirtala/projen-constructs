@@ -4,17 +4,78 @@ import { Component, SourceCode } from "projen";
 import type { NodeProject } from "projen/lib/javascript";
 import { tsconfigDevPath } from "../utils";
 
+/**
+ * Options for the LambdaFunctionConstructGenerator
+ */
 export interface LambdaFunctionConstructGeneratorOptions {
+    /**
+     * Source directory where Lambda Function handlers are located
+     *
+     * @default "src/handlers"
+     */
     readonly sourceDir?: string;
+
+    /**
+     * Output directory where Lambda Function constructs will be generated
+     *
+     * @default "src/constructs/lambda"
+     */
     readonly outputDir?: string;
+
+    /**
+     * File pattern to identify Lambda Function handlers
+     *
+     * @default "*.lambda.ts"
+     */
     readonly filePattern?: string;
+
+    /**
+     * esbuild options to customize the bundling process
+     *
+     * @default {}
+     */
     readonly esbuildOptions?: BuildOptions;
+
+    /**
+     * Whether to automatically add the required dependencies
+     *
+     * @default true
+     */
     readonly addDependencies?: boolean;
+
+    /**
+     * Import statement for the base construct
+     *
+     * @example "import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';"
+     *
+     * @default "import { aws_lambda } from 'aws-cdk-lib';"
+     */
     readonly baseConstructImport?: string;
+
+    /**
+     * Name of the construct class to extend
+     *
+     * @example "NodejsFunction"
+     *
+     * @default "aws_lambda.Function"
+     */
     readonly baseConstructClass?: string;
+
+    /**
+     * Package name to add as dependency for the base construct
+     *
+     * @example "aws-cdk-lib"
+     *
+     * @default "aws-cdk-lib"
+     */
     readonly baseConstructPackage?: string;
 }
 
+/**
+ * A projen component that generates AWS CDK Lambda Function constructs and bundles their code assets using esbuild.
+ *
+ * The bundling happens during projen execution, not during CDK synth, enabling a "build once, deploy many" pattern.
+ */
 export class LambdaFunctionConstructGenerator extends Component {
     public readonly sourceDir: string;
     public readonly outputDir: string;

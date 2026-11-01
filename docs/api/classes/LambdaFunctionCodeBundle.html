@@ -10,6 +10,20 @@
 <ul class="tsd-breadcrumb" aria-label="Breadcrumb">
 <li><a href="" aria-current="page">LambdaFunctionCodeBundle</a></li></ul>
 <h1>Class LambdaFunctionCodeBundle</h1></div>
+<section class="tsd-panel tsd-comment">
+<div class="tsd-comment tsd-typography"><p>Generates a pre-bundled AWS Lambda Function code asset from handler code.</p>
+<p>Adds a task to the project's <code>Bundler</code> that uses <code>esbuild</code> to bundle the
+handler into the assets directory, and generates a file (e.g. <code>src/foo-code.ts</code>)
+exporting an <code>aws_lambda.Code</code> constant (e.g. <code>FooFunctionCode</code>) that points to
+the bundle. Pass it as the <code>code</code> of an <code>aws_lambda.Function</code>.</p>
+<p>Requires a <code>Bundler</code> component in the project.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-example">
+<h4 class="tsd-anchor-link" id="example">Example<a href="#example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">Bundler</span><span class="hl-1">(</span><span class="hl-5">myProject</span><span class="hl-1">);</span><br/><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">LambdaFunctionCodeBundle</span><span class="hl-1">(</span><span class="hl-5">myProject</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-5">entrypoint:</span><span class="hl-1"> </span><span class="hl-2">&quot;src/foo.lambda.ts&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">extension:</span><span class="hl-1"> </span><span class="hl-2">&quot;.lambda.ts&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">});</span>
+</code><button type="button">Copy</button></pre>
+
+</div></div></section>
 <section class="tsd-panel tsd-hierarchy" data-refl="90">
 <h4>Hierarchy</h4>
 <ul class="tsd-hierarchy">
@@ -51,11 +65,17 @@
 <li class="">
 <div class="tsd-signature tsd-anchor-link" id="constructorlambdafunctioncodebundle"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">LambdaFunctionCodeBundle</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">project</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Project</span><span class="tsd-signature-symbol">,</span><br/>    <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">:</span> <a href="../interfaces/LambdaFunctionCodeBundleOptions.html" class="tsd-signature-type tsd-kind-interface">LambdaFunctionCodeBundleOptions</a><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">LambdaFunctionCodeBundle</a><a href="#constructorlambdafunctioncodebundle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Defines a pre-bundled AWS Lambda Function code asset from handler code.</p>
+</div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">project</span>: <span class="tsd-signature-type">Project</span></span></li>
-<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/LambdaFunctionCodeBundleOptions.html" class="tsd-signature-type tsd-kind-interface">LambdaFunctionCodeBundleOptions</a></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">project</span>: <span class="tsd-signature-type">Project</span></span>
+<div class="tsd-comment tsd-typography"><p>The project to use</p>
+</div></li>
+<li><span><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/LambdaFunctionCodeBundleOptions.html" class="tsd-signature-type tsd-kind-interface">LambdaFunctionCodeBundleOptions</a></span>
+<div class="tsd-comment tsd-typography"><p>Options</p>
+</div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">LambdaFunctionCodeBundle</a></h4><aside class="tsd-sources">
 <p>Overrides Component.constructor</p></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
