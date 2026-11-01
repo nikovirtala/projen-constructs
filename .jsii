@@ -11781,7 +11781,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 74
+        "line": 75
       },
       "members": [
         {
@@ -11813,7 +11813,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 90
+        "line": 91
       },
       "members": [
         {
@@ -11910,7 +11910,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 9
+        "line": 10
       },
       "members": [
         {
@@ -16201,7 +16201,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 37
+        "line": 38
       },
       "members": [
         {
@@ -20708,7 +20708,7 @@
         },
         "locationInModule": {
           "filename": "src/components/vitest.ts",
-          "line": 344
+          "line": 345
         },
         "parameters": [
           {
@@ -20729,7 +20729,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 315
+        "line": 316
       },
       "methods": [
         {
@@ -20738,7 +20738,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 316
+            "line": 317
           },
           "name": "of",
           "parameters": [
@@ -20763,7 +20763,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 417
+            "line": 466
           },
           "name": "addExclude",
           "parameters": [
@@ -20781,7 +20781,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 412
+            "line": 461
           },
           "name": "addInclude",
           "parameters": [
@@ -20799,7 +20799,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 427
+            "line": 476
           },
           "name": "configureCoverageProvider",
           "parameters": [
@@ -20817,7 +20817,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 446
+            "line": 495
           },
           "name": "configureCoverageReporters",
           "parameters": [
@@ -20840,7 +20840,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 422
+            "line": 471
           },
           "name": "configureEnvironment",
           "parameters": [
@@ -20858,7 +20858,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 451
+            "line": 500
           },
           "name": "configureGlobals"
         },
@@ -20869,9 +20869,22 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 402
+            "line": 403
           },
           "name": "preSynthesize",
+          "overrides": "projen.Component"
+        },
+        {
+          "docs": {
+            "remarks": "`postSynthesize` would be too late to rely\non: projen skips it when `PROJEN_DISABLE_POST` is set.",
+            "stability": "stable",
+            "summary": "Runs after projen's sample code component, which is added in the project constructor before any component, so the sample test exists by now."
+          },
+          "locationInModule": {
+            "filename": "src/components/vitest.ts",
+            "line": 418
+          },
+          "name": "synthesize",
           "overrides": "projen.Component"
         }
       ],
@@ -20890,7 +20903,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 122
+        "line": 123
       },
       "name": "VitestConfigOptions",
       "properties": [
@@ -20905,7 +20918,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 242
+            "line": 243
           },
           "name": "bail",
           "optional": true,
@@ -20923,7 +20936,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 202
+            "line": 203
           },
           "name": "coverageDirectory",
           "optional": true,
@@ -20942,7 +20955,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 179
+            "line": 180
           },
           "name": "coverageEnabled",
           "optional": true,
@@ -20961,7 +20974,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 187
+            "line": 188
           },
           "name": "coverageProvider",
           "optional": true,
@@ -20980,7 +20993,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 195
+            "line": 196
           },
           "name": "coverageReporters",
           "optional": true,
@@ -21004,7 +21017,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 145
+            "line": 146
           },
           "name": "environment",
           "optional": true,
@@ -21023,7 +21036,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 137
+            "line": 138
           },
           "name": "exclude",
           "optional": true,
@@ -21048,7 +21061,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 171
+            "line": 172
           },
           "name": "globals",
           "optional": true,
@@ -21067,7 +21080,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 129
+            "line": 130
           },
           "name": "include",
           "optional": true,
@@ -21092,7 +21105,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 155
+            "line": 156
           },
           "name": "isolate",
           "optional": true,
@@ -21111,7 +21124,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 234
+            "line": 235
           },
           "name": "passWithNoTests",
           "optional": true,
@@ -21130,7 +21143,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 163
+            "line": 164
           },
           "name": "pool",
           "optional": true,
@@ -21149,7 +21162,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 258
+            "line": 259
           },
           "name": "printConsoleTrace",
           "optional": true,
@@ -21168,7 +21181,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 266
+            "line": 267
           },
           "name": "slowTestThreshold",
           "optional": true,
@@ -21188,7 +21201,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 218
+            "line": 219
           },
           "name": "typecheckChecker",
           "optional": true,
@@ -21207,7 +21220,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 210
+            "line": 211
           },
           "name": "typecheckEnabled",
           "optional": true,
@@ -21226,7 +21239,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 226
+            "line": 227
           },
           "name": "typecheckTsconfig",
           "optional": true,
@@ -21246,7 +21259,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 250
+            "line": 251
           },
           "name": "updateSnapshots",
           "optional": true,
@@ -21267,7 +21280,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 269
+        "line": 270
       },
       "name": "VitestOptions",
       "properties": [
@@ -21280,7 +21293,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 280
+            "line": 281
           },
           "name": "config",
           "optional": true,
@@ -21298,7 +21311,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 275
+            "line": 276
           },
           "name": "configFilePath",
           "optional": true,
@@ -21319,7 +21332,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 312
+            "line": 313
           },
           "name": "extraConfig",
           "optional": true,
@@ -21345,7 +21358,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 300
+            "line": 301
           },
           "name": "extraTestConfig",
           "optional": true,
@@ -21368,7 +21381,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 287
+            "line": 288
           },
           "name": "vitestVersion",
           "optional": true,
@@ -21381,5 +21394,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "uE2hlT0BADk6Q2NhG2EY7LNUlCEQU03Zj5cZxnvyemo="
+  "fingerprint": "PZ7Bew4zetzyTzrRIIM3Q1ES//heFlSdmMqbXwLSqWw="
 }
