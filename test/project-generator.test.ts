@@ -176,5 +176,64 @@ describe("ProjectGenerator", () => {
             expect(classFile).toContain("enabled: vitest");
             expect(classFile).toContain("applyDefaults");
         });
+
+        it("passes auto-detected options property to the component", () => {
+            const project = new TypeScriptProject({
+                name: "test-project",
+                defaultReleaseBranch: "main",
+            });
+
+            new ProjectGenerator(project, {
+                name: "TestProject",
+                projectType: ProjectType.TYPE_SCRIPT_PROJECT,
+                filePath: "./src/test-project.generated.ts",
+                components: [{ componentClass: Vitest }],
+            });
+
+            const snapshot = synthSnapshot(project);
+            const classFile = snapshot["src/test-project.generated.ts"];
+
+            expect(classFile).toContain("const { vitest, vitestOptions, ...baseOptions } = options;");
+            expect(classFile).toContain("{ component: Vitest, enabled: vitest, options: vitestOptions }");
+        });
+
+        it("passes custom options property to the component", () => {
+            const project = new TypeScriptProject({
+                name: "test-project",
+                defaultReleaseBranch: "main",
+            });
+
+            new ProjectGenerator(project, {
+                name: "TestProject",
+                projectType: ProjectType.TYPE_SCRIPT_PROJECT,
+                filePath: "./src/test-project.generated.ts",
+                components: [{ componentClass: Vitest, optionsProperty: "customVitestOptions" }],
+            });
+
+            const snapshot = synthSnapshot(project);
+            const classFile = snapshot["src/test-project.generated.ts"];
+
+            expect(classFile).toContain("{ component: Vitest, enabled: vitest, options: customVitestOptions }");
+        });
+
+        it("passes no options when optionsProperty is false", () => {
+            const project = new TypeScriptProject({
+                name: "test-project",
+                defaultReleaseBranch: "main",
+            });
+
+            new ProjectGenerator(project, {
+                name: "TestProject",
+                projectType: ProjectType.TYPE_SCRIPT_PROJECT,
+                filePath: "./src/test-project.generated.ts",
+                components: [{ componentClass: Vitest, optionsProperty: false }],
+            });
+
+            const snapshot = synthSnapshot(project);
+            const classFile = snapshot["src/test-project.generated.ts"];
+
+            expect(classFile).toContain("const { vitest, ...baseOptions } = options;");
+            expect(classFile).toContain("{ component: Vitest, enabled: vitest }");
+        });
     });
 });

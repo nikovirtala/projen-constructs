@@ -16123,7 +16123,7 @@
         },
         "locationInModule": {
           "filename": "src/project-generator.ts",
-          "line": 560
+          "line": 574
         },
         "parameters": [
           {
@@ -16149,7 +16149,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/project-generator.ts",
-        "line": 552
+        "line": 561
       },
       "methods": [
         {
@@ -16160,7 +16160,7 @@
           },
           "locationInModule": {
             "filename": "src/project-generator.ts",
-            "line": 737
+            "line": 752
           },
           "name": "preSynthesize",
           "overrides": "projen.Component"
@@ -21195,5 +21195,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "LI+jZuWy/ttN4tVIW9oc4rI1YgBQeoWRo2CrN7eIAbg="
+  "fingerprint": "kRsj40Qcqm77TQJOjjLFja7MLOk23ah7CNipRJ3/AsA="
 }
