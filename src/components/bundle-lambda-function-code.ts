@@ -1,7 +1,16 @@
 import * as path from "node:path";
 import { basename, dirname, extname, join, posix, sep } from "node:path";
 import { pascal } from "case";
-import { Component, DependencyType, javascript, type Project, SourceCode, type Task, type typescript } from "projen";
+import {
+    Component,
+    cdk,
+    DependencyType,
+    javascript,
+    type Project,
+    SourceCode,
+    type Task,
+    type typescript,
+} from "projen";
 
 export function renderBundleName(entrypoint: string) {
     const parts = join(entrypoint).split(sep);
@@ -234,17 +243,21 @@ export interface LambdaFunctionCodeBundlerOptions {
     readonly bundleOptions?: LambdaFunctionCodeBundleOptions;
 }
 
-export class LambdaFunctionCodeBundler extends Component {
+/**
+ * Creates Lambda Function code bundles from entrypoints discovered in the project's source tree.
+ */
+export class LambdaFunctionCodeBundler extends cdk.AutoDiscoverBase {
     constructor(project: Project, options: LambdaFunctionCodeBundlerOptions) {
-        super(project);
+        super(project, {
+            projectdir: options.srcdir,
+            extension: options.extension,
+        });
 
-        const entrypoints: string[] = [];
-
-        for (const entrypoint of entrypoints) {
+        for (const entrypoint of this.entrypoints) {
             new LambdaFunctionCodeBundle(this.project, {
+                ...options.bundleOptions,
                 entrypoint: entrypoint,
                 extension: options.extension,
-                ...options.bundleOptions,
             });
         }
     }
