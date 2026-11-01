@@ -27,11 +27,16 @@ export interface LocalStackOptions {
     readonly debug?: boolean;
 
     /**
-     * LocalStack Docker image tag.
+     * LocalStack Docker image tag, e.g. `"4.9"` to pin a version.
      *
-     * Not applied yet: LocalStack always starts with its default image.
+     * When set, LocalStack starts with the `localstack/localstack:<imageTag>` image, passed to
+     * `localstack start` through the `IMAGE_NAME` environment variable. That's the community
+     * image, even if a `LOCALSTACK_AUTH_TOKEN` would otherwise select the Pro image.
      *
-     * @default "latest"
+     * Must be a valid Docker tag.
+     *
+     * @default - the LocalStack CLI's default image
+     * @see https://docs.localstack.cloud/aws/customization/configuration-options/
      */
     readonly imageTag?: string;
 }
@@ -53,6 +58,11 @@ export class LocalStack extends Component {
         const port = options.port ?? 4566;
         const debug = options.debug ?? false;
 
+        /* The tag ends up in a shell command, so only accept valid Docker tags */
+        if (options.imageTag !== undefined && !/^[\w][\w.-]{0,127}$/.test(options.imageTag)) {
+            throw new Error(`LocalStack imageTag "${options.imageTag}" is not a valid Docker image tag`);
+        }
+
         new Colima(project);
 
         let homebrew = Homebrew.of(project);
@@ -67,6 +77,9 @@ export class LocalStack extends Component {
         const envVars = [`LOCALSTACK_PORT=${port}`, `LOCALSTACK_DEBUG=${debug ? "1" : "0"}`];
         if (options.services) {
             envVars.push(`SERVICES=${options.services.join(",")}`);
+        }
+        if (options.imageTag !== undefined) {
+            envVars.push(`IMAGE_NAME=localstack/localstack:${options.imageTag}`);
         }
 
         const localstackTask = project.addTask("localstack", {

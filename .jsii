@@ -15917,7 +15917,7 @@
         },
         "locationInModule": {
           "filename": "src/components/localstack.ts",
-          "line": 45
+          "line": 50
         },
         "parameters": [
           {
@@ -15938,7 +15938,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/localstack.ts",
-        "line": 44
+        "line": 49
       },
       "name": "LocalStack",
       "symbolId": "src/components/localstack:LocalStack"
@@ -15979,15 +15979,16 @@
         {
           "abstract": true,
           "docs": {
-            "default": "\"latest\"",
-            "remarks": "Not applied yet: LocalStack always starts with its default image.",
+            "default": "- the LocalStack CLI's default image",
+            "remarks": "When set, LocalStack starts with the `localstack/localstack:<imageTag>` image, passed to\n`localstack start` through the `IMAGE_NAME` environment variable. That's the community\nimage, even if a `LOCALSTACK_AUTH_TOKEN` would otherwise select the Pro image.\n\nMust be a valid Docker tag.",
+            "see": "https://docs.localstack.cloud/aws/customization/configuration-options/",
             "stability": "stable",
-            "summary": "LocalStack Docker image tag."
+            "summary": "LocalStack Docker image tag, e.g. `\"4.9\"` to pin a version."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 36
+            "line": 41
           },
           "name": "imageTag",
           "optional": true,
@@ -21380,5 +21381,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "I9UNE2TF0K92KU1jpj9VigfqzfjCKzzb1i985caFDVE="
+  "fingerprint": "SsoG69RC7THtvnLayb0IfcNNuG4PG6a2qLAt4Z1pbq0="
 }
