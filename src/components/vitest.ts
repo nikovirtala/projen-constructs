@@ -1,3 +1,4 @@
+import * as fs from "node:fs";
 import * as path from "node:path";
 import { awscdk, cdk } from "projen";
 import { Component } from "projen/lib/component";
@@ -407,6 +408,54 @@ export class Vitest extends Component {
                 throw new Error("vitest cannot be used together with jest");
             }
         }
+    }
+
+    /**
+     * Runs after projen's sample code component, which is added in the project constructor before
+     * any component, so the sample test exists by now. `postSynthesize` would be too late to rely
+     * on: projen skips it when `PROJEN_DISABLE_POST` is set.
+     */
+    public override synthesize() {
+        super.synthesize();
+
+        this.importVitestInSampleTest();
+    }
+
+    /**
+     * Makes the sample test of AWS CDK apps work with Vitest.
+     *
+     * Projen writes `<testdir>/<entrypoint>.test.ts` for AWS CDK TypeScript apps whenever the test
+     * directory contains no TypeScript files. The test uses the Jest globals `test` and `expect`,
+     * which don't exist with Vitest unless `globals` is enabled, so import them from `vitest`.
+     *
+     * Only a file that still matches projen's sample is changed, never a test written by hand.
+     */
+    private importVitestInSampleTest(): void {
+        if (this.globals || !(this.project instanceof awscdk.AwsCdkTypeScriptApp)) {
+            return;
+        }
+
+        const project = this.project;
+        const entrypointName = path.basename(project.appEntrypoint, ".ts");
+        const testPath = path.join(project.outdir, project.testdir, `${entrypointName}.test.ts`);
+
+        if (!fs.existsSync(testPath)) {
+            return;
+        }
+
+        const sampleImports =
+            "import { App } from 'aws-cdk-lib';\nimport { Template } from 'aws-cdk-lib/assertions';\n";
+        const contents = fs.readFileSync(testPath, "utf-8");
+
+        const isSample = contents.startsWith(sampleImports) && contents.includes("\ntest('Snapshot', () => {");
+        if (!isSample || contents.includes("from 'vitest'")) {
+            return;
+        }
+
+        fs.writeFileSync(
+            testPath,
+            contents.replace(sampleImports, `${sampleImports}import { expect, test } from 'vitest';\n`),
+        );
     }
 
     public addInclude(pattern: string): void {
