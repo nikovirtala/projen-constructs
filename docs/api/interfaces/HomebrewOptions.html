@@ -25,7 +25,21 @@
 <section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="packages"><code class="tsd-tag">Optional</code> <code class="tsd-tag">Readonly</code><span>packages</span><a href="#packages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">packages</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div></section></section></details></div>
+<div class="tsd-signature"><span class="tsd-kind-property">packages</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+<div class="tsd-comment tsd-typography"><p>Formulae to install, by name (<code>jq</code>) or fully qualified (<code>user/repository/formula</code>).</p>
+<p>A fully qualified formula adds a <code>tap</code> entry for its tap. Formulae from non-official taps
+are marked <code>trusted: true</code> in the <code>Brewfile</code>, since Homebrew 6 only loads trusted formulae
+from non-official taps. Only the formula is trusted, not the rest of its tap.</p>
+</div>
+<div class="tsd-comment tsd-typography">
+<div class="tsd-tag-default">
+<h4 class="tsd-anchor-link" id="default">Default<a href="#default" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><pre><code class="ts"><span class="hl-1">[]</span>
+</code><button type="button">Copy</button></pre>
+
+</div>
+<div class="tsd-tag-see">
+<h4 class="tsd-anchor-link" id="see">See<a href="#see" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h4><p><a href="https://docs.brew.sh/Tap-Trust">https://docs.brew.sh/Tap-Trust</a></p>
+</div></div></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

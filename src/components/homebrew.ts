@@ -3,7 +3,26 @@ import type { Project } from "projen/lib/project";
 import { TaskShell } from "projen/lib/task-shell";
 import { TextFile } from "projen/lib/textfile";
 
+/**
+ * Returns the tap of a fully qualified formula name (`user/repository/formula`), or `undefined`
+ * for a formula from Homebrew's default tap.
+ */
+function tapOf(packageName: string): string | undefined {
+    const parts = packageName.split("/");
+    return parts.length === 3 ? `${parts[0]}/${parts[1]}` : undefined;
+}
+
 export interface HomebrewOptions {
+    /**
+     * Formulae to install, by name (`jq`) or fully qualified (`user/repository/formula`).
+     *
+     * A fully qualified formula adds a `tap` entry for its tap. Formulae from non-official taps
+     * are marked `trusted: true` in the `Brewfile`, since Homebrew 6 only loads trusted formulae
+     * from non-official taps. Only the formula is trusted, not the rest of its tap.
+     *
+     * @default []
+     * @see https://docs.brew.sh/Tap-Trust
+     */
     readonly packages?: string[];
 }
 
@@ -46,9 +65,8 @@ export class Homebrew extends Component {
         const taps = new Set<string>();
 
         for (const pkg of this.packages) {
-            const parts = pkg.split("/");
-            if (parts.length >= 2) {
-                const tap = `${parts[0]}/${parts[1]}`;
+            const tap = tapOf(pkg);
+            if (tap) {
                 taps.add(tap);
             }
         }
@@ -58,7 +76,11 @@ export class Homebrew extends Component {
         }
 
         for (const pkg of Array.from(this.packages).sort()) {
-            lines.push(`brew "${pkg}"`);
+            /* Since Homebrew 6, formulae from non-official taps only load when trusted. Trust
+             * the formula that was asked for by name rather than its whole tap. */
+            const tap = tapOf(pkg);
+            const trusted = tap !== undefined && !tap.startsWith("homebrew/");
+            lines.push(trusted ? `brew "${pkg}", trusted: true` : `brew "${pkg}"`);
         }
 
         new TextFile(this, "Brewfile", {

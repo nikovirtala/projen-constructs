@@ -95,7 +95,41 @@ it("sorts taps and packages alphabetically", () => {
     const snapshot = synthSnapshot(project);
     const lines = snapshot.Brewfile.split("\n").filter((line: string) => line.trim());
     expect(lines[0]).toBe('tap "aws/tap"');
-    expect(lines[1]).toBe('brew "aws/tap/aws-sam-cli"');
+    expect(lines[1]).toBe('brew "aws/tap/aws-sam-cli", trusted: true');
     expect(lines[2]).toBe('brew "jq"');
     expect(lines[3]).toBe('brew "zsh"');
+});
+
+it("trusts formulae from non-official taps, not the taps", () => {
+    const project = new Project({ name: "test" });
+    new Homebrew(project, { packages: ["cargo-lambda/tap/cargo-lambda", "zig"] });
+    const lines = synthSnapshot(project)
+        .Brewfile.split("\n")
+        .filter((line: string) => line.trim());
+
+    expect(lines).toEqual([
+        'tap "cargo-lambda/tap"',
+        'brew "cargo-lambda/tap/cargo-lambda", trusted: true',
+        'brew "zig"',
+    ]);
+});
+
+it("doesn't mark formulae from official taps as trusted", () => {
+    const project = new Project({ name: "test" });
+    new Homebrew(project, { packages: ["homebrew/cask/docker"] });
+    const lines = synthSnapshot(project)
+        .Brewfile.split("\n")
+        .filter((line: string) => line.trim());
+
+    expect(lines).toEqual(['tap "homebrew/cask"', 'brew "homebrew/cask/docker"']);
+});
+
+it("adds no tap for a name that isn't fully qualified", () => {
+    const project = new Project({ name: "test" });
+    new Homebrew(project, { packages: ["user/formula"] });
+    const lines = synthSnapshot(project)
+        .Brewfile.split("\n")
+        .filter((line: string) => line.trim());
+
+    expect(lines).toEqual(['brew "user/formula"']);
 });
