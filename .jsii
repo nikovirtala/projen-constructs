@@ -20575,7 +20575,7 @@
         },
         "locationInModule": {
           "filename": "src/components/vitest.ts",
-          "line": 317
+          "line": 344
         },
         "parameters": [
           {
@@ -20596,7 +20596,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/vitest.ts",
-        "line": 290
+        "line": 315
       },
       "methods": [
         {
@@ -20605,7 +20605,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 291
+            "line": 316
           },
           "name": "of",
           "parameters": [
@@ -20630,7 +20630,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 383
+            "line": 417
           },
           "name": "addExclude",
           "parameters": [
@@ -20648,7 +20648,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 378
+            "line": 412
           },
           "name": "addInclude",
           "parameters": [
@@ -20666,7 +20666,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 393
+            "line": 427
           },
           "name": "configureCoverageProvider",
           "parameters": [
@@ -20684,7 +20684,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 412
+            "line": 446
           },
           "name": "configureCoverageReporters",
           "parameters": [
@@ -20707,7 +20707,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 388
+            "line": 422
           },
           "name": "configureEnvironment",
           "parameters": [
@@ -20725,7 +20725,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 417
+            "line": 451
           },
           "name": "configureGlobals"
         },
@@ -20736,7 +20736,7 @@
           },
           "locationInModule": {
             "filename": "src/components/vitest.ts",
-            "line": 368
+            "line": 402
           },
           "name": "preSynthesize",
           "overrides": "projen.Component"
@@ -21176,6 +21176,58 @@
         {
           "abstract": true,
           "docs": {
+            "default": "- no additional top-level options",
+            "example": "{ resolve: { alias: { \"@\": \"/src\" } } }",
+            "remarks": "Values are rendered as JSON, so they must be JSON-serializable (no functions or regular expressions,\nwhich rules out plugins). Use `extraTestConfig` for `test` options.",
+            "see": "https://vitest.dev/config/",
+            "stability": "stable",
+            "summary": "Additional top-level config options, next to `test`, such as `resolve`."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/vitest.ts",
+            "line": 312
+          },
+          "name": "extraConfig",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "any"
+              },
+              "kind": "map"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "- no additional test options",
+            "example": "{ setupFiles: [\"test/setup.ts\"], expect: { requireAssertions: true } }",
+            "remarks": "Deep-merged over the options generated from `config`: objects are merged, other values (including\narrays) replace the generated value. Values are rendered as JSON, so they must be JSON-serializable\n(no functions or regular expressions).",
+            "see": "https://vitest.dev/config/",
+            "stability": "stable",
+            "summary": "Additional `test` options for settings that `config` doesn't cover, such as `setupFiles` or `expect`."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/vitest.ts",
+            "line": 300
+          },
+          "name": "extraTestConfig",
+          "optional": true,
+          "type": {
+            "collection": {
+              "elementtype": {
+                "primitive": "any"
+              },
+              "kind": "map"
+            }
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
             "default": "\"^4\"",
             "stability": "stable",
             "summary": "Vitest version."
@@ -21196,5 +21248,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "FogcWi9qM1HFccdOybTWC5YOCNMK0r4ctG8N4XDuLcg="
+  "fingerprint": "F+RoT9yu04vaJugfY5lE5ilNdv7ghJZ4fUJ1lmZbLxs="
 }

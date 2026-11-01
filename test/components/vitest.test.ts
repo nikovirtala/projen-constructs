@@ -6,6 +6,24 @@ import { beforeEach, describe, expect, test } from "vitest";
 import { configDefaults } from "vitest/config";
 import { CoverageProvider, CoverageReporter, Environment, Pool, Vitest } from "../../src/components";
 
+const configPrefix = "export default defineConfig(";
+
+/**
+ * Parses the object passed to `defineConfig` in a generated vitest config file.
+ *
+ * The result is untyped JSON, so tests can reach into nested options without casts.
+ */
+// biome-ignore lint/suspicious/noExplicitAny: parsed JSON of arbitrary shape
+type ParsedConfig = { test: Record<string, any>; [key: string]: any };
+
+function parseConfig(file: string): ParsedConfig {
+    const start = file.indexOf(configPrefix);
+    expect(start, "defineConfig call not found").toBeGreaterThan(-1);
+    expect(file.trimEnd().endsWith(");"), "defineConfig call must end the file").toBe(true);
+
+    return JSON.parse(file.slice(start + configPrefix.length, file.trimEnd().length - 2));
+}
+
 describe("jest", () => {
     test("throws when jest is enabled", () => {
         const project = new TypeScriptProject({
@@ -58,30 +76,43 @@ describe("vitest", () => {
         expect(snapshot["package.json"].scripts["test:update"]).toBe("projen test:update");
         expect(snapshot["package.json"].scripts["test:watch"]).toBe("projen test:watch");
 
-        const config = snapshot["vitest.config.ts"];
-        expect(config).toContain("    coverage: {\n      enabled: true,");
-        expect(config).toContain('      provider: "v8",\n');
-        expect(config).toContain('      reporter: ["text","lcov"],\n');
-        expect(config).toContain('      reportsDirectory: "coverage",\n');
-
-        expect(config).toContain("    typecheck: {\n      enabled: true,");
-        expect(config).toContain('      checker: "tsc --noEmit",\n');
-        expect(config).toContain('      tsconfig: "test/tsconfig.json",\n');
-
-        expect(config).toContain("    bail: 0,\n");
-        expect(config).toContain('    environment: "node",\n');
-        expect(config).toContain("    globals: false,\n");
-        expect(config).toContain("    isolate: true,\n");
-        expect(config).toContain("    passWithNoTests: true,\n");
-        expect(config).toContain("    printConsoleTrace: true,\n");
-        expect(config).toContain('    pool: "forks",\n');
-        expect(config).toContain("    slowTestThreshold: 300,\n");
-        expect(config).toContain("    update: true,\n");
-
-        expect(config).toContain(`    include: ${JSON.stringify(configDefaults.include)},\n`);
-        expect(config).toContain(
-            '    exclude: ["**/node_modules/**","**/dist/**","**/cypress/**","**/.{idea,git,cache,output,temp}/**","**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*"],',
+        const file = snapshot["vitest.config.ts"];
+        expect(file).toMatch(
+            /^import \{ defineConfig \} from "@nikovirtala\/projen-constructs\/lib\/vitest-define-config";\n/,
         );
+
+        expect(parseConfig(file)).toEqual({
+            test: {
+                bail: 0,
+                coverage: {
+                    enabled: true,
+                    provider: "v8",
+                    reporter: ["text", "lcov"],
+                    reportsDirectory: "coverage",
+                },
+                environment: "node",
+                exclude: [
+                    "**/node_modules/**",
+                    "**/dist/**",
+                    "**/cypress/**",
+                    "**/.{idea,git,cache,output,temp}/**",
+                    "**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build,eslint,prettier}.config.*",
+                ],
+                globals: false,
+                include: configDefaults.include,
+                isolate: true,
+                passWithNoTests: true,
+                printConsoleTrace: true,
+                pool: "forks",
+                slowTestThreshold: 300,
+                typecheck: {
+                    enabled: true,
+                    checker: "tsc --noEmit",
+                    tsconfig: "test/tsconfig.json",
+                },
+                update: true,
+            },
+        });
     });
 
     test("custom environment", () => {
@@ -89,7 +120,7 @@ describe("vitest", () => {
         vitest.configureEnvironment(Environment.JSDOM);
 
         const snapshot = synthSnapshot(project);
-        expect(snapshot["vitest.config.ts"]).toContain('environment: "jsdom"');
+        expect(parseConfig(snapshot["vitest.config.ts"]).test.environment).toBe("jsdom");
     });
 
     test("custom coverage provider", () => {
@@ -98,7 +129,7 @@ describe("vitest", () => {
 
         const snapshot = synthSnapshot(project);
 
-        expect(snapshot["vitest.config.ts"]).toContain('provider: "istanbul"');
+        expect(parseConfig(snapshot["vitest.config.ts"]).test.coverage.provider).toBe("istanbul");
         expect(snapshot["package.json"].devDependencies["@vitest/coverage-istanbul"]).toBe("^4");
     });
 
@@ -107,7 +138,7 @@ describe("vitest", () => {
         vitest.configureCoverageReporters([CoverageReporter.HTML, CoverageReporter.JSON]);
 
         const snapshot = synthSnapshot(project);
-        expect(snapshot["vitest.config.ts"]).toContain('reporter: ["html","json"]');
+        expect(parseConfig(snapshot["vitest.config.ts"]).test.coverage.reporter).toEqual(["html", "json"]);
     });
 
     test("custom include patterns", () => {
@@ -115,7 +146,7 @@ describe("vitest", () => {
         vitest.addInclude("**/*.spec.ts");
 
         const snapshot = synthSnapshot(project);
-        expect(snapshot["vitest.config.ts"]).toContain('"**/*.spec.ts"');
+        expect(parseConfig(snapshot["vitest.config.ts"]).test.include).toContain("**/*.spec.ts");
     });
 
     test("custom exclude patterns", () => {
@@ -123,7 +154,76 @@ describe("vitest", () => {
         vitest.addExclude("**/*.test.js");
 
         const snapshot = synthSnapshot(project);
-        expect(snapshot["vitest.config.ts"]).toContain('"**/*.test.js"');
+        expect(parseConfig(snapshot["vitest.config.ts"]).test.exclude).toContain("**/*.test.js");
+    });
+
+    describe("extra config", () => {
+        test("deep-merges extraTestConfig into the test options", () => {
+            new Vitest(project, {
+                extraTestConfig: {
+                    setupFiles: ["test/setup.ts"],
+                    expect: { requireAssertions: true },
+                    coverage: { exclude: ["src/generated/**"] },
+                },
+            });
+
+            const { test } = parseConfig(synthSnapshot(project)["vitest.config.ts"]);
+
+            expect(test.setupFiles).toEqual(["test/setup.ts"]);
+            expect(test.expect).toEqual({ requireAssertions: true });
+            /* nested objects are merged, so the generated coverage options are kept */
+            expect(test.coverage).toEqual({
+                enabled: true,
+                provider: "v8",
+                reporter: ["text", "lcov"],
+                reportsDirectory: "coverage",
+                exclude: ["src/generated/**"],
+            });
+        });
+
+        test("extraTestConfig overrides generated test options", () => {
+            new Vitest(project, {
+                config: { environment: Environment.JSDOM },
+                extraTestConfig: { environment: "happy-dom", include: ["only/**/*.test.ts"] },
+            });
+
+            const { test } = parseConfig(synthSnapshot(project)["vitest.config.ts"]);
+
+            expect(test.environment).toBe("happy-dom");
+            /* arrays replace the generated value */
+            expect(test.include).toEqual(["only/**/*.test.ts"]);
+        });
+
+        test("adds extraConfig next to test", () => {
+            new Vitest(project, {
+                extraConfig: { resolve: { alias: { $amplify: "./.amplify/generated" } } },
+            });
+
+            const config = parseConfig(synthSnapshot(project)["vitest.config.ts"]);
+
+            expect(config.resolve).toEqual({ alias: { $amplify: "./.amplify/generated" } });
+            expect(config.test.environment).toBe("node");
+        });
+
+        test("throws when extraConfig contains test", () => {
+            expect(() => new Vitest(project, { extraConfig: { test: { globals: true } } })).toThrow(
+                "vitest extraConfig must not contain `test`, use extraTestConfig for test options",
+            );
+        });
+
+        test("keeps extra config when the config is regenerated", () => {
+            const vitest = new Vitest(project, {
+                extraTestConfig: { setupFiles: ["test/setup.ts"] },
+                extraConfig: { resolve: { alias: { "@": "/src" } } },
+            });
+            vitest.configureEnvironment(Environment.JSDOM);
+
+            const config = parseConfig(synthSnapshot(project)["vitest.config.ts"]);
+
+            expect(config.test.environment).toBe("jsdom");
+            expect(config.test.setupFiles).toEqual(["test/setup.ts"]);
+            expect(config.resolve).toEqual({ alias: { "@": "/src" } });
+        });
     });
 
     test("handles non-existent dependencies gracefully", () => {
@@ -170,24 +270,32 @@ describe("vitest", () => {
         });
 
         const snapshot = synthSnapshot(project);
-        expect(snapshot["custom.vitest.config.ts"]).toBeDefined();
-        expect(snapshot["custom.vitest.config.ts"]).toContain('environment: "happy-dom"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain("isolate: false");
-        expect(snapshot["custom.vitest.config.ts"]).toContain("passWithNoTests: false");
-        expect(snapshot["custom.vitest.config.ts"]).toContain('pool: "threads"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain("globals: false");
-        expect(snapshot["custom.vitest.config.ts"]).toContain("enabled: false");
-        expect(snapshot["custom.vitest.config.ts"]).toContain('checker: "tsc"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain('tsconfig: "tsconfig.custom.json"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain('provider: "istanbul"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain('reporter: ["html"]');
-        expect(snapshot["custom.vitest.config.ts"]).toContain('reportsDirectory: "custom-coverage"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain('"**/*.test.ts"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain('"**/*.spec.js"');
-        expect(snapshot["custom.vitest.config.ts"]).toContain("bail: 5");
-        expect(snapshot["custom.vitest.config.ts"]).toContain("update: false");
-        expect(snapshot["custom.vitest.config.ts"]).toContain("printConsoleTrace: false");
-        expect(snapshot["custom.vitest.config.ts"]).toContain("slowTestThreshold: 500");
+        expect(parseConfig(snapshot["custom.vitest.config.ts"])).toEqual({
+            test: {
+                bail: 5,
+                coverage: {
+                    enabled: false,
+                    provider: "istanbul",
+                    reporter: ["html"],
+                    reportsDirectory: "custom-coverage",
+                },
+                environment: "happy-dom",
+                exclude: ["**/*.spec.js"],
+                globals: false,
+                include: ["**/*.test.ts"],
+                isolate: false,
+                passWithNoTests: false,
+                printConsoleTrace: false,
+                pool: "threads",
+                slowTestThreshold: 500,
+                typecheck: {
+                    enabled: false,
+                    checker: "tsc",
+                    tsconfig: "tsconfig.custom.json",
+                },
+                update: false,
+            },
+        });
         expect(snapshot["package.json"].devDependencies.vitest).toBe("^4");
     });
 

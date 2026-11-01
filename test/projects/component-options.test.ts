@@ -69,7 +69,7 @@ describe.each(projects)("$name component options", ({ create }) => {
     });
 
     it("passes vitestOptions to Vitest", () => {
-        expect(snapshot["vitest.config.ts"]).toContain('environment: "jsdom"');
+        expect(snapshot["vitest.config.ts"]).toContain('"environment": "jsdom"');
     });
 });
 
