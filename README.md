@@ -237,6 +237,10 @@ const homebrew = new Homebrew(project, {
 homebrew.addPackage("gh");
 ```
 
+A fully qualified formula (`user/repository/formula`) also adds a `tap` entry. Since Homebrew 6,
+formulae from non-official taps only load when trusted, so they're written with `trusted: true`.
+That trusts only the formula, not the rest of its tap.
+
 #### Colima
 
 [Colima](https://github.com/abiosoft/colima) container runtime component. Alternative for Docker.
