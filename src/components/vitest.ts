@@ -4,7 +4,7 @@ import { Component } from "projen/lib/component";
 import { DependencyType } from "projen/lib/dependencies";
 import { Jest, type NodeProject } from "projen/lib/javascript";
 import { TextFile } from "projen/lib/textfile";
-import { tsconfigDevPath } from "../utils";
+import { deepMerge, tsconfigDevPath } from "../utils";
 
 export enum Environment {
     /**
@@ -285,6 +285,31 @@ export interface VitestOptions {
      * @default "^4"
      */
     readonly vitestVersion?: string;
+
+    /**
+     * Additional `test` options for settings that `config` doesn't cover, such as `setupFiles` or `expect`.
+     *
+     * Deep-merged over the options generated from `config`: objects are merged, other values (including
+     * arrays) replace the generated value. Values are rendered as JSON, so they must be JSON-serializable
+     * (no functions or regular expressions).
+     *
+     * @example { setupFiles: ["test/setup.ts"], expect: { requireAssertions: true } }
+     * @default - no additional test options
+     * @see https://vitest.dev/config/
+     */
+    readonly extraTestConfig?: { [key: string]: unknown };
+
+    /**
+     * Additional top-level config options, next to `test`, such as `resolve`.
+     *
+     * Values are rendered as JSON, so they must be JSON-serializable (no functions or regular expressions,
+     * which rules out plugins). Use `extraTestConfig` for `test` options.
+     *
+     * @example { resolve: { alias: { "@": "/src" } } }
+     * @default - no additional top-level options
+     * @see https://vitest.dev/config/
+     */
+    readonly extraConfig?: { [key: string]: unknown };
 }
 
 export class Vitest extends Component {
@@ -313,9 +338,18 @@ export class Vitest extends Component {
     private version: string;
     private readonly printConsoleTrace: boolean;
     private readonly slowTestThreshold: number;
+    private readonly extraTestConfig: { [key: string]: unknown };
+    private readonly extraConfig: { [key: string]: unknown };
 
     constructor(project: NodeProject, options: VitestOptions = {}) {
         super(project);
+
+        if (options.extraConfig && "test" in options.extraConfig) {
+            throw new Error("vitest extraConfig must not contain `test`, use extraTestConfig for test options");
+        }
+
+        this.extraTestConfig = options.extraTestConfig ?? {};
+        this.extraConfig = options.extraConfig ?? {};
 
         this.configFilePath = options.configFilePath ?? "vitest.config.ts";
         this.include = new Set(options.config?.include ?? ["**/*.{test,spec}.?(c|m)[jt]s?(x)"]);
@@ -471,43 +505,38 @@ export class Vitest extends Component {
                 ? 'import { defineConfig } from "./lib/vitest-define-config";'
                 : 'import { defineConfig } from "@nikovirtala/projen-constructs/lib/vitest-define-config";';
 
-        return [
-            defineConfigImport,
-            "",
-            "export default defineConfig({",
-            "  test: {",
-            ...this.renderTestOptions(),
-            "  },",
-            "});",
-        ];
+        const config = {
+            ...this.extraConfig,
+            test: deepMerge<Record<string, unknown>>(this.renderTestOptions(), this.extraTestConfig),
+        };
+
+        return [defineConfigImport, "", `export default defineConfig(${JSON.stringify(config, null, 2)});`];
     }
 
-    private renderTestOptions(): Array<string> {
-        const lines: Array<string> = [];
-
-        lines.push(`    bail: ${this.bail},`);
-        lines.push("    coverage: {");
-        lines.push(`      enabled: ${this.coverageEnabled},`);
-        lines.push(`      provider: "${this.coverageProvider}",`);
-        lines.push(`      reporter: ${JSON.stringify(this.coverageReporters)},`);
-        lines.push(`      reportsDirectory: "${this.coverageDirectory}",`);
-        lines.push("    },");
-        lines.push(`    environment: "${this.environment}",`);
-        lines.push(`    exclude: ${JSON.stringify(Array.from(this.exclude))},`);
-        lines.push(`    globals: ${this.globals},`);
-        lines.push(`    include: ${JSON.stringify(Array.from(this.include))},`);
-        lines.push(`    isolate: ${this.isolate},`);
-        lines.push(`    passWithNoTests: ${this.passWithNoTests},`);
-        lines.push(`    printConsoleTrace: ${this.printConsoleTrace},`);
-        lines.push(`    pool: "${this.pool}",`);
-        lines.push(`    slowTestThreshold: ${this.slowTestThreshold},`);
-        lines.push("    typecheck: {");
-        lines.push(`      enabled: ${this.typecheckEnabled},`);
-        lines.push(`      checker: "${this.typecheckChecker}",`);
-        lines.push(`      tsconfig: "${this.typecheckTsconfig}",`);
-        lines.push("    },");
-        lines.push(`    update: ${this.updateSnapshots},`);
-
-        return lines;
+    private renderTestOptions(): Record<string, unknown> {
+        return {
+            bail: this.bail,
+            coverage: {
+                enabled: this.coverageEnabled,
+                provider: this.coverageProvider,
+                reporter: this.coverageReporters,
+                reportsDirectory: this.coverageDirectory,
+            },
+            environment: this.environment,
+            exclude: Array.from(this.exclude),
+            globals: this.globals,
+            include: Array.from(this.include),
+            isolate: this.isolate,
+            passWithNoTests: this.passWithNoTests,
+            printConsoleTrace: this.printConsoleTrace,
+            pool: this.pool,
+            slowTestThreshold: this.slowTestThreshold,
+            typecheck: {
+                enabled: this.typecheckEnabled,
+                checker: this.typecheckChecker,
+                tsconfig: this.typecheckTsconfig,
+            },
+            update: this.updateSnapshots,
+        };
     }
 }

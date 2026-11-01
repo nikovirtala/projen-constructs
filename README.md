@@ -175,6 +175,24 @@ new Vitest(project, {
 Type checking runs against the project's development tsconfig (`test/tsconfig.json`) unless
 `config.typecheckTsconfig` says otherwise.
 
+For Vitest settings that `config` doesn't cover, use `extraTestConfig` (merged into `test`) and
+`extraConfig` (top-level options next to `test`):
+
+```typescript
+new Vitest(project, {
+  extraTestConfig: {
+    setupFiles: ["test/setup.ts"],
+  },
+  extraConfig: {
+    resolve: { alias: { "@": "/src" } },
+  },
+});
+```
+
+`extraTestConfig` is deep-merged over the generated `test` options: objects merge, and other values
+(including arrays) replace the generated value. Both options are rendered as JSON, so their values
+can't contain functions or regular expressions, which rules out plugins.
+
 #### TypeDoc
 
 [TypeDoc](https://typedoc.org) documentation generation component.
