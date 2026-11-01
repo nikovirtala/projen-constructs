@@ -4,13 +4,43 @@ import { NodeProject } from "projen/lib/javascript";
 import { Colima } from "./colima";
 import { Homebrew } from "./homebrew";
 
+/**
+ * Options for LocalStack component.
+ */
 export interface LocalStackOptions {
+    /**
+     * LocalStack services to enable.
+     * @default - all services enabled
+     */
     readonly services?: string[];
+
+    /**
+     * LocalStack gateway port.
+     * @default 4566
+     */
     readonly port?: number;
+
+    /**
+     * Enable LocalStack debug mode.
+     * @default false
+     */
     readonly debug?: boolean;
+
+    /**
+     * LocalStack Docker image tag.
+     *
+     * Not applied yet: LocalStack always starts with its default image.
+     *
+     * @default "latest"
+     */
     readonly imageTag?: string;
 }
 
+/**
+ * LocalStack component for projen projects.
+ *
+ * Adds LocalStack support to your project with automatic Docker/Colima setup.
+ */
 export class LocalStack extends Component {
     constructor(scope: IConstruct, options: LocalStackOptions = {}) {
         super(scope);
