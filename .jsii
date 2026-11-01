@@ -10995,7 +10995,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 149
+        "line": 158
       },
       "name": "Bundle",
       "properties": [
@@ -11007,7 +11007,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 150
+            "line": 159
           },
           "name": "bundleTask",
           "type": {
@@ -11022,7 +11022,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 152
+            "line": 161
           },
           "name": "outdir",
           "type": {
@@ -11037,7 +11037,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 151
+            "line": 160
           },
           "name": "outfile",
           "type": {
@@ -11060,7 +11060,7 @@
         },
         "locationInModule": {
           "filename": "src/components/bundle-lambda-function-code.ts",
-          "line": 41
+          "line": 50
         },
         "parameters": [
           {
@@ -11081,7 +11081,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 28
+        "line": 37
       },
       "methods": [
         {
@@ -11090,7 +11090,7 @@
           },
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 29
+            "line": 38
           },
           "name": "of",
           "parameters": [
@@ -11115,7 +11115,7 @@
           },
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 62
+            "line": 71
           },
           "name": "addBundle",
           "parameters": [
@@ -11148,7 +11148,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 35
+            "line": 44
           },
           "name": "bundledir",
           "type": {
@@ -11162,7 +11162,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 49
+            "line": 58
           },
           "name": "bundleTask",
           "type": {
@@ -11176,7 +11176,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 34
+            "line": 43
           },
           "name": "esbuildVersion",
           "optional": true,
@@ -11197,7 +11197,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 21
+        "line": 30
       },
       "name": "BundlerOptions",
       "properties": [
@@ -11209,7 +11209,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 24
+            "line": 33
           },
           "name": "addToPreCompile",
           "optional": true,
@@ -11225,7 +11225,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 23
+            "line": 32
           },
           "name": "assetsDir",
           "optional": true,
@@ -11241,7 +11241,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 22
+            "line": 31
           },
           "name": "esbuildVersion",
           "optional": true,
@@ -11257,7 +11257,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 25
+            "line": 34
           },
           "name": "loaders",
           "optional": true,
@@ -11283,7 +11283,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 155
+        "line": 164
       },
       "name": "BundlingOptions",
       "properties": [
@@ -11295,7 +11295,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 167
+            "line": 176
           },
           "name": "banner",
           "optional": true,
@@ -11311,7 +11311,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 156
+            "line": 165
           },
           "name": "externals",
           "optional": true,
@@ -11332,7 +11332,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 163
+            "line": 172
           },
           "name": "format",
           "optional": true,
@@ -11348,7 +11348,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 162
+            "line": 171
           },
           "name": "loaders",
           "optional": true,
@@ -11369,7 +11369,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 166
+            "line": 175
           },
           "name": "mainFields",
           "optional": true,
@@ -11385,7 +11385,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 164
+            "line": 173
           },
           "name": "minify",
           "optional": true,
@@ -11401,7 +11401,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 160
+            "line": 169
           },
           "name": "outfile",
           "optional": true,
@@ -11417,7 +11417,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 159
+            "line": 168
           },
           "name": "platform",
           "optional": true,
@@ -11433,7 +11433,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 157
+            "line": 166
           },
           "name": "sourcemap",
           "optional": true,
@@ -11449,7 +11449,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 165
+            "line": 174
           },
           "name": "sourcesContent",
           "optional": true,
@@ -11465,7 +11465,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 158
+            "line": 167
           },
           "name": "target",
           "optional": true,
@@ -11481,7 +11481,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 161
+            "line": 170
           },
           "name": "tsconfigPath",
           "optional": true,
@@ -15273,7 +15273,7 @@
         },
         "locationInModule": {
           "filename": "src/components/bundle-lambda-function-code.ts",
-          "line": 179
+          "line": 188
         },
         "parameters": [
           {
@@ -15293,7 +15293,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 178
+        "line": 187
       },
       "name": "LambdaFunctionCodeBundle",
       "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundle"
@@ -15308,7 +15308,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 170
+        "line": 179
       },
       "name": "LambdaFunctionCodeBundleOptions",
       "properties": [
@@ -15320,7 +15320,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 171
+            "line": 180
           },
           "name": "entrypoint",
           "type": {
@@ -15335,7 +15335,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 172
+            "line": 181
           },
           "name": "extension",
           "type": {
@@ -15350,7 +15350,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 175
+            "line": 184
           },
           "name": "bundlingOptions",
           "optional": true,
@@ -15366,7 +15366,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 173
+            "line": 182
           },
           "name": "constructFile",
           "optional": true,
@@ -15382,7 +15382,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 174
+            "line": 183
           },
           "name": "constructName",
           "optional": true,
@@ -15395,9 +15395,10 @@
     },
     "@nikovirtala/projen-constructs.LambdaFunctionCodeBundler": {
       "assembly": "@nikovirtala/projen-constructs",
-      "base": "projen.Component",
+      "base": "projen.cdk.AutoDiscoverBase",
       "docs": {
-        "stability": "stable"
+        "stability": "stable",
+        "summary": "Creates Lambda Function code bundles from entrypoints discovered in the project's source tree."
       },
       "fqn": "@nikovirtala/projen-constructs.LambdaFunctionCodeBundler",
       "initializer": {
@@ -15406,7 +15407,7 @@
         },
         "locationInModule": {
           "filename": "src/components/bundle-lambda-function-code.ts",
-          "line": 238
+          "line": 250
         },
         "parameters": [
           {
@@ -15426,7 +15427,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 237
+        "line": 249
       },
       "name": "LambdaFunctionCodeBundler",
       "symbolId": "src/components/bundle-lambda-function-code:LambdaFunctionCodeBundler"
@@ -15441,7 +15442,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/bundle-lambda-function-code.ts",
-        "line": 231
+        "line": 240
       },
       "name": "LambdaFunctionCodeBundlerOptions",
       "properties": [
@@ -15453,7 +15454,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 232
+            "line": 241
           },
           "name": "extension",
           "type": {
@@ -15468,7 +15469,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 233
+            "line": 242
           },
           "name": "srcdir",
           "type": {
@@ -15483,7 +15484,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/bundle-lambda-function-code.ts",
-            "line": 234
+            "line": 243
           },
           "name": "bundleOptions",
           "optional": true,
@@ -21195,5 +21196,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "kRsj40Qcqm77TQJOjjLFja7MLOk23ah7CNipRJ3/AsA="
+  "fingerprint": "FogcWi9qM1HFccdOybTWC5YOCNMK0r4ctG8N4XDuLcg="
 }
