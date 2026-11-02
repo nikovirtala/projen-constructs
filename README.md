@@ -35,7 +35,7 @@ pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_libr
 - **Author**: Niko Virtala (niko.virtala@hey.com)
 - **Default Release Branch**: main
 - **Package Manager**: pnpm 11.20.0
-- **Node Version**: 24.19.0
+- **Node Version**: 26.13.0
 - **TypeScript**: 6.0.3
 - **CDK Version**: 2.263.0 (for CDK projects)
 - **JSII Version**: ~6.0.3 (for JSII projects)
@@ -73,7 +73,7 @@ Override any option by passing it to the constructor:
 const project = new JsiiProject({
   name: "my-project",
   repositoryUrl: "https://github.com/nikovirtala/my-project.git",
-  minNodeVersion: "24.0.0",
+  minNodeVersion: "26.0.0",
   author: "Custom Author",
   authorAddress: "custom@example.com",
   mise: false,
@@ -218,7 +218,7 @@ new TypeDoc(project, {
 import { Mise } from "@nikovirtala/projen-constructs";
 
 new Mise(project, {
-  nodeVersion: "24.19.0",
+  nodeVersion: "26.13.0",
 });
 ```
 

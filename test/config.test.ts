@@ -12,6 +12,6 @@ describe("applyDefaultConfig", () => {
 
         const snapshot = synthSnapshot(project);
 
-        expect(snapshot["mise.toml"]).toMatch(/node = "24\.\d+\.\d+"/);
+        expect(snapshot["mise.toml"]).toMatch(/node = "26\.\d+\.\d+"/);
     });
 });

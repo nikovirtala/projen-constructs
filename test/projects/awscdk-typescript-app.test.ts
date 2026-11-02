@@ -32,7 +32,7 @@ describe("AwsCdkTypeScriptAppProject", () => {
         expect(snapshot["cdk.json"]).toMatchObject({
             app: "npx tsx src/main.ts",
         });
-        expect(snapshot["mise.toml"]).toMatch(/node = "24\.\d+\.\d+"/);
+        expect(snapshot["mise.toml"]).toMatch(/node = "26\.\d+\.\d+"/);
     });
 
     it("allows customization of options", () => {
