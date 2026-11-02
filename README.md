@@ -8,7 +8,7 @@ Projen project types with standard configuration for consistent project setup ac
 pnpm add -D @nikovirtala/projen-constructs projen constructs
 ```
 
-Requires pnpm 11 and `projen` >= 0.101.27. `@mrgrain/cdk-esbuild` and `constructs` are peer
+Requires pnpm 12 and `projen` >= 0.101.27. `@mrgrain/cdk-esbuild` and `constructs` are peer
 dependencies as well.
 
 To create a project from scratch:
@@ -34,7 +34,7 @@ pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_libr
 
 - **Author**: Niko Virtala (niko.virtala@hey.com)
 - **Default Release Branch**: main
-- **Package Manager**: pnpm 11.20.0
+- **Package Manager**: pnpm 12.16.1
 - **Node Version**: 26.13.0
 - **TypeScript**: 6.0.3
 - **CDK Version**: 2.263.0 (for CDK projects)
@@ -424,7 +424,7 @@ Both are ES module apps run with `tsx`, using pnpm, Biome, Vitest and mise. The 
   `install:homebrew` (installs Homebrew if `brew` is missing) and `homebrew:bundle`. Set
   `homebrew: false` to turn it off.
 - **cdk.json `app`** is `npx tsx src/main.ts` instead of `tsx --tsconfig tsconfig.json src/main.ts`.
-- **Defaults** come from this library: Node.js, TypeScript, CDK and pnpm versions (pnpm 11 instead
+- **Defaults** come from this library: Node.js, TypeScript, CDK and pnpm versions (pnpm 12 instead
   of 10), Dependabot off, auto-merge on, `auto-approve` and `auto-merge` labels on dependency
   upgrade PRs, and auto-approval of PRs by `nikovirtala`. Any option you set explicitly still wins,
   so set `autoApproveOptions` if you aren't `nikovirtala`.

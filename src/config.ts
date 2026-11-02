@@ -123,7 +123,7 @@ export const projectDefaultOptions = {
         linter: true,
     },
     packageManager: javascript.NodePackageManager.PNPM,
-    pnpmVersion: "11.20.0",
+    pnpmVersion: "12.16.1",
     /**
      * pnpm 11 only reads auth and registry settings from `.npmrc`, everything else
      * has to live in `pnpm-workspace.yaml`.

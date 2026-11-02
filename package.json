@@ -83,7 +83,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.20.0",
+      "version": "12.16.1",
       "onFail": "ignore"
     }
   },
@@ -94,7 +94,7 @@
     "access": "public"
   },
   "version": "0.0.0",
-  "packageManager": "pnpm@11.20.0",
+  "packageManager": "pnpm@12.16.1",
   "types": "lib/index.d.ts",
   "jsii": {
     "outdir": "dist",
