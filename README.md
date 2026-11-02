@@ -164,7 +164,7 @@ The package includes reusable components for common development tasks:
 import { Vitest } from "@nikovirtala/projen-constructs";
 
 new Vitest(project, {
-  vitestVersion: "^4",
+  vitestVersion: "^5",
   config: {
     coverageProvider: CoverageProvider.V8,
     coverageReporters: [CoverageReporter.TEXT, CoverageReporter.LCOV],
