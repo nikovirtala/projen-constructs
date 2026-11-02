@@ -71,8 +71,8 @@ describe("vitest", () => {
 
         const snapshot = synthSnapshot(project);
 
-        expect(snapshot["package.json"].devDependencies.vitest).toBe("^4");
-        expect(snapshot["package.json"].devDependencies["@vitest/coverage-v8"]).toBe("^4");
+        expect(snapshot["package.json"].devDependencies.vitest).toBe("^5");
+        expect(snapshot["package.json"].devDependencies["@vitest/coverage-v8"]).toBe("^5");
         expect(snapshot["package.json"].scripts["test:update"]).toBe("projen test:update");
         expect(snapshot["package.json"].scripts["test:watch"]).toBe("projen test:watch");
 
@@ -130,7 +130,7 @@ describe("vitest", () => {
         const snapshot = synthSnapshot(project);
 
         expect(parseConfig(snapshot["vitest.config.ts"]).test.coverage.provider).toBe("istanbul");
-        expect(snapshot["package.json"].devDependencies["@vitest/coverage-istanbul"]).toBe("^4");
+        expect(snapshot["package.json"].devDependencies["@vitest/coverage-istanbul"]).toBe("^5");
     });
 
     test("custom coverage reporters", () => {

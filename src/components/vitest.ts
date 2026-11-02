@@ -283,7 +283,7 @@ export interface VitestOptions {
     /**
      * Vitest version.
      *
-     * @default "^4"
+     * @default "^5"
      */
     readonly vitestVersion?: string;
 
@@ -376,7 +376,7 @@ export class Vitest extends Component {
         this.coverageProvider = options.config?.coverageProvider ?? CoverageProvider.V8;
         this.coverageReporters = options.config?.coverageReporters ?? [CoverageReporter.TEXT, CoverageReporter.LCOV];
         this.coverageDirectory = options.config?.coverageDirectory ?? "coverage";
-        this.version = options.vitestVersion ?? "^4";
+        this.version = options.vitestVersion ?? "^5";
         this.updateSnapshots = options.config?.updateSnapshots ?? true;
         this.printConsoleTrace = options.config?.printConsoleTrace ?? true;
         this.slowTestThreshold = options.config?.slowTestThreshold ?? 300;
