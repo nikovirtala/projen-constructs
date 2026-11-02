@@ -26,7 +26,7 @@ describe("TypeScriptProject", () => {
         });
 
         expect(snapshot["biome.jsonc"]).toBeDefined();
-        expect(snapshot["mise.toml"]).toMatch(/node = "24\.\d+\.\d+"/);
+        expect(snapshot["mise.toml"]).toMatch(/node = "26\.\d+\.\d+"/);
     });
 
     it("allows customization of options", () => {

@@ -1,7 +1,7 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-const nodeJsMajorVersion = 24;
+const nodeJsMajorVersion = 26;
 
 async function getLatestVersion(packageName: string): Promise<string> {
     const response = await fetch(`https://registry.npmjs.org/${packageName}/latest`);
