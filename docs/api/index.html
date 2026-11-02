@@ -14,7 +14,7 @@
 <pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-3">-D</span><span class="hl-1"> </span><span class="hl-2">@nikovirtala/projen-constructs</span><span class="hl-1"> </span><span class="hl-2">projen</span><span class="hl-1"> </span><span class="hl-2">constructs</span>
 </code><button type="button">Copy</button></pre>
 
-<p>Requires pnpm 11 and <code>projen</code> &gt;= 0.101.27. <code>@mrgrain/cdk-esbuild</code> and <code>constructs</code> are peer
+<p>Requires pnpm 12 and <code>projen</code> &gt;= 0.101.27. <code>@mrgrain/cdk-esbuild</code> and <code>constructs</code> are peer
 dependencies as well.</p>
 <p>To create a project from scratch:</p>
 <pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">dlx</span><span class="hl-1"> </span><span class="hl-2">projen</span><span class="hl-1"> </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-3">--from</span><span class="hl-1"> </span><span class="hl-2">@nikovirtala/projen-constructs</span><span class="hl-1"> </span><span class="hl-2">aws_cdk_construct_library</span>
@@ -37,7 +37,7 @@ dependencies as well.</p>
 <ul>
 <li><strong>Author</strong>: Niko Virtala (<a href="mailto:niko.virtala@hey.com">niko.virtala@hey.com</a>)</li>
 <li><strong>Default Release Branch</strong>: main</li>
-<li><strong>Package Manager</strong>: pnpm 11.20.0</li>
+<li><strong>Package Manager</strong>: pnpm 12.16.1</li>
 <li><strong>Node Version</strong>: 26.13.0</li>
 <li><strong>TypeScript</strong>: 6.0.3</li>
 <li><strong>CDK Version</strong>: 2.263.0 (for CDK projects)</li>
@@ -295,7 +295,7 @@ used to replace them all.</li>
 <code>install:homebrew</code> (installs Homebrew if <code>brew</code> is missing) and <code>homebrew:bundle</code>. Set
 <code>homebrew: false</code> to turn it off.</li>
 <li><strong>cdk.json <code>app</code></strong> is <code>npx tsx src/main.ts</code> instead of <code>tsx --tsconfig tsconfig.json src/main.ts</code>.</li>
-<li><strong>Defaults</strong> come from this library: Node.js, TypeScript, CDK and pnpm versions (pnpm 11 instead
+<li><strong>Defaults</strong> come from this library: Node.js, TypeScript, CDK and pnpm versions (pnpm 12 instead
 of 10), Dependabot off, auto-merge on, <code>auto-approve</code> and <code>auto-merge</code> labels on dependency
 upgrade PRs, and auto-approval of PRs by <code>nikovirtala</code>. Any option you set explicitly still wins,
 so set <code>autoApproveOptions</code> if you aren't <code>nikovirtala</code>.</li>

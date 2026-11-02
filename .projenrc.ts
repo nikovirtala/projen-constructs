@@ -18,7 +18,7 @@ const project = new JsiiProject({
     name: "@nikovirtala/projen-constructs",
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
-    pnpmVersion: "11.20.0",
+    pnpmVersion: "12.16.1",
     // shamefully-hoist fixes jsii-pacmak esbuild resolution
     pnpmOptions: {
         workspaceYamlOptions: {
