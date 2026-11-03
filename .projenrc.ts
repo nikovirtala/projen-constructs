@@ -13,7 +13,8 @@ const project = new JsiiProject({
     bundledDeps: ["case", "@mrgrain/jsii-struct-builder"],
     defaultReleaseBranch: "main",
     deps: ["projen"],
-    description: "Projen project types with standard configuration",
+    description:
+        "Opinionated projen project types that scaffold TypeScript, JSII and AWS CDK repositories with one shared config.",
     devDeps: ["constructs", "projen", "esbuild", "@mrgrain/cdk-esbuild", "@jsii/spec"],
     name: "@nikovirtala/projen-constructs",
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],

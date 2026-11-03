@@ -1,6 +1,6 @@
 {
   "name": "@nikovirtala/projen-constructs",
-  "description": "Projen project types with standard configuration",
+  "description": "Opinionated projen project types that scaffold TypeScript, JSII and AWS CDK repositories with one shared config.",
   "repository": {
     "type": "git",
     "url": "https://github.com/nikovirtala/projen-constructs.git"
