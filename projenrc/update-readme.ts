@@ -194,7 +194,9 @@ export function updateDocumentation(): string[] {
     const missing = spans.filter((span) => !applied.has(span.start));
     if (missing.length > 0) {
         const names = missing.map((span) => `${span.start} / ${span.end}`).join(", ");
-        throw new Error(`No documentation file carries the markers ${names}. Searched: ${documentationFiles.join(", ")}`);
+        throw new Error(
+            `No documentation file carries the markers ${names}. Searched: ${documentationFiles.join(", ")}`,
+        );
     }
 
     return changed;
