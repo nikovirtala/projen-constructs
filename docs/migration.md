@@ -27,7 +27,7 @@ get new features or fixes. Every class, interface, enum and function they export
    import { Vitest } from "@nikovirtala/projen-constructs";
    ```
 
-2. Check the peer dependencies. `@nikovirtala/projen-constructs` needs `projen` ^0.104, `constructs`
+2. Check the peer dependencies. `@nikovirtala/projen-constructs` needs `projen` ^0.104.23, `constructs`
    ^10 and `@mrgrain/cdk-esbuild` ^5. The standalone packages accepted older projen versions, so you
    may have to upgrade projen in the same change.
 3. Install the new package, run `npx projen` and review the changes to the generated files.

@@ -92,7 +92,7 @@ pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_libr
 - **Standard configuration**: opinionated defaults for author, release branch, package manager,
   Node.js, TypeScript, and tooling
 - **Automatic project type discovery**: generates the `ProjectType` enum from projen's JSII manifest
-  (21 project types)
+  (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)
 - **Component system**: reusable components (Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack,
   Lambda bundling)
 - **Code generation**: `ProjectGenerator` creates project classes with standard configuration

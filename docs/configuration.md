@@ -8,6 +8,7 @@ you override any of it.
 
 Every project type ships with the same opinionated defaults:
 
+<!-- generated:version-table-start -->
 - **Author**: Niko Virtala (niko.virtala@hey.com)
 - **Default release branch**: main
 - **Package manager**: pnpm 12.16.1
@@ -15,6 +16,7 @@ Every project type ships with the same opinionated defaults:
 - **TypeScript**: 6.0.3
 - **CDK version**: 2.275.0 (for CDK projects)
 - **JSII version**: ~6.0.3 (for JSII projects)
+<!-- generated:version-table-end -->
 
 The AWS CDK, Node.js and TypeScript versions live in `src/versions.json` and are refreshed by the
 `update-versions` task, which the dependency upgrade workflow runs.
