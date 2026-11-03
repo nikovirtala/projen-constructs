@@ -20,7 +20,7 @@ pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_libr
 ## Features
 
 - **Standard Configuration**: Opinionated defaults for author, release branch, package manager, Node.js, TypeScript, and tooling
-- **Automatic Project Type Discovery**: Generates the `ProjectType` enum from Projen's JSII manifest (19 project types)
+- **Automatic Project Type Discovery**: Generates the `ProjectType` enum from Projen's JSII manifest (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)
 - **Component System**: Reusable components (Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, Lambda bundling)
 - **Code Generation**: `ProjectGenerator` creates project classes with standard configuration
 - **ES Modules**: TypeScript and CDK App projects use ES modules (JSII uses CommonJS)
@@ -32,13 +32,15 @@ pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_libr
 
 ## Standard Configuration
 
+<!-- generated:version-table-start -->
 - **Author**: Niko Virtala (niko.virtala@hey.com)
-- **Default Release Branch**: main
-- **Package Manager**: pnpm 12.16.1
-- **Node Version**: 26.13.0
+- **Default release branch**: main
+- **Package manager**: pnpm 12.16.1
+- **Node version**: 26.13.0
 - **TypeScript**: 6.0.3
-- **CDK Version**: 2.263.0 (for CDK projects)
-- **JSII Version**: ~6.0.3 (for JSII projects)
+- **CDK version**: 2.275.0 (for CDK projects)
+- **JSII version**: ~6.0.3 (for JSII projects)
+<!-- generated:version-table-end -->
 
 The AWS CDK, Node.js and TypeScript versions live in `src/versions.json` and are refreshed by the
 `update-versions` task, which the dependency upgrade workflow runs.
