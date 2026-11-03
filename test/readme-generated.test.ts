@@ -27,7 +27,9 @@ function readDocumentation(): { relativePath: string; content: string }[] {
 function documentWith(marker: string): string {
     const match = readDocumentation().find(({ content }) => content.includes(marker));
     if (!match) {
-        throw new Error(`No documentation file carries the marker ${marker}. Searched: ${documentationFiles.join(", ")}`);
+        throw new Error(
+            `No documentation file carries the marker ${marker}. Searched: ${documentationFiles.join(", ")}`,
+        );
     }
     return match.content;
 }

@@ -23,7 +23,7 @@ dependencies as well.</p>
 <h2 id="features" class="tsd-anchor-link">Features<a href="#features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
 <ul>
 <li><strong>Standard Configuration</strong>: Opinionated defaults for author, release branch, package manager, Node.js, TypeScript, and tooling</li>
-<li><strong>Automatic Project Type Discovery</strong>: Generates the <code>ProjectType</code> enum from Projen's JSII manifest (19 project types)</li>
+<li><strong>Automatic Project Type Discovery</strong>: Generates the <code>ProjectType</code> enum from Projen's JSII manifest (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)</li>
 <li><strong>Component System</strong>: Reusable components (Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, Lambda bundling)</li>
 <li><strong>Code Generation</strong>: <code>ProjectGenerator</code> creates project classes with standard configuration</li>
 <li><strong>ES Modules</strong>: TypeScript and CDK App projects use ES modules (JSII uses CommonJS)</li>
@@ -34,15 +34,17 @@ dependencies as well.</p>
 <li><strong>mise</strong>: Node version management</li>
 </ul>
 <h2 id="standard-configuration" class="tsd-anchor-link">Standard Configuration<a href="#standard-configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<!-- generated:version-table-start -->
 <ul>
 <li><strong>Author</strong>: Niko Virtala (<a href="mailto:niko.virtala@hey.com">niko.virtala@hey.com</a>)</li>
-<li><strong>Default Release Branch</strong>: main</li>
-<li><strong>Package Manager</strong>: pnpm 12.16.1</li>
-<li><strong>Node Version</strong>: 26.13.0</li>
+<li><strong>Default release branch</strong>: main</li>
+<li><strong>Package manager</strong>: pnpm 12.16.1</li>
+<li><strong>Node version</strong>: 26.13.0</li>
 <li><strong>TypeScript</strong>: 6.0.3</li>
-<li><strong>CDK Version</strong>: 2.263.0 (for CDK projects)</li>
-<li><strong>JSII Version</strong>: ~6.0.3 (for JSII projects)</li>
+<li><strong>CDK version</strong>: 2.275.0 (for CDK projects)</li>
+<li><strong>JSII version</strong>: ~6.0.3 (for JSII projects)</li>
 </ul>
+<!-- generated:version-table-end -->
 <p>The AWS CDK, Node.js and TypeScript versions live in <code>src/versions.json</code> and are refreshed by the
 <code>update-versions</code> task, which the dependency upgrade workflow runs.</p>
 <h3 id="pnpm" class="tsd-anchor-link">pnpm<a href="#pnpm" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
