@@ -9,18 +9,20 @@ Automates project scaffolding and configuration for TypeScript, JSII, and AWS CD
 ## Key Features
 
 - **Standard Configuration**: Opinionated defaults for author, release branch, package manager, Node.js, TypeScript, and tooling
-- **Automatic Project Type Discovery**: Generates `ProjectType` enum from Projen's JSII manifest (18 project types)
+- **Automatic Project Type Discovery**: Generates `ProjectType` enum from Projen's JSII manifest (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)
 - **Component System**: Reusable components (Vitest, Mise, TypeDoc, LocalStack, Homebrew, Colima, etc.)
 - **Code Generation**: `ProjectGenerator` creates project classes with standard configuration
 - **ES Modules**: TypeScript and CDK App projects use ES modules (JSII uses CommonJS)
 
 ## Standard Defaults
 
+<!-- generated:product-defaults-start -->
 - Author: Niko Virtala (niko.virtala@hey.com)
-- Package Manager: pnpm 11
-- Node Version: 24.11.1
-- TypeScript: 5.9.3
-- CDK Version: 2.223.0
+- Package Manager: pnpm 12
+- Node Version: 26.13.0
+- TypeScript: 6.0.3
+- CDK Version: 2.275.0
+<!-- generated:product-defaults-end -->
 - Code Quality: Biome for formatting and linting
 - Testing: Vitest with coverage
 - Version Management: mise

@@ -21,7 +21,13 @@ const repositoryRoot = join(__dirname, "..");
  * searched and rewritten. A file that does not exist is skipped, so the generator
  * works whether or not the extracted `docs/` reference pages are present.
  */
-const documentationFiles = ["README.md", join("docs", "configuration.md")];
+const documentationFiles = [
+    "README.md",
+    join("docs", "configuration.md"),
+    join(".kiro", "steering", "product.md"),
+    join(".kiro", "steering", "tech.md"),
+    join(".kiro", "steering", "structure.md"),
+];
 
 interface GeneratedSpan {
     readonly start: string;
@@ -66,6 +72,30 @@ function readVersions(): {
 }
 
 /**
+ * Reads the default Vitest major version from the `Vitest` component in
+ * src/components/vitest.ts (the `vitestVersion ?? "^<major>"` default), so the
+ * steering docs stay in sync with the component default.
+ */
+function readVitestMajor(): string {
+    const source = readFileSync(join(repositoryRoot, "src", "components", "vitest.ts"), "utf-8");
+    const version = matchOne(
+        source,
+        /options\.vitestVersion\s*\?\?\s*"\^(\d+)"/,
+        'the default `vitestVersion` ("^<major>") in src/components/vitest.ts',
+    );
+    return version;
+}
+
+/** The leading major-version number of a semver string such as `12.16.1` -> `12`. */
+function majorOf(version: string, description: string): string {
+    const match = version.match(/^(\d+)/);
+    if (!match) {
+        throw new Error(`Could not read a major version from ${description} ("${version}")`);
+    }
+    return match[1];
+}
+
+/**
  * Counts the members of the generated `ProjectType` enum in src/project-type.ts,
  * so the count stays in sync with the committed enum.
  */
@@ -95,6 +125,8 @@ function matchOne(source: string, pattern: RegExp, description: string): string 
 export function buildGeneratedSpans(): GeneratedSpan[] {
     const versions = readVersions();
     const projectTypeCount = countProjectTypes();
+    const pnpmMajor = majorOf(versions.pnpmVersion, "pnpmVersion in src/config.ts");
+    const vitestMajor = readVitestMajor();
 
     const versionTable = [
         "- **Author**: Niko Virtala (niko.virtala@hey.com)",
@@ -104,6 +136,25 @@ export function buildGeneratedSpans(): GeneratedSpan[] {
         `- **TypeScript**: ${versions.typescriptVersion}`,
         `- **CDK version**: ${versions.cdkVersion} (for CDK projects)`,
         `- **JSII version**: ${versions.jsiiVersion} (for JSII projects)`,
+    ].join("\n");
+
+    // The steering `product.md` "Standard Defaults" list uses sentence-case labels
+    // and full semver versions.
+    const productDefaults = [
+        "- Author: Niko Virtala (niko.virtala@hey.com)",
+        `- Package Manager: pnpm ${pnpmMajor}`,
+        `- Node Version: ${versions.minNodeVersion}`,
+        `- TypeScript: ${versions.typescriptVersion}`,
+        `- CDK Version: ${versions.cdkVersion}`,
+    ].join("\n");
+
+    // The steering `tech.md` "Core Technologies" list uses the pnpm major version
+    // and the `~`-prefixed jsii version, matching its prose.
+    const techCore = [
+        `- **TypeScript ${versions.typescriptVersion}** - Primary language`,
+        `- **Node.js ${versions.minNodeVersion}** - Runtime (managed via mise)`,
+        `- **JSII ${versions.jsiiVersion}** - Multi-language library support`,
+        `- **pnpm ${pnpmMajor}** - Package manager (settings live in \`pnpm-workspace.yaml\`, not \`.npmrc\`)`,
     ].join("\n");
 
     return [
@@ -116,6 +167,21 @@ export function buildGeneratedSpans(): GeneratedSpan[] {
             start: "<!-- generated:project-type-count-start -->",
             end: "<!-- generated:project-type-count-end -->",
             content: `${projectTypeCount}`,
+        },
+        {
+            start: "<!-- generated:product-defaults-start -->",
+            end: "<!-- generated:product-defaults-end -->",
+            content: `\n${productDefaults}\n`,
+        },
+        {
+            start: "<!-- generated:tech-core-start -->",
+            end: "<!-- generated:tech-core-end -->",
+            content: `\n${techCore}\n`,
+        },
+        {
+            start: "<!-- generated:vitest-major-start -->",
+            end: "<!-- generated:vitest-major-end -->",
+            content: `${vitestMajor}`,
         },
     ];
 }
