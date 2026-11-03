@@ -151,7 +151,7 @@ import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
 
 const project = new AwsCdkTypeScriptAppProject({
   name: "my-cdk-app",
-  repositoryUrl: "https://github.com/nikovirtala/my-cdk-app.git",
+  repository: "https://github.com/nikovirtala/my-cdk-app.git",
 });
 
 project.synth();
@@ -177,7 +177,7 @@ import { TypeScriptProject } from "@nikovirtala/projen-constructs";
 
 const project = new TypeScriptProject({
   name: "my-typescript-project",
-  repositoryUrl: "https://github.com/nikovirtala/my-typescript-project.git",
+  repository: "https://github.com/nikovirtala/my-typescript-project.git",
 });
 
 project.synth();
