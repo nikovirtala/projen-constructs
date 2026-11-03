@@ -142,7 +142,7 @@ const project = new AwsCdkConstructLibraryProject({
   name: "my-cdk-construct",
   author: "Niko Virtala",
   authorAddress: "niko.virtala@hey.com",
-  cdkVersion: "2.263.0",
+  cdkVersion: "2.275.0",
   repositoryUrl: "https://github.com/nikovirtala/my-cdk-construct.git",
 });
 
