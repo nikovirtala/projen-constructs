@@ -15,10 +15,12 @@ This project is **entirely managed by projen**. Key implications:
 
 ## Core Technologies
 
-- **TypeScript 5.9.3** - Primary language
-- **Node.js 24.11.1** - Runtime (managed via mise)
-- **JSII ~5.9.3** - Multi-language library support
-- **pnpm 11** - Package manager (settings live in `pnpm-workspace.yaml`, not `.npmrc`)
+<!-- generated:tech-core-start -->
+- **TypeScript 6.0.3** - Primary language
+- **Node.js 26.13.0** - Runtime (managed via mise)
+- **JSII ~6.0.3** - Multi-language library support
+- **pnpm 12** - Package manager (settings live in `pnpm-workspace.yaml`, not `.npmrc`)
+<!-- generated:tech-core-end -->
 
 ## Code Quality
 
@@ -30,7 +32,7 @@ This project is **entirely managed by projen**. Key implications:
 
 ## Testing
 
-- **Vitest 4** - Test framework (replaces Jest)
+- **Vitest <!-- generated:vitest-major-start -->5<!-- generated:vitest-major-end -->** - Test framework (replaces Jest)
   - Coverage provider: v8
   - Coverage reporters: text, lcov
   - Type checking enabled with tsc

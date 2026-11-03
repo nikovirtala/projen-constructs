@@ -11,10 +11,18 @@ const repositoryRoot = join(__dirname, "..");
  * Documentation files that may carry generated markers. The version table lives
  * in `docs/configuration.md` once the reference pages are extracted, and in the
  * README before that; the project-type count stays inline in the README. The
- * generator applies each span to whichever of these files carries its markers,
- * so the drift guard searches the same set.
+ * `.kiro/steering/*.md` conventions docs carry their own version/count spans
+ * (`product-defaults`, `tech-core`, `vitest-major`). The generator applies each
+ * span to whichever of these files carries its markers, so the drift guard
+ * searches the same set.
  */
-const documentationFiles = ["README.md", join("docs", "configuration.md")];
+const documentationFiles = [
+    "README.md",
+    join("docs", "configuration.md"),
+    join(".kiro", "steering", "product.md"),
+    join(".kiro", "steering", "tech.md"),
+    join(".kiro", "steering", "structure.md"),
+];
 
 function readDocumentation(): { relativePath: string; content: string }[] {
     return documentationFiles
@@ -66,6 +74,64 @@ describe("README generated spans", () => {
 
         expect(documentWith("<!-- generated:project-type-count-start -->")).toContain(
             `<!-- generated:project-type-count-start -->${projectTypeCount}<!-- generated:project-type-count-end -->`,
+        );
+    });
+});
+
+/**
+ * Independent checks for the `.kiro/steering/*.md` spans. These read the
+ * authoritative sources directly (versions.json, config.ts, vitest.ts and the
+ * ProjectType enum) rather than re-running the generator, so a drift in either
+ * the committed docs or the generator surfaces here.
+ */
+describe("steering generated spans", () => {
+    // pnpm major from src/config.ts, read independently of the generator.
+    const pnpmMajor = (() => {
+        const config = readFileSync(join(repositoryRoot, "src", "config.ts"), "utf-8");
+        const match = config.match(/pnpmVersion:\s*"(\d+)/);
+        if (!match) {
+            throw new Error("Could not find pnpmVersion in src/config.ts");
+        }
+        return match[1];
+    })();
+
+    // Default Vitest major from src/components/vitest.ts, read independently.
+    const vitestMajor = (() => {
+        const source = readFileSync(join(repositoryRoot, "src", "components", "vitest.ts"), "utf-8");
+        const match = source.match(/options\.vitestVersion\s*\?\?\s*"\^(\d+)"/);
+        if (!match) {
+            throw new Error("Could not find the default vitestVersion in src/components/vitest.ts");
+        }
+        return match[1];
+    })();
+
+    it("renders the product.md defaults from source", () => {
+        const defaults = documentWith("<!-- generated:product-defaults-start -->");
+        expect(defaults).toContain(`- Package Manager: pnpm ${pnpmMajor}`);
+        expect(defaults).toContain(`- Node Version: ${versions.minNodeVersion}`);
+        expect(defaults).toContain(`- TypeScript: ${versions.typescriptVersion}`);
+        expect(defaults).toContain(`- CDK Version: ${versions.cdkVersion}`);
+    });
+
+    it("renders the product.md project-type count from the ProjectType enum", () => {
+        const projectTypeCount = Object.keys(ProjectType).length;
+        expect(documentWith("<!-- generated:product-defaults-start -->")).toBeTruthy();
+        expect(documentWith("<!-- generated:project-type-count-start -->")).toContain(
+            `<!-- generated:project-type-count-start -->${projectTypeCount}<!-- generated:project-type-count-end -->`,
+        );
+    });
+
+    it("renders the tech.md core technologies from source", () => {
+        const core = documentWith("<!-- generated:tech-core-start -->");
+        expect(core).toContain(`- **TypeScript ${versions.typescriptVersion}** - Primary language`);
+        expect(core).toContain(`- **Node.js ${versions.minNodeVersion}** - Runtime (managed via mise)`);
+        expect(core).toContain(`- **JSII ~${versions.typescriptVersion}** - Multi-language library support`);
+        expect(core).toContain(`- **pnpm ${pnpmMajor}** - Package manager`);
+    });
+
+    it("renders the tech.md Vitest major from the Vitest component default", () => {
+        expect(documentWith("<!-- generated:vitest-major-start -->")).toContain(
+            `<!-- generated:vitest-major-start -->${vitestMajor}<!-- generated:vitest-major-end -->`,
         );
     });
 });
