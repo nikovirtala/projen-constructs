@@ -8,7 +8,7 @@ Projen project types with standard configuration for consistent project setup ac
 pnpm add -D @nikovirtala/projen-constructs projen constructs
 ```
 
-Requires pnpm 12 and `projen` >= 0.101.27. `@mrgrain/cdk-esbuild` and `constructs` are peer
+Requires pnpm 12 and `projen` ^0.104.23. `@mrgrain/cdk-esbuild` and `constructs` are peer
 dependencies as well.
 
 To create a project from scratch:
@@ -99,6 +99,8 @@ first `node .projenrc.ts`: `npm init` writes `"type": "commonjs"`, which makes N
 Override any option by passing it to the constructor:
 
 ```typescript
+import { JsiiProject } from "@nikovirtala/projen-constructs";
+
 const project = new JsiiProject({
   name: "my-project",
   repositoryUrl: "https://github.com/nikovirtala/my-project.git",
@@ -149,7 +151,7 @@ import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
 
 const project = new AwsCdkTypeScriptAppProject({
   name: "my-cdk-app",
-  repositoryUrl: "https://github.com/nikovirtala/my-cdk-app.git",
+  repository: "https://github.com/nikovirtala/my-cdk-app.git",
 });
 
 project.synth();
@@ -175,7 +177,7 @@ import { TypeScriptProject } from "@nikovirtala/projen-constructs";
 
 const project = new TypeScriptProject({
   name: "my-typescript-project",
-  repositoryUrl: "https://github.com/nikovirtala/my-typescript-project.git",
+  repository: "https://github.com/nikovirtala/my-typescript-project.git",
 });
 
 project.synth();
@@ -190,7 +192,7 @@ The package includes reusable components for common development tasks:
 [Vitest](https://vitest.dev) testing framework component.
 
 ```typescript
-import { Vitest } from "@nikovirtala/projen-constructs";
+import { Vitest, CoverageProvider, CoverageReporter } from "@nikovirtala/projen-constructs";
 
 new Vitest(project, {
   vitestVersion: "^5",
@@ -208,6 +210,8 @@ For Vitest settings that `config` doesn't cover, use `extraTestConfig` (merged i
 `extraConfig` (top-level options next to `test`):
 
 ```typescript
+import { Vitest } from "@nikovirtala/projen-constructs";
+
 new Vitest(project, {
   extraTestConfig: {
     setupFiles: ["test/setup.ts"],
@@ -338,7 +342,7 @@ new LambdaFunctionCodeBundle(project, {
 Generates TypeScript project classes with standard configuration.
 
 ```typescript
-import { ProjectGenerator, ProjectType } from "@nikovirtala/projen-constructs";
+import { ProjectGenerator, ProjectType, Mise, Vitest } from "@nikovirtala/projen-constructs";
 
 new ProjectGenerator(project, {
   name: "TypeScriptProject",
@@ -389,7 +393,7 @@ get new features or fixes. Every class, interface, enum and function they export
    import { Vitest } from "@nikovirtala/projen-constructs";
    ```
 
-2. Check the peer dependencies. `@nikovirtala/projen-constructs` needs `projen` ^0.104, `constructs`
+2. Check the peer dependencies. `@nikovirtala/projen-constructs` needs `projen` ^0.104.23, `constructs`
    ^10 and `@mrgrain/cdk-esbuild` ^5. The standalone packages accepted older projen versions, so you
    may have to upgrade projen in the same change.
 3. Install the new package, run `npx projen` and review the changes to the generated files.
