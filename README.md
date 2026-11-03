@@ -47,13 +47,37 @@ Quick links: [Quick start](#quick-start) · [Usage](#usage) · [Features](#featu
 
 ## Quick start
 
-Install the library alongside its `projen` and `constructs` peers:
+To start a new project from scratch, run `projen new --from` in an empty directory. It installs the
+library and writes a ready-to-use `.projenrc.ts` and the full project for you, with no manual setup:
+
+```bash
+pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_library
+```
+
+**Expected output**: projen installs `@nikovirtala/projen-constructs` and its peers, writes a
+`.projenrc.ts` that defines the project, and synthesizes the generated files into the directory:
+`package.json`, `tsconfig.json`, `pnpm-workspace.yaml`, the GitHub Actions workflows, the Vitest and
+Biome configuration, `mise.toml`, and the source and test scaffolding for your construct library.
+
+Pass a different project type to scaffold one of the others this library provides:
+
+| Project type | `projen new --from` argument |
+| --- | --- |
+| AWS CDK construct library | `aws_cdk_construct_library` |
+| AWS CDK TypeScript app | `aws_cdk_type_script_app` |
+| JSII | `jsii_project` |
+| TypeScript | `type_script_project` |
+
+### Adding it to an existing project
+
+If you already have a `.projenrc.ts`, install the library alongside its `projen` and `constructs`
+peers instead:
 
 ```bash
 pnpm add -D @nikovirtala/projen-constructs projen constructs
 ```
 
-Create a `.projenrc.ts` that defines an AWS CDK construct library and synthesizes it:
+Then define a project in `.projenrc.ts`:
 
 ```typescript
 import { AwsCdkConstructLibraryProject } from "@nikovirtala/projen-constructs";
@@ -69,23 +93,13 @@ const project = new AwsCdkConstructLibraryProject({
 project.synth();
 ```
 
-Then run synthesis:
+Run synthesis to write or update the generated files:
 
 ```bash
 pnpm dlx projen
 ```
 
-**Expected output**: projen reads `.projenrc.ts` and writes the generated project files into the
-working directory: `package.json`, `tsconfig.json`, `pnpm-workspace.yaml`, the GitHub Actions
-workflows, the Vitest and Biome configuration, `mise.toml`, and the source and test scaffolding for
-your construct library. Re-running the command after you edit `.projenrc.ts` updates those files in
-place.
-
-To start a project from scratch without writing `.projenrc.ts` yourself:
-
-```bash
-pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_library
-```
+Re-running `projen` after you edit `.projenrc.ts` updates those files in place.
 
 ## Features
 
