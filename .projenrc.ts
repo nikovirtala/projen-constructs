@@ -99,6 +99,14 @@ project.defaultTask?.spawn(
     }),
 );
 
+// regenerate the volatile version values and project-type count in README.md from source
+project.defaultTask?.spawn(
+    project.addTask("update-readme", {
+        description: "regenerate the generated version values and project-type count in README.md",
+        exec: "tsx projenrc/update-readme.ts",
+    }),
+);
+
 /**
  * `vitest/config` is ESM only, so re-exporting it cannot be compiled by jsii
  * (CommonJS). This file is an esbuild entrypoint, bundled into

@@ -32,6 +32,7 @@
     "test:watch": "projen test:watch",
     "typedoc": "projen typedoc",
     "unbump": "projen unbump",
+    "update-readme": "projen update-readme",
     "update-versions": "projen update-versions",
     "upgrade": "projen upgrade",
     "watch": "projen watch",
