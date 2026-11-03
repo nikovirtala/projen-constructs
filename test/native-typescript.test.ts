@@ -3,7 +3,6 @@ import * as os from "node:os";
 import * as path from "node:path";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { supportsTypeStripping } from "../src/native-typescript";
 import {
     AwsCdkConstructLibraryProject,
     AwsCdkTypeScriptAppProject,
@@ -17,39 +16,16 @@ const publishable = {
     repositoryUrl: "https://github.com/test/test.git",
 };
 
-describe("supportsTypeStripping", () => {
-    it.each([
-        [undefined, true],
-        ["26.13.0", true],
-        ["24.0.0", true],
-        ["v24.11.1", true],
-        ["23.6.0", true],
-        ["23.5.0", false],
-        ["22.18.0", true],
-        ["22.17.1", false],
-        ["v20.17.0", false],
-        ["18", false],
-    ])("%s → %s", (version, expected) => {
-        expect(supportsTypeStripping(version)).toBe(expected);
-    });
-});
-
 describe("ES module project types", () => {
     const projects = [
         {
             name: "TypeScriptProject",
-            create: (minNodeVersion?: string) =>
-                new TypeScriptProject({ name: "test", defaultReleaseBranch: "main", minNodeVersion }),
+            create: () => new TypeScriptProject({ name: "test", defaultReleaseBranch: "main" }),
         },
         {
             name: "AwsCdkTypeScriptAppProject",
-            create: (minNodeVersion?: string) =>
-                new AwsCdkTypeScriptAppProject({
-                    name: "test",
-                    defaultReleaseBranch: "main",
-                    cdkVersion: "2.223.0",
-                    minNodeVersion,
-                }),
+            create: () =>
+                new AwsCdkTypeScriptAppProject({ name: "test", defaultReleaseBranch: "main", cdkVersion: "2.223.0" }),
         },
     ];
 
@@ -73,27 +49,12 @@ describe("ES module project types", () => {
                 verbatimModuleSyntax: true,
             });
         });
-
-        it("falls back to tsx when the minimum Node.js version has no type stripping", () => {
-            const snapshot = synthSnapshot(create("20.17.0"));
-
-            expect(snapshot[".projen/tasks.json"].tasks.default.steps[0]).toEqual({
-                exec: "tsx --tsconfig test/tsconfig.json .projenrc.ts",
-            });
-            expect(snapshot["package.json"].devDependencies).toHaveProperty("tsx");
-        });
     });
 
     it("runs the CDK app with Node.js", () => {
         const snapshot = synthSnapshot(projects[1].create());
 
         expect(snapshot["cdk.json"].app).toBe("node src/main.ts");
-    });
-
-    it("runs the CDK app with tsx when the minimum Node.js version has no type stripping", () => {
-        const snapshot = synthSnapshot(projects[1].create("20.17.0"));
-
-        expect(snapshot["cdk.json"].app).toBe("npx tsx src/main.ts");
     });
 });
 

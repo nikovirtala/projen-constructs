@@ -87,12 +87,8 @@ Code in these projects must therefore:
 Lambda handlers bundled by esbuild and tests run by Vitest aren't run by Node.js directly, but the
 same compiler options apply to them.
 
-Two exceptions keep using `tsx`:
-
-- **JSII and AWS CDK construct library projects**, because jsii compiles to CommonJS, and their
-  `.projenrc.ts` often imports their own `src`.
-- **Projects whose `minNodeVersion` is older than 22.18** (or 23.0–23.5), which have no type
-  stripping.
+JSII and AWS CDK construct library projects keep using `tsx`, because jsii compiles to CommonJS, and
+their `.projenrc.ts` often imports their own `src`.
 
 When you start a new project by hand, make sure `package.json` has `"type": "module"` before the
 first `node .projenrc.ts`: `npm init` writes `"type": "commonjs"`, which makes Node.js reject the

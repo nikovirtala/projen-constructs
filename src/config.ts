@@ -1,6 +1,6 @@
 import { awscdk, cdk, javascript, type Component as ProjenComponent, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
-import { AwsCdkAppSampleCode, supportsTypeStripping } from "./native-typescript";
+import { AwsCdkAppSampleCode } from "./native-typescript";
 import { mergeAll } from "./utils";
 import * as versions from "./versions.json";
 
@@ -37,20 +37,18 @@ function configureProject(
     }
 
     /* ES module projects run TypeScript with Node.js's type stripping. jsii libraries compile to
-     * CommonJS, and Node.js versions without type stripping need a TypeScript runner, so they use tsx. */
-    const runsTypeScriptNatively = isEsModule && supportsTypeStripping(project.minNodeVersion);
-    const runTypeScript = runsTypeScriptNatively ? "node" : `tsx --tsconfig ${project.tsconfigDev.file.path}`;
+     * CommonJS, so they use tsx. */
+    const runTypeScript = isEsModule ? "node" : `tsx --tsconfig ${project.tsconfigDev.file.path}`;
 
     project.deps.removeDependency("ts-node");
-    if (!runsTypeScriptNatively) {
+    if (!isEsModule) {
         project.addDevDeps("tsx");
     }
     project.defaultTask?.reset();
     project.defaultTask?.exec(`${runTypeScript} .projenrc.ts`);
 
     if (project instanceof awscdk.AwsCdkTypeScriptApp) {
-        const app = runsTypeScriptNatively ? "node" : "npx tsx";
-        project.cdkConfig.json.addOverride("app", `${app} ${project.srcdir}/${project.appEntrypoint}`);
+        project.cdkConfig.json.addOverride("app", `node ${project.srcdir}/${project.appEntrypoint}`);
         new AwsCdkAppSampleCode(project);
     }
 

@@ -3,35 +3,6 @@ import * as path from "node:path";
 import { type awscdk, Component } from "projen";
 
 /**
- * Whether Node.js can run TypeScript files natively, by stripping types, without a flag.
- *
- * Type stripping is enabled by default since Node.js 23.6 and 22.18. Projects that don't declare a
- * minimum Node.js version use the defaults of this library, which are recent enough.
- *
- * @param minNodeVersion - Minimum Node.js version of the project, e.g. "22.18.0" or "v20.17.0"
- *
- * @see https://nodejs.org/api/typescript.html#type-stripping
- */
-export function supportsTypeStripping(minNodeVersion?: string): boolean {
-    if (minNodeVersion === undefined) {
-        return true;
-    }
-
-    const [major = 0, minor = 0] = minNodeVersion
-        .replace(/^v/, "")
-        .split(".")
-        .map((part) => Number.parseInt(part, 10) || 0);
-
-    if (major === 22) {
-        return minor >= 18;
-    }
-    if (major === 23) {
-        return minor >= 6;
-    }
-    return major > 23;
-}
-
-/**
  * Makes projen's sample code of AWS CDK TypeScript apps runnable with Node.js's native TypeScript
  * support and `verbatimModuleSyntax`.
  *

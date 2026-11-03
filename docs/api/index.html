@@ -107,13 +107,8 @@ e.g. <code>projen/lib/component.js</code> rather than <code>projen/lib/component
 </ul>
 <p>Lambda handlers bundled by esbuild and tests run by Vitest aren't run by Node.js directly, but the
 same compiler options apply to them.</p>
-<p>Two exceptions keep using <code>tsx</code>:</p>
-<ul>
-<li><strong>JSII and AWS CDK construct library projects</strong>, because jsii compiles to CommonJS, and their
-<code>.projenrc.ts</code> often imports their own <code>src</code>.</li>
-<li><strong>Projects whose <code>minNodeVersion</code> is older than 22.18</strong> (or 23.0–23.5), which have no type
-stripping.</li>
-</ul>
+<p>JSII and AWS CDK construct library projects keep using <code>tsx</code>, because jsii compiles to CommonJS, and
+their <code>.projenrc.ts</code> often imports their own <code>src</code>.</p>
 <p>When you start a new project by hand, make sure <code>package.json</code> has <code>&quot;type&quot;: &quot;module&quot;</code> before the
 first <code>node .projenrc.ts</code>: <code>npm init</code> writes <code>&quot;type&quot;: &quot;commonjs&quot;</code>, which makes Node.js reject the
 <code>import</code> statements in <code>.projenrc.ts</code>.</p>
