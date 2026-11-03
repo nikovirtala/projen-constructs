@@ -172,6 +172,9 @@
         },
         {
           "spawn": "bundle-vitest-define-config"
+        },
+        {
+          "spawn": "update-readme"
         }
       ]
     },
@@ -401,6 +404,15 @@
         },
         {
           "exec": "jsii --silence-warnings=reserved-word"
+        }
+      ]
+    },
+    "update-readme": {
+      "name": "update-readme",
+      "description": "regenerate the generated version values and project-type count in README.md",
+      "steps": [
+        {
+          "exec": "tsx projenrc/update-readme.ts"
         }
       ]
     },
