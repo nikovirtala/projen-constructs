@@ -1,17 +1,27 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 /**
- * Regenerates the volatile values embedded in README.md from their authoritative
- * sources, so they fail the build when they drift instead of being hand-maintained.
+ * Regenerates the volatile values embedded in the documentation from their
+ * authoritative sources, so they fail the build when they drift instead of being
+ * hand-maintained.
  *
- * The generated spans are delimited by explicit HTML-comment markers. Only the
+ * The generated values are delimited by explicit HTML-comment markers. Only the
  * content between a start and end marker is rewritten; all hand-written prose
- * outside the markers is preserved.
+ * outside the markers is preserved. A span is applied to whichever documentation
+ * file carries its markers, so the generated values can live wherever the prose
+ * structure puts them: the project-type count sits inline in the README feature
+ * list, while the version table lives in `docs/configuration.md`.
  */
 
 const repositoryRoot = join(__dirname, "..");
-const readmePath = join(repositoryRoot, "README.md");
+
+/**
+ * Documentation files that may carry generated markers, in the order they are
+ * searched and rewritten. A file that does not exist is skipped, so the generator
+ * works whether or not the extracted `docs/` reference pages are present.
+ */
+const documentationFiles = ["README.md", join("docs", "configuration.md")];
 
 interface GeneratedSpan {
     readonly start: string;
@@ -57,7 +67,7 @@ function readVersions(): {
 
 /**
  * Counts the members of the generated `ProjectType` enum in src/project-type.ts,
- * so the README count stays in sync with the committed enum.
+ * so the count stays in sync with the committed enum.
  */
 function countProjectTypes(): number {
     const source = readFileSync(join(repositoryRoot, "src", "project-type.ts"), "utf-8");
@@ -78,6 +88,9 @@ function matchOne(source: string, pattern: RegExp, description: string): string 
 
 /**
  * Builds the list of generated spans from the current source values.
+ *
+ * The version table uses sentence-case labels so it matches the extracted
+ * `docs/configuration.md` reference page verbatim.
  */
 export function buildGeneratedSpans(): GeneratedSpan[] {
     const versions = readVersions();
@@ -85,12 +98,12 @@ export function buildGeneratedSpans(): GeneratedSpan[] {
 
     const versionTable = [
         "- **Author**: Niko Virtala (niko.virtala@hey.com)",
-        "- **Default Release Branch**: main",
-        `- **Package Manager**: pnpm ${versions.pnpmVersion}`,
-        `- **Node Version**: ${versions.minNodeVersion}`,
+        "- **Default release branch**: main",
+        `- **Package manager**: pnpm ${versions.pnpmVersion}`,
+        `- **Node version**: ${versions.minNodeVersion}`,
         `- **TypeScript**: ${versions.typescriptVersion}`,
-        `- **CDK Version**: ${versions.cdkVersion} (for CDK projects)`,
-        `- **JSII Version**: ${versions.jsiiVersion} (for JSII projects)`,
+        `- **CDK version**: ${versions.cdkVersion} (for CDK projects)`,
+        `- **JSII version**: ${versions.jsiiVersion} (for JSII projects)`,
     ].join("\n");
 
     return [
@@ -108,50 +121,87 @@ export function buildGeneratedSpans(): GeneratedSpan[] {
 }
 
 /**
- * Applies the generated spans to README content and returns the result.
- * Throws if a marker pair is missing, so markers can't silently drift out.
+ * Applies a single generated span to the content of a file. Returns the rewritten
+ * content, or `undefined` if the file does not carry the span's markers.
+ * Throws if only one marker of the pair is present, or they are out of order, so
+ * a half-present marker set can't silently drift.
  */
-export function applyGeneratedSpans(readme: string, spans: GeneratedSpan[]): string {
-    let result = readme;
+function applySpan(fileName: string, content: string, span: GeneratedSpan): string | undefined {
+    const startIndex = content.indexOf(span.start);
+    const endIndex = content.indexOf(span.end);
+    if (startIndex === -1 && endIndex === -1) {
+        return undefined;
+    }
+    if (startIndex === -1 || endIndex === -1) {
+        throw new Error(`${fileName} has only one of the markers ${span.start} / ${span.end}`);
+    }
+    if (endIndex < startIndex) {
+        throw new Error(`${fileName} has ${span.end} before ${span.start}`);
+    }
+    const before = content.slice(0, startIndex + span.start.length);
+    const after = content.slice(endIndex);
+    return `${before}${span.content}${after}`;
+}
+
+/**
+ * Applies the generated spans to a single file's content. Spans whose markers are
+ * absent from the file are left for another file to own. Returns the rewritten
+ * content and the set of span start markers that were applied here.
+ */
+export function applyGeneratedSpans(content: string, spans: GeneratedSpan[], fileName = "README.md"): string {
+    let result = content;
     for (const span of spans) {
-        const startIndex = result.indexOf(span.start);
-        const endIndex = result.indexOf(span.end);
-        if (startIndex === -1 || endIndex === -1) {
-            throw new Error(`README.md is missing the markers ${span.start} / ${span.end}`);
+        const next = applySpan(fileName, result, span);
+        if (next !== undefined) {
+            result = next;
         }
-        if (endIndex < startIndex) {
-            throw new Error(`README.md has ${span.end} before ${span.start}`);
-        }
-        const before = result.slice(0, startIndex + span.start.length);
-        const after = result.slice(endIndex);
-        result = `${before}${span.content}${after}`;
     }
     return result;
 }
 
 /**
- * Returns the README content as it should be, generated from the current sources.
+ * Regenerates every documentation file that carries generated markers, rewriting
+ * only the content between markers. Throws if a span's markers are not found in
+ * any documentation file, so markers can't silently drift out of existence.
+ *
+ * Returns the list of files that changed.
  */
-export function renderReadme(): string {
-    const readme = readFileSync(readmePath, "utf-8");
-    return applyGeneratedSpans(readme, buildGeneratedSpans());
-}
+export function updateDocumentation(): string[] {
+    const spans = buildGeneratedSpans();
+    const applied = new Set<string>();
+    const changed: string[] = [];
 
-/**
- * Writes the regenerated README to disk. Returns true if the file changed.
- */
-export function updateReadme(): boolean {
-    const current = readFileSync(readmePath, "utf-8");
-    const next = applyGeneratedSpans(current, buildGeneratedSpans());
-    if (current !== next) {
-        writeFileSync(readmePath, next);
-        return true;
+    for (const relativePath of documentationFiles) {
+        const absolutePath = join(repositoryRoot, relativePath);
+        if (!existsSync(absolutePath)) {
+            continue;
+        }
+        const current = readFileSync(absolutePath, "utf-8");
+        let next = current;
+        for (const span of spans) {
+            const rewritten = applySpan(relativePath, next, span);
+            if (rewritten !== undefined) {
+                next = rewritten;
+                applied.add(span.start);
+            }
+        }
+        if (next !== current) {
+            writeFileSync(absolutePath, next);
+            changed.push(relativePath);
+        }
     }
-    return false;
+
+    const missing = spans.filter((span) => !applied.has(span.start));
+    if (missing.length > 0) {
+        const names = missing.map((span) => `${span.start} / ${span.end}`).join(", ");
+        throw new Error(`No documentation file carries the markers ${names}. Searched: ${documentationFiles.join(", ")}`);
+    }
+
+    return changed;
 }
 
 // Run as a script (projen `update-readme` task) only when executed directly.
 if (require.main === module) {
-    const changed = updateReadme();
-    console.log(changed ? "README.md regenerated" : "README.md already up to date");
+    const changed = updateDocumentation();
+    console.log(changed.length > 0 ? `Regenerated: ${changed.join(", ")}` : "Documentation already up to date");
 }

@@ -34,12 +34,12 @@ pnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_libr
 
 <!-- generated:version-table-start -->
 - **Author**: Niko Virtala (niko.virtala@hey.com)
-- **Default Release Branch**: main
-- **Package Manager**: pnpm 12.16.1
-- **Node Version**: 26.13.0
+- **Default release branch**: main
+- **Package manager**: pnpm 12.16.1
+- **Node version**: 26.13.0
 - **TypeScript**: 6.0.3
-- **CDK Version**: 2.275.0 (for CDK projects)
-- **JSII Version**: ~6.0.3 (for JSII projects)
+- **CDK version**: 2.275.0 (for CDK projects)
+- **JSII version**: ~6.0.3 (for JSII projects)
 <!-- generated:version-table-end -->
 
 The AWS CDK, Node.js and TypeScript versions live in `src/versions.json` and are refreshed by the
