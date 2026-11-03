@@ -1,5 +1,6 @@
 import { awscdk, cdk, javascript, type Component as ProjenComponent, typescript } from "projen";
 import type { TypeScriptProjectOptions } from "projen/lib/typescript";
+import { AwsCdkAppSampleCode } from "./native-typescript";
 import { mergeAll } from "./utils";
 import * as versions from "./versions.json";
 
@@ -26,21 +27,29 @@ function configureProject(
         | typescript.TypeScriptProject
         | cdk.JsiiProject,
 ) {
-    if (
+    const isEsModule =
         (project instanceof awscdk.AwsCdkTypeScriptApp || project instanceof typescript.TypeScriptProject) &&
         !(project instanceof cdk.JsiiProject) &&
-        !(project instanceof awscdk.AwsCdkConstructLibrary)
-    ) {
+        !(project instanceof awscdk.AwsCdkConstructLibrary);
+
+    if (isEsModule) {
         project.package.addField("type", "module");
     }
 
+    /* ES module projects run TypeScript with Node.js's type stripping. jsii libraries compile to
+     * CommonJS, so they use tsx. */
+    const runTypeScript = isEsModule ? "node" : `tsx --tsconfig ${project.tsconfigDev.file.path}`;
+
     project.deps.removeDependency("ts-node");
-    project.addDevDeps("tsx");
+    if (!isEsModule) {
+        project.addDevDeps("tsx");
+    }
     project.defaultTask?.reset();
-    project.defaultTask?.exec(`tsx --tsconfig ${project.tsconfigDev.file.path} .projenrc.ts`);
+    project.defaultTask?.exec(`${runTypeScript} .projenrc.ts`);
 
     if (project instanceof awscdk.AwsCdkTypeScriptApp) {
-        project.cdkConfig.json.addOverride("app", `npx tsx ${project.srcdir}/${project.appEntrypoint}`);
+        project.cdkConfig.json.addOverride("app", `node ${project.srcdir}/${project.appEntrypoint}`);
+        new AwsCdkAppSampleCode(project);
     }
 
     project.vscode?.extensions.addRecommendations("biomejs.biome");
@@ -200,6 +209,15 @@ const esModuleTsconfigOptions = {
     tsconfig: {
         compilerOptions: {
             allowImportingTsExtensions: true,
+            /**
+             * Only allow TypeScript syntax that Node.js can strip (no enums, namespaces with
+             * values or parameter properties), and require type-only imports to be marked as
+             * such, so that the code also runs with Node.js's native TypeScript support.
+             *
+             * @see https://nodejs.org/api/typescript.html#type-stripping
+             */
+            erasableSyntaxOnly: true,
+            verbatimModuleSyntax: true,
             lib: ["esnext"],
             module: "nodenext",
             moduleResolution: javascript.TypeScriptModuleResolution.NODE_NEXT,

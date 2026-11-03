@@ -77,9 +77,13 @@ project.synth();
 `;
         writeFileSync(join(projectDir, ".projenrc.ts"), projenrc);
 
+        /* `npm init` declares "type": "commonjs", which keeps Node.js from running the ES module
+         * .projenrc.ts natively until projen has written "type": "module" (see README) */
+        execSync("npm pkg set type=module", { cwd: projectDir, stdio: "inherit" });
+
         /* Run projen to generate project files */
         console.log("Running projen...");
-        execSync("npx tsx .projenrc.ts", {
+        execSync("node .projenrc.ts", {
             cwd: projectDir,
             stdio: "inherit",
             env: { ...process.env, CI: "false" },
@@ -173,9 +177,13 @@ project.synth();
 `;
         writeFileSync(join(projectDir, ".projenrc.ts"), projenrc);
 
+        /* `npm init` declares "type": "commonjs", which keeps Node.js from running the ES module
+         * .projenrc.ts natively until projen has written "type": "module" (see README) */
+        execSync("npm pkg set type=module", { cwd: projectDir, stdio: "inherit" });
+
         /* Run projen to generate project files */
         console.log("Running projen...");
-        execSync("npx tsx .projenrc.ts", {
+        execSync("node .projenrc.ts", {
             cwd: projectDir,
             stdio: "inherit",
             env: { ...process.env, CI: "false" },

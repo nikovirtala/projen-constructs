@@ -65,6 +65,35 @@ Projen renders three configs, and none of them should be edited directly:
   the editor use, and the one `tsconfigDev` points at.
 - `projenrc/tsconfig.json` covers `.projenrc.ts`.
 
+### Native TypeScript
+
+TypeScript and AWS CDK app projects run TypeScript with Node.js's built-in
+[type stripping](https://nodejs.org/api/typescript.html#type-stripping) instead of `tsx` or
+`ts-node`: the default task is `node .projenrc.ts`, and the cdk.json `app` is `node src/main.ts`.
+Their `tsconfig.json` sets `erasableSyntaxOnly` and `verbatimModuleSyntax`, so `tsc` reports code
+that Node.js can't run before Node.js does.
+
+Code in these projects must therefore:
+
+- only use syntax that can be stripped: no `enum`s (use an `as const` object), no namespaces with
+  values, and no constructor parameter properties
+- mark type-only imports with `type` (Biome's `useImportType` fixes these)
+- import relative files with their `.ts` extension, and never import a directory
+- use Node.js [subpath imports](https://nodejs.org/api/packages.html#subpath-imports)
+  (`#stacks` in `package.json` `imports`) instead of tsconfig `paths`, which Node.js doesn't read
+- import packages without an `exports` map either from the package root or with an explicit file,
+  e.g. `projen/lib/component.js` rather than `projen/lib/component`
+
+Lambda handlers bundled by esbuild and tests run by Vitest aren't run by Node.js directly, but the
+same compiler options apply to them.
+
+JSII and AWS CDK construct library projects keep using `tsx`, because jsii compiles to CommonJS, and
+their `.projenrc.ts` often imports their own `src`.
+
+When you start a new project by hand, make sure `package.json` has `"type": "module"` before the
+first `node .projenrc.ts`: `npm init` writes `"type": "commonjs"`, which makes Node.js reject the
+`import` statements in `.projenrc.ts`.
+
 ## Customization
 
 Override any option by passing it to the constructor:
@@ -417,13 +446,16 @@ import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
 const project = new AwsCdkTypeScriptAppProject({ name: "my-app", cdkVersion: "2.221.0" });
 ```
 
-Both are ES module apps run with `tsx`, using pnpm, Biome, Vitest and mise. The differences:
+Both are ES module apps using pnpm, Biome, Vitest and mise. The differences:
+
+- **Native TypeScript**: `.projenrc.ts` and the app run with `node` instead of `tsx`, and the
+  tsconfig sets `erasableSyntaxOnly` and `verbatimModuleSyntax` (see [Native TypeScript](#native-typescript)).
 
 - **`nvm` is removed.** Use mise (on by default), which pins the Node.js version in `mise.toml`.
 - **Homebrew is on by default.** The project gets a `Brewfile`, and `npx projen` runs
   `install:homebrew` (installs Homebrew if `brew` is missing) and `homebrew:bundle`. Set
   `homebrew: false` to turn it off.
-- **cdk.json `app`** is `npx tsx src/main.ts` instead of `tsx --tsconfig tsconfig.json src/main.ts`.
+- **cdk.json `app`** is `node src/main.ts` instead of `tsx --tsconfig tsconfig.json src/main.ts`.
 - **Defaults** come from this library: Node.js, TypeScript, CDK and pnpm versions (pnpm 12 instead
   of 10), Dependabot off, auto-merge on, `auto-approve` and `auto-merge` labels on dependency
   upgrade PRs, and auto-approval of PRs by `nikovirtala`. Any option you set explicitly still wins,
