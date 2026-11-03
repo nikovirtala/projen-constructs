@@ -140,6 +140,9 @@ import { AwsCdkConstructLibraryProject } from "@nikovirtala/projen-constructs";
 
 const project = new AwsCdkConstructLibraryProject({
   name: "my-cdk-construct",
+  author: "Niko Virtala",
+  authorAddress: "niko.virtala@hey.com",
+  cdkVersion: "2.263.0",
   repositoryUrl: "https://github.com/nikovirtala/my-cdk-construct.git",
 });
 
@@ -153,6 +156,7 @@ import { AwsCdkTypeScriptAppProject } from "@nikovirtala/projen-constructs";
 
 const project = new AwsCdkTypeScriptAppProject({
   name: "my-cdk-app",
+  cdkVersion: "2.275.0",
   repository: "https://github.com/nikovirtala/my-cdk-app.git",
 });
 
@@ -166,6 +170,8 @@ import { JsiiProject } from "@nikovirtala/projen-constructs";
 
 const project = new JsiiProject({
   name: "my-jsii-project",
+  author: "Niko Virtala",
+  authorAddress: "niko.virtala@hey.com",
   repositoryUrl: "https://github.com/nikovirtala/my-jsii-project.git",
 });
 
@@ -194,7 +200,11 @@ The package includes reusable components for common development tasks:
 [Vitest](https://vitest.dev) testing framework component.
 
 ```typescript
-import { Vitest, CoverageProvider, CoverageReporter } from "@nikovirtala/projen-constructs";
+import {
+  Vitest,
+  CoverageProvider,
+  CoverageReporter,
+} from "@nikovirtala/projen-constructs";
 
 new Vitest(project, {
   vitestVersion: "^5",
@@ -344,7 +354,12 @@ new LambdaFunctionCodeBundle(project, {
 Generates TypeScript project classes with standard configuration.
 
 ```typescript
-import { ProjectGenerator, ProjectType, Mise, Vitest } from "@nikovirtala/projen-constructs";
+import {
+  ProjectGenerator,
+  ProjectType,
+  Mise,
+  Vitest,
+} from "@nikovirtala/projen-constructs";
 
 new ProjectGenerator(project, {
   name: "TypeScriptProject",
