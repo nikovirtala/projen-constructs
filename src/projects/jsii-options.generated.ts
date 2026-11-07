@@ -65,6 +65,8 @@ export interface JsiiProjectOptions {
    * By default, jsii will include all *.ts files (except .d.ts files) in the TypeScript compiler input.
    * This can be problematic for example when the package's build or test procedure generates .ts files
    * that cannot be compiled with jsii's compiler settings.
+   *
+   * When ESLint is enabled, these patterns are also added to its ignore patterns.
    * @stability experimental
    */
   readonly excludeTypescript?: Array<string>;
@@ -711,6 +713,13 @@ export interface JsiiProjectOptions {
    * @stability experimental
    */
   readonly peerDependencyOptions?: javascript.PeerDependencyOptions;
+  /**
+   * Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional.
+   * Each key must also be declared as a peer dependency.
+   * @default - no `peerDependenciesMeta`
+   * @stability experimental
+   */
+  readonly peerDependenciesMeta?: Record<string, javascript.PeerDependencyMeta>;
   /**
    * The "name" in package.json.
    * @default - defaults to project name
