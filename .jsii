@@ -16099,18 +16099,19 @@
       "assembly": "@nikovirtala/projen-constructs",
       "base": "projen.Component",
       "docs": {
+        "deprecated": "Use the Floci component instead, which delivers Floci (https://floci.io), a\ndrop-in replacement for LocalStack.",
         "remarks": "Adds LocalStack support to your project with automatic Docker/Colima setup.",
-        "stability": "stable",
+        "stability": "deprecated",
         "summary": "LocalStack component for projen projects."
       },
       "fqn": "@nikovirtala/projen-constructs.LocalStack",
       "initializer": {
         "docs": {
-          "stability": "stable"
+          "stability": "deprecated"
         },
         "locationInModule": {
           "filename": "src/components/localstack.ts",
-          "line": 50
+          "line": 56
         },
         "parameters": [
           {
@@ -16131,7 +16132,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/localstack.ts",
-        "line": 49
+        "line": 55
       },
       "name": "LocalStack",
       "symbolId": "src/components/localstack:LocalStack"
@@ -16140,14 +16141,15 @@
       "assembly": "@nikovirtala/projen-constructs",
       "datatype": true,
       "docs": {
-        "stability": "stable",
+        "deprecated": "Use the Floci component instead, which delivers Floci (https://floci.io), a\ndrop-in replacement for LocalStack.",
+        "stability": "deprecated",
         "summary": "Options for LocalStack component."
       },
       "fqn": "@nikovirtala/projen-constructs.LocalStackOptions",
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/localstack.ts",
-        "line": 10
+        "line": 13
       },
       "name": "LocalStackOptions",
       "properties": [
@@ -16155,13 +16157,13 @@
           "abstract": true,
           "docs": {
             "default": "false",
-            "stability": "stable",
+            "stability": "deprecated",
             "summary": "Enable LocalStack debug mode."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 27
+            "line": 30
           },
           "name": "debug",
           "optional": true,
@@ -16175,13 +16177,13 @@
             "default": "- the LocalStack CLI's default image",
             "remarks": "When set, LocalStack starts with the `localstack/localstack:<imageTag>` image, passed to\n`localstack start` through the `IMAGE_NAME` environment variable. That's the community\nimage, even if a `LOCALSTACK_AUTH_TOKEN` would otherwise select the Pro image.\n\nMust be a valid Docker tag.",
             "see": "https://docs.localstack.cloud/aws/customization/configuration-options/",
-            "stability": "stable",
+            "stability": "deprecated",
             "summary": "LocalStack Docker image tag, e.g. `\"4.9\"` to pin a version."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 41
+            "line": 44
           },
           "name": "imageTag",
           "optional": true,
@@ -16193,13 +16195,13 @@
           "abstract": true,
           "docs": {
             "default": "4566",
-            "stability": "stable",
+            "stability": "deprecated",
             "summary": "LocalStack gateway port."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 21
+            "line": 24
           },
           "name": "port",
           "optional": true,
@@ -16211,13 +16213,13 @@
           "abstract": true,
           "docs": {
             "default": "- all services enabled",
-            "stability": "stable",
+            "stability": "deprecated",
             "summary": "LocalStack services to enable."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/localstack.ts",
-            "line": 15
+            "line": 18
           },
           "name": "services",
           "optional": true,
@@ -21610,5 +21612,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "9h/vBoluH0COdEyBqy0UitBFkTPXU5Q2ZK1oKtzVWJM="
+  "fingerprint": "Kxr5xz+9V1a8/dQrf4JXpgKUYMAOI0nLEqJQSGfIDE0="
 }

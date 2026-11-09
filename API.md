@@ -6155,7 +6155,7 @@ new LocalStack(scope: IConstruct, options?: LocalStackOptions)
 
 ---
 
-##### `toString` <a name="toString" id="@nikovirtala/projen-constructs.LocalStack.toString"></a>
+##### ~~`toString`~~ <a name="toString" id="@nikovirtala/projen-constructs.LocalStack.toString"></a>
 
 ```typescript
 public toString(): string
@@ -6163,7 +6163,7 @@ public toString(): string
 
 Returns a string representation of this construct.
 
-##### `with` <a name="with" id="@nikovirtala/projen-constructs.LocalStack.with"></a>
+##### ~~`with`~~ <a name="with" id="@nikovirtala/projen-constructs.LocalStack.with"></a>
 
 ```typescript
 public with(mixins: ...IMixin[]): IConstruct
@@ -6184,7 +6184,7 @@ The mixins to apply.
 
 ---
 
-##### `postProjectCreation` <a name="postProjectCreation" id="@nikovirtala/projen-constructs.LocalStack.postProjectCreation"></a>
+##### ~~`postProjectCreation`~~ <a name="postProjectCreation" id="@nikovirtala/projen-constructs.LocalStack.postProjectCreation"></a>
 
 ```typescript
 public postProjectCreation(initProject: InitProject): void
@@ -6205,7 +6205,7 @@ Details about how the project was created, e.g. its type and the original CLI ar
 
 ---
 
-##### `postSynthesize` <a name="postSynthesize" id="@nikovirtala/projen-constructs.LocalStack.postSynthesize"></a>
+##### ~~`postSynthesize`~~ <a name="postSynthesize" id="@nikovirtala/projen-constructs.LocalStack.postSynthesize"></a>
 
 ```typescript
 public postSynthesize(): void
@@ -6215,7 +6215,7 @@ Called after synthesis.
 
 Order is *not* guaranteed.
 
-##### `preSynthesize` <a name="preSynthesize" id="@nikovirtala/projen-constructs.LocalStack.preSynthesize"></a>
+##### ~~`preSynthesize`~~ <a name="preSynthesize" id="@nikovirtala/projen-constructs.LocalStack.preSynthesize"></a>
 
 ```typescript
 public preSynthesize(): void
@@ -6223,7 +6223,7 @@ public preSynthesize(): void
 
 Called before synthesis.
 
-##### `projectCreation` <a name="projectCreation" id="@nikovirtala/projen-constructs.LocalStack.projectCreation"></a>
+##### ~~`projectCreation`~~ <a name="projectCreation" id="@nikovirtala/projen-constructs.LocalStack.projectCreation"></a>
 
 ```typescript
 public projectCreation(initProject: InitProject): void
@@ -6242,7 +6242,7 @@ Details about how the project was created, e.g. its type and the original CLI ar
 
 ---
 
-##### `synthesize` <a name="synthesize" id="@nikovirtala/projen-constructs.LocalStack.synthesize"></a>
+##### ~~`synthesize`~~ <a name="synthesize" id="@nikovirtala/projen-constructs.LocalStack.synthesize"></a>
 
 ```typescript
 public synthesize(): void
@@ -6259,7 +6259,7 @@ Synthesizes files to the project output directory.
 
 ---
 
-##### `isConstruct` <a name="isConstruct" id="@nikovirtala/projen-constructs.LocalStack.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="@nikovirtala/projen-constructs.LocalStack.isConstruct"></a>
 
 ```typescript
 import { LocalStack } from '@nikovirtala/projen-constructs'
@@ -6291,7 +6291,7 @@ Any object.
 
 ---
 
-##### `isComponent` <a name="isComponent" id="@nikovirtala/projen-constructs.LocalStack.isComponent"></a>
+##### ~~`isComponent`~~ <a name="isComponent" id="@nikovirtala/projen-constructs.LocalStack.isComponent"></a>
 
 ```typescript
 import { LocalStack } from '@nikovirtala/projen-constructs'
@@ -6316,7 +6316,10 @@ Test whether the given construct is a component.
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.LocalStack.property.node"></a>
+##### ~~`node`~~<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.LocalStack.property.node"></a>
+
+- *Deprecated:* Use the Floci component instead, which delivers Floci (https://floci.io), a
+drop-in replacement for LocalStack.
 
 ```typescript
 public readonly node: Node;
@@ -6328,7 +6331,10 @@ The tree node.
 
 ---
 
-##### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.LocalStack.property.project"></a>
+##### ~~`project`~~<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.LocalStack.property.project"></a>
+
+- *Deprecated:* Use the Floci component instead, which delivers Floci (https://floci.io), a
+drop-in replacement for LocalStack.
 
 ```typescript
 public readonly project: Project;
@@ -17979,7 +17985,10 @@ const localStackOptions: LocalStackOptions = { ... }
 
 ---
 
-##### `debug`<sup>Optional</sup> <a name="debug" id="@nikovirtala/projen-constructs.LocalStackOptions.property.debug"></a>
+##### ~~`debug`~~<sup>Optional</sup> <a name="debug" id="@nikovirtala/projen-constructs.LocalStackOptions.property.debug"></a>
+
+- *Deprecated:* Use the Floci component instead, which delivers Floci (https://floci.io), a
+drop-in replacement for LocalStack.
 
 ```typescript
 public readonly debug: boolean;
@@ -17992,7 +18001,10 @@ Enable LocalStack debug mode.
 
 ---
 
-##### `imageTag`<sup>Optional</sup> <a name="imageTag" id="@nikovirtala/projen-constructs.LocalStackOptions.property.imageTag"></a>
+##### ~~`imageTag`~~<sup>Optional</sup> <a name="imageTag" id="@nikovirtala/projen-constructs.LocalStackOptions.property.imageTag"></a>
+
+- *Deprecated:* Use the Floci component instead, which delivers Floci (https://floci.io), a
+drop-in replacement for LocalStack.
 
 ```typescript
 public readonly imageTag: string;
@@ -18013,7 +18025,10 @@ Must be a valid Docker tag.
 
 ---
 
-##### `port`<sup>Optional</sup> <a name="port" id="@nikovirtala/projen-constructs.LocalStackOptions.property.port"></a>
+##### ~~`port`~~<sup>Optional</sup> <a name="port" id="@nikovirtala/projen-constructs.LocalStackOptions.property.port"></a>
+
+- *Deprecated:* Use the Floci component instead, which delivers Floci (https://floci.io), a
+drop-in replacement for LocalStack.
 
 ```typescript
 public readonly port: number;
@@ -18026,7 +18041,10 @@ LocalStack gateway port.
 
 ---
 
-##### `services`<sup>Optional</sup> <a name="services" id="@nikovirtala/projen-constructs.LocalStackOptions.property.services"></a>
+##### ~~`services`~~<sup>Optional</sup> <a name="services" id="@nikovirtala/projen-constructs.LocalStackOptions.property.services"></a>
+
+- *Deprecated:* Use the Floci component instead, which delivers Floci (https://floci.io), a
+drop-in replacement for LocalStack.
 
 ```typescript
 public readonly services: string[];

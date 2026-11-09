@@ -107,6 +107,8 @@ new Colima(project);
 
 ## LocalStack
 
+> **Deprecated:** use the [Floci](#floci) component instead, which delivers [Floci](https://floci.io), a drop-in replacement for LocalStack.
+
 [LocalStack](https://www.localstack.cloud) AWS emulation component.
 
 ```typescript

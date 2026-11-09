@@ -6,6 +6,9 @@ import { Homebrew } from "./homebrew";
 
 /**
  * Options for LocalStack component.
+ *
+ * @deprecated Use the Floci component instead, which delivers Floci (https://floci.io), a
+ * drop-in replacement for LocalStack.
  */
 export interface LocalStackOptions {
     /**
@@ -45,6 +48,9 @@ export interface LocalStackOptions {
  * LocalStack component for projen projects.
  *
  * Adds LocalStack support to your project with automatic Docker/Colima setup.
+ *
+ * @deprecated Use the Floci component instead, which delivers Floci (https://floci.io), a
+ * drop-in replacement for LocalStack.
  */
 export class LocalStack extends Component {
     constructor(scope: IConstruct, options: LocalStackOptions = {}) {
