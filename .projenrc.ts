@@ -147,5 +147,13 @@ project.upgradeWorkflow?.postUpgradeTask.exec(
     "pnpm dlx npm-check-updates@18 --upgrade --target=minor --peer --dep=dev,peer --filter=@mrgrain/cdk-esbuild",
 );
 project.upgradeWorkflow?.postUpgradeTask.exec("pnpm i --no-frozen-lockfile");
+// regenerate .jsii so the committed manifest carries the upgraded jsii toolchain's jsiiVersion + fingerprint
+project.upgradeWorkflow?.postUpgradeTask.exec("jsii --silence-warnings=reserved-word");
+// normalize the lockfile so its `specifier:` fields match the synth'd (loose) package.json ranges;
+// `--fix-lockfile` forces this reconciliation even on a warm install (plain `pnpm i` does not).
+// This MUST stay the last post-upgrade exec: the `upgrade` task synthesizes (reverting package.json
+// to the loose ranges) before spawning `post-upgrade`, so running it last reconciles against the
+// already-reverted manifest. Reordering it earlier would reintroduce the specifier flip-flop.
+project.upgradeWorkflow?.postUpgradeTask.exec("pnpm i --no-frozen-lockfile --fix-lockfile");
 
 project.synth();

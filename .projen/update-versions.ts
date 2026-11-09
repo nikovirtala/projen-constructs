@@ -65,7 +65,7 @@ async function main() {
         minNodeVersion: nodeVersion,
     };
 
-    writeFileSync(resolve(__dirname, "../src/versions.json"), JSON.stringify(versions, null, 4));
+    writeFileSync(resolve(__dirname, "../src/versions.json"), `${JSON.stringify(versions, null, 4)}\n`);
 
     console.log("Updated versions:", versions);
 }

@@ -304,6 +304,12 @@
         },
         {
           "exec": "pnpm i --no-frozen-lockfile"
+        },
+        {
+          "exec": "jsii --silence-warnings=reserved-word"
+        },
+        {
+          "exec": "pnpm i --no-frozen-lockfile --fix-lockfile"
         }
       ]
     },
