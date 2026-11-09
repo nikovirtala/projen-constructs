@@ -11649,7 +11649,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/typedoc-config.ts",
-        "line": 454
+        "line": 462
       },
       "members": [
         {
@@ -11912,7 +11912,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/typedoc-config.ts",
-        "line": 402
+        "line": 410
       },
       "members": [
         {
@@ -12113,6 +12113,62 @@
         }
       ],
       "symbolId": "src/components/floci:FlociOptions"
+    },
+    "@nikovirtala/projen-constructs.HeadingsOptions": {
+      "assembly": "@nikovirtala/projen-constructs",
+      "datatype": true,
+      "docs": {
+        "see": "https://typedoc.org/documents/Options.Output.html#headings",
+        "stability": "stable",
+        "summary": "Headings options."
+      },
+      "fqn": "@nikovirtala/projen-constructs.HeadingsOptions",
+      "kind": "interface",
+      "locationInModule": {
+        "filename": "src/components/typedoc-config.ts",
+        "line": 526
+      },
+      "name": "HeadingsOptions",
+      "properties": [
+        {
+          "abstract": true,
+          "docs": {
+            "default": "false",
+            "stability": "stable",
+            "summary": "If set, TypeDoc renders its own page heading above document pages."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 539
+          },
+          "name": "document",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "default": "true",
+            "remarks": "Disable this when the readme starts with its own top-level heading.",
+            "stability": "stable",
+            "summary": "If set, TypeDoc renders its own page heading above the readme on the index page."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 533
+          },
+          "name": "readme",
+          "optional": true,
+          "type": {
+            "primitive": "boolean"
+          }
+        }
+      ],
+      "symbolId": "src/components/typedoc-config:HeadingsOptions"
     },
     "@nikovirtala/projen-constructs.Homebrew": {
       "assembly": "@nikovirtala/projen-constructs",
@@ -16246,7 +16302,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/typedoc-config.ts",
-        "line": 426
+        "line": 434
       },
       "members": [
         {
@@ -16931,7 +16987,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 264
+            "line": 271
           },
           "name": "cacheBust",
           "optional": true,
@@ -17057,7 +17113,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 243
+            "line": 250
           },
           "name": "disableGit",
           "optional": true,
@@ -17075,7 +17131,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 236
+            "line": 243
           },
           "name": "disableSources",
           "optional": true,
@@ -17229,7 +17285,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 320
+            "line": 327
           },
           "name": "externalPattern",
           "optional": true,
@@ -17252,7 +17308,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 327
+            "line": 334
           },
           "name": "externalSymbolLinkMappings",
           "optional": true,
@@ -17280,7 +17336,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 222
+            "line": 229
           },
           "name": "gitRemote",
           "optional": true,
@@ -17298,12 +17354,30 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 215
+            "line": 222
           },
           "name": "gitRevision",
           "optional": true,
           "type": {
             "primitive": "string"
+          }
+        },
+        {
+          "abstract": true,
+          "docs": {
+            "see": "https://typedoc.org/documents/Options.Output.html#headings",
+            "stability": "stable",
+            "summary": "Specify which pages TypeDoc renders its own page heading on."
+          },
+          "immutable": true,
+          "locationInModule": {
+            "filename": "src/components/typedoc-config.ts",
+            "line": 208
+          },
+          "name": "headings",
+          "optional": true,
+          "type": {
+            "fqn": "@nikovirtala/projen-constructs.HeadingsOptions"
           }
         },
         {
@@ -17316,7 +17390,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 250
+            "line": 257
           },
           "name": "hideGenerator",
           "optional": true,
@@ -17334,7 +17408,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 257
+            "line": 264
           },
           "name": "hideParameterTypesInTitle",
           "optional": true,
@@ -17370,7 +17444,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 313
+            "line": 320
           },
           "name": "intentionallyNotExported",
           "optional": true,
@@ -17483,7 +17557,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 208
+            "line": 215
           },
           "name": "packageJson",
           "optional": true,
@@ -17519,7 +17593,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 292
+            "line": 299
           },
           "name": "requiredToBeDocumented",
           "optional": true,
@@ -17588,7 +17662,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 271
+            "line": 278
           },
           "name": "searchInComments",
           "optional": true,
@@ -17606,7 +17680,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 278
+            "line": 285
           },
           "name": "searchInDocuments",
           "optional": true,
@@ -17665,7 +17739,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 229
+            "line": 236
           },
           "name": "sourceLinkTemplate",
           "optional": true,
@@ -17701,7 +17775,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 306
+            "line": 313
           },
           "name": "treatValidationWarningsAsErrors",
           "optional": true,
@@ -17719,7 +17793,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 299
+            "line": 306
           },
           "name": "treatWarningsAsErrors",
           "optional": true,
@@ -17773,7 +17847,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 285
+            "line": 292
           },
           "name": "validation",
           "optional": true,
@@ -20816,7 +20890,7 @@
       "kind": "interface",
       "locationInModule": {
         "filename": "src/components/typedoc-config.ts",
-        "line": 498
+        "line": 506
       },
       "name": "ValidationOptions",
       "properties": [
@@ -20829,7 +20903,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 510
+            "line": 518
           },
           "name": "invalidLink",
           "optional": true,
@@ -20846,7 +20920,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 506
+            "line": 514
           },
           "name": "notDocumented",
           "optional": true,
@@ -20863,7 +20937,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/typedoc-config.ts",
-            "line": 502
+            "line": 510
           },
           "name": "notExported",
           "optional": true,
@@ -20885,7 +20959,7 @@
       "kind": "enum",
       "locationInModule": {
         "filename": "src/components/typedoc-config.ts",
-        "line": 478
+        "line": 486
       },
       "members": [
         {
@@ -21612,5 +21686,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "bMbSPJQQ1e6Jxep9Rgka6L28F7S9w1jgfzcHE3tmQdA="
+  "fingerprint": "kdZwznHoWpPrfecavlRso6qAaLuIwFkQOVmh+NILwOw="
 }

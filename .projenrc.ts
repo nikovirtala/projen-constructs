@@ -20,6 +20,12 @@ const project = new JsiiProject({
     peerDeps: ["projen", "constructs", "@mrgrain/cdk-esbuild"],
     repositoryUrl: "https://github.com/nikovirtala/projen-constructs.git",
     pnpmVersion: "12.16.1",
+    // README.md starts with its own H1, so skip TypeDoc's duplicate heading on the docs index page
+    typeDocOptions: {
+        typeDocConfig: {
+            headings: { readme: false },
+        },
+    },
     // shamefully-hoist fixes jsii-pacmak esbuild resolution
     pnpmOptions: {
         workspaceYamlOptions: {
