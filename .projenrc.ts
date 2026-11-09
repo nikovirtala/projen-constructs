@@ -1,4 +1,4 @@
-import { JsonPatch } from "projen";
+import { github, JsonPatch } from "projen";
 import { Homebrew } from "./src/components/homebrew";
 import { Mise } from "./src/components/mise";
 import { TypeDoc } from "./src/components/typedoc";
@@ -155,5 +155,77 @@ project.upgradeWorkflow?.postUpgradeTask.exec("jsii --silence-warnings=reserved-
 // to the loose ranges) before spawning `post-upgrade`, so running it last reconciles against the
 // already-reverted manifest. Reordering it earlier would reintroduce the specifier flip-flop.
 project.upgradeWorkflow?.postUpgradeTask.exec("pnpm i --no-frozen-lockfile --fix-lockfile");
+
+// build the TypeDoc docs and deploy them to GitHub Pages on release
+const docs = project.github?.addWorkflow("docs");
+
+docs?.on({
+    release: { types: ["published"] },
+    workflowDispatch: {},
+});
+
+// a single GitHub Pages deployment should run at a time; never cancel an in-flight publish
+docs?.file?.patch(
+    JsonPatch.add("/concurrency", {
+        group: "pages",
+        "cancel-in-progress": false,
+    }),
+);
+
+docs?.addJob("deploy", {
+    runsOn: ["ubuntu-latest"],
+    permissions: {
+        pages: github.workflows.JobPermission.WRITE,
+        idToken: github.workflows.JobPermission.WRITE,
+        contents: github.workflows.JobPermission.READ,
+    },
+    environment: {
+        name: "github-pages",
+        url: "${{ steps.deployment.outputs.page_url }}",
+    },
+    steps: [
+        {
+            name: "Checkout",
+            uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        },
+        {
+            name: "Setup pnpm",
+            uses: "pnpm/action-setup@v6.0.10",
+            with: { version: "12.16.1" },
+        },
+        {
+            name: "Setup Node.js",
+            uses: "actions/setup-node@v7.0.0",
+            with: { "node-version": "26.13.0", "package-manager-cache": false },
+        },
+        {
+            name: "Install dependencies",
+            run: "pnpm i --frozen-lockfile",
+        },
+        {
+            name: "Generate TypeDoc documentation",
+            run: "pnpm exec projen typedoc",
+        },
+        {
+            // typedoc cleans docs/api on every run, so write the custom domain afterwards
+            name: "Add custom domain",
+            run: "echo 'projen.nikovirtala.dev' > docs/api/CNAME",
+        },
+        {
+            name: "Setup Pages",
+            uses: "actions/configure-pages@v5",
+        },
+        {
+            name: "Upload Pages artifact",
+            uses: "actions/upload-pages-artifact@v3",
+            with: { path: "docs/api" },
+        },
+        {
+            name: "Deploy to GitHub Pages",
+            id: "deployment",
+            uses: "actions/deploy-pages@v4",
+        },
+    ],
+});
 
 project.synth();

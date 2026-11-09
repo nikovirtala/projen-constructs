@@ -55,7 +55,9 @@ jspm_packages/
 /coverage/
 !/vitest.config.ts
 !/typedoc.jsonc
+/docs/api/
 !/src/project-type.ts
+!/.github/workflows/docs.yml
 !/.projenrc.ts
 !/src/projects/typescript.generated.ts
 !/src/projects/typescript-options.generated.ts
