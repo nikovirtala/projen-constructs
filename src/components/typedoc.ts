@@ -75,6 +75,16 @@ export class TypeDoc extends Component {
             readonly: false,
         });
 
+        /*
+         * The generated API documentation is regenerated and deployed to GitHub
+         * Pages by CI on every release, so there is no need to track the build
+         * artifact in git.
+         */
+        const out = this.typeDocConfiguration.out;
+        if (typeof out === "string") {
+            project.gitignore.addPatterns(`/${out}/`);
+        }
+
         this.task = project.addTask("typedoc", {
             description: "Generate TypeDoc documentation",
             steps: [

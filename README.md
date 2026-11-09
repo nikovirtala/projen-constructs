@@ -41,7 +41,7 @@ across this documentation track those sources.
 | [Components](./docs/components.md) | Reference for every component: Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, LambdaFunctionConstructGenerator, Bundler, and ProjectGenerator |
 | [Migration](./docs/migration.md) | Moving from the deprecated standalone packages, including the name mapping and behaviour changes |
 | [Development](./docs/development.md) | Development commands and the build process diagram |
-| [API reference](./docs/api/index.html) | Generated TypeDoc API documentation |
+| [API reference](https://projen.nikovirtala.dev) | Generated TypeDoc API documentation |
 
 Quick links: [Quick start](#quick-start) · [Usage](#usage) · [Features](#features).
 

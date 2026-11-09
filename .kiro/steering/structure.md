@@ -20,7 +20,7 @@
 │   └── integration/              # Integration tests
 ├── lib/                          # Compiled JavaScript output
 ├── dist/                         # JSII distribution packages
-├── docs/api/                     # Generated TypeDoc documentation
+├── docs/api/                     # Generated TypeDoc documentation (gitignored; CI deploys to GitHub Pages)
 ├── .projen/                      # Projen internal files
 ├── .projenrc.ts                  # Projen configuration (project definition)
 └── scripts/                      # Build and utility scripts
