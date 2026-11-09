@@ -1,5 +1,6 @@
 export * from "./bundle-lambda-function-code";
 export * from "./colima";
+export * from "./floci";
 export * from "./homebrew";
 export * from "./lambda-function-construct-generator";
 export * from "./localstack";

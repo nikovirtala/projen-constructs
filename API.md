@@ -2885,6 +2885,8 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ### Bundler <a name="Bundler" id="@nikovirtala/projen-constructs.Bundler"></a>
 
+Adds support for bundling JavaScript applications and dependencies into a single file.
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.Bundler.Initializer"></a>
 
 ```typescript
@@ -2923,7 +2925,7 @@ new Bundler(project: Project, options?: BundlerOptions)
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.projectCreation">projectCreation</a></code> | Called once, right after `synthesize()`, only when the project is created for the first time. |
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
-| <code><a href="#@nikovirtala/projen-constructs.Bundler.addBundle">addBundle</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Bundler.addBundle">addBundle</a></code> | Adds a task to the project which bundles a specific entrypoint and all of its dependencies into a single javascript output file. |
 
 ---
 
@@ -3028,15 +3030,21 @@ Synthesizes files to the project output directory.
 public addBundle(entrypoint: string, options: BundlingOptions): Bundle
 ```
 
+Adds a task to the project which bundles a specific entrypoint and all of its dependencies into a single javascript output file.
+
 ###### `entrypoint`<sup>Required</sup> <a name="entrypoint" id="@nikovirtala/projen-constructs.Bundler.addBundle.parameter.entrypoint"></a>
 
 - *Type:* string
+
+The relative path of the artifact within the project.
 
 ---
 
 ###### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.Bundler.addBundle.parameter.options"></a>
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.BundlingOptions">BundlingOptions</a>
+
+Bundling options.
 
 ---
 
@@ -3046,7 +3054,7 @@ public addBundle(entrypoint: string, options: BundlingOptions): Bundle
 | --- | --- |
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
-| <code><a href="#@nikovirtala/projen-constructs.Bundler.of">of</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Bundler.of">of</a></code> | Returns the `Bundler` instance associated with a project or `undefined` if there is no Bundler. |
 
 ---
 
@@ -3106,9 +3114,13 @@ import { Bundler } from '@nikovirtala/projen-constructs'
 Bundler.of(project: Project)
 ```
 
+Returns the `Bundler` instance associated with a project or `undefined` if there is no Bundler.
+
 ###### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.Bundler.of.parameter.project"></a>
 
 - *Type:* projen.Project
+
+The project.
 
 ---
 
@@ -3118,9 +3130,9 @@ Bundler.of(project: Project)
 | --- | --- | --- |
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@nikovirtala/projen-constructs.Bundler.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Bundler.property.bundledir">bundledir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Bundler.property.bundleTask">bundleTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Bundler.property.esbuildVersion">esbuildVersion</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Bundler.property.bundledir">bundledir</a></code> | <code>string</code> | Root bundle directory. |
+| <code><a href="#@nikovirtala/projen-constructs.Bundler.property.bundleTask">bundleTask</a></code> | <code>projen.Task</code> | Gets or creates the singleton "bundle" task of the project. |
+| <code><a href="#@nikovirtala/projen-constructs.Bundler.property.esbuildVersion">esbuildVersion</a></code> | <code>string</code> | The semantic version requirement for `esbuild` (if defined). |
 
 ---
 
@@ -3154,6 +3166,8 @@ public readonly bundledir: string;
 
 - *Type:* string
 
+Root bundle directory.
+
 ---
 
 ##### `bundleTask`<sup>Required</sup> <a name="bundleTask" id="@nikovirtala/projen-constructs.Bundler.property.bundleTask"></a>
@@ -3163,6 +3177,11 @@ public readonly bundleTask: Task;
 ```
 
 - *Type:* projen.Task
+
+Gets or creates the singleton "bundle" task of the project.
+
+If the project doesn't have a "bundle" task, it will be created and spawned
+during the pre-compile phase (unless `addToPreCompile` is `false`).
 
 ---
 
@@ -3174,10 +3193,16 @@ public readonly esbuildVersion: string;
 
 - *Type:* string
 
+The semantic version requirement for `esbuild` (if defined).
+
 ---
 
 
 ### Colima <a name="Colima" id="@nikovirtala/projen-constructs.Colima"></a>
+
+Colima component for projen projects.
+
+Adds Colima support to your project with automatic installation and startup.
 
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.Colima.Initializer"></a>
 
@@ -3387,6 +3412,239 @@ The tree node.
 ---
 
 ##### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.Colima.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
+### Floci <a name="Floci" id="@nikovirtala/projen-constructs.Floci"></a>
+
+Floci component for projen projects.
+
+Adds Floci (https://floci.io) support to your project with automatic Docker/Colima setup.
+Floci is a local cloud emulator and a drop-in replacement for LocalStack; this component
+delivers its AWS emulator.
+
+#### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.Floci.Initializer"></a>
+
+```typescript
+import { Floci } from '@nikovirtala/projen-constructs'
+
+new Floci(scope: IConstruct, options?: FlociOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.Initializer.parameter.scope">scope</a></code> | <code>constructs.IConstruct</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.FlociOptions">FlociOptions</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@nikovirtala/projen-constructs.Floci.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@nikovirtala/projen-constructs.Floci.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@nikovirtala/projen-constructs.FlociOptions">FlociOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.postProjectCreation">postProjectCreation</a></code> | Called once, right after `postSynthesize()`, only when the project is created for the first time. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.projectCreation">projectCreation</a></code> | Called once, right after `synthesize()`, only when the project is created for the first time. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@nikovirtala/projen-constructs.Floci.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@nikovirtala/projen-constructs.Floci.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@nikovirtala/projen-constructs.Floci.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
+
+##### `postProjectCreation` <a name="postProjectCreation" id="@nikovirtala/projen-constructs.Floci.postProjectCreation"></a>
+
+```typescript
+public postProjectCreation(initProject: InitProject): void
+```
+
+Called once, right after `postSynthesize()`, only when the project is created for the first time.
+
+It does not run on later `projen` invocations. It only fires for `projen new` (or `Projects.createProject`).
+It is also skipped when post-synthesis steps are disabled, e.g. `--no-post` or `PROJEN_DISABLE_POST`.
+Use it for one-off setup that can be turned off by the user, like running a task to give the user immediate
+feedback on their new project. Order across components is not guaranteed.
+
+###### `initProject`<sup>Required</sup> <a name="initProject" id="@nikovirtala/projen-constructs.Floci.postProjectCreation.parameter.initProject"></a>
+
+- *Type:* projen.InitProject
+
+Details about how the project was created, e.g. its type and the original CLI args.
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@nikovirtala/projen-constructs.Floci.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@nikovirtala/projen-constructs.Floci.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `projectCreation` <a name="projectCreation" id="@nikovirtala/projen-constructs.Floci.projectCreation"></a>
+
+```typescript
+public projectCreation(initProject: InitProject): void
+```
+
+Called once, right after `synthesize()`, only when the project is created for the first time.
+
+It does not run on later `projen` invocations. It only fires for `projen new` (or `Projects.createProject`).
+Use it for deterministic, one-off file generation. Order across components is not guaranteed.
+
+###### `initProject`<sup>Required</sup> <a name="initProject" id="@nikovirtala/projen-constructs.Floci.projectCreation.parameter.initProject"></a>
+
+- *Type:* projen.InitProject
+
+Details about how the project was created, e.g. its type and the original CLI args.
+
+---
+
+##### `synthesize` <a name="synthesize" id="@nikovirtala/projen-constructs.Floci.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@nikovirtala/projen-constructs.Floci.isConstruct"></a>
+
+```typescript
+import { Floci } from '@nikovirtala/projen-constructs'
+
+Floci.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.Floci.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@nikovirtala/projen-constructs.Floci.isComponent"></a>
+
+```typescript
+import { Floci } from '@nikovirtala/projen-constructs'
+
+Floci.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.Floci.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@nikovirtala/projen-constructs.Floci.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.Floci.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.Floci.property.project"></a>
 
 ```typescript
 public readonly project: Project;
@@ -5051,6 +5309,26 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ### LambdaFunctionCodeBundle <a name="LambdaFunctionCodeBundle" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundle"></a>
 
+Generates a pre-bundled AWS Lambda Function code asset from handler code.
+
+Adds a task to the project's `Bundler` that uses `esbuild` to bundle the
+handler into the assets directory, and generates a file (e.g. `src/foo-code.ts`)
+exporting an `aws_lambda.Code` constant (e.g. `FooFunctionCode`) that points to
+the bundle. Pass it as the `code` of an `aws_lambda.Function`.
+
+Requires a `Bundler` component in the project.
+
+*Example*
+
+```typescript
+new Bundler(myProject);
+new LambdaFunctionCodeBundle(myProject, {
+  entrypoint: "src/foo.lambda.ts",
+  extension: ".lambda.ts",
+});
+```
+
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundle.Initializer"></a>
 
 ```typescript
@@ -5061,8 +5339,8 @@ new LambdaFunctionCodeBundle(project: Project, options: LambdaFunctionCodeBundle
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundle.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundle.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions">LambdaFunctionCodeBundleOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundle.Initializer.parameter.project">project</a></code> | <code>projen.Project</code> | The project to use. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundle.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions">LambdaFunctionCodeBundleOptions</a></code> | Options. |
 
 ---
 
@@ -5070,11 +5348,15 @@ new LambdaFunctionCodeBundle(project: Project, options: LambdaFunctionCodeBundle
 
 - *Type:* projen.Project
 
+The project to use.
+
 ---
 
 ##### `options`<sup>Required</sup> <a name="options" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundle.Initializer.parameter.options"></a>
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions">LambdaFunctionCodeBundleOptions</a>
+
+Options.
 
 ---
 
@@ -5278,6 +5560,8 @@ public readonly project: Project;
 
 ### LambdaFunctionCodeBundler <a name="LambdaFunctionCodeBundler" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundler"></a>
 
+Creates Lambda Function code bundles from entrypoints discovered in the project's source tree.
+
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundler.Initializer"></a>
 
 ```typescript
@@ -5477,6 +5761,7 @@ Test whether the given construct is a component.
 | --- | --- | --- |
 | <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundler.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundler.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundler.property.entrypoints">entrypoints</a></code> | <code>string[]</code> | Auto-discovered entry points with paths relative to the project directory. |
 
 ---
 
@@ -5502,8 +5787,24 @@ public readonly project: Project;
 
 ---
 
+##### `entrypoints`<sup>Required</sup> <a name="entrypoints" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundler.property.entrypoints"></a>
+
+```typescript
+public readonly entrypoints: string[];
+```
+
+- *Type:* string[]
+
+Auto-discovered entry points with paths relative to the project directory.
+
+---
+
 
 ### LambdaFunctionConstructGenerator <a name="LambdaFunctionConstructGenerator" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGenerator"></a>
+
+A projen component that generates AWS CDK Lambda Function constructs and bundles their code assets using esbuild.
+
+The bundling happens during projen execution, not during CDK synth, enabling a "build once, deploy many" pattern.
 
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGenerator.Initializer"></a>
 
@@ -5808,6 +6109,10 @@ public readonly baseConstructPackage: string;
 
 
 ### LocalStack <a name="LocalStack" id="@nikovirtala/projen-constructs.LocalStack"></a>
+
+LocalStack component for projen projects.
+
+Adds LocalStack support to your project with automatic Docker/Colima setup.
 
 #### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.LocalStack.Initializer"></a>
 
@@ -8221,7 +8526,7 @@ new Vitest(project: NodeProject, options?: VitestOptions)
 | <code><a href="#@nikovirtala/projen-constructs.Vitest.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
 | <code><a href="#@nikovirtala/projen-constructs.Vitest.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
 | <code><a href="#@nikovirtala/projen-constructs.Vitest.projectCreation">projectCreation</a></code> | Called once, right after `synthesize()`, only when the project is created for the first time. |
-| <code><a href="#@nikovirtala/projen-constructs.Vitest.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+| <code><a href="#@nikovirtala/projen-constructs.Vitest.synthesize">synthesize</a></code> | Runs after projen's sample code component, which is added in the project constructor before any component, so the sample test exists by now. |
 | <code><a href="#@nikovirtala/projen-constructs.Vitest.addExclude">addExclude</a></code> | *No description.* |
 | <code><a href="#@nikovirtala/projen-constructs.Vitest.addInclude">addInclude</a></code> | *No description.* |
 | <code><a href="#@nikovirtala/projen-constructs.Vitest.configureCoverageProvider">configureCoverageProvider</a></code> | *No description.* |
@@ -8324,7 +8629,10 @@ Details about how the project was created, e.g. its type and the original CLI ar
 public synthesize(): void
 ```
 
-Synthesizes files to the project output directory.
+Runs after projen's sample code component, which is added in the project constructor before any component, so the sample test exists by now.
+
+`postSynthesize` would be too late to rely
+on: projen skips it when `PROJEN_DISABLE_POST` is set.
 
 ##### `addExclude` <a name="addExclude" id="@nikovirtala/projen-constructs.Vitest.addExclude"></a>
 
@@ -8551,15 +8859,17 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compatIgnore">compatIgnore</a></code> | <code>string</code> | Name of the ignore file for API compatibility tests. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.compressAssembly">compressAssembly</a></code> | <code>boolean</code> | Emit a compressed version of the assembly. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.config">config</a></code> | <code>{[ key: string ]: any}</code> | Configuration values available to package scripts at runtime. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dedupeDeps">dedupeDeps</a></code> | <code>boolean</code> | Add a `dedupe` task that deduplicates project dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
@@ -8583,6 +8893,7 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.experimentalIntegRunner">experimentalIntegRunner</a></code> | <code>boolean</code> | Enable experimental support for the AWS CDK integ-runner. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.githubReleaseLatest">githubReleaseLatest</a></code> | <code>boolean</code> | Whether GitHub should explicitly mark the release from the default branch as the latest release. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
@@ -8616,11 +8927,14 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDependenciesMeta">peerDependenciesMeta</a></code> | <code>{[ key: string ]: projen.javascript.PeerDependencyMeta}</code> | Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.pnpmOptions">pnpmOptions</a></code> | <code>projen.javascript.PnpmOptions</code> | Options for pnpm. |
@@ -8675,6 +8989,7 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name (and path) of the development tsconfig file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typecheckTests">typecheckTests</a></code> | <code>boolean</code> | Type-check the test suite as part of the `test` task. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.validateTsconfig">validateTsconfig</a></code> | <code>projen.cdk.ValidateTsconfig</code> | Level of tsconfig validation jsii should perform on the user-provided tsconfig. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
@@ -8686,8 +9001,7 @@ const awsCdkConstructLibraryProjectOptions: AwsCdkConstructLibraryProjectOptions
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -9249,7 +9563,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -9321,6 +9635,21 @@ Emit a compressed version of the assembly.
 
 ---
 
+##### `config`<sup>Optional</sup> <a name="config" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.config"></a>
+
+```typescript
+public readonly config: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+- *Default:* no package configuration
+
+Configuration values available to package scripts at runtime.
+
+Values should be JSON-serializable.
+
+---
+
 ##### `constructsVersion`<sup>Optional</sup> <a name="constructsVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.constructsVersion"></a>
 
 ```typescript
@@ -9365,6 +9694,34 @@ The copyright years to put in the LICENSE file.
 This value is only used if the selected license text contains the
 `$copyright_period` placeholder. For example, it has no effect on the
 MPL-2.0 license text.
+
+---
+
+##### `dedupeDeps`<sup>Optional</sup> <a name="dedupeDeps" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.dedupeDeps"></a>
+
+```typescript
+public readonly dedupeDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false, unless `yarnBerryOptions.dedupePackages` is set
+
+Add a `dedupe` task that deduplicates project dependencies.
+
+Deduplication prevents multiple versions of the same package from being
+installed, if a single version can satisfy all requested version ranges.
+This prevents version proliferation and reduces the size of the dependency
+tree.
+
+The behavior depends on the package manager:
+- npm: runs `npm dedupe` after every mutating install.
+- pnpm: runs `pnpm dedupe` after every mutating install.
+- Yarn Berry: runs `yarn dedupe` after every mutating install. If
+  `yarnBerryOptions.dedupePackages` is set, only the listed packages are
+  deduplicated.
+- Yarn Classic: `yarn install` already deduplicates, so the task only
+  prints an informational message.
+- Bun: not supported, enabling this option throws an error.
 
 ---
 
@@ -9657,6 +10014,8 @@ By default, jsii will include all *.ts files (except .d.ts files) in the TypeScr
 This can be problematic for example when the package's build or test procedure generates .ts files
 that cannot be compiled with jsii's compiler settings.
 
+When ESLint is enabled, these patterns are also added to its ignore patterns.
+
 ---
 
 ##### `experimentalIntegRunner`<sup>Optional</sup> <a name="experimentalIntegRunner" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.experimentalIntegRunner"></a>
@@ -9697,6 +10056,22 @@ public readonly githubOptions: GitHubOptions;
 - *Default:* see GitHubOptions
 
 Options for GitHub integration.
+
+---
+
+##### `githubReleaseLatest`<sup>Optional</sup> <a name="githubReleaseLatest" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.githubReleaseLatest"></a>
+
+```typescript
+public readonly githubReleaseLatest: boolean;
+```
+
+- *Type:* boolean
+- *Default:* GitHub determines the latest release based on date and semantic version.
+
+Whether GitHub should explicitly mark the release from the default branch as the latest release.
+
+Set to `true` to mark the release as latest, or `false` to explicitly not
+mark it as latest.
 
 ---
 
@@ -9894,6 +10269,11 @@ public readonly libdir: string;
 - *Default:* "lib"
 
 Typescript  artifacts output directory.
+
+When `libdir` is changed, set `entrypoint` to match it (for example
+`libdir: "dist"` with `entrypoint: "dist/index.js"`). `types` follows the
+entrypoint rather than `libdir`, and `main` still defaults to
+`lib/index.js`.
 
 ---
 
@@ -10159,7 +10539,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -10186,6 +10567,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -10226,7 +10637,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* Detected from the calling process or `YARN_CLASSIC` if detection fails.
+- *Default:* pnpm
 
 The Node Package Manager used to execute scripts.
 
@@ -10254,6 +10665,19 @@ public readonly parent: Project;
 - *Type:* projen.Project
 
 The parent project, if this project is part of a bigger project.
+
+---
+
+##### `peerDependenciesMeta`<sup>Optional</sup> <a name="peerDependenciesMeta" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.peerDependenciesMeta"></a>
+
+```typescript
+public readonly peerDependenciesMeta: {[ key: string ]: PeerDependencyMeta};
+```
+
+- *Type:* {[ key: string ]: projen.javascript.PeerDependencyMeta}
+- *Default:* no `peerDependenciesMeta`
+
+Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency.
 
 ---
 
@@ -10371,6 +10795,10 @@ public readonly projenCommand: string;
 - *Default:* "npx projen"
 
 The shell command to use in order to run the projen CLI.
+
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
 
 Can be used to customize in special environments.
 
@@ -10531,6 +10959,9 @@ public readonly publishToGo: JsiiGoTarget;
 - *Default:* no publishing
 
 Publish Go bindings to a git repository.
+
+A separate repository is recommended. If `moduleName` refers to the source
+repository, set `publishToSourceRepository` to `true`.
 
 ---
 
@@ -11010,6 +11441,21 @@ for test files.
 
 ---
 
+##### `typecheckTests`<sup>Optional</sup> <a name="typecheckTests" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typecheckTests"></a>
+
+```typescript
+public readonly typecheckTests: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Type-check the test suite as part of the `test` task.
+
+Adds a `tsc --noEmit` step against the development tsconfig.
+
+---
+
 ##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.typescriptVersion"></a>
 
 ```typescript
@@ -11165,28 +11611,25 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOn"></a>
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowPermissions"></a>
 
 ```typescript
-public readonly workflowRunsOn: string[];
+public readonly workflowPermissions: JobPermissions;
 ```
 
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
 
-Github Runner selection labels.
+Permissions for the main build, release and dependency upgrade jobs.
 
----
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
 
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@nikovirtala/projen-constructs.AwsCdkConstructLibraryProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
 
 ---
 
@@ -11256,13 +11699,15 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.config">config</a></code> | <code>{[ key: string ]: any}</code> | Configuration values available to package scripts at runtime. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.constructsVersion">constructsVersion</a></code> | <code>string</code> | Minimum version of the `constructs` library to depend on. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.context">context</a></code> | <code>{[ key: string ]: any}</code> | Additional context to include in `cdk.json`. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.dedupeDeps">dedupeDeps</a></code> | <code>boolean</code> | Add a `dedupe` task that deduplicates project dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
@@ -11285,6 +11730,7 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.featureFlags">featureFlags</a></code> | <code>projen.awscdk.ICdkFeatureFlags</code> | Feature flags that should be enabled in `cdk.json`. Make sure to double-check any changes to feature flags in `cdk.json` before deploying. Unexpected changes may cause breaking changes in your CDK app. You can overwrite any feature flag by passing it into the context field. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.githubReleaseLatest">githubReleaseLatest</a></code> | <code>boolean</code> | Whether GitHub should explicitly mark the release from the default branch as the latest release. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
@@ -11317,11 +11763,14 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.peerDependenciesMeta">peerDependenciesMeta</a></code> | <code>{[ key: string ]: projen.javascript.PeerDependencyMeta}</code> | Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.pnpmOptions">pnpmOptions</a></code> | <code>projen.javascript.PnpmOptions</code> | Options for pnpm. |
@@ -11372,8 +11821,10 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name (and path) of the development tsconfig file. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.typecheckTests">typecheckTests</a></code> | <code>boolean</code> | Type-check the test suite as part of the `test` task. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.versionReporting">versionReporting</a></code> | <code>boolean</code> | Enable AWS CDK library version reporting. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest component. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vitestOptions">vitestOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestOptions">VitestOptions</a></code> | Vitest configuration. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.vscode">vscode</a></code> | <code>boolean</code> | Enable VSCode integration. |
@@ -11384,8 +11835,7 @@ const awsCdkTypeScriptAppProjectOptions: AwsCdkTypeScriptAppProjectOptions = { .
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -11753,6 +12203,10 @@ This command will be called when
 running `cdk synth` or when `cdk watch` identifies a change in your source
 code before redeployment.
 
+The CDK CLI runs it through a shell on every synthesis, on the machine of
+anyone who checks out the project, so shell syntax in it is interpreted and
+the command should be one you would run yourself.
+
 ---
 
 ##### `buildWorkflow`<sup>Optional</sup> <a name="buildWorkflow" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.buildWorkflow"></a>
@@ -11941,7 +12395,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -11968,6 +12422,21 @@ public readonly commitGenerated: boolean;
 - *Default:* true
 
 Whether to commit the managed files by default.
+
+---
+
+##### `config`<sup>Optional</sup> <a name="config" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.config"></a>
+
+```typescript
+public readonly config: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+- *Default:* no package configuration
+
+Configuration values available to package scripts at runtime.
+
+Values should be JSON-serializable.
 
 ---
 
@@ -12028,6 +12497,34 @@ The copyright years to put in the LICENSE file.
 This value is only used if the selected license text contains the
 `$copyright_period` placeholder. For example, it has no effect on the
 MPL-2.0 license text.
+
+---
+
+##### `dedupeDeps`<sup>Optional</sup> <a name="dedupeDeps" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.dedupeDeps"></a>
+
+```typescript
+public readonly dedupeDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false, unless `yarnBerryOptions.dedupePackages` is set
+
+Add a `dedupe` task that deduplicates project dependencies.
+
+Deduplication prevents multiple versions of the same package from being
+installed, if a single version can satisfy all requested version ranges.
+This prevents version proliferation and reduces the size of the dependency
+tree.
+
+The behavior depends on the package manager:
+- npm: runs `npm dedupe` after every mutating install.
+- pnpm: runs `pnpm dedupe` after every mutating install.
+- Yarn Berry: runs `yarn dedupe` after every mutating install. If
+  `yarnBerryOptions.dedupePackages` is set, only the listed packages are
+  deduplicated.
+- Yarn Classic: `yarn install` already deduplicates, so the task only
+  prints an informational message.
+- Bun: not supported, enabling this option throws an error.
 
 ---
 
@@ -12347,6 +12844,22 @@ Options for GitHub integration.
 
 ---
 
+##### `githubReleaseLatest`<sup>Optional</sup> <a name="githubReleaseLatest" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.githubReleaseLatest"></a>
+
+```typescript
+public readonly githubReleaseLatest: boolean;
+```
+
+- *Type:* boolean
+- *Default:* GitHub determines the latest release based on date and semantic version.
+
+Whether GitHub should explicitly mark the release from the default branch as the latest release.
+
+Set to `true` to mark the release as latest, or `false` to explicitly not
+mark it as latest.
+
+---
+
 ##### `gitignore`<sup>Optional</sup> <a name="gitignore" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.gitignore"></a>
 
 ```typescript
@@ -12521,6 +13034,11 @@ public readonly libdir: string;
 - *Default:* "lib"
 
 Typescript  artifacts output directory.
+
+When `libdir` is changed, set `entrypoint` to match it (for example
+`libdir: "dist"` with `entrypoint: "dist/index.js"`). `types` follows the
+entrypoint rather than `libdir`, and `main` still defaults to
+`lib/index.js`.
 
 ---
 
@@ -12786,7 +13304,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -12813,6 +13332,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -12853,7 +13402,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* Detected from the calling process or `YARN_CLASSIC` if detection fails.
+- *Default:* pnpm
 
 The Node Package Manager used to execute scripts.
 
@@ -12881,6 +13430,19 @@ public readonly parent: Project;
 - *Type:* projen.Project
 
 The parent project, if this project is part of a bigger project.
+
+---
+
+##### `peerDependenciesMeta`<sup>Optional</sup> <a name="peerDependenciesMeta" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.peerDependenciesMeta"></a>
+
+```typescript
+public readonly peerDependenciesMeta: {[ key: string ]: PeerDependencyMeta};
+```
+
+- *Type:* {[ key: string ]: projen.javascript.PeerDependencyMeta}
+- *Default:* no `peerDependenciesMeta`
+
+Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency.
 
 ---
 
@@ -12998,6 +13560,10 @@ public readonly projenCommand: string;
 - *Default:* "npx projen"
 
 The shell command to use in order to run the projen CLI.
+
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
 
 Can be used to customize in special environments.
 
@@ -13587,6 +14153,21 @@ for test files.
 
 ---
 
+##### `typecheckTests`<sup>Optional</sup> <a name="typecheckTests" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.typecheckTests"></a>
+
+```typescript
+public readonly typecheckTests: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Type-check the test suite as part of the `test` task.
+
+Adds a `tsc --noEmit` step against the development tsconfig.
+
+---
+
 ##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.typescriptVersion"></a>
 
 ```typescript
@@ -13615,6 +14196,19 @@ public readonly versionrcOptions: {[ key: string ]: any};
 Custom configuration used when creating changelog with commit-and-tag-version package.
 
 Given values either append to default configuration or overwrite values in it.
+
+---
+
+##### `versionReporting`<sup>Optional</sup> <a name="versionReporting" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.versionReporting"></a>
+
+```typescript
+public readonly versionReporting: boolean;
+```
+
+- *Type:* boolean
+- *Default:* use the AWS CDK default
+
+Enable AWS CDK library version reporting.
 
 ---
 
@@ -13752,28 +14346,25 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowRunsOn"></a>
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowPermissions"></a>
 
 ```typescript
-public readonly workflowRunsOn: string[];
+public readonly workflowPermissions: JobPermissions;
 ```
 
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
 
-Github Runner selection labels.
+Permissions for the main build, release and dependency upgrade jobs.
 
----
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
 
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@nikovirtala/projen-constructs.AwsCdkTypeScriptAppProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
 
 ---
 
@@ -13792,6 +14383,8 @@ Options for Yarn Berry.
 
 ### Bundle <a name="Bundle" id="@nikovirtala/projen-constructs.Bundle"></a>
 
+A bundle created by `Bundler.addBundle`.
+
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.Bundle.Initializer"></a>
 
 ```typescript
@@ -13804,9 +14397,9 @@ const bundle: Bundle = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.Bundle.property.bundleTask">bundleTask</a></code> | <code>projen.Task</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Bundle.property.outdir">outdir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.Bundle.property.outfile">outfile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.Bundle.property.bundleTask">bundleTask</a></code> | <code>projen.Task</code> | The task that produces this bundle. |
+| <code><a href="#@nikovirtala/projen-constructs.Bundle.property.outdir">outdir</a></code> | <code>string</code> | Base directory containing the output file (relative to project root). |
+| <code><a href="#@nikovirtala/projen-constructs.Bundle.property.outfile">outfile</a></code> | <code>string</code> | Location of the output file (relative to project root). |
 
 ---
 
@@ -13818,6 +14411,8 @@ public readonly bundleTask: Task;
 
 - *Type:* projen.Task
 
+The task that produces this bundle.
+
 ---
 
 ##### `outdir`<sup>Required</sup> <a name="outdir" id="@nikovirtala/projen-constructs.Bundle.property.outdir"></a>
@@ -13827,6 +14422,8 @@ public readonly outdir: string;
 ```
 
 - *Type:* string
+
+Base directory containing the output file (relative to project root).
 
 ---
 
@@ -13838,9 +14435,13 @@ public readonly outfile: string;
 
 - *Type:* string
 
+Location of the output file (relative to project root).
+
 ---
 
 ### BundlerOptions <a name="BundlerOptions" id="@nikovirtala/projen-constructs.BundlerOptions"></a>
+
+Options for `Bundler`.
 
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.BundlerOptions.Initializer"></a>
 
@@ -13854,10 +14455,10 @@ const bundlerOptions: BundlerOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.addToPreCompile">addToPreCompile</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.assetsDir">assetsDir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.esbuildVersion">esbuildVersion</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.loaders">loaders</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.addToPreCompile">addToPreCompile</a></code> | <code>boolean</code> | Install the `bundle` command as a pre-compile phase. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.assetsDir">assetsDir</a></code> | <code>string</code> | Output directory for all bundles. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.esbuildVersion">esbuildVersion</a></code> | <code>string</code> | The semantic version requirement for `esbuild`. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlerOptions.property.loaders">loaders</a></code> | <code>{[ key: string ]: string}</code> | Map of file extensions (without dot) and loaders to use for this file type. |
 
 ---
 
@@ -13868,6 +14469,9 @@ public readonly addToPreCompile: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Install the `bundle` command as a pre-compile phase.
 
 ---
 
@@ -13878,6 +14482,9 @@ public readonly assetsDir: string;
 ```
 
 - *Type:* string
+- *Default:* "assets"
+
+Output directory for all bundles.
 
 ---
 
@@ -13888,6 +14495,9 @@ public readonly esbuildVersion: string;
 ```
 
 - *Type:* string
+- *Default:* no specific version (implies latest)
+
+The semantic version requirement for `esbuild`.
 
 ---
 
@@ -13898,10 +14508,17 @@ public readonly loaders: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+- *Default:* no loaders
+
+Map of file extensions (without dot) and loaders to use for this file type.
+
+Loaders are appended to the esbuild command by `--loader:.extension=loader`
 
 ---
 
 ### BundlingOptions <a name="BundlingOptions" id="@nikovirtala/projen-constructs.BundlingOptions"></a>
+
+Options for bundling.
 
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.BundlingOptions.Initializer"></a>
 
@@ -13915,18 +14532,18 @@ const bundlingOptions: BundlingOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.banner">banner</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.externals">externals</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.format">format</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.loaders">loaders</a></code> | <code>{[ key: string ]: string}</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.mainFields">mainFields</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.minify">minify</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.outfile">outfile</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.platform">platform</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.sourcemap">sourcemap</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.sourcesContent">sourcesContent</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.target">target</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.tsconfigPath">tsconfigPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.banner">banner</a></code> | <code>string</code> | esbuild `--banner` argument, appended as is (so it starts with the file type, e.g. `:js=`). |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.externals">externals</a></code> | <code>string[]</code> | You can mark a file or a package as external to exclude it from your build. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.format">format</a></code> | <code>string</code> | Output format for the generated JavaScript files: `"iife"`, `"cjs"` or `"esm"`. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.loaders">loaders</a></code> | <code>{[ key: string ]: string}</code> | Map of file extensions (without dot) and loaders to use for this file type. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.mainFields">mainFields</a></code> | <code>string</code> | Comma-separated list of `package.json` fields esbuild tries when resolving a package. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.minify">minify</a></code> | <code>boolean</code> | Minify the bundle. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.outfile">outfile</a></code> | <code>string</code> | Bundler output path relative to the asset's output directory. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.platform">platform</a></code> | <code>string</code> | esbuild platform. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.sourcemap">sourcemap</a></code> | <code>boolean</code> | Include a source map in the bundle. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.sourcesContent">sourcesContent</a></code> | <code>boolean</code> | Include the original source code in the source map. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.target">target</a></code> | <code>string</code> | esbuild target. |
+| <code><a href="#@nikovirtala/projen-constructs.BundlingOptions.property.tsconfigPath">tsconfigPath</a></code> | <code>string</code> | The path of the tsconfig.json file to use for bundling. |
 
 ---
 
@@ -13937,6 +14554,13 @@ public readonly banner: string;
 ```
 
 - *Type:* string
+- *Default:* ":js=import { createRequire as topLevelCreateRequire } from 'module';const require = topLevelCreateRequire(import.meta.url)"
+
+esbuild `--banner` argument, appended as is (so it starts with the file type, e.g. `:js=`).
+
+The default defines `require` so that CommonJS dependencies work in an ES module bundle.
+
+> [https://esbuild.github.io/api/#banner](https://esbuild.github.io/api/#banner)
 
 ---
 
@@ -13947,6 +14571,21 @@ public readonly externals: string[];
 ```
 
 - *Type:* string[]
+- *Default:* []
+
+You can mark a file or a package as external to exclude it from your build.
+
+Instead of being bundled, the import will be preserved (using require for
+the iife and cjs formats and using import for the esm format) and will be
+evaluated at run time instead.
+
+This has several uses. First of all, it can be used to trim unnecessary
+code from your bundle for a code path that you know will never be executed.
+For example, a package may contain code that only runs in node but you will
+only be using that package in the browser. It can also be used to import
+code in node at run time from a package that cannot be bundled. For
+example, the fsevents package contains a native extension, which esbuild
+doesn't support.
 
 ---
 
@@ -13957,6 +14596,11 @@ public readonly format: string;
 ```
 
 - *Type:* string
+- *Default:* "esm"
+
+Output format for the generated JavaScript files: `"iife"`, `"cjs"` or `"esm"`.
+
+> [https://esbuild.github.io/api/#format](https://esbuild.github.io/api/#format)
 
 ---
 
@@ -13967,6 +14611,11 @@ public readonly loaders: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
+- *Default:* the loaders of the `Bundler`
+
+Map of file extensions (without dot) and loaders to use for this file type.
+
+Loaders are appended to the esbuild command by `--loader:.extension=loader`
 
 ---
 
@@ -13977,6 +14626,11 @@ public readonly mainFields: string;
 ```
 
 - *Type:* string
+- *Default:* "module,main"
+
+Comma-separated list of `package.json` fields esbuild tries when resolving a package.
+
+> [https://esbuild.github.io/api/#main-fields](https://esbuild.github.io/api/#main-fields)
 
 ---
 
@@ -13987,6 +14641,11 @@ public readonly minify: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Minify the bundle.
+
+> [https://esbuild.github.io/api/#minify](https://esbuild.github.io/api/#minify)
 
 ---
 
@@ -13997,6 +14656,9 @@ public readonly outfile: string;
 ```
 
 - *Type:* string
+- *Default:* "index.mjs"
+
+Bundler output path relative to the asset's output directory.
 
 ---
 
@@ -14007,6 +14669,9 @@ public readonly platform: string;
 ```
 
 - *Type:* string
+- *Default:* "node"
+
+esbuild platform.
 
 ---
 
@@ -14017,6 +14682,9 @@ public readonly sourcemap: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Include a source map in the bundle.
 
 ---
 
@@ -14027,6 +14695,11 @@ public readonly sourcesContent: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* false
+
+Include the original source code in the source map.
+
+> [https://esbuild.github.io/api/#sources-content](https://esbuild.github.io/api/#sources-content)
 
 ---
 
@@ -14037,6 +14710,9 @@ public readonly target: string;
 ```
 
 - *Type:* string
+- *Default:* "esnext"
+
+esbuild target.
 
 ---
 
@@ -14047,6 +14723,11 @@ public readonly tsconfigPath: string;
 ```
 
 - *Type:* string
+- *Default:* no tsconfig is passed to esbuild
+
+The path of the tsconfig.json file to use for bundling.
+
+`LambdaFunctionCodeBundle` always sets this to the project's development tsconfig.
 
 ---
 
@@ -14159,6 +14840,74 @@ Fully qualified type name (optional, auto-detected from component constructor).
 
 ---
 
+### FlociOptions <a name="FlociOptions" id="@nikovirtala/projen-constructs.FlociOptions"></a>
+
+Options for Floci component.
+
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.FlociOptions.Initializer"></a>
+
+```typescript
+import { FlociOptions } from '@nikovirtala/projen-constructs'
+
+const flociOptions: FlociOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.FlociOptions.property.image">image</a></code> | <code>string</code> | Floci Docker image, e.g. `"floci/floci:1.5.0"` to pin a version. |
+| <code><a href="#@nikovirtala/projen-constructs.FlociOptions.property.port">port</a></code> | <code>number</code> | Floci AWS emulator host port. |
+| <code><a href="#@nikovirtala/projen-constructs.FlociOptions.property.services">services</a></code> | <code>string[]</code> | AWS services to enable. |
+
+---
+
+##### `image`<sup>Optional</sup> <a name="image" id="@nikovirtala/projen-constructs.FlociOptions.property.image"></a>
+
+```typescript
+public readonly image: string;
+```
+
+- *Type:* string
+- *Default:* the Floci CLI's default image
+
+Floci Docker image, e.g. `"floci/floci:1.5.0"` to pin a version.
+
+When set, Floci starts from this image, passed to `floci start` through its `--image`
+flag. Otherwise the Floci CLI uses its default image.
+
+Must be a valid Docker image reference (`name` or `name:tag`).
+
+> [https://floci.io](https://floci.io)
+
+---
+
+##### `port`<sup>Optional</sup> <a name="port" id="@nikovirtala/projen-constructs.FlociOptions.property.port"></a>
+
+```typescript
+public readonly port: number;
+```
+
+- *Type:* number
+- *Default:* 4566
+
+Floci AWS emulator host port.
+
+---
+
+##### `services`<sup>Optional</sup> <a name="services" id="@nikovirtala/projen-constructs.FlociOptions.property.services"></a>
+
+```typescript
+public readonly services: string[];
+```
+
+- *Type:* string[]
+- *Default:* all services enabled
+
+AWS services to enable.
+
+---
+
 ### HomebrewOptions <a name="HomebrewOptions" id="@nikovirtala/projen-constructs.HomebrewOptions"></a>
 
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.HomebrewOptions.Initializer"></a>
@@ -14173,7 +14922,7 @@ const homebrewOptions: HomebrewOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.HomebrewOptions.property.packages">packages</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.HomebrewOptions.property.packages">packages</a></code> | <code>string[]</code> | Formulae to install, by name (`jq`) or fully qualified (`user/repository/formula`). |
 
 ---
 
@@ -14184,6 +14933,15 @@ public readonly packages: string[];
 ```
 
 - *Type:* string[]
+- *Default:* []
+
+Formulae to install, by name (`jq`) or fully qualified (`user/repository/formula`).
+
+A fully qualified formula adds a `tap` entry for its tap. Formulae from non-official taps
+are marked `trusted: true` in the `Brewfile`, since Homebrew 6 only loads trusted formulae
+from non-official taps. Only the formula is trusted, not the rest of its tap.
+
+> [https://docs.brew.sh/Tap-Trust](https://docs.brew.sh/Tap-Trust)
 
 ---
 
@@ -14236,14 +14994,16 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.compat">compat</a></code> | <code>boolean</code> | Automatically run API compatibility test against the latest version published to npm after compilation. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.compatIgnore">compatIgnore</a></code> | <code>string</code> | Name of the ignore file for API compatibility tests. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.compressAssembly">compressAssembly</a></code> | <code>boolean</code> | Emit a compressed version of the assembly. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.config">config</a></code> | <code>{[ key: string ]: any}</code> | Configuration values available to package scripts at runtime. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.dedupeDeps">dedupeDeps</a></code> | <code>boolean</code> | Add a `dedupe` task that deduplicates project dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
@@ -14265,6 +15025,7 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.excludeTypescript">excludeTypescript</a></code> | <code>string[]</code> | Accepts a list of glob patterns. Files matching any of those patterns will be excluded from the TypeScript compiler input. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.githubReleaseLatest">githubReleaseLatest</a></code> | <code>boolean</code> | Whether GitHub should explicitly mark the release from the default branch as the latest release. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
@@ -14294,11 +15055,14 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.peerDependenciesMeta">peerDependenciesMeta</a></code> | <code>{[ key: string ]: projen.javascript.PeerDependencyMeta}</code> | Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.pnpmOptions">pnpmOptions</a></code> | <code>projen.javascript.PnpmOptions</code> | Options for pnpm. |
@@ -14352,6 +15116,7 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name (and path) of the development tsconfig file. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.typecheckTests">typecheckTests</a></code> | <code>boolean</code> | Type-check the test suite as part of the `test` task. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.typeDoc">typeDoc</a></code> | <code>boolean</code> | Enable TypeDoc component. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.typeDocOptions">typeDocOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.TypeDocOptions">TypeDocOptions</a></code> | TypeDoc configuration. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
@@ -14365,8 +15130,7 @@ const jsiiProjectOptions: JsiiProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#@nikovirtala/projen-constructs.JsiiProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -14860,7 +15624,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -14932,6 +15696,21 @@ Emit a compressed version of the assembly.
 
 ---
 
+##### `config`<sup>Optional</sup> <a name="config" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.config"></a>
+
+```typescript
+public readonly config: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+- *Default:* no package configuration
+
+Configuration values available to package scripts at runtime.
+
+Values should be JSON-serializable.
+
+---
+
 ##### `copyrightOwner`<sup>Optional</sup> <a name="copyrightOwner" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.copyrightOwner"></a>
 
 ```typescript
@@ -14963,6 +15742,34 @@ The copyright years to put in the LICENSE file.
 This value is only used if the selected license text contains the
 `$copyright_period` placeholder. For example, it has no effect on the
 MPL-2.0 license text.
+
+---
+
+##### `dedupeDeps`<sup>Optional</sup> <a name="dedupeDeps" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.dedupeDeps"></a>
+
+```typescript
+public readonly dedupeDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false, unless `yarnBerryOptions.dedupePackages` is set
+
+Add a `dedupe` task that deduplicates project dependencies.
+
+Deduplication prevents multiple versions of the same package from being
+installed, if a single version can satisfy all requested version ranges.
+This prevents version proliferation and reduces the size of the dependency
+tree.
+
+The behavior depends on the package manager:
+- npm: runs `npm dedupe` after every mutating install.
+- pnpm: runs `pnpm dedupe` after every mutating install.
+- Yarn Berry: runs `yarn dedupe` after every mutating install. If
+  `yarnBerryOptions.dedupePackages` is set, only the listed packages are
+  deduplicated.
+- Yarn Classic: `yarn install` already deduplicates, so the task only
+  prints an informational message.
+- Bun: not supported, enabling this option throws an error.
 
 ---
 
@@ -15242,6 +16049,8 @@ By default, jsii will include all *.ts files (except .d.ts files) in the TypeScr
 This can be problematic for example when the package's build or test procedure generates .ts files
 that cannot be compiled with jsii's compiler settings.
 
+When ESLint is enabled, these patterns are also added to its ignore patterns.
+
 ---
 
 ##### `github`<sup>Optional</sup> <a name="github" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.github"></a>
@@ -15269,6 +16078,22 @@ public readonly githubOptions: GitHubOptions;
 - *Default:* see GitHubOptions
 
 Options for GitHub integration.
+
+---
+
+##### `githubReleaseLatest`<sup>Optional</sup> <a name="githubReleaseLatest" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.githubReleaseLatest"></a>
+
+```typescript
+public readonly githubReleaseLatest: boolean;
+```
+
+- *Type:* boolean
+- *Default:* GitHub determines the latest release based on date and semantic version.
+
+Whether GitHub should explicitly mark the release from the default branch as the latest release.
+
+Set to `true` to mark the release as latest, or `false` to explicitly not
+mark it as latest.
 
 ---
 
@@ -15414,6 +16239,11 @@ public readonly libdir: string;
 - *Default:* "lib"
 
 Typescript  artifacts output directory.
+
+When `libdir` is changed, set `entrypoint` to match it (for example
+`libdir: "dist"` with `entrypoint: "dist/index.js"`). `types` follows the
+entrypoint rather than `libdir`, and `main` still defaults to
+`lib/index.js`.
 
 ---
 
@@ -15679,7 +16509,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -15706,6 +16537,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -15746,7 +16607,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* Detected from the calling process or `YARN_CLASSIC` if detection fails.
+- *Default:* pnpm
 
 The Node Package Manager used to execute scripts.
 
@@ -15774,6 +16635,19 @@ public readonly parent: Project;
 - *Type:* projen.Project
 
 The parent project, if this project is part of a bigger project.
+
+---
+
+##### `peerDependenciesMeta`<sup>Optional</sup> <a name="peerDependenciesMeta" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.peerDependenciesMeta"></a>
+
+```typescript
+public readonly peerDependenciesMeta: {[ key: string ]: PeerDependencyMeta};
+```
+
+- *Type:* {[ key: string ]: projen.javascript.PeerDependencyMeta}
+- *Default:* no `peerDependenciesMeta`
+
+Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency.
 
 ---
 
@@ -15891,6 +16765,10 @@ public readonly projenCommand: string;
 - *Default:* "npx projen"
 
 The shell command to use in order to run the projen CLI.
+
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
 
 Can be used to customize in special environments.
 
@@ -16051,6 +16929,9 @@ public readonly publishToGo: JsiiGoTarget;
 - *Default:* no publishing
 
 Publish Go bindings to a git repository.
+
+A separate repository is recommended. If `moduleName` refers to the source
+repository, set `publishToSourceRepository` to `true`.
 
 ---
 
@@ -16517,6 +17398,21 @@ for test files.
 
 ---
 
+##### `typecheckTests`<sup>Optional</sup> <a name="typecheckTests" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.typecheckTests"></a>
+
+```typescript
+public readonly typecheckTests: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Type-check the test suite as part of the `test` task.
+
+Adds a `tsc --noEmit` step against the development tsconfig.
+
+---
+
 ##### `typeDoc`<sup>Optional</sup> <a name="typeDoc" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.typeDoc"></a>
 
 ```typescript
@@ -16698,28 +17594,25 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowRunsOn"></a>
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowPermissions"></a>
 
 ```typescript
-public readonly workflowRunsOn: string[];
+public readonly workflowPermissions: JobPermissions;
 ```
 
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
 
-Github Runner selection labels.
+Permissions for the main build, release and dependency upgrade jobs.
 
----
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
 
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@nikovirtala/projen-constructs.JsiiProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
 
 ---
 
@@ -16738,6 +17631,8 @@ Options for Yarn Berry.
 
 ### LambdaFunctionCodeBundleOptions <a name="LambdaFunctionCodeBundleOptions" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions"></a>
 
+Options for `LambdaFunctionCodeBundle`.
+
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.Initializer"></a>
 
 ```typescript
@@ -16750,11 +17645,11 @@ const lambdaFunctionCodeBundleOptions: LambdaFunctionCodeBundleOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.extension">extension</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.bundlingOptions">bundlingOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.BundlingOptions">BundlingOptions</a></code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.constructFile">constructFile</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.constructName">constructName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.entrypoint">entrypoint</a></code> | <code>string</code> | A path from the project root directory to a TypeScript file which contains the AWS Lambda handler entrypoint (exports a `handler` function). |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.extension">extension</a></code> | <code>string</code> | Suffix for AWS Lambda handlers. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.bundlingOptions">bundlingOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.BundlingOptions">BundlingOptions</a></code> | Bundling options for this AWS Lambda Function. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.constructFile">constructFile</a></code> | <code>string</code> | The name of the generated TypeScript source file. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.constructName">constructName</a></code> | <code>string</code> | The name of the generated `aws_lambda.Code` constant. |
 
 ---
 
@@ -16766,7 +17661,18 @@ public readonly entrypoint: string;
 
 - *Type:* string
 
+A path from the project root directory to a TypeScript file which contains the AWS Lambda handler entrypoint (exports a `handler` function).
+
+This is relative to the root directory of the project.
+
 ---
+
+*Example*
+
+```typescript
+"src/subdir/foo.lambda.ts"
+```
+
 
 ##### `extension`<sup>Required</sup> <a name="extension" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.extension"></a>
 
@@ -16776,7 +17682,16 @@ public readonly extension: string;
 
 - *Type:* string
 
+Suffix for AWS Lambda handlers.
+
 ---
+
+*Example*
+
+```typescript
+".lambda.ts"
+```
+
 
 ##### `bundlingOptions`<sup>Optional</sup> <a name="bundlingOptions" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions.property.bundlingOptions"></a>
 
@@ -16785,6 +17700,9 @@ public readonly bundlingOptions: BundlingOptions;
 ```
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.BundlingOptions">BundlingOptions</a>
+- *Default:* the defaults of `BundlingOptions`
+
+Bundling options for this AWS Lambda Function.
 
 ---
 
@@ -16795,6 +17713,12 @@ public readonly constructFile: string;
 ```
 
 - *Type:* string
+- *Default:* The path of the entrypoint file, with the `-code.ts` suffix instead of the extension (e.g. `src/foo-code.ts`).
+
+The name of the generated TypeScript source file.
+
+This file should also be
+under the source tree.
 
 ---
 
@@ -16805,10 +17729,15 @@ public readonly constructName: string;
 ```
 
 - *Type:* string
+- *Default:* A pascal cased version of the name of the entrypoint file, with the suffix `FunctionCode` (e.g. `ResizeImageFunctionCode`).
+
+The name of the generated `aws_lambda.Code` constant.
 
 ---
 
 ### LambdaFunctionCodeBundlerOptions <a name="LambdaFunctionCodeBundlerOptions" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions"></a>
+
+Options for `LambdaFunctionCodeBundler`.
 
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.Initializer"></a>
 
@@ -16822,9 +17751,9 @@ const lambdaFunctionCodeBundlerOptions: LambdaFunctionCodeBundlerOptions = { ...
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.extension">extension</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.srcdir">srcdir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.bundleOptions">bundleOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions">LambdaFunctionCodeBundleOptions</a></code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.extension">extension</a></code> | <code>string</code> | Locate files with the given extension. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.srcdir">srcdir</a></code> | <code>string</code> | Project source tree (relative to project output directory). |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.bundleOptions">bundleOptions</a></code> | <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions">LambdaFunctionCodeBundleOptions</a></code> | Options for AWS Lambda Function bundling, applied to every discovered entrypoint. |
 
 ---
 
@@ -16836,7 +17765,16 @@ public readonly extension: string;
 
 - *Type:* string
 
+Locate files with the given extension.
+
 ---
+
+*Example*
+
+```typescript
+".lambda.ts"
+```
+
 
 ##### `srcdir`<sup>Required</sup> <a name="srcdir" id="@nikovirtala/projen-constructs.LambdaFunctionCodeBundlerOptions.property.srcdir"></a>
 
@@ -16845,6 +17783,8 @@ public readonly srcdir: string;
 ```
 
 - *Type:* string
+
+Project source tree (relative to project output directory).
 
 ---
 
@@ -16855,10 +17795,18 @@ public readonly bundleOptions: LambdaFunctionCodeBundleOptions;
 ```
 
 - *Type:* <a href="#@nikovirtala/projen-constructs.LambdaFunctionCodeBundleOptions">LambdaFunctionCodeBundleOptions</a>
+- *Default:* the defaults of `LambdaFunctionCodeBundleOptions`
+
+Options for AWS Lambda Function bundling, applied to every discovered entrypoint.
+
+The `entrypoint` and `extension` given here are ignored: each bundle uses its
+discovered entrypoint and the `extension` of the bundler.
 
 ---
 
 ### LambdaFunctionConstructGeneratorOptions <a name="LambdaFunctionConstructGeneratorOptions" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions"></a>
+
+Options for the LambdaFunctionConstructGenerator.
 
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.Initializer"></a>
 
@@ -16872,14 +17820,14 @@ const lambdaFunctionConstructGeneratorOptions: LambdaFunctionConstructGeneratorO
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.addDependencies">addDependencies</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructClass">baseConstructClass</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructImport">baseConstructImport</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructPackage">baseConstructPackage</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.esbuildOptions">esbuildOptions</a></code> | <code>@mrgrain/cdk-esbuild.BuildOptions</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.filePattern">filePattern</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.outputDir">outputDir</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.sourceDir">sourceDir</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.addDependencies">addDependencies</a></code> | <code>boolean</code> | Whether to automatically add the required dependencies. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructClass">baseConstructClass</a></code> | <code>string</code> | Name of the construct class to extend. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructImport">baseConstructImport</a></code> | <code>string</code> | Import statement for the base construct. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructPackage">baseConstructPackage</a></code> | <code>string</code> | Package name to add as dependency for the base construct. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.esbuildOptions">esbuildOptions</a></code> | <code>@mrgrain/cdk-esbuild.BuildOptions</code> | esbuild options to customize the bundling process. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.filePattern">filePattern</a></code> | <code>string</code> | File pattern to identify Lambda Function handlers. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.outputDir">outputDir</a></code> | <code>string</code> | Output directory where Lambda Function constructs will be generated. |
+| <code><a href="#@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.sourceDir">sourceDir</a></code> | <code>string</code> | Source directory where Lambda Function handlers are located. |
 
 ---
 
@@ -16890,6 +17838,9 @@ public readonly addDependencies: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* true
+
+Whether to automatically add the required dependencies.
 
 ---
 
@@ -16900,8 +17851,18 @@ public readonly baseConstructClass: string;
 ```
 
 - *Type:* string
+- *Default:* "aws_lambda.Function"
+
+Name of the construct class to extend.
 
 ---
+
+*Example*
+
+```typescript
+"NodejsFunction"
+```
+
 
 ##### `baseConstructImport`<sup>Optional</sup> <a name="baseConstructImport" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructImport"></a>
 
@@ -16910,8 +17871,18 @@ public readonly baseConstructImport: string;
 ```
 
 - *Type:* string
+- *Default:* "import { aws_lambda } from 'aws-cdk-lib';"
+
+Import statement for the base construct.
 
 ---
+
+*Example*
+
+```typescript
+"import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';"
+```
+
 
 ##### `baseConstructPackage`<sup>Optional</sup> <a name="baseConstructPackage" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.baseConstructPackage"></a>
 
@@ -16920,8 +17891,18 @@ public readonly baseConstructPackage: string;
 ```
 
 - *Type:* string
+- *Default:* "aws-cdk-lib"
+
+Package name to add as dependency for the base construct.
 
 ---
+
+*Example*
+
+```typescript
+"aws-cdk-lib"
+```
+
 
 ##### `esbuildOptions`<sup>Optional</sup> <a name="esbuildOptions" id="@nikovirtala/projen-constructs.LambdaFunctionConstructGeneratorOptions.property.esbuildOptions"></a>
 
@@ -16930,6 +17911,9 @@ public readonly esbuildOptions: BuildOptions;
 ```
 
 - *Type:* @mrgrain/cdk-esbuild.BuildOptions
+- *Default:* {}
+
+esbuild options to customize the bundling process.
 
 ---
 
@@ -16940,6 +17924,9 @@ public readonly filePattern: string;
 ```
 
 - *Type:* string
+- *Default:* "*.lambda.ts"
+
+File pattern to identify Lambda Function handlers.
 
 ---
 
@@ -16950,6 +17937,9 @@ public readonly outputDir: string;
 ```
 
 - *Type:* string
+- *Default:* "src/constructs/lambda"
+
+Output directory where Lambda Function constructs will be generated.
 
 ---
 
@@ -16960,10 +17950,15 @@ public readonly sourceDir: string;
 ```
 
 - *Type:* string
+- *Default:* "src/handlers"
+
+Source directory where Lambda Function handlers are located.
 
 ---
 
 ### LocalStackOptions <a name="LocalStackOptions" id="@nikovirtala/projen-constructs.LocalStackOptions"></a>
+
+Options for LocalStack component.
 
 #### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.LocalStackOptions.Initializer"></a>
 
@@ -16977,10 +17972,10 @@ const localStackOptions: LocalStackOptions = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.debug">debug</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.imageTag">imageTag</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.port">port</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.services">services</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.debug">debug</a></code> | <code>boolean</code> | Enable LocalStack debug mode. |
+| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.imageTag">imageTag</a></code> | <code>string</code> | LocalStack Docker image tag, e.g. `"4.9"` to pin a version. |
+| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.port">port</a></code> | <code>number</code> | LocalStack gateway port. |
+| <code><a href="#@nikovirtala/projen-constructs.LocalStackOptions.property.services">services</a></code> | <code>string[]</code> | LocalStack services to enable. |
 
 ---
 
@@ -16991,6 +17986,9 @@ public readonly debug: boolean;
 ```
 
 - *Type:* boolean
+- *Default:* false
+
+Enable LocalStack debug mode.
 
 ---
 
@@ -17001,6 +17999,17 @@ public readonly imageTag: string;
 ```
 
 - *Type:* string
+- *Default:* the LocalStack CLI's default image
+
+LocalStack Docker image tag, e.g. `"4.9"` to pin a version.
+
+When set, LocalStack starts with the `localstack/localstack:<imageTag>` image, passed to
+`localstack start` through the `IMAGE_NAME` environment variable. That's the community
+image, even if a `LOCALSTACK_AUTH_TOKEN` would otherwise select the Pro image.
+
+Must be a valid Docker tag.
+
+> [https://docs.localstack.cloud/aws/customization/configuration-options/](https://docs.localstack.cloud/aws/customization/configuration-options/)
 
 ---
 
@@ -17011,6 +18020,9 @@ public readonly port: number;
 ```
 
 - *Type:* number
+- *Default:* 4566
+
+LocalStack gateway port.
 
 ---
 
@@ -17021,6 +18033,9 @@ public readonly services: string[];
 ```
 
 - *Type:* string[]
+- *Default:* all services enabled
+
+LocalStack services to enable.
 
 ---
 
@@ -18012,11 +19027,13 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.checkLicenses">checkLicenses</a></code> | <code>projen.javascript.LicenseCheckerOptions</code> | Configure which licenses should be deemed acceptable for use by dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.clobber">clobber</a></code> | <code>boolean</code> | Add a `clobber` task which resets the repo to origin. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.codeArtifactOptions">codeArtifactOptions</a></code> | <code>projen.javascript.CodeArtifactOptions</code> | Options for npm packages using AWS CodeArtifact. |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.codeCov">codeCov</a></code> | <code>boolean</code> | Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.codeCovTokenSecret">codeCovTokenSecret</a></code> | <code>string</code> | Define the secret name for a specified https://codecov.io/ token. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.commitGenerated">commitGenerated</a></code> | <code>boolean</code> | Whether to commit the managed files by default. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.config">config</a></code> | <code>{[ key: string ]: any}</code> | Configuration values available to package scripts at runtime. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.copyrightOwner">copyrightOwner</a></code> | <code>string</code> | License copyright owner. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.copyrightPeriod">copyrightPeriod</a></code> | <code>string</code> | The copyright years to put in the LICENSE file. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.dedupeDeps">dedupeDeps</a></code> | <code>boolean</code> | Add a `dedupe` task that deduplicates project dependencies. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.defaultReleaseBranch">defaultReleaseBranch</a></code> | <code>string</code> | The name of the main release branch. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.deleteOrphanedLockFiles">deleteOrphanedLockFiles</a></code> | <code>boolean</code> | Automatically delete lockfiles from package managers that are not the active one. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.dependabot">dependabot</a></code> | <code>boolean</code> | Use dependabot to handle dependency upgrades. |
@@ -18036,6 +19053,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.entrypointTypes">entrypointTypes</a></code> | <code>string</code> | The .d.ts file that includes the type declarations for this module. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.github">github</a></code> | <code>boolean</code> | Enable GitHub integration. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.githubOptions">githubOptions</a></code> | <code>projen.github.GitHubOptions</code> | Options for GitHub integration. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.githubReleaseLatest">githubReleaseLatest</a></code> | <code>boolean</code> | Whether GitHub should explicitly mark the release from the default branch as the latest release. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.gitignore">gitignore</a></code> | <code>string[]</code> | Additional entries to .gitignore. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.gitIgnoreOptions">gitIgnoreOptions</a></code> | <code>projen.IgnoreFileOptions</code> | Configuration options for .gitignore file. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.gitOptions">gitOptions</a></code> | <code>projen.GitOptions</code> | Configuration options for git. |
@@ -18064,11 +19082,14 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmRegistryUrl">npmRegistryUrl</a></code> | <code>string</code> | The base URL of the npm package registry. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmTokenSecret">npmTokenSecret</a></code> | <code>string</code> | GitHub secret which contains the NPM token to use when publishing packages. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmTrustedPublishing">npmTrustedPublishing</a></code> | <code>boolean</code> | Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmVerifyPublished">npmVerifyPublished</a></code> | <code>boolean</code> | Wait until the published package version is available from the npm registry before the publish job completes. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmVerifyPublishedTimeoutSeconds">npmVerifyPublishedTimeoutSeconds</a></code> | <code>number</code> | How long to wait, in seconds, for the published package version to be available. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.outdir">outdir</a></code> | <code>string</code> | The root directory of the project. Relative to this directory, all files are synthesized. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.package">package</a></code> | <code>boolean</code> | Defines a `package` task that will produce an npm tarball under the artifacts directory (e.g. `dist`). |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.packageManager">packageManager</a></code> | <code>projen.javascript.NodePackageManager</code> | The Node Package Manager used to execute scripts. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.packageName">packageName</a></code> | <code>string</code> | The "name" in package.json. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.parent">parent</a></code> | <code>projen.Project</code> | The parent project, if this project is part of a bigger project. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.peerDependenciesMeta">peerDependenciesMeta</a></code> | <code>{[ key: string ]: projen.javascript.PeerDependencyMeta}</code> | Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.peerDependencyOptions">peerDependencyOptions</a></code> | <code>projen.javascript.PeerDependencyOptions</code> | Options for `peerDeps`. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.peerDeps">peerDeps</a></code> | <code>string[]</code> | Peer dependencies for this module. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.pnpmOptions">pnpmOptions</a></code> | <code>projen.javascript.PnpmOptions</code> | Options for pnpm. |
@@ -18117,6 +19138,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.tsconfig">tsconfig</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom TSConfig. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.tsconfigDev">tsconfigDev</a></code> | <code>projen.javascript.TypescriptConfigOptions</code> | Custom tsconfig options for the development tsconfig.json file (used for testing). |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.tsconfigDevFile">tsconfigDevFile</a></code> | <code>string</code> | The name (and path) of the development tsconfig file. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.typecheckTests">typecheckTests</a></code> | <code>boolean</code> | Type-check the test suite as part of the `test` task. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.typescriptVersion">typescriptVersion</a></code> | <code>string</code> | TypeScript version to use. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.versionrcOptions">versionrcOptions</a></code> | <code>{[ key: string ]: any}</code> | Custom configuration used when creating changelog with commit-and-tag-version package. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.vitest">vitest</a></code> | <code>boolean</code> | Enable Vitest component. |
@@ -18127,8 +19149,7 @@ const typeScriptProjectOptions: TypeScriptProjectOptions = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowGitIdentity">workflowGitIdentity</a></code> | <code>projen.github.GitIdentity</code> | The git identity to use in workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowNodeVersion">workflowNodeVersion</a></code> | <code>string</code> | The node version used in GitHub Actions workflows. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowPackageCache">workflowPackageCache</a></code> | <code>boolean</code> | Enable Node.js package cache in GitHub workflows. |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowRunsOn">workflowRunsOn</a></code> | <code>string[]</code> | Github Runner selection labels. |
-| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowRunsOnGroup">workflowRunsOnGroup</a></code> | <code>projen.GroupRunnerOptions</code> | Github Runner Group selection options. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowPermissions">workflowPermissions</a></code> | <code>projen.github.workflows.JobPermissions</code> | Permissions for the main build, release and dependency upgrade jobs. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.yarnBerryOptions">yarnBerryOptions</a></code> | <code>projen.javascript.YarnBerryOptions</code> | Options for Yarn Berry. |
 
 ---
@@ -18583,7 +19604,7 @@ public readonly codeCov: boolean;
 - *Type:* boolean
 - *Default:* false
 
-Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/ Uses codecov/codecov-action@v5 By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
+Define a GitHub workflow step for sending code coverage metrics to https://codecov.io/. Uses codecov/codecov-action. By default, OIDC auth is used. Alternatively a token can be provided via `codeCovTokenSecret`.
 
 ---
 
@@ -18610,6 +19631,21 @@ public readonly commitGenerated: boolean;
 - *Default:* true
 
 Whether to commit the managed files by default.
+
+---
+
+##### `config`<sup>Optional</sup> <a name="config" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.config"></a>
+
+```typescript
+public readonly config: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+- *Default:* no package configuration
+
+Configuration values available to package scripts at runtime.
+
+Values should be JSON-serializable.
 
 ---
 
@@ -18644,6 +19680,34 @@ The copyright years to put in the LICENSE file.
 This value is only used if the selected license text contains the
 `$copyright_period` placeholder. For example, it has no effect on the
 MPL-2.0 license text.
+
+---
+
+##### `dedupeDeps`<sup>Optional</sup> <a name="dedupeDeps" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.dedupeDeps"></a>
+
+```typescript
+public readonly dedupeDeps: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false, unless `yarnBerryOptions.dedupePackages` is set
+
+Add a `dedupe` task that deduplicates project dependencies.
+
+Deduplication prevents multiple versions of the same package from being
+installed, if a single version can satisfy all requested version ranges.
+This prevents version proliferation and reduces the size of the dependency
+tree.
+
+The behavior depends on the package manager:
+- npm: runs `npm dedupe` after every mutating install.
+- pnpm: runs `pnpm dedupe` after every mutating install.
+- Yarn Berry: runs `yarn dedupe` after every mutating install. If
+  `yarnBerryOptions.dedupePackages` is set, only the listed packages are
+  deduplicated.
+- Yarn Classic: `yarn install` already deduplicates, so the task only
+  prints an informational message.
+- Bun: not supported, enabling this option throws an error.
 
 ---
 
@@ -18924,6 +19988,22 @@ Options for GitHub integration.
 
 ---
 
+##### `githubReleaseLatest`<sup>Optional</sup> <a name="githubReleaseLatest" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.githubReleaseLatest"></a>
+
+```typescript
+public readonly githubReleaseLatest: boolean;
+```
+
+- *Type:* boolean
+- *Default:* GitHub determines the latest release based on date and semantic version.
+
+Whether GitHub should explicitly mark the release from the default branch as the latest release.
+
+Set to `true` to mark the release as latest, or `false` to explicitly not
+mark it as latest.
+
+---
+
 ##### `gitignore`<sup>Optional</sup> <a name="gitignore" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.gitignore"></a>
 
 ```typescript
@@ -19046,6 +20126,11 @@ public readonly libdir: string;
 - *Default:* "lib"
 
 Typescript  artifacts output directory.
+
+When `libdir` is changed, set `entrypoint` to match it (for example
+`libdir: "dist"` with `entrypoint: "dist/index.js"`). `types` follows the
+entrypoint rather than `libdir`, and `main` still defaults to
+`lib/index.js`.
 
 ---
 
@@ -19311,7 +20396,8 @@ public readonly npmRegistryUrl: string;
 
 The base URL of the npm package registry.
 
-Must be a URL (e.g. start with "https://" or "http://")
+Must be a URL (e.g. start with "https://" or "http://").
+A trailing slash is added if missing.
 
 ---
 
@@ -19338,6 +20424,36 @@ public readonly npmTrustedPublishing: boolean;
 - *Default:* false
 
 Use trusted publishing for publishing to npmjs.com Needs to be pre-configured on npm.js to work.
+
+---
+
+##### `npmVerifyPublished`<sup>Optional</sup> <a name="npmVerifyPublished" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmVerifyPublished"></a>
+
+```typescript
+public readonly npmVerifyPublished: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Wait until the published package version is available from the npm registry before the publish job completes.
+
+Enable this when packages that depend on the published package are released right after.
+
+---
+
+##### `npmVerifyPublishedTimeoutSeconds`<sup>Optional</sup> <a name="npmVerifyPublishedTimeoutSeconds" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.npmVerifyPublishedTimeoutSeconds"></a>
+
+```typescript
+public readonly npmVerifyPublishedTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 3600
+
+How long to wait, in seconds, for the published package version to be available.
+
+Requires `npmVerifyPublished` to be enabled.
 
 ---
 
@@ -19378,7 +20494,7 @@ public readonly packageManager: NodePackageManager;
 ```
 
 - *Type:* projen.javascript.NodePackageManager
-- *Default:* Detected from the calling process or `YARN_CLASSIC` if detection fails.
+- *Default:* pnpm
 
 The Node Package Manager used to execute scripts.
 
@@ -19406,6 +20522,19 @@ public readonly parent: Project;
 - *Type:* projen.Project
 
 The parent project, if this project is part of a bigger project.
+
+---
+
+##### `peerDependenciesMeta`<sup>Optional</sup> <a name="peerDependenciesMeta" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.peerDependenciesMeta"></a>
+
+```typescript
+public readonly peerDependenciesMeta: {[ key: string ]: PeerDependencyMeta};
+```
+
+- *Type:* {[ key: string ]: projen.javascript.PeerDependencyMeta}
+- *Default:* no `peerDependenciesMeta`
+
+Additional information about how peer dependencies are used, rendered as `peerDependenciesMeta` in `package.json`. For example, this can mark peer dependencies as optional. Each key must also be declared as a peer dependency.
 
 ---
 
@@ -19523,6 +20652,10 @@ public readonly projenCommand: string;
 - *Default:* "npx projen"
 
 The shell command to use in order to run the projen CLI.
+
+Inserted verbatim into task steps, workflows and IDE configuration, and run
+by each of their shells - locally, in CI and in dev containers. Keep it a
+plain unquoted command, since shell syntax in it executes in all of them.
 
 Can be used to customize in special environments.
 
@@ -20086,6 +21219,21 @@ for test files.
 
 ---
 
+##### `typecheckTests`<sup>Optional</sup> <a name="typecheckTests" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.typecheckTests"></a>
+
+```typescript
+public readonly typecheckTests: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Type-check the test suite as part of the `test` task.
+
+Adds a `tsc --noEmit` step against the development tsconfig.
+
+---
+
 ##### `typescriptVersion`<sup>Optional</sup> <a name="typescriptVersion" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.typescriptVersion"></a>
 
 ```typescript
@@ -20225,28 +21373,25 @@ Enable Node.js package cache in GitHub workflows.
 
 ---
 
-##### `workflowRunsOn`<sup>Optional</sup> <a name="workflowRunsOn" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowRunsOn"></a>
+##### `workflowPermissions`<sup>Optional</sup> <a name="workflowPermissions" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowPermissions"></a>
 
 ```typescript
-public readonly workflowRunsOn: string[];
+public readonly workflowPermissions: JobPermissions;
 ```
 
-- *Type:* string[]
-- *Default:* ["ubuntu-latest"]
+- *Type:* projen.github.workflows.JobPermissions
+- *Default:* Use the job defaults and automatically inferred permissions.
 
-Github Runner selection labels.
+Permissions for the main build, release and dependency upgrade jobs.
 
----
+Defined scopes override the job defaults and automatically inferred permissions,
+including CodeArtifact and Codecov OIDC. Undefined scopes keep their defaults.
+Use `JobPermission.NONE` to explicitly remove a permission.
 
-##### `workflowRunsOnGroup`<sup>Optional</sup> <a name="workflowRunsOnGroup" id="@nikovirtala/projen-constructs.TypeScriptProjectOptions.property.workflowRunsOnGroup"></a>
-
-```typescript
-public readonly workflowRunsOnGroup: GroupRunnerOptions;
-```
-
-- *Type:* projen.GroupRunnerOptions
-
-Github Runner Group selection options.
+`buildWorkflowOptions.permissions` replaces this entire set, including automatic
+permissions. `depsUpgradeOptions.workflowOptions.permissions` overrides individual
+scopes. Applies to all release branches, but not to separate package, publishing,
+self-mutation or pull request creation jobs, or unrelated workflows.
 
 ---
 
@@ -20654,6 +21799,8 @@ const vitestOptions: VitestOptions = { ... }
 | --- | --- | --- |
 | <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.config">config</a></code> | <code><a href="#@nikovirtala/projen-constructs.VitestConfigOptions">VitestConfigOptions</a></code> | Initial config options. |
 | <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.configFilePath">configFilePath</a></code> | <code>string</code> | Config file path. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.extraConfig">extraConfig</a></code> | <code>{[ key: string ]: any}</code> | Additional top-level config options, next to `test`, such as `resolve`. |
+| <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.extraTestConfig">extraTestConfig</a></code> | <code>{[ key: string ]: any}</code> | Additional `test` options for settings that `config` doesn't cover, such as `setupFiles` or `expect`. |
 | <code><a href="#@nikovirtala/projen-constructs.VitestOptions.property.vitestVersion">vitestVersion</a></code> | <code>string</code> | Vitest version. |
 
 ---
@@ -20683,6 +21830,57 @@ Config file path.
 
 ---
 
+##### `extraConfig`<sup>Optional</sup> <a name="extraConfig" id="@nikovirtala/projen-constructs.VitestOptions.property.extraConfig"></a>
+
+```typescript
+public readonly extraConfig: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+- *Default:* no additional top-level options
+
+Additional top-level config options, next to `test`, such as `resolve`.
+
+Values are rendered as JSON, so they must be JSON-serializable (no functions or regular expressions,
+which rules out plugins). Use `extraTestConfig` for `test` options.
+
+> [https://vitest.dev/config/](https://vitest.dev/config/)
+
+---
+
+*Example*
+
+```typescript
+{ resolve: { alias: { "@": "/src" } } }
+```
+
+
+##### `extraTestConfig`<sup>Optional</sup> <a name="extraTestConfig" id="@nikovirtala/projen-constructs.VitestOptions.property.extraTestConfig"></a>
+
+```typescript
+public readonly extraTestConfig: {[ key: string ]: any};
+```
+
+- *Type:* {[ key: string ]: any}
+- *Default:* no additional test options
+
+Additional `test` options for settings that `config` doesn't cover, such as `setupFiles` or `expect`.
+
+Deep-merged over the options generated from `config`: objects are merged, other values (including
+arrays) replace the generated value. Values are rendered as JSON, so they must be JSON-serializable
+(no functions or regular expressions).
+
+> [https://vitest.dev/config/](https://vitest.dev/config/)
+
+---
+
+*Example*
+
+```typescript
+{ setupFiles: ["test/setup.ts"], expect: { requireAssertions: true } }
+```
+
+
 ##### `vitestVersion`<sup>Optional</sup> <a name="vitestVersion" id="@nikovirtala/projen-constructs.VitestOptions.property.vitestVersion"></a>
 
 ```typescript
@@ -20690,7 +21888,7 @@ public readonly vitestVersion: string;
 ```
 
 - *Type:* string
-- *Default:* "^4"
+- *Default:* "^5"
 
 Vitest version.
 
@@ -21040,8 +22238,10 @@ in the defaultOptions structure.
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.AWS_CDK_TYPE_SCRIPT_APP">AWS_CDK_TYPE_SCRIPT_APP</a></code> | AWS CDK app in TypeScript. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.CDK8S_PYTHON_APP">CDK8S_PYTHON_APP</a></code> | CDK8s app in Python. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.CDK8S_TYPE_SCRIPT_APP">CDK8S_TYPE_SCRIPT_APP</a></code> | CDK8s app in TypeScript. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CDKTN_TYPE_SCRIPT_APP">CDKTN_TYPE_SCRIPT_APP</a></code> | CDKTN app in TypeScript. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDK8S">CONSTRUCT_LIBRARY_CDK8S</a></code> | CDK8s construct library project. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDKTF">CONSTRUCT_LIBRARY_CDKTF</a></code> | CDKTF construct library project. |
+| <code><a href="#@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDKTN">CONSTRUCT_LIBRARY_CDKTN</a></code> | CDKTN construct library project. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.GIT_HUB_PROJECT">GIT_HUB_PROJECT</a></code> | GitHub-based project. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.JAVA_PROJECT">JAVA_PROJECT</a></code> | Java project. |
 | <code><a href="#@nikovirtala/projen-constructs.ProjectType.JSII_PROJECT">JSII_PROJECT</a></code> | Multi-language jsii library project. |
@@ -21098,6 +22298,13 @@ CDK8s app in TypeScript.
 ---
 
 
+##### `CDKTN_TYPE_SCRIPT_APP` <a name="CDKTN_TYPE_SCRIPT_APP" id="@nikovirtala/projen-constructs.ProjectType.CDKTN_TYPE_SCRIPT_APP"></a>
+
+CDKTN app in TypeScript.
+
+---
+
+
 ##### `CONSTRUCT_LIBRARY_CDK8S` <a name="CONSTRUCT_LIBRARY_CDK8S" id="@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDK8S"></a>
 
 CDK8s construct library project.
@@ -21108,6 +22315,13 @@ CDK8s construct library project.
 ##### `CONSTRUCT_LIBRARY_CDKTF` <a name="CONSTRUCT_LIBRARY_CDKTF" id="@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDKTF"></a>
 
 CDKTF construct library project.
+
+---
+
+
+##### `CONSTRUCT_LIBRARY_CDKTN` <a name="CONSTRUCT_LIBRARY_CDKTN" id="@nikovirtala/projen-constructs.ProjectType.CONSTRUCT_LIBRARY_CDKTN"></a>
+
+CDKTN construct library project.
 
 ---
 
