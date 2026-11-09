@@ -119,6 +119,20 @@ new LocalStack(project, {
 });
 ```
 
+## Floci
+
+[Floci](https://floci.io) local cloud emulator component, a drop-in LocalStack replacement delivering AWS emulation.
+
+```typescript
+import { Floci } from "@nikovirtala/projen-constructs";
+
+new Floci(project, {
+  services: ["s3", "lambda", "dynamodb"],
+  port: 4566,
+  image: "floci/floci:1.5.0",
+});
+```
+
 ## LambdaFunctionConstructGenerator
 
 Generates AWS CDK Lambda Function constructs and bundles their code.
