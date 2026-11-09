@@ -6,5 +6,8 @@
   ],
   "excludePrivate": true,
   "out": "docs/api",
-  "disableSources": true
+  "disableSources": true,
+  "headings": {
+    "readme": false
+  }
 }

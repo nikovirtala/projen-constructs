@@ -43,6 +43,27 @@ describe("TypeDoc", () => {
             expect(config.excludePrivate).toBe(true);
         });
 
+        it("headings configuration", () => {
+            const project = getTestProject();
+            new TypeDoc(project, {
+                typeDocConfig: {
+                    headings: { readme: false },
+                },
+            });
+
+            const config = snapshotTypeDocConfig(project);
+            expect(config.headings).toEqual({ readme: false });
+            expect(config.out).toBe("docs/api");
+        });
+
+        it("omits headings by default", () => {
+            const project = getTestProject();
+            new TypeDoc(project);
+
+            const config = snapshotTypeDocConfig(project);
+            expect(config.headings).toBeUndefined();
+        });
+
         it("custom version", () => {
             const project = getTestProject();
             new TypeDoc(project, { version: "^0.26" });

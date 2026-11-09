@@ -201,6 +201,13 @@ export interface TypeDocConfiguration {
     readonly readme?: string;
 
     /**
+     * Specify which pages TypeDoc renders its own page heading on.
+     *
+     * @see https://typedoc.org/documents/Options.Output.html#headings
+     */
+    readonly headings?: HeadingsOptions;
+
+    /**
      * Specify the package.json file that should be used to determine the package name.
      *
      * @see https://typedoc.org/documents/Options.Input.html#packagejson
@@ -366,6 +373,7 @@ export function toJson_TypeDocConfiguration(
         searchGroupBoosts: obj.searchGroupBoosts,
         searchCategoryBoosts: obj.searchCategoryBoosts,
         readme: obj.readme,
+        headings: obj.headings,
         packageJson: obj.packageJson,
         gitRevision: obj.gitRevision,
         gitRemote: obj.gitRemote,
@@ -508,4 +516,25 @@ export interface ValidationOptions {
      * If set, TypeDoc will produce warnings about \@link tags which will produce broken links
      */
     readonly invalidLink?: boolean;
+}
+
+/**
+ * Headings options
+ *
+ * @see https://typedoc.org/documents/Options.Output.html#headings
+ */
+export interface HeadingsOptions {
+    /**
+     * If set, TypeDoc renders its own page heading above the readme on the index page.
+     * Disable this when the readme starts with its own top-level heading.
+     *
+     * @default true
+     */
+    readonly readme?: boolean;
+    /**
+     * If set, TypeDoc renders its own page heading above document pages.
+     *
+     * @default false
+     */
+    readonly document?: boolean;
 }
