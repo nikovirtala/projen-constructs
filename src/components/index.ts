@@ -1,3 +1,4 @@
+export * from "./aws-emulator";
 export * from "./bundle-lambda-function-code";
 export * from "./colima";
 export * from "./floci";

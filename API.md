@@ -2883,6 +2883,239 @@ public readonly DEFAULT_TS_JEST_TRANFORM_PATTERN: string;
 
 ---
 
+### AwsEmulator <a name="AwsEmulator" id="@nikovirtala/projen-constructs.AwsEmulator"></a>
+
+AwsEmulator component for projen projects.
+
+Adds AWS Emulator (https://github.com/aws/aws-emulator), the local emulator of the AWS APIs,
+to your project. It serves HTTPS with a self-signed certificate on 127.0.0.1:9297 by default.
+Every aspect of how it is installed, started and wired into the project is configurable.
+
+#### Initializers <a name="Initializers" id="@nikovirtala/projen-constructs.AwsEmulator.Initializer"></a>
+
+```typescript
+import { AwsEmulator } from '@nikovirtala/projen-constructs'
+
+new AwsEmulator(scope: IConstruct, options?: AwsEmulatorOptions)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.Initializer.parameter.scope">scope</a></code> | <code>constructs.IConstruct</code> | *No description.* |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.Initializer.parameter.options">options</a></code> | <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions">AwsEmulatorOptions</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="@nikovirtala/projen-constructs.AwsEmulator.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+##### `options`<sup>Optional</sup> <a name="options" id="@nikovirtala/projen-constructs.AwsEmulator.Initializer.parameter.options"></a>
+
+- *Type:* <a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions">AwsEmulatorOptions</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.with">with</a></code> | Applies one or more mixins to this construct. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.postProjectCreation">postProjectCreation</a></code> | Called once, right after `postSynthesize()`, only when the project is created for the first time. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.postSynthesize">postSynthesize</a></code> | Called after synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.preSynthesize">preSynthesize</a></code> | Called before synthesis. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.projectCreation">projectCreation</a></code> | Called once, right after `synthesize()`, only when the project is created for the first time. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.synthesize">synthesize</a></code> | Synthesizes files to the project output directory. |
+
+---
+
+##### `toString` <a name="toString" id="@nikovirtala/projen-constructs.AwsEmulator.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `with` <a name="with" id="@nikovirtala/projen-constructs.AwsEmulator.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="@nikovirtala/projen-constructs.AwsEmulator.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
+
+##### `postProjectCreation` <a name="postProjectCreation" id="@nikovirtala/projen-constructs.AwsEmulator.postProjectCreation"></a>
+
+```typescript
+public postProjectCreation(initProject: InitProject): void
+```
+
+Called once, right after `postSynthesize()`, only when the project is created for the first time.
+
+It does not run on later `projen` invocations. It only fires for `projen new` (or `Projects.createProject`).
+It is also skipped when post-synthesis steps are disabled, e.g. `--no-post` or `PROJEN_DISABLE_POST`.
+Use it for one-off setup that can be turned off by the user, like running a task to give the user immediate
+feedback on their new project. Order across components is not guaranteed.
+
+###### `initProject`<sup>Required</sup> <a name="initProject" id="@nikovirtala/projen-constructs.AwsEmulator.postProjectCreation.parameter.initProject"></a>
+
+- *Type:* projen.InitProject
+
+Details about how the project was created, e.g. its type and the original CLI args.
+
+---
+
+##### `postSynthesize` <a name="postSynthesize" id="@nikovirtala/projen-constructs.AwsEmulator.postSynthesize"></a>
+
+```typescript
+public postSynthesize(): void
+```
+
+Called after synthesis.
+
+Order is *not* guaranteed.
+
+##### `preSynthesize` <a name="preSynthesize" id="@nikovirtala/projen-constructs.AwsEmulator.preSynthesize"></a>
+
+```typescript
+public preSynthesize(): void
+```
+
+Called before synthesis.
+
+##### `projectCreation` <a name="projectCreation" id="@nikovirtala/projen-constructs.AwsEmulator.projectCreation"></a>
+
+```typescript
+public projectCreation(initProject: InitProject): void
+```
+
+Called once, right after `synthesize()`, only when the project is created for the first time.
+
+It does not run on later `projen` invocations. It only fires for `projen new` (or `Projects.createProject`).
+Use it for deterministic, one-off file generation. Order across components is not guaranteed.
+
+###### `initProject`<sup>Required</sup> <a name="initProject" id="@nikovirtala/projen-constructs.AwsEmulator.projectCreation.parameter.initProject"></a>
+
+- *Type:* projen.InitProject
+
+Details about how the project was created, e.g. its type and the original CLI args.
+
+---
+
+##### `synthesize` <a name="synthesize" id="@nikovirtala/projen-constructs.AwsEmulator.synthesize"></a>
+
+```typescript
+public synthesize(): void
+```
+
+Synthesizes files to the project output directory.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.isComponent">isComponent</a></code> | Test whether the given construct is a component. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="@nikovirtala/projen-constructs.AwsEmulator.isConstruct"></a>
+
+```typescript
+import { AwsEmulator } from '@nikovirtala/projen-constructs'
+
+AwsEmulator.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.AwsEmulator.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isComponent` <a name="isComponent" id="@nikovirtala/projen-constructs.AwsEmulator.isComponent"></a>
+
+```typescript
+import { AwsEmulator } from '@nikovirtala/projen-constructs'
+
+AwsEmulator.isComponent(x: any)
+```
+
+Test whether the given construct is a component.
+
+###### `x`<sup>Required</sup> <a name="x" id="@nikovirtala/projen-constructs.AwsEmulator.isComponent.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulator.property.project">project</a></code> | <code>projen.Project</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="@nikovirtala/projen-constructs.AwsEmulator.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `project`<sup>Required</sup> <a name="project" id="@nikovirtala/projen-constructs.AwsEmulator.property.project"></a>
+
+```typescript
+public readonly project: Project;
+```
+
+- *Type:* projen.Project
+
+---
+
+
 ### Bundler <a name="Bundler" id="@nikovirtala/projen-constructs.Bundler"></a>
 
 Adds support for bundling JavaScript applications and dependencies into a single file.
@@ -14387,6 +14620,357 @@ Options for Yarn Berry.
 
 ---
 
+### AwsEmulatorOptions <a name="AwsEmulatorOptions" id="@nikovirtala/projen-constructs.AwsEmulatorOptions"></a>
+
+Options for AwsEmulator component.
+
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.Initializer"></a>
+
+```typescript
+import { AwsEmulatorOptions } from '@nikovirtala/projen-constructs'
+
+const awsEmulatorOptions: AwsEmulatorOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.addToTestTask">addToTestTask</a></code> | <code>boolean</code> | Start the emulator before the `test` task. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.authentication">authentication</a></code> | <code>boolean</code> | Whether the emulator validates SigV4 request signatures (`-a on\|off`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.caBundlePath">caBundlePath</a></code> | <code>string</code> | Path to the emulator CA certificate. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.command">command</a></code> | <code>string</code> | Path or name of the AWS Emulator binary (native mode only). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.configFile">configFile</a></code> | <code>string</code> | Path to an emulator `config.toml` (`EMULATOR_CONFIG`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.configureEndpointEnv">configureEndpointEnv</a></code> | <code>boolean</code> | Set `AWS_ENDPOINT_URL` on all project tasks so AWS SDKs and the CLI use the emulator. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.containerName">containerName</a></code> | <code>string</code> | Name of the container (container mode only). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.dataPort">dataPort</a></code> | <code>number</code> | Port of the emulator data endpoint (`EMULATOR_DATA_PORT`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.environment">environment</a></code> | <code>{[ key: string ]: string}</code> | Additional environment variables for the emulator process. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.extraArgs">extraArgs</a></code> | <code>string[]</code> | Additional command line arguments passed to the emulator. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.healthTimeoutSeconds">healthTimeoutSeconds</a></code> | <code>number</code> | Seconds to wait for the emulator to become healthy. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.homebrewPackage">homebrewPackage</a></code> | <code>string</code> | Homebrew package to install the emulator with. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.host">host</a></code> | <code>string</code> | Address to bind to (`-b`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.idleTimeoutSeconds">idleTimeoutSeconds</a></code> | <code>number</code> | Shut the emulator down after this many idle seconds (`--idle-timeout`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.image">image</a></code> | <code>string</code> | Container image to run (container mode only, required in container mode). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.mode">mode</a></code> | <code>string</code> | How to run AWS Emulator: `"native"` runs the `aws-emulator` binary on the host, `"container"` runs it in a Docker container (the route for macOS and Windows). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.port">port</a></code> | <code>number</code> | Port to listen on (`-p`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.stackBytes">stackBytes</a></code> | <code>number</code> | Stack size in bytes for emulator threads (`EMULATOR_STACK_BYTES`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.taskName">taskName</a></code> | <code>string</code> | Name of the projen task that starts the emulator. |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.telemetry">telemetry</a></code> | <code>boolean</code> | Whether the emulator sends usage telemetry to AWS (`-t on\|off`). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.useColima">useColima</a></code> | <code>boolean</code> | Set up Colima as the container runtime (container mode only). |
+| <code><a href="#@nikovirtala/projen-constructs.AwsEmulatorOptions.property.waitForHealthy">waitForHealthy</a></code> | <code>boolean</code> | Wait until the emulator reports healthy (`/__admin/health`) after starting. |
+
+---
+
+##### `addToTestTask`<sup>Optional</sup> <a name="addToTestTask" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.addToTestTask"></a>
+
+```typescript
+public readonly addToTestTask: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Start the emulator before the `test` task.
+
+---
+
+##### `authentication`<sup>Optional</sup> <a name="authentication" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.authentication"></a>
+
+```typescript
+public readonly authentication: boolean;
+```
+
+- *Type:* boolean
+- *Default:* the emulator default (on)
+
+Whether the emulator validates SigV4 request signatures (`-a on|off`).
+
+---
+
+##### `caBundlePath`<sup>Optional</sup> <a name="caBundlePath" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.caBundlePath"></a>
+
+```typescript
+public readonly caBundlePath: string;
+```
+
+- *Type:* string
+- *Default:* none
+
+Path to the emulator CA certificate.
+
+When set together with `configureEndpointEnv`,
+`AWS_CA_BUNDLE` and `NODE_EXTRA_CA_CERTS` are set so clients trust its self-signed certificate.
+
+---
+
+##### `command`<sup>Optional</sup> <a name="command" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.command"></a>
+
+```typescript
+public readonly command: string;
+```
+
+- *Type:* string
+- *Default:* "aws-emulator"
+
+Path or name of the AWS Emulator binary (native mode only).
+
+---
+
+##### `configFile`<sup>Optional</sup> <a name="configFile" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.configFile"></a>
+
+```typescript
+public readonly configFile: string;
+```
+
+- *Type:* string
+- *Default:* `~/.aws/emulator/config.toml`
+
+Path to an emulator `config.toml` (`EMULATOR_CONFIG`).
+
+---
+
+##### `configureEndpointEnv`<sup>Optional</sup> <a name="configureEndpointEnv" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.configureEndpointEnv"></a>
+
+```typescript
+public readonly configureEndpointEnv: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Set `AWS_ENDPOINT_URL` on all project tasks so AWS SDKs and the CLI use the emulator.
+
+Requires `caBundlePath`, because the emulator serves a self-signed certificate.
+
+---
+
+##### `containerName`<sup>Optional</sup> <a name="containerName" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.containerName"></a>
+
+```typescript
+public readonly containerName: string;
+```
+
+- *Type:* string
+- *Default:* "aws-emulator"
+
+Name of the container (container mode only).
+
+---
+
+##### `dataPort`<sup>Optional</sup> <a name="dataPort" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.dataPort"></a>
+
+```typescript
+public readonly dataPort: number;
+```
+
+- *Type:* number
+- *Default:* the emulator default
+
+Port of the emulator data endpoint (`EMULATOR_DATA_PORT`).
+
+---
+
+##### `environment`<sup>Optional</sup> <a name="environment" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.environment"></a>
+
+```typescript
+public readonly environment: {[ key: string ]: string};
+```
+
+- *Type:* {[ key: string ]: string}
+- *Default:* {}
+
+Additional environment variables for the emulator process.
+
+---
+
+##### `extraArgs`<sup>Optional</sup> <a name="extraArgs" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.extraArgs"></a>
+
+```typescript
+public readonly extraArgs: string[];
+```
+
+- *Type:* string[]
+- *Default:* []
+
+Additional command line arguments passed to the emulator.
+
+Each argument must consist of shell-safe characters only.
+
+---
+
+##### `healthTimeoutSeconds`<sup>Optional</sup> <a name="healthTimeoutSeconds" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.healthTimeoutSeconds"></a>
+
+```typescript
+public readonly healthTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* 30
+
+Seconds to wait for the emulator to become healthy.
+
+---
+
+##### `homebrewPackage`<sup>Optional</sup> <a name="homebrewPackage" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.homebrewPackage"></a>
+
+```typescript
+public readonly homebrewPackage: string;
+```
+
+- *Type:* string
+- *Default:* none
+
+Homebrew package to install the emulator with.
+
+When unset, nothing is added to the
+Brewfile, since AWS Emulator has no official Homebrew formula.
+
+---
+
+##### `host`<sup>Optional</sup> <a name="host" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.host"></a>
+
+```typescript
+public readonly host: string;
+```
+
+- *Type:* string
+- *Default:* "127.0.0.1"
+
+Address to bind to (`-b`).
+
+IPv4 addresses and host names only. A wildcard (`0.0.0.0`) is
+probed and advertised as `127.0.0.1`. In container mode the emulator always binds to `0.0.0.0` inside
+the container, and this is the host address the port is published on.
+
+---
+
+##### `idleTimeoutSeconds`<sup>Optional</sup> <a name="idleTimeoutSeconds" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.idleTimeoutSeconds"></a>
+
+```typescript
+public readonly idleTimeoutSeconds: number;
+```
+
+- *Type:* number
+- *Default:* the emulator default
+
+Shut the emulator down after this many idle seconds (`--idle-timeout`).
+
+---
+
+##### `image`<sup>Optional</sup> <a name="image" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.image"></a>
+
+```typescript
+public readonly image: string;
+```
+
+- *Type:* string
+- *Default:* none
+
+Container image to run (container mode only, required in container mode).
+
+AWS Emulator does not publish a prebuilt image, so build one from the Dockerfile in the
+user guide and pass its reference here, e.g. `"aws-emulator:local"`.
+
+Must be a valid Docker image reference (`name` or `name:tag`).
+
+> [https://docs.aws.amazon.com/emulator/latest/userguide/getting-started-docker.html](https://docs.aws.amazon.com/emulator/latest/userguide/getting-started-docker.html)
+
+---
+
+##### `mode`<sup>Optional</sup> <a name="mode" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.mode"></a>
+
+```typescript
+public readonly mode: string;
+```
+
+- *Type:* string
+- *Default:* "native"
+
+How to run AWS Emulator: `"native"` runs the `aws-emulator` binary on the host, `"container"` runs it in a Docker container (the route for macOS and Windows).
+
+---
+
+##### `port`<sup>Optional</sup> <a name="port" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.port"></a>
+
+```typescript
+public readonly port: number;
+```
+
+- *Type:* number
+- *Default:* 9297
+
+Port to listen on (`-p`).
+
+---
+
+##### `stackBytes`<sup>Optional</sup> <a name="stackBytes" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.stackBytes"></a>
+
+```typescript
+public readonly stackBytes: number;
+```
+
+- *Type:* number
+- *Default:* the emulator default
+
+Stack size in bytes for emulator threads (`EMULATOR_STACK_BYTES`).
+
+---
+
+##### `taskName`<sup>Optional</sup> <a name="taskName" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.taskName"></a>
+
+```typescript
+public readonly taskName: string;
+```
+
+- *Type:* string
+- *Default:* "aws-emulator"
+
+Name of the projen task that starts the emulator.
+
+---
+
+##### `telemetry`<sup>Optional</sup> <a name="telemetry" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.telemetry"></a>
+
+```typescript
+public readonly telemetry: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+Whether the emulator sends usage telemetry to AWS (`-t on|off`).
+
+Upstream telemetry is on by default. This component passes `off` unless you enable it,
+to keep CI and local runs private.
+
+---
+
+##### `useColima`<sup>Optional</sup> <a name="useColima" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.useColima"></a>
+
+```typescript
+public readonly useColima: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Set up Colima as the container runtime (container mode only).
+
+---
+
+##### `waitForHealthy`<sup>Optional</sup> <a name="waitForHealthy" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.waitForHealthy"></a>
+
+```typescript
+public readonly waitForHealthy: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+Wait until the emulator reports healthy (`/__admin/health`) after starting.
+
+---
+
 ### Bundle <a name="Bundle" id="@nikovirtala/projen-constructs.Bundle"></a>
 
 A bundle created by `Bundler.addBundle`.
@@ -14911,6 +15495,57 @@ public readonly services: string[];
 - *Default:* all services enabled
 
 AWS services to enable.
+
+---
+
+### HeadingsOptions <a name="HeadingsOptions" id="@nikovirtala/projen-constructs.HeadingsOptions"></a>
+
+Headings options.
+
+> [https://typedoc.org/documents/Options.Output.html#headings](https://typedoc.org/documents/Options.Output.html#headings)
+
+#### Initializer <a name="Initializer" id="@nikovirtala/projen-constructs.HeadingsOptions.Initializer"></a>
+
+```typescript
+import { HeadingsOptions } from '@nikovirtala/projen-constructs'
+
+const headingsOptions: HeadingsOptions = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#@nikovirtala/projen-constructs.HeadingsOptions.property.document">document</a></code> | <code>boolean</code> | If set, TypeDoc renders its own page heading above document pages. |
+| <code><a href="#@nikovirtala/projen-constructs.HeadingsOptions.property.readme">readme</a></code> | <code>boolean</code> | If set, TypeDoc renders its own page heading above the readme on the index page. |
+
+---
+
+##### `document`<sup>Optional</sup> <a name="document" id="@nikovirtala/projen-constructs.HeadingsOptions.property.document"></a>
+
+```typescript
+public readonly document: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false
+
+If set, TypeDoc renders its own page heading above document pages.
+
+---
+
+##### `readme`<sup>Optional</sup> <a name="readme" id="@nikovirtala/projen-constructs.HeadingsOptions.property.readme"></a>
+
+```typescript
+public readonly readme: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true
+
+If set, TypeDoc renders its own page heading above the readme on the index page.
+
+Disable this when the readme starts with its own top-level heading.
 
 ---
 
@@ -18281,6 +18916,7 @@ const typeDocConfiguration: TypeDocConfiguration = { ... }
 | <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.externalSymbolLinkMappings">externalSymbolLinkMappings</a></code> | <code>{[ key: string ]: {[ key: string ]: string}}</code> | Define custom mappings for symbols in external packages. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.gitRemote">gitRemote</a></code> | <code>string</code> | Specify the git remote that should be used to link to source files. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.gitRevision">gitRevision</a></code> | <code>string</code> | Specify the git revision that should be used to link to source files. |
+| <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.headings">headings</a></code> | <code><a href="#@nikovirtala/projen-constructs.HeadingsOptions">HeadingsOptions</a></code> | Specify which pages TypeDoc renders its own page heading on. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.hideGenerator">hideGenerator</a></code> | <code>boolean</code> | Do not print the TypeDoc link at the end of the page. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.hideParameterTypesInTitle">hideParameterTypesInTitle</a></code> | <code>boolean</code> | Hide parameter types in the signature. |
 | <code><a href="#@nikovirtala/projen-constructs.TypeDocConfiguration.property.includes">includes</a></code> | <code>string</code> | Specify the location to look for included documents. |
@@ -18600,6 +19236,20 @@ public readonly gitRevision: string;
 Specify the git revision that should be used to link to source files.
 
 > [https://typedoc.org/documents/Options.Comments.html#gitrevision](https://typedoc.org/documents/Options.Comments.html#gitrevision)
+
+---
+
+##### `headings`<sup>Optional</sup> <a name="headings" id="@nikovirtala/projen-constructs.TypeDocConfiguration.property.headings"></a>
+
+```typescript
+public readonly headings: HeadingsOptions;
+```
+
+- *Type:* <a href="#@nikovirtala/projen-constructs.HeadingsOptions">HeadingsOptions</a>
+
+Specify which pages TypeDoc renders its own page heading on.
+
+> [https://typedoc.org/documents/Options.Output.html#headings](https://typedoc.org/documents/Options.Output.html#headings)
 
 ---
 
