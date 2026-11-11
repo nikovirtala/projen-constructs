@@ -38,6 +38,8 @@ Reusable Projen components that can be added to any project:
 - **homebrew.ts** - Homebrew package management
 - **colima.ts** - Colima container runtime
 - **localstack.ts** - LocalStack AWS emulation
+- **floci.ts** - Floci AWS emulation
+- **aws-emulator.ts** - AWS Emulator (native or container, fully option-driven)
 - **lambda-function-construct-generator.ts** - Lambda construct generation
 - **bundle-lambda-function-code.ts** - Lambda code bundling utilities
 

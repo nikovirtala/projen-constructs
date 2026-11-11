@@ -10,7 +10,7 @@ Automates project scaffolding and configuration for TypeScript, JSII, and AWS CD
 
 - **Standard Configuration**: Opinionated defaults for author, release branch, package manager, Node.js, TypeScript, and tooling
 - **Automatic Project Type Discovery**: Generates `ProjectType` enum from Projen's JSII manifest (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)
-- **Component System**: Reusable components (Vitest, Mise, TypeDoc, LocalStack, Homebrew, Colima, etc.)
+- **Component System**: Reusable components (Vitest, Mise, TypeDoc, LocalStack, Floci, AwsEmulator, Homebrew, Colima, etc.)
 - **Code Generation**: `ProjectGenerator` creates project classes with standard configuration
 - **ES Modules**: TypeScript and CDK App projects use ES modules (JSII uses CommonJS)
 

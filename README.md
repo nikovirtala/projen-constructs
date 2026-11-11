@@ -38,7 +38,7 @@ across this documentation track those sources.
 | Guide | What it covers |
 | --- | --- |
 | [Configuration](./docs/configuration.md) | Standard defaults, pnpm settings, the TypeScript configs, native TypeScript, and how to customize any option |
-| [Components](./docs/components.md) | Reference for every component: Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, LambdaFunctionConstructGenerator, Bundler, and ProjectGenerator |
+| [Components](./docs/components.md) | Reference for every component: Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, Floci, AwsEmulator, LambdaFunctionConstructGenerator, Bundler, and ProjectGenerator |
 | [Migration](./docs/migration.md) | Moving from the deprecated standalone packages, including the name mapping and behaviour changes |
 | [Development](./docs/development.md) | Development commands and the build process diagram |
 | [API reference](https://projen.nikovirtala.dev) | Generated TypeDoc API documentation |

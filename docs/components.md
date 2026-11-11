@@ -135,6 +135,36 @@ new Floci(project, {
 });
 ```
 
+## AwsEmulator
+
+[AWS Emulator](https://github.com/aws/aws-emulator) component. AWS Emulator is a local emulator of the AWS APIs for building and testing without an AWS account. It serves HTTPS with a self-signed certificate on `127.0.0.1:9297` and reports health at `/__admin/health`. It has no official Homebrew formula or prebuilt image, so installation is up to you and everything is configurable through options. The start task is idempotent, runs the emulator in the background, and waits until it is healthy.
+
+```typescript
+import { AwsEmulator } from "@nikovirtala/projen-constructs";
+
+new AwsEmulator(project, {
+  mode: "native", // or "container" (requires image; sets up Colima unless useColima is false)
+  command: "aws-emulator",
+  host: "127.0.0.1",
+  port: 9297,
+  authentication: false, // -a on|off (SigV4 validation)
+  telemetry: false, // -t on|off, off unless enabled
+  idleTimeoutSeconds: 900,
+  dataPort: 9300, // EMULATOR_DATA_PORT
+  configFile: "emulator.toml", // EMULATOR_CONFIG
+  stackBytes: 8388608, // EMULATOR_STACK_BYTES
+  extraArgs: [],
+  environment: {},
+  taskName: "aws-emulator",
+  addToTestTask: true,
+  waitForHealthy: true,
+  healthTimeoutSeconds: 30,
+  homebrewPackage: undefined, // added to the Brewfile only when set
+  configureEndpointEnv: true, // sets AWS_ENDPOINT_URL on all tasks
+  caBundlePath: "certs/emulator-ca.pem", // sets AWS_CA_BUNDLE and NODE_EXTRA_CA_CERTS
+});
+```
+
 ## LambdaFunctionConstructGenerator
 
 Generates AWS CDK Lambda Function constructs and bundles their code.
