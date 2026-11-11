@@ -14740,6 +14740,8 @@ public readonly configureEndpointEnv: boolean;
 
 Set `AWS_ENDPOINT_URL` on all project tasks so AWS SDKs and the CLI use the emulator.
 
+Requires `caBundlePath`, because the emulator serves a self-signed certificate.
+
 ---
 
 ##### `containerName`<sup>Optional</sup> <a name="containerName" id="@nikovirtala/projen-constructs.AwsEmulatorOptions.property.containerName"></a>
@@ -14836,7 +14838,8 @@ public readonly host: string;
 
 Address to bind to (`-b`).
 
-In container mode the emulator always binds to `0.0.0.0` inside
+IPv4 addresses and host names only. A wildcard (`0.0.0.0`) is
+probed and advertised as `127.0.0.1`. In container mode the emulator always binds to `0.0.0.0` inside
 the container, and this is the host address the port is published on.
 
 ---

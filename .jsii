@@ -4196,7 +4196,7 @@
   },
   "name": "@nikovirtala/projen-constructs",
   "readme": {
-    "markdown": "# @nikovirtala/projen-constructs\n\nOpinionated projen project types that scaffold TypeScript, JSII and AWS CDK repositories with one shared config.\n\n[![npm version badge, latest release on npm](https://img.shields.io/npm/v/@nikovirtala/projen-constructs?label=npm)](https://www.npmjs.com/package/@nikovirtala/projen-constructs)\n[![build status badge from the GitHub Actions build workflow](https://img.shields.io/github/actions/workflow/status/nikovirtala/projen-constructs/build.yml?branch=main&label=build)](https://github.com/nikovirtala/projen-constructs/actions/workflows/build.yml)\n[![license badge, Apache-2.0](https://img.shields.io/npm/l/@nikovirtala/projen-constructs?label=license)](./LICENSE)\n[![supported Node.js version badge, requires Node.js 26.13.0 or newer](https://img.shields.io/badge/node-%3E%3D26.13.0-informational?label=node)](https://nodejs.org)\n[![projen peer dependency version badge, requires projen 0.104.23 or newer](https://img.shields.io/badge/projen-%5E0.104.23-informational?label=projen)](https://projen.io)\n\n## Why this exists\n\nProjen gives you code-first project configuration, but wiring up a consistent setup across many\nTypeScript, JSII and AWS CDK repositories still means repeating the same choices. This library\npackages those choices into ready-made project types and reusable components, so every repository\nyou generate shares the same package manager, Node.js and TypeScript versions, testing, linting and\nrelease tooling.\n\nIt is for anyone in the projen and AWS CDK community who maintains more than one repository and wants\nthem to behave the same way without hand-copying configuration between them.\n\n## When not to use this\n\nReach for plain projen instead when:\n\n- you want unopinionated projen defaults and prefer to make each tooling choice yourself\n- your setup is not pnpm-based or cannot run Node.js 26\n- you build in languages beyond TypeScript, JSII and AWS CDK\n\n## Status and supported versions\n\nStability: **stable**. This library requires `projen` ^0.104.23, pnpm 12, and Node.js >= 26.13.0.\nThese values are maintained in `src/versions.json` and the project configuration; the numbers quoted\nacross this documentation track those sources.\n\n## Documentation\n\n| Guide | What it covers |\n| --- | --- |\n| [Configuration](./docs/configuration.md) | Standard defaults, pnpm settings, the TypeScript configs, native TypeScript, and how to customize any option |\n| [Components](./docs/components.md) | Reference for every component: Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, LambdaFunctionConstructGenerator, Bundler, and ProjectGenerator |\n| [Migration](./docs/migration.md) | Moving from the deprecated standalone packages, including the name mapping and behaviour changes |\n| [Development](./docs/development.md) | Development commands and the build process diagram |\n| [API reference](https://projen.nikovirtala.dev) | Generated TypeDoc API documentation |\n\nQuick links: [Quick start](#quick-start) · [Usage](#usage) · [Features](#features).\n\n## Quick start\n\nTo start a new project from scratch, run `projen new --from` in an empty directory. It installs the\nlibrary and writes a ready-to-use `.projenrc.ts` and the full project for you, with no manual setup:\n\n```bash\npnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_library\n```\n\n**Expected output**: projen installs `@nikovirtala/projen-constructs` and its peers, writes a\n`.projenrc.ts` that defines the project, and synthesizes the generated files into the directory:\n`package.json`, `tsconfig.json`, `pnpm-workspace.yaml`, the GitHub Actions workflows, the Vitest and\nBiome configuration, `mise.toml`, and the source and test scaffolding for your construct library.\n\nPass a different project type to scaffold one of the others this library provides:\n\n| Project type | `projen new --from` argument |\n| --- | --- |\n| AWS CDK construct library | `aws_cdk_construct_library` |\n| AWS CDK TypeScript app | `aws_cdk_type_script_app` |\n| JSII | `jsii_project` |\n| TypeScript | `type_script_project` |\n\n### Adding it to an existing project\n\nIf you already have a `.projenrc.ts`, install the library alongside its `projen` and `constructs`\npeers instead:\n\n```bash\npnpm add -D @nikovirtala/projen-constructs projen constructs\n```\n\nThen define a project in `.projenrc.ts`:\n\n```typescript\nimport { AwsCdkConstructLibraryProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new AwsCdkConstructLibraryProject({\n  name: \"my-cdk-construct\",\n  author: \"Your Name\",\n  authorAddress: \"you@example.com\",\n  repositoryUrl: \"https://github.com/your-org/my-cdk-construct.git\",\n  cdkVersion: \"2.275.0\",\n});\n\nproject.synth();\n```\n\nRun synthesis to write or update the generated files:\n\n```bash\npnpm dlx projen\n```\n\nRe-running `projen` after you edit `.projenrc.ts` updates those files in place.\n\n## Features\n\n- **Standard configuration**: opinionated defaults for author, release branch, package manager,\n  Node.js, TypeScript, and tooling\n- **Automatic project type discovery**: generates the `ProjectType` enum from projen's JSII manifest\n  (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)\n- **Component system**: reusable components (Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack,\n  Lambda bundling)\n- **Code generation**: `ProjectGenerator` creates project classes with standard configuration\n- **ES modules**: TypeScript and CDK app projects use ES modules (JSII uses CommonJS)\n- **Code quality**: Biome for formatting and linting\n- **Testing**: Vitest with coverage\n- **Auto-merge**: enabled with auto-approve\n- **VSCode**: recommended extensions and settings\n- **mise**: Node version management\n\n## Usage\n\nEach project type applies the standard configuration and the shared components. See\n[Configuration](./docs/configuration.md) for the defaults and how to override them, and\n[Components](./docs/components.md) for the component reference.\n\n### AWS CDK construct library project\n\n```typescript\nimport { AwsCdkConstructLibraryProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new AwsCdkConstructLibraryProject({\n  name: \"my-cdk-construct\",\n  author: \"Your Name\",\n  authorAddress: \"you@example.com\",\n  repositoryUrl: \"https://github.com/nikovirtala/my-cdk-construct.git\",\n  cdkVersion: \"2.275.0\",\n});\n\nproject.synth();\n```\n\n### AWS CDK TypeScript app project\n\n```typescript\nimport { AwsCdkTypeScriptAppProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new AwsCdkTypeScriptAppProject({\n  name: \"my-cdk-app\",\n  repository: \"https://github.com/nikovirtala/my-cdk-app.git\",\n  cdkVersion: \"2.275.0\",\n});\n\nproject.synth();\n```\n\n### JSII project\n\n```typescript\nimport { JsiiProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new JsiiProject({\n  name: \"my-jsii-project\",\n  author: \"Your Name\",\n  authorAddress: \"you@example.com\",\n  repositoryUrl: \"https://github.com/nikovirtala/my-jsii-project.git\",\n});\n\nproject.synth();\n```\n\n### TypeScript project\n\n```typescript\nimport { TypeScriptProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new TypeScriptProject({\n  name: \"my-typescript-project\",\n  repository: \"https://github.com/nikovirtala/my-typescript-project.git\",\n});\n\nproject.synth();\n```\n\n## Contributing\n\nSee [Development](./docs/development.md) for the commands and the build process. Configuration\nchanges belong in `.projenrc.ts`, never in the generated files.\n\n## License\n\nApache-2.0. See [LICENSE](./LICENSE).\n"
+    "markdown": "# @nikovirtala/projen-constructs\n\nOpinionated projen project types that scaffold TypeScript, JSII and AWS CDK repositories with one shared config.\n\n[![npm version badge, latest release on npm](https://img.shields.io/npm/v/@nikovirtala/projen-constructs?label=npm)](https://www.npmjs.com/package/@nikovirtala/projen-constructs)\n[![build status badge from the GitHub Actions build workflow](https://img.shields.io/github/actions/workflow/status/nikovirtala/projen-constructs/build.yml?branch=main&label=build)](https://github.com/nikovirtala/projen-constructs/actions/workflows/build.yml)\n[![license badge, Apache-2.0](https://img.shields.io/npm/l/@nikovirtala/projen-constructs?label=license)](./LICENSE)\n[![supported Node.js version badge, requires Node.js 26.13.0 or newer](https://img.shields.io/badge/node-%3E%3D26.13.0-informational?label=node)](https://nodejs.org)\n[![projen peer dependency version badge, requires projen 0.104.23 or newer](https://img.shields.io/badge/projen-%5E0.104.23-informational?label=projen)](https://projen.io)\n\n## Why this exists\n\nProjen gives you code-first project configuration, but wiring up a consistent setup across many\nTypeScript, JSII and AWS CDK repositories still means repeating the same choices. This library\npackages those choices into ready-made project types and reusable components, so every repository\nyou generate shares the same package manager, Node.js and TypeScript versions, testing, linting and\nrelease tooling.\n\nIt is for anyone in the projen and AWS CDK community who maintains more than one repository and wants\nthem to behave the same way without hand-copying configuration between them.\n\n## When not to use this\n\nReach for plain projen instead when:\n\n- you want unopinionated projen defaults and prefer to make each tooling choice yourself\n- your setup is not pnpm-based or cannot run Node.js 26\n- you build in languages beyond TypeScript, JSII and AWS CDK\n\n## Status and supported versions\n\nStability: **stable**. This library requires `projen` ^0.104.23, pnpm 12, and Node.js >= 26.13.0.\nThese values are maintained in `src/versions.json` and the project configuration; the numbers quoted\nacross this documentation track those sources.\n\n## Documentation\n\n| Guide | What it covers |\n| --- | --- |\n| [Configuration](./docs/configuration.md) | Standard defaults, pnpm settings, the TypeScript configs, native TypeScript, and how to customize any option |\n| [Components](./docs/components.md) | Reference for every component: Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack, Floci, AwsEmulator, LambdaFunctionConstructGenerator, Bundler, and ProjectGenerator |\n| [Migration](./docs/migration.md) | Moving from the deprecated standalone packages, including the name mapping and behaviour changes |\n| [Development](./docs/development.md) | Development commands and the build process diagram |\n| [API reference](https://projen.nikovirtala.dev) | Generated TypeDoc API documentation |\n\nQuick links: [Quick start](#quick-start) · [Usage](#usage) · [Features](#features).\n\n## Quick start\n\nTo start a new project from scratch, run `projen new --from` in an empty directory. It installs the\nlibrary and writes a ready-to-use `.projenrc.ts` and the full project for you, with no manual setup:\n\n```bash\npnpm dlx projen new --from @nikovirtala/projen-constructs aws_cdk_construct_library\n```\n\n**Expected output**: projen installs `@nikovirtala/projen-constructs` and its peers, writes a\n`.projenrc.ts` that defines the project, and synthesizes the generated files into the directory:\n`package.json`, `tsconfig.json`, `pnpm-workspace.yaml`, the GitHub Actions workflows, the Vitest and\nBiome configuration, `mise.toml`, and the source and test scaffolding for your construct library.\n\nPass a different project type to scaffold one of the others this library provides:\n\n| Project type | `projen new --from` argument |\n| --- | --- |\n| AWS CDK construct library | `aws_cdk_construct_library` |\n| AWS CDK TypeScript app | `aws_cdk_type_script_app` |\n| JSII | `jsii_project` |\n| TypeScript | `type_script_project` |\n\n### Adding it to an existing project\n\nIf you already have a `.projenrc.ts`, install the library alongside its `projen` and `constructs`\npeers instead:\n\n```bash\npnpm add -D @nikovirtala/projen-constructs projen constructs\n```\n\nThen define a project in `.projenrc.ts`:\n\n```typescript\nimport { AwsCdkConstructLibraryProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new AwsCdkConstructLibraryProject({\n  name: \"my-cdk-construct\",\n  author: \"Your Name\",\n  authorAddress: \"you@example.com\",\n  repositoryUrl: \"https://github.com/your-org/my-cdk-construct.git\",\n  cdkVersion: \"2.275.0\",\n});\n\nproject.synth();\n```\n\nRun synthesis to write or update the generated files:\n\n```bash\npnpm dlx projen\n```\n\nRe-running `projen` after you edit `.projenrc.ts` updates those files in place.\n\n## Features\n\n- **Standard configuration**: opinionated defaults for author, release branch, package manager,\n  Node.js, TypeScript, and tooling\n- **Automatic project type discovery**: generates the `ProjectType` enum from projen's JSII manifest\n  (<!-- generated:project-type-count-start -->21<!-- generated:project-type-count-end --> project types)\n- **Component system**: reusable components (Vitest, TypeDoc, Mise, Homebrew, Colima, LocalStack,\n  Lambda bundling)\n- **Code generation**: `ProjectGenerator` creates project classes with standard configuration\n- **ES modules**: TypeScript and CDK app projects use ES modules (JSII uses CommonJS)\n- **Code quality**: Biome for formatting and linting\n- **Testing**: Vitest with coverage\n- **Auto-merge**: enabled with auto-approve\n- **VSCode**: recommended extensions and settings\n- **mise**: Node version management\n\n## Usage\n\nEach project type applies the standard configuration and the shared components. See\n[Configuration](./docs/configuration.md) for the defaults and how to override them, and\n[Components](./docs/components.md) for the component reference.\n\n### AWS CDK construct library project\n\n```typescript\nimport { AwsCdkConstructLibraryProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new AwsCdkConstructLibraryProject({\n  name: \"my-cdk-construct\",\n  author: \"Your Name\",\n  authorAddress: \"you@example.com\",\n  repositoryUrl: \"https://github.com/nikovirtala/my-cdk-construct.git\",\n  cdkVersion: \"2.275.0\",\n});\n\nproject.synth();\n```\n\n### AWS CDK TypeScript app project\n\n```typescript\nimport { AwsCdkTypeScriptAppProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new AwsCdkTypeScriptAppProject({\n  name: \"my-cdk-app\",\n  repository: \"https://github.com/nikovirtala/my-cdk-app.git\",\n  cdkVersion: \"2.275.0\",\n});\n\nproject.synth();\n```\n\n### JSII project\n\n```typescript\nimport { JsiiProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new JsiiProject({\n  name: \"my-jsii-project\",\n  author: \"Your Name\",\n  authorAddress: \"you@example.com\",\n  repositoryUrl: \"https://github.com/nikovirtala/my-jsii-project.git\",\n});\n\nproject.synth();\n```\n\n### TypeScript project\n\n```typescript\nimport { TypeScriptProject } from \"@nikovirtala/projen-constructs\";\n\nconst project = new TypeScriptProject({\n  name: \"my-typescript-project\",\n  repository: \"https://github.com/nikovirtala/my-typescript-project.git\",\n});\n\nproject.synth();\n```\n\n## Contributing\n\nSee [Development](./docs/development.md) for the commands and the build process. Configuration\nchanges belong in `.projenrc.ts`, never in the generated files.\n\n## License\n\nApache-2.0. See [LICENSE](./LICENSE).\n"
   },
   "repository": {
     "type": "git",
@@ -11046,7 +11046,7 @@
         },
         "locationInModule": {
           "filename": "src/components/aws-emulator.ts",
-          "line": 199
+          "line": 201
         },
         "parameters": [
           {
@@ -11067,7 +11067,7 @@
       "kind": "class",
       "locationInModule": {
         "filename": "src/components/aws-emulator.ts",
-        "line": 198
+        "line": 200
       },
       "name": "AwsEmulator",
       "symbolId": "src/components/aws-emulator:AwsEmulator"
@@ -11097,7 +11097,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 123
+            "line": 124
           },
           "name": "addToTestTask",
           "optional": true,
@@ -11115,7 +11115,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 63
+            "line": 64
           },
           "name": "authentication",
           "optional": true,
@@ -11134,7 +11134,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 163
+            "line": 165
           },
           "name": "caBundlePath",
           "optional": true,
@@ -11170,7 +11170,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 91
+            "line": 92
           },
           "name": "configFile",
           "optional": true,
@@ -11182,13 +11182,14 @@
           "abstract": true,
           "docs": {
             "default": "false",
+            "remarks": "Requires `caBundlePath`, because the emulator serves a self-signed certificate.",
             "stability": "stable",
             "summary": "Set `AWS_ENDPOINT_URL` on all project tasks so AWS SDKs and the CLI use the emulator."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 155
+            "line": 157
           },
           "name": "configureEndpointEnv",
           "optional": true,
@@ -11224,7 +11225,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 85
+            "line": 86
           },
           "name": "dataPort",
           "optional": true,
@@ -11242,7 +11243,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 111
+            "line": 112
           },
           "name": "environment",
           "optional": true,
@@ -11266,7 +11267,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 105
+            "line": 106
           },
           "name": "extraArgs",
           "optional": true,
@@ -11289,7 +11290,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 135
+            "line": 136
           },
           "name": "healthTimeoutSeconds",
           "optional": true,
@@ -11308,7 +11309,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 149
+            "line": 150
           },
           "name": "homebrewPackage",
           "optional": true,
@@ -11320,14 +11321,14 @@
           "abstract": true,
           "docs": {
             "default": "\"127.0.0.1\"",
-            "remarks": "In container mode the emulator always binds to `0.0.0.0` inside\nthe container, and this is the host address the port is published on.",
+            "remarks": "IPv4 addresses and host names only. A wildcard (`0.0.0.0`) is\nprobed and advertised as `127.0.0.1`. In container mode the emulator always binds to `0.0.0.0` inside\nthe container, and this is the host address the port is published on.",
             "stability": "stable",
             "summary": "Address to bind to (`-b`)."
           },
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 51
+            "line": 52
           },
           "name": "host",
           "optional": true,
@@ -11345,7 +11346,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 79
+            "line": 80
           },
           "name": "idleTimeoutSeconds",
           "optional": true,
@@ -11401,7 +11402,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 57
+            "line": 58
           },
           "name": "port",
           "optional": true,
@@ -11419,7 +11420,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 97
+            "line": 98
           },
           "name": "stackBytes",
           "optional": true,
@@ -11437,7 +11438,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 117
+            "line": 118
           },
           "name": "taskName",
           "optional": true,
@@ -11456,7 +11457,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 73
+            "line": 74
           },
           "name": "telemetry",
           "optional": true,
@@ -11474,7 +11475,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 141
+            "line": 142
           },
           "name": "useColima",
           "optional": true,
@@ -11492,7 +11493,7 @@
           "immutable": true,
           "locationInModule": {
             "filename": "src/components/aws-emulator.ts",
-            "line": 129
+            "line": 130
           },
           "name": "waitForHealthy",
           "optional": true,
@@ -22158,5 +22159,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "dQYcNJ8dBb3uZvuOFKiGKn0ig3eVwUfzU4Hpni3aHDA="
+  "fingerprint": "2Efw9tRhxKql7qR6iKUvKC52gECg9/dz+9OvCfhiYN4="
 }

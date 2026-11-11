@@ -43,7 +43,8 @@ export interface AwsEmulatorOptions {
     readonly containerName?: string;
 
     /**
-     * Address to bind to (`-b`). In container mode the emulator always binds to `0.0.0.0` inside
+     * Address to bind to (`-b`). IPv4 addresses and host names only. A wildcard (`0.0.0.0`) is
+     * probed and advertised as `127.0.0.1`. In container mode the emulator always binds to `0.0.0.0` inside
      * the container, and this is the host address the port is published on.
      *
      * @default "127.0.0.1"
@@ -150,6 +151,7 @@ export interface AwsEmulatorOptions {
 
     /**
      * Set `AWS_ENDPOINT_URL` on all project tasks so AWS SDKs and the CLI use the emulator.
+     * Requires `caBundlePath`, because the emulator serves a self-signed certificate.
      * @default false
      */
     readonly configureEndpointEnv?: boolean;
@@ -214,6 +216,11 @@ export class AwsEmulator extends Component {
         checkSafe("command", command);
         const host = options.host ?? "127.0.0.1";
         checkSafe("host", host);
+        if (host.includes(":")) {
+            throw new Error(`AwsEmulator host "${host}" is not supported, IPv6 addresses cannot be used`);
+        }
+        /* Wildcard bind addresses are not connectable, so clients and probes use loopback */
+        const clientHost = host === "0.0.0.0" ? "127.0.0.1" : host;
         const port = options.port ?? 9297;
         checkPort("port", port);
         const containerName = options.containerName ?? "aws-emulator";
@@ -237,6 +244,11 @@ export class AwsEmulator extends Component {
         }
         if (options.caBundlePath !== undefined) {
             checkSafe("caBundlePath", options.caBundlePath);
+        }
+        if (options.configureEndpointEnv && options.caBundlePath === undefined) {
+            throw new Error(
+                "AwsEmulator configureEndpointEnv requires caBundlePath, since the emulator uses a self-signed certificate",
+            );
         }
         if (options.homebrewPackage !== undefined) {
             checkSafe("homebrewPackage", options.homebrewPackage);
@@ -287,7 +299,7 @@ export class AwsEmulator extends Component {
         }
         args.push(...(options.extraArgs ?? []));
 
-        const healthUrl = `https://${host}:${port}/__admin/health`;
+        const healthUrl = `https://${clientHost}:${port}/__admin/health`;
         const healthCheck = `curl -ksf ${healthUrl} >/dev/null 2>&1`;
 
         let start: string;
@@ -304,7 +316,8 @@ export class AwsEmulator extends Component {
             start = `docker rm -f ${containerName} >/dev/null 2>&1; ${run} >/dev/null`;
         } else {
             const envPrefix = Object.entries(env).map(([k, v]) => `${k}=${quote(v)} `);
-            start = `${envPrefix.join("")}nohup ${command} ${args.join(" ")} >.aws-emulator.log 2>&1 &`;
+            start = `${envPrefix.join("")}nohup ${command} ${args.join(" ")} >.aws-emulator.log 2>&1 & echo $! >.aws-emulator.pid`;
+            project.gitignore.exclude(".aws-emulator.log", ".aws-emulator.pid");
         }
 
         const emulatorTask = project.addTask(taskName, { description: "Start AWS Emulator" });
@@ -316,7 +329,7 @@ export class AwsEmulator extends Component {
         }
 
         /* Idempotent: skip if already healthy, otherwise start in the background */
-        emulatorTask.exec(`${healthCheck} || { ${start} }`, bash);
+        emulatorTask.exec(`${healthCheck} || { ${start}; }`, bash);
         if (options.waitForHealthy ?? true) {
             emulatorTask.exec(
                 `for i in $(seq 1 ${healthTimeout}); do ${healthCheck} && exit 0; sleep 1; done; ` +
@@ -325,8 +338,17 @@ export class AwsEmulator extends Component {
             );
         }
 
+        /* Stop task: removes the container or kills the recorded background process */
+        const stopTask = project.addTask(`${taskName}:stop`, { description: "Stop AWS Emulator" });
+        stopTask.exec(
+            container
+                ? `docker rm -f ${containerName} >/dev/null 2>&1 || true`
+                : "if [ -f .aws-emulator.pid ]; then kill $(cat .aws-emulator.pid) 2>/dev/null || true; rm -f .aws-emulator.pid; fi",
+            bash,
+        );
+
         if (options.configureEndpointEnv) {
-            project.tasks.addEnvironment("AWS_ENDPOINT_URL", `https://${host}:${port}`);
+            project.tasks.addEnvironment("AWS_ENDPOINT_URL", `https://${clientHost}:${port}`);
             if (options.caBundlePath !== undefined) {
                 project.tasks.addEnvironment("AWS_CA_BUNDLE", options.caBundlePath);
                 project.tasks.addEnvironment("NODE_EXTRA_CA_CERTS", options.caBundlePath);

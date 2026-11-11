@@ -137,7 +137,7 @@ new Floci(project, {
 
 ## AwsEmulator
 
-[AWS Emulator](https://github.com/aws/aws-emulator) component. AWS Emulator is a local emulator of the AWS APIs for building and testing without an AWS account. It serves HTTPS with a self-signed certificate on `127.0.0.1:9297` and reports health at `/__admin/health`. It has no official Homebrew formula or prebuilt image, so installation is up to you and everything is configurable through options. The start task is idempotent, runs the emulator in the background, and waits until it is healthy.
+[AWS Emulator](https://github.com/aws/aws-emulator) component. AWS Emulator is a local emulator of the AWS APIs for building and testing without an AWS account. It serves HTTPS with a self-signed certificate on `127.0.0.1:9297` and reports health at `/__admin/health`. It has no official Homebrew formula or prebuilt image, so installation is up to you and everything is configurable through options. The start task is idempotent, runs the emulator in the background, and waits until it is healthy. A companion `<taskName>:stop` task stops it (removes the container, or kills the recorded process), and native mode git-ignores `.aws-emulator.log` and `.aws-emulator.pid`. `configureEndpointEnv` requires `caBundlePath`, and IPv6 hosts are rejected.
 
 ```typescript
 import { AwsEmulator } from "@nikovirtala/projen-constructs";

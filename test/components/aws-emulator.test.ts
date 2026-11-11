@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { javascript } from "projen";
 import { synthSnapshot } from "projen/lib/util/synth";
 import { describe, expect, it } from "vitest";
@@ -17,6 +18,33 @@ function startExec(project: javascript.NodeProject, name = "aws-emulator"): stri
 }
 
 describe("AwsEmulator", () => {
+    it("should generate valid bash in both modes", () => {
+        for (const options of [{}, { mode: "container", image: "a:b" }, { mode: "native", host: "0.0.0.0" }]) {
+            const project = create(options);
+            for (const task of ["aws-emulator", "aws-emulator:stop"]) {
+                for (const step of project.tasks.tryFind(task)?.steps ?? []) {
+                    if (step.exec) execFileSync("bash", ["-n", "-c", step.exec]);
+                }
+            }
+        }
+    });
+
+    it("should add a stop task and gitignore the native log", () => {
+        const snap = synthSnapshot(create());
+        expect(snap[".gitignore"]).toContain(".aws-emulator.log");
+        expect(snap[".gitignore"]).toContain(".aws-emulator.pid");
+        expect(snap[".projen/tasks.json"].tasks["aws-emulator:stop"].steps[0].exec).toContain(".aws-emulator.pid");
+    });
+
+    it("should stop the container in container mode", () => {
+        const exec = create({ mode: "container", image: "a:b" }).tasks.tryFind("aws-emulator:stop")?.steps[0].exec;
+        expect(exec).toContain("docker rm -f aws-emulator");
+    });
+
+    it("should reject IPv6 hosts", () => {
+        expect(() => create({ host: "::1" })).toThrow("IPv6");
+    });
+
     it("should start natively with defaults", () => {
         const exec = startExec(create());
         expect(exec).toContain("curl -ksf https://127.0.0.1:9297/__admin/health");
@@ -56,7 +84,7 @@ describe("AwsEmulator", () => {
                 environment: { FOO: "it's" },
             }),
         );
-        expect(exec).toContain("https://0.0.0.0:8443/__admin/health");
+        expect(exec).toContain("https://127.0.0.1:8443/__admin/health");
         expect(exec).toContain("EMULATOR_DATA_PORT='9300'");
         expect(exec).toContain("EMULATOR_CONFIG='/etc/emulator.toml'");
         expect(exec).toContain("EMULATOR_STACK_BYTES='8388608'");
@@ -150,10 +178,8 @@ describe("AwsEmulator", () => {
             expect(env.NODE_EXTRA_CA_CERTS).toBe("certs/ca.pem");
         });
 
-        it("should skip CA variables without a path", () => {
-            const env = synthSnapshot(create({ configureEndpointEnv: true }))[".projen/tasks.json"].env;
-            expect(env.AWS_ENDPOINT_URL).toBe("https://127.0.0.1:9297");
-            expect(env.AWS_CA_BUNDLE).toBeUndefined();
+        it("should require a CA path with the endpoint variable", () => {
+            expect(() => create({ configureEndpointEnv: true })).toThrow("requires caBundlePath");
         });
     });
 
