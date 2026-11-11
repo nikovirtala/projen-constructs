@@ -14,7 +14,7 @@ Every project type ships with the same opinionated defaults:
 - **Package manager**: pnpm 12.16.1
 - **Node version**: 26.13.0
 - **TypeScript**: 6.0.3
-- **CDK version**: 2.275.0 (for CDK projects)
+- **CDK version**: 2.276.0 (for CDK projects)
 - **JSII version**: ~6.0.3 (for JSII projects)
 <!-- generated:version-table-end -->
 
