@@ -12,7 +12,7 @@ Every project type ships with the same opinionated defaults:
 - **Author**: Niko Virtala (niko.virtala@hey.com)
 - **Default release branch**: main
 - **Package manager**: pnpm 12.16.1
-- **Node version**: 26.13.0
+- **Node version**: 26.13.1
 - **TypeScript**: 6.0.3
 - **CDK version**: 2.276.0 (for CDK projects)
 - **JSII version**: ~6.0.3 (for JSII projects)
