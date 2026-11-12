@@ -17,7 +17,7 @@ This project is **entirely managed by projen**. Key implications:
 
 <!-- generated:tech-core-start -->
 - **TypeScript 6.0.3** - Primary language
-- **Node.js 26.13.0** - Runtime (managed via mise)
+- **Node.js 26.13.1** - Runtime (managed via mise)
 - **JSII ~6.0.3** - Multi-language library support
 - **pnpm 12** - Package manager (settings live in `pnpm-workspace.yaml`, not `.npmrc`)
 <!-- generated:tech-core-end -->

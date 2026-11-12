@@ -19,7 +19,7 @@ Automates project scaffolding and configuration for TypeScript, JSII, and AWS CD
 <!-- generated:product-defaults-start -->
 - Author: Niko Virtala (niko.virtala@hey.com)
 - Package Manager: pnpm 12
-- Node Version: 26.13.0
+- Node Version: 26.13.1
 - TypeScript: 6.0.3
 - CDK Version: 2.276.0
 <!-- generated:product-defaults-end -->
