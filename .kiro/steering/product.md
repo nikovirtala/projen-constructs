@@ -21,7 +21,7 @@ Automates project scaffolding and configuration for TypeScript, JSII, and AWS CD
 - Package Manager: pnpm 12
 - Node Version: 26.13.1
 - TypeScript: 6.0.3
-- CDK Version: 2.276.0
+- CDK Version: 2.277.0
 <!-- generated:product-defaults-end -->
 - Code Quality: Biome for formatting and linting
 - Testing: Vitest with coverage
